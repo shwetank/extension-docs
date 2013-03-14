@@ -1,8 +1,11 @@
 ---
 layout: default
-title: Hello World!
+title: Opera extensions documentation for Opera 14 and beyond
 ---
-This is my first Jekyll website.
+Here you can find all our extensions documentation.
 
-* [link to article](article.html)
-* [link to article with sidebar](article-withsidebar.html)
+We have [link to article](article.html)
+
+Then look at [link to article with sidebar](article-withsidebar.html)
+
+And at [link to API documentation article](apidoc.html)
