@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Opera extensions documentation for Opera 14 and beyond
+title: Opera extensions docs for Opera 14 and beyond
 ---
-Here you can find all our extensions documentation.
+Here you can find all our new extensions documentation.
 
 We have [link to article](article.html)
 
