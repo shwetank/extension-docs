@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Opera extensions docs for Opera 14 and beyond
+layout: default-withsidebar
+title: Welcome!
 ---
 Here you can find all our new extensions documentation.
 
