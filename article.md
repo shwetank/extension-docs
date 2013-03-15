@@ -1,5 +1,5 @@
 ---
-layout: default
-title: Article 1
+layout: default-withsidebar
+title: Introduction
 ---
 This is my first Jekyll website.

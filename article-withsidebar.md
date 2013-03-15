@@ -1,5 +1,5 @@
 ---
 layout: default-withsidebar
-title: Article with sidebar
+title: 2nd article
 ---
 This is my first article with sidebar.
