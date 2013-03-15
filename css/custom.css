@@ -1,1 +1,2 @@
-/* extra CSS goes here */
+body {padding-top: 40px;} /* added 40px padding as per view-source:http://twitter.github.com/bootstrap/components.html */
+#sidebar {margin-top: 60px;}
