@@ -3,7 +3,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script>
    $(function(){
-      var path = location.pathname.substring(1);
+      var path = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
       if ( path )
         $('#sidebar a[href$="' + path + '"]').parent().attr('class', 'active');
         $('#navbar ul a[href$="' + path + '"]').parent().attr('class', 'active');
