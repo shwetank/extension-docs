@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: Contact us
+copyright: opera-ccby
 ---
 There are a number of ways to get in touch with us:
 * If you want ask a quick question or say hi, contact us on [Twitter](https://twitter.com/odevrel/)
