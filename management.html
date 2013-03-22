@@ -1,0 +1,905 @@
+---
+layout: default-withsidebar
+title: chrome.management
+copyright: opera-google-ccby
+---
+      <div id="gc-pagecontent">
+        
+        
+        
+        <div id="toc">
+          <h2>Contents</h2>
+          <ol>
+            <li>
+              <a href="management.html#manifest">Manifest</a>
+            </li>
+            <li>
+              <a href="management.html#apiReference">API reference: chrome.management</a>
+              <ol>
+                  <li><a href="management.html#types">Types</a><ol>  <li>    <a href="management.html#type-IconInfo">IconInfo</a>  </li>  <li>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>  </li></ol></li>
+                  
+                  <li><a href="management.html#methods">Methods</a><ol>  <li><a href="management.html#method-getAll">getAll</a></li>  <li><a href="management.html#method-get">get</a></li>  <li><a href="management.html#method-getPermissionWarningsById">getPermissionWarningsById</a></li>  <li><a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a></li>  <li><a href="management.html#method-setEnabled">setEnabled</a></li>  <li><a href="management.html#method-uninstall">uninstall</a></li>  <li><a href="management.html#method-uninstallSelf">uninstallSelf</a></li>  <li><a href="management.html#method-launchApp">launchApp</a></li></ol></li>
+                  <li><a href="management.html#events">Events</a><ol>  <li><a href="management.html#event-onInstalled">onInstalled</a></li>  <li><a href="management.html#event-onUninstalled">onUninstalled</a></li>  <li><a href="management.html#event-onEnabled">onEnabled</a></li>  <li><a href="management.html#event-onDisabled">onDisabled</a></li></ol></li>
+                  <li><a href="management.html#samples">Sample Extensions</a></li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+<p id="classSummary">
+The <code>chrome.management</code> module provides ways to manage the list of extensions/apps that are installed and running. It is particularly useful for extensions that <a href="override.html">override</a> the built-in New Tab page.
+</p>
+
+<h2 id="manifest">Manifest</h2>
+
+<p>You must declare the "management" permission
+in the <a href="manifest.html">extension manifest</a>
+to use the management API.
+For example:</p>
+<pre>{
+  "name": "My extension",
+  ...
+  <b>"permissions": [
+    "management"
+  ]</b>,
+  ...
+}</pre>
+
+<p>
+<a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a> and
+<a href="management.html#method-uninstallSelf">uninstallSelf</a> do not require the management permission
+</p>
+        <h2 id="apiReference">API Reference: chrome.management</h2>
+        <div class="api_reference">
+            <h3 id="types">Types</h3>
+              <div>
+                <h3 id="type-IconInfo">IconInfo</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+              <dd>
+                    Information about an icon belonging to an extension, app, or theme.
+                  </dd>    <h4 id="IconInfo-properties">
+                    Properties of <a href="management.html#type-IconInfo">IconInfo</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <a name="property-IconInfo-size"></a>
+                      <dt>
+                        <span class="variable">size</span>
+                        <span class="property">
+                          (
+                            
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        A number representing the width and height of the icon. Likely values include (but are not limited to) 128, 48, 24, and 16.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-IconInfo-url"></a>
+                      <dt>
+                        <span class="variable">url</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The URL for this icon image. To display a grayscale version of the icon (to indicate that an extension is disabled, for example), append <code>?grayscale=true</code> to the URL.
+                      </dd>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+              <div>
+                <h3 id="type-ExtensionInfo">ExtensionInfo</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+              <dd>
+                    Information about an installed extension, app, or theme.
+                  </dd>    <h4 id="ExtensionInfo-properties">
+                    Properties of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <a name="property-ExtensionInfo-id"></a>
+                      <dt>
+                        <span class="variable">id</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The extension's unique identifier.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-name"></a>
+                      <dt>
+                        <span class="variable">name</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The name of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-description"></a>
+                      <dt>
+                        <span class="variable">description</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The description of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-version"></a>
+                      <dt>
+                        <span class="variable">version</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The <a href='manifest.html#version'>version</a> of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-mayDisable"></a>
+                      <dt>
+                        <span class="variable">mayDisable</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether this extension can be disabled or uninstalled by the user.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-enabled"></a>
+                      <dt>
+                        <span class="variable">enabled</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether it is currently enabled or disabled.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-disabledReason"></a>
+                      <dt>
+                        <span class="variable">disabledReason</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            enumerated string ["unknown", "permissions_increase"]
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        A reason the item is disabled.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-type"></a>
+                      <dt>
+                        <span class="variable">type</span>
+                        <span class="property">
+                          (
+                            
+                            enumerated string ["extension", "hosted_app", "packaged_app", "legacy_packaged_app", "theme"]
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The type of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-appLaunchUrl"></a>
+                      <dt>
+                        <span class="variable">appLaunchUrl</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The launch url (only present for apps).
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-homepageUrl"></a>
+                      <dt>
+                        <span class="variable">homepageUrl</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The URL of the homepage of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-updateUrl"></a>
+                      <dt>
+                        <span class="variable">updateUrl</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The update URL of this extension, app, or theme.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-offlineEnabled"></a>
+                      <dt>
+                        <span class="variable">offlineEnabled</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether the extension, app, or theme declares that it supports offline.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-optionsUrl"></a>
+                      <dt>
+                        <span class="variable">optionsUrl</span>
+                        <span class="property">
+                          (
+                            
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The url for the item's options page, if it has one.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-icons"></a>
+                      <dt>
+                        <span class="variable">icons</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            array of <a href="management.html#type-IconInfo">IconInfo</a>
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        A list of icon information. Note that this just reflects what was declared in the manifest, and the actual image at that url may be larger or smaller than what was declared, so you might consider using explicit width and height attributes on img tags referencing these images. See the <a href='manifest.html#icons'>manifest documentation on icons</a> for more details.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-permissions"></a>
+                      <dt>
+                        <span class="variable">permissions</span>
+                        <span class="property">
+                          (
+                            
+                            array of string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Returns a list of API based permissions.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-hostPermissions"></a>
+                      <dt>
+                        <span class="variable">hostPermissions</span>
+                        <span class="property">
+                          (
+                            
+                            array of string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Returns a list of host based permissions.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-ExtensionInfo-installType"></a>
+                      <dt>
+                        <span class="variable">installType</span>
+                        <span class="property">
+                          (
+                            
+                            enumerated string ["admin", "development", "normal", "sideload", "other"]
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        How the extension was installed. One of<br><var>admin</var>: The extension was installed because of an administrative policy,<br><var>development</var>: The extension was loaded unpacked in developer mode,<br><var>normal</var>: The extension was installed normally via a .crx file,<br><var>sideload</var>: The extension was installed by other software on the machine,<br><var>other</var>: The extension was installed by other means.
+                      </dd>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+            <h3 id="methods">Methods</h3>
+              <div>
+                <h4 id="method-getAll">getAll</h4>
+                <div class="summary lower">
+                  <span>chrome.management.getAll</span>(<span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Returns a list of information about installed extensions and apps.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getAll-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(array of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                array of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-get">get</h4>
+                <div class="summary lower">
+                  <span>chrome.management.get</span>(<span>string <span class="variable">id</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Returns information about the installed extension, app, or theme that has the given ID.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-get-id"></a>
+                        <dt>
+                          <span class="variable">id</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The ID from an item of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-get-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(<a href="management.html#type-ExtensionInfo">ExtensionInfo</a> result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getPermissionWarningsById">getPermissionWarningsById</h4>
+                <div class="summary lower">
+                  <span>chrome.management.getPermissionWarningsById</span>(<span>string <span class="variable">id</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Returns a list of <a href='permission_warnings.html'>permission warnings</a> for the given extension id.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getPermissionWarningsById-id"></a>
+                        <dt>
+                          <span class="variable">id</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The ID of an already installed extension.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getPermissionWarningsById-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(array of string permissionWarnings) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-permissionWarnings"></a>
+                          <dt>
+                            <span class="variable">permissionWarnings</span>
+                            <span class="property">
+                              (
+                                
+                                array of string
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</h4>
+                <div class="summary lower">
+                  <span>chrome.management.getPermissionWarningsByManifest</span>(<span>string <span class="variable">manifestStr</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Returns a list of <a href='permission_warnings.html'>permission warnings</a> for the given extension manifest string. Note: This function can be used without requesting the 'management' permission in the manifest.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getPermissionWarningsByManifest-manifestStr"></a>
+                        <dt>
+                          <span class="variable">manifestStr</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          Extension manifest JSON string.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getPermissionWarningsByManifest-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(array of string permissionWarnings) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-permissionWarnings"></a>
+                          <dt>
+                            <span class="variable">permissionWarnings</span>
+                            <span class="property">
+                              (
+                                
+                                array of string
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setEnabled">setEnabled</h4>
+                <div class="summary lower">
+                  <span>chrome.management.setEnabled</span>(<span>string <span class="variable">id</span></span>, <span>boolean <span class="variable">enabled</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Enables or disables an app or extension.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setEnabled-id"></a>
+                        <dt>
+                          <span class="variable">id</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          This should be the id from an item of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-setEnabled-enabled"></a>
+                        <dt>
+                          <span class="variable">enabled</span>
+                          <span class="property">
+                            (
+                              
+                              boolean
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          Whether this item should be enabled or disabled.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-setEnabled-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-uninstall">uninstall</h4>
+                <div class="summary lower">
+                  <span>chrome.management.uninstall</span>(<span>string <span class="variable">id</span></span>, <span class="optional">object <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Uninstalls a currently installed app or extension.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-uninstall-id"></a>
+                        <dt>
+                          <span class="variable">id</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          This should be the id from an item of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-uninstall-options"></a>
+                        <dt>
+                          <span class="variable">options</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-options-showConfirmDialog"></a>
+                              <dt>
+                                <span class="variable">showConfirmDialog</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Whether or not a confirm-uninstall dialog should prompt the user. Defaults to false.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-uninstall-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-uninstallSelf">uninstallSelf</h4>
+                <div class="summary lower">
+                  <span>chrome.management.uninstallSelf</span>(<span class="optional">object <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Uninstalls the calling extension. Note: This function can be used without requesting the 'management' permission in the manifest.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-uninstallSelf-options"></a>
+                        <dt>
+                          <span class="variable">options</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-options-showConfirmDialog"></a>
+                              <dt>
+                                <span class="variable">showConfirmDialog</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Whether or not a confirm-uninstall dialog should prompt the user. Defaults to false.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-uninstallSelf-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-launchApp">launchApp</h4>
+                <div class="summary lower">
+                  <span>chrome.management.launchApp</span>(<span>string <span class="variable">id</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Launches an application.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-launchApp-id"></a>
+                        <dt>
+                          <span class="variable">id</span>
+                          <span class="property">
+                            (
+                              
+                              string
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The extension id of the application.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-launchApp-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+            <h3 id="events">Events</h3>
+              <div>
+                <h4 id="event-onInstalled">onInstalled</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.management.</span>onInstalled<span class="subdued">.addListener</span>(function(<span><a href="management.html#type-ExtensionInfo">ExtensionInfo</a> <span class="variable">info</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when an app or extension has been installed.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onInstalled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="event-onUninstalled">onUninstalled</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.management.</span>onUninstalled<span class="subdued">.addListener</span>(function(<span>string <span class="variable">id</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when an app or extension has been uninstalled.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onUninstalled-id"></a>  <dt>    <span class="variable">id</span>    <span class="property">      (                string      )    </span>  </dt>  <dd>    The id of the extension, app, or theme that was uninstalled.  </dd></div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="event-onEnabled">onEnabled</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.management.</span>onEnabled<span class="subdued">.addListener</span>(function(<span><a href="management.html#type-ExtensionInfo">ExtensionInfo</a> <span class="variable">info</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when an app or extension has been enabled.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onEnabled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="event-onDisabled">onDisabled</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.management.</span>onDisabled<span class="subdued">.addListener</span>(function(<span><a href="management.html#type-ExtensionInfo">ExtensionInfo</a> <span class="variable">info</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when an app or extension has been disabled.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onDisabled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></div>
+                    </dl>
+                </div>
+              </div>
+        </div>
+          <h2 id="samples">Sample Extensions that use chrome.management</h2>
+            <li><strong><a href="samples.html#461b3e0c33d8370c83997cbb9e4e47b7">App Launcher</a></strong>
+        </li>
+      </div>

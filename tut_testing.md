@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
-title: Introduction
+title: Testing and debugging your extensions
 copyright: opera-ccby
 ---
-Text of the introduction article
+
+-> Andreas

@@ -1,0 +1,175 @@
+---
+layout: default-withsidebar
+title: chrome.idle
+copyright: opera-google-ccby
+---
+      <div id="gc-pagecontent">
+        
+        
+        
+        <div id="toc">
+          <h2>Contents</h2>
+          <ol>
+            <li>
+              <a href="idle.html#manifest">Manifest</a>
+            </li>
+            <li>
+              <a href="idle.html#apiReference">API reference: chrome.idle</a>
+              <ol>
+                  
+                  
+                  <li><a href="idle.html#methods">Methods</a><ol>  <li><a href="idle.html#method-queryState">queryState</a></li>  <li><a href="idle.html#method-setDetectionInterval">setDetectionInterval</a></li></ol></li>
+                  <li><a href="idle.html#events">Events</a><ol>  <li><a href="idle.html#event-onStateChanged">onStateChanged</a></li></ol></li>
+                  <li><a href="idle.html#samples">Sample Extensions</a></li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+<table class="intro">
+  <tr>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td>Use the <code>chrome.idle</code> module
+    to detect when the machine's idle state changes.</td>
+  </tr>
+  <tr>
+    <td><strong>Availability:</strong></td>
+    <td>Google Chrome 6</td>
+  </tr>
+  <tr>
+    <td><strong>Permissions:</strong></td>
+    <td><code>"idle"</code></td>
+  </tr>
+</table>
+
+<h2 id="manifest">Manifest</h2>
+<p>You must declare the "idle" permission in your extension's manifest to use the idle API.
+For example:
+</p>
+
+<pre>{
+  "name": "My extension",
+  ...
+  <b>"permissions": [
+    "idle"
+  ]</b>,
+  ...
+}</pre>
+        <h2 id="apiReference">API Reference: chrome.idle</h2>
+        <div class="api_reference">
+            <h3 id="methods">Methods</h3>
+              <div>
+                <h4 id="method-queryState">queryState</h4>
+                <div class="summary lower">
+                  <span>chrome.idle.queryState</span>(<span>integer <span class="variable">detectionIntervalInSeconds</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Returns "locked" if the system is locked, "idle" if the user has not generated any input for a specified number of seconds, or "active" otherwise.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-queryState-detectionIntervalInSeconds"></a>
+                        <dt>
+                          <span class="variable">detectionIntervalInSeconds</span>
+                          <span class="property">
+                            (
+                              
+                              integer
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The system is considered idle if detectionIntervalInSeconds seconds have elapsed since the last user input detected.
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-queryState-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(enumerated string ["active""idle""locked"] newState) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-newState"></a>
+                          <dt>
+                            <span class="variable">newState</span>
+                            <span class="property">
+                              (
+                                
+                                enumerated string ["active""idle""locked"]
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setDetectionInterval">setDetectionInterval</h4>
+                <div class="summary lower">
+                  <span>chrome.idle.setDetectionInterval</span>(<span>integer <span class="variable">intervalInSeconds</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the interval, in seconds, used to determine when the system is in an idle state for onStateChanged events. The default interval is 60 seconds.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setDetectionInterval-intervalInSeconds"></a>
+                        <dt>
+                          <span class="variable">intervalInSeconds</span>
+                          <span class="property">
+                            (
+                              
+                              integer
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          Threshold, in seconds, used to determine when the system is in an idle state.
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+            <h3 id="events">Events</h3>
+              <div>
+                <h4 id="event-onStateChanged">onStateChanged</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.idle.</span>onStateChanged<span class="subdued">.addListener</span>(function(<span>enumerated string ["active""idle""locked"] <span class="variable">newState</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when the system changes to an active, idle or locked state. The event fires with "locked" if the screen is locked or the screensaver activates, "idle" if the system is unlocked and the user has not generated any input for a specified number of seconds, and "active" when the user generates input on an idle system.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onStateChanged-newState"></a>  <dt>    <span class="variable">newState</span>    <span class="property">      (                enumerated string ["active""idle""locked"]      )    </span>  </dt></div>
+                    </dl>
+                </div>
+              </div>
+        </div>
+          <h2 id="samples">Sample Extensions that use chrome.idle</h2>
+            <li><strong><a href="samples.html#b7ee031d2bfdbdd1c89f2cff6ed9781c">Idle - Simple Example</a></strong>
+            &ndash; Demonstrates the Idle API
+        </li>
+      </div>

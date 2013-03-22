@@ -1,0 +1,1145 @@
+---
+layout: default-withsidebar
+title: chrome.windows
+copyright: opera-google-ccby
+---
+      <div id="gc-pagecontent">
+        
+        
+        
+        <div id="toc">
+          <h2>Contents</h2>
+          <ol>
+            <li>
+              <a href="windows.html#manifest">Manifest</a>
+            </li>
+            <li>
+              <a href="windows.html#current-window">The current window</a>
+            </li>
+            <li>
+              <a href="windows.html#examples"> Examples </a>
+            </li>
+            <li>
+              <a href="windows.html#apiReference">API reference: chrome.windows</a>
+              <ol>
+                  <li><a href="windows.html#types">Types</a><ol>  <li>    <a href="windows.html#type-Window">Window</a>  </li></ol></li>
+                  <li><a href="windows.html#properties">Properties</a><ol>  <li>    <a href="windows.html#property-WINDOW_ID_NONE">WINDOW_ID_NONE</a>  </li>  <li>    <a href="windows.html#property-WINDOW_ID_CURRENT">WINDOW_ID_CURRENT</a>  </li></ol></li>
+                  <li><a href="windows.html#methods">Methods</a><ol>  <li><a href="windows.html#method-get">get</a></li>  <li><a href="windows.html#method-getCurrent">getCurrent</a></li>  <li><a href="windows.html#method-getLastFocused">getLastFocused</a></li>  <li><a href="windows.html#method-getAll">getAll</a></li>  <li><a href="windows.html#method-create">create</a></li>  <li><a href="windows.html#method-update">update</a></li>  <li><a href="windows.html#method-remove">remove</a></li></ol></li>
+                  <li><a href="windows.html#events">Events</a><ol>  <li><a href="windows.html#event-onCreated">onCreated</a></li>  <li><a href="windows.html#event-onRemoved">onRemoved</a></li>  <li><a href="windows.html#event-onFocusChanged">onFocusChanged</a></li></ol></li>
+                  <li><a href="windows.html#samples">Sample Extensions</a></li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+<p id="classSummary">
+Use the <code>chrome.windows</code> module
+to interact with browser windows.
+You can use this module to
+create, modify, and rearrange windows in the browser.
+</p>
+
+<img src="../static/images/windows.png"
+     width="256" height="76" alt="Two windows, each with one tab" />
+
+<h2 id="manifest">Manifest</h2>
+<p>
+To use the windows API,
+you must declare the "tabs" permission
+in <a href="manifest.html">manifest.json</a>.
+(No, that isn't a typo &mdash;
+the window and tabs modules interact so closely we
+decided to just share one permission between them.)
+For example:
+</p>
+
+<pre>{
+  "name": "My extension",
+  ...
+  <b>"permissions": ["tabs"]</b>,
+  ...
+}</pre>
+
+<h2 id="current-window">The current window</h2>
+
+<p>Many functions in the extension system
+take an optional <var>windowId</var> parameter,
+which defaults to the current window.
+</p>
+
+<p>The <em>current window</em> is the window that
+contains the code that is currently executing.
+It's important to realize that this can be
+different from the topmost or focused window.
+</p>
+
+<p>For example, say an extension
+creates a few tabs or windows from a single HTML file,
+and that the HTML file
+contains a call to
+<a href="tabs.html#method-query">tabs.query</a>.
+The current window is the window that contains the page that made
+the call, no matter what the topmost window is.
+</p>
+
+<p>In the case of the <a href="event_pages.html">event page</a>,
+the value of the current window falls back to the last active window. Under some
+circumstances, there may be no current window for background pages.
+</p>
+
+<h2 id="examples"> Examples </h2>
+
+<p>
+You can find simple examples of using the windows module in the
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/windows/">examples/api/windows</a>
+directory.
+Another example is in the
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/tabs/inspector/tabs_api.html?content-type=text/plain">tabs_api.html</a> file
+of the
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/tabs/inspector/">inspector</a>
+example.
+For other examples and for help in viewing the source code, see
+<a href="samples.html">Samples</a>.
+</p>
+        <h2 id="apiReference">API Reference: chrome.windows</h2>
+        <div class="api_reference">
+            <h3 id="types">Types</h3>
+              <div>
+                <h3 id="type-Window">Window</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <h4 id="Window-properties">
+                    Properties of <a href="windows.html#type-Window">Window</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <a name="property-Window-id"></a>
+                      <dt>
+                        <span class="variable">id</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The ID of the window. Window IDs are unique within a browser session. Under some circumstances a Window may not be assigned an ID, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-focused"></a>
+                      <dt>
+                        <span class="variable">focused</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether the window is currently the focused window.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-top"></a>
+                      <dt>
+                        <span class="variable">top</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The offset of the window from the top edge of the screen in pixels. Under some circumstances a Window may not be assigned top property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-left"></a>
+                      <dt>
+                        <span class="variable">left</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The offset of the window from the left edge of the screen in pixels. Under some circumstances a Window may not be assigned left property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-width"></a>
+                      <dt>
+                        <span class="variable">width</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The width of the window in pixels. Under some circumstances a Window may not be assigned width property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-height"></a>
+                      <dt>
+                        <span class="variable">height</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The height of the window in pixels. Under some circumstances a Window may not be assigned height property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-tabs"></a>
+                      <dt>
+                        <span class="variable">tabs</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            array of <a href="tabs.html#type-Tab">tabs.Tab</a>
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Array of <a href="tabs.html#type-Tab">tabs.Tab</a> objects representing the current tabs in the window.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-incognito"></a>
+                      <dt>
+                        <span class="variable">incognito</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether the window is incognito.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-type"></a>
+                      <dt>
+                        <span class="variable">type</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            enumerated string ["normal", "popup", "panel", "app"]
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The type of browser window this is. Under some circumstances a Window may not be assigned type property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-state"></a>
+                      <dt>
+                        <span class="variable">state</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            enumerated string ["normal", "minimized", "maximized", "fullscreen"]
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        The state of this browser window. Under some circumstances a Window may not be assigned state property, for example when querying closed windows from the <a href="sessionRestore.html">sessionRestore</a> API.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Window-alwaysOnTop"></a>
+                      <dt>
+                        <span class="variable">alwaysOnTop</span>
+                        <span class="property">
+                          (
+                            
+                            boolean
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Whether the window is set to be always on top.
+                      </dd>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+            <h3 id="properties">Properties</h3>
+              <div>
+                <h3 id="property-WINDOW_ID_NONE">WINDOW_ID_NONE</h3>
+                <div class="summary">
+                  <span>chrome.windows.WINDOW_ID_NONE</span>
+                </div>
+                <div>
+                  <dt><span class="property">WINDOW_ID_NONE</span> <span class="type_name">  (    <code>-1</code>  )</span></dt>
+              <dd>
+                    The windowId value that represents the absence of a chrome browser window.
+                  </dd>  </div>
+              </div>
+              <div>
+                <h3 id="property-WINDOW_ID_CURRENT">WINDOW_ID_CURRENT</h3>
+                <div class="summary">
+                  <span>chrome.windows.WINDOW_ID_CURRENT</span>
+                </div>
+                <div>
+                  <dt><span class="property">WINDOW_ID_CURRENT</span> <span class="type_name">  (    <code>-2</code>  )</span></dt>
+              <dd>
+                    The windowId value that represents the <a href='windows.html#current-window'>current window</a>.
+                  </dd>  </div>
+              </div>
+            <h3 id="methods">Methods</h3>
+              <div>
+                <h4 id="method-get">get</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.get</span>(<span>integer <span class="variable">windowId</span></span>, <span class="optional">object <span class="variable">getInfo</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets details about a window.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-get-windowId"></a>
+                        <dt>
+                          <span class="variable">windowId</span>
+                          <span class="property">
+                            (
+                              
+                              integer
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                      <div>
+                        <a name="property-get-getInfo"></a>
+                        <dt>
+                          <span class="variable">getInfo</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          
+                        </dd>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-getInfo-populate"></a>
+                              <dt>
+                                <span class="variable">populate</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, the window object will have a <var>tabs</var> property that contains a list of the <a href="tabs.html#type-Tab">tabs.Tab</a> objects
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-get-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(<a href="windows.html#type-Window">Window</a> window) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-window"></a>
+                          <dt>
+                            <span class="variable">window</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getCurrent">getCurrent</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.getCurrent</span>(<span class="optional">object <span class="variable">getInfo</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the <a href='windows.html#current-window'>current window</a>.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getCurrent-getInfo"></a>
+                        <dt>
+                          <span class="variable">getInfo</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          
+                        </dd>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-getInfo-populate"></a>
+                              <dt>
+                                <span class="variable">populate</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, the window object will have a <var>tabs</var> property that contains a list of the <a href="tabs.html#type-Tab">tabs.Tab</a> objects
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getCurrent-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(<a href="windows.html#type-Window">Window</a> window) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-window"></a>
+                          <dt>
+                            <span class="variable">window</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getLastFocused">getLastFocused</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.getLastFocused</span>(<span class="optional">object <span class="variable">getInfo</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the window that was most recently focused &mdash; typically the window 'on top'.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getLastFocused-getInfo"></a>
+                        <dt>
+                          <span class="variable">getInfo</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          
+                        </dd>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-getInfo-populate"></a>
+                              <dt>
+                                <span class="variable">populate</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, the window object will have a <var>tabs</var> property that contains a list of the <a href="tabs.html#type-Tab">tabs.Tab</a> objects
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getLastFocused-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(<a href="windows.html#type-Window">Window</a> window) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-window"></a>
+                          <dt>
+                            <span class="variable">window</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getAll">getAll</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.getAll</span>(<span class="optional">object <span class="variable">getInfo</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets all windows.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getAll-getInfo"></a>
+                        <dt>
+                          <span class="variable">getInfo</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          
+                        </dd>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-getInfo-populate"></a>
+                              <dt>
+                                <span class="variable">populate</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, each window object will have a <var>tabs</var> property that contains a list of the <a href="tabs.html#type-Tab">tabs.Tab</a> objects for that window.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getAll-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(array of <a href="windows.html#type-Window">Window</a> windows) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-windows"></a>
+                          <dt>
+                            <span class="variable">windows</span>
+                            <span class="property">
+                              (
+                                
+                                array of <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-create">create</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.create</span>(<span class="optional">object <span class="variable">createData</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Creates (opens) a new browser with any optional sizing, position or default URL provided.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-create-createData"></a>
+                        <dt>
+                          <span class="variable">createData</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-createData-url"></a>
+                              <dt>
+                                <span class="variable">url</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                A URL or list of URLs to open as tabs in the window. Fully-qualified URLs must include a scheme (i.e. 'http://www.google.com', not 'www.google.com'). Relative URLs will be relative to the current page within the extension. Defaults to the New Tab Page.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The id of the tab for which you want to adopt to the new window.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-left"></a>
+                              <dt>
+                                <span class="variable">left</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The number of pixels to position the new window from the left edge of the screen. If not specified, the new window is offset naturally from the last focused window. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-top"></a>
+                              <dt>
+                                <span class="variable">top</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The number of pixels to position the new window from the top edge of the screen. If not specified, the new window is offset naturally from the last focused window. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-width"></a>
+                              <dt>
+                                <span class="variable">width</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The width in pixels of the new window. If not specified defaults to a natural width.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-height"></a>
+                              <dt>
+                                <span class="variable">height</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The height in pixels of the new window. If not specified defaults to a natural height.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-focused"></a>
+                              <dt>
+                                <span class="variable">focused</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, opens an active window. If false, opens an inactive window.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-incognito"></a>
+                              <dt>
+                                <span class="variable">incognito</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Whether the new window should be an incognito window.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-createData-type"></a>
+                              <dt>
+                                <span class="variable">type</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    enumerated string ["normal", "popup", "panel", "detached_panel"]
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Specifies what type of browser window to create. The 'panel' and 'detached_panel' types create a popup unless the '--enable-panels' flag is set.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-create-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(<a href="windows.html#type-Window">Window</a> window) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-window"></a>
+                          <dt>
+                            <span class="variable">window</span>
+                            <span class="property">
+                              (
+                                <span class="optional">optional</span>
+                                <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                          <dd>
+                            Contains details about the created window.
+                          </dd>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-update">update</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.update</span>(<span>integer <span class="variable">windowId</span></span>, <span>object <span class="variable">updateInfo</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Updates the properties of a window. Specify only the properties that you want to change; unspecified properties will be left unchanged.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-update-windowId"></a>
+                        <dt>
+                          <span class="variable">windowId</span>
+                          <span class="property">
+                            (
+                              
+                              integer
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                      <div>
+                        <a name="property-update-updateInfo"></a>
+                        <dt>
+                          <span class="variable">updateInfo</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-updateInfo-left"></a>
+                              <dt>
+                                <span class="variable">left</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The offset from the left edge of the screen to move the window to in pixels. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-top"></a>
+                              <dt>
+                                <span class="variable">top</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The offset from the top edge of the screen to move the window to in pixels. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-width"></a>
+                              <dt>
+                                <span class="variable">width</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The width to resize the window to in pixels. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-height"></a>
+                              <dt>
+                                <span class="variable">height</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The height to resize the window to in pixels. This value is ignored for panels.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-focused"></a>
+                              <dt>
+                                <span class="variable">focused</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, brings the window to the front. If false, brings the next window in the z-order to the front.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-drawAttention"></a>
+                              <dt>
+                                <span class="variable">drawAttention</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    boolean
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If true, causes the window to be displayed in a manner that draws the user's attention to the window, without changing the focused window. The effect lasts until the user changes focus to the window. This option has no effect if the window already has focus. Set to false to cancel a previous draw attention request.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-updateInfo-state"></a>
+                              <dt>
+                                <span class="variable">state</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    enumerated string ["normal", "minimized", "maximized", "fullscreen"]
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The new state of the window. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined with 'left', 'top', 'width' or 'height'.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-update-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function(<a href="windows.html#type-Window">Window</a> window) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-window"></a>
+                          <dt>
+                            <span class="variable">window</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="windows.html#type-Window">Window</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-remove">remove</h4>
+                <div class="summary lower">
+                  <span>chrome.windows.remove</span>(<span>integer <span class="variable">windowId</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Removes (closes) a window, and all the tabs inside it.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-remove-windowId"></a>
+                        <dt>
+                          <span class="variable">windowId</span>
+                          <span class="property">
+                            (
+                              
+                              integer
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                      <div>
+                        <a name="property-remove-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+            <h3 id="events">Events</h3>
+              <div>
+                <h4 id="event-onCreated">onCreated</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.windows.</span>onCreated<span class="subdued">.addListener</span>(function(<span><a href="windows.html#type-Window">Window</a> <span class="variable">window</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when a window is created.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onCreated-window"></a>  <dt>    <span class="variable">window</span>    <span class="property">      (                <a href="windows.html#type-Window">Window</a>      )    </span>  </dt>  <dd>    Details of the window that was created.  </dd></div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="event-onRemoved">onRemoved</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.windows.</span>onRemoved<span class="subdued">.addListener</span>(function(<span>integer <span class="variable">windowId</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when a window is removed (closed).
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onRemoved-windowId"></a>  <dt>    <span class="variable">windowId</span>    <span class="property">      (                integer      )    </span>  </dt>  <dd>    ID of the removed window.  </dd></div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="event-onFocusChanged">onFocusChanged</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.windows.</span>onFocusChanged<span class="subdued">.addListener</span>(function(<span>integer <span class="variable">windowId</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when the currently focused window changes. Will be chrome.windows.WINDOW_ID_NONE if all chrome windows have lost focus. Note: On some Linux window managers, WINDOW_ID_NONE will always be sent immediately preceding a switch from one chrome window to another.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onFocusChanged-windowId"></a>  <dt>    <span class="variable">windowId</span>    <span class="property">      (                integer      )    </span>  </dt>  <dd>    ID of the newly focused window.  </dd></div>
+                    </dl>
+                </div>
+              </div>
+        </div>
+          <h2 id="samples">Sample Extensions that use chrome.windows</h2>
+            <li><strong><a href="samples.html#2b0f7d02f3ebd51358ed54ef59dceebb">Cookie API Test Extension</a></strong>
+            &ndash; Testing Cookie API
+        </li>
+            <li><strong><a href="samples.html#f447d4d0c667a4f72ef8c6190e7925d7">Live HTTP headers</a></strong>
+            &ndash; Displays the live log with the http requests headers
+        </li>
+            <li><strong><a href="samples.html#812b7fe611113aedf0a394e9fbbfcce1">JavaScript pause/resume</a></strong>
+            &ndash; Pauses / resumes JavaScript execution
+        </li>
+            <li><strong><a href="samples.html#31e082ed1a598b3d1ae28197fa2a89bc">Download Selected Links</a></strong>
+            &ndash; Select links on a page and download them.
+        </li>
+            <li><strong><a href="samples.html#5cd19f5329cf45fd555d2f754abfc5f1">Show Tabs in Process</a></strong>
+            &ndash; Adds a browser action showing which tabs share the current tab's process.
+        </li>
+            <li><strong><a href="samples.html#062d24295dce5def19f91da9c449e1e4">Tab Inspector</a></strong>
+            &ndash; Utility for working with the extension tabs api
+        </li>
+            <li><strong><a href="samples.html#ada4d65f29289c46d04a1920af682232">Console TTS Engine</a></strong>
+            &ndash; A "silent" TTS engine that prints text to a small window rather than synthesizing speech.
+        </li>
+            <li><strong><a href="samples.html#f92d20e2d53aae42280f27e7dbeb761f">Merge Windows</a></strong>
+            &ndash; Merges all of the browser's windows into the current window
+        </li>
+            <li><strong><a href="samples.html#a4adef17601281fa9ae9cec08590c7b2">Page Benchmarker</a></strong>
+            &ndash; Chromium Page Benchmarker.
+        </li>
+            <li><strong><a href="samples.html#e9ecdf298b120a99b7a50cd4871c0f83">Chrome Sounds</a></strong>
+            &ndash; Enjoy a more magical and immersive experience when browsing the web using the power of sound.
+        </li>
+            <li><strong><a href="samples.html#5139d19c542e2188a42418c27c9cdd5b">Google Mail Checker</a></strong>
+            &ndash; Displays the number of unread messages in your Google Mail inbox. You can also click the button to open your inbox.
+        </li>
+            <li><strong><a href="samples.html#93904b0c2be99bc6dad7609b132a905e">Imageinfo</a></strong>
+            &ndash; Get image info for images, including EXIF data
+        </li>
+            <li><strong><a href="samples.html#fe3bfa0dd0b9d2a0aab933bd6d3aab88">Speak Selection</a></strong>
+            &ndash; Speaks the current selection out loud.
+        </li>
+      </div>

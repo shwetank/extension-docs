@@ -1,0 +1,922 @@
+---
+layout: default-withsidebar
+title: chrome.events
+copyright: opera-google-ccby
+---
+      <div id="gc-pagecontent">
+        
+        
+        
+        <div id="toc">
+          <h2>Contents</h2>
+          <ol>
+            <li>
+              <a href="events.html#declarative">Declarative Event Handlers</a>
+              <ol>
+                <li><a href="events.html#rules">Rules</a></li><li><a href="events.html#eventobjects">Event objects</a></li><li><a href="events.html#addingrules">Adding rules</a></li><li><a href="events.html#removingrules">Removing rules</a></li><li><a href="events.html#retrievingrules">Retrieving rules</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="events.html#filtered">Filtered events</a>
+            </li>
+            <li>
+              <a href="events.html#apiReference">API reference: chrome.events</a>
+              <ol>
+                  <li><a href="events.html#types">Types</a><ol>  <li>    <a href="events.html#type-Rule">Rule</a>  </li>  <li>    <a href="events.html#type-Event">Event</a><ol><li>      <a href="events.html#Event-methods">Methods</a>      <ol>        <li><a href="events.html#method-Event-addListener">addListener</a></li>        <li><a href="events.html#method-Event-removeListener">removeListener</a></li>        <li><a href="events.html#method-Event-hasListener">hasListener</a></li>        <li><a href="events.html#method-Event-hasListeners">hasListeners</a></li>        <li><a href="events.html#method-Event-addRules">addRules</a></li>        <li><a href="events.html#method-Event-getRules">getRules</a></li>        <li><a href="events.html#method-Event-removeRules">removeRules</a></li>      </ol>    </li></ol>  </li>  <li>    <a href="events.html#type-UrlFilter">UrlFilter</a>  </li></ol></li>
+                  
+                  
+                  
+                  
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+<p>
+An <code>Event</code> is an object
+that allows you to be notified
+when something interesting happens.
+Here's an example of using the
+<code>chrome.tabs.onCreated</code> event
+to be notified whenever there's a new tab:
+</p>
+
+<pre>
+chrome.tabs.onCreated.<b>addListener(function(</b>tab<b>) {</b>
+  appendToLog('tabs.onCreated --'
+              + ' window: ' + tab.windowId
+              + ' tab: '    + tab.id
+              + ' index: '  + tab.index
+              + ' url: '    + tab.url);
+<b>});</b>
+</pre>
+
+<p>
+As the example shows,
+you register for notification using <code>addListener()</code>.
+The argument to <code>addListener()</code>
+is always a function that you define to handle the event,
+but the parameters to the function depend on
+which event you're handling.
+Checking the documentation for
+<a href="tabs.html#event-onCreated">tabs.onCreated</a>,
+you can see that the function has a single parameter:
+a <a href="tabs.html#type-Tab">tabs.Tab</a> object
+that has details about the newly created tab.
+</p>
+
+
+<div class="doc-family extensions">
+<h2 id="declarative">Declarative Event Handlers</h2>
+
+<p>
+The declarative event handlers provide a means to define rules consisting of
+declarative conditions and actions. Conditions are evaluated in the browser
+rather than the JavaScript engine which reduces roundtrip latencies and allows
+for very high efficiency.
+</p>
+
+<p>Declarative event handlers are used for example in the <a
+  href="declarativeWebRequest.html">Declarative Web Request API</a> and possibly
+further extension APIs in the future. This page describes the underlying
+concepts of all declarative event handlers.
+</p>
+
+<h3 id="rules">Rules</h3>
+
+<p>The simplest possible rule consists of one or more conditions and one or more
+actions:</p>
+<pre>
+var rule = {
+  conditions: [ /* my conditions */ ],
+  actions: [ /* my actions */ ]
+};
+</pre>
+
+<p>If any of the conditions is fulfilled, all actions are executed.</p>
+
+<p>In addition to conditions and actions you may give each rule an identifier,
+which simplifies unregistering previously registered rules, and a priority to
+define precedences among rules. Priorities are only considered if rules conflict
+each other or need to be executed in a specific order. Actions are executed in
+decendending order of the priority of their rules.</p>
+
+<pre>
+var rule = {
+  id: "my rule",  // optional, will be generated if not set.
+  priority: 100,  // optional, defaults to 100.
+  conditions: [ /* my conditions */ ],
+  actions: [ /* my actions */ ]
+};
+</pre>
+
+<h3 id="eventobjects">Event objects</h3>
+
+<p>
+<a href="events.html">Event objects</a> may support rules. These event objects
+don't call a callback function when events happen but test whether any
+registered rule has at least one fulfilled condition and execute the actions
+associated with this rule. Event objects supporting the declarative API have
+three relevant methods: <a href="events.html#method-Event-addRules">Event.addRules</a>,
+<a href="events.html#method-Event-removeRules">Event.removeRules</a>, and
+<a href="events.html#method-Event-getRules">Event.getRules</a>.
+</p>
+
+<h3 id="addingrules">Adding rules</h3>
+
+<p>
+To add rules call the <code>addRules()</code> function of the event object. It
+takes an array of rule instances as its first parameter and a callback function
+that is called on completion.
+</p>
+
+<pre>
+var rule_list = [rule1, rule2, ...];
+function addRules(rule_list, function callback(details) {...});
+</pre>
+
+<p>
+If the rules were inserted successfully, the <code>details</code> parameter
+contains an array of inserted rules appearing in the same order as in the passed
+<code>rule_list</code> where the optional parameters <code>id</code> and
+<code>priority</code> were filled with the generated values. If any rule is
+invalid, e.g., because it contained an invalid condition or action, none of the
+rules are added and the 
+  <a href="runtime.html#property-lastError">runtime.lastError</a> variable is set when
+the callback function is called. Each rule in <code>rule_list</code> must
+contain a unique identifier that is not currently used by another rule or an
+empty identifier.
+</p>
+
+<p class="note">
+<strong>Note:</strong> Rules are persistent across browsing sessions. Therefore,
+you should install rules during extension installation time using the
+<code><a href="runtime.html#event-onInstalled">runtime.onInstalled</a></code>
+event. Note that this event is also triggered when an extension is updated.
+Therefore, you should first clear previously installed rules and then register
+new rules.
+</p>
+
+<h3 id="removingrules">Removing rules</h3>
+
+<p>
+To remove rules call the <code>removeRules()</code> function. It accepts an
+optional array of rule identifiers as its first parameter and a callback
+function as its second parameter.
+</p>
+
+<pre>
+var rule_ids = ["id1", "id2", ...];
+function removeRules(rule_ids, function callback() {...});
+</pre>
+
+<p>
+If <code>rule_ids</code> is an array of identifiers, all rules having
+identifiers listed in the array are removed. If <code>rule_ids</code> lists an
+identifier, that is unknown, this identifier is silently ignored. If
+<code>rule_ids</code> is <code>undefined</code>, all registered rules of this
+extension are removed. The <code>callback()</code> function is called when the
+rules were removed.
+</p>
+
+<h3 id="retrievingrules">Retrieving rules</h3>
+
+<p>
+To retrieve a list of currently registered rules, call the
+<code>getRules()</code> function. It accepts an optional array of rule
+identifiers with the same semantics as <code>removeRules</code> and a callback
+function.
+</p>
+
+<pre>
+var rule_ids = ["id1", "id2", ...];
+function getRules(rule_ids, function callback(details) {...});
+</pre>
+
+<p>
+The <code>details</code> parameter passed to the <code>calback()</code> function
+refers to an array of rules including filled optional parameters.
+</p>
+</div>
+
+<div class="doc-family extensions">
+<h2 id="filtered">Filtered events</h2>
+
+<p>Filtered events are a mechanism that allows listeners to specify a subset of
+events that they are interested in. A listener that makes use of a filter won't
+be invoked for events that don't pass the filter, which makes the listening
+code more declarative and efficient - an <a href="event_pages.html">event
+  page</a> page need not be woken up to handle events it doesn't care
+about.</p>
+
+<p>Filtered events are intended to allow a transition from manual filtering
+code like this:</p>
+
+<pre>
+chrome.webNavigation.onCommitted.addListener(function(e) {
+  if (hasHostSuffix(e.url, 'google.com') ||
+      hasHostSuffix(e.url, 'google.com.au')) {
+    // ...
+  }
+});
+</pre>
+
+<p>into this:</p>
+
+<pre>
+chrome.webNavigation.onCommitted.addListener(function(e) {
+  // ...
+}, {url: [{hostSuffix: 'google.com'},
+          {hostSuffix: 'google.com.au'}]});
+</pre>
+
+<p>Events support specific filters that are meaningful to that event. The list
+of filters that an event supports will be listed in the documentation for that
+event in the "filters" section.</p>
+
+<p>When matching URLs (as in the example above), event filters support the same
+URL matching capabilities as expressable with a 
+  <a href="events.html#type-UrlFilter">UrlFilter</a>, except for scheme and port
+matching.</p>
+
+</div>
+        <h2 id="apiReference">API Reference: chrome.events</h2>
+        <div class="api_reference">
+            <h3 id="types">Types</h3>
+              <div>
+                <h3 id="type-Rule">Rule</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+              <dd>
+                    Description of a declarative rule for handling events.
+                  </dd>    <h4 id="Rule-properties">
+                    Properties of <a href="events.html#type-Rule">Rule</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <a name="property-Rule-id"></a>
+                      <dt>
+                        <span class="variable">id</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Optional identifier that allows referencing this rule.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Rule-conditions"></a>
+                      <dt>
+                        <span class="variable">conditions</span>
+                        <span class="property">
+                          (
+                            
+                            array of any
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        List of conditions that can trigger the actions.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Rule-actions"></a>
+                      <dt>
+                        <span class="variable">actions</span>
+                        <span class="property">
+                          (
+                            
+                            array of any
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        List of actions that are triggered if one of the condtions is fulfilled.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-Rule-priority"></a>
+                      <dt>
+                        <span class="variable">priority</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Optional priority of this rule. Defaults to 100.
+                      </dd>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+              <div>
+                <h3 id="type-Event">Event</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+              <dd>
+                    An object which allows the addition and removal of listeners for a Chrome event.
+                  </dd>    <h4 id="Event-methods">
+                    Methods of <a href="events.html#type-Event">Event</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <h4 id="method-Event-addListener">addListener</h4>
+                      <div class="summary lower">
+                        <span>Event.addListener</span>(<span>function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <p>
+                          Registers an event listener <em>callback</em> to an event.
+                        </p>
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-addListener-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Called when an event occurs. The parameters of this function depend on the type of event.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                The <em>callback</em> parameter should specify a function
+                                that looks like this:
+                          </p>
+                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-removeListener">removeListener</h4>
+                      <div class="summary lower">
+                        <span>Event.removeListener</span>(<span>function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <p>
+                          Deregisters an event listener <em>callback</em> from an event.
+                        </p>
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-removeListener-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Listener that shall be unregistered.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                The <em>callback</em> parameter should specify a function
+                                that looks like this:
+                          </p>
+                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-hasListener">hasListener</h4>
+                      <div class="summary">
+                        <span>boolean Event.hasListener</span>(<span>function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-hasListener-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Listener whose registration status shall be tested.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                The <em>callback</em> parameter should specify a function
+                                that looks like this:
+                          </p>
+                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-hasListeners">hasListeners</h4>
+                      <div class="summary">
+                        <span>boolean Event.hasListeners</span>()
+                      </div>
+                      <div class="description">
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-addRules">addRules</h4>
+                      <div class="summary lower">
+                        <span>Event.addRules</span>(<span>array of <a href="events.html#type-Rule">Rule</a> <span class="variable">rules</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <p>
+                          Registers rules to handle events.
+                        </p>
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-addRules-rules"></a>
+                              <dt>
+                                <span class="variable">rules</span>
+                                <span class="property">
+                                  (
+                                    
+                                    array of <a href="events.html#type-Rule">Rule</a>
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Rules to be registered. These do not replace previously registered rules.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-addRules-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Called with registered rules.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                If you specify the <em>callback</em> parameter, it should
+                                specify a function that looks like this:
+                          </p>
+                          <pre>function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
+                          <dl>
+                              <div>
+                                <a name="property-callback-rules"></a>
+                                <dt>
+                                  <span class="variable">rules</span>
+                                  <span class="property">
+                                    (
+                                      
+                                      array of <a href="events.html#type-Rule">Rule</a>
+                                    )
+                                  </span>
+                                </dt>
+                                <dd>
+                                  Rules that were registered, the optional parameters are filled with values.
+                                </dd>
+                              </div>
+                          </dl>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-getRules">getRules</h4>
+                      <div class="summary lower">
+                        <span>Event.getRules</span>(<span class="optional">array of string <span class="variable">ruleIdentifiers</span></span>, <span>function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <p>
+                          Returns currently registered rules.
+                        </p>
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-getRules-ruleIdentifiers"></a>
+                              <dt>
+                                <span class="variable">ruleIdentifiers</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    array of string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If an array is passed, only rules with identifiers contained in this array are returned.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-getRules-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Called with registered rules.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                The <em>callback</em> parameter should specify a function
+                                that looks like this:
+                          </p>
+                          <pre>function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
+                          <dl>
+                              <div>
+                                <a name="property-callback-rules"></a>
+                                <dt>
+                                  <span class="variable">rules</span>
+                                  <span class="property">
+                                    (
+                                      
+                                      array of <a href="events.html#type-Rule">Rule</a>
+                                    )
+                                  </span>
+                                </dt>
+                                <dd>
+                                  Rules that were registered, the optional parameters are filled with values.
+                                </dd>
+                              </div>
+                          </dl>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 id="method-Event-removeRules">removeRules</h4>
+                      <div class="summary lower">
+                        <span>Event.removeRules</span>(<span class="optional">array of string <span class="variable">ruleIdentifiers</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                      </div>
+                      <div class="description">
+                        <p>
+                          Unregisters currently registered rules.
+                        </p>
+                        <h4>Parameters</h4>
+                        <dl>
+                            <div>
+                              <a name="property-removeRules-ruleIdentifiers"></a>
+                              <dt>
+                                <span class="variable">ruleIdentifiers</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    array of string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                If an array is passed, only rules with identifiers contained in this array are unregistered.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-removeRules-callback"></a>
+                              <dt>
+                                <span class="variable">callback</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    function
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Called when rules were unregistered.
+                              </dd>
+                            </div>
+                        </dl>
+                          <h4>Callback</h4>
+                          <p>
+                                If you specify the <em>callback</em> parameter, it should
+                                specify a function that looks like this:
+                          </p>
+                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                      </div>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+              <div>
+                <h3 id="type-UrlFilter">UrlFilter</h3>
+                <div>
+                  <dt><span class="type_name">  (    object  )</span></dt>
+              <dd>
+                    Filters URLs for various criteria. See <a href='events.html#filtered'>event filtering</a>. All criteria are case sensitive.
+                  </dd>    <h4 id="UrlFilter-properties">
+                    Properties of <a href="events.html#type-UrlFilter">UrlFilter</a>
+                  </h4>
+                  <dd><dl>      <div>
+                      <a name="property-UrlFilter-hostContains"></a>
+                      <dt>
+                        <span class="variable">hostContains</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the host name of the URL contains a specified string. To test whether a host name component has a prefix 'foo', use hostContains: '.foo'. This matches 'www.foobar.com' and 'foo.com', because an implicit dot is added at the beginning of the host name. Similarly, hostContains can be used to match against component suffix ('foo.') and to exactly match against components ('.foo.'). Suffix- and exact-matching for the last components need to be done separately using hostSuffix, because no implicit dot is added at the end of the host name.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-hostEquals"></a>
+                      <dt>
+                        <span class="variable">hostEquals</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the host name of the URL is equal to a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-hostPrefix"></a>
+                      <dt>
+                        <span class="variable">hostPrefix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the host name of the URL starts with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-hostSuffix"></a>
+                      <dt>
+                        <span class="variable">hostSuffix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the host name of the URL ends with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-pathContains"></a>
+                      <dt>
+                        <span class="variable">pathContains</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the path segment of the URL contains a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-pathEquals"></a>
+                      <dt>
+                        <span class="variable">pathEquals</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the path segment of the URL is equal to a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-pathPrefix"></a>
+                      <dt>
+                        <span class="variable">pathPrefix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the path segment of the URL starts with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-pathSuffix"></a>
+                      <dt>
+                        <span class="variable">pathSuffix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the path segment of the URL ends with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-queryContains"></a>
+                      <dt>
+                        <span class="variable">queryContains</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the query segment of the URL contains a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-queryEquals"></a>
+                      <dt>
+                        <span class="variable">queryEquals</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the query segment of the URL is equal to a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-queryPrefix"></a>
+                      <dt>
+                        <span class="variable">queryPrefix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the query segment of the URL starts with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-querySuffix"></a>
+                      <dt>
+                        <span class="variable">querySuffix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the query segment of the URL ends with a specified string.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-urlContains"></a>
+                      <dt>
+                        <span class="variable">urlContains</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the URL (without fragment identifier) contains a specified string. Port numbers are stripped from the URL if they match the default port number.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-urlEquals"></a>
+                      <dt>
+                        <span class="variable">urlEquals</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the URL (without fragment identifier) is equal to a specified string. Port numbers are stripped from the URL if they match the default port number.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-urlMatches"></a>
+                      <dt>
+                        <span class="variable">urlMatches</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the URL (without fragment identifier) matches a specified regular expression. Port numbers are stripped from the URL if they match the default port number. The regular expressions use the <a href="http://code.google.com/p/re2/wiki/Syntax">RE2 syntax</a>.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-urlPrefix"></a>
+                      <dt>
+                        <span class="variable">urlPrefix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the URL (without fragment identifier) starts with a specified string. Port numbers are stripped from the URL if they match the default port number.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-urlSuffix"></a>
+                      <dt>
+                        <span class="variable">urlSuffix</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the URL (without fragment identifier) ends with a specified string. Port numbers are stripped from the URL if they match the default port number.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-schemes"></a>
+                      <dt>
+                        <span class="variable">schemes</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            array of string
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the scheme of the URL is equal to any of the schemes specified in the array.
+                      </dd>
+                    </div>
+                    <div>
+                      <a name="property-UrlFilter-ports"></a>
+                      <dt>
+                        <span class="variable">ports</span>
+                        <span class="property">
+                          (
+                            <span class="optional">optional</span>
+                            array of integer or array of integer
+                          )
+                        </span>
+                      </dt>
+                      <dd>
+                        Matches if the port of the URL is contained in any of the specified port lists. For example <code>[80, 443, [1000, 1200]]</code> matches all requests on port 80, 443 and in the range 1000-1200.
+                      </dd>
+                    </div>
+              </dl></dd>
+                </div>
+              </div>
+        </div>
+      </div>

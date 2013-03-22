@@ -1,0 +1,1038 @@
+---
+layout: default-withsidebar
+title: chrome.browserAction
+copyright: opera-google-ccby
+---
+      <div id="gc-pagecontent">
+        
+        
+        
+        <div id="toc">
+          <h2>Contents</h2>
+          <ol>
+            <li>
+              <a href="browserAction.html#manifest">Manifest</a>
+            </li>
+            <li>
+              <a href="browserAction.html#ui">Parts of the UI</a>
+              <ol>
+                <li><a href="browserAction.html#icon">Icon</a></li><li><a href="browserAction.html#tooltip">Tooltip</a></li><li><a href="browserAction.html#badge">Badge</a></li><li><a href="browserAction.html#popups">Popup</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="browserAction.html#tips">Tips</a>
+            </li>
+            <li>
+              <a href="browserAction.html#examples"> Examples </a>
+            </li>
+            <li>
+              <a href="browserAction.html#apiReference">API reference: chrome.browserAction</a>
+              <ol>
+                  <li><a href="browserAction.html#types">Types</a><ol>  <li>    <a href="browserAction.html#type-ColorArray">ColorArray</a>  </li>  <li>    <a href="browserAction.html#type-ImageDataType">ImageDataType</a>  </li></ol></li>
+                  
+                  <li><a href="browserAction.html#methods">Methods</a><ol>  <li><a href="browserAction.html#method-setTitle">setTitle</a></li>  <li><a href="browserAction.html#method-getTitle">getTitle</a></li>  <li><a href="browserAction.html#method-setIcon">setIcon</a></li>  <li><a href="browserAction.html#method-setPopup">setPopup</a></li>  <li><a href="browserAction.html#method-getPopup">getPopup</a></li>  <li><a href="browserAction.html#method-setBadgeText">setBadgeText</a></li>  <li><a href="browserAction.html#method-getBadgeText">getBadgeText</a></li>  <li><a href="browserAction.html#method-setBadgeBackgroundColor">setBadgeBackgroundColor</a></li>  <li><a href="browserAction.html#method-getBadgeBackgroundColor">getBadgeBackgroundColor</a></li>  <li><a href="browserAction.html#method-enable">enable</a></li>  <li><a href="browserAction.html#method-disable">disable</a></li></ol></li>
+                  <li><a href="browserAction.html#events">Events</a><ol>  <li><a href="browserAction.html#event-onClicked">onClicked</a></li></ol></li>
+                  <li><a href="browserAction.html#samples">Sample Extensions</a></li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+<p>Use browser actions to put icons
+  in the main Google Chrome toolbar,
+  to the right of the address bar.
+  In addition to its <a href="browserAction.html#icon">icon</a>,
+  a browser action can also have
+  a <a href="browserAction.html#tooltip">tooltip</a>,
+  a <a href="browserAction.html#badge">badge</a>,
+  and a <a href="browserAction.html#popups">popup</a>.
+  </p>
+
+<p>
+In the following figure,
+the multicolored square
+to the right of the address bar
+is the icon for a browser action.
+A popup is below the icon.
+</p>
+
+<img src="static/images/browser-action.png"
+  width="363" height="226" />
+
+<p>
+If you want to create an icon that isn't always visible,
+use a <a href="pageAction.html">page action</a>
+instead of a browser action.
+</p>
+
+<h2 id="manifest">Manifest</h2>
+
+<p>
+Register your browser action in the
+<a href="manifest.html">extension manifest</a>
+like this:
+</p>
+
+<pre>{
+  "name": "My extension",
+  ...
+  <b>"browser_action": {
+    "default_icon": {                    <em>// optional</em>
+      "19": "images/icon19.png",           <em>// optional</em>
+      "38": "images/icon38.png"            <em>// optional</em>
+    },
+    "default_title": "Google Mail",      <em>// optional; shown in tooltip</em>
+    "default_popup": "popup.html"        <em>// optional</em>
+  }</b>,
+  ...
+}</pre>
+
+<p>
+If you only provide one of the 19px or 38px icon size, the extension system will
+scale the icon you provide to the pixel density of the user's display, which
+can lose detail or make it look fuzzy. The old syntax for registering the
+default icon is still supported:
+</p>
+
+<pre>{
+  "name": "My extension",
+  ...
+  <b>"browser_action": {
+    ...
+    "default_icon": "images/icon19.png"  <em>// optional</em>
+    <em>// equivalent to "default_icon": { "19": "images/icon19.png" }</em>
+  }</b>,
+  ...
+}</pre>
+
+<h2 id="ui">Parts of the UI</h2>
+
+<p>
+A browser action can have an <a href="browserAction.html#icon">icon</a>,
+a <a href="browserAction.html#tooltip">tooltip</a>,
+a <a href="browserAction.html#badge">badge</a>,
+and a <a href="browserAction.html#popups">popup</a>.
+</p>
+
+<h3 id="icon">Icon</h3>
+
+<p>Browser action icons can be up to 19 dips (device-independent pixels)
+  wide and high. Larger icons are resized to fit, but for best results,
+  use a 19-dip square icon.</p>
+
+<p>You can set the icon in two ways:
+  using a static image or using the
+  HTML5 <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html">canvas element</a>.
+  Using static images is easier for simple applications,
+  but you can create more dynamic UIs &mdash;
+  such as smooth animation &mdash;
+  using the canvas element.
+  </p>
+
+<p>Static images can be in any format WebKit can display,
+  including BMP, GIF, ICO, JPEG, or PNG.
+  </p>
+
+<p>To set the icon,
+  use the <b>default_icon</b> field of <b>browser_action</b>
+  in the <a href="browserAction.html#manifest">manifest</a>,
+  or call the <a href="browserAction.html#method-setIcon">setIcon</a> method.
+  </p>
+
+<p>To properly display icon when screen pixel density (ratio
+  <code>size_in_pixel / size_in_dip</code>) is different than 1,
+  the icon can be defined as set of images with different sizes.
+  The actual image to display will be selected from the set to
+  best fit the pixel size of 19 dip icon.
+  At the moment, the icon set can contain images with pixel sizes 19 and 38.
+  </p>
+
+<h3 id="tooltip">Tooltip</h3>
+
+<p>
+To set the tooltip,
+use the <b>default_title</b> field of <b>browser_action</b>
+in the <a href="browserAction.html#manifest">manifest</a>,
+or call the <a href="browserAction.html#method-setTitle">setTitle</a> method.
+You can specify locale-specific strings for the <b>default_title</b> field;
+see <a href="i18n.html">Internationalization</a> for details.
+</p>
+
+<h3 id="badge">Badge</h3>
+
+<p>Browser actions can optionally display a <em>badge</em> &mdash;
+  a bit of text that is layered over the icon.
+  Badges make it easy to update the browser action
+  to display a small amount of information
+  about the state of the extension.</p>
+
+<p>Because the badge has limited space,
+   it should have 4 characters or less.
+  </p>
+
+<p>
+Set the text and color of the badge using
+<a href="browserAction.html#method-setBadgeText">setBadgeText</a> and
+<a href="browserAction.html#method-setBadgeBackgroundColor">setBadgeBackgroundColor</a>,
+respectively.
+
+</p>
+
+
+<h3 id="popups">Popup</h3>
+
+<p>If a browser action has a popup,
+  the popup appears when the user clicks the icon.
+  The popup can contain any HTML contents that you like,
+  and it's automatically sized to fit its contents.
+  </p>
+
+<p>
+To add a popup to your browser action,
+create an HTML file with the popup's contents.
+Specify the HTML file in the <b>default_popup</b> field of <b>browser_action</b>
+in the <a href="browserAction.html#manifest">manifest</a>, or call the
+<a href="browserAction.html#method-setPopup">setPopup</a> method.
+</p>
+
+<h2 id="tips">Tips</h2>
+
+<p>For the best visual impact,
+  follow these guidelines:</p>
+
+<ul>
+  <li><b>Do</b> use browser actions for features
+    that make sense on most pages.
+  <li><b>Don't</b> use browser actions for features
+    that make sense for only a few pages.
+    Use <a href="pageAction.html">page actions</a> instead.
+  <li><b>Do</b> use big, colorful icons that make the most of
+    the 19x19-pixel space.
+    Browser action icons should seem a little bigger
+    and heavier than page action icons.
+  <li><b>Don't</b> attempt to mimic
+    Google Chrome's monochrome menu icon.
+    That doesn't work well with themes, and anyway,
+    extensions should stand out a little.
+  <li><b>Do</b> use alpha transparency
+    to add soft edges to your icon.
+    Because many people use themes,
+    your icon should look nice
+    on a variety of background colors.
+  <li><b>Don't</b> constantly animate your icon.
+    That's just annoying.
+</ul>
+
+<h2 id="examples"> Examples </h2>
+
+<p>
+You can find simple examples of using browser actions in the
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/browserAction/">examples/api/browserAction</a>
+directory.
+For other examples and for help in viewing the source code, see
+<a href="samples.html">Samples</a>.
+</p>
+        <h2 id="apiReference">API Reference: chrome.browserAction</h2>
+        <div class="api_reference">
+            <h3 id="types">Types</h3>
+              <div>
+                <h3 id="type-ColorArray">ColorArray</h3>
+                <div>
+                  <dt><span class="type_name">  (    array of integer  )</span></dt>
+                </div>
+              </div>
+              <div>
+                <h3 id="type-ImageDataType">ImageDataType</h3>
+                <div>
+                  <dt><span class="type_name">  (    imagedata  )</span></dt>
+              <dd>
+                    Pixel data for an image. Must be an ImageData object (for example, from a <code>canvas</code> element).
+                  </dd>  </div>
+              </div>
+            <h3 id="methods">Methods</h3>
+              <div>
+                <h4 id="method-setTitle">setTitle</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.setTitle</span>(<span>object <span class="variable">details</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the title of the browser action. This shows up in the tooltip.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setTitle-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-title"></a>
+                              <dt>
+                                <span class="variable">title</span>
+                                <span class="property">
+                                  (
+                                    
+                                    string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The string the browser action should display when moused over.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getTitle">getTitle</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.getTitle</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the title of the browser action.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getTitle-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Specify the tab to get the title from. If no tab is specified, the non-tab-specific title is returned.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getTitle-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(string result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                string
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setIcon">setIcon</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.setIcon</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the icon for the browser action. The icon can be specified either as the path to an image file or as the pixel data from a canvas element, or as dictionary of either one of those. Either the <b>path</b> or the <b>imageData</b> property must be specified.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setIcon-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-imageData"></a>
+                              <dt>
+                                <span class="variable">imageData</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    <a href="browserAction.html#type-ImageDataType">ImageDataType</a> or 
+                                    object
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Either an ImageData object or a dictionary {size -> ImageData} representing icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * 19 will be selected. Initially only scales 1 and 2 will be supported. At least one image must be specified. Note that 'details.imageData = foo' is equivalent to 'details.imageData = {'19': foo}'
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-path"></a>
+                              <dt>
+                                <span class="variable">path</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    string or 
+                                    object
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Either a relative image path or a dictionary {size -> relative image path} pointing to icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * 19 will be selected. Initially only scales 1 and 2 will be supported. At least one image must be specified. Note that 'details.path = foo' is equivalent to 'details.imageData = {'19': foo}'
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-setIcon-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          If you specify the <em>callback</em> parameter, it should
+                          specify a function that looks like this:
+                    </p>
+                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setPopup">setPopup</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.setPopup</span>(<span>object <span class="variable">details</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the html document to be opened as a popup when the user clicks on the browser action's icon.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setPopup-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-popup"></a>
+                              <dt>
+                                <span class="variable">popup</span>
+                                <span class="property">
+                                  (
+                                    
+                                    string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                The html file to show in a popup.  If set to the empty string (''), no popup is shown.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getPopup">getPopup</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.getPopup</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the html document set as the popup for this browser action.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getPopup-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Specify the tab to get the popup from. If no tab is specified, the non-tab-specific popup is returned.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getPopup-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(string result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                string
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setBadgeText">setBadgeText</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.setBadgeText</span>(<span>object <span class="variable">details</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the badge text for the browser action. The badge is displayed on top of the icon.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setBadgeText-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-text"></a>
+                              <dt>
+                                <span class="variable">text</span>
+                                <span class="property">
+                                  (
+                                    
+                                    string
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Any number of characters can be passed, but only about four can fit in the space.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getBadgeText">getBadgeText</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.getBadgeText</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the badge text of the browser action. If no tab is specified, the non-tab-specific badge text is returned.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getBadgeText-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Specify the tab to get the badge text from. If no tab is specified, the non-tab-specific badge text is returned.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getBadgeText-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(string result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                string
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-setBadgeBackgroundColor">setBadgeBackgroundColor</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.setBadgeBackgroundColor</span>(<span>object <span class="variable">details</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Sets the background color for the badge.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-setBadgeBackgroundColor-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-color"></a>
+                              <dt>
+                                <span class="variable">color</span>
+                                <span class="property">
+                                  (
+                                    
+                                    string or 
+                                    <a href="browserAction.html#type-ColorArray">ColorArray</a>
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                An array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <code>[255, 0, 0, 255]</code>. Can also be a string with a CSS value, with opaque red being <code>#FF0000</code> or <code>#F00</code>.
+                              </dd>
+                            </div>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-getBadgeBackgroundColor">getBadgeBackgroundColor</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.getBadgeBackgroundColor</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Gets the background color of the browser action.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-getBadgeBackgroundColor-details"></a>
+                        <dt>
+                          <span class="variable">details</span>
+                          <span class="property">
+                            (
+                              
+                              object
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <div>
+                              <a name="property-details-tabId"></a>
+                              <dt>
+                                <span class="variable">tabId</span>
+                                <span class="property">
+                                  (
+                                    <span class="optional">optional</span>
+                                    integer
+                                  )
+                                </span>
+                              </dt>
+                              <dd>
+                                Specify the tab to get the badge background color from. If no tab is specified, the non-tab-specific badge background color is returned.
+                              </dd>
+                            </div>
+                          </dl>
+                        </dd>
+                      </div>
+                      <div>
+                        <a name="property-getBadgeBackgroundColor-callback"></a>
+                        <dt>
+                          <span class="variable">callback</span>
+                          <span class="property">
+                            (
+                              
+                              function
+                            )
+                          </span>
+                        </dt>
+                      </div>
+                  </dl>
+                    <h4>Callback</h4>
+                    <p>
+                          The <em>callback</em> parameter should specify a function
+                          that looks like this:
+                    </p>
+                    <pre>function(<a href="browserAction.html#type-ColorArray">ColorArray</a> result) <span class="subdued">{...}</span>;</pre>
+                    <dl>
+                        <div>
+                          <a name="property-callback-result"></a>
+                          <dt>
+                            <span class="variable">result</span>
+                            <span class="property">
+                              (
+                                
+                                <a href="browserAction.html#type-ColorArray">ColorArray</a>
+                              )
+                            </span>
+                          </dt>
+                        </div>
+                    </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-enable">enable</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.enable</span>(<span class="optional">integer <span class="variable">tabId</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Enables the browser action for a tab. By default, browser actions are enabled.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-enable-tabId"></a>
+                        <dt>
+                          <span class="variable">tabId</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              integer
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The id of the tab for which you want to modify the browser action.
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+              <div>
+                <h4 id="method-disable">disable</h4>
+                <div class="summary lower">
+                  <span>chrome.browserAction.disable</span>(<span class="optional">integer <span class="variable">tabId</span></span>)
+                </div>
+                <div class="description">
+                  <p>
+                    Disables the browser action for a tab.
+                  </p>
+                  <h4>Parameters</h4>
+                  <dl>
+                      <div>
+                        <a name="property-disable-tabId"></a>
+                        <dt>
+                          <span class="variable">tabId</span>
+                          <span class="property">
+                            (
+                              <span class="optional">optional</span>
+                              integer
+                            )
+                          </span>
+                        </dt>
+                        <dd>
+                          The id of the tab for which you want to modify the browser action.
+                        </dd>
+                      </div>
+                  </dl>
+                </div>
+              </div>
+            <h3 id="events">Events</h3>
+              <div>
+                <h4 id="event-onClicked">onClicked</h4>
+                <div class="summary">
+                  <span class="subdued">chrome.browserAction.</span>onClicked<span class="subdued">.addListener</span>(function(<span><a href="tabs.html#type-Tab">tabs.Tab</a> <span class="variable">tab</span></span>)<span class="subdued"> {...}</span>);
+                </div>
+                <div class="description">
+              <p>
+                    Fired when a browser action icon is clicked.  This event will not fire if the browser action has a popup.
+                  </p>      <h4>Listener Parameters</h4>
+                    <dl>
+                      <div>  <a name="property-onClicked-tab"></a>  <dt>    <span class="variable">tab</span>    <span class="property">      (                <a href="tabs.html#type-Tab">tabs.Tab</a>      )    </span>  </dt></div>
+                    </dl>
+                </div>
+              </div>
+        </div>
+          <h2 id="samples">Sample Extensions that use chrome.browserAction</h2>
+            <li><strong><a href="samples.html#cb771f28a910d79a2fcfeb1c5be6983b">A browser action with no icon that makes the page red</a></strong>
+        </li>
+            <li><strong><a href="samples.html#db80e292b687541c7aa5e89cee75ad79">Print this page</a></strong>
+            &ndash; Adds a print button to the browser.
+        </li>
+            <li><strong><a href="samples.html#932e16ad4805a5820c9b7dc6b1cb03ab">A browser action which changes its icon when clicked.</a></strong>
+        </li>
+            <li><strong><a href="samples.html#2b0f7d02f3ebd51358ed54ef59dceebb">Cookie API Test Extension</a></strong>
+            &ndash; Testing Cookie API
+        </li>
+            <li><strong><a href="samples.html#f447d4d0c667a4f72ef8c6190e7925d7">Live HTTP headers</a></strong>
+            &ndash; Displays the live log with the http requests headers
+        </li>
+            <li><strong><a href="samples.html#812b7fe611113aedf0a394e9fbbfcce1">JavaScript pause/resume</a></strong>
+            &ndash; Pauses / resumes JavaScript execution
+        </li>
+            <li><strong><a href="samples.html#d5d930bdcf3f5e1753d0de5924a89a65">Event Page Example</a></strong>
+            &ndash; Demonstrates usage and features of the event page
+        </li>
+            <li><strong><a href="samples.html#87fc6fd215630c7d5e7f86be5d6407fd">CLD</a></strong>
+            &ndash; Displays the language of a tab
+        </li>
+            <li><strong><a href="samples.html#b7ee031d2bfdbdd1c89f2cff6ed9781c">Idle - Simple Example</a></strong>
+            &ndash; Demonstrates the Idle API
+        </li>
+            <li><strong><a href="samples.html#00294fafee1df479cc20247741f44447">Speech Recognizer</a></strong>
+            &ndash; Recognizes your speech and tells you the most likely result.
+        </li>
+            <li><strong><a href="samples.html#062d24295dce5def19f91da9c449e1e4">Tab Inspector</a></strong>
+            &ndash; Utility for working with the extension tabs api
+        </li>
+            <li><strong><a href="samples.html#dcc956ee1308eb125ff32bdaad4c1d84">Test Screenshot Extension</a></strong>
+            &ndash; Demonstrate screenshot functionality in the chrome.tabs api. Note: only works for code.google.com
+        </li>
+            <li><strong><a href="samples.html#f92d20e2d53aae42280f27e7dbeb761f">Merge Windows</a></strong>
+            &ndash; Merges all of the browser's windows into the current window
+        </li>
+            <li><strong><a href="samples.html#a4adef17601281fa9ae9cec08590c7b2">Page Benchmarker</a></strong>
+            &ndash; Chromium Page Benchmarker.
+        </li>
+            <li><strong><a href="samples.html#9fa1c6ac42d625c3f62314548468640c">Chromium Buildbot Monitor</a></strong>
+            &ndash; Displays the status of the Chromium buildbot in the toolbar.  Click to see more detailed status in a popup.
+        </li>
+            <li><strong><a href="samples.html#d85d53e2433c9325f85336791560a68c">Google Calendar Checker (by Google)</a></strong>
+            &ndash; Quickly see the time until your next meeting from any of your calendars. Click on the button to be taken to your calendar.
+        </li>
+            <li><strong><a href="samples.html#4e61966db98ebfc75fa32b5ff2406c6b">Email this page (by Google)</a></strong>
+            &ndash; This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.
+        </li>
+            <li><strong><a href="samples.html#5139d19c542e2188a42418c27c9cdd5b">Google Mail Checker</a></strong>
+            &ndash; Displays the number of unread messages in your Google Mail inbox. You can also click the button to open your inbox.
+        </li>
+            <li><strong><a href="samples.html#fd0e71a56fc3e6c5ebe1d5daa3049120">Sample - OAuth Contacts</a></strong>
+            &ndash; Uses OAuth to connect to Google's contacts service and display a list of your contacts.
+        </li>
+            <li><strong><a href="samples.html#bea7f3606e50b59b0f8b08cbab6236da">Proxy Extension API Sample</a></strong>
+            &ndash; Set Chrome-specific proxies; a demonstration of Chrome's Proxy API
+        </li>
+            <li><strong><a href="samples.html#fe3bfa0dd0b9d2a0aab933bd6d3aab88">Speak Selection</a></strong>
+            &ndash; Speaks the current selection out loud.
+        </li>
+            <li><strong><a href="samples.html#bba3c3de3da89e7a53b56bac8a173c3c">Talking Alarm Clock</a></strong>
+            &ndash; A clock with two configurable alarms that will play a sound and speak a phrase of your choice.
+        </li>
+            <li><strong><a href="samples.html#47c541bcb84a8bc242edeb89dc06630e">Sandboxed Frame</a></strong>
+        </li>
+      </div>
