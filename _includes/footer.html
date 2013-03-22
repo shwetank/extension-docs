@@ -1,27 +1,27 @@
-    <div id="push"></div><!-- this is for sticky footer: http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html -->
-   </div><!-- .container-fluid -->
-  </div><!-- #wrap -->
-  <footer id="footer">
-    {% if page.copyright == 'opera-ccby' %}
-   <p>This article is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 License</a>.</p>
-   {% elsif page.copyright == 'opera-google-ccby' %}
-   <p>This article is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 License</a>.</p><p>Portions of this page are reproduced from work created and <a
-  href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the <a
-  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-  3.0 Attribution License</a>.</p>
-    {% endif %}
-  </footer>
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/prettify/run_prettify.js"></script>
-  <script>
-   $(function(){
-      var path = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
-      if ( path )
-        $('#sidebar a[href$="' + path + '"]').parent().attr('class', 'active');
-        $('#navbar ul a[href$="' + path + '"]').parent().attr('class', 'active');
-    });
-   // see http://docs.jquery.com/Tutorials:Auto-Selecting_Navigation and Ola's fix
-  </script>
- </body>
-</html>
+				<div id="push"></div><!-- this is for sticky footer: http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html -->
+			</div><!-- /.container-fluid -->
+		</div><!-- /#wrap -->
+		<footer id="footer">
+				{% if page.copyright == 'opera-ccby' %}
+			<p>This article is licensed under a	<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 License</a>.</p>
+			{% elsif page.copyright == 'opera-google-ccby' %}
+			<p>This article is licensed under a	<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 License</a>.</p><p>Portions of this page are reproduced from work created and	<a
+		href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the	<a
+		href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+		3.0 Attribution License</a>.</p>
+				{% endif %}
+		</footer>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/prettify/run_prettify.js"></script>
+		<script>
+		 $(function(){
+						var path = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+						if ( path )
+								$('#sidebar a[href$="' + path + '"]').parent().attr('class', 'active');
+								$('#navbar ul a[href$="' + path + '"]').parent().attr('class', 'active');
+				});
+			// see http://docs.jquery.com/Tutorials:Auto-Selecting_Navigation and Ola's fix
+		</script>
+	</body>
+</html>	
