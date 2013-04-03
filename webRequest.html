@@ -57,7 +57,7 @@ for any hosts whose network requests you want to access. If you want to
 use the web request API in a blocking fashion, you need to request
 the "webRequestBlocking" permission in addition.
 For example:</p>
-<pre>{
+<pre class="prettyprint">{
   "name": "My extension",
   ...
   <b>"permissions": [
@@ -207,7 +207,7 @@ argument.</p>
 
 <p>The three arguments to the web request API's <code>addListener()</code> have
 the following definitions:</p>
-<pre>
+<pre class="prettyprint">
 var callback = function(details) {...};
 var filter = {...};
 var opt_extraInfoSpec = [...];
@@ -215,7 +215,7 @@ var opt_extraInfoSpec = [...];
 
 <p>Here's an example of listening for the <code>onBeforeRequest</code>
 event:</p>
-<pre>
+<pre class="prettyprint">
 chrome.webRequest.onBeforeRequest.addListener(
   callback, filter, opt_extraInfoSpec);
 </pre>
@@ -302,7 +302,7 @@ might give unexpected results.
 
 <p>The following example illustrates how to block all requests to
 <code>www.evil.com</code>:</p>
-<pre>
+<pre class="prettyprint">
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     return {cancel: details.url.indexOf("://www.evil.com/") != -1};
@@ -317,7 +317,7 @@ as well as the "webRequestBlocking" permission in the manifest file.</p>
 <p>The following example achieves the same goal in a more efficient way because
 requests that are not targeted to <code>www.evil.com</code> do not need to be
 passed to the extension:</p>
-<pre>
+<pre class="prettyprint">
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) { return {cancel: true}; },
   {urls: ["*://www.evil.com/*"]},
@@ -326,7 +326,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 <p>The following example illustrates how to delete the User-Agent header from
 all requests:</p>
-<pre>
+<pre class="prettyprint">
 chrome.webRequest.onBeforeSendHeaders.addListener(
   function(details) {
     for (var i = 0; i < details.requestHeaders.length; ++i) {
@@ -619,7 +619,7 @@ samples</a>.</p>
                           If you specify the <em>callback</em> parameter, it should
                           specify a function that looks like this:
                     </p>
-                    <pre>function() <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                 </div>
               </div>
             <h3 id="events">Events</h3>
@@ -696,7 +696,7 @@ samples</a>.</p>
                           If you specify the <em>callback</em> parameter, it should
                           specify a function that looks like this:
                     </p>
-                    <pre>function(<a href="webRequest.html#type-BlockingResponse">BlockingResponse</a> response) <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function(<a href="webRequest.html#type-BlockingResponse">BlockingResponse</a> response) <span class="subdued">{...}</span>;</pre>
                     <dl>
                         <div>
                           <a name="property-callback-response"></a>

@@ -38,7 +38,7 @@ The only fields that are always required
 are <b>name</b> and <b>version</b>.
 </p>
 
-<pre>
+<pre class="prettyprint">
 {
   <em>// Required</em>
   "<a href="manifest.html#name">name</a>": "<em>My Extension</em>",
@@ -162,7 +162,7 @@ including BMP, GIF, ICO, and JPEG.
 Here's an example of specifying the icons:
 </p>
 
-<pre>
+<pre class="prettyprint">
 "icons": { "16": "icon16.png",
            "48": "icon48.png",
           "128": "icon128.png" },
@@ -285,7 +285,7 @@ registers a Native Client module as the content handler
 for the OpenOffice spreadsheet MIME type.
 </p>
 
-<pre>
+<pre class="prettyprint">
 {
   "name": "Native Client OpenOffice Spreadsheet Viewer",
   "version": "0.1",
@@ -313,7 +313,7 @@ with two <code>.nmf</code> files
 that handle three MIME types.
 </p>
 
-<pre>
+<pre class="prettyprint">
 {
   "name": "Spreadsheet Viewer",
   "version": "0.1",
@@ -372,7 +372,7 @@ You can list the 3D-related features your app requires,
 as demonstrated in the following example:
 </p>
 
-<pre>
+<pre class="prettyprint">
 "requirements": {
   "3D": {
     "features": ["webgl"]
@@ -394,7 +394,7 @@ by setting NPAPI to true,
 as shown in this example:
 </p>
 
-<pre>
+<pre class="prettyprint">
 "requirements": {
   "plugins": {
     "npapi": true
@@ -462,7 +462,7 @@ requires. As of Chrome 18, developers <em>should</em> specify <code>2</code>
 (without quotes) to use the format as described by this document:
 </p>
 
-<pre>"manifest_version": 2</pre>
+<pre class="prettyprint">"manifest_version": 2</pre>
 
 <p>
 Consider manifest version 1 <em>deprecated</em> as of Chrome 18. Version 2 is
@@ -497,7 +497,7 @@ any resources that interface requires (images, icons, stylesheets, scripts,
 etc.) as follows:
 </p>
 
-<pre>{
+<pre class="prettyprint">{
   ...
   "web_accessible_resources": [
     "images/my-awesome-image1.png",
@@ -568,7 +568,7 @@ direct access to non-sandboxed pages (it may communicate with them via
   <p>For example, here's how to specify that two extension pages are to be
   served in a sandbox with a custom CSP:</p>
 
-  <pre>{
+  <pre class="prettyprint">{
   ...
   "sandbox": {
     "pages": [

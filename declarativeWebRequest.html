@@ -58,7 +58,7 @@ along with <a href="declare_permissions.html">host permissions</a> for any
 hosts whose network requests you want to access.
 </p>
 
-<pre>{
+<pre class="prettyprint">{
   "name": "My extension",
   ...
 <b>  "permissions": [
@@ -98,7 +98,7 @@ requests if and only if all listed criteria are met. The following
 "http://www.example.com" in the URL bar:
 </p>
 
-<pre>
+<pre class="prettyprint">
 var matcher = new chrome.declarativeWebRequest.RequestMatcher({
   url: { hostSuffix: 'example.com', schemes: ['http'] },
   resourceType: ['main_frame']
@@ -120,7 +120,7 @@ as shown in the example above.
 In order to cancel all requests to "example.com", you can define a rule as
 follows:
 </p>
-<pre>
+<pre class="prettyprint">
 var rule = {
   conditions: [
     new chrome.declarativeWebRequest.RequestMatcher({
@@ -136,7 +136,7 @@ In order to cancel all requests to "example.com" and "foobar.com", you can add a
 second condition, as each condition is sufficient to trigger all specified
 actions:
 </p>
-<pre>
+<pre class="prettyprint">
 var rule2 = {
   conditions: [
     new chrome.declarativeWebRequest.RequestMatcher({
@@ -152,7 +152,7 @@ var rule2 = {
 <p>
 Register rules as follows:
 </p>
-<pre>
+<pre class="prettyprint">
 chrome.declarativeWebRequest.onRequest.addRules([rule2]);
 </pre>
 
@@ -250,7 +250,7 @@ to express exceptions. The following example will block all requests to
 images named "evil.jpg" except on the server "myserver.com".
 </p>
 
-<pre>
+<pre class="prettyprint">
 var rule1 = {
   priority: 100,
   conditions: [

@@ -92,7 +92,7 @@ copyright: opera-google-ccby
   same format as the <a href="declare_permissions.html">permissions</a>
   field:
 
-<pre>{
+<pre class="prettyprint">{
   "name": "My extension",
   ...
   <b>"optional_permissions": [ "tabs", "http://www.google.com/" ],</b>
@@ -129,7 +129,7 @@ You can specify any of the following as optional permissions:
 <p>
   Request the permissions from within a user gesture using
   <code>permissions.request()</code>:
-<pre>
+<pre class="prettyprint">
 document.querySelector('#my-button').addEventListener('click', function(event) {
   // Permissions must be requested from inside a user gesture, like a button's
   // click handler.
@@ -167,7 +167,7 @@ document.querySelector('#my-button').addEventListener('click', function(event) {
   permissions, use <code>permission.contains()</code>:
 </p>
 
-<pre>
+<pre class="prettyprint">
 chrome.permissions.contains({
   permissions: ['tabs'],
   origins: ['http://www.google.com/']
@@ -188,7 +188,7 @@ chrome.permissions.contains({
   prompting the user.
 </p>
 
-<pre>
+<pre class="prettyprint">
 chrome.permissions.remove({
   permissions: ['tabs'],
   origins: ['http://www.google.com/']
@@ -274,7 +274,7 @@ chrome.permissions.remove({
                           The <em>callback</em> parameter should specify a function
                           that looks like this:
                     </p>
-                    <pre>function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</pre>
                     <dl>
                         <div>
                           <a name="property-callback-permissions"></a>
@@ -335,7 +335,7 @@ chrome.permissions.remove({
                           The <em>callback</em> parameter should specify a function
                           that looks like this:
                     </p>
-                    <pre>function(boolean result) <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</pre>
                     <dl>
                         <div>
                           <a name="property-callback-result"></a>
@@ -396,7 +396,7 @@ chrome.permissions.remove({
                           If you specify the <em>callback</em> parameter, it should
                           specify a function that looks like this:
                     </p>
-                    <pre>function(boolean granted) <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function(boolean granted) <span class="subdued">{...}</span>;</pre>
                     <dl>
                         <div>
                           <a name="property-callback-granted"></a>
@@ -457,7 +457,7 @@ chrome.permissions.remove({
                           If you specify the <em>callback</em> parameter, it should
                           specify a function that looks like this:
                     </p>
-                    <pre>function(boolean removed) <span class="subdued">{...}</span>;</pre>
+                    <pre class="prettyprint">function(boolean removed) <span class="subdued">{...}</span>;</pre>
                     <dl>
                         <div>
                           <a name="property-callback-removed"></a>

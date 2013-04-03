@@ -92,7 +92,7 @@ with the following key differences:
   href="manifest.html">extension manifest</a>
   to use the storage API.
   For example:</p>
-<pre>{
+<pre class="prettyprint">{
   "name": "My extension",
   ...
   <b>"permissions": [
@@ -158,7 +158,7 @@ and if found,
 stores it.
 </p>
 
-<pre>
+<pre class="prettyprint">
 function saveChanges() {
   // Get a value saved in a form.
   var theValue = textarea.value;
@@ -186,7 +186,7 @@ Here's sample code
 to listen for saved changes:
 </p>
 
-<pre>
+<pre class="prettyprint">
 chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
@@ -303,7 +303,7 @@ You can find examples that use this API on the
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function(object items) <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function(object items) <span class="subdued">{...}</span>;</pre>
                           <dl>
                               <div>
                                 <a name="property-callback-items"></a>
@@ -371,7 +371,7 @@ You can find examples that use this API on the
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function(integer bytesInUse) <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function(integer bytesInUse) <span class="subdued">{...}</span>;</pre>
                           <dl>
                               <div>
                                 <a name="property-callback-bytesInUse"></a>
@@ -438,7 +438,7 @@ You can find examples that use this API on the
                                 If you specify the <em>callback</em> parameter, it should
                                 specify a function that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
                     <div>
@@ -489,7 +489,7 @@ You can find examples that use this API on the
                                 If you specify the <em>callback</em> parameter, it should
                                 specify a function that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
                     <div>
@@ -524,7 +524,7 @@ You can find examples that use this API on the
                                 If you specify the <em>callback</em> parameter, it should
                                 specify a function that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
               </dl></dd>

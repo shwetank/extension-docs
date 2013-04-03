@@ -41,7 +41,7 @@ Here's an example of using the
 to be notified whenever there's a new tab:
 </p>
 
-<pre>
+<pre class="prettyprint">
 chrome.tabs.onCreated.<b>addListener(function(</b>tab<b>) {</b>
   appendToLog('tabs.onCreated --'
               + ' window: ' + tab.windowId
@@ -86,7 +86,7 @@ concepts of all declarative event handlers.
 
 <p>The simplest possible rule consists of one or more conditions and one or more
 actions:</p>
-<pre>
+<pre class="prettyprint">
 var rule = {
   conditions: [ /* my conditions */ ],
   actions: [ /* my actions */ ]
@@ -101,7 +101,7 @@ define precedences among rules. Priorities are only considered if rules conflict
 each other or need to be executed in a specific order. Actions are executed in
 decendending order of the priority of their rules.</p>
 
-<pre>
+<pre class="prettyprint">
 var rule = {
   id: "my rule",  // optional, will be generated if not set.
   priority: 100,  // optional, defaults to 100.
@@ -130,7 +130,7 @@ takes an array of rule instances as its first parameter and a callback function
 that is called on completion.
 </p>
 
-<pre>
+<pre class="prettyprint">
 var rule_list = [rule1, rule2, ...];
 function addRules(rule_list, function callback(details) {...});
 </pre>
@@ -165,7 +165,7 @@ optional array of rule identifiers as its first parameter and a callback
 function as its second parameter.
 </p>
 
-<pre>
+<pre class="prettyprint">
 var rule_ids = ["id1", "id2", ...];
 function removeRules(rule_ids, function callback() {...});
 </pre>
@@ -188,7 +188,7 @@ identifiers with the same semantics as <code>removeRules</code> and a callback
 function.
 </p>
 
-<pre>
+<pre class="prettyprint">
 var rule_ids = ["id1", "id2", ...];
 function getRules(rule_ids, function callback(details) {...});
 </pre>
@@ -212,7 +212,7 @@ about.</p>
 <p>Filtered events are intended to allow a transition from manual filtering
 code like this:</p>
 
-<pre>
+<pre class="prettyprint">
 chrome.webNavigation.onCommitted.addListener(function(e) {
   if (hasHostSuffix(e.url, 'google.com') ||
       hasHostSuffix(e.url, 'google.com.au')) {
@@ -223,7 +223,7 @@ chrome.webNavigation.onCommitted.addListener(function(e) {
 
 <p>into this:</p>
 
-<pre>
+<pre class="prettyprint">
 chrome.webNavigation.onCommitted.addListener(function(e) {
   // ...
 }, {url: [{hostSuffix: 'google.com'},
@@ -356,7 +356,7 @@ matching.</p>
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
                     <div>
@@ -391,7 +391,7 @@ matching.</p>
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
                     <div>
@@ -423,7 +423,7 @@ matching.</p>
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
                     <div>
@@ -481,7 +481,7 @@ matching.</p>
                                 If you specify the <em>callback</em> parameter, it should
                                 specify a function that looks like this:
                           </p>
-                          <pre>function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
                           <dl>
                               <div>
                                 <a name="property-callback-rules"></a>
@@ -548,7 +548,7 @@ matching.</p>
                                 The <em>callback</em> parameter should specify a function
                                 that looks like this:
                           </p>
-                          <pre>function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function(array of <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</pre>
                           <dl>
                               <div>
                                 <a name="property-callback-rules"></a>
@@ -615,7 +615,7 @@ matching.</p>
                                 If you specify the <em>callback</em> parameter, it should
                                 specify a function that looks like this:
                           </p>
-                          <pre>function() <span class="subdued">{...}</span>;</pre>
+                          <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                       </div>
                     </div>
               </dl></dd>
