@@ -1,1 +1,2 @@
 					<h1>{{ page.title }}</h1>
+					{% if page.author %} <p>by {{ page.author }} {% endif %} {% if page.coauthor %} and {{ page.coauthor }} {% endif %} {% if page.author %} </p> {% endif %}
