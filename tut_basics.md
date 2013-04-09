@@ -7,16 +7,26 @@ copyright: opera-ccby
 # Making your first Opera extension
 *By Shwetank Dixit* 
 
-Making extensions for Opera 14 and above is really easy. If you are already familiar with making chrome extensions, then you will right at home as Opera 14 (and above) are based on the chromium project, so will inherit their extensions architecture ([though its not exactly the same]).
+##Introduction
 
-For your first extension, we'll take a look at making a simple extenson which will add a button on the toolbar. Clicking on that button will open up a new tab and go to [Dev.Opera] - Its a simple extension to get your started.
+Making extensions for Opera 14 and above is really easy. If you are already familiar with making chrome extensions, then you will right at home, as Opera 14 (and above) uses the chromium extensions architecture (with some minor differences). And even if you aren't, Opera extensions are still easily — they are made using open web technologies, plus some specific APIs to tap into browser functionality.
 
-## Step 1 - The extension manifest
-The first step we'll take is to define the extension manifest. This is where we'll define the name of the extension, it's description, and other details like the author etc. 
+In this article we'll put together a simple example extension to show you how it works.
 
-Apart from that, there is another important aspect to extension manifests - we define what special permissions we need in order for the extension to run properly. In our case, we will be needing to create a new tabs, so working with tabs would be required, and this would need to be specified in the manifest. 
+##What's in an Opera extension?
 
-Extension manifests are written in the JSON format, so it will be familiar to most people who know javascript. Let's for now, just open up a text editor and write the following in a file and name is 'manifest.json'. 
+CHRIS - add brief description of what a typical extension contains, and say briefly what each of the parts of an extension are for, and how it works, then linking to the article you're doing about extension architecture in detail. I think we need this to give a little context of what we're doing before we start throwing files together.
+
+## Your first extension
+
+Now we're familiar with the basics of how it all works, let's try putting an extension together. We'll make a simple extension that will add a button to the browser toolbar — when clicked, the button will open up a new tab and load [dev.opera.com](http://dev.opera.com). This is a pretty trivial example, but at least it'll get you used to the basics.
+
+### Step 1: Defining the extension, with an extension manifest
+The first step we'll take is to define the extension manifest. This is where we define the name of the extension, its description, author, version number, and other such details. 
+
+There is another important aspect to extension manifests - inside we define the necessary permissions in order for the extension to run properly. For our example, working with tabs is required, so this needs to be specified in the manifest. 
+
+Extension manifests are written in JSON; we'll explain the specifics later, but for now just open up a text editor, type the following into a new file and save it as 'manifest.json' in an empty directory, anywhere you like. 
 
 ```
 {
@@ -35,9 +45,9 @@ Extension manifests are written in the JSON format, so it will be familiar to mo
 }
 ```
 
-## Step 2 - The background script
+### Step 2: Communicating with the browser: the background script
 
-The background script is a very important peice of an extension. Anything to do with UI elements in the browser need to written in the background script. In our case, we'll be working with tabs, so we will be using methods from the Tabs API in our script. You'll read more about working with tabs later on. For now, create a file named 'background.js' in your extension directory, and enter the following
+The background script is very important — this is where anything to do with manipulating the browser UI is contained. In our case, we'll be working with tabs, so we will be using methods from the Tabs API in our script. You'll read more about working with tabs later on, but for now, create a file named 'background.js' in the same directory as before and enter the following code into it:
 
 ```
 chrome.browserAction.onClicked.addListener(function() {
@@ -47,34 +57,38 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 ``` 
 
-## Step 3 - Icons and other files
-You'll need an icon to represent the button on the toolbar. We would recommend the icon to be **--Insert the recommended size for icons--**. 
+### Step 3: Including icons and other assets
+You'll need an icon to adorn the button on the toolbar, and represent the extension in other places. We would recommend the icon to be **--Insert the recommended size for icons--**. 
 
-## Step 3 - Test it out
-Okay, time to test out your extension. As a developer making your own extension, you don't need to pack it all up into a container format just to test things out. You can test your extension straight from the directory. 
+CHRIS - unfinished - you'll also need to add information about other files too. Maybe say that when other assets are involved, such as images, video and SVG, these would go in the XXX folder. 
+
+### Step 4: Testing your extension
+Okay, time to test out your extension. For the final extension, you'll need to package all the files into a zip file and give it a special .nex file extension. But the good news is that you don't need to do this every time you want to test things out — You can test your extension straight from the directory, like so:
 
 ** --- The following is not ready yet, so this will probably change: ---** 
 
-1. Just go to '*Tools->Extensions->Manage Extensions*' where you will see a page where you can manage all your extensions. 
-2. Check the checkbox for '*Developer Mode*'. 
-3. Now click on the button '*Load unpacked extension*'
-4. Select the directory where the files are for your extension
+1. Go to the Extension Management Page, at '*Tools->Extensions->Manage Extensions*'. 
+2. Check the '*Developer Mode*' checkbox. 
+3. Click on the '*Load unpacked extension*' button.
+4. Select your extension's directory
 
-Thats it! Your extension should be loaded in 'Developer Mode'. This mode gives you more power as a developer as it gives you the ability to inspect various parts of the extension using the developer tools inbuilt in the browser.
+Thats it! Your extension should be loaded in 'Developer Mode'. This mode gives you the ability to inspect various parts of the extension using the browser's developer tools.
 
-If all goes well, you should see an icon on the top right side of the browser next to the address bar. Clicking on it will open up a new tab, which will go to [Dev.Opera](http://dev.opera.com) - Opera's portal for developers. 
+If all goes well, you should see an icon in the top right of the browser window next to the address bar. Clicking on it will open up a new tab, which will go to [Dev.Opera](http://dev.opera.com) - Opera's developer tutorial site. 
 
-## Step 4 - Packing it all up!
-Once you are ready and satisfied with the extension, start with the process of converting it into an 'NEX' file. Follow the steps below:
+### Step 5 - Packing it all up!
+Once you are satisfied that your extension is finished, you need to package it into an .nex file, as follows:
 
 1. Go to the '*Manage Extensions'* page.
 2. Click on the '*Pack Extension*' button, located on the top of the page.
 3. Select the directory of your extension
 4. Click '*Ok*'.
 
-Your extension in .NEX format will be generated in the parent directory of the one you had selected. Congratulations! 
+Your .nex package will be generated in the parent directory of the one you had selected. Congratulations! 
+
+
 
 ## What now?
-As you could see, making extensions for Opera is really easy. Through this tutorial, you've learn how to make a basic extension, load it in *Developer Mode* and test it out and finally package it. 
+As you can see, making extensions for Opera is really easy. Through this tutorial, you've learn how to make a basic extension, load it in *Developer Mode*, test it out and finally package it. 
 
-Now, go on and take a look at the various other tutorials we have for the different parts of extensions (like Buttons, Tabs, Messaging, etc) and also look through the [API documentation](Link to the API docs). 
+From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure refernce guide, check out the Opera extensions [API documentation](Link to the API docs). 
