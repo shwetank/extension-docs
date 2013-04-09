@@ -7,44 +7,36 @@ copyright: opera-ccby
 # Display buttons, popups and badges
 By Shwetank Dixit
 
-In the [architecture overview](#), we covered the various UI elements of extensions in Opera. This consisted of *Page Actions* and *Browser Actions*.
+##Introduction
 
-In this article, we’ll get to see how to put these UI elements in your extension. 
+In the [architecture overview](Link to the architecture overview article), we covered the various UI elements that can be included in Opera extensions: these fall into two categories, *Page Actions* and *Browser Actions*.
 
-Getting to display any of these UI elements on the browser is extremely simple. All you need to do is enter the necessary details in the extension manifest, and make sure you have the appropriate files ready in the extension package (like the icon files, popup.html files etc).
+In this article, we’ll get to see how to put these UI elements into action in an extension. 
+
+Getting to display any of these UI elements on the browser is extremely simple. All you need to do is enter the necessary details (CHRIS - WOULD IT BE BETTER TO SAY "DECLARE THE NECESSARY PERMISSIONS" OR SOMETHING?) in the extension manifest, and make sure you have the appropriate functionality ready in the extension package (icon files, popup.html, background.js, etc).
 
 ## Browser Actions
+First up, lets look at the different available browser actions. CHRIS - ADD DEFINITION OF WHAT BROWSER ACTIONS ARE, GENERALLY SPEAKING?
 
-### Buttons:
+### Buttons
 
-To get to display a button, simply mention it in the extension manifest like so:
+To display a button in the browser UI, we simply mention it in the extension manifest like so:
 
+```
+"browser_action": {    "default_icon": {                    // optional      "19": "images/icon19.png",           // optional      "38": "images/icon38.png"            // optional    },    "default_title": "My Sample Extension",      // optional; shown in tooltip  },
+  ```
+[Download our sample button extension](Link to the extension) to see a very simple button example.
 
-	"browser_action": {
-	    "default_icon": {                    // optional
-	      "19": "images/icon19.png",           // optional
-	      "38": "images/icon38.png"            // optional
-	    },
-	    "default_title": "My Sample Extension",      // optional; shown in tooltip
-	  },
+CHRIS - DON'T YOU WANT TO SHOW AN EXAMPLE OF THE CODE YOU NEED TO PUT IN BACKGROUND.JS TO ACTUALLY PLACE THE BUTTON AND SPECIFY ITS FUNCTIONALITY? ALSO, WHAT ABOUT EXPLAINING A BIT MORE ABOUT THE DIFFERN ICON SIZES YOU MIGHT NEED, AND WHERE THEY ARE USED WHEN INCLUDED? TO MY MIND, THIS COULD BE EXPANDED A LOT, POSSIBLY EVEN TURNED INTO ITS OWN ARTICLE.
 
-You can also [download our sample extension](#) which has a very simple button being displayed.
+### Popups
 
-### Popups:
+To create a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
-To display a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
-
-
-	"browser_action": {
-	    "default_icon": {                    // optional
-	      "19": "images/icon19.png",           // optional
-	      "38": "images/icon38.png"            // optional
-	    },
-	    "default_title": "My Sample Extension",      // optional; shown in tooltip
-	    "default_popup": "popup.html"        // optional
-	  },
-
-Go ahead and [download our sample extension](#) which has a very simple popup being displayed.
+```
+"browser_action": {    "default_icon": {                    // optional      "19": "images/icon19.png",           // optional      "38": "images/icon38.png"            // optional    },    "default_title": "My Sample Extension",      // optional; shown in tooltip    "default_popup": "popup.html"        // optional  },
+  ```
+Go ahead and [download our sample extension](Link to the extension) which has a very simple popup being displayed.
 
 ### Badges:
 
@@ -77,28 +69,17 @@ Just like Browser Actions, you can make buttons and popups for Page Actions too,
 
 To get to display a button, simply mention it in the extension manifest like so:
 
-	"page_action": {
-	    "default_icon": {                    // optional
-	      "19": "images/icon19.png",           // optional
-	      "38": "images/icon38.png"            // optional
-	    },
-	    "default_title": "My Sample Extension",      // optional; shown in tooltip
-	  },
- 
+```
+"page_action": {    "default_icon": {                    // optional      "19": "images/icon19.png",           // optional      "38": "images/icon38.png"            // optional    },    "default_title": "My Sample Extension",      // optional; shown in tooltip  },
+``` 
 ### Popups:
 
 To display a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 
-	"page_action": {
-	    "default_icon": {                    // optional
-	      "19": "images/icon19.png",           // optional
-	      "38": "images/icon38.png"            // optional
-	    },
-	    "default_title": "My Sample Extension",      // optional; shown in tooltip
-	    "default_popup": "popup.html"        // optional
-	  },
-
+```
+"page_action": {    "default_icon": {                    // optional      "19": "images/icon19.png",           // optional      "38": "images/icon38.png"            // optional    },    "default_title": "My Sample Extension",      // optional; shown in tooltip    "default_popup": "popup.html"        // optional  },
+```
 
 
 ## Displaying a Page Action
@@ -107,16 +88,10 @@ Page Actions are not displayed by default, unlike browser actions. You will need
 
 For this, you will also need to know the Tab ID of the current visible tab. Thus the code to show or hide the Page Actions should reside in the background script. For example, to only show Page Actions in URLs on www.opera.com, we would do something like this in the background script:
 
+```
+function checkValidURL(tabID, changeInfo, tab){	if (tab.url.indexOf(‘www.opera.com’)> -1){ // If it satisfies the criteria (the URL containing ‘www.opera.com’)		chrome.pageAction.show(tabID) // shows the page action		}}chrome.tabs.onupdated.addEventListener(checkValidURL);
+```
 
-	function checkValidURL(tabID, changeInfo, tab){
-		if (tab.url.indexOf(‘www.opera.com’)> -1){ // If it satisfies the criteria (the URL containing ‘www.opera.com’)
-			chrome.pageAction.show(tabID) // shows the page action
-			}
-	}
-
-	chrome.tabs.onupdated.addEventListener(checkValidURL);
-
-
-Go ahead and [download the source for this extension](#), to check out the code required for making it work.
+Go ahead and [download the source for this extension](Link to the extension), to check out the code required for making it work.
 
 **Next: Tabs and Windows**
