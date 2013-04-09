@@ -29,7 +29,9 @@ footer {
 		padding-right: 20px;
 	}
 }
-#wrap > .container-fluid {
-	padding-top: 60px;
+@media (min-width: 980px) {
+	#wrap > .container-fluid {
+		padding-top: 60px;
+	}
 }
 /* /sticky footer */
