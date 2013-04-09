@@ -7,31 +7,49 @@ copyright: opera-ccby
 # Getting Started with Opera Extensions
 *By Shwetank Dixit*
 
-Extensions are small pieces of functionality you can add on top of the browser. The point of extensions is to allow you to add great features and enhancements to Opera, which other Opera fans might also find usefull.  Examples include an extension which could close all tabs to the right hand side of the current tab, or an extension which notifies you of new mail from your favourite email service etc. If you haven’t already, then head over to the [Opera Extensions Gallery](Link to the gallery) to download and get a feel of various extensions.
+#Introduction
 
-The Opera Extensions API provides you with a number of features of the browser you can tap into, thereby giving you a lot options for you to come up with great ideas for extensions.  
+Extensions are small code packages that you can add to your browser to extend its functionality. The point of Opera extensions is to not only add more features to Opera, to make it more useful, but also to share those new features with other Opera users. Want to add an e-mail notification window to the browser that brings up your latest mails form your preferred mail service? Want to add a button that closes all tabs to right of the active tab? Want to tweet straight from the browser, replace all instances of the word "politics" on web pages with "fish", or bring up translations of the current selection in a tooltip? Extensions are the way forward. You can develop extensions to do pretty much anything that can be done with standards web technologies, and more.
+
+The Opera Extensions API allows you to tap into many different features of the browser, giving you a lot options for extension functionality. This article will get you started, looking at what's available, providing links to further information.
+
+Note: If you haven’t already, then head over to the [Opera Extensions Gallery](Link to the gallery) to download and get a feel of various extensions.
 
 ## Already developed Chrome Extensions?
-If you have already developed extensions for Chrome, then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For now, we support the following APIs for CRX format. We have additional APIs for extensions, which will be available under the '*opr*' object, and will be required to have a ‘*.NEX*’ file extension. 
+If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For now, we support the following APIs for the CRX format:
+
+* a
+* b (CHRIS - WERE YOU INTENDING TO ADD A LIST OF THESE APIS HERE AND BRIEF DESCRIPTIONS?)
+
+We have additional APIs for extensions, which will be available under the '*opr*' object; extensions using these features will be required to have a ‘*.NEX*’ file extension:
+
+* a
+* b (CHRIS - DO YOU ALSO WANT TO ADD A LIST OF THESE AND BRIEF DESCRIPTIONS?)
 
 ## Porting your previously made Opera extensions
-With Opera 14, we have changed the extensions platform. This means previously made Opera extensions will need to be converted to the new format for it to work in Opera 14 and above - But don’t worry, we’ve got you covered. If you had subbmitted your old Opera extensions to the Opera extensions gallery, they you will have the option to have it converted into a format suitable for Opera 14 and above. 
+Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 14+. 
 
-We've also made a tool call '*OEX2CRX*' (**--Is this going to be the name of the too, or will be change it?--**) which will convert your *.oex* based extensions into the new extensions format. Feel free to also read the [article we have written](Link to the oex2crx tool article) about the tool. 
+We've also made a tool called '*OEX2CRX*' (**--Is this going to be the name of the too, or will be change it?--**), which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](Link to the oex2crx tool article). 
 
 ## Learn the basics
-Get started making extensions for Opera by [making your first Opera extension](Link to the article). This will get you familiar with the basics of making a simple extension. Next, we would suggest taking a look at the [technical overview of Opera extensions](Link to overview article), to get a deeper idea of how things work. Finally, read our [range of tutorials and walkthroughs](Link to main tutorial page), which will explain all aspects of creating great extensions. 
+To learn how to make Opera extensions, begin by reading our [making your first Opera extension](Link to the article) article: this will get you familiar with the basics of making a simple extension.
+
+Next, we would suggest taking a look at the [technical overview of Opera extensions](Link to overview article), to get a more complete overview how things work.
+
+With the basics behind you, consult our [range of tutorials and walkthroughs](Link to main tutorial page) for much more detailed information on specific aspects of extension development and API usage. 
 
 ## Test, debug and look things over
 Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](Link to testing and debugging guide). 
 
 ## Finally, show it to the world!
-Get ready to show your extensions to the world by summiting it to the Opera addons gallery. Before you do that though, be sure to read the [guidelines on submitting extensions](Link to guidelines) to the addons store. We’ve made things even more easy and creating a [handy checklist for you to look at before submitting](Link to the checklist). 
+You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](Link to guidelines) to the add-ons store. We’ve also provided a [handy checklist for you to follow](Link to the checklist), to speed up the submission process further. 
 
 ## Updating your extension?
-You already have an existing extension in the store, and want to update it? Great! Follow these [steps on releasing updates to Opera extensions](Link to article on updating extensions), and your users will receive the latest and greatest version of your extension in no time! 
+If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](Link to article on updating extensions); your users will receive the latest and greatest version of your extension in no time! 
 
-## Community: Discuss and keep up on the latest news
-We’d love to discuss more things with you on the Opera extensions mailing list. Also, follow us on [Twitter](Link to Devrel twitter) and [Google+](Link to Devrel google plus). 
+## Discuss and keep up on the latest news
+We’d love to discuss Opera extension development with you some more! 
 
-Finally, be sure to subscribe to the [ODIN Blog](http://my.opera.com/odin/blog/) for the latest on Opera Extensions and Web Standards in general.
+* Ask questions on the [Opera extensions mailing list](add link to mailing list info)
+* Join the discussion on [Twitter](Link to Devrel twitter) and [Google+](Link to Devrel google plus) 
+* Subscribe to the [ODIN Blog](http://my.opera.com/odin/blog/) for the latest on Opera Extensions and Web Standards in general.
