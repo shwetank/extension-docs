@@ -1,12 +1,9 @@
 ---
 layout: default-withsidebar
-title: Tab and Window Handling
+title: Working with Tabs and Windows
 author: shwetankdixit 
 copyright: opera-ccby
 ---
-
-# Working with Tabs and Windows
-*By Shwetank Dixit*
 
 The Opera Extensions APIs give a lot of power to you when it comes to manipulating windows and tabs of the browser. In this article, we’ll take a deeper look on how to manipulate windows and tabs in extensions.
 
