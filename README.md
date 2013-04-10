@@ -4,7 +4,7 @@ This is a repo for Opera's totally revamped extensions documentation.
 
 # Behind the scenes
 
-There's HTML, Markdown and Jekyll.
+There's HTML, Markdown, jQuery, Bootstrap and Jekyll.
 
 To generate the site:
 
@@ -15,9 +15,9 @@ To generate the site:
 
 # YAML front matter details:
 
-`layout: default-withsidebar | default-noh1-withsidebar | default-withoutsidebar`
-`title: *custom string*`
-`author: *any author name mentioned in _config.yml*`
-`hattip: *include any text string, e.g. thanks to my dear colleague Chris for the JS wizardry!*`
-`copyright: opera-ccby | opera-google-ccby`
-`originalsource: *URL to original source*`
+* `layout: default-withsidebar | default-noh1-withsidebar | default-withoutsidebar`
+* `title: *custom string*`
+* `author: *any author name mentioned in _config.yml*`
+* `hattip: *include any text string, e.g. thanks to my dear colleague Chris for the JS wizardry!*`
+* `copyright: opera-ccby | opera-google-ccby`
+* `originalsource: *URL to original source*`
