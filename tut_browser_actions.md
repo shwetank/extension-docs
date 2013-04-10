@@ -22,7 +22,13 @@ First up, lets look at the different available browser actions. CHRIS - ADD DEFI
 
 To display a button in the browser UI, we simply mention it in the extension manifest like so:
 
-<pre class="prettyprint">"browser_action": {  "default_icon": {                    // optional    "19": "images/icon19.png",           // optional    "38": "images/icon38.png"            // optional  },  "default_title": "My Sample Extension",      // optional; shown in tooltip},</pre>
+<pre class="prettyprint">"browser_action": {
+  "default_icon": {                          // optional
+    "19": "images/icon19.png",               // optional
+    "38": "images/icon38.png"                // optional
+  },
+  "default_title": "My Sample Extension",    // optional; shown in tooltip
+},</pre>
 
 [Download our sample button extension](http://sample.com/index.html) to see a very simple button example.
 
@@ -32,7 +38,15 @@ CHRIS - DON'T YOU WANT TO SHOW AN EXAMPLE OF THE CODE YOU NEED TO PUT IN BACKGRO
 
 To create a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
-<pre class="prettyprint">"browser_action": {  "default_icon": {                        // optional    "19": "images/icon19.png",             // optional    "38": "images/icon38.png"              // optional  },   "default_title": "My Sample Extension",  // optional; shown in tooltip  "default_popup": "popup.html"            // optional},</pre>
+<pre class="prettyprint">"browser_action": {
+  "default_icon": {                          // optional
+    "19": "images/icon19.png",               // optional
+    "38": "images/icon38.png"                // optional
+  },
+
+  "default_title": "My Sample Extension",    // optional; shown in tooltip
+  "default_popup": "popup.html"              // optional
+},</pre>
 
 Go ahead and [download our sample extension](http://sample.com/index.html), which has a very simple popup being displayed.
 
@@ -67,13 +81,26 @@ Just like Browser Actions, you can make buttons and popups for Page Actions too,
 
 To get to display a button, simply mention it in the extension manifest like so:
 
-<pre class="prettyprint">"page_action": {  "default_icon": {                    // optional    "19": "images/icon19.png",           // optional    "38": "images/icon38.png"            // optional  },  "default_title": "My Sample Extension",      // optional; shown in tooltip},</pre>
+<pre class="prettyprint">"page_action": {
+  "default_icon": {                          // optional
+    "19": "images/icon19.png",               // optional
+    "38": "images/icon38.png"                // optional
+  },
+  "default_title": "My Sample Extension",    // optional; shown in tooltip
+},</pre>
  
 ### Popups:
 
 To display a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
-<pre class="prettyprint">"page_action": {  "default_icon": {                        // optional    "19": "images/icon19.png",             // optional    "38": "images/icon38.png"              // optional  },  "default_title": "My Sample Extension",  // optional; shown in tooltip  "default_popup": "popup.html"            // optional},</pre>
+<pre class="prettyprint">"page_action": {
+  "default_icon": {                          // optional
+    "19": "images/icon19.png",               // optional
+    "38": "images/icon38.png"                // optional
+  },
+  "default_title": "My Sample Extension",    // optional; shown in tooltip
+  "default_popup": "popup.html"              // optional
+},</pre>
 
 ## Displaying a Page Action
 
@@ -82,7 +109,12 @@ Page Actions are not displayed by default, unlike browser actions. You will need
 For this, you will also need to know the Tab ID of the current visible tab. Thus the code to show or hide the Page Actions should reside in the background script. For example, to only show Page Actions in URLs on www.opera.com, we would do something like this in the background script:
 
 <pre class="prettyprint">  function checkValidURL(tabID, changeInfo, tab){
-    if (tab.url.indexOf(‘www.opera.com’)> -1){ // If it satisfies the criteria (the URL containing ‘www.opera.com’)    chrome.pageAction.show(tabID) // shows the page action  }}chrome.tabs.onupdated.addEventListener(checkValidURL);</pre>
+    if (tab.url.indexOf(‘www.opera.com’)> -1){ // If it satisfies the criteria (the URL containing ‘www.opera.com’)
+    chrome.pageAction.show(tabID) // shows the page action
+  }
+}
+
+chrome.tabs.onupdated.addEventListener(checkValidURL);</pre>
 
 Go ahead and [download the source for this extension](http://sample.com/index.html), to check out the code required for making it work.
 
