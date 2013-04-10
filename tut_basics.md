@@ -25,7 +25,6 @@ There is another important aspect to extension manifests - inside we define the 
 
 Extension manifests are written in JSON; we'll explain the specifics later, but for now just open up a text editor, type the following into a new file and save it as 'manifest.json' in an empty directory, anywhere you like. 
 
-
 <pre class="prettyprint">{
   "manifest_version": 2,
 
@@ -37,7 +36,7 @@ Extension manifests are written in JSON; we'll explain the specifics later, but 
   "permissions": ["tabs"],
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Go to Dev.Opera!"
+    "default_title": "Go to Dev.Opera!"    
   }
 }</pre>
 
@@ -45,13 +44,11 @@ Extension manifests are written in JSON; we'll explain the specifics later, but 
 
 The background script is very important — this is where anything to do with manipulating the browser UI is contained. In our case, we'll be working with tabs, so we will be using methods from the Tabs API in our script. You'll read more about working with tabs later on, but for now, create a file named 'background.js' in the same directory as before and enter the following code into it:
 
-
 <pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
   chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
     chrome.tabs.create( { "url": "http://dev.opera.com" } );
   });
-});</pre>
- 
+});</pre> 
 
 ### Step 3: Including icons and other assets
 You'll need an icon to adorn the button on the toolbar, and represent the extension in other places. We would recommend the icon to be **--Insert the recommended size for icons--**. 
