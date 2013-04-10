@@ -26,31 +26,31 @@ There is another important aspect to extension manifests - inside we define the 
 Extension manifests are written in JSON; we'll explain the specifics later, but for now just open up a text editor, type the following into a new file and save it as 'manifest.json' in an empty directory, anywhere you like. 
 
 
-	{
-	  "manifest_version": 2,
+<pre class="prettyprint">{
+  "manifest_version": 2,
 
-	  "name": "Opera Extensions - Getting Started",
-	  "description": "Sample extension for the 'Making your first extension' article. A button will be created in the toolbar, which upon being clicked, will open a new tab which goes to Dev.Opera",
-	  "version": "1.0",
-	  "background": {"scripts": ["background.js"]},
+  "name": "Opera Extensions - Getting Started",
+  "description": "Sample extension for the 'Making your first extension' article. A button will be created in the toolbar, which upon being clicked, will open a new tab which goes to Dev.Opera",
+  "version": "1.0",
+  "background": {"scripts": ["background.js"]},
 
-	  "permissions": ["tabs"],
-	  "browser_action": {
-	    "default_icon": "icon.png",
-	    "default_title": "Go to Dev.Opera!"
-	  }
-	}
+  "permissions": ["tabs"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Go to Dev.Opera!"
+  }
+}</pre>
 
 ### Step 2: Communicating with the browser: the background script
 
 The background script is very important — this is where anything to do with manipulating the browser UI is contained. In our case, we'll be working with tabs, so we will be using methods from the Tabs API in our script. You'll read more about working with tabs later on, but for now, create a file named 'background.js' in the same directory as before and enter the following code into it:
 
 
-	chrome.browserAction.onClicked.addListener(function() {
-	    chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
-	        chrome.tabs.create( { "url": "http://dev.opera.com" } );
-	    });
-	});
+<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
+  chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
+    chrome.tabs.create( { "url": "http://dev.opera.com" } );
+  });
+});</pre>
  
 
 ### Step 3: Including icons and other assets
@@ -86,4 +86,4 @@ Your .nex package will be generated in the parent directory of the one you had s
 ## What now?
 As you can see, making extensions for Opera is really easy. Through this tutorial, you've learn how to make a basic extension, load it in *Developer Mode*, test it out and finally package it. 
 
-From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure refernce guide, check out the Opera extensions [API documentation](#). 
+From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure refernce guide, check out the Opera extensions [API documentation](http://sample.com/index.html). 
