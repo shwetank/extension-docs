@@ -1,12 +1,9 @@
 ---
 layout: default-withsidebar
-title: Message Passing
+title: Passing Messages in extensions
 author: shwetankdixit
 copyright: opera-ccby
 ---
-
-# Passing Messages in Extensions
-
 
 Communicating and passing messages around is an essential part in developing extensions. Let’s take a look at the different ways to do that using the Opera Extensions API. 
 
