@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: The basics of making an extension
+author: shwetankdixit
 copyright: opera-ccby
 ---
 

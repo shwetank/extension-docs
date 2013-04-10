@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: Architecture Overview
+author: shwetankdixit
 copyright: opera-ccby
 ---
 

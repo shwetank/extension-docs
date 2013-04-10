@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: Icons
+author: andreasbovens
 copyright: opera-ccby
 ---
 

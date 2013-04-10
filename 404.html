@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>{{ page.title }} - New Opera extensions documentation</title>
+		<title>404 NOT FOUND - New Opera extensions documentation</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -32,3 +32,32 @@
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8">
+
+						<h1>404! This document doesn't exist (yet).</h1>
+
+						<!-- custom 404 page as per https://help.github.com/articles/custom-404-pages -->
+
+  					</div><!-- .span8 -->
+			</div><!-- .row-fluid -->
+				<div id="push"></div><!-- this is for sticky footer: http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html -->
+			</div><!-- /.container-fluid -->
+		</div><!-- /#wrap -->
+		<footer id="footer">
+				
+			<p>This article is licensed under a	<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported</a> license.</p>
+			
+		</footer>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/prettify/run_prettify.js"></script>
+		<script>
+		 $(function(){
+						var path = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+						if ( path )
+								$('#sidebar a[href$="' + path + '"]').parent().attr('class', 'active');
+								$('#navbar ul a[href$="' + path + '"]').parent().attr('class', 'active');
+				});
+			// see http://docs.jquery.com/Tutorials:Auto-Selecting_Navigation and Ola's fix
+		</script>
+	</body>
+</html>	

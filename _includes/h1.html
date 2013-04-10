@@ -1,2 +1,11 @@
 					<h1>{{ page.title }}</h1>
-					{% if page.author %} <p>by {{ page.author }} {% endif %} {% if page.coauthor %} and {{ page.coauthor }} {% endif %} {% if page.author %} </p> {% endif %}
+					{% assign author = site.authors[page.author] %}
+					{% if page.author %} 
+						<p><img src="img/{{ author.icon }}" width="20"> by <a href="https://github.com/{{ author.github }}/">{{ author.display_name }}</a>
+					{% endif %}
+					{% if page.hattip %} 
+						({{ page.hattip }})
+					{% endif %}
+					{% if page.author %}
+						</p>
+					{% endif %}
