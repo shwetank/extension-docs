@@ -2,3 +2,19 @@ auto: true
 server: true
 server_port: 1337
 markdown: maruku
+authors:
+  andreasbovens:
+    display_name: Andreas Bovens
+    icon: andreasbovens.jpg
+    twitter: andreasbovens
+    github: andreasbovens 
+  chrismills:
+    display_name: Chris Mills
+    icon: chrismills.jpg
+    twitter: chrisdavidmills
+    github: chrisdavidmills
+  shwetankdixit:
+    display_name: Shwetank Dixit
+    icon: shwetankdixit.jpg
+    twitter: shwetank
+    github: shwetank
