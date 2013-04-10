@@ -16,8 +16,8 @@ To generate the site:
 # YAML front matter details:
 
 * `layout: default-withsidebar | default-noh1-withsidebar | default-withoutsidebar`
-* `title: *custom string*`
-* `author: *any author name mentioned in _config.yml*`
-* `hattip: *include any text string, e.g. thanks to my dear colleague Chris for the JS wizardry!*`
+* `title: TITLE` TITLE should be the actual title of the article
+* `author: AUTHOR` AUTHOR can be any author name mentioned in _config.yml
+* `hattip: HATTIP` HATTIP can be any mention or sentence, e.g. "thanks to my dear colleague Chris for the JS wizardry!"
 * `copyright: opera-ccby | opera-google-ccby`
-* `originalsource: *URL to original source*`
+* `originalsource: ORIGINALSOURCE` ORIGINALSOURCE should be a link to the original version of the document
