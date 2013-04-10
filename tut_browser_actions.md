@@ -1,13 +1,11 @@
 ---
 layout: default-withsidebar
-title: Browser Actions
+title: Display buttons, popups and badges (browser actions)
+author: shwetankdixit
 copyright: opera-ccby
 ---
 
-# Display buttons, popups and badges
-By Shwetank Dixit
-
-##Introduction
+## Introduction
 
 In the [architecture overview](http://sample.com/index.html), we covered the various UI elements that can be included in Opera extensions: these fall into two categories, *Page Actions* and *Browser Actions*.
 
@@ -50,7 +48,7 @@ To create a popup, you just need to make an html file (lets call it ‘popup.htm
 
 Go ahead and [download our sample extension](http://sample.com/index.html), which has a very simple popup being displayed.
 
-### Badges:
+### Badges
 
 Badges are small pieces of information located right next to a button. They often show supplementary information (for example, an extension for your email site might show the number of unread mails etc). 
 
@@ -89,7 +87,7 @@ To get to display a button, simply mention it in the extension manifest like so:
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
  
-### Popups:
+### Popups
 
 To display a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 

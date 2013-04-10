@@ -1,11 +1,9 @@
 ---
 layout: default-withsidebar
 title: Getting started
-author: Shwetank Dixit
-coauthor: 
+author: shwetankdixit
 copyright: opera-ccby
 ---
-
 
 ## Introduction
 
@@ -21,7 +19,7 @@ If you have already developed extensions for Chrome then you will feel right at 
 * a
 * b (CHRIS - WERE YOU INTENDING TO ADD A LIST OF THESE APIS HERE AND BRIEF DESCRIPTIONS?)
 
-We have additional APIs for extensions, which will be available under the '*opr*' object; extensions using these features will be required to have a ‘*.NEX*’ file extension:
+We have additional APIs for extensions, which will be available under the `opr` object; extensions using these features will be required to have a .NEX file extension:
 
 * a
 * b (CHRIS - DO YOU ALSO WANT TO ADD A LIST OF THESE AND BRIEF DESCRIPTIONS?)
@@ -29,7 +27,7 @@ We have additional APIs for extensions, which will be available under the '*opr*
 ## Porting your previously made Opera extensions
 Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 14+. 
 
-We've also made a tool called '*OEX2CRX*' (**--Is this going to be the name of the too, or will be change it?--**), which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](http://sample.com/index.html). 
+We've also made a tool called '*OEX2NEX*' (**--Is this going to be the name of the too, or will be change it?--**), which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](http://sample.com/index.html). 
 
 ## Learn the basics
 To learn how to make Opera extensions, begin by reading our [making your first Opera extension](http://sample.com/index.html) article: this will get you familiar with the basics of making a simple extension.
