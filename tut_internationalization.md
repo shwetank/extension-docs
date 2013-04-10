@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: Internationalization
+author: andreasbovens
 copyright: opera-ccby
 ---
 

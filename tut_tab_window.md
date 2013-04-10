@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
-title: Tab and Window Handling 
+title: Tab and Window Handling
+author: shwetankdixit 
 copyright: opera-ccby
 ---
 

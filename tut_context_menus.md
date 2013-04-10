@@ -1,11 +1,9 @@
 ---
 layout: default-withsidebar
-title: Context Menus
+title: Working with the context menu
+author: shwetankdixit
 copyright: opera-ccby
 ---
-
-# Working with the context menu
-*By Shwetank Dixit*
 
 This article will describe how to use the `chrome.contextmenus.*` methods and events to manipulate the browser's context menu
 

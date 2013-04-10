@@ -1,6 +1,7 @@
 ---
 layout: default-withsidebar
 title: Speed Dial extensions
+author: shwetankdixit
 copyright: opera-ccby
 ---
 
