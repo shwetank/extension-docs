@@ -1,8 +1,8 @@
-auto: true
+auto: true # automatically rebuilds every time you save
 server: true
-server_port: 1337
+server_port: 1337 # cause that's how we roll
 markdown: maruku
-authors:
+authors: # author details
   andreasbovens:
     display_name: Andreas Bovens
     icon: andreasbovens.jpg
