@@ -13,43 +13,38 @@ The ability to manipulate tabs is one of the basic, yet one of the most powerful
 First you need to mention that you need to work with Tabs in the *‘permission’* field in the extension manifest, like so:
 
 
-<pre class="prettyprint">
-{
-  ...
-  "permissions": ["tabs"],
-  ...
-}
-</pre>
+	{
+	  ...
+	  "permissions": ["tabs"],
+	  ...
+	}
+
 
 ### Creating a new tab
 One of the most common things to do with tabs in extension, is to create a new tab. This is done using the `create()` method. In this method, you can specify the properties of the tab you want to create (for example, the URL, whether it should be an active tab, whether it should be a pinned tab or not, etc). 
 
 For example, to create a an extension which opens up a new pinned tab on the press of a button, you will need to add this to the background.js file 
 
-<pre class="prettyprint">
 	chrome.browserAction.onClicked.addListener(function() {
 	  chrome.tabs.create({'url': ‘http://www.opera.com’,'pinned': true});
 	});
-</pre>
+
 
 You can [download the sample extension](#) to take a better look.
 
 ### Getting hold of the current tab
 You can get hold of the currently active tab, and its properties via the `query()` method. In particular, you will need to employ something like this:
 
-<pre class="prettyprint">
-chrome.tabs.query({currentWindow: true, active: true}, function(tab)  …
-</pre>
+	chrome.tabs.query({currentWindow: true, active: true}, function(tab)  …
 
 Lets create an extension, which on the click of a button, will take the current URL and open a new tab where it will run the URL through the WAVE accessibility evaluation tool. 
 
-<pre class="prettyprint">
-chrome.browserAction.onClicked.addListener(function() {
-    chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
-        chrome.tabs.create( { "url": "http://wave.webaim.org/report?url=" +tab[0].url } );
-    });
-});
-</pre>
+
+	chrome.browserAction.onClicked.addListener(function() {
+	    chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
+	        chrome.tabs.create( { "url": "http://wave.webaim.org/report?url=" +tab[0].url } );
+	    });
+	});
 
 You can [download this extension](#), and play with the code further.
 
@@ -60,31 +55,30 @@ For example, lets take a look at an extension where we would like to pin all the
 
 In the background.js, we will write:
 
-<pre class="prettyprint">
-var pattern = "http://*.opera.com/*"; // This pattern will match all tabs which are on opera.com
 
-chrome.browserAction.onClicked.addListener(function() {
-    chrome.tabs.query({'currentWindow': true, 'url': pattern}, function(tab) { // This will match all tabs to the pattern we specified
-        for (var i=0; i<tab.length; i++){ // Go through all tabs which match the URL pattern
-        	chrome.tabs.update(tab[i].id, {'pinned': true}); // Pinn those tabs
-        }
-        
-    });
-});
-</pre>
+	var pattern = "http://*.opera.com/*"; // This pattern will match all tabs which are on opera.com
 
-You can [download the sample extension](#) with the above code. 
+	chrome.browserAction.onClicked.addListener(function() {
+	    chrome.tabs.query({'currentWindow': true, 'url': pattern}, function(tab) { // This will match all tabs to the pattern we specified
+	        for (var i=0; i<tab.length; i++){ // Go through all tabs which match the URL pattern
+	        	chrome.tabs.update(tab[i].id, {'pinned': true}); // Pinn those tabs
+	        }
+	        
+	    });
+	});
+
+ You can [download the sample extension](#) with the above code. 
 
 ### Closing, reloading and duplicating tabs
 Closing, reloading and duplicating tabs are made possible using the `remove()`, `reload()` and `duplicate()` methods respectively. The important thing to note about these methods is that you do not necessarily need to mention the ‘tabs’ permission in the extension manifest in order to use them in the extension.
 
 All three of these methods work in the same way. Lets take the example of us reloading a tab. The first thing to do would be to get hold of the current tab, after which we call the `reload()` method. So, in the background script we will write something like so:
 
-<pre class="prettyprint">
-chrome.tabs.query({currentWindow: true, active: true}, function(tab){ // Get the current tab
-	chrome.tabs.remove(tab[0].id); // Remove the tab
-});
-</pre>
+
+	chrome.tabs.query({currentWindow: true, active: true}, function(tab){ // Get the current tab
+		chrome.tabs.remove(tab[0].id); // Remove the tab
+	});
+
 
 You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at a sample extension where we make use of all three methods to close, reload and duplicate the current tab.
 
@@ -94,13 +88,12 @@ There are more functions available in the [API guide for Tabs and Windows](#) in
 
 Windows are easy to create using the Tabs and Windows API guide. The first thing to do when working with windows is to mention it in the extension manifest. 
 
-<pre class="prettyprint">
-{
-  ...
-  "permissions": ["tabs"],
-  ...
-}
-</pre>
+
+	{
+	  ...
+	  "permissions": ["tabs"],
+	  ...
+	}
 
 **Note:** We have mentioned \[‘tabs’] in the manifest. This is *deliberate*. Working with windows and tabs are so closely inter-related that its better to just mention ‘tabs’ in the extension manifest, even in the case of windows.
 
@@ -110,13 +103,13 @@ The most common and hence most important function to note, when it comes to wind
 
 We achieve this by writing the following in the background.js
 
-<pre class="prettyprint">
-var URL_list = ['http://www.opera.com', 'http://www.wikipedia.org'];//The list of URLs to load in the new window
 
-chrome.browserAction.onClicked.addListener(function() {
-  chrome.windows.create({'url': URL_list,'incognito': true});
-});
-</pre>
+	var URL_list = ['http://www.opera.com', 'http://www.wikipedia.org'];//The list of URLs to load in the new window
+
+	chrome.browserAction.onClicked.addListener(function() {
+	  chrome.windows.create({'url': URL_list,'incognito': true});
+	});
+
 
 You can [download the sample extension](#) showing the above functionality and play with the code yourself. 
 
