@@ -22,20 +22,18 @@ It is also recommended to have a 16x16 icon next to the context menu item, which
 
 The manifest would look like so: 
 
-<pre class="prettyprint">
-	{
-	  "name": "Context Menu Extension",
-	  ...
-	  "permissions": [
-	    "contextMenus"
-	  ],
-	  "icons": {
-	    "16": "icon-small.png",
-	  ...
-	  },
-	  ...
-	}
-</pre>
+<pre class="prettyprint">{
+  "name": "Context Menu Extension",
+  ...
+  "permissions": [
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "icon-small.png",
+  ...
+  },
+  ...
+}</pre>
 
 ### Creating a context menu item
 We can create a context menu item by calling the `create()` function. As an argument, this function takes an object that details which kind of context menu item we want to create. 
@@ -44,13 +42,11 @@ Lets for example create a context menu item that will only appear when a user ri
 
 To set up the context menu, we would write somethign like this in the background.js script:
 
-<pre class="prettyprint">
-	chrome.contextMenus.create({
-		title: "Look up: %s",
-		contexts: ["selection"],
-		onclick: searchText
-	});
-</pre>
+<pre class="prettyprint">chrome.contextMenus.create({
+	title: "Look up: %s",
+	contexts: ["selection"],
+	onclick: searchText
+});</pre>
 
 The object we are passing in as the argument of `create()` has three parts to it:
 
@@ -66,12 +62,10 @@ CHRIS - DOES THIS READ OK? I THOUGHT THE EXPLANATION NEEDED CLARIFYING A BIT.
 ### Controlling the result of a user clicking on the menu item
 Once the user clicks on the menu item, we need it to do something. In our example, the function `searchtext()` is called onclick. The function looks like so:
 
-<pre class="prettyprint">
-function searchText(info){
+<pre class="prettyprint">function searchText(info){
 	var myQuery = encodeURI("https://www.google.com/search?q="+info.selectionText);
 	chrome.tabs.create({url: myQuery});
-}
-</pre>
+}</pre>
 
 The function handles an '*info*' object of type *OnClickData* (CHRIS - THE ONE THING I DON'T GET FORM THIS EXPLANATION IS WHERE THIS ONCLICKDATA TYPE COMES FROM. IS IT SPECIFIED ANYWHERE, OR JUST WORKED OUT FROM THE CONTEXT YOU ARE USING INFO IN? I TAKE IT INFO IS JUST A GLOBAL OBJECT THAT YOU CAN ACCESS FROM ANYWHERE IN AN EXTENSION?) - this basically means that this object will contain a bunch of information from the thing you just clicked on. In our case, it will contain information about the text we selected. We can get this by using `info.selectionText`. After that it is just a simple matter of appending that text to google's query URL as a query string, creating a new tab, and loading the URL you just assembled in the new tab.
 
