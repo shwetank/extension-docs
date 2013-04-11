@@ -61,17 +61,18 @@ For example, lets take a look at an extension where we would like to pin all the
 
 In the background.js, we will write:
 
+<pre class="prettyprint">
+var pattern = "http://*.opera.com/*"; // This pattern will match all tabs which are on opera.com
 
-	var pattern = "http://*.opera.com/*"; // This pattern will match all tabs which are on opera.com
-
-	chrome.browserAction.onClicked.addListener(function() {
-	    chrome.tabs.query({'currentWindow': true, 'url': pattern}, function(tab) { // This will match all tabs to the pattern we specified
-	        for (var i=0; i<tab.length; i++){ // Go through all tabs which match the URL pattern
-	        	chrome.tabs.update(tab[i].id, {'pinned': true}); // Pinn those tabs
-	        }
-	        
-	    });
-	});
+chrome.browserAction.onClicked.addListener(function() {
+    chrome.tabs.query({'currentWindow': true, 'url': pattern}, function(tab) { // This will match all tabs to the pattern we specified
+        for (var i=0; i&lt;tab.length; i++){ // Go through all tabs which match the URL pattern
+        	chrome.tabs.update(tab[i].id, {'pinned': true}); // Pinn those tabs
+        }
+        
+    });
+});
+</pre>
 
  You can [download the sample extension](#) with the above code. 
 
@@ -80,10 +81,11 @@ Closing, reloading and duplicating tabs are made possible using the `remove()`, 
 
 All three of these methods work in the same way. Lets take the example of us reloading a tab. The first thing to do would be to get hold of the current tab, after which we call the `reload()` method. So, in the background script we will write something like so:
 
-
-	chrome.tabs.query({currentWindow: true, active: true}, function(tab){ // Get the current tab
-		chrome.tabs.remove(tab[0].id); // Remove the tab
-	});
+<pre class="prettyprint">
+chrome.tabs.query({currentWindow: true, active: true}, function(tab){ // Get the current tab
+	chrome.tabs.remove(tab[0].id); // Remove the tab
+});
+</pre>
 
 
 You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at a sample extension where we make use of all three methods to close, reload and duplicate the current tab.
@@ -94,12 +96,13 @@ There are more functions available in the [API guide for Tabs and Windows](#) in
 
 Windows are easy to create using the Tabs and Windows API guide. The first thing to do when working with windows is to mention it in the extension manifest. 
 
-
-	{
-	  ...
-	  "permissions": ["tabs"],
-	  ...
-	}
+<pre class="prettyprint">
+{
+  ...
+  "permissions": ["tabs"],
+  ...
+}
+</pre>
 
 **Note:** We have mentioned \[‘tabs’] in the manifest. This is *deliberate*. Working with windows and tabs are so closely inter-related that its better to just mention ‘tabs’ in the extension manifest, even in the case of windows.
 
@@ -109,13 +112,13 @@ The most common and hence most important function to note, when it comes to wind
 
 We achieve this by writing the following in the background.js
 
-
+<pre class="prettyprint">
 	var URL_list = ['http://www.opera.com', 'http://www.wikipedia.org'];//The list of URLs to load in the new window
 
 	chrome.browserAction.onClicked.addListener(function() {
 	  chrome.windows.create({'url': URL_list,'incognito': true});
 	});
-
+</pre>
 
 You can [download the sample extension](#) showing the above functionality and play with the code yourself. 
 

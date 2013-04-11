@@ -31,12 +31,12 @@ So in effect, we are selecting the currently active tab of the current window an
 chrome.extension.onMessage.addListener(
 	function (request, sender){
 		if (request.line=='countparas'){ /* If we get the request from the Background script */
-			var paras = document.body.querySelectorAll('p'); /* Select all `<p>` elements in the document body */
-			if (paras.length > 0){ /* If the number of `<p>` elements is greater than zero */
+			var paras = document.body.querySelectorAll('p'); /* Select all `&lt;p>` elements in the document body */
+			if (paras.length > 0){ /* If the number of `&lt;p>` elements is greater than zero */
 			var theCount = paras.length+''; /* Assigning that number to a variable called 'theCount' and convert it to a string format */
 			chrome.runtime.sendMessage({count:theCount}); /* Send the count back to the background script */
 			} else {
-				alert('There does not seem to be any `<p>` elements in this page!');
+				alert('There does not seem to be any `&lt;p>` elements in this page!');
 			}
 		}
 });
