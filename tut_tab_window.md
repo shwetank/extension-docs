@@ -5,48 +5,54 @@ author: shwetankdixit
 copyright: opera-ccby
 ---
 
-The Opera Extensions APIs give a lot of power to you when it comes to manipulating windows and tabs of the browser. In this article, we’ll take a deeper look on how to manipulate windows and tabs in extensions.
+##Introduction
+The Opera Extension APIs provide a lot of power when it comes to manipulating windows and tabs inside the browser. In this article, you’ll take a deeper look at how to manipulate windows and tabs in extensions.
 
 ## Tabs
-The ability to manipulate tabs is one of the basic, yet one of the most powerful and useful things in extensions. The [Tabs and Windows API guide](#) provides a detailed overview of the methods and events associated with it. 
+The ability to manipulate tabs is one of the most basic but powerful and useful features of extensions. The [Tabs and Windows API guide](#) provides a detailed overview of the methods and events associated with it. 
 
-First you need to mention that you need to work with Tabs in the *‘permission’* field in the extension manifest, like so:
+To work with tabs in an extension you need to first specify the relevant permissions in the *‘permission’* field of the extension manifest, like so:
 
 
-	{
-	  ...
-	  "permissions": ["tabs"],
-	  ...
-	}
+
+<pre class="prettyprint">{
+  ...
+  "permissions": ["tabs"],
+  ...
+}</pre>
+
 
 
 ### Creating a new tab
-One of the most common things to do with tabs in extension, is to create a new tab. This is done using the `create()` method. In this method, you can specify the properties of the tab you want to create (for example, the URL, whether it should be an active tab, whether it should be a pinned tab or not, etc). 
+Creating a new tab is done using the `create()` method. Inside this method you can specify the properties of the tab you want to create (for example the URL, whether it should be an active tab, whether it should be a pinned tab or not, etc.) 
 
-For example, to create a an extension which opens up a new pinned tab on the press of a button, you will need to add this to the background.js file 
+For example, to specify extension functionality that opens up a new pinned tab containing [opera.com](http://www.opera.com) when a button is clicked, you need to add this to the background.js file:
 
-	chrome.browserAction.onClicked.addListener(function() {
-	  chrome.tabs.create({'url': ‘http://www.opera.com’,'pinned': true});
-	});
-
-
-You can [download the sample extension](#) to take a better look.
-
-### Getting hold of the current tab
-You can get hold of the currently active tab, and its properties via the `query()` method. In particular, you will need to employ something like this:
-
-	chrome.tabs.query({currentWindow: true, active: true}, function(tab)  …
-
-Lets create an extension, which on the click of a button, will take the current URL and open a new tab where it will run the URL through the WAVE accessibility evaluation tool. 
+<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
+  chrome.tabs.create({'url': ‘http://www.opera.com’,'pinned': true});
+});</pre>
 
 
-	chrome.browserAction.onClicked.addListener(function() {
-	    chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
-	        chrome.tabs.create( { "url": "http://wave.webaim.org/report?url=" +tab[0].url } );
-	    });
-	});
 
-You can [download this extension](#), and play with the code further.
+You can [download the sample extension](http://sample.com/index.html) and take a better look at how this works.
+
+
+### Accessing the current tab
+You can access the currently active tab and its properties via the `query()` method, for example:
+
+<pre class="prettyprint">chrome.tabs.query({currentWindow: true, active: true}, function(tab)</pre>
+
+Let's extend this example a bit. To specify that on the click of a button the browser will take the current URL and open a new tab where it will run the URL through the WAVE accessibility evaluation tool, you could do something like this: 
+
+
+<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
+  chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
+    chrome.tabs.create( { "url": "http://wave.webaim.org/report?url=" +tab[0].url } );
+  });
+});</pre>
+
+
+You can [download the WAVE extension](http://sample.com/index.html) and play with this code further.
 
 ### Modifying existing tabs
 You can modify existing tabs using the `update()` method. You can change the URL of tabs, make them active, highlight them, or even pin them. This, combined with the `query()` method, gives you a lot of power over what all types of tabs you can change and in what way.
