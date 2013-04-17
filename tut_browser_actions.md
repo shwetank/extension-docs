@@ -11,10 +11,12 @@ In the [architecture overview](http://sample.com/index.html), we covered the var
 
 In this article, we’ll get to see how to put these UI elements into action in an extension. 
 
-Getting to display any of these UI elements on the browser is extremely simple. All you need to do is enter the necessary details (CHRIS - WOULD IT BE BETTER TO SAY "DECLARE THE NECESSARY PERMISSIONS" OR SOMETHING?) in the extension manifest, and make sure you have the appropriate functionality ready in the extension package (icon files, popup.html, background.js, etc).
+Getting to display any of these UI elements on the browser is extremely simple. All you need to do is enter the necessary details in the extension manifest, and make sure you have the appropriate functionality ready in the extension package (icon files, popup.html, background.js, etc).
 
 ## Browser Actions
-First up, lets look at the different available browser actions. CHRIS - ADD DEFINITION OF WHAT BROWSER ACTIONS ARE, GENERALLY SPEAKING?
+*Browser actions* are used to put UI elements on the extensions toolbar. These UI elements can be a button (with or without a badge) or a popup. Use browser actions if you want the UI element to appear all the time. 
+
+However, if you don't want the UI element to appear all the time, rather only wanting it to appear in specific pages, then it recommened to use *Page Actions*, which is explained later in the article. You cannot use both *Browser Actions* and *Page Actions* at the same time. 
 
 ### Buttons
 
@@ -28,9 +30,18 @@ To display a button in the browser UI, we simply mention it in the extension man
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
 
-[Download our sample button extension](http://sample.com/index.html) to see a very simple button example.
+Providing the default icon size in 19px or 38px size will allow the browser to automatically adjust the icon size according to the pixel density of the user's display.
 
-CHRIS - DON'T YOU WANT TO SHOW AN EXAMPLE OF THE CODE YOU NEED TO PUT IN BACKGROUND.JS TO ACTUALLY PLACE THE BUTTON AND SPECIFY ITS FUNCTIONALITY? ALSO, WHAT ABOUT EXPLAINING A BIT MORE ABOUT THE DIFFERN ICON SIZES YOU MIGHT NEED, AND WHERE THEY ARE USED WHEN INCLUDED? TO MY MIND, THIS COULD BE EXPANDED A LOT, POSSIBLY EVEN TURNED INTO ITS OWN ARTICLE.
+Putting this in the manifest will just display the button in the browser. Clicking it will not have an effect. However, with a button, you need it to perform a function once someone clicks on it. 
+
+To do that, you need to use add an event listener which listens to the click event, like so:
+
+<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function(){
+  console.log('This button was clicked!');
+});
+</pre>
+
+[Download our sample button extension](http://sample.com/index.html) to see a very simple button example.
 
 ### Popups
 
