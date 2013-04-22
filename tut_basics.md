@@ -13,11 +13,15 @@ In this article we'll put together a simple example extension to show you how it
 
 ## What's in an Opera extension?
 
-CHRIS - add brief description of what a typical extension contains, and say briefly what each of the parts of an extension are for, and how it works, then linking to the article you're doing about extension architecture in detail. I think we need this to give a little context of what we're doing before we start throwing files together.
+An opera extension contains a *manifest file* which defines the stuff like the name of the extension, its author etc. It also lists the various API permissions we want the extension to have.   It will also typically have a *background page* or *background script*, which is reponsible for communicating with the browser UI. Apart from that, it could have a *content script* which deals with changes to web pages. You could also need some other html (and related css and javascript) files for popups or the options pages, etc.
+
+Apart from all the JS and html files, you'll also need to put in some images for the extension icon, etc. 
+
+All of this is wrapped in a .zip file format and renamed as .nex. To know more about the architecture of extensions in Opera, please read the [associated article](tut_architecture_overview.html) which describes it in detail.
 
 ## Your first extension
 
-Now we're familiar with the basics of how it all works, let's try putting an extension together. We'll make a simple extension that will add a button to the browser toolbar — when clicked, the button will open up a new tab and load [dev.opera.com](http://dev.opera.com). This is a pretty trivial example, but at least it'll get you used to the basics.
+Now we're familiar with the basics of how it all works, let's try putting an extension together. We'll make a simple extension that will add a button to the browser toolbar — when clicked, the button will open up a new tab and load [dev.opera.com](http://dev.opera.com). This is a pretty trivial example, but it'll get you used to the basics.
 
 ### Step 1: Defining the extension, with an extension manifest
 The first step we'll take is to define the extension manifest. This is where we define the name of the extension, its description, author, version number, and other such details. 
@@ -42,10 +46,10 @@ Extension manifests are written in JSON; we'll explain the specifics later, but 
 }</pre>
 
 ### Step 2: Communicating with the browser: the background script
-
 The background script is very important — this is where anything to do with manipulating the browser UI is contained. In our case, we'll be working with tabs, so we will be using methods from the Tabs API in our script. You'll read more about working with tabs later on, but for now, create a file named 'background.js' in the same directory as before and enter the following code into it:
 
-<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
+<pre class="prettyprint">
+chrome.browserAction.onClicked.addListener(function() {
   chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
     chrome.tabs.create( { "url": "http://dev.opera.com" } );
   });
@@ -73,10 +77,11 @@ If all goes well, you should see an icon in the top right of the browser window 
 ### Step 5 - Packing it all up!
 Once you are satisfied that your extension is finished, you need to package it into an .nex file, as follows:
 
-1. Go to the '*Manage Extensions'* page.
-2. Click on the '*Pack Extension*' button, located on the top of the page.
-3. Select the directory of your extension
-4. Click '*Ok*'.
+1. Go to the browser address bar and type '*opera:extensions'*.
+2. Make sure you have *Developer Mode* (located on the top right) checked.
+3. Click on the '*Pack Extension*' button, located on the top of the page.
+4. Select the directory of your extension
+5. Click '*Ok*'.
 
 Your .nex package will be generated in the parent directory of the one you had selected. Congratulations! 
 
