@@ -100,7 +100,7 @@ Your extensions needs an icon, which should be --insert icon file size--. Apart 
 
 The above screenshot represents the folder structure of a typical extension. To make things more organized, you could also put images, fonts and other media in a  folder called *media*, stylsheets in a *css* folder and JS files in a *scripts* folder. 
 
-You can refer to any of your files in your extensions using relative URLs. For example : `<img src="media/myimage.png />"`. An absolute URL to your extension resource can be received by accessing `<extensionID>/<pathToFile>`. 
+You can refer to any of your files in your extensions using relative URLs. For example : `<img src="media/myimage.png />"`. An absolute URL to your extension resource can be received by accessing `chrome-extension://<extensionID>/<pathToFile>`. 
 
 ## How different parts interact
 
@@ -110,7 +110,6 @@ Opera supports a certain subset of chrome.\* APIs found in the chromium project,
 - The Speed Dial API
 
 With time, we will be adding more APIs to the *opr* object. 
-
 
 The *chrome.\** APIs supported in Opera are:
 
@@ -129,4 +128,3 @@ The *chrome.\** APIs supported in Opera are:
 - tabs
 - webRequest
 - windows
-
