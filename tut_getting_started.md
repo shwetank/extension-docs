@@ -11,18 +11,10 @@ Extensions are small code packages that you can add to your browser to extend it
 
 The Opera Extensions API allows you to tap into many different features of the browser, giving you a lot options for extension functionality. This article will get you started, looking at what's available, providing links to further information.
 
-Note: If you haven’t already, then head over to the [Opera Extensions Gallery](http://sample.com/index.html) to download and get a feel of various extensions.
+Note: If you haven’t already, then head over to the [Opera Extensions Gallery](https://addons.opera.com/addons/extensions/) to download and get a feel of various extensions.
 
 ## Already developed Chrome Extensions?
-If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For now, we support the following APIs for the CRX format:
-
-* a
-* b (CHRIS - WERE YOU INTENDING TO ADD A LIST OF THESE APIS HERE AND BRIEF DESCRIPTIONS?)
-
-We have additional APIs for extensions, which will be available under the `opr` object; extensions using these features will be required to have a .NEX file extension:
-
-* a
-* b (CHRIS - DO YOU ALSO WANT TO ADD A LIST OF THESE AND BRIEF DESCRIPTIONS?)
+If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
 
 ## Porting your previously made Opera extensions
 Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 14+. 
