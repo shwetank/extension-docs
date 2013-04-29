@@ -19,23 +19,23 @@ If you have already developed extensions for Chrome then you will feel right at 
 ## Porting your previously made Opera extensions
 Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 14+. 
 
-We've also made a tool called '*OEX2NEX*' (**--Is this going to be the name of the too, or will be change it?--**), which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](http://sample.com/index.html). 
+We've also made a tool called '*OEX2NEX*' (**--Is this going to be the name of the too, or will be change it?--**), which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](tut_oex2nex.html). 
 
 ## Learn the basics
-To learn how to make Opera extensions, begin by reading our [making your first Opera extension](http://sample.com/index.html) article: this will get you familiar with the basics of making a simple extension.
+To learn how to make Opera extensions, begin by reading our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
 
-Next, we would suggest taking a look at the [technical overview of Opera extensions](http://sample.com/index.html), to get a more complete overview how things work.
+Next, we would suggest taking a look at the [technical overview of Opera extensions](tut_architecture_overview.html), to get a more complete overview how things work.
 
 With the basics behind you, consult our [range of tutorials and walkthroughs](http://sample.com/index.html) for much more detailed information on specific aspects of extension development and API usage. 
 
 ## Test, debug and look things over
-Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](http://sample.com/index.html). 
+Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](tut_testing.html). 
 
 ## Finally, show it to the world!
-You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](http://sample.com/index.html) to the add-ons store. We’ve also provided a [handy checklist for you to follow](http://sample.com/index.html), to speed up the submission process further. 
+You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist for you to follow](http://sample.com/index.html), to speed up the submission process further. 
 
 ## Updating your extension?
-If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](http://sample.com/index.html); your users will receive the latest and greatest version of your extension in no time! 
+If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! 
 
 ## Discuss and keep up on the latest news
 We’d love to discuss Opera extension development with you some more! 
