@@ -1,7 +1,7 @@
 					<h1>{{ page.title }}</h1>
 					{% assign author = site.authors[page.author] %}
 					{% if page.author %} 
-						<p><img src="img/{{ author.icon }}" width="20"> by <a href="https://github.com/{{ author.github }}/">{{ author.display_name }}</a>
+						<p>{% if author.icon %}<img src="img/{{ author.icon }}" width="20">{% else %}<i class="icon-user"></i>{% endif %} by {% if author.github %}<a href="https://github.com/{{ author.github }}/">{% endif %}{{ author.display_name }}{% if author.github %}</a>{% endif %}
 					{% endif %}
 					{% if page.hattip %} 
 						({{ page.hattip }})
