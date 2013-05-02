@@ -67,9 +67,7 @@ are <b>name</b> and <b>version</b>.
   "<a href="manifest.html#homepage_url">homepage_url</a>": "http://<em>path/to/homepage</em>",
   "<a href="manifest.html#incognito">incognito</a>": "spanning" <em>or</em> "split",
   "<a href="manifest.html#key">key</a>": "<em>publicKey</em>",
-  "<a href="manifest.html#minimum_chrome_version">minimum_chrome_version</a>": "<em>versionString</em>",
-
-  "<a href="manifest.html#nacl_modules">nacl_modules</a>": [...],
+  "<a href="manifest.html#minimum_opera_version">minimum_opera_version</a>": "<em>versionString</em>",
   "<a href="manifest.html#offline_enabled">offline_enabled</a>": true,
   "<a href="omnibox.html">omnibox</a>": { "keyword": "<em>aString</em>" },
   "<a href="options.html">options_page</a>": "<em>aFile</em>.html",
@@ -124,7 +122,7 @@ no more than 132 characters)
 that describes the extension.
 The description should be suitable for both
 the browser's extension management UI
-and the <a href="https://chrome.google.com/webstore">Chrome Web Store</a>.
+and the Opera addons site.
 You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
@@ -132,10 +130,10 @@ see <a href="i18n.html">Internationalization</a> for details.
 <h3 id="homepage_url">homepage_url</h3>
 
 <p>
-The URL of the homepage for this extension. The extensions management page (chrome://extensions)
+The URL of the homepage for this extension. The extensions management page
 will contain a link to this URL.  This field is particularly useful if you
 <a href="hosting.html">host the extension on your own site</a>. If you distribute your
-extension using the <a href="https://chrome.google.com/webstore">Chrome Web Store</a>,
+extension using the Opera addons site,
 the homepage URL defaults to the extension's own page.
 </p>
 
@@ -144,10 +142,9 @@ the homepage URL defaults to the extension's own page.
 <p>
 One or more icons that represent the extension, app, or theme.
 You should always provide a 128x128 icon;
-it's used during installation and by the Chrome Web Store.
+it's used during installation and by the Opera addons site.
 Extensions should also provide a 48x48 icon,
-which is used in the extensions management page
-(chrome://extensions).
+which is used in the extensions management page.
 You can also specify a 16x16 icon to be used as the favicon
 for an extension's pages.
 The 16x16 icon is also displayed in the experimental extension
@@ -158,7 +155,7 @@ feature.
 <p>
 Icons should generally be in PNG format,
 because PNG has the best support for transparency.
-They can, however, be in any format supported by WebKit,
+They can, however, be in any format supported by Opera 14 and above,
 including BMP, GIF, ICO, and JPEG.
 Here's an example of specifying the icons:
 </p>
@@ -173,25 +170,14 @@ Here's an example of specifying the icons:
 <b>Important:</b>
 Use only the documented icon sizes.
 <br><br>
-You might notice that Chrome sometimes resizes these icons down to smaller
+You might notice that Opera sometimes resizes these icons down to smaller
 sizes. For example, the install dialog might shrink the 128-pixel
 icon down to 69 pixels.
 <br><br>
 However, the details of
-Chrome's UI may change between versions, and these changes assume that
+Opera's UI may change between versions, and these changes assume that
 developers are using the documented sizes. If you use other sizes,
 your icon may look bad in future versions of the browser.
-</p>
-
-<p>
-If you upload your extension, app, or theme using the
-<a href="https://chrome.google.com/webstore/developer/dashboard">Chrome Developer Dashboard</a>,
-you'll need to upload additional images,
-including at least one screenshot of your extension.
-For more information,
-see the
-<a href="http://code.google.com/chrome/webstore/">Chrome Web Store
-developer documentation</a>.
 </p>
 
 <h3 id="incognito">incognito</h3>
@@ -236,7 +222,7 @@ it is loaded during development.
 </p>
 
 <p class="note">
-<b>Note:</b> You don't usually need to
+<strong>Note:</strong> You don't usually need to
 use this value. Instead, write your
 code so that the key value doesn't matter
 by using <a href="overview.html#relative-urls">relative paths</a>
@@ -245,21 +231,16 @@ and <a href="extension.html#method-getURL">extension.getURL</a>.
 
 <p>
 To get a suitable key value, first
-install your extension from a <code>.crx</code> file
-(you may need to
-<a href="https://chrome.google.com/webstore/developer/dashboard">upload your extension</a>
-or <a href="packaging.html">package it manually</a>).
-Then, in your
-<a href="http://www.chromium.org/user-experience/user-data-directory">user
-data directory</a>, look in the file
+install your extension from a <code>.crx</code> file.
+Then, in your user data directory</a>, look in the file
 <code>Default/Extensions/<em>&lt;extensionId&gt;</em>/<em>&lt;versionString&gt;</em>/manifest.json</code>.
 You will see the key value filled in there.
 </p>
 
-<h3 id="minimum_chrome_version">minimum_chrome_version</h3>
+<h3 id="minimum_opera_version">minimum_opera_version</h3>
 
 <p>
-The version of Chrome that your extension, app, or theme requires, if any.
+The version of Opera that your extension, app, or theme requires, if any.
 The format for this string is the same as for the
 <a href="manifest.html#version">version</a> field.
 
@@ -276,77 +257,10 @@ You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
 
-<h3 id="nacl_modules">nacl_modules</h3>
-
-<p>
-One or more mappings from MIME types to the Native Client module
-that handles each type.
-For example, the bold code in the following snippet
-registers a Native Client module as the content handler
-for the OpenOffice spreadsheet MIME type.
-</p>
-
-<pre class="prettyprint">
-{
-  "name": "Native Client OpenOffice Spreadsheet Viewer",
-  "version": "0.1",
-  "description": "Open OpenOffice spreadsheets, right in your browser.",
-  <b>"nacl_modules": [{
-    "path": "OpenOfficeViewer.nmf",
-    "mime_type": "application/vnd.oasis.opendocument.spreadsheet"
-  }]</b>
-}
-</pre>
-
-<p>
-The value of "path" is the location of a Native Client manifest
-(a <code>.nmf</code> file)
-within the extension directory.
-For more information on Native Client and <code>.nmf</code> files, see the
-<a href="http://code.google.com/chrome/nativeclient/docs/technical_overview.html">Native Client Technical Overview</a>.
-</p>
-
-<p>
-Each MIME type can be associated with only one <code>.nmf</code> file,
-but a single <code>.nmf</code> file might handle multiple MIME types.
-The following example shows an extension
-with two <code>.nmf</code> files
-that handle three MIME types.
-</p>
-
-<pre class="prettyprint">
-{
-  "name": "Spreadsheet Viewer",
-  "version": "0.1",
-  "description": "Open OpenOffice and Excel spreadsheets, right in your browser.",
-  "nacl_modules": [{
-    "path": "OpenOfficeViewer.nmf",
-    "mime_type": "application/vnd.oasis.opendocument.spreadsheet"
-  },
-  {
-    "path": "OpenOfficeViewer.nmf",
-    "mime_type": "application/vnd.oasis.opendocument.spreadsheet-template"
-  },
-  {
-    "path": "ExcelViewer.nmf",
-    "mime_type": "application/excel"
-  }]
-}
-</pre>
-
-<p class="note">
-<strong>Note:</strong>
-You can use Native Client modules in extensions
-without specifying "nacl_modules".
-Use "nacl_modules" only if you want the browser
-to use your Native Client module
-to display a particular type of content.
-</p>
-
 <h3 id="offline_enabled">offline_enabled</h3>
 
 <p>
-Whether the app or extension is expected to work offline. When Chrome detects
+Whether the app or extension is expected to work offline. When Opera detects
 that it is offline, apps with this field set to true will be highlighted
 on the New Tab page.
 </p>
@@ -355,7 +269,7 @@ on the New Tab page.
 
 <p>
 Technologies required by the app or extension.
-Hosting sites such as the Chrome Web Store may use this list
+Hosting sites such as the Opera addons site may use this list
 to dissuade users from installing apps or extensions
 that will not work on their computer.
 Supported requirements currently include "3D" and "plugins";
@@ -366,9 +280,6 @@ additional requirements checks may be added in the future.
 The "3D" requirement denotes GPU hardware acceleration.
 The "webgl" requirement refers to the
 <a href="http://www.khronos.org/webgl/">WebGL API</a>.
-For more information on Chrome 3D graphics support,
-see the help article on
-<a href="http://www.google.com/support/chrome/bin/answer.py?answer=1220892">WebGL and 3D graphics</a>.
 You can list the 3D-related features your app requires,
 as demonstrated in the following example:
 </p>
@@ -459,14 +370,14 @@ For more information, see
 
 <p>
 One integer specifying the version of the manifest file format your package
-requires. As of Chrome 18, developers <em>should</em> specify <code>2</code>
+requires. As of Opera 14, developers <em>should</em> specify <code>2</code>
 (without quotes) to use the format as described by this document:
 </p>
 
 <pre class="prettyprint">"manifest_version": 2</pre>
 
 <p>
-Consider manifest version 1 <em>deprecated</em> as of Chrome 18. Version 2 is
+Consider manifest version 1 <em>deprecated</em> as of Opera 14. Version 2 is
 not yet <em>required</em>, but we will, at some point in the not-too-distant
 future, stop supporting packages using deprecated manifest versions. Extensions,
 applications, and themes that aren't ready to make the jump to the new manifest
@@ -478,13 +389,6 @@ leave the key off entirely.
 The changes between version 1 and version 2 of the manifest file format are
 described in detail in <a href="manifestVersion.html">the
 <code>manifest_version</code> documentation.</a>
-</p>
-
-<p class="caution">
-  Setting <code>manifest_version</code> 2 in Chrome 17 or lower is not
-  recommended. If your extension needs to work in older versions of Chrome,
-  stick with version 1 for the moment. We'll give you ample warning before
-  version 1 stops working.
 </p>
 
 <h3 id="web_accessible_resources">web_accessible_resources</h3>
@@ -603,7 +507,7 @@ that embeds them.
 </p>
 
 <p>
-<a href="sandboxingEval.html">"Using eval in Chrome Extensions. Safely."</a>
+<a href="sandboxingEval.html">"Using eval in Opera Extensions. Safely."</a>
 goes into more detail about implementing a sandboxing workflow that enables use
 of libraries that would otherwise have issues executing under extension's
 <a href="contentSecurityPolicy.html">default Content Security

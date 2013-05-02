@@ -10,23 +10,12 @@ originalsource: http://developer.chrome.com/trunk/extensions/tabs.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="tabs.html#manifest">Manifest</a>
-            </li>
-            <li>
-              <a href="tabs.html#examples"> Examples </a>
-            </li>
-            <li>
-              <a href="tabs.html#apiReference">API reference: chrome.tabs</a>
               <ol>
                   <li><a href="tabs.html#types">Types</a><ol>  <li>    <a href="tabs.html#type-Tab">Tab</a>  </li>  <li>    <a href="tabs.html#type-InjectDetails">InjectDetails</a>  </li></ol></li>
                   
                   <li><a href="tabs.html#methods">Methods</a><ol>  <li><a href="tabs.html#method-get">get</a></li>  <li><a href="tabs.html#method-getCurrent">getCurrent</a></li>  <li><a href="tabs.html#method-connect">connect</a></li>  <li><a href="tabs.html#method-sendMessage">sendMessage</a></li>  <li><a href="tabs.html#method-create">create</a></li>  <li><a href="tabs.html#method-duplicate">duplicate</a></li>  <li><a href="tabs.html#method-query">query</a></li>  <li><a href="tabs.html#method-highlight">highlight</a></li>  <li><a href="tabs.html#method-update">update</a></li>  <li><a href="tabs.html#method-move">move</a></li>  <li><a href="tabs.html#method-reload">reload</a></li>  <li><a href="tabs.html#method-remove">remove</a></li>  <li><a href="tabs.html#method-detectLanguage">detectLanguage</a></li>  <li><a href="tabs.html#method-captureVisibleTab">captureVisibleTab</a></li>  <li><a href="tabs.html#method-executeScript">executeScript</a></li>  <li><a href="tabs.html#method-insertCSS">insertCSS</a></li></ol></li>
                   <li><a href="tabs.html#events">Events</a><ol>  <li><a href="tabs.html#event-onCreated">onCreated</a></li>  <li><a href="tabs.html#event-onUpdated">onUpdated</a></li>  <li><a href="tabs.html#event-onMoved">onMoved</a></li>  <li><a href="tabs.html#event-onActivated">onActivated</a></li>  <li><a href="tabs.html#event-onHighlighted">onHighlighted</a></li>  <li><a href="tabs.html#event-onDetached">onDetached</a></li>  <li><a href="tabs.html#event-onAttached">onAttached</a></li>  <li><a href="tabs.html#event-onRemoved">onRemoved</a></li>  <li><a href="tabs.html#event-onReplaced">onReplaced</a></li></ol></li>
-                  <li><a href="tabs.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
+                  
           </ol>
         </div>
 
@@ -40,41 +29,6 @@ create, modify, and rearrange tabs in the browser.
 <img src="static/images/tabs.png"
      width="323" height="50" alt="Two tabs in a window" />
 
-<h2 id="manifest">Manifest</h2>
-<p>
-Almost all <code>chrome.tabs</code> methods require you to
-declare the "tabs" permission
-in the <a href="manifest.html">extension manifest</a>.
-For example:
-</p>
-
-<pre class="prettyprint">{
-  "name": "My extension",
-  ...
-  <b>"permissions": [
-    "tabs"
-  ]</b>,
-  ...
-}</pre>
-
-<p>
-Three methods (<a href="tabs.html#method-create">create</a>,
-<a href="tabs.html#method-update">update</a> and
-<a href="tabs.html#method-remove">remove</a>) and one event
-(<a href="tabs.html#event-onRemoved">onRemoved</a>) don't require the "tabs"
-permission.
-</p>
-
-
-<h2 id="examples"> Examples </h2>
-
-<p>
-You can find simple examples of using the tabs module in the
-<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/tabs/">examples/api/tabs</a>
-directory.
-For other examples and for help in viewing the source code, see
-<a href="samples.html">Samples</a>.
-</p>
         <h2 id="apiReference">API Reference: chrome.tabs</h2>
         <div class="api_reference">
             <h3 id="types">Types</h3>
@@ -1962,107 +1916,5 @@ For other examples and for help in viewing the source code, see
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.tabs</h2>
-            <li><strong><a href="samples.html#39c879e6ea31a83cb901ae55a5fcf76a">My Bookmarks</a></strong>
-            &ndash; A browser action with a popup dump of all bookmarks, including search, add, edit and delete.
-        </li>
-            <li><strong><a href="samples.html#cb771f28a910d79a2fcfeb1c5be6983b">A browser action with no icon that makes the page red</a></strong>
-        </li>
-            <li><strong><a href="samples.html#db80e292b687541c7aa5e89cee75ad79">Print this page</a></strong>
-            &ndash; Adds a print button to the browser.
-        </li>
-            <li><strong><a href="samples.html#d16474b573d238b0c9551d21cb8f48c0">A browser action with a popup that changes the page color.</a></strong>
-        </li>
-            <li><strong><a href="samples.html#2b0f7d02f3ebd51358ed54ef59dceebb">Cookie API Test Extension</a></strong>
-            &ndash; Testing Cookie API
-        </li>
-            <li><strong><a href="samples.html#fe164387de8d80ba3e7d3275a771bc43">Broken Links</a></strong>
-            &ndash; Extends the Developer Tools, adding an audit category that finds broken links on the inspected page.
-        </li>
-            <li><strong><a href="samples.html#35c22ede9b5f84575bdca84b28c4319a">FirePHP for Chrome</a></strong>
-            &ndash; Extends the Developer Tools, adding support for parsing FirePHP messages from server
-        </li>
-            <li><strong><a href="samples.html#31e082ed1a598b3d1ae28197fa2a89bc">Download Selected Links</a></strong>
-            &ndash; Select links on a page and download them.
-        </li>
-            <li><strong><a href="samples.html#d5d930bdcf3f5e1753d0de5924a89a65">Event Page Example</a></strong>
-            &ndash; Demonstrates usage and features of the event page
-        </li>
-            <li><strong><a href="samples.html#27840ea197cf9d783a89661d934c60b1">Typed URL History</a></strong>
-            &ndash; Reads your history, and shows the top ten pages you go to by typing the URL.
-        </li>
-            <li><strong><a href="samples.html#491f794ab3e7044b6a15162dc7666652">Time filter for History</a></strong>
-            &ndash; Reads your history, and shows top pages you visited in the time +/-1 hour in the last two months
-        </li>
-            <li><strong><a href="samples.html#87fc6fd215630c7d5e7f86be5d6407fd">CLD</a></strong>
-            &ndash; Displays the language of a tab
-        </li>
-            <li><strong><a href="samples.html#2a0bb0bb3a9934a7915ccc7cd640f8ec">Message Timer</a></strong>
-            &ndash; Times how long it takes to send a message to a content script and back.
-        </li>
-            <li><strong><a href="samples.html#0ebfdfeb5e765ff6e1e8cb0c882ae98d">Page action by URL</a></strong>
-            &ndash; Shows a page action for urls which have the letter 'g' in them.
-        </li>
-            <li><strong><a href="samples.html#4eb3fe60ccf03927cd9ef78caf325b4a">Top Chrome Extension Questions</a></strong>
-            &ndash; Sample demonstration of the optional permissions API.
-        </li>
-            <li><strong><a href="samples.html#5cd19f5329cf45fd555d2f754abfc5f1">Show Tabs in Process</a></strong>
-            &ndash; Adds a browser action showing which tabs share the current tab's process.
-        </li>
-            <li><strong><a href="samples.html#3680ae406d5eb5fd580b19a93b88b6bf">Stylizr</a></strong>
-            &ndash; Spruce up your pages with custom CSS.
-        </li>
-            <li><strong><a href="samples.html#062d24295dce5def19f91da9c449e1e4">Tab Inspector</a></strong>
-            &ndash; Utility for working with the extension tabs api
-        </li>
-            <li><strong><a href="samples.html#eb620fcf35898532d926df05a12c9cff">Keyboard Pin</a></strong>
-            &ndash; Creates a keyboard shortcut (Alt + Shift + P) to toggle the pinned state of the currently selected tab
-        </li>
-            <li><strong><a href="samples.html#dcc956ee1308eb125ff32bdaad4c1d84">Test Screenshot Extension</a></strong>
-            &ndash; Demonstrate screenshot functionality in the chrome.tabs api. Note: only works for code.google.com
-        </li>
-            <li><strong><a href="samples.html#f92d20e2d53aae42280f27e7dbeb761f">Merge Windows</a></strong>
-            &ndash; Merges all of the browser's windows into the current window
-        </li>
-            <li><strong><a href="samples.html#461b3e0c33d8370c83997cbb9e4e47b7">App Launcher</a></strong>
-        </li>
-            <li><strong><a href="samples.html#a4adef17601281fa9ae9cec08590c7b2">Page Benchmarker</a></strong>
-            &ndash; Chromium Page Benchmarker.
-        </li>
-            <li><strong><a href="samples.html#d85d53e2433c9325f85336791560a68c">Google Calendar Checker (by Google)</a></strong>
-            &ndash; Quickly see the time until your next meeting from any of your calendars. Click on the button to be taken to your calendar.
-        </li>
-            <li><strong><a href="samples.html#8ef667a213d47272dacd8a4dc0bc97af">Chromium Search</a></strong>
-            &ndash; Add support to the omnibox to search the Chromium source code.
-        </li>
-            <li><strong><a href="samples.html#4e61966db98ebfc75fa32b5ff2406c6b">Email this page (by Google)</a></strong>
-            &ndash; This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.
-        </li>
-            <li><strong><a href="samples.html#e9ecdf298b120a99b7a50cd4871c0f83">Chrome Sounds</a></strong>
-            &ndash; Enjoy a more magical and immersive experience when browsing the web using the power of sound.
-        </li>
-            <li><strong><a href="samples.html#76455c1d015bafc204858bee2d4f87e0">Google Document List Viewer</a></strong>
-            &ndash; Demonstrates how to use OAuth to connect the Google Documents List Data API.
-        </li>
-            <li><strong><a href="samples.html#5139d19c542e2188a42418c27c9cdd5b">Google Mail Checker</a></strong>
-            &ndash; Displays the number of unread messages in your Google Mail inbox. You can also click the button to open your inbox.
-        </li>
-            <li><strong><a href="samples.html#93904b0c2be99bc6dad7609b132a905e">Imageinfo</a></strong>
-            &ndash; Get image info for images, including EXIF data
-        </li>
-            <li><strong><a href="samples.html#4042eaccda909714a2b78cfe60d59b9f">Mappy</a></strong>
-            &ndash; Finds addresses in the web page you're on and pops up a map window.
-        </li>
-            <li><strong><a href="samples.html#87133c06d75da1d316996299bddd7bd1">News Reader (by Google)</a></strong>
-            &ndash; Displays the latest stories from Google News in a popup.
-        </li>
-            <li><strong><a href="samples.html#fa938486615357452a5e018cd3243f65">News Reader</a></strong>
-            &ndash; Displays the first 5 items from the 'Google News - top news' RSS feed in a popup.
-        </li>
-            <li><strong><a href="samples.html#fd0e71a56fc3e6c5ebe1d5daa3049120">Sample - OAuth Contacts</a></strong>
-            &ndash; Uses OAuth to connect to Google's contacts service and display a list of your contacts.
-        </li>
-            <li><strong><a href="samples.html#fe3bfa0dd0b9d2a0aab933bd6d3aab88">Speak Selection</a></strong>
-            &ndash; Speaks the current selection out loud.
-        </li>
+          
       </div>

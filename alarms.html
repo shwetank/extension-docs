@@ -10,19 +10,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="alarms.html#apiReference">API reference: chrome.alarms</a>
+          
               <ol>
                   <li><a href="alarms.html#types">Types</a><ol>  <li>    <a href="alarms.html#type-Alarm">Alarm</a>  </li>  <li>    <a href="alarms.html#type-AlarmCreateInfo">AlarmCreateInfo</a>  </li></ol></li>
                   
                   <li><a href="alarms.html#methods">Methods</a><ol>  <li><a href="alarms.html#method-create">create</a></li>  <li><a href="alarms.html#method-get">get</a></li>  <li><a href="alarms.html#method-getAll">getAll</a></li>  <li><a href="alarms.html#method-clear">clear</a></li>  <li><a href="alarms.html#method-clearAll">clearAll</a></li></ol></li>
                   <li><a href="alarms.html#events">Events</a><ol>  <li><a href="alarms.html#event-onAlarm">onAlarm</a></li></ol></li>
-                  <li><a href="alarms.html#samples">Sample Extensions</a></li>
+                  
               </ol>
-            </li>
-          </ol>
-        </div>
+                   </div>
 
 <table class="intro">
   <tr>
@@ -37,7 +33,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
   </tr>
   <tr>
     <td><strong>Availability:</strong></td>
-    <td>Google Chrome 22</td>
+    <td>Opera 14</td>
   </tr>
   <tr>
     <td><strong>Permissions:</strong></td>
@@ -169,7 +165,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
                 </div>
                 <div class="description">
                   <p>
-                    Creates an alarm.  Near the time(s) specified by <var>alarmInfo</var>, the <code>onAlarm</code> event is fired. If there is another alarm with the same name (or no name if none is specified), it will be cancelled and replaced by this alarm.<br/><br/> In order to reduce the load on the user's machine, Chrome limits alarms to at most once every 1 minute but may delay them an arbitrary amount more.  That is, setting <code><a href="alarms.html#property-AlarmCreateInfo-delayInMinutes">delayInMinutes</a></code> or <code><a href="alarms.html#property-AlarmCreateInfo-periodInMinutes">periodInMinutes</a></code> to less than <code>1</code> will not be honored and will cause a warning.  <code><a href="alarms.html#property-AlarmCreateInfo-when">when</a></code> can be set to less than 1 minute after "now" without warning but won't actually cause the alarm to fire for at least 1 minute.<br/><br/> To help you debug your app or extension, when you've loaded it unpacked, there's no limit to how often the alarm can fire.
+                    Creates an alarm.  Near the time(s) specified by <var>alarmInfo</var>, the <code>onAlarm</code> event is fired. If there is another alarm with the same name (or no name if none is specified), it will be cancelled and replaced by this alarm.<br/><br/> In order to reduce the load on the user's machine, Opera limits alarms to at most once every 1 minute but may delay them an arbitrary amount more.  That is, setting <code><a href="alarms.html#property-AlarmCreateInfo-delayInMinutes">delayInMinutes</a></code> or <code><a href="alarms.html#property-AlarmCreateInfo-periodInMinutes">periodInMinutes</a></code> to less than <code>1</code> will not be honored and will cause a warning.  <code><a href="alarms.html#property-AlarmCreateInfo-when">when</a></code> can be set to less than 1 minute after "now" without warning but won't actually cause the alarm to fire for at least 1 minute.<br/><br/> To help you debug your app or extension, when you've loaded it unpacked, there's no limit to how often the alarm can fire.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -369,11 +365,4 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.alarms</h2>
-            <li><strong><a href="samples.html#d5d930bdcf3f5e1753d0de5924a89a65">Event Page Example</a></strong>
-            &ndash; Demonstrates usage and features of the event page
-        </li>
-            <li><strong><a href="samples.html#5139d19c542e2188a42418c27c9cdd5b">Google Mail Checker</a></strong>
-            &ndash; Displays the number of unread messages in your Google Mail inbox. You can also click the button to open your inbox.
-        </li>
-      </div>
+                </div>
