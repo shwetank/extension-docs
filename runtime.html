@@ -10,18 +10,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="runtime.html#apiReference">API reference: chrome.runtime</a>
+
               <ol>
                   <li><a href="runtime.html#types">Types</a><ol>  <li>    <a href="runtime.html#type-Port">Port</a>  </li>  <li>    <a href="runtime.html#type-MessageSender">MessageSender</a>  </li></ol></li>
                   <li><a href="runtime.html#properties">Properties</a><ol>  <li>    <a href="runtime.html#property-lastError">lastError</a><ol><li>      <a href="runtime.html#lastError-properties">Properties</a>      <ol>        <li>          <a href="runtime.html#property-lastError-message">message</a>        </li>      </ol>    </li></ol>  </li>  <li>    <a href="runtime.html#property-id">id</a>  </li></ol></li>
                   <li><a href="runtime.html#methods">Methods</a><ol>  <li><a href="runtime.html#method-getBackgroundPage">getBackgroundPage</a></li>  <li><a href="runtime.html#method-getManifest">getManifest</a></li>  <li><a href="runtime.html#method-getURL">getURL</a></li>  <li><a href="runtime.html#method-reload">reload</a></li>  <li><a href="runtime.html#method-requestUpdateCheck">requestUpdateCheck</a></li>  <li><a href="runtime.html#method-connect">connect</a></li>  <li><a href="runtime.html#method-sendMessage">sendMessage</a></li></ol></li>
                   <li><a href="runtime.html#events">Events</a><ol>  <li><a href="runtime.html#event-onStartup">onStartup</a></li>  <li><a href="runtime.html#event-onInstalled">onInstalled</a></li>  <li><a href="runtime.html#event-onSuspend">onSuspend</a></li>  <li><a href="runtime.html#event-onSuspendCanceled">onSuspendCanceled</a></li>  <li><a href="runtime.html#event-onUpdateAvailable">onUpdateAvailable</a></li>  <li><a href="runtime.html#event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</a></li>  <li><a href="runtime.html#event-onConnect">onConnect</a></li>  <li><a href="runtime.html#event-onConnectExternal">onConnectExternal</a></li>  <li><a href="runtime.html#event-onMessage">onMessage</a></li>  <li><a href="runtime.html#event-onMessageExternal">onMessageExternal</a></li></ol></li>
-                  <li><a href="runtime.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
-          </ol>
+                            </ol>
         </div>
 
 <table class="intro">
@@ -39,17 +34,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
   </tr>
   <tr>
     <td><strong>Availability:</strong></td>
-    <td>Google Chrome 22</td>
+    <td>Opera 14</td>
   </tr>
   <tr>
     <td><strong>Permissions:</strong></td>
     <td>None</td>
   </tr>
-  <tr>
-    <td><strong>Learn more:</strong></td>
-    <td><a href="http://developer.chrome.com/trunk/extensions/app_lifecycle.html">Manage App Lifecycle</a><br>
-    <a href="event_pages.html">Event Pages</a></td>
-  </tr>
+  
 </table>
         <h2 id="apiReference">API Reference: chrome.runtime</h2>
         <div class="api_reference">
@@ -683,53 +674,5 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.runtime</h2>
-            <li><strong><a href="samples.html#e0410b3575a19930b8cf73f1e5acee0a">Context Menus Sample (with Event Page)</a></strong>
-            &ndash; Shows some of the features of the Context Menus API using an event page
-        </li>
-            <li><strong><a href="samples.html#f447d4d0c667a4f72ef8c6190e7925d7">Live HTTP headers</a></strong>
-            &ndash; Displays the live log with the http requests headers
-        </li>
-            <li><strong><a href="samples.html#812b7fe611113aedf0a394e9fbbfcce1">JavaScript pause/resume</a></strong>
-            &ndash; Pauses / resumes JavaScript execution
-        </li>
-            <li><strong><a href="samples.html#d5d930bdcf3f5e1753d0de5924a89a65">Event Page Example</a></strong>
-            &ndash; Demonstrates usage and features of the event page
-        </li>
-            <li><strong><a href="samples.html#2a0bb0bb3a9934a7915ccc7cd640f8ec">Message Timer</a></strong>
-            &ndash; Times how long it takes to send a message to a content script and back.
-        </li>
-            <li><strong><a href="samples.html#00294fafee1df479cc20247741f44447">Speech Recognizer</a></strong>
-            &ndash; Recognizes your speech and tells you the most likely result.
-        </li>
-            <li><strong><a href="samples.html#3680ae406d5eb5fd580b19a93b88b6bf">Stylizr</a></strong>
-            &ndash; Spruce up your pages with custom CSS.
-        </li>
-            <li><strong><a href="samples.html#0837f59976e148ed9922266e1de6c29f">WebNavigation Tech Demo</a></strong>
-            &ndash; Demonstration of the WebNavigation extension API.
-        </li>
-            <li><strong><a href="samples.html#a4adef17601281fa9ae9cec08590c7b2">Page Benchmarker</a></strong>
-            &ndash; Chromium Page Benchmarker.
-        </li>
-            <li><strong><a href="samples.html#ecc227966949f60af19c444222a775d9">Catifier</a></strong>
-            &ndash; Moar cats!
-        </li>
-            <li><strong><a href="samples.html#4e61966db98ebfc75fa32b5ff2406c6b">Email this page (by Google)</a></strong>
-            &ndash; This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.
-        </li>
-            <li><strong><a href="samples.html#5139d19c542e2188a42418c27c9cdd5b">Google Mail Checker</a></strong>
-            &ndash; Displays the number of unread messages in your Google Mail inbox. You can also click the button to open your inbox.
-        </li>
-            <li><strong><a href="samples.html#fca4e590e0afe37428e5724d34f3a5b3">Per-plugin content settings</a></strong>
-            &ndash; Customize your content setting for different plug-ins.
-        </li>
-            <li><strong><a href="samples.html#bea7f3606e50b59b0f8b08cbab6236da">Proxy Extension API Sample</a></strong>
-            &ndash; Set Chrome-specific proxies; a demonstration of Chrome's Proxy API
-        </li>
-            <li><strong><a href="samples.html#bba3c3de3da89e7a53b56bac8a173c3c">Talking Alarm Clock</a></strong>
-            &ndash; A clock with two configurable alarms that will play a sound and speak a phrase of your choice.
-        </li>
-            <li><strong><a href="samples.html#8774186b22c7efb19317611dc01dce1b">TTS Demo</a></strong>
-            &ndash; Demo Chrome's synthesized text-to-speech capabilities.
-        </li>
+          
       </div>

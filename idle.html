@@ -10,56 +10,49 @@ originalsource: http://developer.chrome.com/trunk/extensions/idle.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="idle.html#manifest">Manifest</a>
-            </li>
-            <li>
-              <a href="idle.html#apiReference">API reference: chrome.idle</a>
+
               <ol>
                   
                   
                   <li><a href="idle.html#methods">Methods</a><ol>  <li><a href="idle.html#method-queryState">queryState</a></li>  <li><a href="idle.html#method-setDetectionInterval">setDetectionInterval</a></li></ol></li>
                   <li><a href="idle.html#events">Events</a><ol>  <li><a href="idle.html#event-onStateChanged">onStateChanged</a></li></ol></li>
-                  <li><a href="idle.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
+                  
           </ol>
         </div>
-
-<table class="intro">
-  <tr>
-    <th scope="col"></th>
-    <th scope="col"></th>
-  </tr>
-  <tr>
-    <td><strong>Description:</strong></td>
-    <td>Use the <code>chrome.idle</code> module
-    to detect when the machine's idle state changes.</td>
-  </tr>
-  <tr>
-    <td><strong>Availability:</strong></td>
-    <td>Google Chrome 6</td>
-  </tr>
-  <tr>
-    <td><strong>Permissions:</strong></td>
-    <td><code>"idle"</code></td>
-  </tr>
+        
+        <table class="intro">
+<tbody>
+<tr>
+<th scope="col"/>
+<th scope="col"/>
+</tr>
+<tr>
+<td>
+<strong>Description:</strong>
+</td>
+<td>
+Use the 
+<code>chrome.idle</code>
+ module to detect when the machine's idle state changes.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Availability:</strong>
+</td>
+<td>Opera 14</td>
+</tr>
+<tr>
+<td>
+<strong>Permissions:</strong>
+</td>
+<td>
+<code>"idle"</code>
+</td>
+</tr>
+</tbody>
 </table>
 
-<h2 id="manifest">Manifest</h2>
-<p>You must declare the "idle" permission in your extension's manifest to use the idle API.
-For example:
-</p>
-
-<pre class="prettyprint">{
-  "name": "My extension",
-  ...
-  <b>"permissions": [
-    "idle"
-  ]</b>,
-  ...
-}</pre>
         <h2 id="apiReference">API Reference: chrome.idle</h2>
         <div class="api_reference">
             <h3 id="methods">Methods</h3>
@@ -169,8 +162,5 @@ For example:
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.idle</h2>
-            <li><strong><a href="samples.html#b7ee031d2bfdbdd1c89f2cff6ed9781c">Idle - Simple Example</a></strong>
-            &ndash; Demonstrates the Idle API
-        </li>
+ 
       </div>

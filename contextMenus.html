@@ -10,99 +10,52 @@ originalsource: http://developer.chrome.com/trunk/extensions/contextMenus.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="contextMenus.html#usage">Usage</a>
-            </li>
-            <li>
-              <a href="contextMenus.html#manifest">Manifest</a>
-            </li>
-            <li>
-              <a href="contextMenus.html#examples">Examples</a>
-            </li>
-            <li>
-              <a href="contextMenus.html#apiReference">API reference: chrome.contextMenus</a>
+
               <ol>
                   <li><a href="contextMenus.html#types">Types</a><ol>  <li>    <a href="contextMenus.html#type-OnClickData">OnClickData</a>  </li></ol></li>
                   
                   <li><a href="contextMenus.html#methods">Methods</a><ol>  <li><a href="contextMenus.html#method-create">create</a></li>  <li><a href="contextMenus.html#method-update">update</a></li>  <li><a href="contextMenus.html#method-remove">remove</a></li>  <li><a href="contextMenus.html#method-removeAll">removeAll</a></li></ol></li>
                   <li><a href="contextMenus.html#events">Events</a><ol>  <li><a href="contextMenus.html#event-onClicked">onClicked</a></li></ol></li>
-                  <li><a href="contextMenus.html#samples">Sample Extensions</a></li>
+                  
               </ol>
-            </li>
-          </ol>
+ 
         </div>
-
-<table class="intro">
-  <tr>
-    <th scope="col"></th>
-    <th scope="col"></th>
-  </tr>
-  <tr>
-    <td><strong>Description:</strong></td>
-    <td>Use the <code>chrome.contextMenus</code> module
-    to add items to Google Chrome's context menu.
-    You can choose what types of objects
-    your context menu additions apply to,
-    such as images, hyperlinks, and pages.
-  </td>
-  </tr>
-  <tr>
-    <td><strong>Availability:</strong></td>
-    <td>Google Chrome 6</td>
-  </tr>
-  <tr>
-    <td><strong>Permissions:</strong></td>
-    <td><code>"contextMenus"</code></td>
-  </tr>
+        
+        <table class="intro">
+<tbody>
+<tr>
+<th scope="col"/>
+<th scope="col"/>
+</tr>
+<tr>
+<td>
+<strong>Description:</strong>
+</td>
+<td>
+Use the 
+<code>chrome.contextMenus</code>
+ module to add items to Opera's context menu. You can choose what types of objects your context menu additions apply to, such as images, hyperlinks, and pages. 
+</td>
+</tr>
+<tr>
+<td>
+<strong>Availability:</strong>
+</td>
+<td>Opera 14</td>
+</tr>
+<tr>
+<td>
+<strong>Permissions:</strong>
+</td>
+<td>
+<code>"contextMenus"</code>
+</td>
+</tr>
+</tbody>
 </table>
 
-<h2 id="usage">Usage</h2>
 
-<p>
-Context menu items can appear in any document
-(or frame within a document),
-even those with file:// or chrome:// URLs.
-To control which documents your items can appear in,
-specify the documentUrlPatterns field
-when you call the create() or update() method.
-</p>
 
-<p>
-You can create as many context menu items
-as you need, but if more than one
-from your extension is visible at once,
-Google Chrome automatically collapses them
-into a single parent menu.
-</p>
-
-<h2 id="manifest">Manifest</h2>
-<p>You must declare the "contextMenus" permission
-in your extension's manifest to use the API.
-Also, you should specify a 16x16-pixel icon
-for display next to your menu item.
-For example:
-</p>
-
-<pre class="prettyprint">{
-  "name": "My extension",
-  ...
-  "permissions": [
-    <b>"contextMenus"</b>
-  ],
-  "icons": {
-    <b>"16": "icon-bitty.png",</b>
-    "48": "icon-small.png",
-    "128": "icon-large.png"
-  },
-  ...
-}</pre>
-
-<h2 id="examples">Examples</h2>
-
-<p>
-You can find samples of this API on the
-<a href="samples.html#contextMenus">sample page</a>.
         <h2 id="apiReference">API Reference: chrome.contextMenus</h2>
         <div class="api_reference">
             <h3 id="types">Types</h3>
@@ -808,14 +761,5 @@ You can find samples of this API on the
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.contextMenus</h2>
-            <li><strong><a href="samples.html#ea5374398da2255f743fd37964100fed">Context Menus Sample</a></strong>
-            &ndash; Shows some of the features of the Context Menus API
-        </li>
-            <li><strong><a href="samples.html#e0410b3575a19930b8cf73f1e5acee0a">Context Menus Sample (with Event Page)</a></strong>
-            &ndash; Shows some of the features of the Context Menus API using an event page
-        </li>
-            <li><strong><a href="samples.html#93904b0c2be99bc6dad7609b132a905e">Imageinfo</a></strong>
-            &ndash; Get image info for images, including EXIF data
-        </li>
+          
       </div>

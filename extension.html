@@ -10,67 +10,21 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="extension.html#content" scripts>Support for content scripts</a>
-            </li>
-            <li>
-              <a href="extension.html#apiReference">API reference: chrome.extension</a>
+
               <ol>
                   <li><a href="extension.html#types">Types</a><ol>  <li>    <a href="extension.html#type-MessageSender">MessageSender</a>  </li></ol></li>
                   <li><a href="extension.html#properties">Properties</a><ol>  <li>    <a href="extension.html#property-lastError">lastError</a><ol><li>      <a href="extension.html#lastError-properties">Properties</a>      <ol>        <li>          <a href="extension.html#property-lastError-message">message</a>        </li>      </ol>    </li></ol>  </li>  <li>    <a href="extension.html#property-inIncognitoContext">inIncognitoContext</a>  </li></ol></li>
                   <li><a href="extension.html#methods">Methods</a><ol>  <li><a href="extension.html#method-getURL">getURL</a></li>  <li><a href="extension.html#method-getViews">getViews</a></li>  <li><a href="extension.html#method-getBackgroundPage">getBackgroundPage</a></li>  <li><a href="extension.html#method-isAllowedIncognitoAccess">isAllowedIncognitoAccess</a></li>  <li><a href="extension.html#method-isAllowedFileSchemeAccess">isAllowedFileSchemeAccess</a></li>  <li><a href="extension.html#method-setUpdateUrlData">setUpdateUrlData</a></li></ol></li>
                   
-                  <li><a href="extension.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
-          </ol>
+                            </ol>
         </div>
+        
+        <p id="classSummary">
+ The 
+<code>chrome.extension</code>
+ module has utilities that can be used by any extension page. It includes support for exchanging messages between an extension and its content scripts or between extensions, as described in detail in 
+<a href="messaging.html">Message Passing</a>. </p>
 
-<p id="classSummary">
-The <code>chrome.extension</code> module
-has utilities that can be used by any extension page.
-It includes support for exchanging messages
-between an extension and its content scripts
-or between extensions,
-as described in detail in
-<a href="messaging.html">Message Passing</a>.
-</p>
-
-<h2 id="content scripts">Support for content scripts</h2>
-<p>
-Unlike the other chrome.* APIs,
-parts of <code>chrome.extension</code>
-can be used by content scripts:
-</p>
-
-<dl>
-  <dt>
-    <a href="runtime.html#method-sendMessage">runtime.sendMessage</a> and
-    <a href="runtime.html#event-onMessage">runtime.onMessage</a>
-  </dt>
-  <dd>
-    Simple communication with extension pages
-  </dd>
-  <dt>
-    <a href="runtime.html#method-connect">runtime.connect</a> and
-    <a href="runtime.html#event-onConnect">runtime.onConnect</a>
-  </dt>
-  <dd>
-    Extended communication with extension pages
-  </dd>
-  <dt>
-    <a href="extension.html#method-getURL">getURL</a>
-  </dt>
-  <dd>
-    Access to extension resources such as image files
-  </dd>
-</dl>
-
-<p>
-For details, see
-<a href="content_scripts.html">Content Scripts</a>.
-</p>
         <h2 id="apiReference">API Reference: chrome.extension</h2>
         <div class="api_reference">
             <h3 id="types">Types</h3>
@@ -364,7 +318,7 @@ For details, see
                 </div>
                 <div class="description">
                   <p>
-                    Sets the value of the ap CGI parameter used in the extension's update URL.  This value is ignored for extensions that are hosted in the Chrome Extension Gallery.
+                    Sets the value of the ap CGI parameter used in the extension's update URL.  This value is ignored for extensions that are hosted in the Opera addons gallery.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -384,70 +338,5 @@ For details, see
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.extension</h2>
-            <li><strong><a href="samples.html#ea5374398da2255f743fd37964100fed">Context Menus Sample</a></strong>
-            &ndash; Shows some of the features of the Context Menus API
-        </li>
-            <li><strong><a href="samples.html#e0410b3575a19930b8cf73f1e5acee0a">Context Menus Sample (with Event Page)</a></strong>
-            &ndash; Shows some of the features of the Context Menus API using an event page
-        </li>
-            <li><strong><a href="samples.html#2b0f7d02f3ebd51358ed54ef59dceebb">Cookie API Test Extension</a></strong>
-            &ndash; Testing Cookie API
-        </li>
-            <li><strong><a href="samples.html#07f27750d548befdcdaef589017d9631">`extension.isAllowedFileSchemeAccess` and `extension.isAllowedIncognitoAccess` Example</a></strong>
-            &ndash; Demonstrates the `extension.isAllowedFileSchemeAccess` and `extesion.isAllowedIncognitoAccess` APIs
-        </li>
-            <li><strong><a href="samples.html#b7ee031d2bfdbdd1c89f2cff6ed9781c">Idle - Simple Example</a></strong>
-            &ndash; Demonstrates the Idle API
-        </li>
-            <li><strong><a href="samples.html#bad5f7136687125becc69911eb43ed26">Block/allow third-party cookies API example extension</a></strong>
-            &ndash; Sample extension which demonstrates how to access a preference.
-        </li>
-            <li><strong><a href="samples.html#d16e42e2f0a05f98f31406d425da538e">Block/allow referrer API example extension</a></strong>
-            &ndash; Sample extension which demonstrates how to access a preference.
-        </li>
-            <li><strong><a href="samples.html#3680ae406d5eb5fd580b19a93b88b6bf">Stylizr</a></strong>
-            &ndash; Spruce up your pages with custom CSS.
-        </li>
-            <li><strong><a href="samples.html#062d24295dce5def19f91da9c449e1e4">Tab Inspector</a></strong>
-            &ndash; Utility for working with the extension tabs api
-        </li>
-            <li><strong><a href="samples.html#dcc956ee1308eb125ff32bdaad4c1d84">Test Screenshot Extension</a></strong>
-            &ndash; Demonstrate screenshot functionality in the chrome.tabs api. Note: only works for code.google.com
-        </li>
-            <li><strong><a href="samples.html#ada4d65f29289c46d04a1920af682232">Console TTS Engine</a></strong>
-            &ndash; A "silent" TTS engine that prints text to a small window rather than synthesizing speech.
-        </li>
-            <li><strong><a href="samples.html#461b3e0c33d8370c83997cbb9e4e47b7">App Launcher</a></strong>
-        </li>
-            <li><strong><a href="samples.html#a4adef17601281fa9ae9cec08590c7b2">Page Benchmarker</a></strong>
-            &ndash; Chromium Page Benchmarker.
-        </li>
-            <li><strong><a href="samples.html#9fa1c6ac42d625c3f62314548468640c">Chromium Buildbot Monitor</a></strong>
-            &ndash; Displays the status of the Chromium buildbot in the toolbar.  Click to see more detailed status in a popup.
-        </li>
-            <li><strong><a href="samples.html#d85d53e2433c9325f85336791560a68c">Google Calendar Checker (by Google)</a></strong>
-            &ndash; Quickly see the time until your next meeting from any of your calendars. Click on the button to be taken to your calendar.
-        </li>
-            <li><strong><a href="samples.html#e9ecdf298b120a99b7a50cd4871c0f83">Chrome Sounds</a></strong>
-            &ndash; Enjoy a more magical and immersive experience when browsing the web using the power of sound.
-        </li>
-            <li><strong><a href="samples.html#76455c1d015bafc204858bee2d4f87e0">Google Document List Viewer</a></strong>
-            &ndash; Demonstrates how to use OAuth to connect the Google Documents List Data API.
-        </li>
-            <li><strong><a href="samples.html#4042eaccda909714a2b78cfe60d59b9f">Mappy</a></strong>
-            &ndash; Finds addresses in the web page you're on and pops up a map window.
-        </li>
-            <li><strong><a href="samples.html#87133c06d75da1d316996299bddd7bd1">News Reader (by Google)</a></strong>
-            &ndash; Displays the latest stories from Google News in a popup.
-        </li>
-            <li><strong><a href="samples.html#fd0e71a56fc3e6c5ebe1d5daa3049120">Sample - OAuth Contacts</a></strong>
-            &ndash; Uses OAuth to connect to Google's contacts service and display a list of your contacts.
-        </li>
-            <li><strong><a href="samples.html#bea7f3606e50b59b0f8b08cbab6236da">Proxy Extension API Sample</a></strong>
-            &ndash; Set Chrome-specific proxies; a demonstration of Chrome's Proxy API
-        </li>
-            <li><strong><a href="samples.html#fe3bfa0dd0b9d2a0aab933bd6d3aab88">Speak Selection</a></strong>
-            &ndash; Speaks the current selection out loud.
-        </li>
+          
       </div>

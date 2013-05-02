@@ -10,32 +10,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="storage.html#overview">Overview</a>
-            </li>
-            <li>
-              <a href="storage.html#manifest">Manifest</a>
-            </li>
-            <li>
-              <a href="storage.html#using-sync">Usage</a>
-            </li>
-            <li>
-              <a href="storage.html#limits">Storage and throttling limits</a>
-            </li>
-            <li>
-              <a href="storage.html#examples">Examples</a>
-            </li>
-            <li>
-              <a href="storage.html#apiReference">API reference: chrome.storage</a>
+
               <ol>
                   <li><a href="storage.html#types">Types</a><ol>  <li>    <a href="storage.html#type-StorageChange">StorageChange</a>  </li>  <li>    <a href="storage.html#type-StorageArea">StorageArea</a><ol><li>      <a href="storage.html#StorageArea-methods">Methods</a>      <ol>        <li><a href="storage.html#method-StorageArea-get">get</a></li>        <li><a href="storage.html#method-StorageArea-getBytesInUse">getBytesInUse</a></li>        <li><a href="storage.html#method-StorageArea-set">set</a></li>        <li><a href="storage.html#method-StorageArea-remove">remove</a></li>        <li><a href="storage.html#method-StorageArea-clear">clear</a></li>      </ol>    </li></ol>  </li></ol></li>
                   <li><a href="storage.html#properties">Properties</a><ol>  <li>    <a href="storage.html#property-sync">sync</a><ol><li>      <a href="storage.html#sync-properties">Properties</a>      <ol>        <li>          <a href="storage.html#property-sync-QUOTA_BYTES">QUOTA_BYTES</a>        </li>        <li>          <a href="storage.html#property-sync-QUOTA_BYTES_PER_ITEM">QUOTA_BYTES_PER_ITEM</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_ITEMS">MAX_ITEMS</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_WRITE_OPERATIONS_PER_HOUR">MAX_WRITE_OPERATIONS_PER_HOUR</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE">MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</a>        </li>      </ol>    </li></ol>  </li>  <li>    <a href="storage.html#property-local">local</a><ol><li>      <a href="storage.html#local-properties">Properties</a>      <ol>        <li>          <a href="storage.html#property-local-QUOTA_BYTES">QUOTA_BYTES</a>        </li>      </ol>    </li></ol>  </li></ol></li>
                   
                   <li><a href="storage.html#events">Events</a><ol>  <li><a href="storage.html#event-onChanged">onChanged</a></li></ol></li>
-                  <li><a href="storage.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
+                  
           </ol>
         </div>
 
@@ -51,160 +32,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
   </tr>
   <tr>
     <td><strong>Availability:</strong></td>
-    <td>Google Chrome 20</td>
+    <td>Opera 14</td>
   </tr>
   <tr>
     <td><strong>Permissions:</strong></td>
     <td><code>"storage"</code></td>
   </tr>
-  <tr>
-    <td><strong>Learn more:</strong></td>
-    <td><a href="https://developers.google.com/live/shows/7320022/">Chrome Apps Office Hours: Chrome Storage APIs</a><br>
-    <a href="https://developers.google.com/live/shows/7320022-1/">Chrome Apps Office Hours: Storage API Deep Dive</a></td>
-  </tr>
+  
 </table>
 
-<h2 id="overview">Overview</h2>
-
-<p id="classSummary">
-This API has been optimized
-to meet the specific storage needs of extensions.
-It provides the same storage capabilities as the
-<a href="https://developer.mozilla.org/en/DOM/Storage#localStorage">localStorage API</a>
-with the following key differences:
-</p>
-
-<ul>
-  <li>User data can be automatically synced with Chrome sync
-  (using <code>storage.sync</code>).</li>
-  <li>Your extension's content scripts can directly access user data
-  without the need for a background page.</li>
-  <li>A user's extension settings can be persisted
-  even when using
-  <a href="manifest.html#incognito">split incognito behavior</a>.</li>
-  <li>It's asynchronous with bulk read and write operations, and therefore
-  faster than the blocking and serial <code>localStorage API</code>.
-  <li>User data can be stored as objects
-  (the <code>localStorage API</code> stores data in strings).</li>
-</ul>
-
-<h2 id="manifest">Manifest</h2>
-<p>You must declare the "storage" permission in the <a
-  href="manifest.html">extension manifest</a>
-  to use the storage API.
-  For example:</p>
-<pre class="prettyprint">{
-  "name": "My extension",
-  ...
-  <b>"permissions": [
-    "storage"
-  ]</b>,
-  ...
-}</pre>
-
-<h2 id="using-sync">Usage</h2>
-
-<p>
-To store user data for your extension,
-you can use either
-<code>storage.sync</code> or
-<code>storage.local</code>.
-When using <code>storage.sync</code>,
-the stored data will automatically be synced
-to any Chrome browser that the user is logged into,
-provided the user has sync enabled.
-</p>
-
-<p>
-When Chrome is offline,
-Chrome stores the data locally.
-The next time the browser is online,
-Chrome syncs the data.
-Even if a user disables syncing,
-<code>storage.sync</code> will still work.
-In this case, it will behave identically
-to <code>storage.local</code>.
-</p>
-
-<p class="warning">
-Confidential user information should not be stored!
-The storage area isn't encrypted.
-</p>
-
-<h2 id="limits">Storage and throttling limits</h2>
-
-<p><code>chrome.storage</code> is not a big truck.
-It's a series of tubes.
-And if you don't understand,
-those tubes can be filled,
-and if they are filled
-when you put your message in,
-it gets in line,
-and it's going to be delayed
-by anyone that puts into that tube
-enormous amounts of material.
-
-<p>For details on the current limits
-of the storage API, and what happens
-when those limits are exceeded, please
-see the <a href="storage.html#apiReference">API reference</a>.
-
-
-<h2 id="examples">Examples</h2>
-
-<p>
-The following example checks for
-CSS code saved by a user on a form,
-and if found,
-stores it.
-</p>
-
-<pre class="prettyprint">
-function saveChanges() {
-  // Get a value saved in a form.
-  var theValue = textarea.value;
-  // Check that there's some code there.
-  if (!theValue) {
-    message('Error: No value specified');
-    return;
-  }
-  // Save it using the Chrome extension storage API.
-  chrome.storage.sync.set({'value': theValue}, function() {
-    // Notify that we saved.
-    message('Settings saved');
-  });
-}
-</pre>
-
-<p>
-If you're interested in tracking changes made
-to a data object,
-you can add a listener
-to its <code>onChanged</code> event.
-Whenever anything changes in storage,
-that event fires.
-Here's sample code
-to listen for saved changes:
-</p>
-
-<pre class="prettyprint">
-chrome.storage.onChanged.addListener(function(changes, namespace) {
-  for (key in changes) {
-    var storageChange = changes[key];
-    console.log('Storage key "%s" in namespace "%s" changed. ' +
-                'Old value was "%s", new value is "%s".',
-                key,
-                namespace,
-                storageChange.oldValue,
-                storageChange.newValue);
-  }
-});
-</pre>
-
-<p>
-You can find examples that use this API on the
-<a href="samples.html#sty">Samples page</a>.
-</p>
         <h2 id="apiReference">API Reference: chrome.storage</h2>
         <div class="api_reference">
             <h3 id="types">Types</h3>
@@ -668,17 +504,5 @@ You can find examples that use this API on the
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.storage</h2>
-            <li><strong><a href="samples.html#3680ae406d5eb5fd580b19a93b88b6bf">Stylizr</a></strong>
-            &ndash; Spruce up your pages with custom CSS.
-        </li>
-            <li><strong><a href="samples.html#0837f59976e148ed9922266e1de6c29f">WebNavigation Tech Demo</a></strong>
-            &ndash; Demonstration of the WebNavigation extension API.
-        </li>
-            <li><strong><a href="samples.html#7918ead5edfd0f65c5bf982020d21b54">Calculator</a></strong>
-            &ndash; A simple calculator.
-        </li>
-            <li><strong><a href="samples.html#9fa1c6ac42d625c3f62314548468640c">Chromium Buildbot Monitor</a></strong>
-            &ndash; Displays the status of the Chromium buildbot in the toolbar.  Click to see more detailed status in a popup.
-        </li>
+          
       </div>

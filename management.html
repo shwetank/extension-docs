@@ -10,46 +10,22 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
         
         <div id="toc">
           <h2>Contents</h2>
-          <ol>
-            <li>
-              <a href="management.html#manifest">Manifest</a>
-            </li>
-            <li>
-              <a href="management.html#apiReference">API reference: chrome.management</a>
+ 
               <ol>
                   <li><a href="management.html#types">Types</a><ol>  <li>    <a href="management.html#type-IconInfo">IconInfo</a>  </li>  <li>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>  </li></ol></li>
                   
                   <li><a href="management.html#methods">Methods</a><ol>  <li><a href="management.html#method-getAll">getAll</a></li>  <li><a href="management.html#method-get">get</a></li>  <li><a href="management.html#method-getPermissionWarningsById">getPermissionWarningsById</a></li>  <li><a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a></li>  <li><a href="management.html#method-setEnabled">setEnabled</a></li>  <li><a href="management.html#method-uninstall">uninstall</a></li>  <li><a href="management.html#method-uninstallSelf">uninstallSelf</a></li>  <li><a href="management.html#method-launchApp">launchApp</a></li></ol></li>
                   <li><a href="management.html#events">Events</a><ol>  <li><a href="management.html#event-onInstalled">onInstalled</a></li>  <li><a href="management.html#event-onUninstalled">onUninstalled</a></li>  <li><a href="management.html#event-onEnabled">onEnabled</a></li>  <li><a href="management.html#event-onDisabled">onDisabled</a></li></ol></li>
-                  <li><a href="management.html#samples">Sample Extensions</a></li>
-              </ol>
-            </li>
+                  
           </ol>
         </div>
-
-<p id="classSummary">
-The <code>chrome.management</code> module provides ways to manage the list of extensions/apps that are installed and running. It is particularly useful for extensions that <a href="override.html">override</a> the built-in New Tab page.
+        
+        <p id="classSummary">
+ The 
+<code>chrome.management</code>
+ module provides ways to manage the list of extensions/apps that are installed and running. It is particularly useful for extensions that override the built-in New Tab page. 
 </p>
 
-<h2 id="manifest">Manifest</h2>
-
-<p>You must declare the "management" permission
-in the <a href="manifest.html">extension manifest</a>
-to use the management API.
-For example:</p>
-<pre class="prettyprint">{
-  "name": "My extension",
-  ...
-  <b>"permissions": [
-    "management"
-  ]</b>,
-  ...
-}</pre>
-
-<p>
-<a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a> and
-<a href="management.html#method-uninstallSelf">uninstallSelf</a> do not require the management permission
-</p>
         <h2 id="apiReference">API Reference: chrome.management</h2>
         <div class="api_reference">
             <h3 id="types">Types</h3>
@@ -900,7 +876,5 @@ For example:</p>
                 </div>
               </div>
         </div>
-          <h2 id="samples">Sample Extensions that use chrome.management</h2>
-            <li><strong><a href="samples.html#461b3e0c33d8370c83997cbb9e4e47b7">App Launcher</a></strong>
-        </li>
+          
       </div>
