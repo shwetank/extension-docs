@@ -56,9 +56,6 @@ The object we are passing in as the argument of `create()` has three parts to it
 
 * Last, we are defining what happens when the menu item is clicked, in the `onclick` line: When someone clicks on the menu item, the `searchtext()` function will be fired.
 
-CHRIS - DOES THIS READ OK? I THOUGHT THE EXPLANATION NEEDED CLARIFYING A BIT.
-
-
 ### Controlling the result of a user clicking on the menu item
 Once the user clicks on the menu item, we need it to do something. In our example, the function `searchtext()` is called onclick. The function looks like so:
 
@@ -67,7 +64,7 @@ Once the user clicks on the menu item, we need it to do something. In our exampl
 	chrome.tabs.create({url: myQuery});
 }</pre>
 
-The function handles an '*info*' object of type *OnClickData* (CHRIS - THE ONE THING I DON'T GET FROM THIS EXPLANATION IS WHERE THIS ONCLICKDATA TYPE COMES FROM. IS IT SPECIFIED ANYWHERE, OR JUST WORKED OUT FROM THE CONTEXT YOU ARE USING INFO IN? I TAKE IT INFO IS JUST A GLOBAL OBJECT THAT YOU CAN ACCESS FROM ANYWHERE IN AN EXTENSION?) - this basically means that this object will contain a bunch of information from the thing you just clicked on. In our case, it will contain information about the text we selected. We can get this by using `info.selectionText`. After that it is just a simple matter of appending that text to google's query URL as a query string, creating a new tab, and loading the URL you just assembled in the new tab.
+The function handles an '*info*' object of type [*OnClickData*](contextMenus.html#type-OnClickData)  - This is an object which stores a bunch of relavent information when a context menu item is clicked. In our case, it will contain information about the text we selected. We can get this by using `info.selectionText`. After that it is just a simple matter of appending that text to google's query URL as a query string, creating a new tab, and loading the URL you just assembled in the new tab.
 
 You can [download the context menu extension example](http://sample.com/index.html) described above and take a better look at the code. Also, you can [download another context menu example](http://sample.com/index.html) that creates different context menu types for different web objects (e.g. links, the page in general, images.)
 
