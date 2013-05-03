@@ -5,6 +5,10 @@ author: shwetankdixit
 copyright: opera-ccby
 ---
 
+## The Speed Dial
+
+![Speed dial in Opera](img/Speed-Dial.png)
+
 Back in 2007 we introduced the concept of the *speed dial* to browsers. It has since turned out to be a hugely popular feature, so it makes sense to give extension authors the ability to add to it by giving them the ability to make speed dial extensions.
 
 Speed dial extensions use the *opr.\** APIs instead of the *chrome.\** ones. Also, they need to be packaged in *.nex* format - if they are is any other format (including *.crx* they will not run).  
