@@ -1,6 +1,4 @@
-auto: true # automatically rebuilds every time you save
-server: true
-server_port: 1337 # cause that's how we roll
+port: 1337 # cause that's how we roll
 markdown: maruku
 authors: # author details
   andreasbovens:

@@ -10,8 +10,9 @@ To generate the site:
 
 1. install jekyll `$ gem install jekyll` (might need `sudo`)
 2. clone this repo
-3. navigate to the directory with terminal, and type `jekyll`
+3. navigate to the directory with terminal, and type `jekyll serve`. If you want to auto-generate the whole site every time you save a file, type `jekyll serve --watch`
 4. open a browser, and go to http://localhost:1337/ (generated files live in _site)
+
 
 # YAML front matter details:
 
