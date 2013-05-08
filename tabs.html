@@ -13,8 +13,8 @@ originalsource: http://developer.chrome.com/trunk/extensions/tabs.html
               <ol>
                   <li><a href="tabs.html#types">Types</a><ol>  <li>    <a href="tabs.html#type-Tab">Tab</a>  </li>  <li>    <a href="tabs.html#type-InjectDetails">InjectDetails</a>  </li></ol></li>
                   
-                  <li><a href="tabs.html#methods">Methods</a><ol>  <li><a href="tabs.html#method-get">get</a></li>  <li><a href="tabs.html#method-getCurrent">getCurrent</a></li>  <li><a href="tabs.html#method-connect">connect</a></li>  <li><a href="tabs.html#method-sendMessage">sendMessage</a></li>  <li><a href="tabs.html#method-create">create</a></li>  <li><a href="tabs.html#method-duplicate">duplicate</a></li>  <li><a href="tabs.html#method-query">query</a></li>  <li><a href="tabs.html#method-highlight">highlight</a></li>  <li><a href="tabs.html#method-update">update</a></li>  <li><a href="tabs.html#method-move">move</a></li>  <li><a href="tabs.html#method-reload">reload</a></li>  <li><a href="tabs.html#method-remove">remove</a></li>  <li><a href="tabs.html#method-detectLanguage">detectLanguage</a></li>  <li><a href="tabs.html#method-captureVisibleTab">captureVisibleTab</a></li>  <li><a href="tabs.html#method-executeScript">executeScript</a></li>  <li><a href="tabs.html#method-insertCSS">insertCSS</a></li></ol></li>
-                  <li><a href="tabs.html#events">Events</a><ol>  <li><a href="tabs.html#event-onCreated">onCreated</a></li>  <li><a href="tabs.html#event-onUpdated">onUpdated</a></li>  <li><a href="tabs.html#event-onMoved">onMoved</a></li>  <li><a href="tabs.html#event-onActivated">onActivated</a></li>  <li><a href="tabs.html#event-onHighlighted">onHighlighted</a></li>  <li><a href="tabs.html#event-onDetached">onDetached</a></li>  <li><a href="tabs.html#event-onAttached">onAttached</a></li>  <li><a href="tabs.html#event-onRemoved">onRemoved</a></li>  <li><a href="tabs.html#event-onReplaced">onReplaced</a></li></ol></li>
+                  <li><a href="tabs.html#methods">Methods</a><ol>  <li><a href="tabs.html#method-get">get</a></li>  <li><a href="tabs.html#method-getCurrent">getCurrent</a></li>  <li><a href="tabs.html#method-connect">connect</a></li>  <li><a href="tabs.html#method-sendMessage">sendMessage</a></li>  <li><a href="tabs.html#method-create">create</a></li>  <li><a href="tabs.html#method-duplicate">duplicate</a></li>  <li><a href="tabs.html#method-query">query</a></li>  <li><a href="tabs.html#method-update">update</a></li>  <li><a href="tabs.html#method-move">move</a></li>  <li><a href="tabs.html#method-reload">reload</a></li>  <li><a href="tabs.html#method-remove">remove</a></li>  <li><a href="tabs.html#method-detectLanguage">detectLanguage</a></li>  <li><a href="tabs.html#method-captureVisibleTab">captureVisibleTab</a></li>  <li><a href="tabs.html#method-executeScript">executeScript</a></li>  <li><a href="tabs.html#method-insertCSS">insertCSS</a></li></ol></li>
+                  <li><a href="tabs.html#events">Events</a><ol>  <li><a href="tabs.html#event-onCreated">onCreated</a></li>  <li><a href="tabs.html#event-onUpdated">onUpdated</a></li>  <li><a href="tabs.html#event-onMoved">onMoved</a></li>  <li><a href="tabs.html#event-onActivated">onActivated</a></li> <li><a href="tabs.html#event-onDetached">onDetached</a></li>  <li><a href="tabs.html#event-onAttached">onAttached</a></li>  <li><a href="tabs.html#event-onRemoved">onRemoved</a></li>  <li><a href="tabs.html#event-onReplaced">onReplaced</a></li></ol></li>
                   
           </ol>
         </div>
@@ -97,21 +97,6 @@ create, modify, and rearrange tabs in the browser.
                       </dt>
                       <dd>
                         The ID of the tab that opened this tab, if any. This will only be present if the opener tab still exists.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-Tab-highlighted"></a>
-                      <dt>
-                        <span class="variable">highlighted</span>
-                        <span class="property">
-                          (
-                            
-                            boolean
-                          )
-                        </span>
-                      </dt>
-                      <dd>
-                        Whether the tab is highlighted.
                       </dd>
                     </div>
                     <div>
@@ -803,21 +788,6 @@ create, modify, and rearrange tabs in the browser.
                               </dd>
                             </div>
                             <div>
-                              <a name="property-queryInfo-highlighted"></a>
-                              <dt>
-                                <span class="variable">highlighted</span>
-                                <span class="property">
-                                  (
-                                    <span class="optional">optional</span>
-                                    boolean
-                                  )
-                                </span>
-                              </dt>
-                              <dd>
-                                Whether the tabs are highlighted.
-                              </dd>
-                            </div>
-                            <div>
                               <a name="property-queryInfo-currentWindow"></a>
                               <dt>
                                 <span class="variable">currentWindow</span>
@@ -976,102 +946,6 @@ create, modify, and rearrange tabs in the browser.
                 </div>
               </div>
               <div>
-                <h4 id="method-highlight">highlight</h4>
-                <div class="summary lower">
-                  <span>chrome.tabs.highlight</span>(<span>object <span class="variable">highlightInfo</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
-                <div class="description">
-                  <p>
-                    Highlights the given tabs.
-                  </p>
-                  <h4>Parameters</h4>
-                  <dl>
-                      <div>
-                        <a name="property-highlight-highlightInfo"></a>
-                        <dt>
-                          <span class="variable">highlightInfo</span>
-                          <span class="property">
-                            (
-                              
-                              object
-                            )
-                          </span>
-                        </dt>
-                        <dd>
-                          <dl>
-                            <div>
-                              <a name="property-highlightInfo-windowId"></a>
-                              <dt>
-                                <span class="variable">windowId</span>
-                                <span class="property">
-                                  (
-                                    <span class="optional">optional</span>
-                                    integer
-                                  )
-                                </span>
-                              </dt>
-                              <dd>
-                                The window that contains the tabs.
-                              </dd>
-                            </div>
-                            <div>
-                              <a name="property-highlightInfo-tabs"></a>
-                              <dt>
-                                <span class="variable">tabs</span>
-                                <span class="property">
-                                  (
-                                    
-                                    array of integer or 
-                                    integer
-                                  )
-                                </span>
-                              </dt>
-                              <dd>
-                                One or more tab indices to highlight.
-                              </dd>
-                            </div>
-                          </dl>
-                        </dd>
-                      </div>
-                      <div>
-                        <a name="property-highlight-callback"></a>
-                        <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
-                            (
-                              
-                              function
-                            )
-                          </span>
-                        </dt>
-                      </div>
-                  </dl>
-                    <h4>Callback</h4>
-                    <p>
-                          The <em>callback</em> parameter should specify a function
-                          that looks like this:
-                    </p>
-                    <pre class="prettyprint">function(<a href="windows.html#type-Window">windows.Window</a> window) <span class="subdued">{...}</span>;</pre>
-                    <dl>
-                        <div>
-                          <a name="property-callback-window"></a>
-                          <dt>
-                            <span class="variable">window</span>
-                            <span class="property">
-                              (
-                                
-                                <a href="windows.html#type-Window">windows.Window</a>
-                              )
-                            </span>
-                          </dt>
-                          <dd>
-                            Contains details about the window whose tabs were highlighted.
-                          </dd>
-                        </div>
-                    </dl>
-                </div>
-              </div>
-              <div>
                 <h4 id="method-update">update</h4>
                 <div class="summary lower">
                   <span>chrome.tabs.update</span>(<span class="optional">integer <span class="variable">tabId</span></span>, <span>object <span class="variable">updateProperties</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
@@ -1138,21 +1012,6 @@ create, modify, and rearrange tabs in the browser.
                               </dt>
                               <dd>
                                 Whether the tab should be active.
-                              </dd>
-                            </div>
-                            <div>
-                              <a name="property-updateProperties-highlighted"></a>
-                              <dt>
-                                <span class="variable">highlighted</span>
-                                <span class="property">
-                                  (
-                                    <span class="optional">optional</span>
-                                    boolean
-                                  )
-                                </span>
-                              </dt>
-                              <dd>
-                                Adds or removes the tab from the current selection.
                               </dd>
                             </div>
                             <div>
@@ -1842,20 +1701,6 @@ create, modify, and rearrange tabs in the browser.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
                       <div>  <a name="property-onActivated-activeInfo"></a>  <dt>    <span class="variable">activeInfo</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    <dl>      <div>        <a name="property-activeInfo-tabId"></a>        <dt>          <span class="variable">tabId</span>          <span class="property">            (                            integer            )          </span>        </dt>        <dd>          The ID of the tab that has become active.        </dd>      </div>      <div>        <a name="property-activeInfo-windowId"></a>        <dt>          <span class="variable">windowId</span>          <span class="property">            (                            integer            )          </span>        </dt>        <dd>          The ID of the window the active tab changed inside of.        </dd>      </div>    </dl>  </dd></div>
-                    </dl>
-                </div>
-              </div>
-              <div>
-                <h4 id="event-onHighlighted">onHighlighted</h4>
-                <div class="summary">
-                  <span class="subdued">chrome.tabs.</span>onHighlighted<span class="subdued">.addListener</span>(function(<span>object <span class="variable">highlightInfo</span></span>)<span class="subdued"> {...}</span>);
-                </div>
-                <div class="description">
-              <p>
-                    Fired when the highlighted or selected tabs in a window changes.
-                  </p>      <h4>Listener Parameters</h4>
-                    <dl>
-                      <div>  <a name="property-onHighlighted-highlightInfo"></a>  <dt>    <span class="variable">highlightInfo</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    <dl>      <div>        <a name="property-highlightInfo-windowId"></a>        <dt>          <span class="variable">windowId</span>          <span class="property">            (                            integer            )          </span>        </dt>        <dd>          The window whose tabs changed.        </dd>      </div>      <div>        <a name="property-highlightInfo-tabIds"></a>        <dt>          <span class="variable">tabIds</span>          <span class="property">            (                            array of integer            )          </span>        </dt>        <dd>          All highlighted tabs in the window.        </dd>      </div>    </dl>  </dd></div>
                     </dl>
                 </div>
               </div>
