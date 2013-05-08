@@ -37,7 +37,9 @@ An example of this could be an extension which listens to certain keyboard input
 ## Different parts of an extension
 
 #### The Extension manifest 
-Every extension *must* contain a manifest file. The manifest file provides basic information like the name of the extension and the author, etc, as well as some important information like the APIs the extensions wants to access, which is listed in the *permissions* field. If the extension manifest is not correctly defined, then there are chances that the extension will not run at all. To know more about the extension manifest, [read the article](tut_manifest_explanation.html) on it. 
+Every extension *must* contain a manifest file. The manifest file provides basic information like the name of the extension and the author, etc, as well as some important information like the APIs the extensions wants to access, which is listed in the *permissions* field. If the extension manifest is not correctly defined, then there are chances that the extension will not run at all. Another important thing to note is the *developer* field, with which you can state the author's name in the manifest. 
+
+To know more about the extension manifest, [read the article](tut_manifest_explanation.html) on it. 
 
 #### The Background Process 
 You need a process to run in the background to co-ordinate some tasks or to maintain a certain state. You have two variants of it - The *Background Page* or *Event Page*. 
