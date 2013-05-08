@@ -21,17 +21,18 @@ There is also a "speeddial" feild in which you need to specify the title of the 
 
 <pre class="prettyprint">{
   "name": "Speed Dial Extension",
+  "developer": "John Doe",
   ...
   "permissions": ["speeddial"],
   "background": {"page": "speeddial.html"},
   "speeddial": {
     "title": "Sample Speeddial",
-    "url": "http://www.opera.com",
-    "required": true
-  ...
+    "url": "http://www.opera.com"
+    }
+    ...
 }</pre>
 
-**Note**: Opera will take string described in the "name" feild of the manifest and use it as the title of the speed dial extension. You can of course then change the title using javascript, which is described later on in this article.
+**Note**: Opera will take string described in the "name" feild of the manifest and use it as the title of the speed dial extension. You can of course then change the title using javascript, which is described later on in this article. 
 
 ## The speed dial page
 The speed dial page itself is just an html page, which will be displayed in the speed dial cell. A speed dial cell is 228px in width and 168px in height. Lets take an example speed dial extension, and see the html associated html page. 
