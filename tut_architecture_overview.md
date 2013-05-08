@@ -7,13 +7,11 @@ copyright: opera-ccby
 Let's delve deeper into the architecture and technical details of extensions in Opera. 
 
 ## The NEX Format
-Opera supports the *NEX* file format for extensions. All the files and folders for an extensions are packaged into a zip file and renamed as *.NEX*. The NEX format will support a major portion of chromium extensions as well as a few APIs specific to Opera. We've created an list where we details which APIs from the chromium project we support, as well as which ones are exclusive to Opera.
+Opera supports the *NEX* file format for extensions. All the files and folders for an extensions are packaged into a zip file and renamed as *.NEX*. The NEX format will support a major portion of Chromium extensions as well as a few APIs specific to Opera. We've created a [list which details which APIs we support](tut_architecture_overview.html#apis_supported) from the Chromium project, as well as which ones are exclusive to Opera.
 
-The APIs from the chromium project supported in NEX extensions (like tabs) can be called using *chrome.\**, whereas the ones specific to Opera (like speed dials) will reside under the *opr.\** object. 
+The APIs from the Chromium project supported in NEX extensions (like tabs) can be called using *chrome.\**, whereas the ones specific to Opera (like speed dials) will reside under the *opr.\** object. 
 
-It is important to note that Opera will run extensions in the CRX format too, as long as the extension uses any of the particular chrome.* APIs which Opera also supports. 
-
-However, we would *strongly* recommend extension authors to make Opera extensions in the NEX file format. 
+It is important to note that Opera will run extensions in the CRX format too, as long as the extension uses any of the particular chrome.* APIs which Opera also supports. So if you would like to just make an extension in CRX format and have it run in Opera as well, please make sure the APIs it uses are all supported by Opera.  
 
 ## Types of extensions
 
@@ -153,7 +151,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	Please note that this does not have any effect on the way you do ajax. You are free to make a call through `XMLHttpRequest()` to any origin. 
 
 ## APIs supported
-Opera supports a certain subset of chrome.\* APIs found in the chromium project, as well as a few APIs exclusive to Opera which are under the *opr* object. The *opr*.\* APIs we support are:
+Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as a few APIs exclusive to Opera which are under the *opr* object. The *opr*.\* APIs we support are:
 
 - [The Speed Dial API](speeddial.html)
 
