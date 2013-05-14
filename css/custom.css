@@ -5,6 +5,16 @@ h2 {
 	font-size: 1.7em;
 }
 
+/* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
+:not(li)>h2, h3, h4 {
+	padding-top: 40px; 
+	margin-top: -40px;
+}
+dd+h4 {
+	padding-top: 50px;
+}
+/* / hidden subtitle anchor fix */
+
 /* Sticky footer styles from http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html */
 html, body {
 	height: 100%;
