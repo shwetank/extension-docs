@@ -1,7 +1,7 @@
 ---
 layout: default-withsidebar
-title: OEX2NEX conversion
+title: Converting extensions
 copyright: opera-ccby
 ---
 
--> Mike
+-> Mike (?)
