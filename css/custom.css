@@ -5,6 +5,9 @@
 html, body {
 	height: 100%;
 }
+h2 {
+	font-size: 1.5em;
+}
 #wrap {
 	min-height: 100%;
 	height: auto !important;
