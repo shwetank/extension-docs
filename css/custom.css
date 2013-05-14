@@ -1,12 +1,13 @@
-#sidebar {margin-top: 60px;}
-.hero-unit {margin-top: 60px;}
+#sidebar, .hero-unit {
+	margin-top: 60px;
+}
+h2 {
+	font-size: 1.5em;
+}
 
 /* Sticky footer styles from http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html */
 html, body {
 	height: 100%;
-}
-h2 {
-	font-size: 1.5em;
 }
 #wrap {
 	min-height: 100%;
