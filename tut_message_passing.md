@@ -1,6 +1,6 @@
 ---
 layout: default-withsidebar
-title: Passing Messages in extensions
+title: Passing messages in extensions
 author: shwetankdixit
 copyright: opera-ccby
 ---

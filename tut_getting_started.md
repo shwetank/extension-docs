@@ -40,6 +40,6 @@ If you already have an existing extension in the store and want to update it, fo
 ## Discuss and keep up on the latest news
 We’d love to discuss Opera extension development with you some more! 
 
-* If you want ask a quick question or say hi, contact us on [Twitter](https://twitter.com/odevrel/)
+* If you want ask a quick question or say hi, contact us on [Twitter](https://twitter.com/odevrel/).
 * If you have an extension dev question, [ask it on StackOverFlow](http://stackoverflow.com/questions/tagged/opera-extension) and tag it `[opera-extension]`.
-* Subscribe to the [ODIN Blog](http://my.opera.com/odin/blog/) for the latest on Opera Extensions and Web Standards in general.
+* Subscribe to the [ODIN blog](http://my.opera.com/odin/blog/) for the latest on Opera Extensions and Web Standards in general.
