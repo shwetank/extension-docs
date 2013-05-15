@@ -1,6 +1,6 @@
 ---
 layout: default-withsidebar
-title: Display buttons, popups and badges (browser actions)
+title: Buttons, popups and badges (browser actions)
 author: shwetankdixit
 copyright: opera-ccby
 ---
