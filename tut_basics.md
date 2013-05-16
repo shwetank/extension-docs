@@ -56,17 +56,15 @@ chrome.browserAction.onClicked.addListener(function() {
 });</pre> 
 
 ### Step 3: Including icons and other assets
-You'll need an icon to adorn the button on the toolbar, and represent the extension in other places. We would recommend the icon to be **--Insert the recommended size for icons--**. 
+You'll need an icon to adorn the button on the toolbar, and represent the extension in other places. For icons, we would recommend you [read our article on it](tut_icons.html), where we discuss the appropriate sizes and best practices for great looking icons in extensions. 
 
-CHRIS - unfinished - you'll also need to add information about other files too. Maybe say that when other assets are involved, such as images, video and SVG, these would go in the XXX folder. 
+You may also need other files such as images, fonts, videos etc. You can include them in the parent directory, or create a seperate folder (for exampele, a folder named '*media*') or two, and place them there. 
 
 ### Step 4: Testing your extension
 Okay, time to test out your extension. For the final extension, you'll need to package all the files into a zip file and give it a special .nex file extension. But the good news is that you don't need to do this every time you want to test things out — You can test your extension straight from the directory, like so:
 
-** - The following is not ready yet, so this will probably change: - ** 
-
-1. Go to the Extension Management Page, at '*Tools->Extensions->Manage Extensions*'. 
-2. Check the '*Developer Mode*' checkbox. 
+1. Go to the browser address bar and type '*opera:extensions'*. 
+2. Check the '*Developer Mode*' button to enable it. 
 3. Click on the '*Load unpacked extension*' button.
 4. Select your extension's directory
 
@@ -85,8 +83,7 @@ Once you are satisfied that your extension is finished, you need to package it i
 
 Your .nex package will be generated in the parent directory of the one you had selected. Congratulations! 
 
-
 ## What now?
 As you can see, making extensions for Opera is really easy. Through this tutorial, you've learn how to make a basic extension, load it in *Developer Mode*, test it out and finally package it. 
 
-From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure refernce guide, check out the Opera extensions [API documentation](http://sample.com/index.html). 
+From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure reference guide, check out the Opera extensions [API documentation](index.html). 
