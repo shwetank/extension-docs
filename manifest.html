@@ -14,7 +14,21 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
             <li>
               <a href="manifest.html#field_details">Field details</a>
               <ol>
-                <li><a href="manifest.html#app">app</a></li><li><a href="manifest.html#default_locale">default_locale</a></li><li><a href="manifest.html#description">description</a></li><li><a href="manifest.html#homepage_url">homepage_url</a></li><li><a href="manifest.html#icons">icons</a></li><li><a href="manifest.html#incognito">incognito</a></li><li><a href="manifest.html#key">key</a></li><li><a href="manifest.html#minimum_chrome_version">minimum_chrome_version</a></li><li><a href="manifest.html#name">name</a></li><li><a href="manifest.html#nacl_modules">nacl_modules</a></li><li><a href="manifest.html#offline_enabled">offline_enabled</a></li><li><a href="manifest.html#requirements">requirements</a></li><li><a href="manifest.html#version">version</a></li><li><a href="manifest.html#manifest_version">manifest_version</a></li><li><a href="manifest.html#web_accessible_resources">web_accessible_resources</a></li><li><a href="manifest.html#sandbox">sandbox</a></li>
+                <li><a href="manifest.html#app">app</a></li>
+                <li><a href="manifest.html#default_locale">default_locale</a></li>
+                <li><a href="manifest.html#description">description</a></li>
+                <li><a href="manifest.html#homepage_url">homepage_url</a></li>
+                <li><a href="manifest.html#icons">icons</a></li>
+                <li><a href="manifest.html#incognito">incognito</a></li>
+                <li><a href="manifest.html#key">key</a></li>
+                <li><a href="manifest.html#minimum_opera_version">minimum_opera_version</a></li>
+                <li><a href="manifest.html#name">name</a></li>
+                <li><a href="manifest.html#offline_enabled">offline_enabled</a></li>
+                <li><a href="manifest.html#requirements">requirements</a></li>
+                <li><a href="manifest.html#version">version</a></li>
+                <li><a href="manifest.html#manifest_version">manifest_version</a></li>
+                <li><a href="manifest.html#web_accessible_resources">web_accessible_resources</a></li>
+                <li><a href="manifest.html#sandbox">sandbox</a></li>
               </ol>
             </li>
           </ol>
@@ -60,7 +74,7 @@ are <b>name</b> and <b>version</b>.
   <em>// Add any of these that you need</em>
   "<a href="event_pages.html">background</a>": {"persistent": false, ...},
   "<a href="background_pages.html">background</a>": {"persistent": true, ...},
-  "<a href="override.html">chrome_url_overrides</a>": {...},
+  "<a href="override.html">opera_url_overrides</a>": {...},
   "<a href="content_scripts.html">content_scripts</a>": [...],
   "<a href="contentSecurityPolicy.html">content_security_policy</a>": "<em>policyString</em>",
   "<a href="fileBrowserHandler.html">file_browser_handlers</a>": [...],
@@ -252,7 +266,7 @@ A short, plain text string
 that identifies the extension.
 The name is used in the install dialog,
 extension management UI,
-and the <a href="https://chrome.google.com/webstore">store</a>.
+and the Opera addons store.
 You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
@@ -381,7 +395,7 @@ Consider manifest version 1 <em>deprecated</em> as of Opera 16. Version 2 is
 not yet <em>required</em>, but we will, at some point in the not-too-distant
 future, stop supporting packages using deprecated manifest versions. Extensions,
 applications, and themes that aren't ready to make the jump to the new manifest
-version in Chrome 18 can either explicitly specify version <code>1</code>, or
+version in Opera 18 can either explicitly specify version <code>1</code>, or
 leave the key off entirely.
 </p>
 
@@ -415,7 +429,7 @@ etc.) as follows:
 
 <p>
 These resources would then be available in a webpage via the URL
-<code>chrome-extension://[PACKAGE ID]/[PATH]</code>, which can be generated with
+<code>opera-extension://[PACKAGE ID]/[PATH]</code>, which can be generated with
 the <a href="extension.html#method-getURL">extension.getURL</a> method. Whitelisted resources are served with appropriate
 <a href="http://www.w3.org/TR/cors/">CORS</a> headers, so they're available via
 mechanisms like XHR.
