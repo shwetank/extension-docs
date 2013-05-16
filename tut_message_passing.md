@@ -61,8 +61,8 @@ chrome.runtime.onMessage.addListener(
 
 Feel free to [download the extension](#) and examine it further. 
 
-## Long lived communication
+## Other methods of communication
 
-In some situations you might want a more *persistent* form of communication between the different parts of your extension.
+In some situations you might want a more *persistent* form of communication between the different parts of your extension, in which case you can open a message channel between your content script and the extension page using [`runtime.connect()`](runtime.html#method-connect) or [`tabs.connect()`](tabs.html#method-connect). 
 
---More to write here--
+You can communicate between different extensions by using the [`runtime.onMessageExternal()`](runtime.html#event-onMessageExternal) and [`runtime.onConnectExternal()`](runtime.html#event-onConnectExternal) methods.
