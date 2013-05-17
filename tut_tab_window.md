@@ -105,5 +105,3 @@ chrome.browserAction.onClicked.addListener(function() {
 });</pre>
 
 [Download the sample window extension](http://sample.com/index.html) to see the above functionality in action and play with the code yourself. 
-
-**Next: Message Passing**

@@ -126,5 +126,3 @@ For this, you will also need to know the Tab ID of the current visible tab. Thus
 chrome.tabs.onupdated.addEventListener(checkValidURL);</pre>
 
 Go ahead and [download the source for this extension](http://sample.com/index.html), to check out the code required for making it work.
-
-**Next: Tabs and Windows**
