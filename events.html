@@ -35,7 +35,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
               <div>
                 <h3 id="type-Rule">Rule</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     Description of a declarative rule for handling events.
                   </dd>    <h4 id="Rule-properties">
@@ -44,13 +44,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                   <dd><dl>      <div>
                       <a name="property-Rule-id"></a>
                       <dt>
-                        <span class="variable">id</span>
-                        <span class="property">
+                        <code class="variable">id</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Optional identifier that allows referencing this rule.
@@ -59,13 +59,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-Rule-conditions"></a>
                       <dt>
-                        <span class="variable">conditions</span>
-                        <span class="property">
+                        <code class="variable">conditions</code>
+                        <code class="property">
                           (
                             
                             array of any
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         List of conditions that can trigger the actions.
@@ -74,13 +74,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-Rule-actions"></a>
                       <dt>
-                        <span class="variable">actions</span>
-                        <span class="property">
+                        <code class="variable">actions</code>
+                        <code class="property">
                           (
                             
                             array of any
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         List of actions that are triggered if one of the condtions is fulfilled.
@@ -89,13 +89,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-Rule-priority"></a>
                       <dt>
-                        <span class="variable">priority</span>
-                        <span class="property">
+                        <code class="variable">priority</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             integer
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Optional priority of this rule. Defaults to 100.
@@ -107,7 +107,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
               <div>
                 <h3 id="type-Event">Event</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     An object which allows the addition and removal of listeners for an extension event.
                   </dd>    <h4 id="Event-methods">
@@ -115,9 +115,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                   </h4>
                   <dd><dl>      <div>
                       <h4 id="method-Event-addListener">addListener</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>Event.addListener</span>(<span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Registers an event listener <em>callback</em> to an event.
@@ -127,13 +127,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-addListener-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Called when an event occurs. The parameters of this function depend on the type of event.
@@ -150,9 +150,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     </div>
                     <div>
                       <h4 id="method-Event-removeListener">removeListener</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>Event.removeListener</span>(<span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Deregisters an event listener <em>callback</em> from an event.
@@ -162,13 +162,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-removeListener-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Listener that shall be unregistered.
@@ -185,22 +185,22 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     </div>
                     <div>
                       <h4 id="method-Event-hasListener">hasListener</h4>
-                      <div class="summary">
+                      <div class="summary"><code>
                         <span>boolean Event.hasListener</span>(<span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <h4>Parameters</h4>
                         <dl>
                             <div>
                               <a name="property-hasListener-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Listener whose registration status shall be tested.
@@ -217,17 +217,17 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     </div>
                     <div>
                       <h4 id="method-Event-hasListeners">hasListeners</h4>
-                      <div class="summary">
+                      <div class="summary"><code>
                         <span>boolean Event.hasListeners</span>()
-                      </div>
+                      </code></div>
                       <div class="description">
                       </div>
                     </div>
                     <div>
                       <h4 id="method-Event-addRules">addRules</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>Event.addRules</span>(<span>array of <a href="events.html#type-Rule">Rule</a> <span class="variable">rules</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Registers rules to handle events.
@@ -237,13 +237,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-addRules-rules"></a>
                               <dt>
-                                <span class="variable">rules</span>
-                                <span class="property">
+                                <code class="variable">rules</code>
+                                <code class="property">
                                   (
                                     
                                     array of <a href="events.html#type-Rule">Rule</a>
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Rules to be registered. These do not replace previously registered rules.
@@ -252,13 +252,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-addRules-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Called with registered rules.
@@ -275,13 +275,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                               <div>
                                 <a name="property-callback-rules"></a>
                                 <dt>
-                                  <span class="variable">rules</span>
-                                  <span class="property">
+                                  <code class="variable">rules</code>
+                                  <code class="property">
                                     (
                                       
                                       array of <a href="events.html#type-Rule">Rule</a>
                                     )
-                                  </span>
+                                  </code>
                                 </dt>
                                 <dd>
                                   Rules that were registered, the optional parameters are filled with values.
@@ -292,9 +292,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     </div>
                     <div>
                       <h4 id="method-Event-getRules">getRules</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>Event.getRules</span>(<span class="optional">array of string <span class="variable">ruleIdentifiers</span></span>, <span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Returns currently registered rules.
@@ -304,13 +304,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-getRules-ruleIdentifiers"></a>
                               <dt>
-                                <span class="variable">ruleIdentifiers</span>
-                                <span class="property">
+                                <code class="variable">ruleIdentifiers</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     array of string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 If an array is passed, only rules with identifiers contained in this array are returned.
@@ -319,13 +319,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-getRules-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Called with registered rules.
@@ -342,13 +342,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                               <div>
                                 <a name="property-callback-rules"></a>
                                 <dt>
-                                  <span class="variable">rules</span>
-                                  <span class="property">
+                                  <code class="variable">rules</code>
+                                  <code class="property">
                                     (
                                       
                                       array of <a href="events.html#type-Rule">Rule</a>
                                     )
-                                  </span>
+                                  </code>
                                 </dt>
                                 <dd>
                                   Rules that were registered, the optional parameters are filled with values.
@@ -359,9 +359,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     </div>
                     <div>
                       <h4 id="method-Event-removeRules">removeRules</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>Event.removeRules</span>(<span class="optional">array of string <span class="variable">ruleIdentifiers</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Unregisters currently registered rules.
@@ -371,13 +371,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-removeRules-ruleIdentifiers"></a>
                               <dt>
-                                <span class="variable">ruleIdentifiers</span>
-                                <span class="property">
+                                <code class="variable">ruleIdentifiers</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     array of string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 If an array is passed, only rules with identifiers contained in this array are unregistered.
@@ -386,13 +386,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                             <div>
                               <a name="property-removeRules-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Called when rules were unregistered.
@@ -413,7 +413,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
               <div>
                 <h3 id="type-UrlFilter">UrlFilter</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     Filters URLs for various criteria. See <a href='events.html#filtered'>event filtering</a>. All criteria are case sensitive.
                   </dd>    <h4 id="UrlFilter-properties">
@@ -422,13 +422,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                   <dd><dl>      <div>
                       <a name="property-UrlFilter-hostContains"></a>
                       <dt>
-                        <span class="variable">hostContains</span>
-                        <span class="property">
+                        <code class="variable">hostContains</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the host name of the URL contains a specified string. To test whether a host name component has a prefix 'foo', use hostContains: '.foo'. This matches 'www.foobar.com' and 'foo.com', because an implicit dot is added at the beginning of the host name. Similarly, hostContains can be used to match against component suffix ('foo.') and to exactly match against components ('.foo.'). Suffix- and exact-matching for the last components need to be done separately using hostSuffix, because no implicit dot is added at the end of the host name.
@@ -437,13 +437,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-hostEquals"></a>
                       <dt>
-                        <span class="variable">hostEquals</span>
-                        <span class="property">
+                        <code class="variable">hostEquals</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the host name of the URL is equal to a specified string.
@@ -452,13 +452,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-hostPrefix"></a>
                       <dt>
-                        <span class="variable">hostPrefix</span>
-                        <span class="property">
+                        <code class="variable">hostPrefix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the host name of the URL starts with a specified string.
@@ -467,13 +467,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-hostSuffix"></a>
                       <dt>
-                        <span class="variable">hostSuffix</span>
-                        <span class="property">
+                        <code class="variable">hostSuffix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the host name of the URL ends with a specified string.
@@ -482,13 +482,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-pathContains"></a>
                       <dt>
-                        <span class="variable">pathContains</span>
-                        <span class="property">
+                        <code class="variable">pathContains</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the path segment of the URL contains a specified string.
@@ -497,13 +497,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-pathEquals"></a>
                       <dt>
-                        <span class="variable">pathEquals</span>
-                        <span class="property">
+                        <code class="variable">pathEquals</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the path segment of the URL is equal to a specified string.
@@ -512,13 +512,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-pathPrefix"></a>
                       <dt>
-                        <span class="variable">pathPrefix</span>
-                        <span class="property">
+                        <code class="variable">pathPrefix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the path segment of the URL starts with a specified string.
@@ -527,13 +527,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-pathSuffix"></a>
                       <dt>
-                        <span class="variable">pathSuffix</span>
-                        <span class="property">
+                        <code class="variable">pathSuffix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the path segment of the URL ends with a specified string.
@@ -542,13 +542,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-queryContains"></a>
                       <dt>
-                        <span class="variable">queryContains</span>
-                        <span class="property">
+                        <code class="variable">queryContains</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the query segment of the URL contains a specified string.
@@ -557,13 +557,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-queryEquals"></a>
                       <dt>
-                        <span class="variable">queryEquals</span>
-                        <span class="property">
+                        <code class="variable">queryEquals</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the query segment of the URL is equal to a specified string.
@@ -572,13 +572,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-queryPrefix"></a>
                       <dt>
-                        <span class="variable">queryPrefix</span>
-                        <span class="property">
+                        <code class="variable">queryPrefix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the query segment of the URL starts with a specified string.
@@ -587,13 +587,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-querySuffix"></a>
                       <dt>
-                        <span class="variable">querySuffix</span>
-                        <span class="property">
+                        <code class="variable">querySuffix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the query segment of the URL ends with a specified string.
@@ -602,13 +602,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-urlContains"></a>
                       <dt>
-                        <span class="variable">urlContains</span>
-                        <span class="property">
+                        <code class="variable">urlContains</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the URL (without fragment identifier) contains a specified string. Port numbers are stripped from the URL if they match the default port number.
@@ -617,13 +617,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-urlEquals"></a>
                       <dt>
-                        <span class="variable">urlEquals</span>
-                        <span class="property">
+                        <code class="variable">urlEquals</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the URL (without fragment identifier) is equal to a specified string. Port numbers are stripped from the URL if they match the default port number.
@@ -632,13 +632,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-urlMatches"></a>
                       <dt>
-                        <span class="variable">urlMatches</span>
-                        <span class="property">
+                        <code class="variable">urlMatches</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the URL (without fragment identifier) matches a specified regular expression. Port numbers are stripped from the URL if they match the default port number. The regular expressions use the <a href="http://code.google.com/p/re2/wiki/Syntax">RE2 syntax</a>.
@@ -647,13 +647,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-urlPrefix"></a>
                       <dt>
-                        <span class="variable">urlPrefix</span>
-                        <span class="property">
+                        <code class="variable">urlPrefix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the URL (without fragment identifier) starts with a specified string. Port numbers are stripped from the URL if they match the default port number.
@@ -662,13 +662,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-urlSuffix"></a>
                       <dt>
-                        <span class="variable">urlSuffix</span>
-                        <span class="property">
+                        <code class="variable">urlSuffix</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the URL (without fragment identifier) ends with a specified string. Port numbers are stripped from the URL if they match the default port number.
@@ -677,13 +677,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-schemes"></a>
                       <dt>
-                        <span class="variable">schemes</span>
-                        <span class="property">
+                        <code class="variable">schemes</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             array of string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the scheme of the URL is equal to any of the schemes specified in the array.
@@ -692,13 +692,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/events.html
                     <div>
                       <a name="property-UrlFilter-ports"></a>
                       <dt>
-                        <span class="variable">ports</span>
-                        <span class="property">
+                        <code class="variable">ports</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             array of integer or array of integer
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Matches if the port of the URL is contained in any of the specified port lists. For example <code>[80, 443, [1000, 1200]]</code> matches all requests on port 80, 443 and in the range 1000-1200.
