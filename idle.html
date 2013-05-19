@@ -58,9 +58,9 @@ Use the
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-queryState">queryState</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.idle.queryState</span>(<span>integer <span class="variable">detectionIntervalInSeconds</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Returns "locked" if the system is locked, "idle" if the user has not generated any input for a specified number of seconds, or "active" otherwise.
@@ -70,13 +70,13 @@ Use the
                       <div>
                         <a name="property-queryState-detectionIntervalInSeconds"></a>
                         <dt>
-                          <span class="variable">detectionIntervalInSeconds</span>
-                          <span class="property">
+                          <code class="variable">detectionIntervalInSeconds</code>
+                          <code class="property">
                             (
                               
                               integer
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The system is considered idle if detectionIntervalInSeconds seconds have elapsed since the last user input detected.
@@ -85,13 +85,13 @@ Use the
                       <div>
                         <a name="property-queryState-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -105,13 +105,13 @@ Use the
                         <div>
                           <a name="property-callback-newState"></a>
                           <dt>
-                            <span class="variable">newState</span>
-                            <span class="property">
+                            <code class="variable">newState</code>
+                            <code class="property">
                               (
                                 
                                 enumerated string ["active""idle""locked"]
                               )
-                            </span>
+                            </code>
                           </dt>
                         </div>
                     </dl>
@@ -119,9 +119,9 @@ Use the
               </div>
               <div>
                 <h4 id="method-setDetectionInterval">setDetectionInterval</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.idle.setDetectionInterval</span>(<span>integer <span class="variable">intervalInSeconds</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the interval, in seconds, used to determine when the system is in an idle state for onStateChanged events. The default interval is 60 seconds.
@@ -131,13 +131,13 @@ Use the
                       <div>
                         <a name="property-setDetectionInterval-intervalInSeconds"></a>
                         <dt>
-                          <span class="variable">intervalInSeconds</span>
-                          <span class="property">
+                          <code class="variable">intervalInSeconds</code>
+                          <code class="property">
                             (
                               
                               integer
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           Threshold, in seconds, used to determine when the system is in an idle state.
@@ -149,15 +149,15 @@ Use the
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onStateChanged">onStateChanged</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.idle.</span>onStateChanged<span class="subdued">.addListener</span>(function(<span>enumerated string ["active""idle""locked"] <span class="variable">newState</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when the system changes to an active, idle or locked state. The event fires with "locked" if the screen is locked or the screensaver activates, "idle" if the system is unlocked and the user has not generated any input for a specified number of seconds, and "active" when the user generates input on an idle system.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onStateChanged-newState"></a>  <dt>    <span class="variable">newState</span>    <span class="property">      (                enumerated string ["active""idle""locked"]      )    </span>  </dt></div>
+                      <div><code>  <a name="property-onStateChanged-newState"></a>  <dt>    <span class="variable">newState</span>    <span class="property">      (                enumerated string ["active""idle""locked"]      )    </span>  </dt></code></div>
                     </dl>
                 </div>
               </div>
