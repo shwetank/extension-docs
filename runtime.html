@@ -48,7 +48,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               <div>
                 <h3 id="type-Port">Port</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     An object which allows two way communication with other pages.
                   </dd>    <h4 id="Port-properties">
@@ -57,73 +57,73 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                   <dd><dl>      <div>
                       <a name="property-Port-name"></a>
                       <dt>
-                        <span class="variable">name</span>
-                        <span class="property">
+                        <code class="variable">name</code>
+                        <code class="property">
                           (
                             
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                     </div>
                     <div>
                       <a name="property-Port-disconnect"></a>
                       <dt>
-                        <span class="variable">disconnect</span>
-                        <span class="property">
+                        <code class="variable">disconnect</code>
+                        <code class="property">
                           (
                             
                             function
                           )
-                        </span>
+                        </code>
                       </dt>
                     </div>
                     <div>
                       <a name="property-Port-onDisconnect"></a>
                       <dt>
-                        <span class="variable">onDisconnect</span>
-                        <span class="property">
+                        <code class="variable">onDisconnect</code>
+                        <code class="property">
                           (
                             
                             <a href="events.html#type-Event">events.Event</a>
                           )
-                        </span>
+                        </code>
                       </dt>
                     </div>
                     <div>
                       <a name="property-Port-onMessage"></a>
                       <dt>
-                        <span class="variable">onMessage</span>
-                        <span class="property">
+                        <code class="variable">onMessage</code>
+                        <code class="property">
                           (
                             
                             <a href="events.html#type-Event">events.Event</a>
                           )
-                        </span>
+                        </code>
                       </dt>
                     </div>
                     <div>
                       <a name="property-Port-postMessage"></a>
                       <dt>
-                        <span class="variable">postMessage</span>
-                        <span class="property">
+                        <code class="variable">postMessage</code>
+                        <code class="property">
                           (
                             
                             function
                           )
-                        </span>
+                        </code>
                       </dt>
                     </div>
                     <div>
                       <a name="property-Port-sender"></a>
                       <dt>
-                        <span class="variable">sender</span>
-                        <span class="property">
+                        <code class="variable">sender</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             <a href="runtime.html#type-MessageSender">MessageSender</a>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         This property will <b>only</b> be present on ports passed to onConnect/onConnectExternal listeners.
@@ -135,7 +135,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               <div>
                 <h3 id="type-MessageSender">MessageSender</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     An object containing information about the script context that sent a message or request.
                   </dd>    <h4 id="MessageSender-properties">
@@ -144,13 +144,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                   <dd><dl>      <div>
                       <a name="property-MessageSender-tab"></a>
                       <dt>
-                        <span class="variable">tab</span>
-                        <span class="property">
+                        <code class="variable">tab</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             <a href="tabs.html#type-Tab">tabs.Tab</a>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         This property will <b>only</b> be present when the connection was opened from a tab or content script.
@@ -159,13 +159,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     <div>
                       <a name="property-MessageSender-id"></a>
                       <dt>
-                        <span class="variable">id</span>
-                        <span class="property">
+                        <code class="variable">id</code>
+                        <code class="property">
                           (
                             
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The ID of the extension/app that opened the connection.
@@ -177,11 +177,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
             <h3 id="properties">Properties</h3>
               <div>
                 <h3 id="property-lastError">lastError</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.runtime.lastError</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">lastError</span> <span class="type_name">  (  <span class="optional">optional</span>  object  )</span></dt>
+                  <dt><code><span class="property">lastError</span> <span class="type_name">  (  <span class="optional">optional</span>  object  )</span></code></dt>
               <dd>
                     This will be defined during an API method callback if there was an error
                   </dd>    <h4 id="lastError-properties">
@@ -190,13 +190,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                   <dd><dl>      <div>
                       <a name="property-lastError-message"></a>
                       <dt>
-                        <span class="variable">message</span>
-                        <span class="property">
+                        <code class="variable">message</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Details about the error which occurred.
@@ -207,11 +207,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h3 id="property-id">id</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.runtime.id</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">id</span> <span class="type_name">  (    string  )</span></dt>
+                  <dt><code><span class="property">id</span> <span class="type_name">  (    string  )</span></code></dt>
               <dd>
                     The ID of the extension/app.
                   </dd>  </div>
@@ -219,9 +219,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-getBackgroundPage">getBackgroundPage</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.runtime.getBackgroundPage</span>(<span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Retrieves the JavaScript 'window' object for the background page running inside the current extension/app. If the background page is an event page, the system will ensure it is loaded before calling the callback. If there is no background page, an error is set.
@@ -231,13 +231,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-getBackgroundPage-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -251,13 +251,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                         <div>
                           <a name="property-callback-backgroundPage"></a>
                           <dt>
-                            <span class="variable">backgroundPage</span>
-                            <span class="property">
+                            <code class="variable">backgroundPage</code>
+                            <code class="property">
                               (
                                 <span class="optional">optional</span>
                                 global
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             The JavaScript 'window' object for the background page.
@@ -268,9 +268,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="method-getManifest">getManifest</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>object chrome.runtime.getManifest</span>()
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Returns details about the app or extension from the manifest. The object returned is a serialization of the full <a href="manifest.html">manifest file</a>.
@@ -279,9 +279,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="method-getURL">getURL</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>string chrome.runtime.getURL</span>(<span>string <span class="variable">path</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Converts a relative path within an app/extension install directory to a fully-qualified URL.
@@ -291,13 +291,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-getURL-path"></a>
                         <dt>
-                          <span class="variable">path</span>
-                          <span class="property">
+                          <code class="variable">path</code>
+                          <code class="property">
                             (
                               
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           A path to a resource within an app/extension expressed relative to its install directory.
@@ -331,13 +331,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-requestUpdateCheck-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -351,13 +351,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                         <div>
                           <a name="property-callback-status"></a>
                           <dt>
-                            <span class="variable">status</span>
-                            <span class="property">
+                            <code class="variable">status</code>
+                            <code class="property">
                               (
                                 
                                 enumerated string ["throttled", "no_update", "update_available"]
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             Result of the update check.
@@ -366,13 +366,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                         <div>
                           <a name="property-callback-details"></a>
                           <dt>
-                            <span class="variable">details</span>
-                            <span class="property">
+                            <code class="variable">details</code>
+                            <code class="property">
                               (
                                 <span class="optional">optional</span>
                                 object
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             If an update is available, this contains more information about the available update.
@@ -382,13 +382,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                               <div>
                                 <a name="property-details-version"></a>
                                 <dt>
-                                  <span class="variable">version</span>
-                                  <span class="property">
+                                  <code class="variable">version</code>
+                                  <code class="property">
                                     (
                                       
                                       string
                                     )
-                                  </span>
+                                  </code>
                                 </dt>
                                 <dd>
                                   The version of the available update.
@@ -402,9 +402,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="method-connect">connect</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span><a href="runtime.html#type-Port">Port</a> chrome.runtime.connect</span>(<span class="optional">string <span class="variable">extensionId</span></span>, <span class="optional">object <span class="variable">connectInfo</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Attempts to connect to other listeners within the extension/app (such as the background page), or other extensions/apps. This is useful for content scripts connecting to their extension processes. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via <a href="tabs.html#method-connect">tabs.connect</a>.
@@ -414,13 +414,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-connect-extensionId"></a>
                         <dt>
-                          <span class="variable">extensionId</span>
-                          <span class="property">
+                          <code class="variable">extensionId</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The ID of the extension/app you want to connect to. If omitted, default is your own extension.
@@ -429,26 +429,26 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-connect-connectInfo"></a>
                         <dt>
-                          <span class="variable">connectInfo</span>
-                          <span class="property">
+                          <code class="variable">connectInfo</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-connectInfo-name"></a>
                               <dt>
-                                <span class="variable">name</span>
-                                <span class="property">
+                                <code class="variable">name</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Will be passed into onConnect for processes that are listening for the connection event.
@@ -474,13 +474,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-sendMessage-extensionId"></a>
                         <dt>
-                          <span class="variable">extensionId</span>
-                          <span class="property">
+                          <code class="variable">extensionId</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The extension ID of the extension you want to connect to. If omitted, default is your own extension.
@@ -489,25 +489,25 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                       <div>
                         <a name="property-sendMessage-message"></a>
                         <dt>
-                          <span class="variable">message</span>
-                          <span class="property">
+                          <code class="variable">message</code>
+                          <code class="property">
                             (
                               
                               any
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                       <div>
                         <a name="property-sendMessage-responseCallback"></a>
                         <dt>
-                          <span class="variable">responseCallback</span>
-                          <span class="property">
+                          <code class="variable">responseCallback</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -521,13 +521,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                         <div>
                           <a name="property-responseCallback-response"></a>
                           <dt>
-                            <span class="variable">response</span>
-                            <span class="property">
+                            <code class="variable">response</code>
+                            <code class="property">
                               (
                                 
                                 any
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             The JSON response object sent by the handler of the message. If an error occurs while connecting to the extension, the callback will be called with no arguments and <a href="runtime.html#property-lastError">lastError</a> will be set to the error message.
@@ -539,9 +539,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onStartup">onStartup</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onStartup<span class="subdued">.addListener</span>(function()<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when a profile that has this extension installed first starts up. This event is not fired when an incognito profile is started, even if this extension is operating in 'split' incognito mode.
@@ -549,23 +549,23 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="event-onInstalled">onInstalled</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onInstalled<span class="subdued">.addListener</span>(function(<span>object <span class="variable">details</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when the extension is first installed, when the extension is updated to a new version, and when Opera is updated to a new version.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onInstalled-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    <dl>      <div>        <a name="property-details-reason"></a>        <dt>          <span class="variable">reason</span>          <span class="property">            (                            enumerated string ["install", "update", "chrome_update"]            )          </span>        </dt>        <dd>          The reason that this event is being dispatched.        </dd>      </div>      <div>        <a name="property-details-previousVersion"></a>        <dt>          <span class="variable">previousVersion</span>          <span class="property">            (              <span class="optional">optional</span>              string            )          </span>        </dt>        <dd>          Indicates the previous version of the extension, which has just been updated. This is present only if 'reason' is 'update'.        </dd>      </div>    </dl>  </dd></div>
+                      <div><code>  <a name="property-onInstalled-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    <dl>      <div>        <a name="property-details-reason"></a>        <dt>          <span class="variable">reason</span>          <span class="property">            (                            enumerated string ["install", "update", "chrome_update"]            )          </span>        </dt>        <dd>          The reason that this event is being dispatched.        </dd>      </code></div>      <div><code>        <a name="property-details-previousVersion"></a>        <dt>          <span class="variable">previousVersion</span>          <span class="property">            (              <span class="optional">optional</span>              string            )          </span>        </dt>        <dd>          Indicates the previous version of the extension, which has just been updated. This is present only if 'reason' is 'update'.        </dd>      </div>    </dl>  </dd></code></div>
                     </dl>
                 </div>
               </div>
               <div>
                 <h4 id="event-onSuspend">onSuspend</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onSuspend<span class="subdued">.addListener</span>(function()<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Sent to the event page just before it is unloaded. This gives the extension opportunity to do some clean up. Note that since the page is unloading, any asynchronous operations started while handling this event are not guaranteed to complete. If more activity for the event page occurs before it gets unloaded the onSuspendCanceled event will be sent and the page won't be unloaded. 
@@ -573,9 +573,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="event-onSuspendCanceled">onSuspendCanceled</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onSuspendCanceled<span class="subdued">.addListener</span>(function()<span class="subdued"> {...}</span>);
-                </div>
+                 </code></div>
                 <div class="description">
               <p>
                     Sent after onSuspend to indicate that the app won't be unloaded after all.
@@ -583,23 +583,23 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="event-onUpdateAvailable">onUpdateAvailable</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onUpdateAvailable<span class="subdued">.addListener</span>(function(<span>object <span class="variable">details</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when an update is available, but isn't installed immediately because the app is currently running. If you do nothing, the update will be installed the next time the background page gets unloaded, if you want it to be installed sooner you can explicitly call chrome.runtime.reload().
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onUpdateAvailable-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    The manifest details of the available update.  </dd>  <dd>    <dl>      <div>        <a name="property-details-version"></a>        <dt>          <span class="variable">version</span>          <span class="property">            (                            string            )          </span>        </dt>        <dd>          The version number of the available update.        </dd>      </div>    </dl>  </dd></div>
+                      <div><code>  <a name="property-onUpdateAvailable-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    The manifest details of the available update.  </dd>  <dd>    <dl>      <div>        <a name="property-details-version"></a>        <dt>          <span class="variable">version</span>          <span class="property">            (                            string            )          </span>        </dt>        <dd>          The version number of the available update.        </dd>      </div>    </dl>  </dd></code></div>
                     </dl>
                 </div>
               </div>
               <div>
                 <h4 id="event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onBrowserUpdateAvailable<span class="subdued">.addListener</span>(function()<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when an Opera update is available, but isn't installed immediately because a browser restart is required.
@@ -607,43 +607,43 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="event-onConnect">onConnect</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onConnect<span class="subdued">.addListener</span>(function(<span><a href="runtime.html#type-Port">Port</a> <span class="variable">port</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when a connection is made from either an extension process or a content script.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onConnect-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></div>
+                      <div><code>  <a name="property-onConnect-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></code></div>
                     </dl>
                 </div>
               </div>
               <div>
                 <h4 id="event-onConnectExternal">onConnectExternal</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onConnectExternal<span class="subdued">.addListener</span>(function(<span><a href="runtime.html#type-Port">Port</a> <span class="variable">port</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when a connection is made from another extension.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onConnectExternal-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></div>
+                      <div><code>  <a name="property-onConnectExternal-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></code></div>
                     </dl>
                 </div>
               </div>
               <div>
                 <h4 id="event-onMessage">onMessage</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onMessage<span class="subdued">.addListener</span>(function(<span>any <span class="variable">message</span></span>, <span><a href="runtime.html#type-MessageSender">MessageSender</a> <span class="variable">sender</span></span>, <span>function <span class="variable">sendResponse</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when a message is sent from either an extension process or a content script.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onMessage-message"></a>  <dt>    <span class="variable">message</span>    <span class="property">      (                any      )    </span>  </dt>  <dd>    The message sent by the calling script.  </dd></div><div>  <a name="property-onMessage-sender"></a>  <dt>    <span class="variable">sender</span>    <span class="property">      (                <a href="runtime.html#type-MessageSender">MessageSender</a>      )    </span>  </dt></div><div>  <a name="property-onMessage-sendResponse"></a>  <dt>    <span class="variable">sendResponse</span>    <span class="property">      (                function      )    </span>  </dt>  <dd>    Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).  </dd></div>
+                      <div>  <a name="property-onMessage-message"></a>  <dt><code>    <span class="variable">message</span>    <span class="property">      (                any      )    </span>  </code></dt>  <dd>    The message sent by the calling script.  </dd></div><div>  <a name="property-onMessage-sender"></a>  <dt><code>    <span class="variable">sender</span>    <span class="property">      (                <a href="runtime.html#type-MessageSender">MessageSender</a>      )    </span>  </code></dt></div><div>  <a name="property-onMessage-sendResponse"></a>  <dt><code>    <span class="variable">sendResponse</span>    <span class="property">      (                function      )    </span>  </code></dt>  <dd>    Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).  </dd></div>
                     </dl>
                     <h4>Callback</h4>
                     <p>
@@ -655,15 +655,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
               </div>
               <div>
                 <h4 id="event-onMessageExternal">onMessageExternal</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.runtime.</span>onMessageExternal<span class="subdued">.addListener</span>(function(<span>any <span class="variable">message</span></span>, <span><a href="runtime.html#type-MessageSender">MessageSender</a> <span class="variable">sender</span></span>, <span>function <span class="variable">sendResponse</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when a message is sent from another extension/app. Cannot be used in a content script.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onMessageExternal-message"></a>  <dt>    <span class="variable">message</span>    <span class="property">      (                any      )    </span>  </dt>  <dd>    The message sent by the calling script.  </dd></div><div>  <a name="property-onMessageExternal-sender"></a>  <dt>    <span class="variable">sender</span>    <span class="property">      (                <a href="runtime.html#type-MessageSender">MessageSender</a>      )    </span>  </dt></div><div>  <a name="property-onMessageExternal-sendResponse"></a>  <dt>    <span class="variable">sendResponse</span>    <span class="property">      (                function      )    </span>  </dt>  <dd>    Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).  </dd></div>
+                      <div>  <a name="property-onMessageExternal-message"></a>  <dt><code>    <span class="variable">message</span>    <span class="property">      (                any      )    </span>  </code></dt>  <dd>    The message sent by the calling script.  </dd></div><div>  <a name="property-onMessageExternal-sender"></a>  <dt><code>    <span class="variable">sender</span>    <span class="property">      (                <a href="runtime.html#type-MessageSender">MessageSender</a>      )    </span>  </code></dt></div><div>  <a name="property-onMessageExternal-sendResponse"></a>  <dt><code>    <span class="variable">sendResponse</span>    <span class="property">      (                function      )    </span>  </code></dt>  <dd>    Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).  </dd></div>
                     </dl>
                     <h4>Callback</h4>
                     <p>
