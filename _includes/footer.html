@@ -2,14 +2,12 @@
 			</div><!-- /.container-fluid -->
 		</div><!-- /#wrap -->
 		<footer id="footer">
-				{% if page.copyright == 'opera-ccby' %}
-			<p>© 2013 Opera Software. This article is licensed under a	<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported</a> license.</p>
+			{% if page.copyright == 'opera-ccby' %}
+			<p>© 2013 Opera Software. This article is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported</a> license.</p>
 			{% elsif page.copyright == 'opera-google-ccby' %}
-			<p>© 2013 Opera Software. This article is licensed under a	<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported</a> license.</p><p>Portions of this page are reproduced from work created and	<a
-		href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the	<a
-		href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-		3.0 Attribution License</a>. (<a href="{{ page.originalsource }}">original source</a>)</p>
-				{% endif %}
+			<p>© 2013 Opera Software. This article is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported</a> license.</p>
+			<p>Portions of this page are reproduced from work created and <a href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>. (<a href="{{ page.originalsource }}">original source</a>)</p>
+			{% endif %}
 		</footer>
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
