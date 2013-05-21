@@ -32,20 +32,20 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
               <div>
                 <h3 id="type-Permissions">Permissions</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
                   <h4 id="Permissions-properties">
                     Properties of <a href="permissions.html#type-Permissions">Permissions</a>
                   </h4>
                   <dd><dl>      <div>
                       <a name="property-Permissions-permissions"></a>
                       <dt>
-                        <span class="variable">permissions</span>
-                        <span class="property">
+                        <code class="variable">permissions</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             array of string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         List of named permissions (does not include hosts or origins).
@@ -54,13 +54,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                     <div>
                       <a name="property-Permissions-origins"></a>
                       <dt>
-                        <span class="variable">origins</span>
-                        <span class="property">
+                        <code class="variable">origins</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             array of string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         List of origin permissions.
@@ -72,9 +72,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-getAll">getAll</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.permissions.getAll</span>(<span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the extension's current set of permissions.
@@ -84,13 +84,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                       <div>
                         <a name="property-getAll-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -104,13 +104,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                         <div>
                           <a name="property-callback-permissions"></a>
                           <dt>
-                            <span class="variable">permissions</span>
-                            <span class="property">
+                            <code class="variable">permissions</code>
+                            <code class="property">
                               (
                                 
                                 <a href="permissions.html#type-Permissions">Permissions</a>
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             The extension's active permissions.
@@ -121,9 +121,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
               </div>
               <div>
                 <h4 id="method-contains">contains</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.permissions.contains</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Checks if the extension has the specified permissions.
@@ -133,25 +133,25 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                       <div>
                         <a name="property-contains-permissions"></a>
                         <dt>
-                          <span class="variable">permissions</span>
-                          <span class="property">
+                          <code class="variable">permissions</code>
+                          <code class="property">
                             (
                               
                               <a href="permissions.html#type-Permissions">Permissions</a>
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                       <div>
                         <a name="property-contains-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -165,13 +165,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                         <div>
                           <a name="property-callback-result"></a>
                           <dt>
-                            <span class="variable">result</span>
-                            <span class="property">
+                            <code class="variable">result</code>
+                            <code class="property">
                               (
                                 
                                 boolean
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             True if the extension has the specified permissions.
@@ -182,9 +182,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
               </div>
               <div>
                 <h4 id="method-request">request</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.permissions.request</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Requests access to the specified permissions. These permissions must be defined in the optional_permissions field of the manifest. If there are any problems requesting the permissions, <a href="runtime.html#property-lastError">runtime.lastError</a> will be set.
@@ -194,25 +194,25 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                       <div>
                         <a name="property-request-permissions"></a>
                         <dt>
-                          <span class="variable">permissions</span>
-                          <span class="property">
+                          <code class="variable">permissions</code>
+                          <code class="property">
                             (
                               
                               <a href="permissions.html#type-Permissions">Permissions</a>
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                       <div>
                         <a name="property-request-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -226,13 +226,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                         <div>
                           <a name="property-callback-granted"></a>
                           <dt>
-                            <span class="variable">granted</span>
-                            <span class="property">
+                            <code class="variable">granted</code>
+                            <code class="property">
                               (
                                 
                                 boolean
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             True if the user granted the specified permissions.
@@ -243,9 +243,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
               </div>
               <div>
                 <h4 id="method-remove">remove</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.permissions.remove</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Removes access to the specified permissions. If there are any problems removing the permissions, <a href="runtime.html#property-lastError">runtime.lastError</a> will be set.
@@ -255,25 +255,25 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                       <div>
                         <a name="property-remove-permissions"></a>
                         <dt>
-                          <span class="variable">permissions</span>
-                          <span class="property">
+                          <code class="variable">permissions</code>
+                          <code class="property">
                             (
                               
                               <a href="permissions.html#type-Permissions">Permissions</a>
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                       <div>
                         <a name="property-remove-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -287,13 +287,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
                         <div>
                           <a name="property-callback-removed"></a>
                           <dt>
-                            <span class="variable">removed</span>
-                            <span class="property">
+                            <code class="variable">removed</code>
+                            <code class="property">
                               (
                                 
                                 boolean
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             True if the permissions were removed.
@@ -305,29 +305,29 @@ originalsource: http://developer.chrome.com/trunk/extensions/permissions.html
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onAdded">onAdded</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.permissions.</span>onAdded<span class="subdued">.addListener</span>(function(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when the extension acquires new permissions.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onAdded-permissions"></a>  <dt>    <span class="variable">permissions</span>    <span class="property">      (                <a href="permissions.html#type-Permissions">Permissions</a>      )    </span>  </dt>  <dd>    The newly acquired permissions.  </dd></div>
+                      <div><code>  <a name="property-onAdded-permissions"></a>  <dt>    <span class="variable">permissions</span>    <span class="property">      (                <a href="permissions.html#type-Permissions">Permissions</a>      )    </span>  </dt>  <dd>    The newly acquired permissions.  </dd></code></div>
                     </dl>
                 </div>
               </div>
               <div>
                 <h4 id="event-onRemoved">onRemoved</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.permissions.</span>onRemoved<span class="subdued">.addListener</span>(function(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when access to permissions has been removed from the extension.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onRemoved-permissions"></a>  <dt>    <span class="variable">permissions</span>    <span class="property">      (                <a href="permissions.html#type-Permissions">Permissions</a>      )    </span>  </dt>  <dd>    The permissions that have been removed.  </dd></div>
+                      <div><code>  <a name="property-onRemoved-permissions"></a>  <dt>    <span class="variable">permissions</span>    <span class="property">      (                <a href="permissions.html#type-Permissions">Permissions</a>      )    </span>  </dt>  <dd>    The permissions that have been removed.  </dd></code></div>
                     </dl>
                 </div>
               </div>

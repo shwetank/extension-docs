@@ -33,13 +33,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               <div>
                 <h3 id="type-ColorArray">ColorArray</h3>
                 <div>
-                  <dt><span class="type_name">  (    array of integer  )</span></dt>
+                  <dt><code class="type_name">  (    array of integer  )</code></dt>
                 </div>
               </div>
               <div>
                 <h3 id="type-ImageDataType">ImageDataType</h3>
                 <div>
-                  <dt><span class="type_name">  (    imagedata  )</span></dt>
+                  <dt><code class="type_name">  (    imagedata  )</code></dt>
               <dd>
                     Pixel data for an image. Must be an ImageData object (for example, from a <code>canvas</code> element).
                   </dd>  </div>
@@ -47,9 +47,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-setTitle">setTitle</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.setTitle</span>(<span>object <span class="variable">details</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the title of the browser action. This shows up in the tooltip.
@@ -59,26 +59,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-setTitle-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-title"></a>
                               <dt>
-                                <span class="variable">title</span>
-                                <span class="property">
+                                <code class="variable">title</code>
+                                <code class="property">
                                   (
                                     
                                     string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 The string the browser action should display when moused over.
@@ -87,13 +87,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
@@ -107,9 +107,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-getTitle">getTitle</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.getTitle</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the title of the browser action.
@@ -119,26 +119,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getTitle-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Specify the tab to get the title from. If no tab is specified, the non-tab-specific title is returned.
@@ -150,13 +150,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getTitle-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -170,13 +170,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                         <div>
                           <a name="property-callback-result"></a>
                           <dt>
-                            <span class="variable">result</span>
-                            <span class="property">
+                            <code class="variable">result</code>
+                            <code class="property">
                               (
                                 
                                 string
                               )
-                            </span>
+                            </code>
                           </dt>
                         </div>
                     </dl>
@@ -184,39 +184,39 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-setIcon">setIcon</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.setIcon</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
-                    Sets the icon for the browser action. The icon can be specified either as the path to an image file or as the pixel data from a canvas element, or as dictionary of either one of those. Either the <b>path</b> or the <b>imageData</b> property must be specified.
+                    Sets the icon for the browser action. The icon can be specified either as the path to an image file or as the pixel data from a canvas element, or as dictionary of either one of those. Either the <code>path</code> or the <code>imageData</code> property must be specified.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
                       <div>
                         <a name="property-setIcon-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-imageData"></a>
                               <dt>
-                                <span class="variable">imageData</span>
-                                <span class="property">
+                                <code class="variable">imageData</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     <a href="browserAction.html#type-ImageDataType">ImageDataType</a> or 
                                     object
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Either an ImageData object or a dictionary {size -> ImageData} representing icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * 19 will be selected. Initially only scales 1 and 2 will be supported. At least one image must be specified. Note that 'details.imageData = foo' is equivalent to 'details.imageData = {'19': foo}'
@@ -225,14 +225,14 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-path"></a>
                               <dt>
-                                <span class="variable">path</span>
-                                <span class="property">
+                                <code class="variable">path</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     string or 
                                     object
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Either a relative image path or a dictionary {size -> relative image path} pointing to icon to be set. If the icon is specified as a dictionary, the actual image to be used is chosen depending on screen's pixel density. If the number of image pixels that fit into one screen space unit equals <code>scale</code>, then image with size <code>scale</code> * 19 will be selected. Initially only scales 1 and 2 will be supported. At least one image must be specified. Note that 'details.path = foo' is equivalent to 'details.imageData = {'19': foo}'
@@ -241,13 +241,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
@@ -259,13 +259,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-setIcon-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -279,9 +279,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-setPopup">setPopup</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.setPopup</span>(<span>object <span class="variable">details</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the html document to be opened as a popup when the user clicks on the browser action's icon.
@@ -291,26 +291,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-setPopup-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
@@ -319,13 +319,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-popup"></a>
                               <dt>
-                                <span class="variable">popup</span>
-                                <span class="property">
+                                <code class="variable">popup</code>
+                                <code class="property">
                                   (
                                     
                                     string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 The html file to show in a popup.  If set to the empty string (''), no popup is shown.
@@ -339,9 +339,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-getPopup">getPopup</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.getPopup</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the html document set as the popup for this browser action.
@@ -351,26 +351,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getPopup-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Specify the tab to get the popup from. If no tab is specified, the non-tab-specific popup is returned.
@@ -382,13 +382,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getPopup-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -402,13 +402,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                         <div>
                           <a name="property-callback-result"></a>
                           <dt>
-                            <span class="variable">result</span>
-                            <span class="property">
+                            <code class="variable">result</code>
+                            <code class="property">
                               (
                                 
                                 string
                               )
-                            </span>
+                            </code>
                           </dt>
                         </div>
                     </dl>
@@ -416,9 +416,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-setBadgeText">setBadgeText</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.setBadgeText</span>(<span>object <span class="variable">details</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the badge text for the browser action. The badge is displayed on top of the icon.
@@ -428,26 +428,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-setBadgeText-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-text"></a>
                               <dt>
-                                <span class="variable">text</span>
-                                <span class="property">
+                                <code class="variable">text</code>
+                                <code class="property">
                                   (
                                     
                                     string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Any number of characters can be passed, but only about four can fit in the space.
@@ -456,13 +456,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
@@ -476,9 +476,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-getBadgeText">getBadgeText</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.getBadgeText</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the badge text of the browser action. If no tab is specified, the non-tab-specific badge text is returned.
@@ -488,26 +488,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getBadgeText-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Specify the tab to get the badge text from. If no tab is specified, the non-tab-specific badge text is returned.
@@ -519,13 +519,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getBadgeText-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -539,13 +539,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                         <div>
                           <a name="property-callback-result"></a>
                           <dt>
-                            <span class="variable">result</span>
-                            <span class="property">
+                            <code class="variable">result</code>
+                            <code class="property">
                               (
                                 
                                 string
                               )
-                            </span>
+                            </code>
                           </dt>
                         </div>
                     </dl>
@@ -553,9 +553,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-setBadgeBackgroundColor">setBadgeBackgroundColor</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.setBadgeBackgroundColor</span>(<span>object <span class="variable">details</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the background color for the badge.
@@ -565,27 +565,27 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-setBadgeBackgroundColor-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-color"></a>
                               <dt>
-                                <span class="variable">color</span>
-                                <span class="property">
+                                <code class="variable">color</code>
+                                <code class="property">
                                   (
                                     
                                     string or 
                                     <a href="browserAction.html#type-ColorArray">ColorArray</a>
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 An array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <code>[255, 0, 0, 255]</code>. Can also be a string with a CSS value, with opaque red being <code>#FF0000</code> or <code>#F00</code>.
@@ -594,13 +594,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Limits the change to when a particular tab is selected. Automatically resets when the tab is closed.
@@ -614,9 +614,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-getBadgeBackgroundColor">getBadgeBackgroundColor</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.getBadgeBackgroundColor</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the background color of the browser action.
@@ -626,26 +626,26 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getBadgeBackgroundColor-details"></a>
                         <dt>
-                          <span class="variable">details</span>
-                          <span class="property">
+                          <code class="variable">details</code>
+                          <code class="property">
                             (
                               
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-details-tabId"></a>
                               <dt>
-                                <span class="variable">tabId</span>
-                                <span class="property">
+                                <code class="variable">tabId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Specify the tab to get the badge background color from. If no tab is specified, the non-tab-specific badge background color is returned.
@@ -657,13 +657,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-getBadgeBackgroundColor-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -677,13 +677,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                         <div>
                           <a name="property-callback-result"></a>
                           <dt>
-                            <span class="variable">result</span>
-                            <span class="property">
+                            <code class="variable">result</code>
+                            <code class="property">
                               (
                                 
                                 <a href="browserAction.html#type-ColorArray">ColorArray</a>
                               )
-                            </span>
+                            </code>
                           </dt>
                         </div>
                     </dl>
@@ -691,9 +691,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-enable">enable</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.enable</span>(<span class="optional">integer <span class="variable">tabId</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Enables the browser action for a tab. By default, browser actions are enabled.
@@ -703,13 +703,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-enable-tabId"></a>
                         <dt>
-                          <span class="variable">tabId</span>
-                          <span class="property">
+                          <code class="variable">tabId</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               integer
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The id of the tab for which you want to modify the browser action.
@@ -720,9 +720,9 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
               </div>
               <div>
                 <h4 id="method-disable">disable</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.browserAction.disable</span>(<span class="optional">integer <span class="variable">tabId</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Disables the browser action for a tab.
@@ -732,13 +732,13 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                       <div>
                         <a name="property-disable-tabId"></a>
                         <dt>
-                          <span class="variable">tabId</span>
-                          <span class="property">
+                          <code class="variable">tabId</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               integer
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The id of the tab for which you want to modify the browser action.
@@ -758,7 +758,7 @@ Use browser actions to put icons in the main Opera toolbar, to the right of the 
                     Fired when a browser action icon is clicked.  This event will not fire if the browser action has a popup.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onClicked-tab"></a>  <dt>    <span class="variable">tab</span>    <span class="property">      (                <a href="tabs.html#type-Tab">tabs.Tab</a>      )    </span>  </dt></div>
+                      <div>  <a name="property-onClicked-tab"></a>  <dt>    <span class="variable">tab</span>    <code class="property">      (                <a href="tabs.html#type-Tab">tabs.Tab</a>      )    </code>  </dt></div>
                     </dl>
                 </div>
               </div>

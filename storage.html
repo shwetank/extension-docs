@@ -47,20 +47,20 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
               <div>
                 <h3 id="type-StorageChange">StorageChange</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
                   <h4 id="StorageChange-properties">
                     Properties of <a href="storage.html#type-StorageChange">StorageChange</a>
                   </h4>
                   <dd><dl>      <div>
                       <a name="property-StorageChange-oldValue"></a>
                       <dt>
-                        <span class="variable">oldValue</span>
-                        <span class="property">
+                        <code class="variable">oldValue</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             any
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The old value of the item, if there was an old value.
@@ -69,13 +69,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     <div>
                       <a name="property-StorageChange-newValue"></a>
                       <dt>
-                        <span class="variable">newValue</span>
-                        <span class="property">
+                        <code class="variable">newValue</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             any
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The new value of the item, if there is a new value.
@@ -87,15 +87,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
               <div>
                 <h3 id="type-StorageArea">StorageArea</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
                   <h4 id="StorageArea-methods">
                     Methods of <a href="storage.html#type-StorageArea">StorageArea</a>
                   </h4>
                   <dd><dl>      <div>
                       <h4 id="method-StorageArea-get">get</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>StorageArea.get</span>(<span class="optional">string or array of string or object <span class="variable">keys</span></span>, <span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Gets one or more items from storage.
@@ -105,15 +105,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-get-keys"></a>
                               <dt>
-                                <span class="variable">keys</span>
-                                <span class="property">
+                                <code class="variable">keys</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     string or 
                                     array of string or 
                                     object
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.
@@ -122,13 +122,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-get-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Callback with storage items, or on failure (in which case <a href="runtime.html#property-lastError">runtime.lastError</a> will be set).
@@ -145,13 +145,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                               <div>
                                 <a name="property-callback-items"></a>
                                 <dt>
-                                  <span class="variable">items</span>
-                                  <span class="property">
+                                  <code class="variable">items</code>
+                                  <code class="property">
                                     (
                                       
                                       object
                                     )
-                                  </span>
+                                  </code>
                                 </dt>
                                 <dd>
                                   Object with items in their key-value mappings.
@@ -162,9 +162,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     </div>
                     <div>
                       <h4 id="method-StorageArea-getBytesInUse">getBytesInUse</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>StorageArea.getBytesInUse</span>(<span class="optional">string or array of string <span class="variable">keys</span></span>, <span>function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Gets the amount of space (in bytes) being used by one or more items.
@@ -174,14 +174,14 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-getBytesInUse-keys"></a>
                               <dt>
-                                <span class="variable">keys</span>
-                                <span class="property">
+                                <code class="variable">keys</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     string or 
                                     array of string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.
@@ -190,13 +190,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-getBytesInUse-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Callback with the amount of space being used by storage, or on failure (in which case <a href="runtime.html#property-lastError">runtime.lastError</a> will be set).
@@ -213,13 +213,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                               <div>
                                 <a name="property-callback-bytesInUse"></a>
                                 <dt>
-                                  <span class="variable">bytesInUse</span>
-                                  <span class="property">
+                                  <code class="variable">bytesInUse</code>
+                                  <code class="property">
                                     (
                                       
                                       integer
                                     )
-                                  </span>
+                                  </code>
                                 </dt>
                                 <dd>
                                   Amount of space being used in storage, in bytes.
@@ -230,9 +230,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     </div>
                     <div>
                       <h4 id="method-StorageArea-set">set</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>StorageArea.set</span>(<span>object <span class="variable">items</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Sets multiple items.
@@ -242,13 +242,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-set-items"></a>
                               <dt>
-                                <span class="variable">items</span>
-                                <span class="property">
+                                <code class="variable">items</code>
+                                <code class="property">
                                   (
                                     
                                     object
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Object specifying items to augment storage with. Values that cannot be serialized (functions, etc) will be ignored.
@@ -257,13 +257,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-set-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Callback on success, or on failure (in which case <a href="runtime.html#property-lastError">runtime.lastError</a> will be set).
@@ -280,9 +280,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     </div>
                     <div>
                       <h4 id="method-StorageArea-remove">remove</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>StorageArea.remove</span>(<span>string or array of string <span class="variable">keys</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Removes one or more items from storage.
@@ -292,14 +292,14 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-remove-keys"></a>
                               <dt>
-                                <span class="variable">keys</span>
-                                <span class="property">
+                                <code class="variable">keys</code>
+                                <code class="property">
                                   (
                                     
                                     string or 
                                     array of string
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 A single key or a list of keys for items to remove.
@@ -308,13 +308,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-remove-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Callback on success, or on failure (in which case <a href="runtime.html#property-lastError">runtime.lastError</a> will be set).
@@ -331,9 +331,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     </div>
                     <div>
                       <h4 id="method-StorageArea-clear">clear</h4>
-                      <div class="summary lower">
+                      <div class="summary lower"><code>
                         <span>StorageArea.clear</span>(<span class="optional">function <span class="variable">callback</span></span>)
-                      </div>
+                      </code></div>
                       <div class="description">
                         <p>
                           Removes all items from storage.
@@ -343,13 +343,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                             <div>
                               <a name="property-clear-callback"></a>
                               <dt>
-                                <span class="variable">callback</span>
-                                <span class="property">
+                                <code class="variable">callback</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     function
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 Callback on success, or on failure (in which case <a href="runtime.html#property-lastError">runtime.lastError</a> will be set).
@@ -370,11 +370,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
             <h3 id="properties">Properties</h3>
               <div>
                 <h3 id="property-sync">sync</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.storage.sync</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">sync</span> <span class="type_name">  (    <a href="storage.html#type-StorageArea">StorageArea</a>  )</span></dt>
+                  <dt><code><span class="property">sync</span> <span class="type_name">  (    <a href="storage.html#type-StorageArea">StorageArea</a>  )</span></code></dt>
               <dd>
                     Items in the <code>sync</code> storage area are synced using Opera Sync.
                   </dd>    <h4 id="sync-properties">
@@ -383,13 +383,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                   <dd><dl>      <div>
                       <a name="property-sync-QUOTA_BYTES"></a>
                       <dt>
-                        <span class="variable">QUOTA_BYTES</span>
-                        <span class="property">
+                        <code class="variable">QUOTA_BYTES</code>
+                        <code class="property">
                           (
                             
                             <code>102,400</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum total amount (in bytes) of data that can be stored in sync storage, as measured by the JSON stringification of every value plus every key's length. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -398,13 +398,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     <div>
                       <a name="property-sync-QUOTA_BYTES_PER_ITEM"></a>
                       <dt>
-                        <span class="variable">QUOTA_BYTES_PER_ITEM</span>
-                        <span class="property">
+                        <code class="variable">QUOTA_BYTES_PER_ITEM</code>
+                        <code class="property">
                           (
                             
                             <code>4,096</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum size (in bytes) of each individual item in sync storage, as measured by the JSON stringification of its value plus its key length. Updates containing items larger than this limit will fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -413,13 +413,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     <div>
                       <a name="property-sync-MAX_ITEMS"></a>
                       <dt>
-                        <span class="variable">MAX_ITEMS</span>
-                        <span class="property">
+                        <code class="variable">MAX_ITEMS</code>
+                        <code class="property">
                           (
                             
                             <code>512</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum number of items that can be stored in sync storage. Updates that would cause this limit to be exceeded will fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -428,13 +428,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     <div>
                       <a name="property-sync-MAX_WRITE_OPERATIONS_PER_HOUR"></a>
                       <dt>
-                        <span class="variable">MAX_WRITE_OPERATIONS_PER_HOUR</span>
-                        <span class="property">
+                        <code class="variable">MAX_WRITE_OPERATIONS_PER_HOUR</code>
+                        <code class="property">
                           (
                             
                             <code>1,000</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each hour. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -443,13 +443,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                     <div>
                       <a name="property-sync-MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE"></a>
                       <dt>
-                        <span class="variable">MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</span>
-                        <span class="property">
+                        <code class="variable">MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</code>
+                        <code class="property">
                           (
                             
                             <code>10</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each minute, sustained over 10 minutes. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -460,11 +460,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
               </div>
               <div>
                 <h3 id="property-local">local</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.storage.local</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">local</span> <span class="type_name">  (    <a href="storage.html#type-StorageArea">StorageArea</a>  )</span></dt>
+                  <dt><code><span class="property">local</span> <span class="type_name">  (    <a href="storage.html#type-StorageArea">StorageArea</a>  )</span></code></dt>
               <dd>
                     Items in the <code>local</code> storage area are local to each machine.
                   </dd>    <h4 id="local-properties">
@@ -473,13 +473,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
                   <dd><dl>      <div>
                       <a name="property-local-QUOTA_BYTES"></a>
                       <dt>
-                        <span class="variable">QUOTA_BYTES</span>
-                        <span class="property">
+                        <code class="variable">QUOTA_BYTES</code>
+                        <code class="property">
                           (
                             
                             <code>5,242,880</code>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The maximum amount (in bytes) of data that can be stored in local storage, as measured by the JSON stringification of every value plus every key's length. This value will be ignored if the extension has the <code>unlimitedStorage</code> permission. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
@@ -491,15 +491,15 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onChanged">onChanged</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.storage.</span>onChanged<span class="subdued">.addListener</span>(function(<span>object <span class="variable">changes</span></span>, <span>string <span class="variable">areaName</span></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when one or more items change.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div>  <a name="property-onChanged-changes"></a>  <dt>    <span class="variable">changes</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    Object mapping each key that changed to its corresponding <a href="storage.html#type-StorageChange">StorageChange</a> for that item.  </dd></div><div>  <a name="property-onChanged-areaName"></a>  <dt>    <span class="variable">areaName</span>    <span class="property">      (                string      )    </span>  </dt>  <dd>    The name of the storage area (<code>sync</code> or <code>local</code>) the changes are for.  </dd></div>
+                      <div>  <a name="property-onChanged-changes"></a>  <dt><code>    <span class="variable">changes</span>    <span class="property">      (                object      )    </span>  </code></dt>  <dd>    Object mapping each key that changed to its corresponding <a href="storage.html#type-StorageChange">StorageChange</a> for that item.  </dd></div><div>  <a name="property-onChanged-areaName"></a>  <dt><code>    <span class="variable">areaName</span>    <span class="property">      (                string      )    </span>  </code></dt>  <dd>    The name of the storage area (<code>sync</code> or <code>local</code>) the changes are for.  </dd></div>
                     </dl>
                 </div>
               </div>

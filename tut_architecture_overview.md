@@ -153,7 +153,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 ## APIs supported
 Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as a few APIs exclusive to Opera which are under the *opr* object. The *opr*.\* APIs we support are:
 
-- [The Speed Dial API](speeddial.html)
+- [The Speed Dial API](tut_speeddial.html)
 
 With time, we will be adding more APIs to the *opr* object.
 

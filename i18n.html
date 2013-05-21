@@ -29,9 +29,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-getAcceptLanguages">getAcceptLanguages</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.i18n.getAcceptLanguages</span>(<span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the accept-languages of the browser. This is different from the locale used by the browser; to get the locale, use <code>window.navigator.language</code>.
@@ -41,13 +41,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
                       <div>
                         <a name="property-getAcceptLanguages-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -61,13 +61,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
                         <div>
                           <a name="property-callback-languages"></a>
                           <dt>
-                            <span class="variable">languages</span>
-                            <span class="property">
+                            <code class="variable">languages</code>
+                            <code class="property">
                               (
                                 
                                 array of string
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             Array of the accept languages of the browser, such as en-US,en,zh-CN
@@ -78,9 +78,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
               </div>
               <div>
                 <h4 id="method-getMessage">getMessage</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>string chrome.i18n.getMessage</span>(<span>string <span class="variable">messageName</span></span>, <span class="optional">any <span class="variable">substitutions</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Gets the localized string for the specified message. If the message is missing, this method returns an empty string (''). If the format of the <code>getMessage()</code> call is wrong &mdash; for example, <em>messageName</em> is not a string or the <em>substitutions</em> array has more than 9 elements &mdash; this method returns <code>undefined</code>.
@@ -90,13 +90,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
                       <div>
                         <a name="property-getMessage-messageName"></a>
                         <dt>
-                          <span class="variable">messageName</span>
-                          <span class="property">
+                          <code class="variable">messageName</code>
+                          <code class="property">
                             (
                               
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           The name of the message, as specified in the <a href='i18n-messages.html'><code>messages.json</code></a> file.
@@ -105,13 +105,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/i18n.html
                       <div>
                         <a name="property-getMessage-substitutions"></a>
                         <dt>
-                          <span class="variable">substitutions</span>
-                          <span class="property">
+                          <code class="variable">substitutions</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               any
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           Up to 9 substitution strings, if the message requires any.

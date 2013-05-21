@@ -31,7 +31,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               <div>
                 <h3 id="type-MessageSender">MessageSender</h3>
                 <div>
-                  <dt><span class="type_name">  (    object  )</span></dt>
+                  <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
                     An object containing information about the script context that sent a message or request.
                   </dd>    <h4 id="MessageSender-properties">
@@ -40,13 +40,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                   <dd><dl>      <div>
                       <a name="property-MessageSender-tab"></a>
                       <dt>
-                        <span class="variable">tab</span>
-                        <span class="property">
+                        <code class="variable">tab</code>
+                        <code class="property">
                           (
                             <span class="optional">optional</span>
                             <a href="tabs.html#type-Tab">tabs.Tab</a>
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         This property will <b>only</b> be present when the connection was opened from a tab or content script.
@@ -55,13 +55,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                     <div>
                       <a name="property-MessageSender-id"></a>
                       <dt>
-                        <span class="variable">id</span>
-                        <span class="property">
+                        <code class="variable">id</code>
+                        <code class="property">
                           (
                             
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         The extension ID of the extension that opened the connection.
@@ -73,11 +73,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
             <h3 id="properties">Properties</h3>
               <div>
                 <h3 id="property-lastError">lastError</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.extension.lastError</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">lastError</span> <span class="type_name">  (  <span class="optional">optional</span>  object  )</span></dt>
+                  <dt><code><span class="property">lastError</span> <span class="type_name">  (  <span class="optional">optional</span>  object  )</span></code></dt>
               <dd>
                     Set for the lifetime of a callback if an ansychronous extension api has resulted in an error. If no error has occured lastError will be <var>undefined</var>.
                   </dd>    <h4 id="lastError-properties">
@@ -86,13 +86,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                   <dd><dl>      <div>
                       <a name="property-lastError-message"></a>
                       <dt>
-                        <span class="variable">message</span>
-                        <span class="property">
+                        <code class="variable">message</code>
+                        <code class="property">
                           (
                             
                             string
                           )
-                        </span>
+                        </code>
                       </dt>
                       <dd>
                         Description of the error that has taken place.
@@ -103,11 +103,11 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h3 id="property-inIncognitoContext">inIncognitoContext</h3>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>chrome.extension.inIncognitoContext</span>
-                </div>
+                </code></div>
                 <div>
-                  <dt><span class="property">inIncognitoContext</span> <span class="type_name">  (  <span class="optional">optional</span>  boolean  )</span></dt>
+                  <dt><code><span class="property">inIncognitoContext</span> <span class="type_name">  (  <span class="optional">optional</span>  boolean  )</span></code></dt>
               <dd>
                     True for content scripts running inside incognito tabs, and for extension pages running inside an incognito process. The latter only applies to extensions with 'split' incognito_behavior.
                   </dd>  </div>
@@ -115,9 +115,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
             <h3 id="methods">Methods</h3>
               <div>
                 <h4 id="method-getURL">getURL</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>string chrome.extension.getURL</span>(<span>string <span class="variable">path</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Converts a relative path within an extension install directory to a fully-qualified URL.
@@ -127,13 +127,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                       <div>
                         <a name="property-getURL-path"></a>
                         <dt>
-                          <span class="variable">path</span>
-                          <span class="property">
+                          <code class="variable">path</code>
+                          <code class="property">
                             (
                               
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           A path to a resource within an extension expressed relative to its install directory.
@@ -144,9 +144,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h4 id="method-getViews">getViews</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>array of global chrome.extension.getViews</span>(<span class="optional">object <span class="variable">fetchProperties</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Returns an array of the JavaScript 'window' objects for each of the pages running inside the current extension.
@@ -156,26 +156,26 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                       <div>
                         <a name="property-getViews-fetchProperties"></a>
                         <dt>
-                          <span class="variable">fetchProperties</span>
-                          <span class="property">
+                          <code class="variable">fetchProperties</code>
+                          <code class="property">
                             (
                               <span class="optional">optional</span>
                               object
                             )
-                          </span>
+                          </code>
                         </dt>
                         <dd>
                           <dl>
                             <div>
                               <a name="property-fetchProperties-type"></a>
                               <dt>
-                                <span class="variable">type</span>
-                                <span class="property">
+                                <code class="variable">type</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     enumerated string ["tab", "infobar", "notification", "popup"]
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 The type of view to get. If omitted, returns all views (including background pages and tabs). Valid values: 'tab', 'infobar', 'notification', 'popup'.
@@ -184,13 +184,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                             <div>
                               <a name="property-fetchProperties-windowId"></a>
                               <dt>
-                                <span class="variable">windowId</span>
-                                <span class="property">
+                                <code class="variable">windowId</code>
+                                <code class="property">
                                   (
                                     <span class="optional">optional</span>
                                     integer
                                   )
-                                </span>
+                                </code>
                               </dt>
                               <dd>
                                 The window to restrict the search to. If omitted, returns all views.
@@ -204,9 +204,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h4 id="method-getBackgroundPage">getBackgroundPage</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span>global chrome.extension.getBackgroundPage</span>()
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Returns the JavaScript 'window' object for the background page running inside the current extension. Returns null if the extension has no background page.
@@ -215,9 +215,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h4 id="method-isAllowedIncognitoAccess">isAllowedIncognitoAccess</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.extension.isAllowedIncognitoAccess</span>(<span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Retrieves the state of the extension's access to Incognito-mode (as determined by the user-controlled 'Allowed in Incognito' checkbox.
@@ -227,13 +227,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                       <div>
                         <a name="property-isAllowedIncognitoAccess-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -247,13 +247,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                         <div>
                           <a name="property-callback-isAllowedAccess"></a>
                           <dt>
-                            <span class="variable">isAllowedAccess</span>
-                            <span class="property">
+                            <code class="variable">isAllowedAccess</code>
+                            <code class="property">
                               (
                                 
                                 boolean
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             True if the extension has access to Incognito mode, false otherwise.
@@ -264,9 +264,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h4 id="method-isAllowedFileSchemeAccess">isAllowedFileSchemeAccess</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.extension.isAllowedFileSchemeAccess</span>(<span>function <span class="variable">callback</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Retrieves the state of the extension's access to the 'file://' scheme (as determined by the user-controlled 'Allow access to File URLs' checkbox.
@@ -276,13 +276,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                       <div>
                         <a name="property-isAllowedFileSchemeAccess-callback"></a>
                         <dt>
-                          <span class="variable">callback</span>
-                          <span class="property">
+                          <code class="variable">callback</code>
+                          <code class="property">
                             (
                               
                               function
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
@@ -296,13 +296,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                         <div>
                           <a name="property-callback-isAllowedAccess"></a>
                           <dt>
-                            <span class="variable">isAllowedAccess</span>
-                            <span class="property">
+                            <code class="variable">isAllowedAccess</code>
+                            <code class="property">
                               (
                                 
                                 boolean
                               )
-                            </span>
+                            </code>
                           </dt>
                           <dd>
                             True if the extension can access the 'file://' scheme, false otherwise.
@@ -313,9 +313,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
               </div>
               <div>
                 <h4 id="method-setUpdateUrlData">setUpdateUrlData</h4>
-                <div class="summary lower">
+                <div class="summary lower"><code>
                   <span>chrome.extension.setUpdateUrlData</span>(<span>string <span class="variable">data</span></span>)
-                </div>
+                </code></div>
                 <div class="description">
                   <p>
                     Sets the value of the ap CGI parameter used in the extension's update URL.  This value is ignored for extensions that are hosted in the Opera addons gallery.
@@ -325,13 +325,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/extension.html
                       <div>
                         <a name="property-setUpdateUrlData-data"></a>
                         <dt>
-                          <span class="variable">data</span>
-                          <span class="property">
+                          <code class="variable">data</code>
+                          <code class="property">
                             (
                               
                               string
                             )
-                          </span>
+                          </code>
                         </dt>
                       </div>
                   </dl>
