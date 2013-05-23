@@ -45,7 +45,7 @@ To do that, you need to use add an event listener which listens to the click eve
 
 ### Popups
 
-To create a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
+To create a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"browser_action": {
   "default_icon": {                          // optional
@@ -67,7 +67,7 @@ Badges are supposed to show a very small amount of information, so they are limi
 
 Lets see how to make a badge and set its text to update after a while.
 
-Badges can be set using javascript in the background script (make sure to mention the background script in the extension manifest). There are two functions you need to be aware of :
+Badges can be set using JavaScript in the background script (make sure to mention the background script in the extension manifest). There are two functions you need to be aware of :
 
 `Chrome.browserAction.setBadgeBackgroundColor()`: This sets the background color of the badge
 
@@ -100,7 +100,7 @@ To get to display a button, simply mention it in the extension manifest like so:
  
 ### Popups
 
-To display a popup, you just need to make an html file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
+To display a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"page_action": {
   "default_icon": {                          // optional
