@@ -26,7 +26,7 @@ Page actions are used to put a UI element specific to just a page or a limited s
 As the name implies, they are extenions to the context menu of the page. You can bring up the context menu by either right-clicking an element in the page, or by using the appropriate shortcuts using your keyboard (varies according to your platform). We've created an article on [how to create context menu extensions](tut_context_menus.html). 
 
 #### 3. Speed Dial extensions
-You can also create extensions on the Speed Dial in Opera. Keep in mind that to create speed dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create speed dial extensions](tut_speeddial.html).
+You can also create extensions on the Speed Dial in Opera. Keep in mind that to create Speed Dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create Speed Dial extensions](tut_speeddial.html).
 #### 4. Extensions with no UI
 You can also create extensions which don't have any UI component. If you are familiar with injected scripts in previous (presto based) versions of Opera, or with greasemonkey scripts, then you get the idea. 
 
@@ -42,7 +42,7 @@ To know more about the extension manifest, [read the API doc](manifest.html) on 
 #### The Background Process 
 You need a process to run in the background to co-ordinate some tasks or to maintain a certain state. You have two variants of it - The *Background Page* or *Event Page*. 
 
-Though you can use an html page and put javascript inside the `<script>` tag, it is usually better to just use a *.js* file and mention that in the manifest file. The browser will automatically generate the corresponding page for it. For example, 
+Though you can use an HTML page and put JavaScript inside the `<script>` tag, it is usually better to just use a *.js* file and mention that in the manifest file. The browser will automatically generate the corresponding page for it. For example, 
 
 <pre class="prettyprint">{
   ...
@@ -82,7 +82,7 @@ The content script does not have *direct* access to the variables and functions 
 More details on it can be found in our [article on content scripts](tut_content_scripts.html).
 
 #### The Popup Page
-Sometimes extensions will have a popup which, well, pops up when you click an extension button. This is defined by an html page, and needs to be specified in the manifest. Read the [buttons, badges and popups](tut_browser_actions.html) article to learn more. 
+Sometimes extensions will have a popup which, well, pops up when you click an extension button. This is defined by an HTML page, and needs to be specified in the manifest. Read the [buttons, badges and popups](tut_browser_actions.html) article to learn more. 
 
 #### The Options Page
 If your extension needs a lot to store a user preferences then you should create an options page. If you define an options page then a link will be provided at the *extensions management* page from where the user can access the page. You need to declare it in the manifest like so:
@@ -138,7 +138,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	
 	You could add the string `'unsafe-eval'` to your policy string to make the extension use `eval()` and related functions, but we would *very strongly* advise you against doing so.
 
-2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline javascript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the html page (like `<script src="popup.js"></script>`).
+2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline JavaScript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the HTML page (like `<script src="popup.js"></script>`).
 3. **Only locally loaded scripts and resources will load**: Only scripts and objects loaded from the extension package will be allowed to load, so if you have something like:
 
 	`<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>`
