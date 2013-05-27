@@ -14,10 +14,10 @@ The Opera Extensions API allows you to tap into many different features of the b
 Note: If you haven’t already, then head over to the [Opera Extensions Gallery](https://addons.opera.com/addons/extensions/) to download and get a feel of various extensions.
 
 ## Already developed Chrome Extensions?
-If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
+If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 15 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 15 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
 
 <!--## Porting your previously made Opera extensions
-Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
+Because Opera 15 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
 
 We've also made a tool, which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](tut_conversion.html). -->
 
