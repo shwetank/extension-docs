@@ -26,13 +26,13 @@ To learn how to make Opera extensions, begin by reading our [making your first O
 
 Next, we would suggest taking a look at the [technical overview of Opera extensions](tut_architecture_overview.html), to get a more complete overview how things work.
 
-With the basics behind you, consult our [range of tutorials and walkthroughs](http://sample.com/index.html) for much more detailed information on specific aspects of extension development and API usage. 
+With the basics behind you, consult our range of tutorials and walkthroughs for much more detailed information on specific aspects of extension development and API usage. 
 
 ## Test, debug and look things over
 Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](tut_testing.html). 
 
 ## Finally, show it to the world!
-You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist for you to follow](http://sample.com/index.html), to speed up the submission process further. 
+You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist of the acceptance criteria for you to follow](tut_publishing_guidelines.html#acceptance-criteria), to speed up the submission process further. 
 
 ## Updating your extension?
 If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! 

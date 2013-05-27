@@ -17,6 +17,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
                 <li><a href="manifest.html#app">app</a></li>
                 <li><a href="manifest.html#default_locale">default_locale</a></li>
                 <li><a href="manifest.html#description">description</a></li>
+                <li><a href="manifest.html#developer">developer</a></li>
                 <li><a href="manifest.html#homepage_url">homepage_url</a></li>
                 <li><a href="manifest.html#icons">icons</a></li>
                 <li><a href="manifest.html#incognito">incognito</a></li>
@@ -62,6 +63,7 @@ are <b>name</b> and <b>version</b>.
 
   <em>// Recommended</em>
   "<a href="manifest.html#description">description</a>": "<em>A plain text description</em>",
+  "<a href="manifest.html#developer">developer</a>": { ... },
   "<a href="manifest.html#icons">icons</a>": { ... },
   "<a href="manifest.html#default_locale">default_locale</a>": "<em>en</em>",
 
@@ -140,6 +142,16 @@ and the Opera addons site.
 You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
+
+<h3 id="developer">developer</h3>
+<p>
+Contains information about author of the extension. It can contain the fields "name" and "url". For example,
+<pre class="prettyprint">
+"developer": { "name": "John Doe",
+               "url": "http://www.example.org" },
+</pre>
+</p>
+
 
 <h3 id="homepage_url">homepage_url</h3>
 
