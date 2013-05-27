@@ -38,7 +38,7 @@ To do that, you need to use add an event listener which listens to the click eve
 });
 </pre>
 
-[Download our sample button extension](http://sample.com/index.html) to see a very simple button example.
+[Download our sample button extension](samples/BrowserActions-button.nex) to see a very simple button example.
 
 ### Popups
 
@@ -50,7 +50,7 @@ To create a popup, you just need to make an HTML file (lets call it ‘popup.htm
   "default_popup": "popup.html"              
 },</pre>
 
-Go ahead and [download our sample extension](http://sample.com/index.html), which has a very simple popup being displayed.
+Go ahead and [download our sample extension](samples/BrowserActions-Popup.nex), which has a very simple popup being displayed.
 
 ### Badges
 
@@ -112,4 +112,4 @@ For this, you will also need to know the Tab ID of the current visible tab. Thus
 
 chrome.tabs.onUpdated.addListener(checkURL);</pre>
 
-Go ahead and [download the source for this extension](http://sample.com/index.html), to check out the code required for making it work.
+Go ahead and [download the source for this extension](samples/PageActions.nex), to check out the code required for making it work.
