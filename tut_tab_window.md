@@ -26,11 +26,11 @@ Creating a new tab is done using the `create()` method. Inside this method you c
 For example, to specify extension functionality that opens up a new pinned tab containing [opera.com](http://www.opera.com) when a button is clicked, you need to add this to the background.js file:
 
 <pre class="prettyprint">chrome.browserAction.onClicked.addListener(function() {
-  chrome.tabs.create({'url': ‘http://www.opera.com’,'pinned': true});
+  chrome.tabs.create({'url': ‘http://www.opera.com’});
 });</pre>
 
 
-You can [download the sample extension](http://sample.com/index.html) and take a better look at how this works.
+You can [download the sample extension](samples/WinTabs-CreateATab.nex) and take a better look at how this works.
 
 ### Accessing the current tab
 You can access the currently active tab and its properties via the `query()` method, for example:
@@ -46,26 +46,26 @@ Lets extend this example a bit. To specify that on the click of a button the bro
   });
 });</pre>
 
-You can [download the WAVE extension](http://sample.com/index.html) and play with this code further.
+You can [download the WAVE extension](samples/WinTabs-Wave.nex) and play with this code further.
 
 ### Modifying existing tabs
 You can modify existing tabs using the `update()` method, performing tasks such as changing the URL loaded, making tabs active, highlighting, or pinning them. The `query()` method explained above is used to select the tab(s) you want to affect.
 
-For example, imagine you wanted to create an extension that allows us to pin all open tabs containing pages in the [opera.com](http://www.opera.com/) domain (including subdomains).
+For example, imagine you wanted to create an extension that allows us to redirect all tabs on [Dev.Opera](http://dev.opera.com) (not just the front page, but various articles too) to the [Opera homepage](http://www.opera.com).
 
 In the background.js, you would write something like:
 
-<pre class="prettyprint">var pattern = "http://*.opera.com/*"; // This pattern will match all tabs that point to URLs on opera.com
+<pre class="prettyprint">var pattern = "http://dev.opera.com/*"; // This pattern will match all tabs that point to URLs on dev.opera.com including subdomains if any
 
 chrome.browserAction.onClicked.addListener(function() {
   chrome.tabs.query({'currentWindow': true, 'url': pattern}, function(tab) { // This will match all tabs to the pattern we specified
     for (var i=0; i&lt;tab.length; i++){ // Go through all tabs that match the URL pattern
-      chrome.tabs.update(tab[i].id, {'pinned': true}); // Pin those tabs
+      chrome.tabs.update(tab[i].id, {'url': 'http://www.opera.com'}); // Update those tabs to point to the new URL, which is the opera homepage
     }        
   });
 });</pre>
 
- You can [download the update example extension](http://sample.com/index.html) to see the above code in action. 
+ You can [download the update example extension](samples/WinTabs-UpdateTab.nex) to see the above code in action. 
 
 ### Closing, reloading and duplicating tabs
 To close, reload and duplicate tabs, you need to use the `remove()`, `reload()` and `duplicate()` methods respectively. The important thing to note about these methods is that you do not necessarily need to mention the ‘tabs’ permission in the extension manifest in order to use them in the extension.
@@ -76,9 +76,9 @@ All three of these methods work in the same way. Lets look at some example exten
   chrome.tabs.remove(tab[0].id); // Remove the tab
 });</pre>
 
-You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at our [sample close, reload and duplicate extension example](http://sample.com/index.html) where we make use of all three methods to close, reload and duplicate the current tab.
+You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at our [sample close, reload and duplicate extension example](samples/CloseReloadDuplicate.nex) where we make use of all three methods to close, reload and duplicate the current tab.
 
-There are more functions available in Opera extensions: to find out about them, consult the [API guide for Tabs and Windows](http://sample.com/index.html).
+There are more functions available in Opera extensions: to find out about them, consult the [API guide for Tabs and Windows](tut_tab_window.html).
 
 ## Windows
 
@@ -98,10 +98,10 @@ The most common and hence most important function to note, when it comes to wind
 
 You can achieve this by writing the following in the background.js:
 
-<pre class="prettyprint">var URL_list = ['http://www.opera.com', 'http://www.wikipedia.org'];//The list of URLs to load in the new window
+<pre class="prettyprint">var URL_list = ['http://www.opera.com', 'http://www.wikipedia.org', 'http://www.google.com'];//The list of URLs to load in the new window
 
 chrome.browserAction.onClicked.addListener(function() {
   chrome.windows.create({'url': URL_list,'incognito': true});
 });</pre>
 
-[Download the sample window extension](http://sample.com/index.html) to see the above functionality in action and play with the code yourself. 
+[Download the sample window extension](samples/PrivateWindow.nex) to see the above functionality in action and play with the code yourself. 

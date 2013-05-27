@@ -116,4 +116,4 @@ To update the Speed Dial extenion, you simply use the `update()` function. For e
 
 <pre class="prettyprint">opr.speeddial.update({ url: "http://dev.opera.com", title: "Dev Opera" });</pre>
 
-Feel free to [download our sample Speed Dial extension](http://sample.com/sample.htm) and have a look around the code. 
+Feel free to [download our sample Speed Dial extension](samples/SpeedDial-CenterContent.nex) and have a look around the code. 

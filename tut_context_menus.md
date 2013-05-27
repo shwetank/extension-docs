@@ -66,4 +66,4 @@ Once the user clicks on the menu item, we need it to do something. In our exampl
 
 The function handles an '*info*' object of type [*OnClickData*](contextMenus.html#type-OnClickData)  - This is an object which stores a bunch of relavent information when a context menu item is clicked. In our case, it will contain information about the text we selected. We can get this by using `info.selectionText`. After that it is just a simple matter of appending that text to google's query URL as a query string, creating a new tab, and loading the URL you just assembled in the new tab.
 
-You can [download the context menu extension example](http://sample.com/index.html) described above and take a better look at the code. Also, you can [download another context menu example](http://sample.com/index.html) that creates different context menu types for different web objects (e.g. links, the page in general, images.)
+You can [download the context menu extension example](samples/ContextMenu-SelectedText.nex) described above and take a better look at the code.
