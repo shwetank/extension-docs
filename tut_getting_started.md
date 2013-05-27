@@ -7,14 +7,14 @@ copyright: opera-ccby
 
 ## Introduction
 
-Extensions are small code packages that you can add to your browser to extend its functionality. The point of Opera extensions is to not only add more features to Opera, to make it more useful, but also to share those new features with other Opera users. Want to add an e-mail notification window to the browser that brings up your latest mails form your preferred mail service? Want to add a button that closes all tabs to right of the active tab? Want to tweet straight from the browser, replace all instances of the word "politics" on web pages with "fish", or bring up translations of the current selection in a tooltip? Extensions are the way forward. You can develop extensions to do pretty much anything that can be done with standards web technologies, and more.
+Extensions are small code packages that you can add to your browser to extend its functionality. The point of Opera extensions is to not only add more features to Opera, to make it more useful, but also to share those new features with other Opera users. Want to add an e-mail notification window to the browser that brings up your latest mails form your preferred mail service? Want to tweet straight from the browser, replace all instances of the word "politics" on web pages with "fish", or bring up translations of the current selection in a tooltip? Extensions are the way forward. You can develop extensions to do pretty much anything that can be done with standards web technologies, and more.
 
 The Opera Extensions API allows you to tap into many different features of the browser, giving you a lot options for extension functionality. This article will get you started, looking at what's available, providing links to further information.
 
-Note: If you haven’t already, then head over to the [Opera Extensions Gallery](https://addons.opera.com/addons/extensions/) to download and get a feel of various extensions.
+Note: If you haven’t already, then head over to the [Opera Extensions Gallery](https://addons.opera.com/addons/extensions/) to download and get a feel for various extensions.
 
 ## Already developed Chrome Extensions?
-If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 15 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 15 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
+If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 15 and above. Opera is now based on Chromium, which means it is possible to run CRX files in Opera 15 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
 
 <!--## Porting your previously made Opera extensions
 Because Opera 15 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
