@@ -100,7 +100,7 @@ If your extension needs a place to store user preferences then you should create
 You can use *localStorage* as defined in the [Web Storage API](http://www.w3.org/TR/webstorage/) to store user preferences for the extension.
 
 #### Icons and other files
-Your extensions need an icon, which should be --insert icon file size--. Apart from icons, you might also need other files like images, fonts etc. as well as CSS and JS files for pages like the popup or options pages. All of these can be placed anywhere inside of the extension package.
+Your extensions need icons (A 128x128 icon used for the addons page and during installation, a 48x48 one for the extensions management page, a 16x16 one for the favicon for the extension's pages, and a 19x19 one in case you need to put an icon as a browser or page action). Apart from icons, you might also need other files like images, fonts etc. as well as CSS and JS files for pages like the popup or options pages. All of these can be placed anywhere inside of the extension package.
 
 ## Files and Folder Structure
 
@@ -121,12 +121,12 @@ You can refer to any of your files in your extensions using relative URLs. For e
 
 	<pre class="prettyprint">{
   ...
-  "content_security_policy": //Write your policy string here,
+  "content_security_policy": "[WRITE YOUR POLICY STRING HERE]"
   ...
 	}</pre>
 
-	By default, the policy string for extensions is supposed to be
- 	`script-src 'self'; object-src 'self'`
+	To know more about the syntax and possible values for writing your content security policy, take a look at the [specification](http://www.w3.org/TR/CSP/). By default, the policy string for extensions is supposed to be
+ 	`script-src 'self'; object-src 'self'`.
  
 	So if you do not define a policy exclusively in an extension manifest, then this policy is assumed. Under this policy, the following things are important to note:
 
@@ -142,7 +142,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	
 	You could add the string `'unsafe-eval'` to your policy string to make the extension use `eval()` and related functions, but we would *very strongly* advise you against doing so.
 
-2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline JavaScript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the HTML page (like `<script src="popup.js"></script>`).
+2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline JavaScript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the HTML page (like `<script src="popup.js"></script>`). Note: Including `'unsafe-inline'` in your CSP will have no effect.
 3. **Only locally loaded scripts and resources will load**: Only scripts and objects loaded from the extension package will be allowed to load, so if you have something like:
 
 	`<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>`
