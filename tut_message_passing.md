@@ -59,7 +59,7 @@ chrome.runtime.onMessage.addListener(
 );
 </pre>
 
-Feel free to [download the extension](#) and examine it further. 
+Feel free to [download the extension](samples/MessagePassing.nex) and examine it further. 
 
 ## Other methods of communication
 
