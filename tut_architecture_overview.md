@@ -121,12 +121,12 @@ You can refer to any of your files in your extensions using relative URLs. For e
 
 	<pre class="prettyprint">{
   ...
-  "content_security_policy": //Write your policy string here,
+  "content_security_policy": "[WRITE YOUR POLICY STRING HERE]"
   ...
 	}</pre>
 
-	By default, the policy string for extensions is supposed to be
- 	`script-src 'self'; object-src 'self'`
+	To know more about the syntax and possible values for writing your content security policy, take a look at the [specification](http://www.w3.org/TR/CSP/). By default, the policy string for extensions is supposed to be
+ 	`script-src 'self'; object-src 'self'`.
  
 	So if you do not define a policy exclusively in an extension manifest, then this policy is assumed. Under this policy, the following things are important to note:
 
@@ -142,7 +142,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	
 	You could add the string `'unsafe-eval'` to your policy string to make the extension use `eval()` and related functions, but we would *very strongly* advise you against doing so.
 
-2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline JavaScript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the HTML page (like `<script src="popup.js"></script>`).
+2. **Inline JavaScript will not run**: Inline JS can also be used as an attack vector for cross-site scripting attacks, so inline JavaScript is disabled under this policy. This means `<script>` blocks as well as inline event handlers (for example `<a onclick="…"`) will not be allowed. So if you have a page (like a popup) and want to have some JavaScript interactivity in it, then it is best to have a seperate JS file and reference it in the HTML page (like `<script src="popup.js"></script>`). Note: Including `'unsafe-inline'` in your CSP will have no effect.
 3. **Only locally loaded scripts and resources will load**: Only scripts and objects loaded from the extension package will be allowed to load, so if you have something like:
 
 	`<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>`
