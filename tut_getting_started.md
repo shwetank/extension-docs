@@ -16,10 +16,10 @@ Note: If you haven’t already, then head over to the [Opera Extensions Gallery]
 ## Already developed Chrome Extensions?
 If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 14 and above. Opera is now based on the Chromium project, which means it is possible to run CRX files in Opera 14 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
 
-## Porting your previously made Opera extensions
-Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 14+. 
+<!--## Porting your previously made Opera extensions
+Because Opera 14 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
 
-We've also made a tool, which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](tut_conversion.html). 
+We've also made a tool, which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](tut_conversion.html). -->
 
 ## Learn the basics
 To learn how to make Opera extensions, begin by reading our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
@@ -34,8 +34,8 @@ Identify issues and solve them easily by reading our [guide to testing and debug
 ## Finally, show it to the world!
 You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist of the acceptance criteria for you to follow](tut_publishing_guidelines.html#acceptance-criteria), to speed up the submission process further. 
 
-## Updating your extension?
-If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! 
+<!--## Updating your extension?
+If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! -->
 
 ## Discuss and keep up on the latest news
 We’d love to discuss Opera extension development with you some more! 

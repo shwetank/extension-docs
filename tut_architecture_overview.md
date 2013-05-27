@@ -13,6 +13,8 @@ The APIs from the Chromium project supported in NEX extensions (like tabs) can b
 
 It is important to note that Opera will run extensions in the CRX format too, as long as the extension uses any of the particular chrome.* APIs which Opera also supports. So if you would like to just make an extension in CRX format and have it run in Opera as well, please make sure the APIs it uses are all supported by Opera.  
 
+If you would like to see the code of an extension, you can rename the file extension to a *.zip* format, and then use a file unarchiver program (for example [7zip](http://www.7-zip.org/download.html)) to unzip the contents.
+
 ## Types of extensions
 
 Currently, there are four types of extensions in Opera.
