@@ -100,7 +100,7 @@ If your extension needs a place to store user preferences then you should create
 You can use *localStorage* as defined in the [Web Storage API](http://www.w3.org/TR/webstorage/) to store user preferences for the extension.
 
 #### Icons and other files
-Your extensions need an icon, which should be --insert icon file size--. Apart from icons, you might also need other files like images, fonts etc. as well as CSS and JS files for pages like the popup or options pages. All of these can be placed anywhere inside of the extension package.
+Your extensions need icons (A 128x128 icon used for the addons page and during installation, a 48x48 one for the extensions management page, a 16x16 one for the favicon for the extension's pages, and a 19x19 one in case you need to put an icon as a browser or page action). Apart from icons, you might also need other files like images, fonts etc. as well as CSS and JS files for pages like the popup or options pages. All of these can be placed anywhere inside of the extension package.
 
 ## Files and Folder Structure
 
