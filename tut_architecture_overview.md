@@ -22,6 +22,8 @@ You can use Browser Actions or Page Actions to put UI elements in the browser wi
 
 Page actions are used to put a UI element specific to just a page or a limited set of pages fitting a certain criteria. If you would like the UI element to be there for all pages, then you should use Browser Actions for that purpose. The UI elements you can use are buttons, badges and popups. To know more on how to create and use these in extensions, please read the article on [creating buttons, badges and popups](tut_browser_actions.html). 
 
+Note: There can only be a maximum of 6 extensions installed at a time in the toolbar using browser actions, and only upto 4 which are based on page actions.
+
 #### 2. Context Menu extensions
 As the name implies, they are extenions to the context menu of the page. You can bring up the context menu by either right-clicking an element in the page, or by using the appropriate shortcuts using your keyboard (varies according to your platform). We've created an article on [how to create context menu extensions](tut_context_menus.html). 
 
