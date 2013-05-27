@@ -23,10 +23,7 @@ However, if you don't want the UI element to appear all the time, rather only wa
 To display a button in the browser UI, we simply mention it in the extension manifest like so:
 
 <pre class="prettyprint">"browser_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
 
@@ -41,23 +38,19 @@ To do that, you need to use add an event listener which listens to the click eve
 });
 </pre>
 
-[Download our sample button extension](http://sample.com/index.html) to see a very simple button example.
+[Download our sample button extension](samples/BrowserActions-button.nex) to see a very simple button example.
 
 ### Popups
 
 To create a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"browser_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
-
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
-  "default_popup": "popup.html"              // optional
+  "default_popup": "popup.html"              
 },</pre>
 
-Go ahead and [download our sample extension](http://sample.com/index.html), which has a very simple popup being displayed.
+Go ahead and [download our sample extension](samples/BrowserActions-Popup.nex), which has a very simple popup being displayed.
 
 ### Badges
 
@@ -73,11 +66,11 @@ Badges can be set using JavaScript in the background script (make sure to mentio
 
 `Chrome.browserAction.setBadgeText()`: This sets the text of the badge
 
-In our example, lets set the badge text as ‘Heya’ with a background color of red. In our background script, we will write:
+In our example, lets set the badge text as ‘Hey’ with a background color of red. In our background script, we will write:
 
-`Chrome.browserAction.setBadgeBackgroundColor( color: \[255, 0, 0, 255]);	Chrome.browserAction.setBadgeText(“Heya”);`
+`Chrome.browserAction.setBadgeBackgroundColor( {color: "#ff0000" });	Chrome.browserAction.setBadgeText(“Hey”);`
 
-Thats it! This is how you set a badge in your chrome extension. You can make it so that you update the badge after certain intervals of time, or after a certain action is performed. 
+Thats it! This is how you set a badge in your chrome extension. You can also specify an RGBa value instead of a hex value in case you want to add some translucency to the background. You can make it so that you update the badge after certain intervals of time, or after a certain action is performed. 
 
 
 ## Page Actions
@@ -91,10 +84,7 @@ Just like Browser Actions, you can make buttons and popups for Page Actions too,
 To get to display a button, simply mention it in the extension manifest like so:
 
 <pre class="prettyprint">"page_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
  
@@ -103,12 +93,9 @@ To get to display a button, simply mention it in the extension manifest like so:
 To display a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"page_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
-  "default_popup": "popup.html"              // optional
+  "default_popup": "popup.html"              
 },</pre>
 
 ## Displaying a Page Action
@@ -117,12 +104,12 @@ Page Actions are not displayed by default, unlike browser actions. You will need
 
 For this, you will also need to know the Tab ID of the current visible tab. Thus the code to show or hide the Page Actions should reside in the background script. For example, to only show Page Actions in URLs on www.opera.com, we would do something like this in the background script:
 
-<pre class="prettyprint">  function checkValidURL(tabID, changeInfo, tab){
+<pre class="prettyprint">  function checkURL(tabID, changeInfo, tab){
     if (tab.url.indexOf(‘www.opera.com’)> -1){ // If it satisfies the criteria (the URL containing ‘www.opera.com’)
-    chrome.pageAction.show(tabID) // shows the page action
+    chrome.pageAction.show(tabID); // shows the page action
   }
 }
 
-chrome.tabs.onupdated.addEventListener(checkValidURL);</pre>
+chrome.tabs.onUpdated.addListener(checkURL);</pre>
 
-Go ahead and [download the source for this extension](http://sample.com/index.html), to check out the code required for making it work.
+Go ahead and [download the source for this extension](samples/PageActions.nex), to check out the code required for making it work.
