@@ -23,10 +23,7 @@ However, if you don't want the UI element to appear all the time, rather only wa
 To display a button in the browser UI, we simply mention it in the extension manifest like so:
 
 <pre class="prettyprint">"browser_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
 
@@ -48,13 +45,9 @@ To do that, you need to use add an event listener which listens to the click eve
 To create a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"browser_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
-
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
-  "default_popup": "popup.html"              // optional
+  "default_popup": "popup.html"              
 },</pre>
 
 Go ahead and [download our sample extension](http://sample.com/index.html), which has a very simple popup being displayed.
@@ -91,10 +84,7 @@ Just like Browser Actions, you can make buttons and popups for Page Actions too,
 To get to display a button, simply mention it in the extension manifest like so:
 
 <pre class="prettyprint">"page_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
 },</pre>
  
@@ -103,12 +93,9 @@ To get to display a button, simply mention it in the extension manifest like so:
 To display a popup, you just need to make an HTML file (lets call it ‘popup.html’) which will be the web page displayed when the popup is opened. All you need to do is to mention this the extension manifest like so: 
 
 <pre class="prettyprint">"page_action": {
-  "default_icon": {                          // optional
-    "19": "images/icon19.png",               // optional
-    "38": "images/icon38.png"                // optional
-  },
+  "default_icon": "icon.png",
   "default_title": "My Sample Extension",    // optional; shown in tooltip
-  "default_popup": "popup.html"              // optional
+  "default_popup": "popup.html"              
 },</pre>
 
 ## Displaying a Page Action
