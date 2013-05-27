@@ -34,8 +34,8 @@ Identify issues and solve them easily by reading our [guide to testing and debug
 ## Finally, show it to the world!
 You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist of the acceptance criteria for you to follow](tut_publishing_guidelines.html#acceptance-criteria), to speed up the submission process further. 
 
-## Updating your extension?
-If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! 
+<!--## Updating your extension?
+If you already have an existing extension in the store and want to update it, follow these [steps on releasing updates to Opera extensions](tut_publishing_new_version.html); your users will receive the latest and greatest version of your extension in no time! -->
 
 ## Discuss and keep up on the latest news
 We’d love to discuss Opera extension development with you some more! 
