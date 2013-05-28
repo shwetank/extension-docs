@@ -15,9 +15,9 @@ Speed dial extensions use the *opr.\** APIs instead of the *chrome.\** ones. Als
 
 ## Specifying it in the manifest
 
-The first thing to do is to specify in the manifest that you want the extension to be a Speed Dial extension. First you'll need to mention "speeddial" in the "permissions" feild. You also need to mention the Speed Dial page, which will also act as your background page. Another thing to note is that Speed Dial extensions, do *not* have permission to create other UI elements like a button or a popup etc.
+The first thing to do is to specify in the manifest that you want the extension to be a Speed Dial extension. First you'll need to mention "speeddial" in the "permissions" field. You also need to mention the Speed Dial page, which will also act as your background page. Another thing to note is that Speed Dial extensions, do *not* have permission to create other UI elements like a button or a popup etc.
 
-There is also a "speeddial" feild in which you need to specify the title of the Speed Dial and the URL to which it will point to, like so:
+There is also a "speeddial" field in which you need to specify the title of the Speed Dial and the URL to which it will point to, like so:
 
 <pre class="prettyprint">{
   "name": "Speed Dial Extension",
@@ -32,7 +32,7 @@ There is also a "speeddial" feild in which you need to specify the title of the 
     ...
 }</pre>
 
-**Note**: Opera will take string described in the "name" feild of the manifest and use it as the title of the Speed Dial extension. You can of course then change the title using javascript, which is described later on in this article. 
+**Note**: Opera will take string described in the "name" field of the manifest and use it as the title of the Speed Dial extension. You can of course then change the title using javascript, which is described later on in this article. 
 
 ## The Speed Dial page
 The Speed Dial page itself is just an HTML page, which will be displayed in the Speed Dial cell. A Speed Dial cell is 228px in width and 168px in height. Lets take an example Speed Dial extension, and see the HTML associated HTML page. 

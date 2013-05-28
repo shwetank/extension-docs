@@ -11,7 +11,7 @@ The Opera Extension APIs provide a lot of power when it comes to manipulating wi
 ## Tabs
 The ability to manipulate tabs is one of the most basic but powerful and useful features of extensions. The [Tabs and Windows API guide](http://sample.com/index.html) provides a detailed overview of the methods and events associated with it. 
 
-To work with tabs in an extension you need to first specify the relevant permissions in the *‘permission’* field of the extension manifest, like so:
+To work with tabs in an extension you need to first specify the relevant permissions in the *‘permissions’* field of the extension manifest, like so:
 
 <pre class="prettyprint">{
   ...

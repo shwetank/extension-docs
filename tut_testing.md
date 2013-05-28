@@ -29,7 +29,7 @@ On the bottom half, you will see the ID of the extension mentioned. You can load
 
 ## Inspecting elements 
 
-Below where it states the ID, it mentions the directory where the extension resides, and below that, there is a field called *Inspect views*. This feild provides a link to inspect resources in the extension.
+Below where it states the ID, it mentions the directory where the extension resides, and below that, there is a field called *Inspect views*. This field provides a link to inspect resources in the extension.
 
 Clicking on that will open the Developer Tools for Opera, and will give you all the resources to inspect elements within it, just like you have for normal web pages. 
 
