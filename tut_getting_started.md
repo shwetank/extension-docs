@@ -7,24 +7,24 @@ copyright: opera-ccby
 
 ## Introduction
 
-Extensions are small code packages that you can add to your browser to extend its functionality. The point of Opera extensions is to not only add more features to Opera, to make it more useful, but also to share those new features with other Opera users. Want to add an e-mail notification window to the browser that brings up your latest mails form your preferred mail service? Want to tweet straight from the browser, replace all instances of the word "politics" on web pages with "fish", or bring up translations of the current selection in a tooltip? Extensions are the way forward. You can develop extensions to do pretty much anything that can be done with standards web technologies, and more.
+Extensions are small code packages that you can add to your browser to extend its functionality. Want to add an e-mail notification window to the browser that brings up your latest mails form your preferred mail service? Want to tweet straight from the browser, replace all instances of the word "politics" on web pages with "fish", or bring up translations of the current selection in a tooltip? Extensions are the way forward! You can develop extensions to do pretty much anything that can be done with standard web technologies, and more.
 
-The Opera Extensions API allows you to tap into many different features of the browser, giving you a lot options for extension functionality. This article will get you started, looking at what's available, providing links to further information.
+The Opera Extensions API allows you to tap into many different features of the browser, giving you a lot options for extension functionality. This article will get you started, look at what is available, and provide links to further information.
 
 Note: If you haven’t already, then head over to the [Opera Extensions Gallery](https://addons.opera.com/addons/extensions/) to download and get a feel for various extensions.
 
 ## Already developed Chrome Extensions?
 If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 15 and above. Opera is now based on Chromium, which means it is possible to run CRX files in Opera 15 and above. For a list of which *chrome.\** APIs we support, please read the [technical overview](tut_architecture_overview.html) of extensions in Opera.
 
-<!--## Porting your previously made Opera extensions
-Because Opera 15 is using the Chromium extensions model, existing Opera extensions need to be converted to CRX or NEX format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
+## Porting your previously made Opera extensions
+Because Opera 15 is using the Chromium extensions model, existing Opera extensions need to be converted to the new Chromium-based extension format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
 
-We've also made a tool, which will convert your *.oex* based extensions into the new extensions format. [Read more about the tool](tut_conversion.html). -->
+We've also made a tool, which will convert your old *.oex* based extensions into the new extensions format, and is built into the Opera extensions catalog's developer interface. Just click the green "Convert" button to get started and follow the steps.
 
 ## Learn the basics
-To learn how to make Opera extensions, begin by reading our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
+To get a good overview of how things work, we would suggest to start with an [overview of the Opera extensions architecture](tut_architecture_overview.html).
 
-Next, we would suggest taking a look at the [technical overview of Opera extensions](tut_architecture_overview.html), to get a more complete overview how things work.
+To learn how to make Opera extensions, read our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
 
 With the basics behind you, consult our range of tutorials and walkthroughs for much more detailed information on specific aspects of extension development and API usage. 
 

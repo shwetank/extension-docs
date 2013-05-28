@@ -7,13 +7,13 @@ copyright: opera-ccby
 Let's delve deeper into the architecture and technical details of extensions in Opera. 
 
 ## The NEX Format
-Opera supports the *NEX* file format for extensions. All the files and folders for an extension are packaged into a zip file with a special header and renamed as *.NEX*. The NEX format will support a major portion of Chromium extensions as well as APIs specific to Opera. We've created a [list that details which APIs we support](tut_architecture_overview.html#apis_supported) from the Chromium project, as well as which ones are exclusive to Opera.
+Opera supports the *NEX* (short for **N**avigator **Ex**tension) file format for extensions. All the files and folders for an extension are packaged into a zip file with a special header and renamed as *.nex*. The NEX format will support a major portion of Chromium extensions, as well as APIs specific to Opera. We've created a [list that details which APIs we support](tut_architecture_overview.html#apis_supported) from the Chromium project, as well as which ones are exclusive to Opera.
 
-The APIs from the Chromium project supported in NEX extensions (like tabs) can be called using *chrome.\**, whereas the ones specific to Opera (like speed dials) will reside under the *opr.\** object. 
+The APIs from the Chromium project supported in NEX extensions (like tabs) can be called using *chrome.\**, whereas the ones specific to Opera (like Speed Dial) will reside under the *opr.\** object. 
 
-It is important to note that Opera will run extensions in the CRX format too, as long as the extension uses any of the particular chrome.* APIs which Opera also supports. So if you would like to just make an extension in CRX format and have it run in Opera as well, please make sure the APIs it uses are all supported by Opera.  
+It is important to note that Opera will run extensions in Chromium's CRX format too, as long as the extension uses the *chrome.\** APIs that Opera supports. 
 
-If you would like to see the code of an extension, you can rename the file extension to a *.zip* format, and then use a file unarchiver program (for example [7zip](http://www.7-zip.org/download.html)) to unzip the contents.
+If you would like to see the code of an extension, you can rename the file extension to a *.zip* format, and then use a file unarchiver program (for example [7zip](http://www.7-zip.org/download.html)) to unzip the contents. On Mac, we recommend using the `unzip` command in Terminal, as Archive Utility produces suboptimal results when dealing with signed files.
 
 ## Types of extensions
 
@@ -54,7 +54,7 @@ Though you can use an HTML page and put JavaScript inside the `<script>` tag, it
   ...
 }</pre>
 
-To specify an event page in the manifest file, you need to define the *persistent* feild as *false* like so:
+To specify an event page in the manifest file, you need to define the *persistent* field as *false* like so:
 
 <pre class="prettyprint">{
   ...
@@ -154,12 +154,8 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	
 	Please note that this does not have any effect on the way you do AJAX. You are free to make a call through `XMLHttpRequest()` to any origin. 
 
-## APIs supported
-Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as APIs exclusive to Opera which are under the *opr* object. The *opr*.\* APIs we support are:
-
-- [The Speed Dial API](tut_speeddial.html)
-
-With time, we will be adding more APIs to the *opr* object.
+## Supported APIs
+Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as APIs exclusive to Opera which are under the *opr* object. 
 
 The *chrome.\** APIs supported in Opera are:
 
@@ -172,10 +168,15 @@ The *chrome.\** APIs supported in Opera are:
 - [idle](idle.html)
 - [management](management.html)
 - [pageAction](pageAction.html)
-- [permissions](permissions.html)
 - [runtime](runtime.html)
 - [scriptBadge](scriptBadge.html)
 - [storage](storage.html)
 - [tabs](tabs.html)
 - [webRequest](webRequest.html)
 - [windows](windows.html)
+
+The *opr*.\* API Opera supports at present is:
+
+- [Speed Dial API](speeddial.html)
+
+With time, we will be adding more APIs to the *opr* object.

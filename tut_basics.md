@@ -13,11 +13,11 @@ In this article we'll put together a simple example extension to show you how it
 
 ## What's in an Opera extension?
 
-An opera extension contains a *manifest file* which defines metadata like the name of the extension, its author, etc. It also lists the various API permissions we want the extension to have. It will also typically have a *background page* or *background script*, which is reponsible for communicating with the browser UI. Apart from that, it could have a *content script* which deals with changes to web pages. You could also need some other HTML (and related CSS and JavaScript) files for button popups or an options page.
+An Opera extension contains a *manifest file* which defines metadata like the name of the extension, its author, etc. It also lists the various API permissions we want the extension to have. It will also typically have a *background page* or *background script*, which is reponsible for communicating with the browser UI. Apart from that, it could have a *content script* which deals with changes to web pages. You could also need some other HTML (and related CSS and JavaScript) files for button popups or an options page.
 
 Apart from all the JS and HTML files, you'll also need to put in some images for the extension icons. 
 
-All of this is wrapped in a ZIP file format with a special header and the .nex file extension. To know more about the architecture of extensions in Opera, please read the [associated article](tut_architecture_overview.html) which describes it in detail.
+All of this is wrapped in a ZIP file format with a special header and the .nex file extension. To know more about the architecture of extensions in Opera, please read the [associated article](tut_architecture_overview.html), which describes it in detail.
 
 ## Your first extension
 
