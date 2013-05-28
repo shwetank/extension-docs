@@ -24,6 +24,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
                 <li><a href="manifest.html#key">key</a></li>
                 <li><a href="manifest.html#minimum_opera_version">minimum_opera_version</a></li>
                 <li><a href="manifest.html#name">name</a></li>
+                <li><a href="manifest.html#permissions">permissions</a></li>
                 <li><a href="manifest.html#offline_enabled">offline_enabled</a></li>
                 <li><a href="manifest.html#requirements">requirements</a></li>
                 <li><a href="manifest.html#version">version</a></li>
@@ -282,6 +283,21 @@ and the Opera addons store.
 You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
+
+<h3 id="permissions">permissions</h3>
+<p>You need to declare your intent to use certain features by listing them in the "permissions" field. A typical example of it would be like so:</p>
+<pre class="prettyprint">
+"permissions": [
+    "tabs",
+    "http://*.opera.com",
+    "contextMenus"
+]
+</pre>
+<p>You can use match patterns to specify if the extension wants the code to run on certain pages. Please see the <a href="tut_match_patterns.html">article on match patterns</a> for more details.</p>
+<p><em>Note</em>: If you want to display the favicon of a page, you would need to mention it in the permissions field as "opera://favicon". Once you declare it in the permissions field, then you can use it like so:</p>
+<pre class="prettyprint">
+&lt;img src=&quot;opera://favicon/http://www.google.com/&quot;&gt;
+</pre>
 
 <h3 id="offline_enabled">offline_enabled</h3>
 
