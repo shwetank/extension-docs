@@ -13,7 +13,7 @@ The first thing to do is to enable developer mode. You can do it by going to the
 
 This will enable developer mode which will give a bunch of options to play with. At the top level, you will notice the options *Load Unpacked Extension*, *Pack Extension*, and *Update Extensions Now* as seen below.
 
-![DeveloperMode1](img/developermode2.png)
+![DeveloperMode1](img/developermode-up.png)
 
 ## Loading an unpacked extension
 
