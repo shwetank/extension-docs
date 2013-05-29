@@ -169,7 +169,6 @@ The *chrome.\** APIs supported in Opera are:
 - [management](management.html)
 - [pageAction](pageAction.html)
 - [runtime](runtime.html)
-- [scriptBadge](scriptBadge.html)
 - [storage](storage.html)
 - [tabs](tabs.html)
 - [webRequest](webRequest.html)
