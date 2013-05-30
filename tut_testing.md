@@ -9,11 +9,11 @@ Testing and debugging is an important part of the development process. Let's tak
 ## Developer Mode
 The first thing to do is to enable developer mode. You can do it by going to the *opera:extensions* page and then clicking on '*Developer Mode*'. 
 
-![DeveloperMode1](img/developermode1.png)
+<img src="img/developermode1.png" class="img-polaroid" title="developer mode inactive">
 
 This will enable developer mode which will give a bunch of options to play with. At the top level, you will notice the options *Load Unpacked Extension*, *Pack Extension*, and *Update Extensions Now* as seen below.
 
-![DeveloperMode1](img/developermode-up.png)
+<img src="img/developermode-up.png" class="img-polaroid" title="developer mode active">
 
 ## Loading an unpacked extension
 
@@ -21,7 +21,7 @@ You do not need to create an extension package before you test it. You can start
 
 Doing this will create an entry for that extension in the page, like so:
 
-![developermode3](img/developermode3.png)
+<img src="img/developermode3.png" class="img-polaroid" title="unpacked extension loaded">
 
 There are few things to note here. Apart from the usual *Disable*, *Options* and *Permissions* buttons on the left, you also now have a *Reload* button on the right. Whenever you make a change in your extension, you can instantly see the results by clicking the *Reload* button. This will reload the extension with the updated code. This is one of the most important things to know when developing extensions, and you will need this a lot! 
 
@@ -33,7 +33,7 @@ Below where it states the ID, it mentions the directory where the extension resi
 
 Clicking on that will open the Developer Tools for Opera, and will give you all the resources to inspect elements within it, just like you have for normal web pages. 
 
-![developermode4](img/developermode4.png)
+<img src="img/developermode4.png" class="img-polaroid" title="debugging with web inspector">
 
 If your extension has a popup, and you want to inspect it, then all you need to do is to click on the button to open the popup (as a user might normaly do) and then right-click in that popup and select *Inspect Element*. 
 

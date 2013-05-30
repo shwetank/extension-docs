@@ -4,6 +4,9 @@
 h2 {
 	font-size: 1.7em;
 }
+img {
+	margin-bottom: 1em;
+}
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
