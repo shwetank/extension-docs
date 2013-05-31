@@ -35,8 +35,12 @@ Clicking on that will open the Developer Tools for Opera, and will give you all 
 
 <img src="img/developermode4.png" class="img-polaroid" title="debugging with web inspector">
 
-If your extension has a popup, and you want to inspect it, then all you need to do is to click on the button to open the popup (as a user might normaly do) and then right-click in that popup and select *Inspect Element*. 
-
 The developer tools give you a lot of power when it comes to debugging as you can set breakpoints, go step-by-step and analyze various variables, change things in the page to see how it would look like, etc.
 
+## Inspecting a popup
 
+If your extension happens to have a popup page, then you can also inspect elements within that page. Just open the popup as you normally would by clicking on the Browser (or Page) action button. Once that popup page is open, just right-click anywhere on the page and select *Inspect Element*. 
+
+<img src="img/popupinspect.png" class="img-polaroid" title="inspecting an extension popup page">
+
+This will open up the developer tools for the context of the popup page, which will enable you to debug the popup page. 
