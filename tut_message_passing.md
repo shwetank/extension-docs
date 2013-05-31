@@ -28,7 +28,7 @@ chrome.browserAction.onClicked.addListener(function() {
 So in effect, we are selecting the currently active tab of the current window and sending a message the content script associated with it. When the content script recieves this message, it will initiate a function, like so:
 
 <pre class="prettyprint">
-chrome.extension.onMessage.addListener(
+chrome.runtime.onMessage.addListener(
 	function (request, sender){
 		if (request.line=='countparas'){ /* If we get the request from the Background script */
 			var paras = document.body.querySelectorAll('p'); /* Select all `&lt;p>` elements in the document body */

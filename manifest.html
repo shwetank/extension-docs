@@ -14,7 +14,6 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
             <li>
               <a href="manifest.html#field_details">Field details</a>
               <ol>
-                <li><a href="manifest.html#app">app</a></li>
                 <li><a href="manifest.html#default_locale">default_locale</a></li>
                 <li><a href="manifest.html#description">description</a></li>
                 <li><a href="manifest.html#developer">developer</a></li>
@@ -26,7 +25,6 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
                 <li><a href="manifest.html#name">name</a></li>
                 <li><a href="manifest.html#permissions">permissions</a></li>
                 <li><a href="manifest.html#offline_enabled">offline_enabled</a></li>
-                <li><a href="manifest.html#requirements">requirements</a></li>
                 <li><a href="manifest.html#version">version</a></li>
                 <li><a href="manifest.html#manifest_version">manifest_version</a></li>
                 <li><a href="manifest.html#web_accessible_resources">web_accessible_resources</a></li>
@@ -71,26 +69,19 @@ are <b>name</b> and <b>version</b>.
   <em>// Pick one (or none)</em>
   "<a href="browserAction.html">browser_action</a>": {...},
   "<a href="pageAction.html">page_action</a>": {...},
-  "<a href="themes.html">theme</a>": {...},
-  "<a href="manifest.html#app">app</a>": {...},
 
   <em>// Add any of these that you need</em>
   "<a href="event_pages.html">background</a>": {"persistent": false, ...},
   "<a href="background_pages.html">background</a>": {"persistent": true, ...},
-  "<a href="override.html">opera_url_overrides</a>": {...},
   "<a href="content_scripts.html">content_scripts</a>": [...],
   "<a href="contentSecurityPolicy.html">content_security_policy</a>": "<em>policyString</em>",
-  "<a href="fileBrowserHandler.html">file_browser_handlers</a>": [...],
   "<a href="manifest.html#homepage_url">homepage_url</a>": "http://<em>path/to/homepage</em>",
   "<a href="manifest.html#incognito">incognito</a>": "spanning" <em>or</em> "split",
   "<a href="manifest.html#key">key</a>": "<em>publicKey</em>",
   "<a href="manifest.html#minimum_opera_version">minimum_opera_version</a>": "<em>versionString</em>",
   "<a href="manifest.html#offline_enabled">offline_enabled</a>": true,
-  "<a href="omnibox.html">omnibox</a>": { "keyword": "<em>aString</em>" },
   "<a href="options.html">options_page</a>": "<em>aFile</em>.html",
   "<a href="declare_permissions.html">permissions</a>": [...],
-  "<a href="npapi.html">plugins</a>": [...],
-  "<a href="manifest.html#requirements">requirements</a>": {...},
   "<a href="autoupdate.html">update_url</a>": "http://<em>path/to/updateInfo</em>.xml",
   "<a href="manifest.html#web_accessible_resources">web_accessible_resources</a>": [...],
   "<a href="manifest.html#sandbox">sandbox</a>": [...]
@@ -107,15 +98,6 @@ with links to where they're described in detail,
 see the <a href="manifest.html#overview">Field summary</a>.
 </p>
 
-
-<h3 id="app">app</h3>
-
-<p>
-Used by <a href="../apps/app_lifecycle.html#eventpage">packaged apps</a>
-to specify the app's background scripts.
-Also used by <a href="https://developers.google.com/chrome/apps/docs/developers_guide#live">hosted apps</a>
-to specify the URLs that the app uses.
-</p>
 
 <h3 id="default_locale">default_locale</h3>
 
@@ -307,17 +289,6 @@ that it is offline, apps with this field set to true will be highlighted
 on the New Tab page.
 </p>
 
-<h3 id="requirements">requirements</h3>
-
-<p>
-Technologies required by the app or extension.
-Hosting sites such as the Opera addons site may use this list
-to dissuade users from installing apps or extensions
-that will not work on their computer.
-Supported requirements currently include "3D" and "plugins";
-additional requirements checks may be added in the future.
-</p>
-
 <p>
 The "3D" requirement denotes GPU hardware acceleration.
 The "webgl" requirement refers to the
@@ -419,18 +390,11 @@ requires. As of Opera 15, developers <em>should</em> specify <code>2</code>
 <pre class="prettyprint">"manifest_version": 2</pre>
 
 <p>
-Consider manifest version 1 <em>deprecated</em> as of Opera 15. Version 2 is
-not yet <em>required</em>, but we will, at some point in the not-too-distant
+Version 2 is not yet <em>required</em>, but we will, at some point in the not-too-distant
 future, stop supporting packages using deprecated manifest versions. Extensions,
 applications, and themes that aren't ready to make the jump to the new manifest
 version in Opera 18 can either explicitly specify version <code>1</code>, or
 leave the key off entirely.
-</p>
-
-<p>
-The changes between version 1 and version 2 of the manifest file format are
-described in detail in <a href="manifestVersion.html">the
-<code>manifest_version</code> documentation.</a>
 </p>
 
 <h3 id="web_accessible_resources">web_accessible_resources</h3>
