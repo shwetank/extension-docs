@@ -73,8 +73,8 @@ are <b>name</b> and <b>version</b>.
   <em>// Add any of these that you need</em>
   "<a href="event_pages.html">background</a>": {"persistent": false, ...},
   "<a href="background_pages.html">background</a>": {"persistent": true, ...},
-  "<a href="content_scripts.html">content_scripts</a>": [...],
-  "<a href="contentSecurityPolicy.html">content_security_policy</a>": "<em>policyString</em>",
+  "<a href="tut_content_scripts.html">content_scripts</a>": [...],
+  "<a href="tut_architecture_overview.html#permissions_and_privileges">content_security_policy</a>": "<em>policyString</em>",
   "<a href="manifest.html#homepage_url">homepage_url</a>": "http://<em>path/to/homepage</em>",
   "<a href="manifest.html#incognito">incognito</a>": "spanning" <em>or</em> "split",
   "<a href="manifest.html#key">key</a>": "<em>publicKey</em>",
@@ -471,7 +471,7 @@ direct access to non-sandboxed pages (it may communicate with them via
 <code>postMessage()</code>).</li>
 <li>
   <p>A sandboxed page is not subject to the
-  <a href="contentSecurityPolicy.html">Content Security Policy
+  <a href="tut_architecture_overview.html#permissions_and_privileges">Content Security Policy
   (CSP)</a> used by the rest of the app or extension (it has its own separate
   CSP value). This means that, for example, it can use inline script and
   <code>eval</code>.</p>
@@ -512,13 +512,13 @@ JavaScript source files) do not need to appear in the
 that embeds them.
 </p>
 
-<p>
+<!--<p>
 <a href="sandboxingEval.html">"Using eval in Opera Extensions. Safely."</a>
 goes into more detail about implementing a sandboxing workflow that enables use
 of libraries that would otherwise have issues executing under extension's
-<a href="contentSecurityPolicy.html">default Content Security
+<a href="tut_architecture_overview.html#permissions_and_privileges">default Content Security
 Policy</a>.
-</p>
+</p>-->
 
 <p>
 Sandboxed page may only be specified when using
