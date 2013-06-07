@@ -147,7 +147,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 
 	`<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>`
 
-	This will not load as its an externally hosted script. To load the library in the extension, you will need to have it included as part of the package, and reference it like so:
+	This will not load as it's an externally hosted script. To load the library in the extension, you will need to have it included as part of the package, and reference it like so:
 
 	`<script src="scripts/jquery-1.9.1.min.js"></script>`
 	No external scripts or resources loaded over HTTP are allowed - except in the case of your local server, in which case you could add either `http://127.0.0.1` or `localhost` to your whitelist. You could also add the following schemes to the whitelist: `chrome-extension` and `chrome-extension-resource`. 
