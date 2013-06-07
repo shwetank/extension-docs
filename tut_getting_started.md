@@ -26,7 +26,7 @@ To get a good overview of how things work, we would suggest to start with an [ov
 
 To learn how to make Opera extensions, read our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
 
-With the basics behind you, consult our range of tutorials and walkthroughs for much more detailed information on specific aspects of extension development and API usage. 
+With the basics behind you, consult our range of tutorials and walk-throughs for much more detailed information on specific aspects of extension development and API usage. 
 
 ## Test, debug and look things over
 Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](tut_testing.html). 
