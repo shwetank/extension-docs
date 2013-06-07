@@ -162,7 +162,6 @@ The *chrome.\** APIs supported in Opera are:
 - [alarms](alarms.html)
 - [browserAction](browserAction.html)
 - [contextMenus](contextMenus.html)
-- [declarativeWebRequest](declarativeWebRequest.html)
 - [extension](extension.html)
 - [internationalization](i18n.html)
 - [idle](idle.html)
