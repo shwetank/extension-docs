@@ -1,6 +1,6 @@
 # Extensions documentation
 
-This is a repo for Opera's totally revamped extensions documentation.
+This is a repo for Opera's totally revamped extensions documentation, which lives on http://dev.opera.com/extension-docs/
 
 # Behind the scenes
 

@@ -60,7 +60,7 @@ Note that the text is there, but is in the top-left corner of the page. Let's se
 
 ## Centering elements in the speed dial
 
-One of the most common things in a Speed Dial is to place an element (whether its some peice of text or some image) in the center of the speed dial. Since Speed Dial pages are just normal HTML pages, you can use CSS to do this. Previous ways to center content were a bit hard to do if you wanted the content to be centered both vertically and horizontally.
+One of the most common things in a Speed Dial is to place an element (whether it's some piece of text or some image) in the center of the speed dial. Since Speed Dial pages are just normal HTML pages, you can use CSS to do this. Previous ways to center content were a bit hard to do if you wanted the content to be centered both vertically and horizontally.
 
 However, with CSS flexbox, its possible to do it very easily. Use `align-items: center` to center the content vertically and `justify-content: center` to do it horizontally. For now, we would also like you to include use flexboxes with prefixes as well as the standard version - this would allow the effect to work currently (using prefixes) and makes sure that will work in the future too (when flexbox is unprefixed, in which case, the unprefixed version will apply).
 
@@ -95,7 +95,7 @@ If you are not familiar with Flexbox, you can learn more about it by reading Chr
 
 ## Use JavaScript to enhance your extension
 
-You can access the Speed Dial functions using javacript by using the *opr.speeddial.\** APIs. Your JS code can be simply be linked from the Speed Dial page, for example 
+You can access the Speed Dial functions using JavaScript by using the *opr.speeddial.\** APIs. Your JS code can be simply be linked from the Speed Dial page, for example 
 
 <pre class="prettyprint">...
 &lt;script src=&quot;sd.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
@@ -112,7 +112,7 @@ For the former, you need to use the `get()` variable. A callback is triggered wh
 console.log("The URL is: " + result.url + " and the title is " + result.title); 
 });</pre>
 
-To update the Speed Dial extenion, you simply use the `update()` function. For example
+To update the Speed Dial extension, you simply use the `update()` function. For example
 
 <pre class="prettyprint">opr.speeddial.update({ url: "http://dev.opera.com", title: "Dev Opera" });</pre>
 

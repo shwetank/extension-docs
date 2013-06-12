@@ -63,9 +63,9 @@ To specify an event page in the manifest file, you need to define the *persisten
   ...
 }</pre>
 
-The background page (or the background script) is essential for the user interface. Any peice of code which requires adding a UI item to the browser needs to be defined here. It is also the one responsible for noticing a change in state and updating or otherwise modifying the UI accordingly. 
+The background page (or the background script) is essential for the user interface. Any piece of code which requires adding a UI item to the browser needs to be defined here. It is also the one responsible for noticing a change in state and updating or otherwise modifying the UI accordingly. 
 
-Event pages are exactly like background pages, except that they only loaded when required. This means when the event page isn't loaded, system memory and resources are not being used, thus giving better performance. Extensions authors are recommended to use event pages whereever they can.
+Event pages are exactly like background pages, except that they only loaded when required. This means when the event page isn't loaded, system memory and resources are not being used, thus giving better performance. Extensions authors are recommended to use event pages wherever they can.
 
 Event pages are loaded when: 
 
@@ -76,7 +76,7 @@ Event pages are loaded when:
 
 The primary difference between background pages and event pages is that event pages are intended to handle events only. So you'd register event listeners in the eventpage.js and the browser will optimize the way it stores and runs these events at runtime. Anything not wrapped in event listeners will be handled on load and then only kept around by the engine if the variables and functions are referenced in any way inside any event listeners.
 
-In other words, try to use an event page whenever feasable, as it will lead to better performance and lesser resource consumption by the browser.
+In other words, try to use an event page whenever feasible, as it will lead to better performance and lesser resource consumption by the browser.
 
 #### The Content Script
 If you want to make any change to the web page itself, then you need to use a content script. The content script has access to the DOM of the web page, but access to variables and functions is confined to only itself. For example, content scripts cannot access variables defined in the web page, or even in other content scripts. 
@@ -111,9 +111,9 @@ The above screenshot represents the folder structure of a typical extension. To 
 You can refer to any of your files in your extensions using relative URLs. For example : `<img src="media/myimage.png" />`. An absolute URL to your extension resource can be used by accessing `chrome-extension://<extensionID>/<pathToFile>`. 
 
 ## Permissions and privileges
-- **Permissions are neccessery**: Each extension comes with a manifest file which administers access over which browser APIs are allowed to be used, and in which set of domains the extension can run. 
+- **Permissions are necessary**: Each extension comes with a manifest file which administers access over which browser APIs are allowed to be used, and in which set of domains the extension can run. 
 
-- **Seperation of privileges**: The content script and the rest of the extension have separate roles and sets of priviliges. Only the content script is able to modify the web page, but does not have the priviledge to modify the UI layer. The rest of the extension components (background pages, popups etc) can do things on the UI layer, but do not have the privilege to modify the web page.  
+- **Seperation of privileges**: The content script and the rest of the extension have separate roles and sets of privileges. Only the content script is able to modify the web page, but does not have the privilege to modify the UI layer. The rest of the extension components (background pages, popups etc) can do things on the UI layer, but do not have the privilege to modify the web page.  
 
 - **Content scripts works in *Isolated worlds***: Content scripts can modify the web page since it has access to the DOM of the page, but it does not have access to the variables and functions that the web page has. A content script cannot access variables and functions defined by the background processes and vice versa (though they can communicate through message passing). This also means content scripts cannot access the extension APIs - they can only be accessed by background or event pages. Each content script lives in an *isolated world* - it cannot even access variables or functions defined in other content scripts present in the extension.
 
@@ -147,7 +147,7 @@ You can refer to any of your files in your extensions using relative URLs. For e
 
 	`<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>`
 
-	This will not load as its an externally hosted script. To load the library in the extension, you will need to have it included as part of the package, and reference it like so:
+	This will not load as it's an externally hosted script. To load the library in the extension, you will need to have it included as part of the package, and reference it like so:
 
 	`<script src="scripts/jquery-1.9.1.min.js"></script>`
 	No external scripts or resources loaded over HTTP are allowed - except in the case of your local server, in which case you could add either `http://127.0.0.1` or `localhost` to your whitelist. You could also add the following schemes to the whitelist: `chrome-extension` and `chrome-extension-resource`. 
@@ -162,7 +162,6 @@ The *chrome.\** APIs supported in Opera are:
 - [alarms](alarms.html)
 - [browserAction](browserAction.html)
 - [contextMenus](contextMenus.html)
-- [declarativeWebRequest](declarativeWebRequest.html)
 - [extension](extension.html)
 - [internationalization](i18n.html)
 - [idle](idle.html)

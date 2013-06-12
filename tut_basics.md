@@ -13,7 +13,7 @@ In this article we'll put together a simple example extension to show you how it
 
 ## What's in an Opera extension?
 
-An Opera extension contains a *manifest file* which defines metadata like the name of the extension, its author, etc. It also lists the various API permissions we want the extension to have. It will also typically have a *background page* or *background script*, which is reponsible for communicating with the browser UI. Apart from that, it could have a *content script* which deals with changes to web pages. You could also need some other HTML (and related CSS and JavaScript) files for button popups or an options page.
+An Opera extension contains a *manifest file* which defines metadata like the name of the extension, its author, etc. It also lists the various API permissions we want the extension to have. It will also typically have a *background page* or *background script*, which is responsible for communicating with the browser UI. Apart from that, it could have a *content script* which deals with changes to web pages. You could also need some other HTML (and related CSS and JavaScript) files for button popups or an options page.
 
 Apart from all the JS and HTML files, you'll also need to put in some images for the extension icons. 
 
@@ -58,7 +58,7 @@ chrome.browserAction.onClicked.addListener(function() {
 ### Step 3: Including icons and other assets
 You'll need an icon for the toolbar button, and represent the extension in other places. For icons, we would recommend you [read our article on it](tut_icons.html), where we discuss the appropriate sizes and best practices for great looking icons in extensions. 
 
-You may also need other files such as images, fonts, videos etc. You can include them in the parent directory, or create a separate folder (for exampele, a folder named '*media*') or two, and place them there. 
+You may also need other files such as images, fonts, videos etc. You can include them in the parent directory, or create a separate folder (for example, a folder named '*media*') or two, and place them there. 
 
 ### Step 4: Testing your extension
 Okay, time to test out your extension. For the final extension, you'll need to package and sign the extension from the Extension Settings page. But the good news is that you don't need to do this every time you want to test things out — you can test your extension straight from the directory, like so:
@@ -73,7 +73,7 @@ Thats it! Your extension should be loaded in 'Developer Mode'. This mode gives y
 If all goes well, you should see an icon in the top right of the browser window next to the address bar. Clicking on it will open up a new tab, which will go to [Dev.Opera](http://dev.opera.com) - Opera's developer tutorial site. 
 
 ### Step 5 - Packing it all up!
-Once you are satisfied that your extension is finished, you need to package it into an .nex file, as follows:
+Once you are satisfied that your extension is finished, you need to package it into a .nex file, as follows:
 
 1. Go to the browser address bar and type '*opera:extensions'*.
 2. Make sure you have *Developer Mode* (located on the top right) checked.

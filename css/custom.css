@@ -18,6 +18,23 @@ dd+h4 {
 }
 /* / hidden subtitle anchor fix */
 
+/* Fixes for search box */
+#searchbox {
+	height: 61px;
+}
+.cse .gsc-control-cse, .gsc-control-cse {
+	background-color: transparent !important;
+	border: transparent !important;
+}
+#gsc-i-id1 {
+	box-shadow: none !important;
+}
+.gs-bidi-start-align.gs-snippet {
+	padding-left: 8px;
+}
+
+/* / Fixes for search box */
+
 /* Sticky footer styles from http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html */
 html, body {
 	height: 100%;

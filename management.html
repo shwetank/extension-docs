@@ -23,7 +23,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
         <p id="classSummary">
  The 
 <code>chrome.management</code>
- module provides ways to manage the list of extensions/apps that are installed and running. It is particularly useful for extensions that override the built-in New Tab page. 
+ module provides ways to manage the list of extensions that are installed and running.
 </p>
 
         <h2 id="apiReference">API Reference: chrome.management</h2>
@@ -34,7 +34,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 <div>
                   <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
-                    Information about an icon belonging to an extension, app, or theme.
+                    Information about an icon belonging to an extension.
                   </dd>    <h4 id="IconInfo-properties">
                     Properties of <a href="management.html#type-IconInfo">IconInfo</a>
                   </h4>
@@ -76,7 +76,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 <div>
                   <dt><code class="type_name">  (    object  )</code></dt>
               <dd>
-                    Information about an installed extension, app, or theme.
+                    Information about an installed extension.
                   </dd>    <h4 id="ExtensionInfo-properties">
                     Properties of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
                   </h4>
@@ -107,7 +107,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        The name of this extension, app, or theme.
+                        The name of this extension.
                       </dd>
                     </div>
                     <div>
@@ -122,7 +122,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        The description of this extension, app, or theme.
+                        The description of this extension.
                       </dd>
                     </div>
                     <div>
@@ -137,7 +137,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        The <a href='manifest.html#version'>version</a> of this extension, app, or theme.
+                        The <a href='manifest.html#version'>version</a> of this extension.
                       </dd>
                     </div>
                     <div>
@@ -192,27 +192,12 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="property">
                           (
                             
-                            enumerated string ["extension", "hosted_app", "packaged_app", "legacy_packaged_app", "theme"]
+                            enumerated string ["extension"]
                           )
                         </code>
                       </dt>
                       <dd>
-                        The type of this extension, app, or theme.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-ExtensionInfo-appLaunchUrl"></a>
-                      <dt>
-                        <code class="variable">appLaunchUrl</code>
-                        <code class="property">
-                          (
-                            <span class="optional">optional</span>
-                            string
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The launch url (only present for apps).
+                        The type of this extension (extension is the only option).
                       </dd>
                     </div>
                     <div>
@@ -227,7 +212,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        The URL of the homepage of this extension, app, or theme.
+                        The URL of the homepage of this extension.
                       </dd>
                     </div>
                     <div>
@@ -242,7 +227,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        The update URL of this extension, app, or theme.
+                        The update URL of this extension.
                       </dd>
                     </div>
                     <div>
@@ -257,7 +242,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         </code>
                       </dt>
                       <dd>
-                        Whether the extension, app, or theme declares that it supports offline.
+                        Whether the extension declares that it supports offline.
                       </dd>
                     </div>
                     <div>
@@ -346,7 +331,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Returns a list of information about installed extensions and apps.
+                    Returns a list of information about installed extensions.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -392,7 +377,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Returns information about the installed extension, app, or theme that has the given ID.
+                    Returns information about the installed extension that has the given ID.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -575,7 +560,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Enables or disables an app or extension.
+                    Enables or disables an extension.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -637,7 +622,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Uninstalls a currently installed app or extension.
+                    Uninstalls a currently installed extension.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -771,53 +756,6 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                     <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
                 </div>
               </div>
-              <div>
-                <h4 id="method-launchApp">launchApp</h4>
-                <div class="summary lower"><code>
-                  <span>chrome.management.launchApp</span>(<span>string <span class="variable">id</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-                </code></div>
-                <div class="description">
-                  <p>
-                    Launches an application.
-                  </p>
-                  <h4>Parameters</h4>
-                  <dl>
-                      <div>
-                        <a name="property-launchApp-id"></a>
-                        <dt>
-                          <code class="variable">id</code>
-                          <code class="property">
-                            (
-                              
-                              string
-                            )
-                          </code>
-                        </dt>
-                        <dd>
-                          The extension id of the application.
-                        </dd>
-                      </div>
-                      <div>
-                        <a name="property-launchApp-callback"></a>
-                        <dt>
-                          <code class="variable">callback</code>
-                          <code class="property">
-                            (
-                              <span class="optional">optional</span>
-                              function
-                            )
-                          </code>
-                        </dt>
-                      </div>
-                  </dl>
-                    <h4>Callback</h4>
-                    <p>
-                          If you specify the <em>callback</em> parameter, it should
-                          specify a function that looks like this:
-                    </p>
-                    <pre class="prettyprint">function() <span class="subdued">{...}</span>;</pre>
-                </div>
-              </div>
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onInstalled">onInstalled</h4>
@@ -826,10 +764,10 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
               <p>
-                    Fired when an app or extension has been installed.
+                    Fired when an extension has been installed.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onInstalled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></code></div>
+                      <div> <a name="property-onInstalled-info"></a>  <dt><code>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </code></dt></code></div>
                     </dl>
                 </div>
               </div>
@@ -840,10 +778,10 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
               <p>
-                    Fired when an app or extension has been uninstalled.
+                    Fired when an extension has been uninstalled.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onUninstalled-id"></a>  <dt>    <span class="variable">id</span>    <span class="property">      (                string      )    </span>  </dt>  <dd>    The id of the extension, app, or theme that was uninstalled.  </dd></code></div>
+                      <div>  <a name="property-onUninstalled-id"></a>  <dt><code>    <span class="variable">id</span>    <span class="property">      (                string      )    </span>  </code></dt>  <dd>    The id of the extension that was uninstalled.  </dd></div>
                     </dl>
                 </div>
               </div>
@@ -854,10 +792,10 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
               <p>
-                    Fired when an app or extension has been enabled.
+                    Fired when an extension has been enabled.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onEnabled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></code></div>
+                      <div>  <a name="property-onEnabled-info"></a>  <dt><code>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </code></dt></div>
                     </dl>
                 </div>
               </div>
@@ -868,10 +806,10 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                 </code></div>
                 <div class="description">
               <p>
-                    Fired when an app or extension has been disabled.
+                    Fired when an extension has been disabled.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onDisabled-info"></a>  <dt>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </dt></code></div>
+                      <div  <a name="property-onDisabled-info"></a>  <dt><code>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </code></dt></div>
                     </dl>
                 </div>
               </div>
