@@ -38,6 +38,7 @@ dd+h4 {
 /* Sticky footer styles from http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html */
 html, body {
 	height: 100%;
+	color: #444444;
 }
 #wrap {
 	min-height: 100%;
@@ -69,4 +70,124 @@ footer {
 		padding-top: 60px;
 	}
 }
+
 /* /sticky footer */
+
+
+
+/* 'Red Look' customization stuff below */
+
+body{
+	background-color: #f5f5f5 !important;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover,
+a:focus {
+  color: #1e1e1e;
+  text-decoration: underline;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+	color: #5e5e5e;
+}
+
+.span8 {
+  width: 620px;
+  box-shadow: 0px 3px 5px #666;
+  padding: 10px;
+  background-color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #1b1b1b !important;
+  background-image: none;
+}
+
+.nav-tabs > .active > a:focus {
+  color: #444444;
+  background-color: #efefef;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  color: #efefef;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #cd0f15;
+}
+
+.nav-list > a.muted:hover,
+.nav-list> a.muted:focus {
+  color: #444444;
+}
+
+.nav .nav-list > li > a {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+background-image: none !important;
+background-color: #cd0f15 !important;
+border-color: #333333 !important;
+}
+
+.cse input.gsc-search-button, input.gsc-search-button {
+	border: 0px solid #fff !important;
+	border-color: none !important;
+}
+
+.navbar-inner {
+	background-image: none !important;
+	background-color: #cd0f15 !important;
+	color: #ffffff;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #cd0f15 !important;
+  background-image: none !important;
+  filter: none !important;
+  border-color: #252525;
+}
+.navbar-inverse .brand, .navbar-inverse .nav>li>a  {
+color: #ffffff;
+}
+
+.hero-unit{
+	background-color: #ffffff;
+}
+
+.btn {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #CD0F15;
+	*background-color: #CD0F15;
+	background-image: none;
+	border-color: #CD0F15;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+	color: #FFFFFF;
+	background-color: #CD0F15;
+	*background-color: #003bb3;
+}
+
+/* End of 'Red Look' customization stuff */
+
