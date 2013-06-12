@@ -86,10 +86,18 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+div.span8 a {
+	border-bottom: 2px solid #ddd;
+}
 a:hover,
 a:focus {
   color: #1e1e1e;
   text-decoration: underline;
+}
+div.span8 a:hover,
+div.span8 a:focus {
+  text-decoration: none;
+  border-bottom: 2px solid red !important;
 }
 
 h1 small,
