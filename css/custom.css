@@ -73,31 +73,29 @@ footer {
 
 /* /sticky footer */
 
-
-
 /* 'Red Look' customization stuff below */
-
-body{
+/* disabling this for now, as there are too many issues
+body {
 	background-color: #f5f5f5 !important;
 }
-
 a {
-  color: #333333;
+  color: #333;
   text-decoration: none;
-  font-weight: bold;
+	font-weight: bold;
 }
-div.span8 a {
+div.span8 a, div.span8 a code {
 	border-bottom: 2px solid #ddd;
 }
 a:hover,
 a:focus {
   color: #1e1e1e;
-  text-decoration: underline;
 }
 div.span8 a:hover,
-div.span8 a:focus {
+div.span8 a:focus,
+div.span8 a:hover code,
+div.span8 a:focus code {
   text-decoration: none;
-  border-bottom: 2px solid red !important;
+  border-bottom: 2px solid #555 !important;
 }
 
 h1 small,
@@ -111,8 +109,8 @@ h6 small {
 
 .span8 {
   width: 620px;
-  box-shadow: 0px 3px 5px #666;
-  padding: 10px;
+  box-shadow: 0px 3px 10px #ddd;
+  padding: 15px;
   background-color: #ffffff !important;
 }
 
@@ -196,6 +194,6 @@ color: #ffffff;
 	background-color: #CD0F15;
 	*background-color: #003bb3;
 }
-
+*/
 /* End of 'Red Look' customization stuff */
 
