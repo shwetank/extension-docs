@@ -30,7 +30,7 @@ Note: There can only be a maximum of 6 extensions installed at a time in the too
 As the name implies, they are extensions to the context menu of the page. You can bring up the context menu by either right-clicking an element in the page, or by using the appropriate shortcuts using your keyboard (varies according to your platform). We've created an article on [how to create context menu extensions](tut_context_menus.html). 
 
 #### 3. Speed Dial extensions
-You can also create extensions for the Speed Dial in Opera. Keep in mind that to create Speed Dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create Speed Dial extensions](tut_speeddial.html).
+You can also create extensions for the Speed Dial in Opera. Keep in mind that to create Speed Dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create Speed Dial extensions](tut_sd_extensions.html).
 #### 4. Extensions with no UI
 You can also create extensions which don't have any UI component. If you are familiar with injected scripts in previous (Presto-based) versions of Opera, or with Greasemonkey scripts, then you get the idea. 
 

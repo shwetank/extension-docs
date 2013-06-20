@@ -108,9 +108,9 @@ This field is <b>required</b> in extensions
 that have a <code>_locales</code> directory;
 it <b>must be absent</b> in extensions
 that have no <code>_locales</code> directory.
-For details, see
+<!--For details, see
 <a href="i18n.html">Internationalization</a>.
-</p>
+</p>-->
 
 <h3 id="description">description</h3>
 
@@ -140,8 +140,7 @@ Contains information about author of the extension. It can contain the fields "n
 
 <p>
 The URL of the homepage for this extension. The extensions management page
-will contain a link to this URL.  This field is particularly useful if you
-<a href="hosting.html">host the extension on your own site</a>. If you distribute your
+will contain a link to this URL. If you distribute your
 extension using the Opera addons site,
 the homepage URL defaults to the extension's own page.
 </p>
@@ -156,10 +155,10 @@ Extensions should also provide a 48x48 icon,
 which is used in the extensions management page.
 You can also specify a 16x16 icon to be used as the favicon
 for an extension's pages.
-The 16x16 icon is also displayed in the experimental extension
+<!--The 16x16 icon is also displayed in the experimental extension
 <a href="experimental.infobars.html">infobar</a>
 feature.
-</p>
+</p>-->
 
 <p>
 Icons should generally be in PNG format,
@@ -234,7 +233,7 @@ it is loaded during development.
 <strong>Note:</strong> You don't usually need to
 use this value. Instead, write your
 code so that the key value doesn't matter
-by using <a href="overview.html#relative-urls">relative paths</a>
+by using relative paths
 and <a href="extension.html#method-getURL">extension.getURL</a>.
 </p>
 
@@ -310,7 +309,7 @@ The "plugins" requirement indicates
 if an app or extension requires NPAPI to run.
 This requirement is enabled by default
 when the manifest includes the
-<a href="../../extensions/npapi.html">"plugins" field</a>. 
+"plugins" field. 
 For apps and extensions that still work when plugins aren't available,
 you can disable this requirement
 by setting NPAPI to false.
@@ -372,11 +371,12 @@ A missing integer is equal to zero.
 For example, 1.1.9.9999 is newer than 1.1.
 </p>
 
+<!--
 <p>
 For more information, see
 <a href="autoupdate.html">Autoupdating</a>.
 </p>
-
+-->
 
 
 <h3 id="manifest_version">manifest_version</h3>
