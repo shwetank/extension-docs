@@ -78,7 +78,7 @@ that will cause the event page to load:
 (in order to <a href="event_pages.html#registration">register for events</a>).
 <li>The event page was listening for an event, and the event is dispatched.
 <li>A content script or other extension
-<a href="messaging.html">sends a message.</a>
+<a href="tut_message_passing.html">sends a message.</a>
 <li>Another view in the extension (for example, a popup) calls
 <code><a href="runtime.html#method-getBackgroundPage">runtime.getBackgroundPage</a></code>.
 </ul>
@@ -155,14 +155,14 @@ Follow this checklist to convert your extension's
   IndexedDB. Since the event page does not stay loaded for long, you
   can no longer rely on global variables for runtime state.
 
-  <li>Use <a href="events.html#filtered">event filters</a> to restrict
+  <!--<li>Use <a href="events.html#filtered">event filters</a> to restrict
   your event notifications to the cases you care about. For example, if
   you listen to the <code><a href="tabs.html#event-onUpdated">tabs.onUpdated</a></code>
   event, try using the
   <code><a href="webNavigation.html#event-onCompleted">webNavigation.onCompleted</a></code>
   event with filters instead (the tabs API does not support filters).
   That way, your event page will only be loaded for events that
-  interest you.
+  interest you.-->
 
   <li>Listen to the
   <code><a href="runtime.html#event-onSuspend">runtime.onSuspend</a></code>
@@ -183,7 +183,7 @@ Follow this checklist to convert your extension's
   instead. The newer method is asynchronous so that it can start the event
   page if necessary before returning it.
 
-  <li>If you're using <a href="messaging.html">message passing</a>, be sure
+  <li>If you're using <a href="tut_message_passing.html">message passing</a>, be sure
   to close unused message ports. The event page will not shut down until all
   message ports are closed.
 

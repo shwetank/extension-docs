@@ -9,7 +9,7 @@ copyright: opera-ccby
 The Opera Extension APIs provide a lot of power when it comes to manipulating windows and tabs inside the browser. In this article, you’ll take a deeper look at how to manipulate windows and tabs in extensions.
 
 ## Tabs
-The ability to manipulate tabs is one of the most basic but powerful and useful features of extensions. The [Tabs and Windows API guide](http://sample.com/index.html) provides a detailed overview of the methods and events associated with it. 
+The ability to manipulate tabs is one of the most basic but powerful and useful features of extensions. The [Tabs and Windows API guide](tabs.html) provides a detailed overview of the methods and events associated with it. 
 
 To work with tabs in an extension you need to first specify the relevant permissions in the *‘permissions’* field of the extension manifest, like so:
 
@@ -76,7 +76,7 @@ All three of these methods work in the same way. Lets look at some example exten
   chrome.tabs.remove(tab[0].id); // Remove the tab
 });</pre>
 
-You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at our [sample close, reload and duplicate extension example](samples/CloseReloadDuplicate.nex) where we make use of all three methods to close, reload and duplicate the current tab.
+You can use the `remove()` and `duplicate()` methods in exactly the same way. Take a look at our [sample close, reload and duplicate extension example](samples/WinTabs-CloseReloadDuplicate.nex) where we make use of all three methods to close, reload and duplicate the current tab.
 
 There are more functions available in Opera extensions: to find out about them, consult the [API guide for Tabs and Windows](tut_tab_window.html).
 
@@ -104,4 +104,4 @@ chrome.browserAction.onClicked.addListener(function() {
   chrome.windows.create({'url': URL_list,'incognito': true});
 });</pre>
 
-[Download the sample window extension](samples/PrivateWindow.nex) to see the above functionality in action and play with the code yourself. 
+[Download the sample window extension](samples/WinTabs-PrivateWindow.nex) to see the above functionality in action and play with the code yourself. 

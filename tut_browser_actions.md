@@ -7,7 +7,7 @@ copyright: opera-ccby
 
 ## Introduction
 
-In the [architecture overview](http://sample.com/index.html), we covered the various UI elements that can be included in Opera extensions: these fall into two categories, *Page Actions* and *Browser Actions*.
+In the [architecture overview](tut_architecture_overview.html), we covered the various UI elements that can be included in Opera extensions: these fall into two categories, *Page Actions* and *Browser Actions*.
 
 In this article, we’ll get to see how to put these UI elements into action in an extension. 
 
