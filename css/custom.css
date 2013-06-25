@@ -1,39 +1,50 @@
 #sidebar, .hero-unit {
 	margin-top: 60px;
 }
+h1 {
+	line-height: 1.1em;
+}
 h2 {
 	font-size: 1.7em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
 }
 img {
 	margin-bottom: 1em;
 }
+pre {
+	padding: 1em !important;
+}
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
-	padding-top: 40px; 
-	margin-top: -40px;
+	padding-top: 52px; 
+	margin-top: -52px;
 }
 dd+h4 {
 	padding-top: 50px;
 }
 /* / hidden subtitle anchor fix */
 
-/* Fixes for search box */
-#searchbox {
-	height: 61px;
-}
-.cse .gsc-control-cse, .gsc-control-cse {
-	background-color: transparent !important;
-	border: transparent !important;
-}
-#gsc-i-id1 {
-	box-shadow: none !important;
+/* Fixes for search results */
+#___gcse_0 * {
+	font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
 }
 .gs-bidi-start-align.gs-snippet {
 	padding-left: 8px;
 }
 
+
 /* / Fixes for search box */
+
+/* responsive stylesheet fix */
+.navbar-search {
+	border: 0 !important;
+}
 
 /* Sticky footer styles from http://twitter.github.com/bootstrap/examples/sticky-footer-navbar.html */
 html, body {
