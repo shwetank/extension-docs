@@ -4,6 +4,8 @@ title: Testing and debugging your extensions
 author: shwetankdixit
 copyright: opera-ccby
 ---
+## Introduction
+
 Testing and debugging is an important part of the development process. Let's take a look at how to debug and test extensions in Opera.
 
 ## Developer Mode

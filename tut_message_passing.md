@@ -5,13 +5,15 @@ author: shwetankdixit
 copyright: opera-ccby
 ---
 
+## Introduction
+
 Communicating and passing messages around is an essential part in developing extensions. Let’s take a look at the different ways to do that using the Opera Extensions API. 
 
 The two broad types of communication methods we have are simple short lived messages, and a more long lived communication method. We’ll cover both in this article.
 
 ## Simple short lived communication
 
-If all you need to do is to send a one-shot message to another part of the extension, and optionally get a calback, then you can use the `runtime.sendMessage()` or `tabs.sendMessage()` methods to do so. To receive a message, use the `runtime.onMessage()` method. 
+If all you need to do is to send a one-shot message to another part of the extension, and optionally get a callback, then you can use the `runtime.sendMessage()` or `tabs.sendMessage()` methods to do so. To receive a message, use the `runtime.onMessage()` method. 
 
 Let’s take an example of an extension which (on click of a button) counts the number of `<p>` elements in the page and updates the button with a badge showing the number. 
 
@@ -25,7 +27,7 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 </pre>
 
-So in effect, we are selecting the currently active tab of the current window and sending a message the content script associated with it. When the content script recieves this message, it will initiate a function, like so:
+So in effect, we are selecting the currently active tab of the current window and sending a message the content script associated with it. When the content script receives this message, it will initiate a function, like so:
 
 <pre class="prettyprint">
 chrome.runtime.onMessage.addListener(

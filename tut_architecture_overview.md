@@ -4,7 +4,8 @@ title: Architecture Overview
 author: shwetankdixit
 copyright: opera-ccby
 ---
-Let's delve deeper into the architecture and technical details of extensions in Opera. 
+## Introduction
+Let's dive deeper into the architecture and technical details of extensions in Opera. 
 
 ## The NEX Format
 Opera supports the *NEX* (short for **N**avigator **Ex**tension) file format for extensions. All the files and folders for an extension are packaged into a zip file with a special header and renamed as *.nex*. The NEX format will support a major portion of Chromium extensions, as well as APIs specific to Opera. We've created a [list that details which APIs we support](tut_architecture_overview.html#apis_supported) from the Chromium project, as well as which ones are exclusive to Opera.

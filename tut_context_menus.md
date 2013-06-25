@@ -35,7 +35,7 @@ The manifest would look like so:
   ...
 }</pre>
 
-### Creating a context menu item
+## Creating a context menu item
 We can create a context menu item by calling the `create()` function. As an argument, this function takes an object that details which kind of context menu item we want to create. 
 
 Lets for example create a context menu item that will only appear when a user right/ctrl-clicks some highlighted text; it will open a new tab, load [Google](http://www.google.com) in it, and perform a Google search for the selected text.
