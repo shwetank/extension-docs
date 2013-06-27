@@ -1,3 +1,23 @@
+body {
+	font-family: Helvetica, Arial, sans-serif !important;
+	font-weight: 400;
+}
+
+.span8 *:not(h1) {
+	line-height: 1.7 !important;
+}
+
+code {
+	color: #666;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background-color: #eee !important;
+}
+
+.container-fluid {
+	max-width: 1300px !important;
+}
+
 #sidebar, .hero-unit {
 	margin-top: 60px;
 }
@@ -9,15 +29,47 @@ h2 {
 }
 h3 {
 	font-size: 1.4em;
+	margin-top: 10px !important;
+	padding-top: 0 !important;
 }
 h4 {
-	font-size: 1.2em;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+h5 {
+	font-size: 1em;
+	font-weight: bold;
 }
 img {
 	margin-bottom: 1em;
 }
-pre {
+pre.prettyprint {
 	padding: 1em !important;
+	border: 0 !important;
+	background-color: #eee !important;
+}
+dt {
+	margin-left: 1em;
+	font-style: italic; 
+}
+dd {
+	margin: 0.5em 0 0.5em 1em;
+}
+dd dd {
+	margin-left: 2em;
+}
+
+.summary {
+	background-color: #DBEBFE;
+	padding: 1em !important;
+	margin: 1em 0 1em 0;
+}
+.summary code {
+	background: transparent !important;
+	border: 0;
+}
+.description {
+	margin-left: 2em;
 }
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
