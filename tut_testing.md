@@ -19,7 +19,7 @@ This will enable developer mode which will give a bunch of options to play with.
 
 ## Loading an unpacked extension
 
-You do not need to create an extension package before you test it. You can start just from the time you create a new directory for your extension. Once you have all your necessery files in place (like the manifest file, icons, background scripts, etc) you can load the extension in *Developer Mode* just by clicking '*Load Extension*, and then select the directory of that extension.
+You do not need to create an extension package before you test it. You can start just from the time you create a new directory for your extension. Once you have all your necessary files in place (like the manifest file, icons, background scripts, etc) you can load the extension in *Developer Mode* just by clicking '*Load Extension*, and then select the directory of that extension.
 
 Doing this will create an entry for that extension in the page, like so:
 

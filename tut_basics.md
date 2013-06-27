@@ -7,7 +7,7 @@ copyright: opera-ccby
 
 ## Introduction
 
-Making extensions for Opera 15 and above is really easy. If you are already familiar with making Google Chrome extensions, then you will be right at home, as Opera 15 (and above) uses the Chromium extensions architecture (with some minor differences). And even if you aren't, Opera extensions are still easy — they are made using open web technologies, plus some specific APIs to tap into browser functionality.
+Making extensions for Opera 15+ is really easy. If you are already familiar with making Google Chrome extensions, then you will be right at home, as Opera 15+ uses the Chromium extensions architecture (with some minor differences). And even if you aren't, Opera extensions are still easy — they are made using open web technologies, plus some specific APIs to tap into browser functionality.
 
 In this article we'll put together a simple example extension to show you how it works.
 
