@@ -4,8 +4,7 @@ title: "Formats: Manifest Files" # this title needs quotes
 copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
 ---
-      <div id="gc-pagecontent">
-        <div id="toc">
+       <div id="toc">
           <h2>Contents</h2>
           <ol>
             <li>
@@ -128,7 +127,7 @@ see <a href="i18n.html">Internationalization</a> for details.
 
 <h3 id="developer">developer</h3>
 <p>
-Contains information about author of the extension. It can contain the fields "name" and "url". For example,
+Contains information about author of the extension. It can contain the fields <code>"name"</code> and <code>"url"</code>. For example,
 <pre class="prettyprint">
 "developer": { "name": "John Doe",
                "url": "http://www.example.org" },
@@ -148,23 +147,18 @@ the homepage URL defaults to the extension's own page.
 <h3 id="icons">icons</h3>
 
 <p>
-One or more icons that represent the extension, app, or theme.
+One or more icons that represent the extension.
 You should always provide a 128x128 icon;
 it's used during installation and by the Opera addons site.
 Extensions should also provide a 48x48 icon,
 which is used in the extensions management page.
 You can also specify a 16x16 icon to be used as the favicon
 for an extension's pages.
-<!--The 16x16 icon is also displayed in the experimental extension
-<a href="experimental.infobars.html">infobar</a>
-feature.
-</p>-->
+</p>
 
 <p>
-Icons should generally be in PNG format,
-because PNG has the best support for transparency.
-They can, however, be in any format supported by Opera 15 and above,
-including BMP, GIF, ICO, and JPEG.
+Icons should generally be in PNG format, because PNG has the best support for transparency.
+They can, however, be in any format supported by Opera 15 and above, including BMP, GIF, ICO, and JPEG.
 Here's an example of specifying the icons:
 </p>
 
@@ -174,49 +168,35 @@ Here's an example of specifying the icons:
           "128": "icon128.png" },
 </pre>
 
-<p class="note">
-<b>Important:</b>
-Use only the documented icon sizes.
-<br><br>
-You might notice that Opera sometimes resizes these icons down to smaller
-sizes. For example, the install dialog might shrink the 128-pixel
-icon down to 69 pixels.
-<br><br>
-However, the details of
+<div class="note">
+<p><b>Important:</b> Use only the documented icon sizes. You might notice that Opera sometimes resizes these icons down to smaller sizes. For example, the install dialog might shrink the 128-pixel icon down to 69 pixels. However, the details of
 Opera's UI may change between versions, and these changes assume that
 developers are using the documented sizes. If you use other sizes,
-your icon may look bad in future versions of the browser.
-</p>
+your icon may look bad in future versions of the browser.</p>
+</div>
 
 <h3 id="incognito">incognito</h3>
 
 <p>
-Either "spanning" or "split", to specify how this extension will
+Either <code>"spanning"</code> or <code>"split"</code>, to specify how this extension will
 behave if allowed to run in incognito mode.
 </p>
 
 <p>
-The default for extensions is "spanning", which means that the extension
+The default for extensions is <code>"spanning"</code>, which means that the extension
 will run in a single shared process. Any events or messages from an incognito
 tab will be sent to the shared process, with an <em>incognito</em> flag
 indicating where it came from. Because incognito tabs cannot use this shared
-process, an extension using the "spanning" incognito mode will not be able to
+process, an extension using the <code>"spanning"</code> incognito mode will not be able to
 load pages from its extension package into the main frame of an incognito tab.
 </p>
 
-<p>
-The default for installable web apps is "split",
-which means that all app pages in
-an incognito window will run in their own incognito process. If the app or extension contains a background page, that will also run in the incognito process.
-This incognito process runs along side the regular process, but has a separate
-memory-only cookie store. Each process sees events and messages only from its
-own context (for example, the incognito process will see only incognito tab updates).
-The processes are unable to communicate with each other.
+<p>In <code>"split"</code> mode, if the extension contains a background page, this page will run in the incognito process. This incognito process runs along side the regular process, but has a separate memory-only cookie store. Each process sees events and messages only from its own context (for example, the incognito process will see only incognito tab updates). The processes are unable to communicate with each other.
 </p>
 
 <p>
-As a rule of thumb, if your extension or app needs to load a tab in an incognito browser, use
-<em>split</em> incognito behavior. If your extension or app needs to be logged
+As a rule of thumb, if your extension needs to load a tab in an incognito browser, use
+<em>split</em> incognito behavior. If your extension needs to be logged
 into a remote server or persist settings locally, use <em>spanning</em>
 incognito behavior.
 </p>
@@ -225,7 +205,7 @@ incognito behavior.
 
 <p>
 This value can be used to control
-the unique ID of an extension, app, or theme when
+the unique ID of an extension when
 it is loaded during development.
 </p>
 
@@ -248,7 +228,7 @@ You will see the key value filled in there.
 <h3 id="minimum_opera_version">minimum_opera_version</h3>
 
 <p>
-The version of Opera that your extension, app, or theme requires, if any.
+The version of Opera that your extension requires, if any.
 The format for this string is the same as for the
 <a href="manifest.html#version">version</a> field.
 
@@ -260,13 +240,13 @@ A short, plain text string
 that identifies the extension.
 The name is used in the install dialog,
 extension management UI,
-and the Opera addons store.
+and the Opera extensions catalog.
 You can specify locale-specific strings for this field;
 see <a href="i18n.html">Internationalization</a> for details.
 </p>
 
 <h3 id="permissions">permissions</h3>
-<p>You need to declare your intent to use certain features by listing them in the "permissions" field. A typical example of it would be like so:</p>
+<p>You need to declare your intent to use certain features by listing them in the <code>"permissions"</code> field. A typical example of it would be like so:</p>
 <pre class="prettyprint">
 "permissions": [
     "tabs",
@@ -275,7 +255,7 @@ see <a href="i18n.html">Internationalization</a> for details.
 ]
 </pre>
 <p>You can use match patterns to specify if the extension wants the code to run on certain pages. Please see the <a href="tut_match_patterns.html">article on match patterns</a> for more details.</p>
-<p><em>Note</em>: If you want to display the favicon of a page, you would need to mention it in the permissions field as "opera://favicon". Once you declare it in the permissions field, then you can use it like so:</p>
+<p><em>Note</em>: If you want to display the favicon of a page, you would need to mention it in the permissions field as <code>"opera://favicon"</code>. Once you declare it in the permissions field, then you can use it like so:</p>
 <pre class="prettyprint">
 &lt;img src=&quot;opera://favicon/http://www.google.com/&quot;&gt;
 </pre>
@@ -283,7 +263,7 @@ see <a href="i18n.html">Internationalization</a> for details.
 <h3 id="offline_enabled">offline_enabled</h3>
 
 <p>
-Whether the app or extension is expected to work offline. When Opera detects
+Whether the xtension is expected to work offline. When Opera detects
 that it is offline, apps with this field set to true will be highlighted
 on the New Tab page.
 </p>
@@ -292,7 +272,7 @@ on the New Tab page.
 The "3D" requirement denotes GPU hardware acceleration.
 The "webgl" requirement refers to the
 <a href="http://www.khronos.org/webgl/">WebGL API</a>.
-You can list the 3D-related features your app requires,
+You can list the 3D-related features your extension requires,
 as demonstrated in the following example:
 </p>
 
@@ -303,29 +283,6 @@ as demonstrated in the following example:
   }
 }
 </pre>
-
-<p>
-The "plugins" requirement indicates
-if an app or extension requires NPAPI to run.
-This requirement is enabled by default
-when the manifest includes the
-"plugins" field. 
-For apps and extensions that still work when plugins aren't available,
-you can disable this requirement
-by setting NPAPI to false.
-You can also enable this requirement manually,
-by setting NPAPI to true,
-as shown in this example:
-</p>
-
-<pre class="prettyprint">
-"requirements": {
-  "plugins": {
-    "npapi": true
-  }
-}
-</pre>
-
 
 <h3 id="version">version</h3>
 
@@ -423,17 +380,6 @@ mechanisms like XHR.
 Injected content scripts themselves do not need to be whitelisted.
 </p>
 
-<p>
-Prior to manifest version 2 all resources within an extension could be accessed
-from any page on the web. This allowed a malicious website to
-<a href="http://en.wikipedia.org/wiki/Device_fingerprint">fingerprint</a> the
-extensions that a user has installed or exploit vulnerabilities (for example
-<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS bugs</a>)within
-installed extensions. Limiting availability to only resources which are
-explicitly intended to be web accessible serves to both minimize the available
-attack surface and protect the privacy of users.
-</p>
-
 <h4 id="availability">Default Availability</h4>
 
 <p>
@@ -442,29 +388,22 @@ Resources inside of packages using <a href="manifest.html#manifest_version"><cod
 for use via this property.
 </p>
 
-<p>
-Resources inside of packages using <code>manifest_version</code> 1 are available
-by default, but <em>if</em> you do set this property, then it will be treated as
-a complete list of all whitelisted resources. Resources not listed will be
-blocked.
-</p>
-
 <h3 id="sandbox">sandbox</h3>
 
 <p>
-Defines an collection of app or extension pages that are to be served
+Defines an collection of extension pages that are to be served
 in a sandboxed unique origin, and optionally a Content Security Policy to use
 with them. Being in a sandbox has two implications:
 </p>
 
 <ol>
-<li>A sandboxed page will not have access to extension or app APIs, or
+<li>A sandboxed page will not have access to extension APIs, or
 direct access to non-sandboxed pages (it may communicate with them via
 <code>postMessage()</code>).</li>
 <li>
   <p>A sandboxed page is not subject to the
   <a href="tut_architecture_overview.html#permissions_and_privileges">Content Security Policy
-  (CSP)</a> used by the rest of the app or extension (it has its own separate
+  (CSP)</a> used by the rest of the extension (it has its own separate
   CSP value). This means that, for example, it can use inline script and
   <code>eval</code>.</p>
 
@@ -503,17 +442,3 @@ JavaScript source files) do not need to appear in the
 <code>sandboxed_page</code> list, they will use the sandbox of the page
 that embeds them.
 </p>
-
-<!--<p>
-<a href="sandboxingEval.html">"Using eval in Opera Extensions. Safely."</a>
-goes into more detail about implementing a sandboxing workflow that enables use
-of libraries that would otherwise have issues executing under extension's
-<a href="tut_architecture_overview.html#permissions_and_privileges">default Content Security
-Policy</a>.
-</p>-->
-
-<p>
-Sandboxed page may only be specified when using
-<a href="manifest.html#manifest_version"><code>manifest_version</code></a> 2 or above.
-</p>
-      </div>

@@ -44,9 +44,8 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
     <td><a href="event_pages.html">Event Pages</a></td>
   </tr>
 </table>
-        <h2 id="apiReference">API Reference: chrome.alarms</h2>
         <div class="api_reference">
-            <h3 id="types">Types</h3>
+            <h2 id="types">Types</h2>
               <div>
                 <h3 id="type-Alarm">Alarm</h3>
                 <div>
@@ -157,7 +156,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
               </dl></dd>
                 </div>
               </div>
-            <h3 id="methods">Methods</h3>
+            <h2 id="methods">Methods</h2>
               <div>
                 <h4 id="method-create">create</h4>
                 <div class="summary lower"><code>
@@ -165,7 +164,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Creates an alarm.  Near the time(s) specified by <var>alarmInfo</var>, the <code>onAlarm</code> event is fired. If there is another alarm with the same name (or no name if none is specified), it will be cancelled and replaced by this alarm.<br/><br/> In order to reduce the load on the user's machine, Opera limits alarms to at most once every 1 minute but may delay them an arbitrary amount more.  That is, setting <code><a href="alarms.html#property-AlarmCreateInfo-delayInMinutes">delayInMinutes</a></code> or <code><a href="alarms.html#property-AlarmCreateInfo-periodInMinutes">periodInMinutes</a></code> to less than <code>1</code> will not be honored and will cause a warning.  <code><a href="alarms.html#property-AlarmCreateInfo-when">when</a></code> can be set to less than 1 minute after "now" without warning but won't actually cause the alarm to fire for at least 1 minute.<br/><br/> To help you debug your app or extension, when you've loaded it unpacked, there's no limit to how often the alarm can fire.
+                    Creates an alarm.  Near the time(s) specified by <var>alarmInfo</var>, the <code>onAlarm</code> event is fired. If there is another alarm with the same name (or no name if none is specified), it will be cancelled and replaced by this alarm.<br/><br/> In order to reduce the load on the user's machine, Opera limits alarms to at most once every 1 minute but may delay them an arbitrary amount more.  That is, setting <code><a href="alarms.html#property-AlarmCreateInfo-delayInMinutes">delayInMinutes</a></code> or <code><a href="alarms.html#property-AlarmCreateInfo-periodInMinutes">periodInMinutes</a></code> to less than <code>1</code> will not be honored and will cause a warning.  <code><a href="alarms.html#property-AlarmCreateInfo-when">when</a></code> can be set to less than 1 minute after "now" without warning but won't actually cause the alarm to fire for at least 1 minute.<br/><br/> To help you debug your extension, when you've loaded it unpacked, there's no limit to how often the alarm can fire.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -352,9 +351,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/alarms.html
             <h3 id="events">Events</h3>
               <div>
                 <h4 id="event-onAlarm">onAlarm</h4>
-                <div class="summary">
+                <div class="summary"><code>
                   <span class="subdued">chrome.alarms.</span>onAlarm<span class="subdued">.addListener</span>(function(<span><a href="alarms.html#type-Alarm">Alarm</a> <code class="variable">alarm</code></span>)<span class="subdued"> {...}</span>);
-                </div>
+                </code></div>
                 <div class="description">
               <p>
                     Fired when an alarm has elapsed. Useful for event pages.

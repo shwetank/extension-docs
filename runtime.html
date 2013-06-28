@@ -13,7 +13,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
 
               <ol>
                   <li><a href="runtime.html#types">Types</a><ol>  <li>    <a href="runtime.html#type-Port">Port</a>  </li>  <li>    <a href="runtime.html#type-MessageSender">MessageSender</a>  </li></ol></li>
-                  <li><a href="runtime.html#properties">Properties</a><ol>  <li>    <a href="runtime.html#property-lastError">lastError</a><ol><li>      <a href="runtime.html#lastError-properties">Properties</a>      <ol>        <li>          <a href="runtime.html#property-lastError-message">message</a>        </li>      </ol>    </li></ol>  </li>  <li>    <a href="runtime.html#property-id">id</a>  </li></ol></li>
+                  <li><a href="runtime.html#properties">Properties</a><ol>  <li>    <a href="runtime.html#property-lastError">lastError</a>  </li>  <li>    <a href="runtime.html#property-id">id</a>  </li></ol></li>
                   <li><a href="runtime.html#methods">Methods</a><ol>  <li><a href="runtime.html#method-getBackgroundPage">getBackgroundPage</a></li>  <li><a href="runtime.html#method-getManifest">getManifest</a></li>  <li><a href="runtime.html#method-getURL">getURL</a></li>  <li><a href="runtime.html#method-reload">reload</a></li>  <li><a href="runtime.html#method-requestUpdateCheck">requestUpdateCheck</a></li>  <li><a href="runtime.html#method-connect">connect</a></li>  <li><a href="runtime.html#method-sendMessage">sendMessage</a></li></ol></li>
                   <li><a href="runtime.html#events">Events</a><ol>  <li><a href="runtime.html#event-onStartup">onStartup</a></li>  <li><a href="runtime.html#event-onInstalled">onInstalled</a></li>  <li><a href="runtime.html#event-onSuspend">onSuspend</a></li>  <li><a href="runtime.html#event-onSuspendCanceled">onSuspendCanceled</a></li>  <li><a href="runtime.html#event-onUpdateAvailable">onUpdateAvailable</a></li>  <li><a href="runtime.html#event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</a></li>  <li><a href="runtime.html#event-onConnect">onConnect</a></li>  <li><a href="runtime.html#event-onConnectExternal">onConnectExternal</a></li>  <li><a href="runtime.html#event-onMessage">onMessage</a></li>  <li><a href="runtime.html#event-onMessageExternal">onMessageExternal</a></li></ol></li>
                             </ol>
@@ -28,7 +28,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
     <td><strong>Description:</strong></td>
     <td>Use the <code>chrome.runtime</code> module
     to retrieve the background page, return details about the manifest,
-    and listen for and respond to events in the app or extension lifecycle.
+    and listen for and respond to events in the extension lifecycle.
     You can also use this API to convert the relative path
     of URLs to fully-qualified URLs.</td>
   </tr>
@@ -42,9 +42,8 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
   </tr>
   
 </table>
-        <h2 id="apiReference">API Reference: chrome.runtime</h2>
         <div class="api_reference">
-            <h3 id="types">Types</h3>
+            <h2 id="types">Types</h2>
               <div>
                 <h3 id="type-Port">Port</h3>
                 <div>
@@ -168,13 +167,13 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                         </code>
                       </dt>
                       <dd>
-                        The ID of the extension/app that opened the connection.
+                        The ID of the extension that opened the connection.
                       </dd>
                     </div>
               </dl></dd>
                 </div>
               </div>
-            <h3 id="properties">Properties</h3>
+            <h2 id="properties">Properties</h2>
               <div>
                 <h3 id="property-lastError">lastError</h3>
                 <div class="summary"><code>
@@ -216,7 +215,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     The ID of the extension/app.
                   </dd>  </div>
               </div>
-            <h3 id="methods">Methods</h3>
+            <h2 id="methods">Methods</h2>
               <div>
                 <h4 id="method-getBackgroundPage">getBackgroundPage</h4>
                 <div class="summary lower"><code>
@@ -273,7 +272,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Returns details about the app or extension from the manifest. The object returned is a serialization of the full <a href="manifest.html">manifest file</a>.
+                    Returns details about the extension from the manifest. The object returned is a serialization of the full <a href="manifest.html">manifest file</a>.
                   </p>
                 </div>
               </div>
@@ -313,7 +312,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </div>
                 <div class="description">
                   <p>
-                    Reloads the app or extension.
+                    Reloads the extension.
                   </p>
                 </div>
               </div>
@@ -407,7 +406,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </code></div>
                 <div class="description">
                   <p>
-                    Attempts to connect to other listeners within the extension/app (such as the background page), or other extensions/apps. This is useful for content scripts connecting to their extension processes. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via <a href="tabs.html#method-connect">tabs.connect</a>.
+                    Attempts to connect to other listeners within the extension (such as the background page), or other extensions. This is useful for content scripts connecting to their extension processes. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via <a href="tabs.html#method-connect">tabs.connect</a>.
                   </p>
                   <h4>Parameters</h4>
                   <dl>
@@ -423,7 +422,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                           </code>
                         </dt>
                         <dd>
-                          The ID of the extension/app you want to connect to. If omitted, default is your own extension.
+                          The ID of the extension you want to connect to. If omitted, default is your own extension.
                         </dd>
                       </div>
                       <div>
@@ -536,7 +535,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     </dl>
                 </div>
               </div>
-            <h3 id="events">Events</h3>
+            <h2 id="events">Events</h2>
               <div>
                 <h4 id="event-onStartup">onStartup</h4>
                 <div class="summary"><code>
@@ -557,7 +556,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     Fired when the extension is first installed, when the extension is updated to a new version, and when Opera is updated to a new version.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onInstalled-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    <dl>      <div>        <a name="property-details-reason"></a>        <dt>          <span class="variable">reason</span>          <span class="property">            (                            enumerated string ["install", "update", "chrome_update"]            )          </span>        </dt>        <dd>          The reason that this event is being dispatched.        </dd>      </code></div>      <div><code>        <a name="property-details-previousVersion"></a>        <dt>          <span class="variable">previousVersion</span>          <span class="property">            (              <span class="optional">optional</span>              string            )          </span>        </dt>        <dd>          Indicates the previous version of the extension, which has just been updated. This is present only if 'reason' is 'update'.        </dd>      </div>    </dl>  </dd></code></div>
+                      <div> <a name="property-onInstalled-details"></a>  <dt><code>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </code></dt>  <dd>    <dl>      <div>        <a name="property-details-reason"></a>        <dt><code>          <span class="variable">reason</span>          <span class="property">            (                            enumerated string ["install", "update", "chrome_update"]            )          </span>        </code></dt>        <dd>          The reason that this event is being dispatched.        </dd>      </div>      <div>      <a name="property-details-previousVersion"></a>        <dt><code>          <span class="variable">previousVersion</span>          <span class="property">            (              <span class="optional">optional</span>              string            )          </span>        </code></dt>        <dd>          Indicates the previous version of the extension, which has just been updated. This is present only if 'reason' is 'update'.        </dd>      </div>    </dl>  </dd></div>
                     </dl>
                 </div>
               </div>
@@ -568,7 +567,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </code></div>
                 <div class="description">
               <p>
-                    Sent to the event page just before it is unloaded. This gives the extension opportunity to do some clean up. Note that since the page is unloading, any asynchronous operations started while handling this event are not guaranteed to complete. If more activity for the event page occurs before it gets unloaded the onSuspendCanceled event will be sent and the page won't be unloaded. 
+                    Sent to the event page just before it is unloaded. This gives the extension the opportunity to do some clean up. Note that since the page is unloading, any asynchronous operations started while handling this event are not guaranteed to complete. If more activity for the event page occurs before it gets unloaded the onSuspendCanceled event will be sent and the page won't be unloaded. 
                   </p>  </div>
               </div>
               <div>
@@ -578,7 +577,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                  </code></div>
                 <div class="description">
               <p>
-                    Sent after onSuspend to indicate that the app won't be unloaded after all.
+                    Sent after onSuspend to indicate that the extension won't be unloaded after all.
                   </p>  </div>
               </div>
               <div>
@@ -588,10 +587,12 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                 </code></div>
                 <div class="description">
               <p>
-                    Fired when an update is available, but isn't installed immediately because the app is currently running. If you do nothing, the update will be installed the next time the background page gets unloaded, if you want it to be installed sooner you can explicitly call chrome.runtime.reload().
+                    Fired when an update is available, but isn't installed immediately because the extension is currently running. If you do nothing, the update will be installed the next time the background page gets unloaded, if you want it to be installed sooner you can explicitly call chrome.runtime.reload().
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onUpdateAvailable-details"></a>  <dt>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </dt>  <dd>    The manifest details of the available update.  </dd>  <dd>    <dl>      <div>        <a name="property-details-version"></a>        <dt>          <span class="variable">version</span>          <span class="property">            (                            string            )          </span>        </dt>        <dd>          The version number of the available update.        </dd>      </div>    </dl>  </dd></code></div>
+                      <div>
+                      	<a name="property-onUpdateAvailable-details"></a>
+                      	<dt><code>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </code></dt>  <dd>    The manifest details of the available update.  </dd>  <dd>    <dl>      <div>        <a name="property-details-version"></a>        <dt><code>          <span class="variable">version</span>          <span class="property">            (                            string            )          </span>       </code></dt>        <dd>          The version number of the available update.        </dd>      </div>    </dl>  </dd></div>
                     </dl>
                 </div>
               </div>
@@ -615,7 +616,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     Fired when a connection is made from either an extension process or a content script.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onConnect-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></code></div>
+                      <div>  <a name="property-onConnect-port"></a>  <dt><code>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </code></dt></div>
                     </dl>
                 </div>
               </div>
@@ -629,7 +630,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/runtime.html
                     Fired when a connection is made from another extension.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div><code>  <a name="property-onConnectExternal-port"></a>  <dt>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </dt></code></div>
+                      <div> <a name="property-onConnectExternal-port"></a>  <dt><code>    <span class="variable">port</span>    <span class="property">      (                <a href="runtime.html#type-Port">Port</a>      )    </span>  </code></dt></div>
                     </dl>
                 </div>
               </div>

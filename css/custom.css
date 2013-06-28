@@ -12,6 +12,7 @@ code {
 	border: 0 !important;
 	border-radius: 0 !important;
 	background-color: #eee !important;
+	white-space: normal;
 }
 
 .container-fluid {
@@ -24,17 +25,18 @@ code {
 h1 {
 	line-height: 1.1em;
 }
-h2 {
+:not(li)>h2 {
 	font-size: 1.7em;
+	margin-top: -42px !important;
 }
 h3 {
 	font-size: 1.4em;
-	margin-top: 10px !important;
-	padding-top: 0 !important;
+	margin-top: -42px !important;
 }
 h4 {
 	font-size: 1.1em;
 	font-weight: bold;
+	margin-top: -47px !important;	
 }
 h5 {
 	font-size: 1em;
@@ -72,10 +74,11 @@ dd dd {
 	margin-left: 2em;
 }
 
+
+
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
 	padding-top: 52px; 
-	margin-top: -52px;
 }
 dd+h4 {
 	padding-top: 50px;
