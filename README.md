@@ -1,10 +1,10 @@
 # Extensions documentation
 
-This is a repo for Opera's totally revamped extensions documentation, which lives on http://dev.opera.com/extension-docs/
+This is a repo for Opera's totally revamped extensions documentation for Opera 15+, which lives on http://dev.opera.com/extension-docs/
 
 # Behind the scenes
 
-There's HTML, Markdown, jQuery, Bootstrap and Jekyll.
+There's Jekyll, jQuery, Bootstrap, Bootswatch Cosmo, prettify.js, Google CSE
 
 To generate the site:
 
@@ -14,7 +14,7 @@ To generate the site:
 4. open a browser, and go to http://localhost:1337/ (generated files live in _site)
 
 
-# YAML front matter details:
+# YAML front matter details
 
 * `layout: default-withsidebar | default-noh1-withsidebar | default-withoutsidebar`
 * `title: TITLE` TITLE should be the actual title of the article
