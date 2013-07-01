@@ -11,11 +11,11 @@ Testing and debugging is an important part of the development process. Let's tak
 ## Developer Mode
 The first thing to do is to enable developer mode. You can do it by going to the *opera:extensions* page and then clicking on '*Developer Mode*'. 
 
-<img src="img/developermode1.png" class="img-polaroid" title="developer mode inactive">
+<img src="static/images/developermode1.png" class="img-polaroid" title="developer mode inactive">
 
 This will enable developer mode which will give a bunch of options to play with. At the top level, you will notice the options *Load Unpacked Extension*, *Pack Extension*, and *Update Extensions Now* as seen below.
 
-<img src="img/developermode-up.png" class="img-polaroid" title="developer mode active">
+<img src="static/images/developermode-up.png" class="img-polaroid" title="developer mode active">
 
 ## Loading an unpacked extension
 
@@ -23,7 +23,7 @@ You do not need to create an extension package before you test it. You can start
 
 Doing this will create an entry for that extension in the page, like so:
 
-<img src="img/developermode3.png" class="img-polaroid" title="unpacked extension loaded">
+<img src="static/images/developermode3.png" class="img-polaroid" title="unpacked extension loaded">
 
 There are few things to note here. Apart from the usual *Disable*, *Options* and *Permissions* buttons on the left, you also now have a *Reload* button on the right. Whenever you make a change in your extension, you can instantly see the results by clicking the *Reload* button. This will reload the extension with the updated code. This is one of the most important things to know when developing extensions, and you will need this a lot! 
 
@@ -35,7 +35,7 @@ Below where it states the ID, it mentions the directory where the extension resi
 
 Clicking on that will open the Developer Tools for Opera, and will give you all the resources to inspect elements within it, just like you have for normal web pages. 
 
-<img src="img/developermode4.png" class="img-polaroid" title="debugging with web inspector">
+<img src="static/images/developermode4.png" class="img-polaroid" title="debugging with web inspector">
 
 The developer tools give you a lot of power when it comes to debugging as you can set breakpoints, go step-by-step and analyze various variables, change things in the page to see how it would look like, etc.
 
@@ -43,6 +43,6 @@ The developer tools give you a lot of power when it comes to debugging as you ca
 
 If your extension happens to have a popup page, then you can also inspect elements within that page. Just open the popup as you normally would by clicking on the Browser (or Page) action button. Once that popup page is open, just right-click anywhere on the page and select *Inspect Element*. 
 
-<img src="img/popupinspect.png" class="img-polaroid" title="inspecting an extension popup page">
+<img src="static/images/popupinspect.png" class="img-polaroid" title="inspecting an extension popup page">
 
 This will open up the developer tools for the context of the popup page, which will enable you to debug the popup page. 

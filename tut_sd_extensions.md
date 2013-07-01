@@ -7,7 +7,7 @@ copyright: opera-ccby
 
 ## Introduction
 
-![Speed dial in Opera](img/Speed-Dial.png)
+![Speed dial in Opera](static/images/Speed-Dial.png)
 
 Back in 2007 we introduced the concept of the *speed dial* to browsers. It has since turned out to be a hugely popular feature, so it makes sense to give extension authors the ability to add to it by giving them the ability to make Speed Dial extensions.
 
@@ -54,7 +54,7 @@ The Speed Dial page itself is just an HTML page, which will be displayed in the 
 
 This will result in a Speed Dial extension which would look like the one below: 
 
-![First Speed Dial extension](img/sdext-1.png)
+![First Speed Dial extension](static/images/sdext-1.png)
 
 Note that the text is there, but is in the top-left corner of the page. Let's see how to change that so that elements can center nicely in the Speed Dial cell.
 
@@ -89,7 +89,7 @@ An example of such an implementation is below:
 
 Which will result in the image being positioned like so:
 
-![Centering images in speeddial with flexbox](img/sdext-2.png)
+![Centering images in speeddial with flexbox](static/images/sdext-2.png)
 
 If you are not familiar with Flexbox, you can learn more about it by reading Chris Mills' great [introductory flexbox article](http://dev.opera.com/articles/view/flexbox-basics/), and then go on for a more [advanced article](http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/) too.
 
