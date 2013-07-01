@@ -1,3 +1,5 @@
+/* Various adjustments to Cosmo bootswatch theme */
+
 body {
 	font-family: Helvetica, Arial, sans-serif !important;
 	font-weight: 400;
@@ -73,8 +75,7 @@ dd dd {
 .description {
 	margin-left: 2em;
 }
-
-
+/* / Various adjustments to Cosmo bootswatch theme */
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
@@ -86,14 +87,12 @@ dd+h4 {
 /* / hidden subtitle anchor fix */
 
 /* Fixes for search results */
-#___gcse_0 * {
-	font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+.gs-title {
+	height: 1.4em !important;
 }
 .gs-bidi-start-align.gs-snippet {
 	padding-left: 8px;
 }
-
-
 /* / Fixes for search box */
 
 /* responsive stylesheet fix */
@@ -136,5 +135,4 @@ footer {
 		padding-top: 60px;
 	}
 }
-
 /* /sticky footer */
