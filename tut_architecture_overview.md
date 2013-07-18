@@ -51,7 +51,7 @@ Though you can use an HTML page and put JavaScript inside the `<script>` tag, it
 
 <pre class="prettyprint">{
   ...
-  "scripts": ["background.js"],
+    "background": {"scripts": ["background.js"]},
   ...
 }</pre>
 
