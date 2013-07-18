@@ -59,8 +59,10 @@ To specify an event page in the manifest file, you need to define the *persisten
 
 <pre class="prettyprint">{
   ...
-  "scripts": ["eventPage.js"],
-  "persistent": false
+  "background":{
+    "scripts": ["eventPage.js"],
+    "persistent": false
+   },
   ...
 }</pre>
 
