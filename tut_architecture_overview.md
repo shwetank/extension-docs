@@ -156,6 +156,8 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	No external scripts or resources loaded over HTTP are allowed - except in the case of your local server, in which case you could add either `http://127.0.0.1` or `localhost` to your whitelist. You could also add the following schemes to the whitelist: `chrome-extension` and `chrome-extension-resource`. 
 	
 	Please note that this does not have any effect on the way you do AJAX. You are free to make a call through `XMLHttpRequest()` to any origin. 
+	
+	Also, if you are familiar with the old version of Opera extensions, then you would be used to declaring permissions for cookie sharing. No such requirement is there for extensions in nex versions, so you can do away with it. If you are converting your *.oex*	extensions to an *.nex* based one, then you can remove the requirement for declaring permission for cookie sharing. 
 
 ## Supported APIs
 Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as APIs exclusive to Opera which are under the *opr* object. 
