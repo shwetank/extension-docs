@@ -18,7 +18,7 @@ To generate the site:
 
 * `layout: default-withsidebar | default-noh1-withsidebar | default-withoutsidebar`
 * `title: TITLE` TITLE should be the actual title of the article
+* `support: VERSION` VERSION should be the browser version from which the API or functionality is supported
 * `author: AUTHOR` AUTHOR can be any author name mentioned in _config.yml
-* `hattip: HATTIP` HATTIP can be any mention or sentence, e.g. "thanks to my dear colleague Chris for the JS wizardry!"
 * `copyright: opera-ccby | opera-google-ccby`
 * `originalsource: ORIGINALSOURCE` ORIGINALSOURCE should be a link to the original version of the document
