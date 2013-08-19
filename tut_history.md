@@ -7,7 +7,7 @@ originalsource: http://developer.chrome.com/extensions/history.html
 ---
 
 ## Introduction
-The History API allows the extension to access and edit the user's browsing history. This can come in handy in some situations, for example analyzing which are the most visited pages by the user, maintaining a list of closed tabs to re-open later, etc. 
+The History API allows an extension to access and edit the user's browsing history. This can come in handy in some situations, for example analyzing which are the most visited pages by the user, maintaining a list of closed tabs to re-open later, etc. 
 
 The first thing to note is to declare it in the *permissions* field in the mainifest file, like so:
 
@@ -34,7 +34,7 @@ The first thing to note is to declare it in the *permissions* field in the maini
 * **"keyword"**:  The URL was generated from a replaceable keyword other than the default search provider. See also [keyword_generated](history.html#tt_keyword_generated).
 * **"keyword_generated"**:  Corresponds to a visit generated for a keyword. See also [keyword](history.html#tt_keyword).
 
-Each and every visit to any URL will be recorded in the history as a [`VisitItem`](history.html#type-VisitItem). This item, besides holding detailed information about every visit, such as the URL visited, the time at which the visit occurred etc, will also hold informtation regarding the *transition type*, that is, how did the user come to the webpage. Thus each and every visit to a web page will have a *transition type* associated with it.
+Each and every visit to any URL will be recorded in the history as a [`VisitItem`](history.html#type-VisitItem). This item, besides holding detailed information about every visit, such as the URL visited, the time at which the visit occurred etc, will also hold information regarding the *transition type*, that is, how the user reached the webpage. Thus each and every visit to a web page will have a *transition type* associated with it.
 
 
 ## Accessing the history behind the currently active tab
@@ -55,13 +55,13 @@ chrome.browserAction.onClicked.addListener(function (tab){
 	
 });</pre>
 
-In the above peice of code, we are getting the URL in the currently active tab. Then we pass in in the function [`getVisits()`](history.html#method-getVisits). This will return in a callback function which will return an array of [`visitItem`](history.html#type-VisitItem) objects for that particular URL (A `visitItem` object is generated any time a URL is visited). We can count these objects to get a number of the times the user visited that URL, and then update the badge with that number.
+In the above piece of code, we are getting the URL of the currently active tab. Then we pass the function [`getVisits()`](history.html#method-getVisits). This will return a callback function which will return an array of [`visitItem`](history.html#type-VisitItem) objects for that particular URL (A `visitItem` object is generated any time a URL is visited). We can count these objects to get a number of the times the user visited that URL, and then update the badge with that number.
 
 [Download the extension](/samples/HistoryAPI-1.nex) for the example above and install it to see it work.
 
 ## Removing URLs from the history 
 
-One of the most common use cases regarding the browser history, is to remove particular URLs from the browser history. We can delete URL from the browser history by using the [`deleteUrl()`](history.html#method-deleteUrl) method. For example, the following example (written in the background script) will remove the URL of the currently active tab from the browser history.
+One of the most common use cases regarding the browser history, is to remove particular URLs from the history. We can delete a URL from the browser history by using the [`deleteUrl()`](history.html#method-deleteUrl) method. For example, the following example will remove the URL of the currently active tab from the browser history.
 
 <pre class="prettyprint">chrome.browserAction.onClicked.addListener(function (tab){		
 	chrome.history.deleteUrl({"url":tab.url});
