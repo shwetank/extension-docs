@@ -21,6 +21,8 @@ The following is an overview of the various permissions declarations possible in
 * **"alarms"**: Required if the extension or app uses the [chrome.alarms](alarms.html) module.
 * **"background"**: You typically use the "background" permission with a [background page or event page](tut_architecture_overview.html#the_background_process).
 * **"contextMenus"**: Required if the extension or app uses the [chrome.contextMenus](contextMenus.html) module.
+* **"cookies"**: Required if the extension or app uses the [chrome.cookies](cookies.html) module.
+* **"history"**: Required if the extension or app uses the [chrome.history](history.html) module.
 * **"idle"**: Required if the extension or app uses the [chrome.idle](idle.html) module.
 * **"management"**: Required if the extension uses the [chrome.management](management.html) module.
 * **"storage"**: Required if the extension or app uses the [chrome.storage](storage.html) module. Note: `storage.sync` will not be supported
