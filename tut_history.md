@@ -1,6 +1,6 @@
 ---
 layout: default-withsidebar
-title: The History API
+title: Working with the browser history
 copyright: opera-google-ccby
 author: shwetankdixit
 originalsource: http://developer.chrome.com/extensions/history.html
