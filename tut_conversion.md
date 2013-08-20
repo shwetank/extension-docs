@@ -63,4 +63,4 @@ When you're done, you submit the extension, and it's pushed to our review queue.
 
 <img src="static/images/conv10.jpg" alt="screenshot of developer interface after approval" title="" class="img-polaroid">
 
-In the developer interface (shown above), you'll see that two extension "streams" appear: one for OEX, which is only shown to Opera 11 and 12, and one for NEX/CRX, which is shown to Opera 15+.
+In the developer interface (shown above), you'll see that two extension "streams" appear: one for OEX (Opera Extension), which is only shown to Opera 11 and 12, and one for NEX/CRX (Navigator Extension), which is shown to Opera 15 and later.
