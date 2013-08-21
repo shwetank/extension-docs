@@ -1,9 +1,10 @@
 ---
 layout: default-withsidebar
-title: Permissions Declaration
+title: Permissions Declarations
 copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/trunk/extensions/content_scripts.html
 ---
+## Introduction
 
 It is required to first declare which permissions you would like the browser to grant your extension. Some permissions are also displayed to users before installation. Permissions are declared in the manifest file, for example:
 
@@ -15,6 +16,7 @@ It is required to first declare which permissions you would like the browser to 
 ],
 ...</pre>
 
+## Permissions declarations allowed in Opera extensions
 The following is an overview of the various permissions declarations possible in extensions in Opera, and what they mean. 
 
 * ***match pattern***: Specifies a host permission. Required if the extension or app wants to interact with the code running on pages. Many capabilities, such as cross-origin XMLHttpRequests, programmatically injected content scripts, etc., require host permissions. For details on the syntax, see [Match Patterns](tut_match_patterns.html).
