@@ -7,9 +7,9 @@ copyright: opera-ccby
 
 ## Introduction
 
-![Speed dial in Opera](static/images/Speed-Dial.png)
+<img src="static/images/Speed-Dial.jpg" alt="Speed Dial extensions" class="img-polaroid">
 
-Back in 2007 we introduced the concept of the *speed dial* to browsers. It has since turned out to be a hugely popular feature, so it makes sense to give extension authors the ability to add to it by giving them the ability to make Speed Dial extensions.
+Back in 2007 we introduced the concept of *Speed Dial* to browsers. It has since turned out to be a hugely popular feature, so it makes sense to give extension authors the ability to add to it by giving them the ability to make Speed Dial extensions.
 
 Speed Dial extensions use an *opr.\** API instead of a *chrome.\** one. Also, they must be packaged in *.nex* format - if they are in any other format (including *.crx* they will not run).  
 
@@ -54,13 +54,13 @@ The Speed Dial page itself is just an HTML page, which will be displayed in the 
 
 This will result in a Speed Dial extension which would look like the one below: 
 
-![First Speed Dial extension](static/images/sdext-1.png)
+<img src="static/images/sdext-1.png" alt="first Speed Dial extension" class="img-polaroid">
 
 Note that the text is there, but is in the top-left corner of the page. Let's see how to change that so that elements can center nicely in the Speed Dial cell.
 
-## Centering elements in the speed dial
+## Centering elements in a Speed Dial cell
 
-One of the most common things in a Speed Dial is to place an element (whether it's some piece of text or some image) in the center of the speed dial. Since Speed Dial pages are just normal HTML pages, you can use CSS to do this. Previous ways to center content were a bit hard to do if you wanted the content to be centered both vertically and horizontally.
+One of the most common things in a Speed Dial cell is to place an element (whether it's some piece of text or some image) in the center of the speed dial. Since Speed Dial pages are just normal HTML pages, you can use CSS to do this. Previous ways to center content were a bit hard to do if you wanted the content to be centered both vertically and horizontally.
 
 However, with CSS flexbox, its possible to do it very easily. Use `align-items: center` to center the content vertically and `justify-content: center` to do it horizontally. For now, we would also like you to include use flexboxes with prefixes as well as the standard version - this would allow the effect to work currently (using prefixes) and makes sure that will work in the future too (when flexbox is unprefixed, in which case, the unprefixed version will apply).
 
@@ -89,9 +89,9 @@ An example of such an implementation is below:
 
 Which will result in the image being positioned like so:
 
-![Centering images in speeddial with flexbox](static/images/sdext-2.png)
+<img src="static/images/sdext-2.png" alt="Centering images in speeddial with flexbox" class="img-polaroid">
 
-If you are not familiar with Flexbox, you can learn more about it by reading Chris Mills' great [introductory flexbox article](http://dev.opera.com/articles/view/flexbox-basics/), and then go on for a more [advanced article](http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/) too.
+If you are not familiar with flexbox, you can learn more about it by reading Chris Mills' great [introductory flexbox article](http://dev.opera.com/articles/view/flexbox-basics/), and then go on for a more [advanced article](http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/) too.
 
 ## Use JavaScript to enhance your extension
 
@@ -103,7 +103,7 @@ You can access the Speed Dial functions using JavaScript by using the *opr.speed
 
 The most common things to do with a Speed Dial in an extension would be to 
 
-1. Get details like the title and the URL of the speed dial.
+1. Get details like the title and the URL of the Speed Dial.
 2. To update the title and URL to something different. 
 
 For the former, you need to use the `get()` variable. A callback is triggered which gives you the required details. For example, 

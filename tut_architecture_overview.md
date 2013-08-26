@@ -107,7 +107,7 @@ Your extensions need icons (A 128x128 icon used for the addons page and during i
 
 ## Files and Folder Structure
 
-![Extension Folder Structure](static/images/folderstructure.png)
+<img src="static/images/folderstructure.png" alt="Extension folder structure" class="img-polaroid">
 
 The above screenshot represents the folder structure of a typical extension. To make things more organized, you could also put images, fonts and other media in a  folder called *media*, stylsheets in a *css* folder and JS files in a *scripts* folder. 
 
