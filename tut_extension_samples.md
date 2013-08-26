@@ -1,13 +1,13 @@
 ---
 layout: default-withsidebar
-title: Extension Templates and samples
+title: Extension templates and samples
 author: shwetankdixit
 copyright: opera-ccby
 ---
 
 ## Introduction
 
-This is a repository of all the example extensions to help you get started with making Opera extensions. These could be useful for just looking through the code and learning about extensions, or you could take any of these as a starting point and then edit them and build upon them for your own extensions. If you haven't already, then we highly recommend that you read through the [architecture overview](tut_architecture_overview.html) before proceeding. 
+This is a repository of all the example extensions to help you get started with making Opera extensions. These could be useful for just looking through the code and learning about extensions, or you could take any of these as a starting point and then edit them and build upon them for your own extensions. If you haven't done so already, we highly recommend that you read through the [architecture overview](tut_architecture_overview.html) before proceeding. 
 
 
 ## Browser and Page Actions
@@ -85,7 +85,7 @@ This is a repository of all the example extensions to help you get started with 
 ## Internationalization (i18n)
 **Sample extension**: 
 
-* [Extension showing how i18n should work. The text in popup should be correctly translated in spanish if the browser locale is changed to spanish](samples/i18nExtension.nex)
+* [Extension showing how i18n should work. The text in popup should be correctly translated in Spanish if the browser locale is changed to Spanish](samples/i18nExtension.nex)
 
 **Relevant reading**:  
 
