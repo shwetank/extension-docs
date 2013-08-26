@@ -77,6 +77,13 @@ dd dd {
 }
 /* / Various adjustments to Cosmo bootswatch theme */
 
+/* table layout fix */
+td {
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+/* / table layout fix */
+
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
 	padding-top: 52px; 
