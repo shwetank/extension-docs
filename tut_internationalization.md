@@ -12,15 +12,15 @@ In this tutorial, we'll see how internationalization, or *i18n* in short, can be
 
 ## The basic principles
 
-You can support multiple locales in opera extensions. The first thing to do is to create a directory called '\_locales'. Under this directory you create a subdirectory for each locale you need. For example, if you want your extensions to support American English, British English as well as Spanish, you will create  *'_locales/en_US'*, *'_locales/en_GB'* and *'_locales/es'*. 
+You can support multiple locales in Opera extensions. The first thing to do is to create a directory called '\_locales'. Under this directory you create a subdirectory for each locale you need. For example, if you want your extensions to support American English, British English as well as Spanish, you will create  *'_locales/en_US'*, *'_locales/en_GB'* and *'_locales/es'*. 
 
 In each of each of these subdirectories, you will need to create a file called 'messages.json', which will store the list of translated text strings needed.
 
-![File structure of i18n enabled extension](img/i18nFileStructure.png)
+<img src="static/images/i18nFileStructure.png" alt="File structure of i18n enabled extension" class="img-polaroid">
 
 Above you can see how the file structure of an opera extension with i18n support will look like. 
 
-The way in which the browser will search and apply a tranlsation is based on the following steps:
+The way in which the browser will search and apply a translation is based on the following steps:
 
 1. **Search for the exact dialect**: If the user's system locale is set to a dialect of a language (Like 'American English' - which is 'en_US') then it will see whether the translation of that message exists in the messages.json file in the 'en_US' folder. If no such message exists, or the file or folder does not exist itself, then it will go to the next step.
 2. **Search for the language**: If the message translation in the exact dialect cannot be found (In our case, 'en_US'), then it will try to look for a messages.json file in the 'en' folder, if it exists. If it manages to find a translation in the messages.json file in the 'en' folder, it will use it. However, if it cannot find it (whether its because there is no such translation in message.json, or if the file or folder does not exist), it will go to the next step.
@@ -29,7 +29,7 @@ The way in which the browser will search and apply a tranlsation is based on the
 
 ## Translating Text : Manifest and CSS Files
 
-You will need a translated version of the text in many different parts of the extension - The manifest file, the CSS files, and various javascript files. When it comes to the manifest and CSS files, you can access various strings using the `__MSG_<messagename>__` convention. 
+You will need a translated version of the text in many different parts of the extension - The manifest file, the CSS files, and various JavaScript files. When it comes to the manifest and CSS files, you can access various strings using the `__MSG_<messagename>__` convention. 
 
 Let's take an example. A normal manifest file (which is not internationalized) would look like the following:
 
@@ -41,7 +41,7 @@ Let's take an example. A normal manifest file (which is not internationalized) w
 }</pre>
 
 
-If we were to create add spanish language support to it, then we would create a directory as *'_locales/es'* and have a file called 'messages.json' in it, where we would list the translated text in the following way:
+If we were to create add Spanish language support to it, then we would create a directory as *'_locales/es'* and have a file called 'messages.json' in it, where we would list the translated text in the following way:
 
 <pre class="prettyprint">{
 	"extensionName":{
@@ -63,24 +63,24 @@ Now, we are going to change the manifest.json file to add i18n support. It will 
 ...  
 }</pre>
 
-Here, `__MSG_extensionName__` will refer to the `extensionName` feild. If the user's locale is set to spanish, then it will display the spanish text. 
+Here, `__MSG_extensionName__` will refer to the `extensionName` field. If the user's locale is set to Spanish, then it will display the Spanish text. 
 
-![image](img/i18nSpanish.png)
+<img src="static/images/i18nSpanish.png" alt="Spanish internationalization example" class="img-polaroid">
 
 When writing CSS for your extensions, you can refer to various translated strings in the same way using the `__MSG_<messagename>__` convention.
 
 ### Predefined Messages
 
-You also have access to some predefined messages which are helpfull when writing CSS or JavaScript code. All predefined messages have a '@@' at the beginning. An example of this is the `@@extension_id` keyword which gives the ID of the extension. Below is a list of all the predefined messages you have access to.
+You also have access to some predefined messages which are helpful when writing CSS or JavaScript code. All predefined messages have a '@@' at the beginning. An example of this is the `@@extension_id` keyword which gives the ID of the extension. Below is a list of all the predefined messages you have access to.
 
 * `@@extension_id` : Gives the ID of the extension. 
 * `@@ui_locale` : The current locale of the browser. 
-* `@@bidi_dir` : The direction of the text flow of the current locacle. For languages such as English, Spanish, Hindi etc it would be 'ltr' (left to right) and for languages such as Japanese or Arabic it would be 'rtl' (right to left). 
+* `@@bidi_dir` : The direction of the text flow of the current locale. For languages such as English, Spanish, Hindi etc it would be 'ltr' (left to right) and for languages such as Japanese or Arabic it would be 'rtl' (right to left). 
 * `@@bidi_reversed_dir` : This is the opposite of `@@bidi_dir`. If the value of `@@bidi_dir` is 'ltr' then the value of `@@bidi_reversed_dir` will be 'rtl', otherwise it would be 'ltr'. 
 * `@@bidi_start_edge` : If the value of `@@bidi_dir` is 'ltr', then this value will be 'left'. If the value of `@@bidi_dir` is 'rtl', then it is 'right'. 
 * `@@bidi_end_edge` : If the value of `@@bidi_dir` is 'ltr', then this value will be 'right'. If the value of `@@bidi_dir` is 'rtl', then it is 'left'.
 
-Predefined messages are particularly helpful in CSS. For example, if we write the following in our CSS file 
+Predefined messages are particularly helpful in CSS. For example, we can write the following in our CSS file: 
 
 <pre class="prettyprint">{
 ...
@@ -188,12 +188,12 @@ for (var i = 0; i &lt; allElements.length; i++){
 }
 </pre>
  
-This will ensure that when the locale is set to English, then the text in the popup will display in english, like so:
+This will ensure that when the locale is set to English, then the text in the popup will display in English, like so:
 
-![Popup in English](img/i18nPopupEn.png)
+<img src="static/images/i18nPopupEn.png" alt="Popup in English" class="img-polaroid"> 
 
-But when the locale is set to Spanish, then it will display spanish text like so:
+But when the locale is set to Spanish, then it will display Spanish text like so:
 
-![image](img/i18nPopupEs.png)
+<img src="static/images/i18nPopupEs.png" alt="Popup in Spanish" class="img-polaroid"> 
 
 You can [download a sample extension](samples/i18nExtension.nex) which uses i18n API and take a closer look. 
