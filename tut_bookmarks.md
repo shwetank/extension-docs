@@ -25,6 +25,8 @@ To have access to the bookmarks, you first need to declare it in the manifest fi
 ##The Bookmarks API
 The bookmarks API can be accessed through `chrome.bookmarks.*` functions. These functions provide you the ability to access the whole or part of the bookmarks tree, create, update or delete bookmarks and even search for a part of the bookmarks tree depending on your search query.
 
+**Note**: You cannot remove or add anything from the root folder. Besides, there are two other folder named 'BookmarksBar' and 'Other Folder' where you cannot rename, move or delete any entries. 
+
 However, before we dive into how to use the API functions, lets take a look at an important object type we will need to work it. 
 
 ###The BookmarkTreeNode Type
