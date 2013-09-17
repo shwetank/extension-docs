@@ -23,6 +23,7 @@ The following is an overview of the various permissions declarations possible in
 * **"activeTab"**: The activeTab permission gives an extension temporary access to the currently active tab when the user invokes the extension - for example by clicking its browser action. Access to the tab lasts until the tab is navigated or closed.This serves as an alternative for many uses of `<all_urls>`, but displays no warning message during installation
 * **"alarms"**: Required if the extension or app uses the [chrome.alarms](alarms.html) module.
 * **"background"**: You typically use the "background" permission with a [background page or event page](tut_architecture_overview.html#the_background_process).
+* **"bookmarks"**: Gives your extension access to the chrome.bookmarks API.
 * **"contextMenus"**: Required if the extension or app uses the [chrome.contextMenus](contextMenus.html) module.
 * **"cookies"**: Required if the extension or app uses the [chrome.cookies](cookies.html) module.
 * **"geolocation"**: Allows the extension or app to use the [proposed HTML5 geolocation API](http://dev.w3.org/geo/api/spec-source.html) without prompting the user for permission..
@@ -31,5 +32,6 @@ The following is an overview of the various permissions declarations possible in
 * **"management"**: Required if the extension uses the [chrome.management](management.html) module.
 * **"storage"**: Required if the extension or app uses the [chrome.storage](storage.html) module. Note: `storage.sync` will not be supported
 * **"tabs"**: Required if the extension uses the [chrome.tabs](tabs.html) or [chrome.windows](windows.html) module.
+* **"webNavigation"**: Gives your extension access to the chrome.webNavigation API.
 * **"webRequest"**: Required if the extension uses the [chrome.webRequest](webRequest.html) module. 
 * **"speeddial"**:  Required if the extension uses the [opr.speeddial](speeddial.html) module.
