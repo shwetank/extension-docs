@@ -16,7 +16,7 @@
 		 $(function(){
 						var path = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
 						if ( path )
-								$('#sidebar a[href$="' + path + '"]').parent().attr('class', 'active');
+								$('#sidebar a[href="' + path + '"]').parent().attr('class', 'active');
 								$('#navbar ul a[href$="' + path + '"]').parent().attr('class', 'active');
 				});
 			// see http://docs.jquery.com/Tutorials:Auto-Selecting_Navigation and Ola's fix
