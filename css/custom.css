@@ -82,6 +82,10 @@ td {
 	border: 1px solid #ddd;
 	padding: 4px;
 }
+#___gcse_0 td {
+	border: 0 !important;
+	padding: 0 !important;
+}
 /* / table layout fix */
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
