@@ -8,7 +8,7 @@ copyright: opera-ccby
 Let's dive deeper into the architecture and technical details of extensions in Opera. 
 
 ## The NEX Format
-Opera supports the *NEX* (short for **N**avigator **Ex**tension) file format for extensions. All the files and folders for an extension are packaged into a zip file with a special header and renamed as *.nex*. The NEX format will support a major portion of Chromium extensions, as well as APIs specific to Opera. We've created a [list that details which APIs we support](tut_architecture_overview.html#apis_supported) from the Chromium project, as well as which ones are exclusive to Opera.
+Opera supports the *NEX* (short for **N**avigator **Ex**tension) file format for extensions. All the files and folders for an extension are packaged into a zip file with a special header and renamed as *.nex*. The NEX format supports a major portion of Chromium extensions, as well as APIs specific to Opera. The API docs section in the right sidebar gives you a good idea of the APIs Opera currently supports.
 
 The APIs from the Chromium project supported in NEX extensions (like tabs) can be called using *chrome.\**, whereas the ones specific to Opera (like Speed Dial) will reside under the *opr.\** object. 
 
@@ -20,17 +20,17 @@ If you would like to see the code of an extension, you can rename the file exten
 
 Currently, there are four types of extensions in Opera.
 
-#### 1. Extensions involving Browser Actions (and Page actions)
+### 1. Extensions involving Browser Actions (and Page actions)
 You can use Browser Actions or Page Actions to put UI elements in the browser window. Browser Actions are used to put UI elements in the top right side of the browser *next* to the address bar. This is different from Page Actions which are used to place a UI element *inside* the address bar. 
 
 Page actions are used to put a UI element specific to just a page or a limited set of pages fitting a certain criteria. If you would like the UI element to be there for all pages, then you should use Browser Actions for that purpose. The UI elements you can use are buttons, badges and popups. To know more on how to create and use these in extensions, please read the article on [creating buttons, badges and popups](tut_browser_actions.html). 
 
 Note: There can only be a maximum of 6 extensions installed at a time in the toolbar using browser actions, and only up to 4 which are based on page actions.
 
-#### 2. Context Menu extensions
+### 2. Context Menu extensions
 As the name implies, they are extensions to the context menu of the page. You can bring up the context menu by either right-clicking an element in the page, or by using the appropriate shortcuts using your keyboard (varies according to your platform). We've created an article on [how to create context menu extensions](tut_context_menus.html). 
 
-#### 3. Speed Dial extensions
+### 3. Speed Dial extensions
 You can also create extensions for the Speed Dial in Opera. Keep in mind that to create Speed Dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create Speed Dial extensions](tut_sd_extensions.html).
 #### 4. Extensions with no UI
 You can also create extensions which don't have any UI component. If you are familiar with injected scripts in previous (Presto-based) versions of Opera, or with Greasemonkey scripts, then you get the idea. 
@@ -39,12 +39,12 @@ An example of this could be an extension which listens to keyboard input, and pe
 
 ## Different parts of an extension
 
-#### The Extension manifest 
+### The Extension manifest 
 Every extension *must* contain a manifest file. The manifest file provides basic information like the name of the extension and the author, as well as some important information like the APIs the extensions wants to access, which is listed in the *permissions* field. If the extension manifest is not correctly defined, the extension will not run at all. Another important thing to note is the *developer* field, where you can include the extension author's name. 
 
 To know more about the extension manifest, [read the API doc](manifest.html) on it. 
 
-#### The Background Process 
+### The Background Process 
 You need a process to run in the background to coordinate some tasks or to maintain a certain state. You have two variants of it - The *Background Page* or *Event Page*. 
 
 Though you can use an HTML page and put JavaScript inside the `<script>` tag, it is usually better to just use a *.js* file and reference that from the manifest file. The browser will automatically generate the corresponding page for it. For example, 
@@ -81,17 +81,17 @@ The primary difference between background pages and event pages is that event pa
 
 In other words, try to use an event page whenever feasible, as it will lead to better performance and lesser resource consumption by the browser.
 
-#### The Content Script
+### The Content Script
 If you want to make any change to the web page itself, then you need to use a content script. The content script has access to the DOM of the web page, but access to variables and functions is confined to only itself. For example, content scripts cannot access variables defined in the web page, or even in other content scripts. 
 
 The content script does not have *direct* access to the variables and functions in the background scripts too. The same applies for access to API functions. However, you can use [message passing](tut_message_passing.html) to communicate between various parts of the extensions, be it background scripts or popups. So, you could call your functions in the background script and then communicate to the content script to do a certain task involving the host page's DOM.
 
 More details on it can be found in our [article on content scripts](tut_content_scripts.html).
 
-#### The Popup Page
+### The Popup Page
 Sometimes extensions will have a popup which, well, pops up when you click an extension button. This is defined by an HTML page, and needs to be specified in the manifest. Read the [buttons, badges and popups](tut_browser_actions.html) article to learn more. 
 
-#### The Options Page
+### The Options Page
 If your extension needs a place to store user preferences then you should create an options page. If you define an options page then a link will be provided at the *extensions management* page from where the user can access the page. You need to declare it in the manifest like so:
 
 <pre class="prettyprint">{
@@ -102,7 +102,7 @@ If your extension needs a place to store user preferences then you should create
 
 You can use *localStorage* as defined in the [Web Storage API](http://www.w3.org/TR/webstorage/) to store user preferences for the extension.
 
-#### Icons and other files
+### Icons and other files
 Your extensions need icons (A 128x128 icon used for the addons page and during installation, a 48x48 one for the extensions management page, a 16x16 one for the favicon for the extension's pages, and a 19x19 one in case you need to put an icon as a browser or page action). Apart from icons, you might also need other files like images, fonts etc. as well as CSS and JS files for pages like the popup or options pages. All of these can be placed anywhere inside of the extension package.
 
 ## Files and Folder Structure
@@ -157,29 +157,4 @@ You can refer to any of your files in your extensions using relative URLs. For e
 	
 	Please note that this does not have any effect on the way you do AJAX. You are free to make a call through `XMLHttpRequest()` to any origin. 
 	
-	Also, if you are familiar with the old version of Opera extensions, then you would be used to declaring permissions for cookie sharing. No such requirement is there for extensions in nex versions, so you can do away with it. If you are converting your *.oex*	extensions to an *.nex* based one, then you can remove the requirement for declaring permission for cookie sharing. 
-
-## Supported APIs
-Opera supports a certain subset of chrome.\* APIs found in the Chromium project, as well as APIs exclusive to Opera which are under the *opr* object. 
-
-The *chrome.\** APIs supported in Opera are:
-
-- [alarms](alarms.html)
-- [browserAction](browserAction.html)
-- [contextMenus](contextMenus.html)
-- [extension](extension.html)
-- [internationalization](i18n.html)
-- [idle](idle.html)
-- [management](management.html)
-- [pageAction](pageAction.html)
-- [runtime](runtime.html)
-- [storage](storage.html)
-- [tabs](tabs.html)
-- [webRequest](webRequest.html)
-- [windows](windows.html)
-
-The *opr*.\* API Opera supports at present is:
-
-- [Speed Dial API](speeddial.html)
-
-With time, we will be adding more APIs to the *opr* object.
+	Also, if you are familiar with the old version of Opera extensions, then you would be used to declaring permissions for cookie sharing. No such requirement is there for extensions in Opera 15+, so you can do away with it. If you are converting your *.oex*	extension to a *.nex* based one, then you can remove the requirement for declaring permission for cookie sharing. 
