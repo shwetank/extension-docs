@@ -24,7 +24,6 @@ The following is an overview of the various permissions declarations possible in
 * **alarms**: Required if the extension or app uses the [chrome.alarms](alarms.html) API.
 * **background**: You typically use the "background" permission with a [background page or event page](tut_architecture_overview.html#the_background_process).
 * **bookmarks**: Gives your extension access to the [chrome.bookmarks API](bookmarks.html).
-* **commands**: Gives your extension access to the [chrome.commands API](commands.html) (keyboard shortcuts).
 * **contextMenus**: Required if the extension or app uses the [chrome.contextMenus](contextMenus.html) API.
 * **cookies**: Required if the extension or app uses the [chrome.cookies](cookies.html) API.
 * **geolocation**: Allows the extension or app to use the [proposed HTML5 geolocation API](http://dev.w3.org/geo/api/spec-source.html) without prompting the user for permission.
