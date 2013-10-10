@@ -23,7 +23,6 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
                 <li><a href="manifest.html#key">key</a></li>
                 <li><a href="manifest.html#name">name</a></li>
                 <li><a href="manifest.html#permissions">permissions</a></li>
-                <li><a href="manifest.html#offline_enabled">offline_enabled</a></li>
                 <li><a href="manifest.html#version">version</a></li>
                 <li><a href="manifest.html#manifest_version">manifest_version</a></li>
                 <li><a href="manifest.html#web_accessible_resources">web_accessible_resources</a></li>
@@ -77,7 +76,6 @@ are <b>name</b> and <b>version</b>.
   "<a href="manifest.html#homepage_url">homepage_url</a>": "http://<em>path/to/homepage</em>",
   "<a href="manifest.html#incognito">incognito</a>": "spanning" <em>or</em> "split",
   "<a href="manifest.html#key">key</a>": "<em>publicKey</em>",
-  "<a href="manifest.html#offline_enabled">offline_enabled</a>": true,
   "<a href="tut_architecture_overview.html#the_options_page">options_page</a>": "<em>aFile</em>.html",
   "<a href="declare_permissions.html">permissions</a>": [...],
   "<a href="autoupdate.html">update_url</a>": "http://<em>path/to/updateInfo</em>.xml",
@@ -251,14 +249,6 @@ see <a href="i18n.html">Internationalization</a> for details.
 <pre class="prettyprint">
 &lt;img src=&quot;opera://favicon/http://www.google.com/&quot;&gt;
 </pre>
-
-<h3 id="offline_enabled">offline_enabled</h3>
-
-<p>
-Whether the xtension is expected to work offline. When Opera detects
-that it is offline, apps with this field set to true will be highlighted
-on the New Tab page.
-</p>
 
 <p>
 The "3D" requirement denotes GPU hardware acceleration.
