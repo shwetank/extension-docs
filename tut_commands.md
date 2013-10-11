@@ -14,7 +14,7 @@ Keyboard shortcuts in extensions can only have the following supported keys: A-Z
 
 Every keyboard shortcut combination must include either Alt or Ctrl (or Command on Mac). Note that Ctrl is automatically converted to Command on Mac, so if you want to use the Ctrl key instead of Command on Mac then please specify it as MacCtrl. 
 
-You cannot use Ctrl and Alt in the same shortcut combination. Also, you cannot use modifier keys like Ctrl or Alt in combination with media keys like MediaNextTrack, MediaPlayPause, etc. 
+You cannot use Ctrl and Alt in the same shortcut combination. Also, you cannot use modifier keys like Ctrl or Alt in combination with media keys like MediaNextTrack, MediaPlayPause, etc. Another thing to note is that browser shortcut keys will take precedence over keyboard shortcut keys defined in the extension. So if your extension defines a shortcut key, but the browser already has the same shortcut key for something, then when the user presses that keyboard shortcut the browser defined action for that keyboard shortcut will be used. So always make sure that the keyboard shortcut you define for the extension does not conflict with any pre-existing keys defined in the browser. 
 
 ##Permissions
 
@@ -57,6 +57,8 @@ Besides the commands for opening popups for browser and page actions, we can def
    },
  ...
 }</pre>
+
+Note: While developing, if you decide to change the keyboard shortcut, then simply reloading the extension in developer mode will not be enough. You will need to delete the extension and install it again for the new keyboard shortcut to take effect. 
  
 In the next section we'll see how to detect for this keyboard shortcut in order to run our own functionality.
 
