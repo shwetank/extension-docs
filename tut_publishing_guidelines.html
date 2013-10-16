@@ -22,7 +22,11 @@ copyright: opera-ccby
 			<li><a href="#good-screenshots">Take good screenshots</a></li>
 		</ul>
 	</li>
-	<li><a href="#submit">Submit your extension for review</a></li>
+	<li><a href="#submit">Submit your extension for review</a>
+		<ul>
+			<li><a href="#acceptance-criteria">Acceptance criteria</a></li>
+		</ul>
+	</li>
 	<li><a href="#reviewed">Your extension is reviewed</a></li>
 	<li><a href="#published">When the extension satisfies all criteria, it will be published</a></li>			
 </ol>
@@ -81,7 +85,7 @@ copyright: opera-ccby
 
 <h3 id="chooselicense">Choose a license</h3>
 
-<p>Choose the distribution license for your extension - the Opera Extensions site allows you to choose between two when uploading.</p>
+<p>Choose the distribution license for your extension — the Opera Extensions site allows you to choose between two when uploading.</p>
 
 <p>With the <a href="https://addons.opera.com/developer/license/hosting/">Opera hosting license</a> you keep all content rights, but allow Opera to make the extension available free of charge to users worldwide. Opera can make changes to the extension, if required to make it work properly.</p>
 
@@ -144,7 +148,7 @@ copyright: opera-ccby
 
 <h2 id="submit">3. Submit your extension for review</h2>
 
-<p>To submit your extension, you need to head over to the <a href="https://addons.opera.com/addons/extensions/">Opera extensions repository</a>, make sure you are signed in, and then upload your extension and associated files and details using the <a href="https://addons.opera.com/developer/upload/">Upload Extensions form</a>. There are a quite a few options to look through in this multi-page process. 
+<p>To submit your extension, you need to head over to the <a href="https://addons.opera.com/addons/extensions/">Opera extensions repository</a>, make sure you are signed in, and then upload your extension and associated files and details using the <a href="https://addons.opera.com/developer/upload/">Upload Extensions form</a>. There are a quite a few options to look through in this multi-page process.</p>
 
 <p>The final page gives you a chance to review all your choices before submitting your extension.</p>
 
@@ -160,7 +164,9 @@ copyright: opera-ccby
 	<li>It must perform as described.</li>
 	<li>There should be no obvious bugs.</li>
 	<li>Icons of all sizes should be similar in style.</li>
+	<li>Icons should not just consist of one or more words on a colored background. Refer to our <a href="tut_icons.html">icon guidelines</a> for tips on how to make good icons.</li>
 	<li>The icons, screenshots and graphic design must be of acceptable quality. Anti-aliased PNGs with transparent backgrounds are preferred. Note that interlaced PNG-files are currently not supported, due to a <a href="http://www.pythonware.com/library/pil/handbook/format-png.htm">limitation of the image library</a> we're using. Avoid this effect in your screenshots.</li>
+	<li>Icons inside the address bar (page actions) cannot have a padlock shape.</li>
 	<li>If defined, the support webpage must be relevant to the extension.</li>
 	<li>It must not collect private information without authorization from the user.</li>
 	<li>It must not send private data to an external store, for example through XHR.</li>
@@ -169,9 +175,10 @@ copyright: opera-ccby
 	<li>It must comply with the <a href="https://addons.opera.com/developer/terms/">Terms of Service</a>.</li>
 	<li>No external JavaScript is allowed. All JavaScript code must be contained in the extension. External APIs are ok.</li>
 	<li>Values in <code>manifest.json</code> must be sound and valid.</li>
-	<li>Speed Dial extensions cannot just be a static picture linking to a website. They must provide valuable functionality, such as e.g. just-in-time info.</li>
-	<li>Extensions cannot just consist of a button linking to a website, or a popup with some static anchors linking to a website. Extensions must provide valuable functionality, such as e.g. a transformation applied on a page when a button is clicked.</li>
-	<li>Icons inside the address bar (page actions) cannot have a padlock shape.</li>
+	<li>Speed Dial extensions cannot just be a static picture linking to a website. They must provide valuable functionality, such as e.g. real-time info.</li>
+	<li>Extensions cannot just consist of a button linking to a website, or of a popup with some static links pointing to a website. Extensions must provide valuable functionality, such as e.g. a transformation applied on a page when a button is clicked, real-time info in a popup, etc.</li>
+	<li>Content inside popups must be optimized for display in a popup. The content must match the popup's size, and vertical scrolling should only be used if really necessary. Avoid horizontal scrolling inside popups.</li>
+	<li>While linking to your own or other sites from your extension is fine, such links should be relevant and have a clear function. Don't overload the extension with promotional links.</li>
 	<li>We must be able to review the code in a reasonable manner. Therefor, the code shouldn't be obfuscated. Binary code is not ok.</li>
 	<li>The summary must answer the question: what does your extension do? It must be composed of grammatically correct and complete sentences.</li>
 	<li>The description must answer: 1) How do you use the extension? 2) What does the extension look like?</li>
