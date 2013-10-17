@@ -32,7 +32,8 @@ As the name implies, they are extensions to the context menu of the page. You ca
 
 ### 3. Speed Dial extensions
 You can also create extensions for the Speed Dial in Opera. Keep in mind that to create Speed Dial extensions, you need to use the *opr* object, and will only run in an NEX file extension. Go ahead and check out [how to create Speed Dial extensions](tut_sd_extensions.html).
-#### 4. Extensions with no UI
+
+### 4. Extensions with no UI
 You can also create extensions which don't have any UI component. If you are familiar with injected scripts in previous (Presto-based) versions of Opera, or with Greasemonkey scripts, then you get the idea. 
 
 An example of this could be an extension which listens to keyboard input, and performs an action (like opening a certain page in a new tab) when a keyboard shortcut is typed by the user. These extensions will work as part of the content script, which will be discussed (along with others parts of an extension) in the next part of this article.
@@ -68,7 +69,7 @@ To specify an event page in the manifest file, you need to define the *persisten
 
 The background page (or the background script) is essential for the user interface. Any piece of code which requires adding a UI item to the browser needs to be defined here. It is also the one responsible for noticing a change in state and updating or otherwise modifying the UI accordingly. 
 
-Event pages are exactly like background pages, except that they only loaded when required. This means when the event page isn't loaded, system memory and resources are not being used, thus giving better performance. Extensions authors are recommended to use event pages wherever they can.
+*Event pages* are exactly like background pages, except that they only loaded when required. This means when the event page isn't loaded, system memory and resources are not being used, thus giving better performance. Extensions authors are recommended to use event pages wherever they can.
 
 Event pages are loaded when: 
 
@@ -79,7 +80,7 @@ Event pages are loaded when:
 
 The primary difference between background pages and event pages is that event pages are intended to handle events only. So you'd register event listeners in the eventpage.js and the browser will optimize the way it stores and runs these events at runtime. Anything not wrapped in event listeners will be handled on load and then only kept around by the engine if the variables and functions are referenced in any way inside any event listeners.
 
-In other words, try to use an event page whenever feasible, as it will lead to better performance and lesser resource consumption by the browser.
+In other words, try to **use an event page whenever feasible, as it will lead to better performance and lesser resource consumption** by the browser.
 
 ### The Content Script
 If you want to make any change to the web page itself, then you need to use a content script. The content script has access to the DOM of the web page, but access to variables and functions is confined to only itself. For example, content scripts cannot access variables defined in the web page, or even in other content scripts. 
