@@ -5,480 +5,456 @@ support: 19
 copyright: opera-ccby
 ---
 
- <div id="gc-pagecontent">
-        
-        
-        
- <div id="toc">
-     <h2>
-       Contents
-     </h2>
-     <ol>
-       <li>
-         <a href="#types">Types</a>
-         <ol>
-           <li>
-             <a href="#type-StashItem">StashItem</a>
-           </li>
-         </ol>
-       </li>
-       <li>
-         <a href="#methods">Methods</a>
-         <ol>
-           <li>
-             <a href="#method-get">get</a>
-           </li>
-           <li>
-             <a href="#method-query">query</a>
-           </li>
-           <li>
-             <a href="#method-remove">remove</a>
-           </li>
-         </ol>
-       </li>
-       <li>
-         <a href="#events">Events</a>
-         <ol>
-           <li>
-             <a href="#event-onCreated">onCreated</a>
-           </li>
-           <li>
-             <a href="#event-onUpdated">onUpdated</a>
-           </li>
-           <li>
-             <a href="#event-onRemoved">onRemoved</a>
-           </li>
-         </ol>
-       </li>
-     </ol>
-   </div>
-
-<table class="intro">
-  <tbody><tr>
-    <th scope="col"><br></th>
-    <th scope="col"><br></th>
-  </tr>
-  <tr>
-    <td>
-      <strong>Description:</strong>
-    </td>
-    <td>
-      Use the <code>opr.stash</code> module to read items stored in a user's stash.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Availability:</strong>
-    </td>
-    <td>
-      Opera 19
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Permissions:</strong>
-    </td>
-    <td>
-      <code>"stash"</code>
-    </td>
-  </tr>
-</tbody></table>
-<div class="api_reference">
-    <h3 id="types">
-      Types
-    </h3>
-    <div>
-      <h3 id="type-StashItem">
-        StashItem
-      </h3>
-      <div>
-        <dl>
-          <dt>
-            <code class="type_name">( object )</code>
-          </dt>
-          <dd>
-            <h4 id="StashItem-properties">
-              Properties of <a href="#type-StashItem">StashItem</a>
-            </h4>
-          </dd>
-          <dd>
-            <dl>
-              <dd>
-                <div>
-                  <a name="property-StashItem-id" id="property-StashItem-id"></a>
-                  <dl>
-                    <dt>
-                      <code class="variable">id</code> <code class="property">( integer )</code>
-                    </dt>
-                    <dd>
-                      A unique identifier for the item. IDs are unique within the current profile, and they remain valid even after the browser is restarted.
-                     <div class="note">
-                        Note: Stash item ids are internal identifiers and are NOT synchronized. As urls are guaranteed to be unique in stash it is encouraged to use them as identifiers in extensions.
-                    
-                  </div></dd></dl>
-                </div>
-                <div>
-                  <a name="property-StashItem-url" id="property-StashItem-url"></a>
-                  <dl>
-                    <dt>
-                      <code class="variable">url</code> <code class="property">( string )</code>
-                    </dt>
-                    <dd>
-                      The URL navigated to when a user clicks the stash item.
-
-                      <div class="note">
-                        Note: the thumbnail image associated with this stash item URL can be retrieved via
-                      <div class="summary">
-                        <code><span class="subdued">opera://stash-snapshot/?</span><span class="subdued">url=</span>{url}</code>
-                      </div>
-                      <p>
-                        The URL have to be UTF-8 encoded, i.e. usage is <code>opera://stash-snapshot/?url= + encodeURIComponent(url)</code>
-                      </p>
-                      </div>
-                    </dd>
-                  </dl>
-                </div>
-                <div>
-                  <a name="property-StashItem-dateAdded" id="property-StashItem-dateAdded"></a>
-                  <dl>
-                    <dt>
-                      <code class="variable">dateAdded</code> <code class="property">( double )</code>
-                    </dt>
-                    <dd>
-                      When this item was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).
-                    </dd>
-                  </dl>
-                </div>
-              </dd>
-            </dl>
-          </dd>
-        </dl>
-      </div>
-    </div>
-              <h2 id="methods">Methods</h2>
-             
-              <div>
-                <h4 id="method-get">get</h4>
-                <div class="summary lower"><code>
-                  <code><span class="subdued">opr.stash.</span>get(integer <code class="variable">stashId</code>, <span>function <code class="variable">callback</code></span>)</code>
-                </code></div>
-                <div class="description">
-                  <p>Retrieves details about the specified stash item.
-                  </p>
-                  <h4>Parameters</h4>
-                  <dl>
-                    <dd>
-                      <div>
-                        <a name="property-get-stashId" id="property-get-stashId"></a>
-                        <dl>
-                          <dt>
-                            <code class="variable">stashId</code> <code class="property">( integer )</code>
-                          </dt>
-                        </dl>
-                      </div>
-                      <div>
-                        <a name="property-get-callback" id="property-get-callback"></a>
-                        <dl>
-                          <dt>
-                            <code class="variable">callback</code> <code class="property">( function )</code>
-                          </dt>
-                        </dl>
-                      </div>
-                    </dd>
-                  </dl>
- 
-                                      <h4>Callback</h4>
-                    <p>
-                              The <em>callback</em> parameter should specify a function that looks like this:
-                            </p>
-                            
-                                        
-                    <pre class="prettyprint"><code>function(<a href="#type-StashItem">StashItem</a> item) <span class="subdued">{...}</span>;</code></pre>
-                    
-                            <dl>
-                              <dd>
-                                <div>
-                                  <a name="property-callback-result" id="property-callback-result"></a>
-                                  <dl>
-                                    <dt>
-                                      <code class="variable">item</code> <code class="property">( <a href="#type-StashItem">StashItem</a> )</code>
-                                    </dt>
-                                  </dl>
-                                </div>
-                              </dd>
-                            </dl>
-                                    </div>
-              </div>
-              <div>
-                <h4 id="method-query">
-                  query
-                </h4>
-                <div class="summary lower">
-                  <code><span class="subdued">opr.stash.</span>query(object <code class="variable">queryInfo</code>, <span>function <code class="variable">callback</code></span>)</code>
-                </div>
-                <div class="description">
-                  <p>
-                    Gets all stash items that have the specified properties, or all stash items if no properties are specified.
-                  </p>
-                  <h4>Parameters</h4>
-                  <dl>
-                      <div>
-                        <a name="property-update-updateProperties"></a>
-                        <dt>
-                          <code class="variable">queryInfo</code>
-                          <code class="property">
-                            (
-                              
-                              object
-                            )
-                          </code>
-                        </dt>
-                        <dd>
-                          <dl>
-                            <div>
-                              <a name="property-queryInfo-search"></a>
-                              <dt>
-                                <code class="variable">search</code>
-                                <code class="property">
-                                  (
-                                    <span class="optional">optional</span>
-                                    string
-                                  )
-                                </code>
-                              </dt>
-                              <dd>
-                                A general search string to match against any field stored for stash item objects.
-                              </dd>
-                            </div>
-                             
-                             <div>
-                               <a name="property-queryInfo-url"></a>
-                               <dt>
-                                 <code class="variable">url</code>
-                                 <code class="property">
-                                   (
-                                     <span class="optional">optional</span>
-                                     string
-                                   )
-                                 </code>
-                               </dt>
-                               <dd>
-                                 Match stash items against a <a href="http://developer.chrome.com/extensions/match_patterns.html">URL pattern</a>. Note that fragment identifiers are not matched.
-                               </dd>
-                             </div>
-                             
-                             <div>
-                               <a name="property-queryInfo-dateBefore"></a>
-                               <dt>
-                                 <code class="variable">dateAddedBefore</code>
-                                 <code class="property">
-                                   (
-                                     <span class="optional">optional</span>
-                                     double
-                                   )
-                                 </code>
-                               </dt>
-                               <dd>
-                                 Match stash items if their <span class="variable">dateAdded</span> attribute is before or equal to the value provided in this attribute, in milliseconds since the epoch.
-                               </dd>
-                             </div>
-                             
-                             <div>
-                               <a name="property-queryInfo-dateBefore"></a>
-                               <dt>
-                                 <code class="variable">dateAddedAfter</code>
-                                 <code class="property">
-                                   (
-                                     <span class="optional">optional</span>
-                                     double
-                                   )
-                                 </code>
-                               </dt>
-                               <dd>
-                                 Match stash items if their <span class="variable">dateAdded</span> attribute is after or equal to the value provided in this attribute, in milliseconds since the epoch.
-                               </dd>
-                             </div>
-                             
-                             <div>
-                               <a name="property-queryInfo-resultsLimit"></a>
-                               <dt>
-                                 <code class="variable">resultsLimit</code>
-                                 <code class="property">
-                                   (
-                                     <span class="optional">optional</span>
-                                     integer
-                                   )
-                                 </code>
-                               </dt>
-                               <dd>
-                                 The maximum number of stash items to return.
-                               </dd>
-                             </div>
-                            
-                          </dl>
-                        </dd>
-                        
-                        <!--<p>For example: </p><pre class="prettyprint"><code>opr.speeddial.update({ url: "http://dev.opera.com", title: "Dev Opera" });</code></pre><p></p>-->
-                        
-                          <div>
-                            <a name="property-get-callback" id="property-get-callback"></a>
-                            <dl>
-                              <dt>
-                                <code class="variable">callback</code> <code class="property">( function )</code>
-                              </dt>
-                            </dl>
-                          </div>
-                        
-                      </div>
-                  </dl>
-                    </div>
-                
-              
-              
-              <h4>
-                        Callback
-                      </h4>
-                      <p>
-                        The <em>callback</em> parameter should specify a function that looks like this:
-                      </p>
-                      <pre class="prettyprint"><code>function (array of <a href="#type-StashItem">StashItem</a> result) <span class="subdued">{...}</span>;</code></pre>
-              
-              
-                      <dl>
-                        <dd>
-                          <div>
-                            <a name="property-callback-result" id="property-callback-result"></a>
-                            <dl>
-                              <dt>
-                                <code class="variable">result</code> <code class="property">( array of <a href="#type-StashItem">StashItem</a> )</code>
-                              </dt>
-                            </dl>
-                          </div>
-                        </dd>
-                      </dl>
-              </div>             
-              <div>
-                    <h4 id="method-remove">
-                      remove
-                    </h4>
-                    <div class="summary lower">
-                      <code><span class="subdued">opr.stash.</span>remove(integer <code class="variable">stashId</code>, <span>function <code class="variable">callback</code></span>)</code>
-                    </div>
-                    <div class="description">
-                      <p>
-                        Removes the specified stash item.
-                      </p>
-                      <h4>
-                        Parameters
-                      </h4>
-                      <dl>
-                        <dd>
-                          <div>
-                            <a name="property-get-stashId" id="property-get-stashId"></a>
-                            <dl>
-                              <dt>
-                                <code class="variable">stashId</code> <code class="property">( integer )</code>
-                              </dt>
-                            </dl>
-                          </div>
-                          <div>
-                            <a name="property-get-callback" id="property-get-callback"></a>
-                            <dl>
-                              <dt>
-                                <code class="variable">callback</code> <code class="property">( <span class="optional">optional</span> function )</code>
-                              </dt>
-                            </dl>
-                          </div>
-                        </dd>
-                      </dl>
-                      <h4>
-                        Callback
-                      </h4>
-                      <p>
-                        The <em>callback</em> parameter should specify a function that looks like this:
-                      </p>
-                      <pre class="prettyprint"><code>function() {...};</code></pre>
-              
-                      <dl>
-                        <dd>
-                          <div>
-                            <a name="property-callback-result" id="property-callback-result"></a>
-              
-                          </div>
-                        </dd>
-                      </dl>
-                    </div>
-                  </div>
-              
-              <h2 id="events">Events</h2>
-              
-              <div>
-                <h4 id="event-onCreated">
-                  onCreated
-                </h4>
-                <div class="summary">
-                  <code><span class="subdued">opr.stash.</span>onCreated<span class="subdued">.addListener</span>(function(<span><a href="#type-StashItem">StashItem</a> <code class="variable">item</code></span>) <span class="subdued">{...}</span>);</code>
-                </div>
-                <div class="description">
-                  <p>
-                    Fired when a stash item is created.
-                  </p>
-                  <h4>
-                    Listener Parameters
-                  </h4>
-                  <dl>
-                    <dd>
-                      <div>
-                        <a name="property-onCreated-item" id="property-onCreated-item"></a>
-                        <dl>
-                          <dt>
-                            <code class="variable">item</code> <code class="property">( <a href="#type-StashItem">StashItem</a> )</code>
-                          </dt>
-                          <dd>
-                            The stash item that has been created.
-                          </dd>
-                        </dl>
-                      </div>
-                    </dd>
-                  </dl>
-                </div>
-              </div>
-              
-              <div><h4 id="event-onRemoved">
-                onRemoved
-              </h4>
-              <div class="summary">
-                <code><span class="subdued">opr.stash.</span>onRemoved<span class="subdued">.addListener</span>(function(object <code class="variable">removeInfo</code>) <span class="subdued">{...}</span>);</code>
-              </div><div class="description">
-                <p>
-                  Fired when a stash item is removed.
-                </p><h4>
-                  Listener Parameters
-                </h4><div>
-                  <a name="property-onRemoved-stashId" id="property-onRemoved-stashId"></a>
-                  <dt>
-                    <code class="variable">removeInfo</code> <code class="property">( object )</code>
-                  </dt>
-                  <dd>
-                    <dl>
-                      <div>
-                        <a name="property-RemoveInfo-url"></a>
-                        <dt>
-                          <code class="variable">url</code>
-                          <code class="property">
-                            (
-                              string
-                            )
-                          </code>
-                        </dt>
-                        <dd>
-                          Url of the removed stash item.
-                        </dd>
-                      </div>
-                    </dl>
-                  </dd>
-                </div>
-                </div></div>
-
-        </div>
-                </div>
+<div id="gc-pagecontent">
+	<div id="toc">
+		<h2>
+			Contents
+		</h2>
+		<ol>
+			<li>
+				<a href="#types">Types</a>
+				<ol>
+					<li>
+						<a href="#type-StashItem">StashItem</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#methods">Methods</a>
+				<ol>
+					<li>
+						<a href="#method-get">get</a>
+					</li>
+					<li>
+						<a href="#method-query">query</a>
+					</li>
+					<li>
+						<a href="#method-remove">remove</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#events">Events</a>
+				<ol>
+					<li>
+						<a href="#event-onCreated">onCreated</a>
+					</li>
+					<li>
+						<a href="#event-onUpdated">onUpdated</a>
+					</li>
+					<li>
+						<a href="#event-onRemoved">onRemoved</a>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<table class="intro">
+		<tbody>
+			<tr>
+				<th scope="col">
+					<br>
+				</th>
+				<th scope="col">
+					<br>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<strong>Description:</strong>
+				</td>
+				<td>
+					Use the <code>opr.stash</code> module to read items stored in a user's Stash.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Permissions:</strong>
+				</td>
+				<td>
+					<code>"stash"</code>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="api_reference">
+		<h2 id="types">
+			Types
+		</h2>
+		<div>
+			<h3 id="type-StashItem">
+				StashItem
+			</h3>
+			<div>
+				<dl>
+					<dt>
+						<code class="type_name">( object )</code>
+					</dt>
+					<dd>
+						<h4 id="StashItem-properties">
+							Properties of <a href="#type-StashItem">StashItem</a>
+						</h4>
+					</dd>
+					<dd>
+						<dl>
+							<dd>
+								<div>
+									<a name="property-StashItem-id" id="property-StashItem-id"></a>
+									<dl>
+										<dt>
+											<code class="variable">id</code> <code class="property">( integer )</code>
+										</dt>
+										<dd>
+											A unique identifier for the item. IDs are unique within the current profile, and they remain valid even after the browser is restarted.
+											<div class="note">
+												Note: Stash item ids are internal identifiers and are NOT synchronized. As urls are guaranteed to be unique in Stash, it is encouraged to use them as identifiers in extensions.
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<div>
+									<a name="property-StashItem-url" id="property-StashItem-url"></a>
+									<dl>
+										<dt>
+											<code class="variable">url</code> <code class="property">( string )</code>
+										</dt>
+										<dd>
+											The URL navigated to when a user clicks the Stash item.
+											<div class="note">
+												Note: the thumbnail image associated with this Stash item URL can be retrieved via
+												<div class="summary">
+													<code><span class="subdued">opera://stash-snapshot/?</span><span class="subdued">url=</span>{url}</code>
+												</div>
+												<p>
+													The URL has to be UTF-8 encoded, i.e. usage is <code>opera://stash-snapshot/?url= + encodeURIComponent(url)</code>
+												</p>
+											</div>
+										</dd>
+									</dl>
+								</div>
+								<div>
+									<a name="property-StashItem-dateAdded" id="property-StashItem-dateAdded"></a>
+									<dl>
+										<dt>
+											<code class="variable">dateAdded</code> <code class="property">( double )</code>
+										</dt>
+										<dd>
+											When this item was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).
+										</dd>
+									</dl>
+								</div>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<h2 id="methods">
+			Methods
+		</h2>
+		<div>
+			<h4 id="method-get">
+				get
+			</h4>
+			<div class="summary lower">
+				<code><code><span class="subdued">opr.stash.</span>get(integer <code class="variable">stashId</code>, <span>function <code class="variable">callback</code></span>)</code></code>
+			</div>
+			<div class="description">
+				<p>
+					Retrieves details about the specified Stash item.
+				</p>
+				<h4>
+					Parameters
+				</h4>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-get-stashId" id="property-get-stashId"></a>
+							<dl>
+								<dt>
+									<code class="variable">stashId</code> <code class="property">( integer )</code>
+								</dt>
+							</dl>
+						</div>
+						<div>
+							<a name="property-get-callback" id="property-get-callback"></a>
+							<dl>
+								<dt>
+									<code class="variable">callback</code> <code class="property">( function )</code>
+								</dt>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<h4>
+					Callback
+				</h4>
+				<p>
+					The <em>callback</em> parameter should specify a function that looks like this:
+				</p>
+				<pre class="prettyprint">
+<code>function(<a href="#type-StashItem">StashItem</a> item) <span class="subdued">{...}</span>;</code>
+</pre>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-callback-result" id="property-callback-result"></a>
+							<dl>
+								<dt>
+									<code class="variable">item</code> <code class="property">( <a href="#type-StashItem">StashItem</a> )</code>
+								</dt>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div>
+			<h4 id="method-query">
+				query
+			</h4>
+			<div class="summary lower">
+				<code><span class="subdued">opr.stash.</span>query(object <code class="variable">queryInfo</code>, <span>function <code class="variable">callback</code></span>)</code>
+			</div>
+			<div class="description">
+				<p>
+					Gets all Stash items that have the specified properties, or all Stash items if no properties are specified.
+				</p>
+				<h4>
+					Parameters
+				</h4>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-update-updateProperties"></a>
+							<dl>
+								<dt>
+									<code class="variable">queryInfo</code> <code class="property">( object )</code>
+								</dt>
+								<dd>
+									<dl>
+										<dd>
+											<div>
+												<a name="property-queryInfo-search"></a>
+												<dl>
+													<dt>
+														<code class="variable">search</code> <code class="property">( <span class="optional">optional</span> string )</code>
+													</dt>
+													<dd>
+														A general search string to match against any field stored for Stash item objects.
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-queryInfo-url"></a>
+												<dl>
+													<dt>
+														<code class="variable">url</code> <code class="property">( <span class="optional">optional</span> string )</code>
+													</dt>
+													<dd>
+														Match Stash items against a <a href="http://developer.chrome.com/extensions/match_patterns.html">URL pattern</a>. Note that fragment identifiers are not matched.
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-queryInfo-dateBefore"></a>
+												<dl>
+													<dt>
+														<code class="variable">dateAddedBefore</code> <code class="property">( <span class="optional">optional</span> double )</code>
+													</dt>
+													<dd>
+														Match Stash items if their <span class="variable">dateAdded</span> attribute is before or equal to the value provided in this attribute, in milliseconds since the epoch.
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-queryInfo-dateBefore"></a>
+												<dl>
+													<dt>
+														<code class="variable">dateAddedAfter</code> <code class="property">( <span class="optional">optional</span> double )</code>
+													</dt>
+													<dd>
+														Match Stash items if their <span class="variable">dateAdded</span> attribute is after or equal to the value provided in this attribute, in milliseconds since the epoch.
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-queryInfo-resultsLimit"></a>
+												<dl>
+													<dt>
+														<code class="variable">resultsLimit</code> <code class="property">( <span class="optional">optional</span> integer )</code>
+													</dt>
+													<dd>
+														The maximum number of Stash items to return.
+													</dd>
+												</dl>
+											</div>
+										</dd>
+									</dl>
+								</dd><!--<p>For example: </p><pre class="prettyprint"><code>opr.speeddial.update({ url: "http://dev.opera.com", title: "Dev Opera" });</code></pre><p></p>-->
+								<dd>
+									<div>
+										<a name="property-get-callback" id="property-get-callback2"></a>
+										<dl>
+											<dt>
+												<code class="variable">callback</code> <code class="property">( function )</code>
+											</dt>
+										</dl>
+									</div>
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<h4>
+					Callback
+				</h4>
+				<p>
+					The <em>callback</em> parameter should specify a function that looks like this:
+				</p>
+				<pre class="prettyprint">
+	<code>function (array of <a href="#type-StashItem">StashItem</a> result) <span class="subdued">{...}</span>;</code>
+	</pre>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-callback-result" id="property-callback-result2"></a>
+							<dl>
+								<dt>
+									<code class="variable">result</code> <code class="property">( array of <a href="#type-StashItem">StashItem</a> )</code>
+								</dt>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div>
+			<h4 id="method-remove">
+				remove
+			</h4>
+			<div class="summary lower">
+				<code><span class="subdued">opr.stash.</span>remove(integer <code class="variable">stashId</code>, <span>function <code class="variable">callback</code></span>)</code>
+			</div>
+			<div class="description">
+				<p>
+					Removes the specified Stash item.
+				</p>
+				<h4>
+					Parameters
+				</h4>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-get-stashId" id="property-get-stashId2"></a>
+							<dl>
+								<dt>
+									<code class="variable">stashId</code> <code class="property">( integer )</code>
+								</dt>
+							</dl>
+						</div>
+						<div>
+							<a name="property-get-callback" id="property-get-callback3"></a>
+							<dl>
+								<dt>
+									<code class="variable">callback</code> <code class="property">( <span class="optional">optional</span> function )</code>
+								</dt>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<h4>
+					Callback
+				</h4>
+				<p>
+					The <em>callback</em> parameter should specify a function that looks like this:
+				</p>
+				<pre class="prettyprint">
+<code>function() {...};</code>
+</pre>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-callback-result" id="property-callback-result3"></a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<h2 id="events">
+			Events
+		</h2>
+		<div>
+			<h4 id="event-onCreated">
+				onCreated
+			</h4>
+			<div class="summary">
+				<code><span class="subdued">opr.stash.</span>onCreated<span class="subdued">.addListener</span>(function(<span><a href="#type-StashItem">StashItem</a> <code class="variable">item</code></span>) <span class="subdued">{...}</span>);</code>
+			</div>
+			<div class="description">
+				<p>
+					Fired when a Stash item is created.
+				</p>
+				<h4>
+					Listener Parameters
+				</h4>
+				<dl>
+					<dd>
+						<div>
+							<a name="property-onCreated-item" id="property-onCreated-item"></a>
+							<dl>
+								<dt>
+									<code class="variable">item</code> <code class="property">( <a href="#type-StashItem">StashItem</a> )</code>
+								</dt>
+								<dd>
+									The Stash item that has been created.
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div>
+			<h4 id="event-onRemoved">
+				onRemoved
+			</h4>
+			<div class="summary">
+				<code><span class="subdued">opr.stash.</span>onRemoved<span class="subdued">.addListener</span>(function(object <code class="variable">removeInfo</code>) <span class="subdued">{...}</span>);</code>
+			</div>
+			<div class="description">
+				<p>
+					Fired when a Stash item is removed.
+				</p>
+				<h4>
+					Listener Parameters
+				</h4>
+				<div>
+					<a name="property-onRemoved-stashId" id="property-onRemoved-stashId"></a>
+					<dl>
+						<dt>
+							<code class="variable">removeInfo</code> <code class="property">( object )</code>
+						</dt>
+						<dd>
+							<dl>
+								<dd>
+									<div>
+										<a name="property-RemoveInfo-url"></a>
+										<dl>
+											<dt>
+												<code class="variable">url</code> <code class="property">( string )</code>
+											</dt>
+											<dd>
+												Url of the removed Stash item.
+											</dd>
+										</dl>
+									</div>
+								</dd>
+							</dl>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
