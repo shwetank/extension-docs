@@ -6,293 +6,91 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/omnibox.html
 ---
 
-<div id="gc-container">
-	<div id="gc-sidebar">
-		<ul 
-				class="level1 ">
-			<li class="level2">
-						<a href="/extensions/getstarted.html" class="level2 ">Getting Started</a>
+<div id="gc-pagecontent">
+	
+	
+	
+	<div id="toc">
+		<ol>
+			<li>
+				<a href="#manifest">Manifest</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/overview.html" class="level2 ">Overview</a>
+			<li>
+				<a href="#examples">Examples</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/whats_new.html" class="level2 ">What's New?</a>
-			</li>
-			<li class="level2">
-						<a href="/extensions/devguide.html" class="level2 ">Developer's Guide</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser UI</span>
-									<div class="toggleIndicator level3 toggled"></div>
-								</a>
-								<ul toggleable
-										class="level3 ">
-									<li class="level4">
-												<a href="/extensions/browserAction.html" class="level4 ">Browser Actions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contextMenus.html" class="level4 ">Context Menus</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/desktop_notifications.html" class="level4 ">Desktop Notifications</a>
-									</li>
-									<li class="level4">
-												<a	class="level4 selected">Omnibox</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/options.html" class="level4 ">Options Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/override.html" class="level4 ">Override Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/pageAction.html" class="level4 ">Page Actions</a>
-									</li>
-								</ul>
+			<div class="api-reference">
+				<li>
+					<a href="#apiReference">Reference</a>
+					<ol>
+						<li>
+							<a href="#types">Types</a>
+							<ol>
+								<li>
+									<a href="#type-SuggestResult">SuggestResult</a>
+								</li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser Interaction</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/bookmarks.html" class="level4 ">Bookmarks</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/cookies.html" class="level4 ">Cookies</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/devtools.html" class="level4 ">Extending DevTools</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/events.html" class="level4 ">Events</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/history.html" class="level4 ">History</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/management.html" class="level4 ">Management</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/tabs.html" class="level4 ">Tabs</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/windows.html" class="level4 ">Windows</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#methods">Methods</a>
+							<ol>
+								<li><a href="#method-setDefaultSuggestion">setDefaultSuggestion</a></li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Implementation</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/a11y.html" class="level4 ">Accessibility</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/event_pages.html" class="level4 ">Event Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contentSecurityPolicy.html" class="level4 ">Content Security Policy</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/content_scripts.html" class="level4 ">Content Scripts</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/xhr.html" class="level4 ">Cross-Origin XHR</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/i18n.html" class="level4 ">Internationalization</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/messaging.html" class="level4 ">Message Passing</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/permissions.html" class="level4 ">Optional Permissions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/npapi.html" class="level4 ">NPAPI Plugins</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#events">Events</a>
+							<ol>
+								<li><a href="#event-onInputStarted">onInputStarted</a></li>
+								<li><a href="#event-onInputChanged">onInputChanged</a></li>
+								<li><a href="#event-onInputEntered">onInputEntered</a></li>
+								<li><a href="#event-onInputCancelled">onInputCancelled</a></li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Finishing</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/hosting.html" class="level4 ">Hosting</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/external_extensions.html" class="level4 ">Other Deployment Options</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#samples">Sample Extensions</a>
 						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<a href="/extensions/tutorials.html" class="level2 ">Tutorials</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/tut_migration_to_manifest_v2.html" class="level3 ">Manifest V2</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_debugging.html" class="level3 ">Debugging</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_analytics.html" class="level3 ">Google Analytics</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_oauth.html" class="level3 ">OAuth</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">Reference</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Formats</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/manifest.html" class="level4 ">Manifest Files</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/match_patterns.html" class="level4 ">Match Patterns</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-									<a href="/extensions/permission_warnings.html" class="level3 ">Permission Warnings</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_index.html" class="level3 ">chrome.* APIs</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_other.html" class="level3 ">Other APIs</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">More</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/faq.html" class="level3 ">FAQ</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/webstore/docs/index.html" class="level3 ">Chrome Web Store</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/apps/docs/developers_guide.html" class="level3 ">Hosted Apps</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/themes.html" class="level3 ">Themes</a>
-						</li>
-					</ul>
-			</li>
-		</ul>
+					</ol>
+				</li>
+			</div>
+		</ol>
 	</div>
-	<div id="gc-pagecontent">
-		<h1 class="page_title">chrome.omnibox</h1>
-		
-		
-		
-		<div id="toc">
-			<ol>
-				<li>
-					<a href="#manifest">Manifest</a>
-				</li>
-				<li>
-					<a href="#examples">Examples</a>
-				</li>
-				<div class="api-reference">
-					<li>
-						<a href="#apiReference">Reference</a>
-						<ol>
-							<li>
-								<a href="#types">Types</a>
-								<ol>
-									<li>
-										<a href="#type-SuggestResult">SuggestResult</a>
-									</li>
-								</ol>
-							</li>
-							<li>
-								<a href="#methods">Methods</a>
-								<ol>
-									<li><a href="#method-setDefaultSuggestion">setDefaultSuggestion</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#events">Events</a>
-								<ol>
-									<li><a href="#event-onInputStarted">onInputStarted</a></li>
-									<li><a href="#event-onInputChanged">onInputChanged</a></li>
-									<li><a href="#event-onInputEntered">onInputEntered</a></li>
-									<li><a href="#event-onInputCancelled">onInputCancelled</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#samples">Sample Extensions</a>
-							</li>
-						</ol>
-					</li>
-				</div>
-			</ol>
-		</div>
-		<table class="intro" id="intro">
-			<tr>
-				<td class="title">Description:</td>
-				<td>
-						
-						
-						The omnibox API allows you to register a keyword with Google Chrome's address bar, which is also known as the omnibox.
-						
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Availability:</td>
-				<td>
-						
-						
-						
-							Stable since Chrome 9.
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Manifest:</td>
-				<td>
-						
-						<span class="code">
-						"omnibox": {...}
-						
-						</span>
-						
-						<br>
-				</td>
-			</tr>
-		</table>
+	<table class="intro" id="intro">
+		<tr>
+			<td class="title">Description:</td>
+			<td>
+					
+					
+					The omnibox API allows you to register a keyword with Google Chrome's address bar, which is also known as the omnibox.
+					
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Availability:</td>
+			<td>
+					
+					
+					
+						Stable since Chrome 9.
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Manifest:</td>
+			<td>
+					
+					<span class="code">
+					"omnibox": {...}
+					
+					</span>
+					
+					<br>
+			</td>
+		</tr>
+	</table>
 <p>
 <img src="/static/images/omnibox.png" width="300" height="150"
 alt="A screenshot showing suggestions related to the keyword 'Chromium Search'"/>
@@ -364,39 +162,98 @@ icon, but it is displayed in color.
 <p>
 You can find samples of this API on the
 <a href="samples.html#omnibox">sample page</a>.
-		<h1 id="apiReference">chrome.omnibox reference</h1>
-		<div class="api_reference">
-				<h2 id="types">Types</h2>
+	<h1 id="apiReference">chrome.omnibox reference</h1>
+	<div class="api_reference">
+			<h2 id="types">Types</h2>
+				<div>
+					<h3 id="type-SuggestResult">SuggestResult</h3>
 					<div>
-						<h3 id="type-SuggestResult">SuggestResult</h3>
-						<div>
-							<dd>A suggest result.</dd>
-							
-								<h4 id="SuggestResult-properties" class="capitalize">
-									properties of <a href="#type-SuggestResult">SuggestResult</a>
-								</h4>
-								<dd>
+						<dd>A suggest result.</dd>
+						
+							<h4 id="SuggestResult-properties" class="capitalize">
+								properties of <a href="#type-SuggestResult">SuggestResult</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<a name="property-SuggestResult-content"></a>
+											<dl>
+												<dt>
+													<span class="variable">content</span>
+													<span class="property">
+														(
+															
+															string
+														)
+													</span>
+												</dt>
+												<dd>
+													The text that is put into the URL bar, and that is sent to the extension when the user chooses this entry.
+												
+												</dd>
+											</dl>
+										</div>
+										<div>
+											<a name="property-SuggestResult-description"></a>
+											<dl>
+												<dt>
+													<span class="variable">description</span>
+													<span class="property">
+														(
+															
+															string
+														)
+													</span>
+												</dt>
+												<dd>
+													The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
+												
+												</dd>
+											</dl>
+										</div>
+								</dl>
+							</dd>
+					</div>
+				</div>
+			<h2 id="methods">Methods</h2>
+				<div>
+					<h4 id="method-setDefaultSuggestion">
+						setDefaultSuggestion
+					</h4>
+					
+					<div class="summary uncapitalize">
+					<div class="line">
+					<span>chrome.omnibox.setDefaultSuggestion</span>(<span>object <span class="variable">suggestion</span></span>)
+					</div>
+					</div>
+					<div class="description">
+						<p>
+							Sets the description and styling for the default suggestion. The default suggestion is the text that is displayed in the first suggestion row underneath the URL bar.
+						</p>
+						<h4>Parameters</h4>
+						<dl>
+								<div>
+									<a name="property-setDefaultSuggestion-suggestion"></a>
 									<dl>
-											<div>
-												<a name="property-SuggestResult-content"></a>
-												<dl>
-													<dt>
-														<span class="variable">content</span>
-														<span class="property">
-															(
-																
-																string
-															)
-														</span>
-													</dt>
-													<dd>
-														The text that is put into the URL bar, and that is sent to the extension when the user chooses this entry.
+										<dt>
+											<span class="variable">suggestion</span>
+											<span class="property">
+												(
 													
-													</dd>
-												</dl>
-											</div>
+													object
+												)
+											</span>
+										</dt>
+										<dd>
+											A partial SuggestResult object, without the 'content' parameter.
+										
+										</dd>
+									</dl>
+									<dd>
+										<h5>Properties of <span class="variable">suggestion</span></h5>
+										<dl>
 											<div>
-												<a name="property-SuggestResult-description"></a>
+												<a name="property-suggestion-description"></a>
 												<dl>
 													<dt>
 														<span class="variable">description</span>
@@ -413,52 +270,109 @@ You can find samples of this API on the
 													</dd>
 												</dl>
 											</div>
-									</dl>
-								</dd>
-						</div>
-					</div>
-				<h2 id="methods">Methods</h2>
-					<div>
-						<h4 id="method-setDefaultSuggestion">
-							setDefaultSuggestion
-						</h4>
-						
-						<div class="summary uncapitalize">
-						<div class="line">
-						<span>chrome.omnibox.setDefaultSuggestion</span>(<span>object <span class="variable">suggestion</span></span>)
-						</div>
-						</div>
-						<div class="description">
-							<p>
-								Sets the description and styling for the default suggestion. The default suggestion is the text that is displayed in the first suggestion row underneath the URL bar.
-							</p>
-							<h4>Parameters</h4>
-							<dl>
-									<div>
-										<a name="property-setDefaultSuggestion-suggestion"></a>
-										<dl>
-											<dt>
-												<span class="variable">suggestion</span>
-												<span class="property">
-													(
-														
-														object
-													)
-												</span>
-											</dt>
-											<dd>
-												A partial SuggestResult object, without the 'content' parameter.
-											
-											</dd>
 										</dl>
-										<dd>
-											<h5>Properties of <span class="variable">suggestion</span></h5>
-											<dl>
+									</dd>
+								</div>
+						</dl>
+					</div>
+				</div>
+			<h2 id="events">Events</h2>
+				<div>
+					<h4 id="event-onInputStarted">onInputStarted</h4>
+					
+					<div class="description">
+				<p>
+							User has started a keyword input session by typing the extension's keyword. This is guaranteed to be sent exactly once per input session, and before any onInputChanged events.
+						</p>			<div>
+								<h4 id="event-onInputStarted-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.omnibox.onInputStarted.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onInputStarted-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function() <span class="subdued">{...}</span>;</pre>
+								</div>
+							</div>
+					</div>
+				</div>
+				<div>
+					<h4 id="event-onInputChanged">onInputChanged</h4>
+					
+					<div class="description">
+				<p>
+							User has changed what is typed into the omnibox.
+						</p>			<div>
+								<h4 id="event-onInputChanged-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.omnibox.onInputChanged.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onInputChanged-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(string text, function suggest) <span class="subdued">{...}</span>;</pre>
+										<dl>
 												<div>
-													<a name="property-suggestion-description"></a>
+													<a name="property-onInputChanged-text"></a>
 													<dl>
 														<dt>
-															<span class="variable">description</span>
+															<span class="variable">text</span>
 															<span class="property">
 																(
 																	
@@ -467,42 +381,15 @@ You can find samples of this API on the
 															</span>
 														</dt>
 														<dd>
-															The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
 														
 														</dd>
 													</dl>
 												</div>
-											</dl>
-										</dd>
-									</div>
-							</dl>
-						</div>
-					</div>
-				<h2 id="events">Events</h2>
-					<div>
-						<h4 id="event-onInputStarted">onInputStarted</h4>
-						
-						<div class="description">
-					<p>
-								User has started a keyword input session by typing the extension's keyword. This is guaranteed to be sent exactly once per input session, and before any onInputChanged events.
-							</p>			<div>
-									<h4 id="event-onInputStarted-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.omnibox.onInputStarted.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
-										<dl>
 												<div>
-													<a name="property-onInputStarted-callback"></a>
+													<a name="property-onInputChanged-suggest"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">suggest</span>
 															<span class="property">
 																(
 																	
@@ -511,49 +398,69 @@ You can find samples of this API on the
 															</span>
 														</dt>
 														<dd>
+															A callback passed to the onInputChanged event used for sending suggestions back to the browser.
 														
 														</dd>
 													</dl>
 												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function() <span class="subdued">{...}</span>;</pre>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-					<div>
-						<h4 id="event-onInputChanged">onInputChanged</h4>
-						
-						<div class="description">
-					<p>
-								User has changed what is typed into the omnibox.
-							</p>			<div>
-									<h4 id="event-onInputChanged-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.omnibox.onInputChanged.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
+				</div>
+				<div>
+					<h4 id="event-onInputEntered">onInputEntered</h4>
+					
+					<div class="description">
+				<p>
+							User has accepted what is typed into the omnibox.
+						</p>			<div>
+								<h4 id="event-onInputEntered-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.omnibox.onInputEntered.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onInputEntered-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(string text, enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code> disposition) <span class="subdued">{...}</span>;</pre>
 										<dl>
 												<div>
-													<a name="property-onInputChanged-callback"></a>
+													<a name="property-onInputEntered-text"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">text</span>
 															<span class="property">
 																(
 																	
-																	function
+																	string
 																)
 															</span>
 														</dt>
@@ -562,194 +469,84 @@ You can find samples of this API on the
 														</dd>
 													</dl>
 												</div>
-										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(string text, function suggest) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onInputChanged-text"></a>
-														<dl>
-															<dt>
-																<span class="variable">text</span>
-																<span class="property">
-																	(
-																		
-																		string
-																	)
-																</span>
-															</dt>
-															<dd>
-															
-															</dd>
-														</dl>
-													</div>
-													<div>
-														<a name="property-onInputChanged-suggest"></a>
-														<dl>
-															<dt>
-																<span class="variable">suggest</span>
-																<span class="property">
-																	(
-																		
-																		function
-																	)
-																</span>
-															</dt>
-															<dd>
-																A callback passed to the onInputChanged event used for sending suggestions back to the browser.
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
-								</div>
-						</div>
-					</div>
-					<div>
-						<h4 id="event-onInputEntered">onInputEntered</h4>
-						
-						<div class="description">
-					<p>
-								User has accepted what is typed into the omnibox.
-							</p>			<div>
-									<h4 id="event-onInputEntered-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.omnibox.onInputEntered.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
-										<dl>
 												<div>
-													<a name="property-onInputEntered-callback"></a>
+													<a name="property-onInputEntered-disposition"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">disposition</span>
 															<span class="property">
 																(
 																	
-																	function
+																	enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code>
 																)
 															</span>
 														</dt>
 														<dd>
+															The window disposition for the omnibox query. This is the recommended context to display results. For example, if the omnibox command is to navigate to a certain URL, a disposition of 'newForegroundTab' means the navigation should take place in a new selected tab.
 														
 														</dd>
 													</dl>
 												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(string text, enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code> disposition) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onInputEntered-text"></a>
-														<dl>
-															<dt>
-																<span class="variable">text</span>
-																<span class="property">
-																	(
-																		
-																		string
-																	)
-																</span>
-															</dt>
-															<dd>
-															
-															</dd>
-														</dl>
-													</div>
-													<div>
-														<a name="property-onInputEntered-disposition"></a>
-														<dl>
-															<dt>
-																<span class="variable">disposition</span>
-																<span class="property">
-																	(
-																		
-																		enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code>
-																	)
-																</span>
-															</dt>
-															<dd>
-																The window disposition for the omnibox query. This is the recommended context to display results. For example, if the omnibox command is to navigate to a certain URL, a disposition of 'newForegroundTab' means the navigation should take place in a new selected tab.
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-					<div>
-						<h4 id="event-onInputCancelled">onInputCancelled</h4>
-						
-						<div class="description">
-					<p>
-								User has ended the keyword input session without accepting the input.
-							</p>			<div>
-									<h4 id="event-onInputCancelled-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.omnibox.onInputCancelled.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
-										<dl>
-												<div>
-													<a name="property-onInputCancelled-callback"></a>
-													<dl>
-														<dt>
-															<span class="variable">callback</span>
-															<span class="property">
-																(
-																	
-																	function
-																)
-															</span>
-														</dt>
-														<dd>
-														
-														</dd>
-													</dl>
-												</div>
-										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function() <span class="subdued">{...}</span>;</pre>
-									</div>
+				</div>
+				<div>
+					<h4 id="event-onInputCancelled">onInputCancelled</h4>
+					
+					<div class="description">
+				<p>
+							User has ended the keyword input session without accepting the input.
+						</p>			<div>
+								<h4 id="event-onInputCancelled-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.omnibox.onInputCancelled.addListener</span>(<span>function <span class="variable">callback</span></span>)
 								</div>
-						</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onInputCancelled-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function() <span class="subdued">{...}</span>;</pre>
+								</div>
+							</div>
 					</div>
-		</div>
-			<h2 id="samples">Sample Extensions that use chrome.omnibox</h2>
-			<ul>
-				<li><strong><a href="samples.html#omnibox-example">Omnibox Example</a></strong>
-				&ndash; To use, type 'omnix' plus a search term into the Omnibox.
-		</li>
-				<li><strong><a href="samples.html#chromium-search">Chromium Search</a></strong>
-				&ndash; Add support to the omnibox to search the Chromium source code.
-		</li>
-			</ul>
+				</div>
 	</div>
+		<h2 id="samples">Sample Extensions that use chrome.omnibox</h2>
+		<ul>
+			<li><strong><a href="samples.html#omnibox-example">Omnibox Example</a></strong>
+			&ndash; To use, type 'omnix' plus a search term into the Omnibox.
+	</li>
+			<li><strong><a href="samples.html#chromium-search">Chromium Search</a></strong>
+			&ndash; Add support to the omnibox to search the Chromium source code.
+	</li>
+		</ul>
 </div>

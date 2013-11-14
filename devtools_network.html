@@ -6,284 +6,83 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/devtools_network.html
 ---
 
-<div id="gc-container">
-	<div id="gc-sidebar">
-		<ul 
-				class="level1 ">
-			<li class="level2">
-						<a href="/extensions/getstarted.html" class="level2 ">Getting Started</a>
+
+<div id="gc-pagecontent">
+	
+	
+	
+	<div id="toc">
+		<ol>
+			<li>
+				<a href="#overview">Overview</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/overview.html" class="level2 ">Overview</a>
+			<li>
+				<a href="#overview-examples">Examples</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/whats_new.html" class="level2 ">What's New?</a>
-			</li>
-			<li class="level2">
-						<a href="/extensions/devguide.html" class="level2 ">Developer's Guide</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser UI</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/browserAction.html" class="level4 ">Browser Actions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contextMenus.html" class="level4 ">Context Menus</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/desktop_notifications.html" class="level4 ">Desktop Notifications</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/omnibox.html" class="level4 ">Omnibox</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/options.html" class="level4 ">Options Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/override.html" class="level4 ">Override Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/pageAction.html" class="level4 ">Page Actions</a>
-									</li>
-								</ul>
+			<div class="api-reference">
+				<li>
+					<a href="#apiReference">Reference</a>
+					<ol>
+						<li>
+							<a href="#types">Types</a>
+							<ol>
+								<li>
+									<a href="#type-Request">Request</a>
+							<ol><li>
+										<a href="#Request-methods">Methods</a>
+										<ol>
+											<li><a href="#method-Request-getContent">getContent</a></li>
+										</ol>
+									</li></ol>	</li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser Interaction</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/bookmarks.html" class="level4 ">Bookmarks</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/cookies.html" class="level4 ">Cookies</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/devtools.html" class="level4 ">Extending DevTools</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/events.html" class="level4 ">Events</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/history.html" class="level4 ">History</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/management.html" class="level4 ">Management</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/tabs.html" class="level4 ">Tabs</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/windows.html" class="level4 ">Windows</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#methods">Methods</a>
+							<ol>
+								<li><a href="#method-getHAR">getHAR</a></li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Implementation</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/a11y.html" class="level4 ">Accessibility</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/event_pages.html" class="level4 ">Event Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contentSecurityPolicy.html" class="level4 ">Content Security Policy</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/content_scripts.html" class="level4 ">Content Scripts</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/xhr.html" class="level4 ">Cross-Origin XHR</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/i18n.html" class="level4 ">Internationalization</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/messaging.html" class="level4 ">Message Passing</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/permissions.html" class="level4 ">Optional Permissions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/npapi.html" class="level4 ">NPAPI Plugins</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#events">Events</a>
+							<ol>
+								<li><a href="#event-onRequestFinished">onRequestFinished</a></li>
+								<li><a href="#event-onNavigated">onNavigated</a></li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Finishing</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/hosting.html" class="level4 ">Hosting</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/external_extensions.html" class="level4 ">Other Deployment Options</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#samples">Sample Extensions</a>
 						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<a href="/extensions/tutorials.html" class="level2 ">Tutorials</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/tut_migration_to_manifest_v2.html" class="level3 ">Manifest V2</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_debugging.html" class="level3 ">Debugging</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_analytics.html" class="level3 ">Google Analytics</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_oauth.html" class="level3 ">OAuth</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">Reference</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Formats</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/manifest.html" class="level4 ">Manifest Files</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/match_patterns.html" class="level4 ">Match Patterns</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-									<a href="/extensions/permission_warnings.html" class="level3 ">Permission Warnings</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_index.html" class="level3 ">chrome.* APIs</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_other.html" class="level3 ">Other APIs</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">More</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/faq.html" class="level3 ">FAQ</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/webstore/docs/index.html" class="level3 ">Chrome Web Store</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/apps/docs/developers_guide.html" class="level3 ">Hosted Apps</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/themes.html" class="level3 ">Themes</a>
-						</li>
-					</ul>
-			</li>
-		</ul>
+					</ol>
+				</li>
+			</div>
+		</ol>
 	</div>
-	<div id="gc-pagecontent">
-		<h1 class="page_title">chrome.devtools.network</h1>
-		
-		
-		
-		<div id="toc">
-			<ol>
-				<li>
-					<a href="#overview">Overview</a>
-				</li>
-				<li>
-					<a href="#overview-examples">Examples</a>
-				</li>
-				<div class="api-reference">
-					<li>
-						<a href="#apiReference">Reference</a>
-						<ol>
-							<li>
-								<a href="#types">Types</a>
-								<ol>
-									<li>
-										<a href="#type-Request">Request</a>
-								<ol><li>
-											<a href="#Request-methods">Methods</a>
-											<ol>
-												<li><a href="#method-Request-getContent">getContent</a></li>
-											</ol>
-										</li></ol>	</li>
-								</ol>
-							</li>
-							<li>
-								<a href="#methods">Methods</a>
-								<ol>
-									<li><a href="#method-getHAR">getHAR</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#events">Events</a>
-								<ol>
-									<li><a href="#event-onRequestFinished">onRequestFinished</a></li>
-									<li><a href="#event-onNavigated">onNavigated</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#samples">Sample Extensions</a>
-							</li>
-						</ol>
-					</li>
-				</div>
-			</ol>
-		</div>
-		<table class="intro" id="intro">
-			<tr>
-				<td class="title">Description:</td>
-				<td>
-						
-						
-						Use the <code>chrome.devtools.network</code> API to retrieve the information about network requests displayed by the Developer Tools in the Network panel.
-						
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Availability:</td>
-				<td>
-						
-						
-						
-							Stable since Chrome 18.
-						
-						
-						<br>
-				</td>
-			</tr>
-		</table>
+	<table class="intro" id="intro">
+		<tr>
+			<td class="title">Description:</td>
+			<td>
+					
+					
+					Use the <code>chrome.devtools.network</code> API to retrieve the information about network requests displayed by the Developer Tools in the Network panel.
+					
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Availability:</td>
+			<td>
+					
+					
+					
+						Stable since Chrome 18.
+					
+					
+					<br>
+			</td>
+		</tr>
+	</table>
 <p>
 See <a href="devtools.html">DevTools APIs summary</a> for
 general introduction to using Developer Tools APIs</a>.
@@ -322,10 +121,10 @@ loaded:</p>
 <pre>
 chrome.devtools.network.onRequestFinished.addListener(
 function(request) {
-	if (request.response.bodySize > 40*1024)
-	chrome.experimental.devtools.console.addMessage(
-			chrome.experimental.devtools.console.Severity.Warning,
-			"Large image: " + request.request.url);
+if (request.response.bodySize > 40*1024)
+chrome.experimental.devtools.console.addMessage(
+		chrome.experimental.devtools.console.Severity.Warning,
+		"Large image: " + request.request.url);
 });
 </pre>
 
@@ -333,309 +132,308 @@ function(request) {
 You can find more examples that use this API in
 <a href="samples.html#devtools.network">Samples</a>.
 </p>
-		<h1 id="apiReference">chrome.devtools.network reference</h1>
-		<div class="api_reference">
-				<h2 id="types">Types</h2>
+	<h1 id="apiReference">chrome.devtools.network reference</h1>
+	<div class="api_reference">
+			<h2 id="types">Types</h2>
+				<div>
+					<h3 id="type-Request">Request</h3>
 					<div>
-						<h3 id="type-Request">Request</h3>
-						<div>
-							<dd>Represents a network request for a document resource (script, image and so on). See HAR Specification for reference.</dd>
-							
-								<h4 id="Request-methods" class="capitalize">
-									methods of <a href="#type-Request">Request</a>
-								</h4>
-								<dd>
-									<dl>
-											<div>
-												<h4 id="method-Request-getContent">
-													getContent
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>Request.getContent</span>(<span>function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
+						<dd>Represents a network request for a document resource (script, image and so on). See HAR Specification for reference.</dd>
+						
+							<h4 id="Request-methods" class="capitalize">
+								methods of <a href="#type-Request">Request</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<h4 id="method-Request-getContent">
+												getContent
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>Request.getContent</span>(<span>function <span class="variable">callback</span></span>)
+											</div>
+											</div>
+											<div class="description">
+												<p>
+													Returns content of the response body.
+												</p>
+												<h4>Parameters</h4>
+												<dl>
+														<div>
+															<a name="property-getContent-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	A function that receives the response body when the request completes.
+																
+																</dd>
+															</dl>
+														</div>
+												</dl>
+													<h4>Callback</h4>
 													<p>
-														Returns content of the response body.
+																The <em>callback</em> parameter should specify a function
+																that looks like this:
 													</p>
-													<h4>Parameters</h4>
+													<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
 													<dl>
 															<div>
-																<a name="property-getContent-callback"></a>
+																<a name="property-callback-content"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">callback</span>
+																		<span class="variable">content</span>
 																		<span class="property">
 																			(
 																				
-																				function
+																				string
 																			)
 																		</span>
 																	</dt>
 																	<dd>
-																		A function that receives the response body when the request completes.
+																		Content of the response body (potentially encoded).
+																	
+																	</dd>
+																</dl>
+															</div>
+															<div>
+																<a name="property-callback-encoding"></a>
+																<dl>
+																	<dt>
+																		<span class="variable">encoding</span>
+																		<span class="property">
+																			(
+																				
+																				string
+																			)
+																		</span>
+																	</dt>
+																	<dd>
+																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
 																	
 																	</dd>
 																</dl>
 															</div>
 													</dl>
-														<h4>Callback</h4>
-														<p>
-																	The <em>callback</em> parameter should specify a function
-																	that looks like this:
-														</p>
-														<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
-														<dl>
-																<div>
-																	<a name="property-callback-content"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">content</span>
-																			<span class="property">
-																				(
-																					
-																					string
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Content of the response body (potentially encoded).
-																		
-																		</dd>
-																	</dl>
-																</div>
-																<div>
-																	<a name="property-callback-encoding"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">encoding</span>
-																			<span class="property">
-																				(
-																					
-																					string
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
-																		
-																		</dd>
-																	</dl>
-																</div>
-														</dl>
-												</div>
 											</div>
-									</dl>
-								</dd>
-						</div>
+										</div>
+								</dl>
+							</dd>
 					</div>
-				<h2 id="methods">Methods</h2>
-					<div>
-						<h4 id="method-getHAR">
-							getHAR
-						</h4>
-						
-						<div class="summary uncapitalize">
-						<div class="line">
-						<span>chrome.devtools.network.getHAR</span>(<span>function <span class="variable">callback</span></span>)
-						</div>
-						</div>
-						<div class="description">
+				</div>
+			<h2 id="methods">Methods</h2>
+				<div>
+					<h4 id="method-getHAR">
+						getHAR
+					</h4>
+					
+					<div class="summary uncapitalize">
+					<div class="line">
+					<span>chrome.devtools.network.getHAR</span>(<span>function <span class="variable">callback</span></span>)
+					</div>
+					</div>
+					<div class="description">
+						<p>
+							Returns HAR log that contains all known network requests.
+						</p>
+						<h4>Parameters</h4>
+						<dl>
+								<div>
+									<a name="property-getHAR-callback"></a>
+									<dl>
+										<dt>
+											<span class="variable">callback</span>
+											<span class="property">
+												(
+													
+													function
+												)
+											</span>
+										</dt>
+										<dd>
+											A function that receives the HAR log when the request completes.
+										
+										</dd>
+									</dl>
+								</div>
+						</dl>
+							<h4>Callback</h4>
 							<p>
-								Returns HAR log that contains all known network requests.
+										The <em>callback</em> parameter should specify a function
+										that looks like this:
 							</p>
-							<h4>Parameters</h4>
+							<pre>function(object harLog) <span class="subdued">{...}</span>;</pre>
 							<dl>
 									<div>
-										<a name="property-getHAR-callback"></a>
+										<a name="property-callback-harLog"></a>
 										<dl>
 											<dt>
-												<span class="variable">callback</span>
+												<span class="variable">harLog</span>
 												<span class="property">
 													(
 														
-														function
+														object
 													)
 												</span>
 											</dt>
 											<dd>
-												A function that receives the HAR log when the request completes.
+												A HAR log. See HAR specification for details.
 											
 											</dd>
 										</dl>
 									</div>
 							</dl>
-								<h4>Callback</h4>
-								<p>
-											The <em>callback</em> parameter should specify a function
-											that looks like this:
-								</p>
-								<pre>function(object harLog) <span class="subdued">{...}</span>;</pre>
-								<dl>
-										<div>
-											<a name="property-callback-harLog"></a>
-											<dl>
-												<dt>
-													<span class="variable">harLog</span>
-													<span class="property">
-														(
-															
-															object
-														)
-													</span>
-												</dt>
-												<dd>
-													A HAR log. See HAR specification for details.
-												
-												</dd>
-											</dl>
-										</div>
-								</dl>
-						</div>
 					</div>
-				<h2 id="events">Events</h2>
-					<div>
-						<h4 id="event-onRequestFinished">onRequestFinished</h4>
-						
-						<div class="description">
-					<p>
-								Fired when a network request is finished and all request data are available.
-							</p>			<div>
-									<h4 id="event-onRequestFinished-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.devtools.network.onRequestFinished.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
+				</div>
+			<h2 id="events">Events</h2>
+				<div>
+					<h4 id="event-onRequestFinished">onRequestFinished</h4>
+					
+					<div class="description">
+				<p>
+							Fired when a network request is finished and all request data are available.
+						</p>			<div>
+								<h4 id="event-onRequestFinished-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.devtools.network.onRequestFinished.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onRequestFinished-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(<a href="devtools.network.html#type-Request">Request</a> request) <span class="subdued">{...}</span>;</pre>
 										<dl>
 												<div>
-													<a name="property-onRequestFinished-callback"></a>
+													<a name="property-onRequestFinished-request"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">request</span>
 															<span class="property">
 																(
 																	
-																	function
+																	<a href="devtools.network.html#type-Request">Request</a>
 																)
 															</span>
 														</dt>
 														<dd>
+															Description of a network request in the form of a HAR entry. See HAR specification for details.
 														
 														</dd>
 													</dl>
 												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(<a href="devtools.network.html#type-Request">Request</a> request) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onRequestFinished-request"></a>
-														<dl>
-															<dt>
-																<span class="variable">request</span>
-																<span class="property">
-																	(
-																		
-																		<a href="devtools.network.html#type-Request">Request</a>
-																	)
-																</span>
-															</dt>
-															<dd>
-																Description of a network request in the form of a HAR entry. See HAR specification for details.
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-					<div>
-						<h4 id="event-onNavigated">onNavigated</h4>
-						
-						<div class="description">
-					<p>
-								Fired when the inspected window navigates to a new page.
-							</p>			<div>
-									<h4 id="event-onNavigated-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.devtools.network.onNavigated.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
+				</div>
+				<div>
+					<h4 id="event-onNavigated">onNavigated</h4>
+					
+					<div class="description">
+				<p>
+							Fired when the inspected window navigates to a new page.
+						</p>			<div>
+								<h4 id="event-onNavigated-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.devtools.network.onNavigated.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onNavigated-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(string url) <span class="subdued">{...}</span>;</pre>
 										<dl>
 												<div>
-													<a name="property-onNavigated-callback"></a>
+													<a name="property-onNavigated-url"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">url</span>
 															<span class="property">
 																(
 																	
-																	function
+																	string
 																)
 															</span>
 														</dt>
 														<dd>
+															URL of the new page.
 														
 														</dd>
 													</dl>
 												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(string url) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onNavigated-url"></a>
-														<dl>
-															<dt>
-																<span class="variable">url</span>
-																<span class="property">
-																	(
-																		
-																		string
-																	)
-																</span>
-															</dt>
-															<dd>
-																URL of the new page.
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-		</div>
-			<h2 id="samples">Sample Extensions that use chrome.devtools.network</h2>
-			<ul>
-				<li><strong><a href="samples.html#firephp-for-chrome">FirePHP for Chrome</a></strong>
-				&ndash; Extends the Developer Tools, adding support for parsing FirePHP messages from server
-		</li>
-			</ul>
+				</div>
 	</div>
+		<h2 id="samples">Sample Extensions that use chrome.devtools.network</h2>
+		<ul>
+			<li><strong><a href="samples.html#firephp-for-chrome">FirePHP for Chrome</a></strong>
+			&ndash; Extends the Developer Tools, adding support for parsing FirePHP messages from server
+	</li>
+		</ul>
 </div>

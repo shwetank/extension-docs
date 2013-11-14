@@ -6,332 +6,131 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/privacy.html
 ---
 
-<div id="gc-container">
-	<div id="gc-sidebar">
-		<ul 
-				class="level1 ">
-			<li class="level2">
-						<a href="/extensions/getstarted.html" class="level2 ">Getting Started</a>
+
+<div id="gc-pagecontent">
+	
+	
+	
+	<div id="toc">
+		<ol>
+			<li>
+				<a href="#manifest">Manifest</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/overview.html" class="level2 ">Overview</a>
+			<li>
+				<a href="#usage">Usage</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/whats_new.html" class="level2 ">What's New?</a>
+			<li>
+				<a href="#examples">Examples</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/devguide.html" class="level2 ">Developer's Guide</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser UI</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/browserAction.html" class="level4 ">Browser Actions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contextMenus.html" class="level4 ">Context Menus</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/desktop_notifications.html" class="level4 ">Desktop Notifications</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/omnibox.html" class="level4 ">Omnibox</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/options.html" class="level4 ">Options Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/override.html" class="level4 ">Override Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/pageAction.html" class="level4 ">Page Actions</a>
-									</li>
-								</ul>
+			<div class="api-reference">
+				<li>
+					<a href="#apiReference">Reference</a>
+					<ol>
+						<li>
+							<a href="#properties">Properties</a>
+							<ol>
+								<li>
+									<a href="#property-network">network</a>
+							<ol><li>
+										<a href="#network-properties">Properties</a>
+										<ol>
+											<li>
+												<a href="#property-network-networkPredictionEnabled">networkPredictionEnabled</a>
+											</li>
+										</ol>
+									</li></ol>	</li>
+								<li>
+									<a href="#property-services">services</a>
+							<ol><li>
+										<a href="#services-properties">Properties</a>
+										<ol>
+											<li>
+												<a href="#property-services-alternateErrorPagesEnabled">alternateErrorPagesEnabled</a>
+											</li>
+											<li>
+												<a href="#property-services-autofillEnabled">autofillEnabled</a>
+											</li>
+											<li>
+												<a href="#property-services-safeBrowsingEnabled">safeBrowsingEnabled</a>
+											</li>
+											<li>
+												<a href="#property-services-searchSuggestEnabled">searchSuggestEnabled</a>
+											</li>
+											<li>
+												<a href="#property-services-spellingServiceEnabled">spellingServiceEnabled</a>
+											</li>
+											<li>
+												<a href="#property-services-translationServiceEnabled">translationServiceEnabled</a>
+											</li>
+										</ol>
+									</li></ol>	</li>
+								<li>
+									<a href="#property-websites">websites</a>
+							<ol><li>
+										<a href="#websites-properties">Properties</a>
+										<ol>
+											<li>
+												<a href="#property-websites-thirdPartyCookiesAllowed">thirdPartyCookiesAllowed</a>
+											</li>
+											<li>
+												<a href="#property-websites-hyperlinkAuditingEnabled">hyperlinkAuditingEnabled</a>
+											</li>
+											<li>
+												<a href="#property-websites-referrersEnabled">referrersEnabled</a>
+											</li>
+											<li>
+												<a href="#property-websites-protectedContentEnabled">protectedContentEnabled</a>
+											</li>
+										</ol>
+									</li></ol>	</li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser Interaction</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/bookmarks.html" class="level4 ">Bookmarks</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/cookies.html" class="level4 ">Cookies</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/devtools.html" class="level4 ">Extending DevTools</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/events.html" class="level4 ">Events</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/history.html" class="level4 ">History</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/management.html" class="level4 ">Management</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/tabs.html" class="level4 ">Tabs</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/windows.html" class="level4 ">Windows</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#samples">Sample Extensions</a>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Implementation</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/a11y.html" class="level4 ">Accessibility</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/event_pages.html" class="level4 ">Event Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contentSecurityPolicy.html" class="level4 ">Content Security Policy</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/content_scripts.html" class="level4 ">Content Scripts</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/xhr.html" class="level4 ">Cross-Origin XHR</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/i18n.html" class="level4 ">Internationalization</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/messaging.html" class="level4 ">Message Passing</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/permissions.html" class="level4 ">Optional Permissions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/npapi.html" class="level4 ">NPAPI Plugins</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Finishing</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/hosting.html" class="level4 ">Hosting</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/external_extensions.html" class="level4 ">Other Deployment Options</a>
-									</li>
-								</ul>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<a href="/extensions/tutorials.html" class="level2 ">Tutorials</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/tut_migration_to_manifest_v2.html" class="level3 ">Manifest V2</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_debugging.html" class="level3 ">Debugging</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_analytics.html" class="level3 ">Google Analytics</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_oauth.html" class="level3 ">OAuth</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">Reference</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Formats</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/manifest.html" class="level4 ">Manifest Files</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/match_patterns.html" class="level4 ">Match Patterns</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-									<a href="/extensions/permission_warnings.html" class="level3 ">Permission Warnings</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_index.html" class="level3 ">chrome.* APIs</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_other.html" class="level3 ">Other APIs</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">More</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/faq.html" class="level3 ">FAQ</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/webstore/docs/index.html" class="level3 ">Chrome Web Store</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/apps/docs/developers_guide.html" class="level3 ">Hosted Apps</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/themes.html" class="level3 ">Themes</a>
-						</li>
-					</ul>
-			</li>
-		</ul>
+					</ol>
+				</li>
+			</div>
+		</ol>
 	</div>
-	<div id="gc-pagecontent">
-		<h1 class="page_title">chrome.privacy</h1>
-		
-		
-		
-		<div id="toc">
-			<ol>
-				<li>
-					<a href="#manifest">Manifest</a>
-				</li>
-				<li>
-					<a href="#usage">Usage</a>
-				</li>
-				<li>
-					<a href="#examples">Examples</a>
-				</li>
-				<div class="api-reference">
-					<li>
-						<a href="#apiReference">Reference</a>
-						<ol>
-							<li>
-								<a href="#properties">Properties</a>
-								<ol>
-									<li>
-										<a href="#property-network">network</a>
-								<ol><li>
-											<a href="#network-properties">Properties</a>
-											<ol>
-												<li>
-													<a href="#property-network-networkPredictionEnabled">networkPredictionEnabled</a>
-												</li>
-											</ol>
-										</li></ol>	</li>
-									<li>
-										<a href="#property-services">services</a>
-								<ol><li>
-											<a href="#services-properties">Properties</a>
-											<ol>
-												<li>
-													<a href="#property-services-alternateErrorPagesEnabled">alternateErrorPagesEnabled</a>
-												</li>
-												<li>
-													<a href="#property-services-autofillEnabled">autofillEnabled</a>
-												</li>
-												<li>
-													<a href="#property-services-safeBrowsingEnabled">safeBrowsingEnabled</a>
-												</li>
-												<li>
-													<a href="#property-services-searchSuggestEnabled">searchSuggestEnabled</a>
-												</li>
-												<li>
-													<a href="#property-services-spellingServiceEnabled">spellingServiceEnabled</a>
-												</li>
-												<li>
-													<a href="#property-services-translationServiceEnabled">translationServiceEnabled</a>
-												</li>
-											</ol>
-										</li></ol>	</li>
-									<li>
-										<a href="#property-websites">websites</a>
-								<ol><li>
-											<a href="#websites-properties">Properties</a>
-											<ol>
-												<li>
-													<a href="#property-websites-thirdPartyCookiesAllowed">thirdPartyCookiesAllowed</a>
-												</li>
-												<li>
-													<a href="#property-websites-hyperlinkAuditingEnabled">hyperlinkAuditingEnabled</a>
-												</li>
-												<li>
-													<a href="#property-websites-referrersEnabled">referrersEnabled</a>
-												</li>
-												<li>
-													<a href="#property-websites-protectedContentEnabled">protectedContentEnabled</a>
-												</li>
-											</ol>
-										</li></ol>	</li>
-								</ol>
-							</li>
-							<li>
-								<a href="#samples">Sample Extensions</a>
-							</li>
-						</ol>
-					</li>
-				</div>
-			</ol>
-		</div>
-		<table class="intro" id="intro">
-			<tr>
-				<td class="title">Description:</td>
-				<td>
-						
-						
-						Use the <code>chrome.privacy</code> API to control usage of the features in Chrome that can affect a user's privacy. This API relies on the <a href='types.html#ChromeSetting'>ChromeSetting prototype of the type API</a> for getting and setting Chrome's configuration.
-						
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Availability:</td>
-				<td>
-						
-						
-						
-							Stable since Chrome 18.
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Permissions:</td>
-				<td>
-						
-						<span class="code">
-						"privacy"
-						
-						</span>
-						
-						<br>
-				</td>
-			</tr>
-		</table>
+	<table class="intro" id="intro">
+		<tr>
+			<td class="title">Description:</td>
+			<td>
+					
+					
+					Use the <code>chrome.privacy</code> API to control usage of the features in Chrome that can affect a user's privacy. This API relies on the <a href='types.html#ChromeSetting'>ChromeSetting prototype of the type API</a> for getting and setting Chrome's configuration.
+					
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Availability:</td>
+			<td>
+					
+					
+					
+						Stable since Chrome 18.
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Permissions:</td>
+			<td>
+					
+					<span class="code">
+					"privacy"
+					
+					</span>
+					
+					<br>
+			</td>
+		</tr>
+	</table>
 <p class="note">
 The <a href="http://www.google.com/intl/en/landing/chrome/google-chrome-privacy-whitepaper.pdf">Chrome Privacy Whitepaper</a>
 gives background detail regarding the features which this API can control.
@@ -402,10 +201,10 @@ reduce user confusion):
 <pre>chrome.privacy.services.autofillEnabled.get({}, function(details) {
 if (details.levelOfControl === 'controllable_by_this_extension') {
 chrome.privacy.services.autofillEnabled.set({ value: true }, function() {
-	if (chrome.runtime.lastError === undefined)
-		console.log("Hooray, it worked!");
-	else
-		console.log("Sadness!", chrome.runtime.lastError);
+if (chrome.runtime.lastError === undefined)
+	console.log("Hooray, it worked!");
+else
+	console.log("Sadness!", chrome.runtime.lastError);
 }
 }
 });</pre>
@@ -420,9 +219,9 @@ status, for example, the following code would suffice:
 
 <pre>chrome.privacy.services.autofillEnabled.onChange.addListener(
 function (details) {
-	// The new value is stored in `details.value`, the new level of control
-	// in `details.levelOfControl`, and `details.incognitoSpecific` will be
-	// `true` if the value is specific to Incognito mode.
+// The new value is stored in `details.value`, the new level of control
+// in `details.levelOfControl`, and `details.incognitoSpecific` will be
+// `true` if the value is specific to Incognito mode.
 });</pre>
 
 <h2 id="examples">Examples</h2>
@@ -431,261 +230,260 @@ For example code, see the
 <a href="samples.html#privacy">Privacy API samples</a>.
 </p>
 
-		<h1 id="apiReference">chrome.privacy reference</h1>
-		<div class="api_reference">
-				<h2 id="properties">Properties</h2>
-					<div>
-						<h3 id="property-network">network</h3>
-						<div class="summary">
-							<div class="line">chrome.privacy.network</div>
-						</div>
-						<div>
-							<dt><span class="property">network</span> <span class="type_name">	(		object	)</span></dt>
-					<dd>
-								Settings that influence Chrome's handling of network connections in general.
-							</dd>		<h4 id="network-properties">
-								Properties of <a href="#property-network">network</a>
-							</h4>
-							<dd><dl>			<div>
-									<a name="property-network-networkPredictionEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">networkPredictionEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome attempts to speed up your web browsing experience by pre-resolving DNS entries, prerendering sites (<code>&lt;link rel='prefetch' ...&gt;</code>), and preemptively opening TCP and SSL connections to servers.	This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-					</dl></dd>
-						</div>
+	<h1 id="apiReference">chrome.privacy reference</h1>
+	<div class="api_reference">
+			<h2 id="properties">Properties</h2>
+				<div>
+					<h3 id="property-network">network</h3>
+					<div class="summary">
+						<div class="line">chrome.privacy.network</div>
 					</div>
 					<div>
-						<h3 id="property-services">services</h3>
-						<div class="summary">
-							<div class="line">chrome.privacy.services</div>
-						</div>
-						<div>
-							<dt><span class="property">services</span> <span class="type_name">	(		object	)</span></dt>
-					<dd>
-								Settings that enable or disable features that require third-party network services provided by Google and your default search provider.
-							</dd>		<h4 id="services-properties">
-								Properties of <a href="#property-services">services</a>
-							</h4>
-							<dd><dl>			<div>
-									<a name="property-services-alternateErrorPagesEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">alternateErrorPagesEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome uses a web service to help resolve navigation errors. This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-services-autofillEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">autofillEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome offers to automatically fill in forms. This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-services-safeBrowsingEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">safeBrowsingEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome does its best to protect you from phishing and malware. This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-services-searchSuggestEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">searchSuggestEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome sends the text you type into the Omnibox to your default search engine, which provides predictions of websites and searches that are likely completions of what you've typed so far. This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-services-spellingServiceEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">spellingServiceEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome uses a web service to help correct spelling errors. This preference's value is a boolean, defaulting to <code>false</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-services-translationServiceEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">translationServiceEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome offers to translate pages that aren't in a language you read. This preference's value is a boolean, defaulting to <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-					</dl></dd>
-						</div>
+						<dt><span class="property">network</span> <span class="type_name">	(		object	)</span></dt>
+				<dd>
+							Settings that influence Chrome's handling of network connections in general.
+						</dd>		<h4 id="network-properties">
+							Properties of <a href="#property-network">network</a>
+						</h4>
+						<dd><dl>			<div>
+								<a name="property-network-networkPredictionEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">networkPredictionEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome attempts to speed up your web browsing experience by pre-resolving DNS entries, prerendering sites (<code>&lt;link rel='prefetch' ...&gt;</code>), and preemptively opening TCP and SSL connections to servers.	This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+				</dl></dd>
+					</div>
+				</div>
+				<div>
+					<h3 id="property-services">services</h3>
+					<div class="summary">
+						<div class="line">chrome.privacy.services</div>
 					</div>
 					<div>
-						<h3 id="property-websites">websites</h3>
-						<div class="summary">
-							<div class="line">chrome.privacy.websites</div>
-						</div>
-						<div>
-							<dt><span class="property">websites</span> <span class="type_name">	(		object	)</span></dt>
-					<dd>
-								Settings that determine what information Chrome makes available to websites.
-							</dd>		<h4 id="websites-properties">
-								Properties of <a href="#property-websites">websites</a>
-							</h4>
-							<dd><dl>			<div>
-									<a name="property-websites-thirdPartyCookiesAllowed"></a>
-									<dl>
-										<dt>
-											<span class="variable">thirdPartyCookiesAllowed</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If disabled, Chrome blocks third-party sites from setting cookies. The value of this preference is of type boolean, and the default value is <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-websites-hyperlinkAuditingEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">hyperlinkAuditingEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome sends auditing pings when requested by a website (<code>&lt;a ping&gt;</code>). The value of this preference is of type boolean, and the default value is <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-websites-referrersEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">referrersEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											If enabled, Chrome sends <code>referer</code> headers with your requests. Yes, the name of this preference doesn't match the misspelled header. No, we're not going to change it. The value of this preference is of type boolean, and the default value is <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-								<div>
-									<a name="property-websites-protectedContentEnabled"></a>
-									<dl>
-										<dt>
-											<span class="variable">protectedContentEnabled</span>
-											<span class="property">
-												(
-													
-													<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
-												)
-											</span>
-										</dt>
-										<dd>
-											<strong>Available on Windows and ChromeOS only</strong>: If enabled, Chrome provides a unique ID to plugins in order to run protected content. The value of this preference is of type boolean, and the default value is <code>true</code>.
-										
-										</dd>
-									</dl>
-								</div>
-					</dl></dd>
-						</div>
+						<dt><span class="property">services</span> <span class="type_name">	(		object	)</span></dt>
+				<dd>
+							Settings that enable or disable features that require third-party network services provided by Google and your default search provider.
+						</dd>		<h4 id="services-properties">
+							Properties of <a href="#property-services">services</a>
+						</h4>
+						<dd><dl>			<div>
+								<a name="property-services-alternateErrorPagesEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">alternateErrorPagesEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome uses a web service to help resolve navigation errors. This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-services-autofillEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">autofillEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome offers to automatically fill in forms. This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-services-safeBrowsingEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">safeBrowsingEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome does its best to protect you from phishing and malware. This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-services-searchSuggestEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">searchSuggestEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome sends the text you type into the Omnibox to your default search engine, which provides predictions of websites and searches that are likely completions of what you've typed so far. This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-services-spellingServiceEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">spellingServiceEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome uses a web service to help correct spelling errors. This preference's value is a boolean, defaulting to <code>false</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-services-translationServiceEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">translationServiceEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome offers to translate pages that aren't in a language you read. This preference's value is a boolean, defaulting to <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+				</dl></dd>
 					</div>
-		</div>
-			<h2 id="samples">Sample Extensions that use chrome.privacy</h2>
-			<ul>
-				<li><strong><a href="samples.html#block/allow-third-party-cookies-api-example-extension">Block/allow third-party cookies API example extension</a></strong>
-				&ndash; Sample extension which demonstrates how to access a preference.
-		</li>
-				<li><strong><a href="samples.html#block/allow-referrer-api-example-extension">Block/allow referrer API example extension</a></strong>
-				&ndash; Sample extension which demonstrates how to access a preference.
-		</li>
-			</ul>
+				</div>
+				<div>
+					<h3 id="property-websites">websites</h3>
+					<div class="summary">
+						<div class="line">chrome.privacy.websites</div>
+					</div>
+					<div>
+						<dt><span class="property">websites</span> <span class="type_name">	(		object	)</span></dt>
+				<dd>
+							Settings that determine what information Chrome makes available to websites.
+						</dd>		<h4 id="websites-properties">
+							Properties of <a href="#property-websites">websites</a>
+						</h4>
+						<dd><dl>			<div>
+								<a name="property-websites-thirdPartyCookiesAllowed"></a>
+								<dl>
+									<dt>
+										<span class="variable">thirdPartyCookiesAllowed</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If disabled, Chrome blocks third-party sites from setting cookies. The value of this preference is of type boolean, and the default value is <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-websites-hyperlinkAuditingEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">hyperlinkAuditingEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome sends auditing pings when requested by a website (<code>&lt;a ping&gt;</code>). The value of this preference is of type boolean, and the default value is <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-websites-referrersEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">referrersEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										If enabled, Chrome sends <code>referer</code> headers with your requests. Yes, the name of this preference doesn't match the misspelled header. No, we're not going to change it. The value of this preference is of type boolean, and the default value is <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<a name="property-websites-protectedContentEnabled"></a>
+								<dl>
+									<dt>
+										<span class="variable">protectedContentEnabled</span>
+										<span class="property">
+											(
+												
+												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
+											)
+										</span>
+									</dt>
+									<dd>
+										<strong>Available on Windows and ChromeOS only</strong>: If enabled, Chrome provides a unique ID to plugins in order to run protected content. The value of this preference is of type boolean, and the default value is <code>true</code>.
+									
+									</dd>
+								</dl>
+							</div>
+				</dl></dd>
+					</div>
+				</div>
 	</div>
+		<h2 id="samples">Sample Extensions that use chrome.privacy</h2>
+		<ul>
+			<li><strong><a href="samples.html#block/allow-third-party-cookies-api-example-extension">Block/allow third-party cookies API example extension</a></strong>
+			&ndash; Sample extension which demonstrates how to access a preference.
+	</li>
+			<li><strong><a href="samples.html#block/allow-referrer-api-example-extension">Block/allow referrer API example extension</a></strong>
+			&ndash; Sample extension which demonstrates how to access a preference.
+	</li>
+		</ul>
 </div>

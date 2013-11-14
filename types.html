@@ -6,275 +6,74 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/types.html
 ---
 
-<div id="gc-container">
-	<div id="gc-sidebar">
-		<ul 
-				class="level1 ">
-			<li class="level2">
-						<a href="/extensions/getstarted.html" class="level2 ">Getting Started</a>
+
+<div id="gc-pagecontent">
+	
+	
+	
+	<div id="toc">
+		<ol>
+			<li>
+				<a href="#ChromeSetting">Chrome settings</a>
+				<ol>
+					<li><a href="#ChromeSetting-lifecycle">Scope and life cycle</a></li><li><a href="#ChromeSetting-precedence">Precedence</a></li>
+				</ol>
 			</li>
-			<li class="level2">
-						<a href="/extensions/overview.html" class="level2 ">Overview</a>
-			</li>
-			<li class="level2">
-						<a href="/extensions/whats_new.html" class="level2 ">What's New?</a>
-			</li>
-			<li class="level2">
-						<a href="/extensions/devguide.html" class="level2 ">Developer's Guide</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser UI</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/browserAction.html" class="level4 ">Browser Actions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contextMenus.html" class="level4 ">Context Menus</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/desktop_notifications.html" class="level4 ">Desktop Notifications</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/omnibox.html" class="level4 ">Omnibox</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/options.html" class="level4 ">Options Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/override.html" class="level4 ">Override Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/pageAction.html" class="level4 ">Page Actions</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser Interaction</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/bookmarks.html" class="level4 ">Bookmarks</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/cookies.html" class="level4 ">Cookies</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/devtools.html" class="level4 ">Extending DevTools</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/events.html" class="level4 ">Events</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/history.html" class="level4 ">History</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/management.html" class="level4 ">Management</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/tabs.html" class="level4 ">Tabs</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/windows.html" class="level4 ">Windows</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Implementation</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/a11y.html" class="level4 ">Accessibility</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/event_pages.html" class="level4 ">Event Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contentSecurityPolicy.html" class="level4 ">Content Security Policy</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/content_scripts.html" class="level4 ">Content Scripts</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/xhr.html" class="level4 ">Cross-Origin XHR</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/i18n.html" class="level4 ">Internationalization</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/messaging.html" class="level4 ">Message Passing</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/permissions.html" class="level4 ">Optional Permissions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/npapi.html" class="level4 ">NPAPI Plugins</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Finishing</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/hosting.html" class="level4 ">Hosting</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/external_extensions.html" class="level4 ">Other Deployment Options</a>
-									</li>
-								</ul>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<a href="/extensions/tutorials.html" class="level2 ">Tutorials</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/tut_migration_to_manifest_v2.html" class="level3 ">Manifest V2</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_debugging.html" class="level3 ">Debugging</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_analytics.html" class="level3 ">Google Analytics</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_oauth.html" class="level3 ">OAuth</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">Reference</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Formats</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/manifest.html" class="level4 ">Manifest Files</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/match_patterns.html" class="level4 ">Match Patterns</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-									<a href="/extensions/permission_warnings.html" class="level3 ">Permission Warnings</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_index.html" class="level3 ">chrome.* APIs</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_other.html" class="level3 ">Other APIs</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">More</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/faq.html" class="level3 ">FAQ</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/webstore/docs/index.html" class="level3 ">Chrome Web Store</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/apps/docs/developers_guide.html" class="level3 ">Hosted Apps</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/themes.html" class="level3 ">Themes</a>
-						</li>
-					</ul>
-			</li>
-		</ul>
-	</div>
-	<div id="gc-pagecontent">
-		<h1 class="page_title">chrome.types</h1>
-		
-		
-		
-		<div id="toc">
-			<ol>
+			<div class="api-reference">
 				<li>
-					<a href="#ChromeSetting">Chrome settings</a>
+					<a href="#apiReference">Reference</a>
 					<ol>
-						<li><a href="#ChromeSetting-lifecycle">Scope and life cycle</a></li><li><a href="#ChromeSetting-precedence">Precedence</a></li>
+						<li>
+							<a href="#types">Types</a>
+							<ol>
+								<li>
+									<a href="#type-ChromeSetting">ChromeSetting</a>
+							<ol><li>
+										<a href="#ChromeSetting-methods">Methods</a>
+										<ol>
+											<li><a href="#method-ChromeSetting-get">get</a></li>
+											<li><a href="#method-ChromeSetting-set">set</a></li>
+											<li><a href="#method-ChromeSetting-clear">clear</a></li>
+										</ol>
+									</li></ol><ol><li>
+										<a href="#ChromeSetting-events">Events</a>
+										<ol>
+											<li><a href="#event-ChromeSetting-onChange">onChange</a></li>
+										</ol>
+									</li></ol>	</li>
+							</ol>
+						</li>
 					</ol>
 				</li>
-				<div class="api-reference">
-					<li>
-						<a href="#apiReference">Reference</a>
-						<ol>
-							<li>
-								<a href="#types">Types</a>
-								<ol>
-									<li>
-										<a href="#type-ChromeSetting">ChromeSetting</a>
-								<ol><li>
-											<a href="#ChromeSetting-methods">Methods</a>
-											<ol>
-												<li><a href="#method-ChromeSetting-get">get</a></li>
-												<li><a href="#method-ChromeSetting-set">set</a></li>
-												<li><a href="#method-ChromeSetting-clear">clear</a></li>
-											</ol>
-										</li></ol><ol><li>
-											<a href="#ChromeSetting-events">Events</a>
-											<ol>
-												<li><a href="#event-ChromeSetting-onChange">onChange</a></li>
-											</ol>
-										</li></ol>	</li>
-								</ol>
-							</li>
-						</ol>
-					</li>
-				</div>
-			</ol>
-		</div>
-		<table class="intro" id="intro">
-			<tr>
-				<td class="title">Description:</td>
-				<td>
-						
-						
-						The <code>chrome.types</code> API contains type declarations for Chrome.
-						
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Availability:</td>
-				<td>
-						
-						
-						
-							Stable since Chrome 13.
-						
-						
-						<br>
-				</td>
-			</tr>
-		</table>
+			</div>
+		</ol>
+	</div>
+	<table class="intro" id="intro">
+		<tr>
+			<td class="title">Description:</td>
+			<td>
+					
+					
+					The <code>chrome.types</code> API contains type declarations for Chrome.
+					
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Availability:</td>
+			<td>
+					
+					
+					
+						Stable since Chrome 13.
+					
+					
+					<br>
+			</td>
+		</tr>
+	</table>
 <h2 id="ChromeSetting">Chrome settings</h2>
 
 <p>
@@ -366,199 +165,103 @@ settings of regular windows can be defined by previously installed extensions.
 The <em>effective</em> value of a setting is the one that results from
 considering the precedence rules. It is used by Chrome.
 <p>
-		<h1 id="apiReference">chrome.types reference</h1>
-		<div class="api_reference">
-				<h2 id="types">Types</h2>
+	<h1 id="apiReference">chrome.types reference</h1>
+	<div class="api_reference">
+			<h2 id="types">Types</h2>
+				<div>
+					<h3 id="type-ChromeSetting">ChromeSetting</h3>
 					<div>
-						<h3 id="type-ChromeSetting">ChromeSetting</h3>
-						<div>
-							<dd>An interface that allows access to a Chrome browser setting. See <a href="proxy.html#property-settings">proxy.settings</a> for an example.</dd>
-							
-								<h4 id="ChromeSetting-methods" class="capitalize">
-									methods of <a href="#type-ChromeSetting">ChromeSetting</a>
-								</h4>
-								<dd>
-									<dl>
-											<div>
-												<h4 id="method-ChromeSetting-get">
-													get
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>ChromeSetting.get</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
-													<p>
-														Gets the value of a setting.
-													</p>
-													<h4>Parameters</h4>
-													<dl>
-															<div>
-																<a name="property-get-details"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">details</span>
-																		<span class="property">
-																			(
-																				
-																				object
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		Which setting to consider.
-																	
-																	</dd>
-																</dl>
-																<dd>
-																	<h5>Properties of <span class="variable">details</span></h5>
-																	<dl>
-																		<div>
-																			<a name="property-details-incognito"></a>
-																			<dl>
-																				<dt>
-																					<span class="variable">incognito</span>
-																					<span class="property">
-																						(
-																							<span class="optional">optional</span>
-																							boolean
-																						)
-																					</span>
-																				</dt>
-																				<dd>
-																					Whether to return the value that applies to the incognito session (default false).
-																				
-																				</dd>
-																			</dl>
-																		</div>
-																	</dl>
-																</dd>
-															</div>
-															<div>
-																<a name="property-get-callback"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">callback</span>
-																		<span class="property">
-																			(
-																				
-																				function
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																	
-																	</dd>
-																</dl>
-															</div>
-													</dl>
-														<h4>Callback</h4>
-														<p>
-																	The <em>callback</em> parameter should specify a function
-																	that looks like this:
-														</p>
-														<pre>function(object details) <span class="subdued">{...}</span>;</pre>
-														<dl>
-																<div>
-																	<a name="property-callback-details"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">details</span>
-																			<span class="property">
-																				(
-																					
-																					object
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Details of the currently effective value.
-																		
-																		</dd>
-																	</dl>
-																	<dd>
-																		<h5>Properties of <span class="variable">details</span></h5>
-																		<dl>
-																			<div>
-																				<a name="property-details-value"></a>
-																				<dl>
-																					<dt>
-																						<span class="variable">value</span>
-																						<span class="property">
-																							(
-																								
-																								any
-																							)
-																						</span>
-																					</dt>
-																					<dd>
-																						The value of the setting.
-																					
-																					</dd>
-																				</dl>
-																			</div>
-																			<div>
-																				<a name="property-details-levelOfControl"></a>
-																				<dl>
-																					<dt>
-																						<span class="variable">levelOfControl</span>
-																						<span class="property">
-																							(
-																								
-																								enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
-																							)
-																						</span>
-																					</dt>
-																					<dd>
-																						One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
-																					
-																					</dd>
-																				</dl>
-																			</div>
-																			<div>
-																				<a name="property-details-incognitoSpecific"></a>
-																				<dl>
-																					<dt>
-																						<span class="variable">incognitoSpecific</span>
-																						<span class="property">
-																							(
-																								<span class="optional">optional</span>
-																								boolean
-																							)
-																						</span>
-																					</dt>
-																					<dd>
-																						Whether the effective value is specific to the incognito session.<br/>This property will <em>only</em> be present if the <var>incognito</var> property in the <var>details</var> parameter of <code>get()</code> was true.
-																					
-																					</dd>
-																				</dl>
-																			</div>
-																		</dl>
-																	</dd>
-																</div>
-														</dl>
-												</div>
+						<dd>An interface that allows access to a Chrome browser setting. See <a href="proxy.html#property-settings">proxy.settings</a> for an example.</dd>
+						
+							<h4 id="ChromeSetting-methods" class="capitalize">
+								methods of <a href="#type-ChromeSetting">ChromeSetting</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<h4 id="method-ChromeSetting-get">
+												get
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>ChromeSetting.get</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
 											</div>
-											<div>
-												<h4 id="method-ChromeSetting-set">
-													set
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>ChromeSetting.set</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
+											</div>
+											<div class="description">
+												<p>
+													Gets the value of a setting.
+												</p>
+												<h4>Parameters</h4>
+												<dl>
+														<div>
+															<a name="property-get-details"></a>
+															<dl>
+																<dt>
+																	<span class="variable">details</span>
+																	<span class="property">
+																		(
+																			
+																			object
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	Which setting to consider.
+																
+																</dd>
+															</dl>
+															<dd>
+																<h5>Properties of <span class="variable">details</span></h5>
+																<dl>
+																	<div>
+																		<a name="property-details-incognito"></a>
+																		<dl>
+																			<dt>
+																				<span class="variable">incognito</span>
+																				<span class="property">
+																					(
+																						<span class="optional">optional</span>
+																						boolean
+																					)
+																				</span>
+																			</dt>
+																			<dd>
+																				Whether to return the value that applies to the incognito session (default false).
+																			
+																			</dd>
+																		</dl>
+																	</div>
+																</dl>
+															</dd>
+														</div>
+														<div>
+															<a name="property-get-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																
+																</dd>
+															</dl>
+														</div>
+												</dl>
+													<h4>Callback</h4>
 													<p>
-														Sets the value of a setting.
+																The <em>callback</em> parameter should specify a function
+																that looks like this:
 													</p>
-													<h4>Parameters</h4>
+													<pre>function(object details) <span class="subdued">{...}</span>;</pre>
 													<dl>
 															<div>
-																<a name="property-set-details"></a>
+																<a name="property-callback-details"></a>
 																<dl>
 																	<dt>
 																		<span class="variable">details</span>
@@ -570,7 +273,7 @@ considering the precedence rules. It is used by Chrome.
 																		</span>
 																	</dt>
 																	<dd>
-																		Which setting to change.
+																		Details of the currently effective value.
 																	
 																	</dd>
 																</dl>
@@ -590,178 +293,299 @@ considering the precedence rules. It is used by Chrome.
 																					</span>
 																				</dt>
 																				<dd>
-																					The value of the setting. <br/>Note that every setting has a specific value type, which is described together with the setting. An extension should <em>not</em> set a value of a different type.
+																					The value of the setting.
 																				
 																				</dd>
 																			</dl>
 																		</div>
 																		<div>
-																			<a name="property-details-scope"></a>
+																			<a name="property-details-levelOfControl"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">scope</span>
-																					<span class="property">
-																						(
-																							<span class="optional">optional</span>
-																							enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
-																						)
-																					</span>
-																				</dt>
-																				<dd>
-																					Where to set the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
-																				
-																				</dd>
-																			</dl>
-																		</div>
-																	</dl>
-																</dd>
-															</div>
-															<div>
-																<a name="property-set-callback"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">callback</span>
-																		<span class="property">
-																			(
-																				<span class="optional">optional</span>
-																				function
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		Called at the completion of the set operation.
-																	
-																	</dd>
-																</dl>
-															</div>
-													</dl>
-														<h4>Callback</h4>
-														<p>
-																	If you specify the <em>callback</em> parameter, it should
-																	specify a function that looks like this:
-														</p>
-														<pre>function() <span class="subdued">{...}</span>;</pre>
-												</div>
-											</div>
-											<div>
-												<h4 id="method-ChromeSetting-clear">
-													clear
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>ChromeSetting.clear</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
-													<p>
-														Clears the setting, restoring any default value.
-													</p>
-													<h4>Parameters</h4>
-													<dl>
-															<div>
-																<a name="property-clear-details"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">details</span>
-																		<span class="property">
-																			(
-																				
-																				object
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		Which setting to clear.
-																	
-																	</dd>
-																</dl>
-																<dd>
-																	<h5>Properties of <span class="variable">details</span></h5>
-																	<dl>
-																		<div>
-																			<a name="property-details-scope"></a>
-																			<dl>
-																				<dt>
-																					<span class="variable">scope</span>
-																					<span class="property">
-																						(
-																							<span class="optional">optional</span>
-																							enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
-																						)
-																					</span>
-																				</dt>
-																				<dd>
-																					Where to clear the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
-																				
-																				</dd>
-																			</dl>
-																		</div>
-																	</dl>
-																</dd>
-															</div>
-															<div>
-																<a name="property-clear-callback"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">callback</span>
-																		<span class="property">
-																			(
-																				<span class="optional">optional</span>
-																				function
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		Called at the completion of the clear operation.
-																	
-																	</dd>
-																</dl>
-															</div>
-													</dl>
-														<h4>Callback</h4>
-														<p>
-																	If you specify the <em>callback</em> parameter, it should
-																	specify a function that looks like this:
-														</p>
-														<pre>function() <span class="subdued">{...}</span>;</pre>
-												</div>
-											</div>
-									</dl>
-								</dd>
-								<h4 id="ChromeSetting-events" class="capitalize">
-									events of <a href="#type-ChromeSetting">ChromeSetting</a>
-								</h4>
-								<dd>
-									<dl>
-											<div>
-												<h4 id="event-ChromeSetting-onChange">onChange</h4>
-												
-												<div class="description">
-											<p>
-														Fired after the setting changes.
-													</p>			<div>
-															<h4 id="event-ChromeSetting-onChange-addListener">
-																addListener
-															</h4>
-															
-															<div class="summary">
-															<div class="line">
-															<span>onChange.addListener</span>(<span>function <span class="variable">callback</span></span>)
-															</div>
-															</div>
-															<div class="description">
-																<h4>Parameters</h4>
-																<dl>
-																		<div>
-																			<a name="property-onChange-callback"></a>
-																			<dl>
-																				<dt>
-																					<span class="variable">callback</span>
+																					<span class="variable">levelOfControl</span>
 																					<span class="property">
 																						(
 																							
-																							function
+																							enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
+																						)
+																					</span>
+																				</dt>
+																				<dd>
+																					One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
+																				
+																				</dd>
+																			</dl>
+																		</div>
+																		<div>
+																			<a name="property-details-incognitoSpecific"></a>
+																			<dl>
+																				<dt>
+																					<span class="variable">incognitoSpecific</span>
+																					<span class="property">
+																						(
+																							<span class="optional">optional</span>
+																							boolean
+																						)
+																					</span>
+																				</dt>
+																				<dd>
+																					Whether the effective value is specific to the incognito session.<br/>This property will <em>only</em> be present if the <var>incognito</var> property in the <var>details</var> parameter of <code>get()</code> was true.
+																				
+																				</dd>
+																			</dl>
+																		</div>
+																	</dl>
+																</dd>
+															</div>
+													</dl>
+											</div>
+										</div>
+										<div>
+											<h4 id="method-ChromeSetting-set">
+												set
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>ChromeSetting.set</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											</div>
+											</div>
+											<div class="description">
+												<p>
+													Sets the value of a setting.
+												</p>
+												<h4>Parameters</h4>
+												<dl>
+														<div>
+															<a name="property-set-details"></a>
+															<dl>
+																<dt>
+																	<span class="variable">details</span>
+																	<span class="property">
+																		(
+																			
+																			object
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	Which setting to change.
+																
+																</dd>
+															</dl>
+															<dd>
+																<h5>Properties of <span class="variable">details</span></h5>
+																<dl>
+																	<div>
+																		<a name="property-details-value"></a>
+																		<dl>
+																			<dt>
+																				<span class="variable">value</span>
+																				<span class="property">
+																					(
+																						
+																						any
+																					)
+																				</span>
+																			</dt>
+																			<dd>
+																				The value of the setting. <br/>Note that every setting has a specific value type, which is described together with the setting. An extension should <em>not</em> set a value of a different type.
+																			
+																			</dd>
+																		</dl>
+																	</div>
+																	<div>
+																		<a name="property-details-scope"></a>
+																		<dl>
+																			<dt>
+																				<span class="variable">scope</span>
+																				<span class="property">
+																					(
+																						<span class="optional">optional</span>
+																						enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
+																					)
+																				</span>
+																			</dt>
+																			<dd>
+																				Where to set the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
+																			
+																			</dd>
+																		</dl>
+																	</div>
+																</dl>
+															</dd>
+														</div>
+														<div>
+															<a name="property-set-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			<span class="optional">optional</span>
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	Called at the completion of the set operation.
+																
+																</dd>
+															</dl>
+														</div>
+												</dl>
+													<h4>Callback</h4>
+													<p>
+																If you specify the <em>callback</em> parameter, it should
+																specify a function that looks like this:
+													</p>
+													<pre>function() <span class="subdued">{...}</span>;</pre>
+											</div>
+										</div>
+										<div>
+											<h4 id="method-ChromeSetting-clear">
+												clear
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>ChromeSetting.clear</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											</div>
+											</div>
+											<div class="description">
+												<p>
+													Clears the setting, restoring any default value.
+												</p>
+												<h4>Parameters</h4>
+												<dl>
+														<div>
+															<a name="property-clear-details"></a>
+															<dl>
+																<dt>
+																	<span class="variable">details</span>
+																	<span class="property">
+																		(
+																			
+																			object
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	Which setting to clear.
+																
+																</dd>
+															</dl>
+															<dd>
+																<h5>Properties of <span class="variable">details</span></h5>
+																<dl>
+																	<div>
+																		<a name="property-details-scope"></a>
+																		<dl>
+																			<dt>
+																				<span class="variable">scope</span>
+																				<span class="property">
+																					(
+																						<span class="optional">optional</span>
+																						enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
+																					)
+																				</span>
+																			</dt>
+																			<dd>
+																				Where to clear the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
+																			
+																			</dd>
+																		</dl>
+																	</div>
+																</dl>
+															</dd>
+														</div>
+														<div>
+															<a name="property-clear-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			<span class="optional">optional</span>
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	Called at the completion of the clear operation.
+																
+																</dd>
+															</dl>
+														</div>
+												</dl>
+													<h4>Callback</h4>
+													<p>
+																If you specify the <em>callback</em> parameter, it should
+																specify a function that looks like this:
+													</p>
+													<pre>function() <span class="subdued">{...}</span>;</pre>
+											</div>
+										</div>
+								</dl>
+							</dd>
+							<h4 id="ChromeSetting-events" class="capitalize">
+								events of <a href="#type-ChromeSetting">ChromeSetting</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<h4 id="event-ChromeSetting-onChange">onChange</h4>
+											
+											<div class="description">
+										<p>
+													Fired after the setting changes.
+												</p>			<div>
+														<h4 id="event-ChromeSetting-onChange-addListener">
+															addListener
+														</h4>
+														
+														<div class="summary">
+														<div class="line">
+														<span>onChange.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														</div>
+														</div>
+														<div class="description">
+															<h4>Parameters</h4>
+															<dl>
+																	<div>
+																		<a name="property-onChange-callback"></a>
+																		<dl>
+																			<dt>
+																				<span class="variable">callback</span>
+																				<span class="property">
+																					(
+																						
+																						function
+																					)
+																				</span>
+																			</dt>
+																			<dd>
+																			
+																			</dd>
+																		</dl>
+																	</div>
+															</dl>
+																<h4>Callback</h4>
+																<p>
+																			The <em>callback</em> parameter should specify a function
+																			that looks like this:
+																</p>
+																<pre>function(object details) <span class="subdued">{...}</span>;</pre>
+																<dl>
+																		<div>
+																			<a name="property-onChange-details"></a>
+																			<dl>
+																				<dt>
+																					<span class="variable">details</span>
+																					<span class="property">
+																						(
+																							
+																							object
 																						)
 																					</span>
 																				</dt>
@@ -769,100 +593,74 @@ considering the precedence rules. It is used by Chrome.
 																				
 																				</dd>
 																			</dl>
+																			<dd>
+																				<h5>Properties of <span class="variable">details</span></h5>
+																				<dl>
+																					<div>
+																						<a name="property-details-value"></a>
+																						<dl>
+																							<dt>
+																								<span class="variable">value</span>
+																								<span class="property">
+																									(
+																										
+																										any
+																									)
+																								</span>
+																							</dt>
+																							<dd>
+																								The value of the setting after the change.
+																							
+																							</dd>
+																						</dl>
+																					</div>
+																					<div>
+																						<a name="property-details-levelOfControl"></a>
+																						<dl>
+																							<dt>
+																								<span class="variable">levelOfControl</span>
+																								<span class="property">
+																									(
+																										
+																										enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
+																									)
+																								</span>
+																							</dt>
+																							<dd>
+																								One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
+																							
+																							</dd>
+																						</dl>
+																					</div>
+																					<div>
+																						<a name="property-details-incognitoSpecific"></a>
+																						<dl>
+																							<dt>
+																								<span class="variable">incognitoSpecific</span>
+																								<span class="property">
+																									(
+																										<span class="optional">optional</span>
+																										boolean
+																									)
+																								</span>
+																							</dt>
+																							<dd>
+																								Whether the value that has changed is specific to the incognito session.<br/>This property will <em>only</em> be present if the user has enabled the extension in incognito mode.
+																							
+																							</dd>
+																						</dl>
+																					</div>
+																				</dl>
+																			</dd>
 																		</div>
 																</dl>
-																	<h4>Callback</h4>
-																	<p>
-																				The <em>callback</em> parameter should specify a function
-																				that looks like this:
-																	</p>
-																	<pre>function(object details) <span class="subdued">{...}</span>;</pre>
-																	<dl>
-																			<div>
-																				<a name="property-onChange-details"></a>
-																				<dl>
-																					<dt>
-																						<span class="variable">details</span>
-																						<span class="property">
-																							(
-																								
-																								object
-																							)
-																						</span>
-																					</dt>
-																					<dd>
-																					
-																					</dd>
-																				</dl>
-																				<dd>
-																					<h5>Properties of <span class="variable">details</span></h5>
-																					<dl>
-																						<div>
-																							<a name="property-details-value"></a>
-																							<dl>
-																								<dt>
-																									<span class="variable">value</span>
-																									<span class="property">
-																										(
-																											
-																											any
-																										)
-																									</span>
-																								</dt>
-																								<dd>
-																									The value of the setting after the change.
-																								
-																								</dd>
-																							</dl>
-																						</div>
-																						<div>
-																							<a name="property-details-levelOfControl"></a>
-																							<dl>
-																								<dt>
-																									<span class="variable">levelOfControl</span>
-																									<span class="property">
-																										(
-																											
-																											enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
-																										)
-																									</span>
-																								</dt>
-																								<dd>
-																									One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
-																								
-																								</dd>
-																							</dl>
-																						</div>
-																						<div>
-																							<a name="property-details-incognitoSpecific"></a>
-																							<dl>
-																								<dt>
-																									<span class="variable">incognitoSpecific</span>
-																									<span class="property">
-																										(
-																											<span class="optional">optional</span>
-																											boolean
-																										)
-																									</span>
-																								</dt>
-																								<dd>
-																									Whether the value that has changed is specific to the incognito session.<br/>This property will <em>only</em> be present if the user has enabled the extension in incognito mode.
-																								
-																								</dd>
-																							</dl>
-																						</div>
-																					</dl>
-																				</dd>
-																			</div>
-																	</dl>
-															</div>
 														</div>
-												</div>
+													</div>
 											</div>
-									</dl>
-								</dd>
-						</div>
+										</div>
+								</dl>
+							</dd>
 					</div>
-		</div>
+				</div>
 	</div>
 </div>

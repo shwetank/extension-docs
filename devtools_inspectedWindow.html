@@ -6,298 +6,96 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/inspectWindow.html
 ---
 
-<div id="gc-container">
-	<div id="gc-sidebar">
-		<ul 
-				class="level1 ">
-			<li class="level2">
-						<a href="/extensions/getstarted.html" class="level2 ">Getting Started</a>
+<div id="gc-pagecontent">
+	
+	
+	
+	<div id="toc">
+		<ol>
+			<li>
+				<a href="#overview">Overview</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/overview.html" class="level2 ">Overview</a>
+			<li>
+				<a href="#executing-code">Executing Code in the Inspected Window</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/whats_new.html" class="level2 ">What's New?</a>
+			<li>
+				<a href="#overview-examples">Examples</a>
 			</li>
-			<li class="level2">
-						<a href="/extensions/devguide.html" class="level2 ">Developer's Guide</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser UI</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/browserAction.html" class="level4 ">Browser Actions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contextMenus.html" class="level4 ">Context Menus</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/desktop_notifications.html" class="level4 ">Desktop Notifications</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/omnibox.html" class="level4 ">Omnibox</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/options.html" class="level4 ">Options Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/override.html" class="level4 ">Override Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/pageAction.html" class="level4 ">Page Actions</a>
-									</li>
-								</ul>
+			<div class="api-reference">
+				<li>
+					<a href="#apiReference">Reference</a>
+					<ol>
+						<li>
+							<a href="#types">Types</a>
+							<ol>
+								<li>
+									<a href="#type-Resource">Resource</a>
+							<ol><li>
+										<a href="#Resource-methods">Methods</a>
+										<ol>
+											<li><a href="#method-Resource-getContent">getContent</a></li>
+											<li><a href="#method-Resource-setContent">setContent</a></li>
+										</ol>
+									</li></ol>	</li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Browser Interaction</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/bookmarks.html" class="level4 ">Bookmarks</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/cookies.html" class="level4 ">Cookies</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/devtools.html" class="level4 ">Extending DevTools</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/events.html" class="level4 ">Events</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/history.html" class="level4 ">History</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/management.html" class="level4 ">Management</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/tabs.html" class="level4 ">Tabs</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/windows.html" class="level4 ">Windows</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#properties">Properties</a>
+							<ol>
+								<li>
+									<a href="#property-tabId">tabId</a>
+								</li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Implementation</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/a11y.html" class="level4 ">Accessibility</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/event_pages.html" class="level4 ">Event Pages</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/contentSecurityPolicy.html" class="level4 ">Content Security Policy</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/content_scripts.html" class="level4 ">Content Scripts</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/xhr.html" class="level4 ">Cross-Origin XHR</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/i18n.html" class="level4 ">Internationalization</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/messaging.html" class="level4 ">Message Passing</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/permissions.html" class="level4 ">Optional Permissions</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/npapi.html" class="level4 ">NPAPI Plugins</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#methods">Methods</a>
+							<ol>
+								<li><a href="#method-eval">eval</a></li>
+								<li><a href="#method-reload">reload</a></li>
+								<li><a href="#method-getResources">getResources</a></li>
+							</ol>
 						</li>
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Finishing</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/hosting.html" class="level4 ">Hosting</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/external_extensions.html" class="level4 ">Other Deployment Options</a>
-									</li>
-								</ul>
+						<li>
+							<a href="#events">Events</a>
+							<ol>
+								<li><a href="#event-onResourceAdded">onResourceAdded</a></li>
+								<li><a href="#event-onResourceContentCommitted">onResourceContentCommitted</a></li>
+							</ol>
 						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<a href="/extensions/tutorials.html" class="level2 ">Tutorials</a>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/tut_migration_to_manifest_v2.html" class="level3 ">Manifest V2</a>
+						<li>
+							<a href="#samples">Sample Extensions</a>
 						</li>
-						<li class="level3">
-									<a href="/extensions/tut_debugging.html" class="level3 ">Debugging</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_analytics.html" class="level3 ">Google Analytics</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/tut_oauth.html" class="level3 ">OAuth</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">Reference</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-								<a class="button level3">
-									<span class="level3">Formats</span>
-									<div class="toggleIndicator level3"></div>
-								</a>
-								<ul toggleable
-										class="level3 hidden">
-									<li class="level4">
-												<a href="/extensions/manifest.html" class="level4 ">Manifest Files</a>
-									</li>
-									<li class="level4">
-												<a href="/extensions/match_patterns.html" class="level4 ">Match Patterns</a>
-									</li>
-								</ul>
-						</li>
-						<li class="level3">
-									<a href="/extensions/permission_warnings.html" class="level3 ">Permission Warnings</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_index.html" class="level3 ">chrome.* APIs</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/api_other.html" class="level3 ">Other APIs</a>
-						</li>
-					</ul>
-			</li>
-			<li class="level2">
-						<span class="level2">More</span>
-					<ul 
-							class="level2 ">
-						<li class="level3">
-									<a href="/extensions/faq.html" class="level3 ">FAQ</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/webstore/docs/index.html" class="level3 ">Chrome Web Store</a>
-						</li>
-						<li class="level3">
-									<a href="http://code.google.com/chrome/apps/docs/developers_guide.html" class="level3 ">Hosted Apps</a>
-						</li>
-						<li class="level3">
-									<a href="/extensions/themes.html" class="level3 ">Themes</a>
-						</li>
-					</ul>
-			</li>
-		</ul>
+					</ol>
+				</li>
+			</div>
+		</ol>
 	</div>
-	<div id="gc-pagecontent">
-		<h1 class="page_title">chrome.devtools.inspectedWindow</h1>
-		
-		
-		
-		<div id="toc">
-			<ol>
-				<li>
-					<a href="#overview">Overview</a>
-				</li>
-				<li>
-					<a href="#executing-code">Executing Code in the Inspected Window</a>
-				</li>
-				<li>
-					<a href="#overview-examples">Examples</a>
-				</li>
-				<div class="api-reference">
-					<li>
-						<a href="#apiReference">Reference</a>
-						<ol>
-							<li>
-								<a href="#types">Types</a>
-								<ol>
-									<li>
-										<a href="#type-Resource">Resource</a>
-								<ol><li>
-											<a href="#Resource-methods">Methods</a>
-											<ol>
-												<li><a href="#method-Resource-getContent">getContent</a></li>
-												<li><a href="#method-Resource-setContent">setContent</a></li>
-											</ol>
-										</li></ol>	</li>
-								</ol>
-							</li>
-							<li>
-								<a href="#properties">Properties</a>
-								<ol>
-									<li>
-										<a href="#property-tabId">tabId</a>
-									</li>
-								</ol>
-							</li>
-							<li>
-								<a href="#methods">Methods</a>
-								<ol>
-									<li><a href="#method-eval">eval</a></li>
-									<li><a href="#method-reload">reload</a></li>
-									<li><a href="#method-getResources">getResources</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#events">Events</a>
-								<ol>
-									<li><a href="#event-onResourceAdded">onResourceAdded</a></li>
-									<li><a href="#event-onResourceContentCommitted">onResourceContentCommitted</a></li>
-								</ol>
-							</li>
-							<li>
-								<a href="#samples">Sample Extensions</a>
-							</li>
-						</ol>
-					</li>
-				</div>
-			</ol>
-		</div>
-		<table class="intro" id="intro">
-			<tr>
-				<td class="title">Description:</td>
-				<td>
-						
-						
-						Use the <code>chrome.devtools.inspectedWindow</code> API to interact with the inspected window: obtain the tab ID for the inspected page, evaluate the code in the context of the inspected window, reload the page, or obtain the list of resources within the page.
-						
-						
-						
-						<br>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">Availability:</td>
-				<td>
-						
-						
-						
-							Stable since Chrome 18.
-						
-						
-						<br>
-				</td>
-			</tr>
-		</table>
+	<table class="intro" id="intro">
+		<tr>
+			<td class="title">Description:</td>
+			<td>
+					
+					
+					Use the <code>chrome.devtools.inspectedWindow</code> API to interact with the inspected window: obtain the tab ID for the inspected page, evaluate the code in the context of the inspected window, reload the page, or obtain the list of resources within the page.
+					
+					
+					
+					<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="title">Availability:</td>
+			<td>
+					
+					
+					
+						Stable since Chrome 18.
+					
+					
+					<br>
+			</td>
+		</tr>
+	</table>
 <p>
 Use <code>chrome.devtools.inspectedWindow</code>
 to interact with the inspected window:
@@ -408,12 +206,12 @@ page:
 <pre>
 chrome.devtools.inspectedWindow.eval(
 "jQuery.fn.jquery",
- function(result, isException) {
-	 if (isException)
-		 console.log("the page is not using jQuery");
-	 else
-		 console.log("The page is using jQuery v" + result);
- }
+function(result, isException) {
+ if (isException)
+	 console.log("the page is not using jQuery");
+ else
+	 console.log("The page is using jQuery v" + result);
+}
 );
 </pre>
 
@@ -421,143 +219,88 @@ chrome.devtools.inspectedWindow.eval(
 You can find more examples that use Developer Tools APIs in
 <a href="samples.html#devtools">Samples</a>.
 </p>
-		<h1 id="apiReference">chrome.devtools.inspectedWindow reference</h1>
-		<div class="api_reference">
-				<h2 id="types">Types</h2>
+	<h1 id="apiReference">chrome.devtools.inspectedWindow reference</h1>
+	<div class="api_reference">
+			<h2 id="types">Types</h2>
+				<div>
+					<h3 id="type-Resource">Resource</h3>
 					<div>
-						<h3 id="type-Resource">Resource</h3>
-						<div>
-							<dd>A resource within the inspected page, such as a document, a script, or an image.</dd>
-							
-								<h4 id="Resource-properties" class="capitalize">
-									properties of <a href="#type-Resource">Resource</a>
-								</h4>
-								<dd>
-									<dl>
-											<div>
-												<a name="property-Resource-url"></a>
+						<dd>A resource within the inspected page, such as a document, a script, or an image.</dd>
+						
+							<h4 id="Resource-properties" class="capitalize">
+								properties of <a href="#type-Resource">Resource</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<a name="property-Resource-url"></a>
+											<dl>
+												<dt>
+													<span class="variable">url</span>
+													<span class="property">
+														(
+															
+															string
+														)
+													</span>
+												</dt>
+												<dd>
+													The URL of the resource.
+												
+												</dd>
+											</dl>
+										</div>
+								</dl>
+							</dd>
+							<h4 id="Resource-methods" class="capitalize">
+								methods of <a href="#type-Resource">Resource</a>
+							</h4>
+							<dd>
+								<dl>
+										<div>
+											<h4 id="method-Resource-getContent">
+												getContent
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>Resource.getContent</span>(<span>function <span class="variable">callback</span></span>)
+											</div>
+											</div>
+											<div class="description">
+												<p>
+													Gets the content of the resource.
+												</p>
+												<h4>Parameters</h4>
 												<dl>
-													<dt>
-														<span class="variable">url</span>
-														<span class="property">
-															(
+														<div>
+															<a name="property-getContent-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	A function that receives resource content when the request completes.
 																
-																string
-															)
-														</span>
-													</dt>
-													<dd>
-														The URL of the resource.
-													
-													</dd>
+																</dd>
+															</dl>
+														</div>
 												</dl>
-											</div>
-									</dl>
-								</dd>
-								<h4 id="Resource-methods" class="capitalize">
-									methods of <a href="#type-Resource">Resource</a>
-								</h4>
-								<dd>
-									<dl>
-											<div>
-												<h4 id="method-Resource-getContent">
-													getContent
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>Resource.getContent</span>(<span>function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
+													<h4>Callback</h4>
 													<p>
-														Gets the content of the resource.
+																The <em>callback</em> parameter should specify a function
+																that looks like this:
 													</p>
-													<h4>Parameters</h4>
+													<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
 													<dl>
 															<div>
-																<a name="property-getContent-callback"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">callback</span>
-																		<span class="property">
-																			(
-																				
-																				function
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		A function that receives resource content when the request completes.
-																	
-																	</dd>
-																</dl>
-															</div>
-													</dl>
-														<h4>Callback</h4>
-														<p>
-																	The <em>callback</em> parameter should specify a function
-																	that looks like this:
-														</p>
-														<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
-														<dl>
-																<div>
-																	<a name="property-callback-content"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">content</span>
-																			<span class="property">
-																				(
-																					
-																					string
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Content of the resource (potentially encoded).
-																		
-																		</dd>
-																	</dl>
-																</div>
-																<div>
-																	<a name="property-callback-encoding"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">encoding</span>
-																			<span class="property">
-																				(
-																					
-																					string
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
-																		
-																		</dd>
-																	</dl>
-																</div>
-														</dl>
-												</div>
-											</div>
-											<div>
-												<h4 id="method-Resource-setContent">
-													setContent
-												</h4>
-												
-												<div class="summary">
-												<div class="line">
-												<span>Resource.setContent</span>(<span>string <span class="variable">content</span></span>, <span>boolean <span class="variable">commit</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-												</div>
-												</div>
-												<div class="description">
-													<p>
-														Sets the content of the resource.
-													</p>
-													<h4>Parameters</h4>
-													<dl>
-															<div>
-																<a name="property-setContent-content"></a>
+																<a name="property-callback-content"></a>
 																<dl>
 																	<dt>
 																		<span class="variable">content</span>
@@ -569,379 +312,459 @@ You can find more examples that use Developer Tools APIs in
 																		</span>
 																	</dt>
 																	<dd>
-																		New content of the resource. Only resources with the text type are currently supported.
+																		Content of the resource (potentially encoded).
 																	
 																	</dd>
 																</dl>
 															</div>
 															<div>
-																<a name="property-setContent-commit"></a>
+																<a name="property-callback-encoding"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">commit</span>
+																		<span class="variable">encoding</span>
 																		<span class="property">
 																			(
 																				
-																				boolean
+																				string
 																			)
 																		</span>
 																	</dt>
 																	<dd>
-																		True if the user has finished editing the resource, and the new content of the resource should be persisted; false if this is a minor change sent in progress of the user editing the resource.
-																	
-																	</dd>
-																</dl>
-															</div>
-															<div>
-																<a name="property-setContent-callback"></a>
-																<dl>
-																	<dt>
-																		<span class="variable">callback</span>
-																		<span class="property">
-																			(
-																				<span class="optional">optional</span>
-																				function
-																			)
-																		</span>
-																	</dt>
-																	<dd>
-																		A function called upon request completion.
+																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
 																	
 																	</dd>
 																</dl>
 															</div>
 													</dl>
-														<h4>Callback</h4>
-														<p>
-																	If you specify the <em>callback</em> parameter, it should
-																	specify a function that looks like this:
-														</p>
-														<pre>function(object error) <span class="subdued">{...}</span>;</pre>
-														<dl>
-																<div>
-																	<a name="property-callback-error"></a>
-																	<dl>
-																		<dt>
-																			<span class="variable">error</span>
-																			<span class="property">
-																				(
-																					<span class="optional">optional</span>
-																					object
-																				)
-																			</span>
-																		</dt>
-																		<dd>
-																			Set to undefined if the resource content was set successfully; describes error otherwise.
-																		
-																		</dd>
-																	</dl>
-																</div>
-														</dl>
-												</div>
 											</div>
+										</div>
+										<div>
+											<h4 id="method-Resource-setContent">
+												setContent
+											</h4>
+											
+											<div class="summary">
+											<div class="line">
+											<span>Resource.setContent</span>(<span>string <span class="variable">content</span></span>, <span>boolean <span class="variable">commit</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											</div>
+											</div>
+											<div class="description">
+												<p>
+													Sets the content of the resource.
+												</p>
+												<h4>Parameters</h4>
+												<dl>
+														<div>
+															<a name="property-setContent-content"></a>
+															<dl>
+																<dt>
+																	<span class="variable">content</span>
+																	<span class="property">
+																		(
+																			
+																			string
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	New content of the resource. Only resources with the text type are currently supported.
+																
+																</dd>
+															</dl>
+														</div>
+														<div>
+															<a name="property-setContent-commit"></a>
+															<dl>
+																<dt>
+																	<span class="variable">commit</span>
+																	<span class="property">
+																		(
+																			
+																			boolean
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	True if the user has finished editing the resource, and the new content of the resource should be persisted; false if this is a minor change sent in progress of the user editing the resource.
+																
+																</dd>
+															</dl>
+														</div>
+														<div>
+															<a name="property-setContent-callback"></a>
+															<dl>
+																<dt>
+																	<span class="variable">callback</span>
+																	<span class="property">
+																		(
+																			<span class="optional">optional</span>
+																			function
+																		)
+																	</span>
+																</dt>
+																<dd>
+																	A function called upon request completion.
+																
+																</dd>
+															</dl>
+														</div>
+												</dl>
+													<h4>Callback</h4>
+													<p>
+																If you specify the <em>callback</em> parameter, it should
+																specify a function that looks like this:
+													</p>
+													<pre>function(object error) <span class="subdued">{...}</span>;</pre>
+													<dl>
+															<div>
+																<a name="property-callback-error"></a>
+																<dl>
+																	<dt>
+																		<span class="variable">error</span>
+																		<span class="property">
+																			(
+																				<span class="optional">optional</span>
+																				object
+																			)
+																		</span>
+																	</dt>
+																	<dd>
+																		Set to undefined if the resource content was set successfully; describes error otherwise.
+																	
+																	</dd>
+																</dl>
+															</div>
+													</dl>
+											</div>
+										</div>
+								</dl>
+							</dd>
+					</div>
+				</div>
+			<h2 id="properties">Properties</h2>
+				<div>
+					<h3 id="property-tabId">tabId</h3>
+					<div class="summary">
+						<div class="line">chrome.devtools.inspectedWindow.tabId</div>
+					</div>
+					<div>
+						<dt><span class="property">tabId</span> <span class="type_name">	(		integer	)</span></dt>
+				<dd>
+							The ID of the tab being inspected. This ID may be used with chrome.tabs.* API.
+						</dd>	</div>
+				</div>
+			<h2 id="methods">Methods</h2>
+				<div>
+					<h4 id="method-eval">
+						eval
+					</h4>
+					
+					<div class="summary uncapitalize">
+					<div class="line">
+					<span>chrome.devtools.inspectedWindow.eval</span>(<span>string <span class="variable">expression</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					</div>
+					</div>
+					<div class="description">
+						<p>
+							Evaluates a JavaScript expression in the context of the main frame of the inspected page. The expression must evaluate to a JSON-compliant object, otherwise an exception is thrown.
+						</p>
+						<h4>Parameters</h4>
+						<dl>
+								<div>
+									<a name="property-eval-expression"></a>
+									<dl>
+										<dt>
+											<span class="variable">expression</span>
+											<span class="property">
+												(
+													
+													string
+												)
+											</span>
+										</dt>
+										<dd>
+											An expression to evaluate.
+										
+										</dd>
 									</dl>
-								</dd>
-						</div>
-					</div>
-				<h2 id="properties">Properties</h2>
-					<div>
-						<h3 id="property-tabId">tabId</h3>
-						<div class="summary">
-							<div class="line">chrome.devtools.inspectedWindow.tabId</div>
-						</div>
-						<div>
-							<dt><span class="property">tabId</span> <span class="type_name">	(		integer	)</span></dt>
-					<dd>
-								The ID of the tab being inspected. This ID may be used with chrome.tabs.* API.
-							</dd>	</div>
-					</div>
-				<h2 id="methods">Methods</h2>
-					<div>
-						<h4 id="method-eval">
-							eval
-						</h4>
-						
-						<div class="summary uncapitalize">
-						<div class="line">
-						<span>chrome.devtools.inspectedWindow.eval</span>(<span>string <span class="variable">expression</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
-						</div>
-						</div>
-						<div class="description">
+								</div>
+								<div>
+									<a name="property-eval-callback"></a>
+									<dl>
+										<dt>
+											<span class="variable">callback</span>
+											<span class="property">
+												(
+													<span class="optional">optional</span>
+													function
+												)
+											</span>
+										</dt>
+										<dd>
+											A function called when evaluation completes.
+										
+										</dd>
+									</dl>
+								</div>
+						</dl>
+							<h4>Callback</h4>
 							<p>
-								Evaluates a JavaScript expression in the context of the main frame of the inspected page. The expression must evaluate to a JSON-compliant object, otherwise an exception is thrown.
+										If you specify the <em>callback</em> parameter, it should
+										specify a function that looks like this:
 							</p>
-							<h4>Parameters</h4>
+							<pre>function(object result, boolean isException) <span class="subdued">{...}</span>;</pre>
 							<dl>
 									<div>
-										<a name="property-eval-expression"></a>
+										<a name="property-callback-result"></a>
 										<dl>
 											<dt>
-												<span class="variable">expression</span>
+												<span class="variable">result</span>
 												<span class="property">
 													(
 														
-														string
-													)
-												</span>
-											</dt>
-											<dd>
-												An expression to evaluate.
-											
-											</dd>
-										</dl>
-									</div>
-									<div>
-										<a name="property-eval-callback"></a>
-										<dl>
-											<dt>
-												<span class="variable">callback</span>
-												<span class="property">
-													(
-														<span class="optional">optional</span>
-														function
-													)
-												</span>
-											</dt>
-											<dd>
-												A function called when evaluation completes.
-											
-											</dd>
-										</dl>
-									</div>
-							</dl>
-								<h4>Callback</h4>
-								<p>
-											If you specify the <em>callback</em> parameter, it should
-											specify a function that looks like this:
-								</p>
-								<pre>function(object result, boolean isException) <span class="subdued">{...}</span>;</pre>
-								<dl>
-										<div>
-											<a name="property-callback-result"></a>
-											<dl>
-												<dt>
-													<span class="variable">result</span>
-													<span class="property">
-														(
-															
-															object
-														)
-													</span>
-												</dt>
-												<dd>
-													The result of evaluation.
-												
-												</dd>
-											</dl>
-										</div>
-										<div>
-											<a name="property-callback-isException"></a>
-											<dl>
-												<dt>
-													<span class="variable">isException</span>
-													<span class="property">
-														(
-															
-															boolean
-														)
-													</span>
-												</dt>
-												<dd>
-													Set if an exception was caught while evaluating the expression.
-												
-												</dd>
-											</dl>
-										</div>
-								</dl>
-						</div>
-					</div>
-					<div>
-						<h4 id="method-reload">
-							reload
-						</h4>
-						
-						<div class="summary uncapitalize">
-						<div class="line">
-						<span>chrome.devtools.inspectedWindow.reload</span>(<span class="optional">object <span class="variable">reloadOptions</span></span>)
-						</div>
-						</div>
-						<div class="description">
-							<p>
-								Reloads the inspected page.
-							</p>
-							<h4>Parameters</h4>
-							<dl>
-									<div>
-										<a name="property-reload-reloadOptions"></a>
-										<dl>
-											<dt>
-												<span class="variable">reloadOptions</span>
-												<span class="property">
-													(
-														<span class="optional">optional</span>
 														object
 													)
 												</span>
 											</dt>
 											<dd>
+												The result of evaluation.
 											
 											</dd>
 										</dl>
-										<dd>
-											<h5>Properties of <span class="variable">reloadOptions</span></h5>
-											<dl>
-												<div>
-													<a name="property-reloadOptions-ignoreCache"></a>
-													<dl>
-														<dt>
-															<span class="variable">ignoreCache</span>
-															<span class="property">
-																(
-																	<span class="optional">optional</span>
-																	boolean
-																)
-															</span>
-														</dt>
-														<dd>
-															When true, the loader will ignore the cache for all inspected page resources loaded before the <code>load</code> event is fired. The effect is similar to pressing Ctrl+Shift+R in the inspected window or within the Developer Tools window.
-														
-														</dd>
-													</dl>
-												</div>
-												<div>
-													<a name="property-reloadOptions-userAgent"></a>
-													<dl>
-														<dt>
-															<span class="variable">userAgent</span>
-															<span class="property">
-																(
-																	<span class="optional">optional</span>
-																	string
-																)
-															</span>
-														</dt>
-														<dd>
-															If specified, the string will override the value of the <code>User-Agent</code> HTTP header that's sent while loading the resources of the inspected page. The string will also override the value of the <code>navigator.userAgent</code> property that's returned to any scripts that are running within the inspected page.
-														
-														</dd>
-													</dl>
-												</div>
-												<div>
-													<a name="property-reloadOptions-injectedScript"></a>
-													<dl>
-														<dt>
-															<span class="variable">injectedScript</span>
-															<span class="property">
-																(
-																	<span class="optional">optional</span>
-																	string
-																)
-															</span>
-														</dt>
-														<dd>
-															If specified, the script will be injected into every frame of the inspected page immediately upon load, before any of the frame's scripts. The script will not be injected after subsequent reloads&mdash;for example, if the user presses Ctrl+R.
-														
-														</dd>
-													</dl>
-												</div>
-											</dl>
-										</dd>
 									</div>
-							</dl>
-						</div>
-					</div>
-					<div>
-						<h4 id="method-getResources">
-							getResources
-						</h4>
-						
-						<div class="summary uncapitalize">
-						<div class="line">
-						<span>chrome.devtools.inspectedWindow.getResources</span>(<span>function <span class="variable">callback</span></span>)
-						</div>
-						</div>
-						<div class="description">
-							<p>
-								Retrieves the list of resources from the inspected page.
-							</p>
-							<h4>Parameters</h4>
-							<dl>
 									<div>
-										<a name="property-getResources-callback"></a>
+										<a name="property-callback-isException"></a>
 										<dl>
 											<dt>
-												<span class="variable">callback</span>
+												<span class="variable">isException</span>
 												<span class="property">
 													(
 														
-														function
+														boolean
 													)
 												</span>
 											</dt>
 											<dd>
-												A function that receives the list of resources when the request completes.
+												Set if an exception was caught while evaluating the expression.
 											
 											</dd>
 										</dl>
 									</div>
 							</dl>
-								<h4>Callback</h4>
-								<p>
-											The <em>callback</em> parameter should specify a function
-											that looks like this:
-								</p>
-								<pre>function(array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resources) <span class="subdued">{...}</span>;</pre>
-								<dl>
-										<div>
-											<a name="property-callback-resources"></a>
-											<dl>
-												<dt>
-													<span class="variable">resources</span>
-													<span class="property">
-														(
-															
-															array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
-														)
-													</span>
-												</dt>
-												<dd>
-													The resources within the page.
-												
-												</dd>
-											</dl>
-										</div>
-								</dl>
-						</div>
 					</div>
-				<h2 id="events">Events</h2>
-					<div>
-						<h4 id="event-onResourceAdded">onResourceAdded</h4>
-						
-						<div class="description">
-					<p>
-								Fired when a new resource is added to the inspected page.
-							</p>			<div>
-									<h4 id="event-onResourceAdded-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.devtools.inspectedWindow.onResourceAdded.addListener</span>(<span>function <span class="variable">callback</span></span>)
+				</div>
+				<div>
+					<h4 id="method-reload">
+						reload
+					</h4>
+					
+					<div class="summary uncapitalize">
+					<div class="line">
+					<span>chrome.devtools.inspectedWindow.reload</span>(<span class="optional">object <span class="variable">reloadOptions</span></span>)
+					</div>
+					</div>
+					<div class="description">
+						<p>
+							Reloads the inspected page.
+						</p>
+						<h4>Parameters</h4>
+						<dl>
+								<div>
+									<a name="property-reload-reloadOptions"></a>
+									<dl>
+										<dt>
+											<span class="variable">reloadOptions</span>
+											<span class="property">
+												(
+													<span class="optional">optional</span>
+													object
+												)
+											</span>
+										</dt>
+										<dd>
+										
+										</dd>
+									</dl>
+									<dd>
+										<h5>Properties of <span class="variable">reloadOptions</span></h5>
+										<dl>
+											<div>
+												<a name="property-reloadOptions-ignoreCache"></a>
+												<dl>
+													<dt>
+														<span class="variable">ignoreCache</span>
+														<span class="property">
+															(
+																<span class="optional">optional</span>
+																boolean
+															)
+														</span>
+													</dt>
+													<dd>
+														When true, the loader will ignore the cache for all inspected page resources loaded before the <code>load</code> event is fired. The effect is similar to pressing Ctrl+Shift+R in the inspected window or within the Developer Tools window.
+													
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-reloadOptions-userAgent"></a>
+												<dl>
+													<dt>
+														<span class="variable">userAgent</span>
+														<span class="property">
+															(
+																<span class="optional">optional</span>
+																string
+															)
+														</span>
+													</dt>
+													<dd>
+														If specified, the string will override the value of the <code>User-Agent</code> HTTP header that's sent while loading the resources of the inspected page. The string will also override the value of the <code>navigator.userAgent</code> property that's returned to any scripts that are running within the inspected page.
+													
+													</dd>
+												</dl>
+											</div>
+											<div>
+												<a name="property-reloadOptions-injectedScript"></a>
+												<dl>
+													<dt>
+														<span class="variable">injectedScript</span>
+														<span class="property">
+															(
+																<span class="optional">optional</span>
+																string
+															)
+														</span>
+													</dt>
+													<dd>
+														If specified, the script will be injected into every frame of the inspected page immediately upon load, before any of the frame's scripts. The script will not be injected after subsequent reloads&mdash;for example, if the user presses Ctrl+R.
+													
+													</dd>
+												</dl>
+											</div>
+										</dl>
+									</dd>
+								</div>
+						</dl>
+					</div>
+				</div>
+				<div>
+					<h4 id="method-getResources">
+						getResources
+					</h4>
+					
+					<div class="summary uncapitalize">
+					<div class="line">
+					<span>chrome.devtools.inspectedWindow.getResources</span>(<span>function <span class="variable">callback</span></span>)
+					</div>
+					</div>
+					<div class="description">
+						<p>
+							Retrieves the list of resources from the inspected page.
+						</p>
+						<h4>Parameters</h4>
+						<dl>
+								<div>
+									<a name="property-getResources-callback"></a>
+									<dl>
+										<dt>
+											<span class="variable">callback</span>
+											<span class="property">
+												(
+													
+													function
+												)
+											</span>
+										</dt>
+										<dd>
+											A function that receives the list of resources when the request completes.
+										
+										</dd>
+									</dl>
+								</div>
+						</dl>
+							<h4>Callback</h4>
+							<p>
+										The <em>callback</em> parameter should specify a function
+										that looks like this:
+							</p>
+							<pre>function(array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resources) <span class="subdued">{...}</span>;</pre>
+							<dl>
+									<div>
+										<a name="property-callback-resources"></a>
+										<dl>
+											<dt>
+												<span class="variable">resources</span>
+												<span class="property">
+													(
+														
+														array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
+													)
+												</span>
+											</dt>
+											<dd>
+												The resources within the page.
+											
+											</dd>
+										</dl>
 									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
+							</dl>
+					</div>
+				</div>
+			<h2 id="events">Events</h2>
+				<div>
+					<h4 id="event-onResourceAdded">onResourceAdded</h4>
+					
+					<div class="description">
+				<p>
+							Fired when a new resource is added to the inspected page.
+						</p>			<div>
+								<h4 id="event-onResourceAdded-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.devtools.inspectedWindow.onResourceAdded.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onResourceAdded-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource) <span class="subdued">{...}</span>;</pre>
 										<dl>
 												<div>
-													<a name="property-onResourceAdded-callback"></a>
+													<a name="property-onResourceAdded-resource"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">resource</span>
 															<span class="property">
 																(
 																	
-																	function
+																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
 															</span>
 														</dt>
@@ -951,63 +774,63 @@ You can find more examples that use Developer Tools APIs in
 													</dl>
 												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onResourceAdded-resource"></a>
-														<dl>
-															<dt>
-																<span class="variable">resource</span>
-																<span class="property">
-																	(
-																		
-																		<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
-																	)
-																</span>
-															</dt>
-															<dd>
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-					<div>
-						<h4 id="event-onResourceContentCommitted">onResourceContentCommitted</h4>
-						
-						<div class="description">
-					<p>
-								Fired when a new revision of the resource is committed (e.g. user saves an edited version of the resource in the Developer Tools).
-							</p>			<div>
-									<h4 id="event-onResourceContentCommitted-addListener">
-										addListener
-									</h4>
-									
-									<div class="summary uncapitalize">
-									<div class="line">
-									<span>chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener</span>(<span>function <span class="variable">callback</span></span>)
-									</div>
-									</div>
-									<div class="description">
-										<h4>Parameters</h4>
+				</div>
+				<div>
+					<h4 id="event-onResourceContentCommitted">onResourceContentCommitted</h4>
+					
+					<div class="description">
+				<p>
+							Fired when a new revision of the resource is committed (e.g. user saves an edited version of the resource in the Developer Tools).
+						</p>			<div>
+								<h4 id="event-onResourceContentCommitted-addListener">
+									addListener
+								</h4>
+								
+								<div class="summary uncapitalize">
+								<div class="line">
+								<span>chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								</div>
+								</div>
+								<div class="description">
+									<h4>Parameters</h4>
+									<dl>
+											<div>
+												<a name="property-onResourceContentCommitted-callback"></a>
+												<dl>
+													<dt>
+														<span class="variable">callback</span>
+														<span class="property">
+															(
+																
+																function
+															)
+														</span>
+													</dt>
+													<dd>
+													
+													</dd>
+												</dl>
+											</div>
+									</dl>
+										<h4>Callback</h4>
+										<p>
+													The <em>callback</em> parameter should specify a function
+													that looks like this:
+										</p>
+										<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource, string content) <span class="subdued">{...}</span>;</pre>
 										<dl>
 												<div>
-													<a name="property-onResourceContentCommitted-callback"></a>
+													<a name="property-onResourceContentCommitted-resource"></a>
 													<dl>
 														<dt>
-															<span class="variable">callback</span>
+															<span class="variable">resource</span>
 															<span class="property">
 																(
 																	
-																	function
+																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
 															</span>
 														</dt>
@@ -1016,60 +839,34 @@ You can find more examples that use Developer Tools APIs in
 														</dd>
 													</dl>
 												</div>
+												<div>
+													<a name="property-onResourceContentCommitted-content"></a>
+													<dl>
+														<dt>
+															<span class="variable">content</span>
+															<span class="property">
+																(
+																	
+																	string
+																)
+															</span>
+														</dt>
+														<dd>
+															New content of the resource.
+														
+														</dd>
+													</dl>
+												</div>
 										</dl>
-											<h4>Callback</h4>
-											<p>
-														The <em>callback</em> parameter should specify a function
-														that looks like this:
-											</p>
-											<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource, string content) <span class="subdued">{...}</span>;</pre>
-											<dl>
-													<div>
-														<a name="property-onResourceContentCommitted-resource"></a>
-														<dl>
-															<dt>
-																<span class="variable">resource</span>
-																<span class="property">
-																	(
-																		
-																		<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
-																	)
-																</span>
-															</dt>
-															<dd>
-															
-															</dd>
-														</dl>
-													</div>
-													<div>
-														<a name="property-onResourceContentCommitted-content"></a>
-														<dl>
-															<dt>
-																<span class="variable">content</span>
-																<span class="property">
-																	(
-																		
-																		string
-																	)
-																</span>
-															</dt>
-															<dd>
-																New content of the resource.
-															
-															</dd>
-														</dl>
-													</div>
-											</dl>
-									</div>
 								</div>
-						</div>
+							</div>
 					</div>
-		</div>
-			<h2 id="samples">Sample Extensions that use chrome.devtools.inspectedWindow</h2>
-			<ul>
-				<li><strong><a href="samples.html#chrome-preprocessor-example">Chrome Preprocessor Example</a></strong>
-				&ndash; Simple hello-world example for chrome.devtools.inspectedWindow.reload() using preprocessor.
-		</li>
-			</ul>
+				</div>
 	</div>
+		<h2 id="samples">Sample Extensions that use chrome.devtools.inspectedWindow</h2>
+		<ul>
+			<li><strong><a href="samples.html#chrome-preprocessor-example">Chrome Preprocessor Example</a></strong>
+			&ndash; Simple hello-world example for chrome.devtools.inspectedWindow.reload() using preprocessor.
+	</li>
+		</ul>
 </div>
