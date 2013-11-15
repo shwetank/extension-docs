@@ -185,7 +185,7 @@ considering the precedence rules. It is used by Chrome.
 											
 											<div class="summary">
 											<div class="line">
-											<span>ChromeSetting.get</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+											<code>ChromeSetting.get</code>(<code>object <code class="variable">details</code></code>, <code>function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -198,13 +198,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-get-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Which setting to consider.
@@ -212,19 +212,19 @@ considering the precedence rules. It is used by Chrome.
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-incognito"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">incognito</span>
-																				<span class="property">
+																				<code class="variable">incognito</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						boolean
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Whether to return the value that applies to the incognito session (default false).
@@ -239,13 +239,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-get-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
 																			
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
@@ -258,19 +258,19 @@ considering the precedence rules. It is used by Chrome.
 																The <em>callback</em> parameter should specify a function
 																that looks like this:
 													</p>
-													<pre>function(object details) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(object details) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-details"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">details</span>
-																		<span class="property">
+																		<code class="variable">details</code>
+																		<code class="property">
 																			(
 																				
 																				object
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Details of the currently effective value.
@@ -278,19 +278,19 @@ considering the precedence rules. It is used by Chrome.
 																	</dd>
 																</dl>
 																<dd>
-																	<h5>Properties of <span class="variable">details</span></h5>
+																	<h5>Properties of <code class="variable">details</code></h5>
 																	<dl>
 																		<div>
 																			<a name="property-details-value"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">value</span>
-																					<span class="property">
+																					<code class="variable">value</code>
+																					<code class="property">
 																						(
 																							
 																							any
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					The value of the setting.
@@ -302,13 +302,13 @@ considering the precedence rules. It is used by Chrome.
 																			<a name="property-details-levelOfControl"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">levelOfControl</span>
-																					<span class="property">
+																					<code class="variable">levelOfControl</code>
+																					<code class="property">
 																						(
 																							
 																							enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
@@ -320,13 +320,13 @@ considering the precedence rules. It is used by Chrome.
 																			<a name="property-details-incognitoSpecific"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">incognitoSpecific</span>
-																					<span class="property">
+																					<code class="variable">incognitoSpecific</code>
+																					<code class="property">
 																						(
-																							<span class="optional">optional</span>
+																							<code class="optional">optional</code>
 																							boolean
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					Whether the effective value is specific to the incognito session.<br/>This property will <em>only</em> be present if the <var>incognito</var> property in the <var>details</var> parameter of <code>get()</code> was true.
@@ -347,7 +347,7 @@ considering the precedence rules. It is used by Chrome.
 											
 											<div class="summary">
 											<div class="line">
-											<span>ChromeSetting.set</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ChromeSetting.set</code>(<code>object <code class="variable">details</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -360,13 +360,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-set-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Which setting to change.
@@ -374,19 +374,19 @@ considering the precedence rules. It is used by Chrome.
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-value"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">value</span>
-																				<span class="property">
+																				<code class="variable">value</code>
+																				<code class="property">
 																					(
 																						
 																						any
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The value of the setting. <br/>Note that every setting has a specific value type, which is described together with the setting. An extension should <em>not</em> set a value of a different type.
@@ -398,13 +398,13 @@ considering the precedence rules. It is used by Chrome.
 																		<a name="property-details-scope"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">scope</span>
-																				<span class="property">
+																				<code class="variable">scope</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Where to set the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
@@ -419,13 +419,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-set-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Called at the completion of the set operation.
@@ -439,7 +439,7 @@ considering the precedence rules. It is used by Chrome.
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 										<div>
@@ -449,7 +449,7 @@ considering the precedence rules. It is used by Chrome.
 											
 											<div class="summary">
 											<div class="line">
-											<span>ChromeSetting.clear</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ChromeSetting.clear</code>(<code>object <code class="variable">details</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -462,13 +462,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-clear-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Which setting to clear.
@@ -476,19 +476,19 @@ considering the precedence rules. It is used by Chrome.
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-scope"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">scope</span>
-																				<span class="property">
+																				<code class="variable">scope</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Where to clear the setting (default: regular). One of<ul><li><var>regular</var>: setting for the regular profile (which is inherited by the incognito profile if not overridden elsewhere),</li><li><var>regular_only</var>: setting for the regular profile only (not inherited by the incognito profile),</li><li><var>incognito_persistent</var>: setting for the incognito profile that survives browser restarts (overrides regular preferences),</li><li><var>incognito_session_only</var>: setting for the incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular and incognito_persistent preferences).</li></ul>
@@ -503,13 +503,13 @@ considering the precedence rules. It is used by Chrome.
 															<a name="property-clear-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Called at the completion of the clear operation.
@@ -523,7 +523,7 @@ considering the precedence rules. It is used by Chrome.
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 								</dl>
@@ -546,7 +546,7 @@ considering the precedence rules. It is used by Chrome.
 														
 														<div class="summary">
 														<div class="line">
-														<span>onChange.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onChange.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -556,13 +556,13 @@ considering the precedence rules. It is used by Chrome.
 																		<a name="property-onChange-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -575,38 +575,38 @@ considering the precedence rules. It is used by Chrome.
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function(object details) <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function(object details) <code class="subdued">{...}</code>;</pre>
 																<dl>
 																		<div>
 																			<a name="property-onChange-details"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">details</span>
-																					<span class="property">
+																					<code class="variable">details</code>
+																					<code class="property">
 																						(
 																							
 																							object
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																				
 																				</dd>
 																			</dl>
 																			<dd>
-																				<h5>Properties of <span class="variable">details</span></h5>
+																				<h5>Properties of <code class="variable">details</code></h5>
 																				<dl>
 																					<div>
 																						<a name="property-details-value"></a>
 																						<dl>
 																							<dt>
-																								<span class="variable">value</span>
-																								<span class="property">
+																								<code class="variable">value</code>
+																								<code class="property">
 																									(
 																										
 																										any
 																									)
-																								</span>
+																								</code>
 																							</dt>
 																							<dd>
 																								The value of the setting after the change.
@@ -618,13 +618,13 @@ considering the precedence rules. It is used by Chrome.
 																						<a name="property-details-levelOfControl"></a>
 																						<dl>
 																							<dt>
-																								<span class="variable">levelOfControl</span>
-																								<span class="property">
+																								<code class="variable">levelOfControl</code>
+																								<code class="property">
 																									(
 																										
 																										enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code>
 																									)
-																								</span>
+																								</code>
 																							</dt>
 																							<dd>
 																								One of<ul><li><var>not_controllable</var>: cannot be controlled by any extension</li><li><var>controlled_by_other_extensions</var>: controlled by extensions with higher precedence</li><li><var>controllable_by_this_extension</var>: can be controlled by this extension</li><li><var>controlled_by_this_extension</var>: controlled by this extension</li></ul>
@@ -636,13 +636,13 @@ considering the precedence rules. It is used by Chrome.
 																						<a name="property-details-incognitoSpecific"></a>
 																						<dl>
 																							<dt>
-																								<span class="variable">incognitoSpecific</span>
-																								<span class="property">
+																								<code class="variable">incognitoSpecific</code>
+																								<code class="property">
 																									(
-																										<span class="optional">optional</span>
+																										<code class="optional">optional</code>
 																										boolean
 																									)
-																								</span>
+																								</code>
 																							</dt>
 																							<dd>
 																								Whether the value that has changed is specific to the incognito session.<br/>This property will <em>only</em> be present if the user has enabled the extension in incognito mode.

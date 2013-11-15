@@ -165,7 +165,7 @@ multiple times, only the last handler is retained.
 represented by <code>FontPicker.png</code> on the Developer Tools toolbar
 and labeled as <em>Font Picker</em>:</p>
 
-<pre>
+<pre class="prettyprint">
 chrome.devtools.panels.create("Font Picker",
 												"FontPicker.png",
 												"Panel.html"
@@ -174,7 +174,7 @@ chrome.devtools.panels.create("Font Picker",
 <p>The following code adds a sidebar pane contained in
 <code>Sidebar.html</code> and titled <em>Font Properties</em> to the Elements
 panel, then sets its height to <code>8ex</code>:
-<pre>
+<pre class="prettyprint">
 chrome.devtools.panels.elements.createSidebarPane("Font Properties",
 function(sidebar) {
 sidebar.setPage("Sidebar.html");
@@ -215,7 +215,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>ElementsPanel.createSidebarPane</span>(<span>string <span class="variable">title</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ElementsPanel.createSidebarPane</code>(<code>string <code class="variable">title</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -228,13 +228,13 @@ You can find examples that use this API in
 															<a name="property-createSidebarPane-title"></a>
 															<dl>
 																<dt>
-																	<span class="variable">title</span>
-																	<span class="property">
+																	<code class="variable">title</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Text that is displayed in sidebar caption.
@@ -246,13 +246,13 @@ You can find examples that use this API in
 															<a name="property-createSidebarPane-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A callback invoked when the sidebar is created.
@@ -266,19 +266,19 @@ You can find examples that use this API in
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function(<a href="devtools.panels.html#type-ExtensionSidebarPane">ExtensionSidebarPane</a> result) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(<a href="devtools.panels.html#type-ExtensionSidebarPane">ExtensionSidebarPane</a> result) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-result"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">result</span>
-																		<span class="property">
+																		<code class="variable">result</code>
+																		<code class="property">
 																			(
 																				
 																				<a href="devtools.panels.html#type-ExtensionSidebarPane">ExtensionSidebarPane</a>
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		An ExtensionSidebarPane object for created sidebar pane.
@@ -309,7 +309,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onSelectionChanged.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onSelectionChanged.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -319,13 +319,13 @@ You can find examples that use this API in
 																		<a name="property-onSelectionChanged-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -338,7 +338,7 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function() <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 														</div>
 													</div>
 											</div>
@@ -364,7 +364,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span><a href="devtools.panels.html#type-Button">Button</a> ExtensionPanel.createStatusBarButton</span>(<span>string <span class="variable">iconPath</span></span>, <span>string <span class="variable">tooltipText</span></span>, <span>boolean <span class="variable">disabled</span></span>)
+											<code><a href="devtools.panels.html#type-Button">Button</a> ExtensionPanel.createStatusBarButton</code>(<code>string <code class="variable">iconPath</code></code>, <code>string <code class="variable">tooltipText</code></code>, <code>boolean <code class="variable">disabled</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -377,13 +377,13 @@ You can find examples that use this API in
 															<a name="property-createStatusBarButton-iconPath"></a>
 															<dl>
 																<dt>
-																	<span class="variable">iconPath</span>
-																	<span class="property">
+																	<code class="variable">iconPath</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Path to the icon of the button. The file should contain a 64x24-pixel image composed of two 32x24 icons. The left icon is used when the button is inactive; the right icon is displayed when the button is pressed.
@@ -395,13 +395,13 @@ You can find examples that use this API in
 															<a name="property-createStatusBarButton-tooltipText"></a>
 															<dl>
 																<dt>
-																	<span class="variable">tooltipText</span>
-																	<span class="property">
+																	<code class="variable">tooltipText</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Text shown as a tooltip when user hovers the mouse over the button.
@@ -413,13 +413,13 @@ You can find examples that use this API in
 															<a name="property-createStatusBarButton-disabled"></a>
 															<dl>
 																<dt>
-																	<span class="variable">disabled</span>
-																	<span class="property">
+																	<code class="variable">disabled</code>
+																	<code class="property">
 																		(
 																			
 																			boolean
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Whether the button is disabled.
@@ -450,7 +450,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onSearch.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onSearch.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -460,13 +460,13 @@ You can find examples that use this API in
 																		<a name="property-onSearch-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -479,19 +479,19 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function(string action, string queryString) <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function(string action, string queryString) <code class="subdued">{...}</code>;</pre>
 																<dl>
 																		<div>
 																			<a name="property-onSearch-action"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">action</span>
-																					<span class="property">
+																					<code class="variable">action</code>
+																					<code class="property">
 																						(
 																							
 																							string
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					Type of search action being performed.
@@ -503,13 +503,13 @@ You can find examples that use this API in
 																			<a name="property-onSearch-queryString"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">queryString</span>
-																					<span class="property">
+																					<code class="variable">queryString</code>
+																					<code class="property">
 																						(
-																							<span class="optional">optional</span>
+																							<code class="optional">optional</code>
 																							string
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					Query string (only for 'performSearch').
@@ -535,7 +535,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onShown.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onShown.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -545,13 +545,13 @@ You can find examples that use this API in
 																		<a name="property-onShown-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -564,19 +564,19 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function(<a href="windows.html#type-Window">windows.Window</a> window) <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function(<a href="windows.html#type-Window">windows.Window</a> window) <code class="subdued">{...}</code>;</pre>
 																<dl>
 																		<div>
 																			<a name="property-onShown-window"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">window</span>
-																					<span class="property">
+																					<code class="variable">window</code>
+																					<code class="property">
 																						(
 																							
 																							<a href="windows.html#type-Window">windows.Window</a>
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					The <code>window</code> object of panel's page.
@@ -602,7 +602,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onHidden.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onHidden.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -612,13 +612,13 @@ You can find examples that use this API in
 																		<a name="property-onHidden-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -631,7 +631,7 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function() <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 														</div>
 													</div>
 											</div>
@@ -657,7 +657,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>ExtensionSidebarPane.setHeight</span>(<span>string <span class="variable">height</span></span>)
+											<code>ExtensionSidebarPane.setHeight</code>(<code>string <code class="variable">height</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -670,13 +670,13 @@ You can find examples that use this API in
 															<a name="property-setHeight-height"></a>
 															<dl>
 																<dt>
-																	<span class="variable">height</span>
-																	<span class="property">
+																	<code class="variable">height</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A CSS-like size specification, such as <code>'100px'</code> or <code>'12ex'</code>.
@@ -694,7 +694,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>ExtensionSidebarPane.setExpression</span>(<span>string <span class="variable">expression</span></span>, <span class="optional">string <span class="variable">rootTitle</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ExtensionSidebarPane.setExpression</code>(<code>string <code class="variable">expression</code></code>, <code class="optional">string <code class="variable">rootTitle</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -707,13 +707,13 @@ You can find examples that use this API in
 															<a name="property-setExpression-expression"></a>
 															<dl>
 																<dt>
-																	<span class="variable">expression</span>
-																	<span class="property">
+																	<code class="variable">expression</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	An expression to be evaluated in context of the inspected page. JavaScript objects and DOM nodes are displayed in an expandable tree similar to the console/watch.
@@ -725,13 +725,13 @@ You can find examples that use this API in
 															<a name="property-setExpression-rootTitle"></a>
 															<dl>
 																<dt>
-																	<span class="variable">rootTitle</span>
-																	<span class="property">
+																	<code class="variable">rootTitle</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	An optional title for the root of the expression tree.
@@ -743,13 +743,13 @@ You can find examples that use this API in
 															<a name="property-setExpression-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A callback invoked after the sidebar pane is updated with the expression evaluation results.
@@ -763,7 +763,7 @@ You can find examples that use this API in
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 										<div>
@@ -773,7 +773,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>ExtensionSidebarPane.setObject</span>(<span>string <span class="variable">jsonObject</span></span>, <span class="optional">string <span class="variable">rootTitle</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ExtensionSidebarPane.setObject</code>(<code>string <code class="variable">jsonObject</code></code>, <code class="optional">string <code class="variable">rootTitle</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -786,13 +786,13 @@ You can find examples that use this API in
 															<a name="property-setObject-jsonObject"></a>
 															<dl>
 																<dt>
-																	<span class="variable">jsonObject</span>
-																	<span class="property">
+																	<code class="variable">jsonObject</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	An object to be displayed in context of the inspected page. Evaluated in the context of the caller (API client).
@@ -804,13 +804,13 @@ You can find examples that use this API in
 															<a name="property-setObject-rootTitle"></a>
 															<dl>
 																<dt>
-																	<span class="variable">rootTitle</span>
-																	<span class="property">
+																	<code class="variable">rootTitle</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	An optional title for the root of the expression tree.
@@ -822,13 +822,13 @@ You can find examples that use this API in
 															<a name="property-setObject-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A callback invoked after the sidebar is updated with the object.
@@ -842,7 +842,7 @@ You can find examples that use this API in
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 										<div>
@@ -852,7 +852,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>ExtensionSidebarPane.setPage</span>(<span>string <span class="variable">path</span></span>)
+											<code>ExtensionSidebarPane.setPage</code>(<code>string <code class="variable">path</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -865,13 +865,13 @@ You can find examples that use this API in
 															<a name="property-setPage-path"></a>
 															<dl>
 																<dt>
-																	<span class="variable">path</span>
-																	<span class="property">
+																	<code class="variable">path</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Relative path of an extension page to display within the sidebar.
@@ -902,7 +902,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onShown.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onShown.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -912,13 +912,13 @@ You can find examples that use this API in
 																		<a name="property-onShown-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -931,19 +931,19 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function(<a href="windows.html#type-Window">windows.Window</a> window) <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function(<a href="windows.html#type-Window">windows.Window</a> window) <code class="subdued">{...}</code>;</pre>
 																<dl>
 																		<div>
 																			<a name="property-onShown-window"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">window</span>
-																					<span class="property">
+																					<code class="variable">window</code>
+																					<code class="property">
 																						(
-																							<span class="optional">optional</span>
+																							<code class="optional">optional</code>
 																							<a href="windows.html#type-Window">windows.Window</a>
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					The <code>window</code> object of the sidebar page, if one was set with the <code>setPage()</code> method.
@@ -969,7 +969,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onHidden.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onHidden.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -979,13 +979,13 @@ You can find examples that use this API in
 																		<a name="property-onHidden-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -998,7 +998,7 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function() <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 														</div>
 													</div>
 											</div>
@@ -1024,7 +1024,7 @@ You can find examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>Button.update</span>(<span class="optional">string <span class="variable">iconPath</span></span>, <span class="optional">string <span class="variable">tooltipText</span></span>, <span class="optional">boolean <span class="variable">disabled</span></span>)
+											<code>Button.update</code>(<code class="optional">string <code class="variable">iconPath</code></code>, <code class="optional">string <code class="variable">tooltipText</code></code>, <code class="optional">boolean <code class="variable">disabled</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -1037,13 +1037,13 @@ You can find examples that use this API in
 															<a name="property-update-iconPath"></a>
 															<dl>
 																<dt>
-																	<span class="variable">iconPath</span>
-																	<span class="property">
+																	<code class="variable">iconPath</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Path to the new icon of the button.
@@ -1055,13 +1055,13 @@ You can find examples that use this API in
 															<a name="property-update-tooltipText"></a>
 															<dl>
 																<dt>
-																	<span class="variable">tooltipText</span>
-																	<span class="property">
+																	<code class="variable">tooltipText</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Text shown as a tooltip when user hovers the mouse over the button.
@@ -1073,13 +1073,13 @@ You can find examples that use this API in
 															<a name="property-update-disabled"></a>
 															<dl>
 																<dt>
-																	<span class="variable">disabled</span>
-																	<span class="property">
+																	<code class="variable">disabled</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			boolean
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	Whether the button is disabled.
@@ -1110,7 +1110,7 @@ You can find examples that use this API in
 														
 														<div class="summary">
 														<div class="line">
-														<span>onClicked.addListener</span>(<span>function <span class="variable">callback</span></span>)
+														<code>onClicked.addListener</code>(<code>function <code class="variable">callback</code></code>)
 														</div>
 														</div>
 														<div class="description">
@@ -1120,13 +1120,13 @@ You can find examples that use this API in
 																		<a name="property-onClicked-callback"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">callback</span>
-																				<span class="property">
+																				<code class="variable">callback</code>
+																				<code class="property">
 																					(
 																						
 																						function
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																			
@@ -1139,7 +1139,7 @@ You can find examples that use this API in
 																			The <em>callback</em> parameter should specify a function
 																			that looks like this:
 																</p>
-																<pre>function() <span class="subdued">{...}</span>;</pre>
+																<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 														</div>
 													</div>
 											</div>
@@ -1155,7 +1155,7 @@ You can find examples that use this API in
 						<div class="line">chrome.devtools.panels.elements</div>
 					</div>
 					<div>
-						<dt><span class="property">elements</span> <span class="type_name">	(		<a href="devtools.panels.html#type-ElementsPanel">ElementsPanel</a>	)</span></dt>
+						<dt><code class="property">elements</code> <code class="type_name">	(		<a href="devtools.panels.html#type-ElementsPanel">ElementsPanel</a>	)</code></dt>
 				<dd>
 							Elements panel.
 						</dd>	</div>
@@ -1168,7 +1168,7 @@ You can find examples that use this API in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.panels.create</span>(<span>string <span class="variable">title</span></span>, <span>string <span class="variable">iconPath</span></span>, <span>string <span class="variable">pagePath</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.devtools.panels.create</code>(<code>string <code class="variable">title</code></code>, <code>string <code class="variable">iconPath</code></code>, <code>string <code class="variable">pagePath</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1181,13 +1181,13 @@ You can find examples that use this API in
 									<a name="property-create-title"></a>
 									<dl>
 										<dt>
-											<span class="variable">title</span>
-											<span class="property">
+											<code class="variable">title</code>
+											<code class="property">
 												(
 													
 													string
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Title that is displayed next to the extension icon in the Developer Tools toolbar.
@@ -1199,13 +1199,13 @@ You can find examples that use this API in
 									<a name="property-create-iconPath"></a>
 									<dl>
 										<dt>
-											<span class="variable">iconPath</span>
-											<span class="property">
+											<code class="variable">iconPath</code>
+											<code class="property">
 												(
 													
 													string
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Path of the panel's icon relative to the extension directory.
@@ -1217,13 +1217,13 @@ You can find examples that use this API in
 									<a name="property-create-pagePath"></a>
 									<dl>
 										<dt>
-											<span class="variable">pagePath</span>
-											<span class="property">
+											<code class="variable">pagePath</code>
+											<code class="property">
 												(
 													
 													string
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Path of the panel's HTML page relative to the extension directory.
@@ -1235,13 +1235,13 @@ You can find examples that use this API in
 									<a name="property-create-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A function that is called when the panel is created.
@@ -1255,19 +1255,19 @@ You can find examples that use this API in
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function(<a href="devtools.panels.html#type-ExtensionPanel">ExtensionPanel</a> panel) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(<a href="devtools.panels.html#type-ExtensionPanel">ExtensionPanel</a> panel) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-panel"></a>
 										<dl>
 											<dt>
-												<span class="variable">panel</span>
-												<span class="property">
+												<code class="variable">panel</code>
+												<code class="property">
 													(
 														
 														<a href="devtools.panels.html#type-ExtensionPanel">ExtensionPanel</a>
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												An ExtensionPanel object representing the created panel.
@@ -1285,7 +1285,7 @@ You can find examples that use this API in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.panels.setOpenResourceHandler</span>(<span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.devtools.panels.setOpenResourceHandler</code>(<code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1298,13 +1298,13 @@ You can find examples that use this API in
 									<a name="property-setOpenResourceHandler-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A function that is called when the user clicks on a valid resource link in Developer Tools window. Note that if the user clicks an invalid URL or an XHR, this function is not called.
@@ -1318,19 +1318,19 @@ You can find examples that use this API in
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a> resource) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(<a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a> resource) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-resource"></a>
 										<dl>
 											<dt>
-												<span class="variable">resource</span>
-												<span class="property">
+												<code class="variable">resource</code>
+												<code class="property">
 													(
 														
 														<a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a>
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												A <a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a> object for the resource that was clicked.

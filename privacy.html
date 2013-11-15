@@ -122,10 +122,10 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 			<td class="title">Permissions:</td>
 			<td>
 					
-					<span class="code">
+					<code class="code">
 					"privacy"
 					
-					</span>
+					</code>
 					
 					<br>
 			</td>
@@ -142,7 +142,7 @@ You must declare the "privacy" permission in your extension's
 <a href="manifest.html">manifest</a> to use the API. For example:
 </p>
 
-<pre data-filename="manifest.json">
+<pre class="prettyprint" data-filename="manifest.json">
 {
 "name": "My extension",
 ...
@@ -163,7 +163,7 @@ your extension's level of control. For example, to determine if Chrome's
 Autofill feature is enabled, you'd write:
 </p>
 
-<pre>chrome.privacy.services.autofillEnabled.get({}, function(details) {
+<pre class="prettyprint">chrome.privacy.services.autofillEnabled.get({}, function(details) {
 if (details.value)
 console.log('Autofill is on!');
 else
@@ -198,7 +198,7 @@ setting it's probably a good idea to visually disable the functionality to
 reduce user confusion):
 </p>
 
-<pre>chrome.privacy.services.autofillEnabled.get({}, function(details) {
+<pre class="prettyprint">chrome.privacy.services.autofillEnabled.get({}, function(details) {
 if (details.levelOfControl === 'controllable_by_this_extension') {
 chrome.privacy.services.autofillEnabled.set({ value: true }, function() {
 if (chrome.runtime.lastError === undefined)
@@ -217,7 +217,7 @@ enterprise policy overrides your control. To listen for changes to Autofill's
 status, for example, the following code would suffice:
 </p>
 
-<pre>chrome.privacy.services.autofillEnabled.onChange.addListener(
+<pre class="prettyprint">chrome.privacy.services.autofillEnabled.onChange.addListener(
 function (details) {
 // The new value is stored in `details.value`, the new level of control
 // in `details.levelOfControl`, and `details.incognitoSpecific` will be
@@ -239,7 +239,7 @@ For example code, see the
 						<div class="line">chrome.privacy.network</div>
 					</div>
 					<div>
-						<dt><span class="property">network</span> <span class="type_name">	(		object	)</span></dt>
+						<dt><code class="property">network</code> <code class="type_name">	(		object	)</code></dt>
 				<dd>
 							Settings that influence Chrome's handling of network connections in general.
 						</dd>		<h4 id="network-properties">
@@ -249,13 +249,13 @@ For example code, see the
 								<a name="property-network-networkPredictionEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">networkPredictionEnabled</span>
-										<span class="property">
+										<code class="variable">networkPredictionEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome attempts to speed up your web browsing experience by pre-resolving DNS entries, prerendering sites (<code>&lt;link rel='prefetch' ...&gt;</code>), and preemptively opening TCP and SSL connections to servers.	This preference's value is a boolean, defaulting to <code>true</code>.
@@ -272,7 +272,7 @@ For example code, see the
 						<div class="line">chrome.privacy.services</div>
 					</div>
 					<div>
-						<dt><span class="property">services</span> <span class="type_name">	(		object	)</span></dt>
+						<dt><code class="property">services</code> <code class="type_name">	(		object	)</code></dt>
 				<dd>
 							Settings that enable or disable features that require third-party network services provided by Google and your default search provider.
 						</dd>		<h4 id="services-properties">
@@ -282,13 +282,13 @@ For example code, see the
 								<a name="property-services-alternateErrorPagesEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">alternateErrorPagesEnabled</span>
-										<span class="property">
+										<code class="variable">alternateErrorPagesEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome uses a web service to help resolve navigation errors. This preference's value is a boolean, defaulting to <code>true</code>.
@@ -300,13 +300,13 @@ For example code, see the
 								<a name="property-services-autofillEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">autofillEnabled</span>
-										<span class="property">
+										<code class="variable">autofillEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome offers to automatically fill in forms. This preference's value is a boolean, defaulting to <code>true</code>.
@@ -318,13 +318,13 @@ For example code, see the
 								<a name="property-services-safeBrowsingEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">safeBrowsingEnabled</span>
-										<span class="property">
+										<code class="variable">safeBrowsingEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome does its best to protect you from phishing and malware. This preference's value is a boolean, defaulting to <code>true</code>.
@@ -336,13 +336,13 @@ For example code, see the
 								<a name="property-services-searchSuggestEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">searchSuggestEnabled</span>
-										<span class="property">
+										<code class="variable">searchSuggestEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome sends the text you type into the Omnibox to your default search engine, which provides predictions of websites and searches that are likely completions of what you've typed so far. This preference's value is a boolean, defaulting to <code>true</code>.
@@ -354,13 +354,13 @@ For example code, see the
 								<a name="property-services-spellingServiceEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">spellingServiceEnabled</span>
-										<span class="property">
+										<code class="variable">spellingServiceEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome uses a web service to help correct spelling errors. This preference's value is a boolean, defaulting to <code>false</code>.
@@ -372,13 +372,13 @@ For example code, see the
 								<a name="property-services-translationServiceEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">translationServiceEnabled</span>
-										<span class="property">
+										<code class="variable">translationServiceEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome offers to translate pages that aren't in a language you read. This preference's value is a boolean, defaulting to <code>true</code>.
@@ -395,7 +395,7 @@ For example code, see the
 						<div class="line">chrome.privacy.websites</div>
 					</div>
 					<div>
-						<dt><span class="property">websites</span> <span class="type_name">	(		object	)</span></dt>
+						<dt><code class="property">websites</code> <code class="type_name">	(		object	)</code></dt>
 				<dd>
 							Settings that determine what information Chrome makes available to websites.
 						</dd>		<h4 id="websites-properties">
@@ -405,13 +405,13 @@ For example code, see the
 								<a name="property-websites-thirdPartyCookiesAllowed"></a>
 								<dl>
 									<dt>
-										<span class="variable">thirdPartyCookiesAllowed</span>
-										<span class="property">
+										<code class="variable">thirdPartyCookiesAllowed</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If disabled, Chrome blocks third-party sites from setting cookies. The value of this preference is of type boolean, and the default value is <code>true</code>.
@@ -423,13 +423,13 @@ For example code, see the
 								<a name="property-websites-hyperlinkAuditingEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">hyperlinkAuditingEnabled</span>
-										<span class="property">
+										<code class="variable">hyperlinkAuditingEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome sends auditing pings when requested by a website (<code>&lt;a ping&gt;</code>). The value of this preference is of type boolean, and the default value is <code>true</code>.
@@ -441,13 +441,13 @@ For example code, see the
 								<a name="property-websites-referrersEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">referrersEnabled</span>
-										<span class="property">
+										<code class="variable">referrersEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome sends <code>referer</code> headers with your requests. Yes, the name of this preference doesn't match the misspelled header. No, we're not going to change it. The value of this preference is of type boolean, and the default value is <code>true</code>.
@@ -459,13 +459,13 @@ For example code, see the
 								<a name="property-websites-protectedContentEnabled"></a>
 								<dl>
 									<dt>
-										<span class="variable">protectedContentEnabled</span>
-										<span class="property">
+										<code class="variable">protectedContentEnabled</code>
+										<code class="property">
 											(
 												
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
-										</span>
+										</code>
 									</dt>
 									<dd>
 										<strong>Available on Windows and ChromeOS only</strong>: If enabled, Chrome provides a unique ID to plugins in order to run protected content. The value of this preference is of type boolean, and the default value is <code>true</code>.

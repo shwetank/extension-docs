@@ -1,9 +1,9 @@
 ---
 layout: default-withsidebar
-title: chrome.inspectedWindow
+title: chrome.devtools.inspectedWindow
 support: 18
 copyright: opera-google-ccby
-originalsource: http://developer.chrome.com/extensions/inspectWindow.html
+originalsource: http://developer.chrome.com/extensions/devtools_inspectedWindow.html
 ---
 
 <div id="gc-pagecontent">
@@ -203,7 +203,7 @@ This can be used to exchange data with the content script.</dd>
 <p>The following code checks for the version of jQuery used by the inspected
 page:
 
-<pre>
+<pre class="prettyprint">
 chrome.devtools.inspectedWindow.eval(
 "jQuery.fn.jquery",
 function(result, isException) {
@@ -236,13 +236,13 @@ You can find more examples that use Developer Tools APIs in
 											<a name="property-Resource-url"></a>
 											<dl>
 												<dt>
-													<span class="variable">url</span>
-													<span class="property">
+													<code class="variable">url</code>
+													<code class="property">
 														(
 															
 															string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The URL of the resource.
@@ -264,7 +264,7 @@ You can find more examples that use Developer Tools APIs in
 											
 											<div class="summary">
 											<div class="line">
-											<span>Resource.getContent</span>(<span>function <span class="variable">callback</span></span>)
+											<code>Resource.getContent</code>(<code>function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -277,13 +277,13 @@ You can find more examples that use Developer Tools APIs in
 															<a name="property-getContent-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
 																			
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A function that receives resource content when the request completes.
@@ -297,19 +297,19 @@ You can find more examples that use Developer Tools APIs in
 																The <em>callback</em> parameter should specify a function
 																that looks like this:
 													</p>
-													<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(string content, string encoding) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-content"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">content</span>
-																		<span class="property">
+																		<code class="variable">content</code>
+																		<code class="property">
 																			(
 																				
 																				string
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Content of the resource (potentially encoded).
@@ -321,13 +321,13 @@ You can find more examples that use Developer Tools APIs in
 																<a name="property-callback-encoding"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">encoding</span>
-																		<span class="property">
+																		<code class="variable">encoding</code>
+																		<code class="property">
 																			(
 																				
 																				string
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
@@ -345,7 +345,7 @@ You can find more examples that use Developer Tools APIs in
 											
 											<div class="summary">
 											<div class="line">
-											<span>Resource.setContent</span>(<span>string <span class="variable">content</span></span>, <span>boolean <span class="variable">commit</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>Resource.setContent</code>(<code>string <code class="variable">content</code></code>, <code>boolean <code class="variable">commit</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -358,13 +358,13 @@ You can find more examples that use Developer Tools APIs in
 															<a name="property-setContent-content"></a>
 															<dl>
 																<dt>
-																	<span class="variable">content</span>
-																	<span class="property">
+																	<code class="variable">content</code>
+																	<code class="property">
 																		(
 																			
 																			string
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	New content of the resource. Only resources with the text type are currently supported.
@@ -376,13 +376,13 @@ You can find more examples that use Developer Tools APIs in
 															<a name="property-setContent-commit"></a>
 															<dl>
 																<dt>
-																	<span class="variable">commit</span>
-																	<span class="property">
+																	<code class="variable">commit</code>
+																	<code class="property">
 																		(
 																			
 																			boolean
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	True if the user has finished editing the resource, and the new content of the resource should be persisted; false if this is a minor change sent in progress of the user editing the resource.
@@ -394,13 +394,13 @@ You can find more examples that use Developer Tools APIs in
 															<a name="property-setContent-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A function called upon request completion.
@@ -414,19 +414,19 @@ You can find more examples that use Developer Tools APIs in
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function(object error) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(object error) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-error"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">error</span>
-																		<span class="property">
+																		<code class="variable">error</code>
+																		<code class="property">
 																			(
-																				<span class="optional">optional</span>
+																				<code class="optional">optional</code>
 																				object
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Set to undefined if the resource content was set successfully; describes error otherwise.
@@ -448,7 +448,7 @@ You can find more examples that use Developer Tools APIs in
 						<div class="line">chrome.devtools.inspectedWindow.tabId</div>
 					</div>
 					<div>
-						<dt><span class="property">tabId</span> <span class="type_name">	(		integer	)</span></dt>
+						<dt><code class="property">tabId</code> <code class="type_name">	(		integer	)</code></dt>
 				<dd>
 							The ID of the tab being inspected. This ID may be used with chrome.tabs.* API.
 						</dd>	</div>
@@ -461,7 +461,7 @@ You can find more examples that use Developer Tools APIs in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.inspectedWindow.eval</span>(<span>string <span class="variable">expression</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.devtools.inspectedWindow.eval</code>(<code>string <code class="variable">expression</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -474,13 +474,13 @@ You can find more examples that use Developer Tools APIs in
 									<a name="property-eval-expression"></a>
 									<dl>
 										<dt>
-											<span class="variable">expression</span>
-											<span class="property">
+											<code class="variable">expression</code>
+											<code class="property">
 												(
 													
 													string
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											An expression to evaluate.
@@ -492,13 +492,13 @@ You can find more examples that use Developer Tools APIs in
 									<a name="property-eval-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A function called when evaluation completes.
@@ -512,19 +512,19 @@ You can find more examples that use Developer Tools APIs in
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function(object result, boolean isException) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(object result, boolean isException) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-result"></a>
 										<dl>
 											<dt>
-												<span class="variable">result</span>
-												<span class="property">
+												<code class="variable">result</code>
+												<code class="property">
 													(
 														
 														object
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												The result of evaluation.
@@ -536,13 +536,13 @@ You can find more examples that use Developer Tools APIs in
 										<a name="property-callback-isException"></a>
 										<dl>
 											<dt>
-												<span class="variable">isException</span>
-												<span class="property">
+												<code class="variable">isException</code>
+												<code class="property">
 													(
 														
 														boolean
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												Set if an exception was caught while evaluating the expression.
@@ -560,7 +560,7 @@ You can find more examples that use Developer Tools APIs in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.inspectedWindow.reload</span>(<span class="optional">object <span class="variable">reloadOptions</span></span>)
+					<code>chrome.devtools.inspectedWindow.reload</code>(<code class="optional">object <code class="variable">reloadOptions</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -573,32 +573,32 @@ You can find more examples that use Developer Tools APIs in
 									<a name="property-reload-reloadOptions"></a>
 									<dl>
 										<dt>
-											<span class="variable">reloadOptions</span>
-											<span class="property">
+											<code class="variable">reloadOptions</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													object
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
 										</dd>
 									</dl>
 									<dd>
-										<h5>Properties of <span class="variable">reloadOptions</span></h5>
+										<h5>Properties of <code class="variable">reloadOptions</code></h5>
 										<dl>
 											<div>
 												<a name="property-reloadOptions-ignoreCache"></a>
 												<dl>
 													<dt>
-														<span class="variable">ignoreCache</span>
-														<span class="property">
+														<code class="variable">ignoreCache</code>
+														<code class="property">
 															(
-																<span class="optional">optional</span>
+																<code class="optional">optional</code>
 																boolean
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 														When true, the loader will ignore the cache for all inspected page resources loaded before the <code>load</code> event is fired. The effect is similar to pressing Ctrl+Shift+R in the inspected window or within the Developer Tools window.
@@ -610,13 +610,13 @@ You can find more examples that use Developer Tools APIs in
 												<a name="property-reloadOptions-userAgent"></a>
 												<dl>
 													<dt>
-														<span class="variable">userAgent</span>
-														<span class="property">
+														<code class="variable">userAgent</code>
+														<code class="property">
 															(
-																<span class="optional">optional</span>
+																<code class="optional">optional</code>
 																string
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 														If specified, the string will override the value of the <code>User-Agent</code> HTTP header that's sent while loading the resources of the inspected page. The string will also override the value of the <code>navigator.userAgent</code> property that's returned to any scripts that are running within the inspected page.
@@ -628,13 +628,13 @@ You can find more examples that use Developer Tools APIs in
 												<a name="property-reloadOptions-injectedScript"></a>
 												<dl>
 													<dt>
-														<span class="variable">injectedScript</span>
-														<span class="property">
+														<code class="variable">injectedScript</code>
+														<code class="property">
 															(
-																<span class="optional">optional</span>
+																<code class="optional">optional</code>
 																string
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 														If specified, the script will be injected into every frame of the inspected page immediately upon load, before any of the frame's scripts. The script will not be injected after subsequent reloads&mdash;for example, if the user presses Ctrl+R.
@@ -655,7 +655,7 @@ You can find more examples that use Developer Tools APIs in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.inspectedWindow.getResources</span>(<span>function <span class="variable">callback</span></span>)
+					<code>chrome.devtools.inspectedWindow.getResources</code>(<code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -668,13 +668,13 @@ You can find more examples that use Developer Tools APIs in
 									<a name="property-getResources-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A function that receives the list of resources when the request completes.
@@ -688,19 +688,19 @@ You can find more examples that use Developer Tools APIs in
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resources) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resources) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-resources"></a>
 										<dl>
 											<dt>
-												<span class="variable">resources</span>
-												<span class="property">
+												<code class="variable">resources</code>
+												<code class="property">
 													(
 														
 														array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												The resources within the page.
@@ -725,7 +725,7 @@ You can find more examples that use Developer Tools APIs in
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.devtools.inspectedWindow.onResourceAdded.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.devtools.inspectedWindow.onResourceAdded.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -735,13 +735,13 @@ You can find more examples that use Developer Tools APIs in
 												<a name="property-onResourceAdded-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -754,19 +754,19 @@ You can find more examples that use Developer Tools APIs in
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onResourceAdded-resource"></a>
 													<dl>
 														<dt>
-															<span class="variable">resource</span>
-															<span class="property">
+															<code class="variable">resource</code>
+															<code class="property">
 																(
 																	
 																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 														
@@ -791,7 +791,7 @@ You can find more examples that use Developer Tools APIs in
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -801,13 +801,13 @@ You can find more examples that use Developer Tools APIs in
 												<a name="property-onResourceContentCommitted-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -820,19 +820,19 @@ You can find more examples that use Developer Tools APIs in
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource, string content) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(<a href="devtools.inspectedWindow.html#type-Resource">Resource</a> resource, string content) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onResourceContentCommitted-resource"></a>
 													<dl>
 														<dt>
-															<span class="variable">resource</span>
-															<span class="property">
+															<code class="variable">resource</code>
+															<code class="property">
 																(
 																	
 																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 														
@@ -843,13 +843,13 @@ You can find more examples that use Developer Tools APIs in
 													<a name="property-onResourceContentCommitted-content"></a>
 													<dl>
 														<dt>
-															<span class="variable">content</span>
-															<span class="property">
+															<code class="variable">content</code>
+															<code class="property">
 																(
 																	
 																	string
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															New content of the resource.

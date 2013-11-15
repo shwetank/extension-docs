@@ -60,10 +60,10 @@ originalsource: http://developer.chrome.com/extensions/pageCapture.html
 			<td class="title">Permissions:</td>
 			<td>
 					
-					<span class="code">
+					<code class="code">
 					"pageCapture"
 					
-					</span>
+					</code>
 					
 					<br>
 			</td>
@@ -87,7 +87,7 @@ system and that it can only be loaded in the main frame.
 in the <a href="manifest.html">extension manifest</a>
 to use the pageCapture API.
 For example:</p>
-<pre data-filename="manifest.json">
+<pre class="prettyprint" data-filename="manifest.json">
 {
 "name": "My extension",
 ...
@@ -107,7 +107,7 @@ For example:</p>
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.pageCapture.saveAsMHTML</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+					<code>chrome.pageCapture.saveAsMHTML</code>(<code>object <code class="variable">details</code></code>, <code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -120,32 +120,32 @@ For example:</p>
 									<a name="property-saveAsMHTML-details"></a>
 									<dl>
 										<dt>
-											<span class="variable">details</span>
-											<span class="property">
+											<code class="variable">details</code>
+											<code class="property">
 												(
 													
 													object
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
 										</dd>
 									</dl>
 									<dd>
-										<h5>Properties of <span class="variable">details</span></h5>
+										<h5>Properties of <code class="variable">details</code></h5>
 										<dl>
 											<div>
 												<a name="property-details-tabId"></a>
 												<dl>
 													<dt>
-														<span class="variable">tabId</span>
-														<span class="property">
+														<code class="variable">tabId</code>
+														<code class="property">
 															(
 																
 																integer
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 														The id of the tab to save as MHTML.
@@ -160,13 +160,13 @@ For example:</p>
 									<a name="property-saveAsMHTML-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the MHTML has been generated.
@@ -180,19 +180,19 @@ For example:</p>
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(binary mhtmlData) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(binary mhtmlData) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-mhtmlData"></a>
 										<dl>
 											<dt>
-												<span class="variable">mhtmlData</span>
-												<span class="property">
+												<code class="variable">mhtmlData</code>
+												<code class="property">
 													(
-														<span class="optional">optional</span>
+														<code class="optional">optional</code>
 														binary
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												The MHTML data as a Blob.

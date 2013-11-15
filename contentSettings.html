@@ -114,10 +114,10 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 			<td class="title">Permissions:</td>
 			<td>
 					
-					<span class="code">
+					<code class="code">
 					"contentSettings"
 					
-					</span>
+					</code>
 					
 					<br>
 			</td>
@@ -127,7 +127,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 <p>You must declare the "contentSettings" permission
 in your extension's manifest to use the API.
 For example:</p>
-<pre data-filename="manifest.json">
+<pre class="prettyprint" data-filename="manifest.json">
 {
 "name": "My extension",
 ...
@@ -281,13 +281,13 @@ You can find samples of this API on the
 											<a name="property-ResourceIdentifier-id"></a>
 											<dl>
 												<dt>
-													<span class="variable">id</span>
-													<span class="property">
+													<code class="variable">id</code>
+													<code class="property">
 														(
 															
 															string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The resource identifier for the given content type.
@@ -299,13 +299,13 @@ You can find samples of this API on the
 											<a name="property-ResourceIdentifier-description"></a>
 											<dl>
 												<dt>
-													<span class="variable">description</span>
-													<span class="property">
+													<code class="variable">description</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													A human readable description of the resource.
@@ -333,7 +333,7 @@ You can find samples of this API on the
 											
 											<div class="summary">
 											<div class="line">
-											<span>ContentSetting.clear</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ContentSetting.clear</code>(<code>object <code class="variable">details</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -346,32 +346,32 @@ You can find samples of this API on the
 															<a name="property-clear-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-scope"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">scope</span>
-																				<span class="property">
+																				<code class="variable">scope</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						enum of <code>"regular"</code>, or <code>"incognito_session_only"</code>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Where to clear the setting (default: regular). One of<br><var>regular</var>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><var>incognito_session_only</var>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
@@ -386,13 +386,13 @@ You can find samples of this API on the
 															<a name="property-clear-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
@@ -405,7 +405,7 @@ You can find samples of this API on the
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 										<div>
@@ -415,7 +415,7 @@ You can find samples of this API on the
 											
 											<div class="summary">
 											<div class="line">
-											<span>ContentSetting.get</span>(<span>object <span class="variable">details</span></span>, <span>function <span class="variable">callback</span></span>)
+											<code>ContentSetting.get</code>(<code>object <code class="variable">details</code></code>, <code>function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -428,32 +428,32 @@ You can find samples of this API on the
 															<a name="property-get-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-primaryUrl"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">primaryUrl</span>
-																				<span class="property">
+																				<code class="variable">primaryUrl</code>
+																				<code class="property">
 																					(
 																						
 																						string
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The primary URL for which the content setting should be retrieved. Note that the meaning of a primary URL depends on the content type.
@@ -465,13 +465,13 @@ You can find samples of this API on the
 																		<a name="property-details-secondaryUrl"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">secondaryUrl</span>
-																				<span class="property">
+																				<code class="variable">secondaryUrl</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						string
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The secondary URL for which the content setting should be retrieved. Defaults to the primary URL. Note that the meaning of a secondary URL depends on the content type, and not all content types use secondary URLs.
@@ -483,13 +483,13 @@ You can find samples of this API on the
 																		<a name="property-details-resourceIdentifier"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">resourceIdentifier</span>
-																				<span class="property">
+																				<code class="variable">resourceIdentifier</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						<a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				A more specific identifier of the type of content for which the settings should be retrieved.
@@ -501,13 +501,13 @@ You can find samples of this API on the
 																		<a name="property-details-incognito"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">incognito</span>
-																				<span class="property">
+																				<code class="variable">incognito</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						boolean
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Whether to check the content settings for an incognito session. (default false)
@@ -522,13 +522,13 @@ You can find samples of this API on the
 															<a name="property-get-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
 																			
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
@@ -541,38 +541,38 @@ You can find samples of this API on the
 																The <em>callback</em> parameter should specify a function
 																that looks like this:
 													</p>
-													<pre>function(object details) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(object details) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-details"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">details</span>
-																		<span class="property">
+																		<code class="variable">details</code>
+																		<code class="property">
 																			(
 																				
 																				object
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																	
 																	</dd>
 																</dl>
 																<dd>
-																	<h5>Properties of <span class="variable">details</span></h5>
+																	<h5>Properties of <code class="variable">details</code></h5>
 																	<dl>
 																		<div>
 																			<a name="property-details-setting"></a>
 																			<dl>
 																				<dt>
-																					<span class="variable">setting</span>
-																					<span class="property">
+																					<code class="variable">setting</code>
+																					<code class="property">
 																						(
 																							
 																							any
 																						)
-																					</span>
+																					</code>
 																				</dt>
 																				<dd>
 																					The content setting. See the description of the individual ContentSetting objects for the possible values.
@@ -593,7 +593,7 @@ You can find samples of this API on the
 											
 											<div class="summary">
 											<div class="line">
-											<span>ContentSetting.set</span>(<span>object <span class="variable">details</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+											<code>ContentSetting.set</code>(<code>object <code class="variable">details</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -606,32 +606,32 @@ You can find samples of this API on the
 															<a name="property-set-details"></a>
 															<dl>
 																<dt>
-																	<span class="variable">details</span>
-																	<span class="property">
+																	<code class="variable">details</code>
+																	<code class="property">
 																		(
 																			
 																			object
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
 																</dd>
 															</dl>
 															<dd>
-																<h5>Properties of <span class="variable">details</span></h5>
+																<h5>Properties of <code class="variable">details</code></h5>
 																<dl>
 																	<div>
 																		<a name="property-details-primaryPattern"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">primaryPattern</span>
-																				<span class="property">
+																				<code class="variable">primaryPattern</code>
+																				<code class="property">
 																					(
 																						
 																						string
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The pattern for the primary URL. For details on the format of a pattern, see <a href='contentSettings.html#patterns'>Content Setting Patterns</a>.
@@ -643,13 +643,13 @@ You can find samples of this API on the
 																		<a name="property-details-secondaryPattern"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">secondaryPattern</span>
-																				<span class="property">
+																				<code class="variable">secondaryPattern</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						string
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The pattern for the secondary URL. Defaults to matching all URLs. For details on the format of a pattern, see <a href='contentSettings.html#patterns'>Content Setting Patterns</a>.
@@ -661,13 +661,13 @@ You can find samples of this API on the
 																		<a name="property-details-resourceIdentifier"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">resourceIdentifier</span>
-																				<span class="property">
+																				<code class="variable">resourceIdentifier</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						<a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The resource identifier for the content type.
@@ -679,13 +679,13 @@ You can find samples of this API on the
 																		<a name="property-details-setting"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">setting</span>
-																				<span class="property">
+																				<code class="variable">setting</code>
+																				<code class="property">
 																					(
 																						
 																						any
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				The setting applied by this rule. See the description of the individual ContentSetting objects for the possible values.
@@ -697,13 +697,13 @@ You can find samples of this API on the
 																		<a name="property-details-scope"></a>
 																		<dl>
 																			<dt>
-																				<span class="variable">scope</span>
-																				<span class="property">
+																				<code class="variable">scope</code>
+																				<code class="property">
 																					(
-																						<span class="optional">optional</span>
+																						<code class="optional">optional</code>
 																						enum of <code>"regular"</code>, or <code>"incognito_session_only"</code>
 																					)
-																				</span>
+																				</code>
 																			</dt>
 																			<dd>
 																				Where to set the setting (default: regular). One of<br><var>regular</var>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><var>incognito_session_only</var>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
@@ -718,13 +718,13 @@ You can find samples of this API on the
 															<a name="property-set-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
-																			<span class="optional">optional</span>
+																			<code class="optional">optional</code>
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
@@ -737,7 +737,7 @@ You can find samples of this API on the
 																If you specify the <em>callback</em> parameter, it should
 																specify a function that looks like this:
 													</p>
-													<pre>function() <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 											</div>
 										</div>
 										<div>
@@ -747,7 +747,7 @@ You can find samples of this API on the
 											
 											<div class="summary">
 											<div class="line">
-											<span>ContentSetting.getResourceIdentifiers</span>(<span>function <span class="variable">callback</span></span>)
+											<code>ContentSetting.getResourceIdentifiers</code>(<code>function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -760,13 +760,13 @@ You can find samples of this API on the
 															<a name="property-getResourceIdentifiers-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
 																			
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																
@@ -779,19 +779,19 @@ You can find samples of this API on the
 																The <em>callback</em> parameter should specify a function
 																that looks like this:
 													</p>
-													<pre>function(array of <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a> resourceIdentifiers) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(array of <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a> resourceIdentifiers) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-resourceIdentifiers"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">resourceIdentifiers</span>
-																		<span class="property">
+																		<code class="variable">resourceIdentifiers</code>
+																		<code class="property">
 																			(
-																				<span class="optional">optional</span>
+																				<code class="optional">optional</code>
 																				array of <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a>
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		A list of resource identifiers for this content type, or <var>undefined</var> if this content type does not use resource identifiers.
@@ -813,7 +813,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.cookies</div>
 					</div>
 					<div>
-						<dt><span class="property">cookies</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">cookies</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to allow cookies and other local data to be set by websites. One of<br><var>allow</var>: Accept cookies,<br><var>block</var>: Block cookies,<br><var>session_only</var>: Accept cookies only for the current session. <br>Default is <var>allow</var>.<br>The primary URL is the URL representing the cookie origin. The secondary URL is the URL of the top-level frame.
 						</dd>	</div>
@@ -824,7 +824,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.images</div>
 					</div>
 					<div>
-						<dt><span class="property">images</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">images</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to show images. One of<br><var>allow</var>: Show images,<br><var>block</var>: Don't show images. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is the URL of the image.
 						</dd>	</div>
@@ -835,7 +835,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.javascript</div>
 					</div>
 					<div>
-						<dt><span class="property">javascript</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">javascript</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to run JavaScript. One of<br><var>allow</var>: Run JavaScript,<br><var>block</var>: Don't run JavaScript. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
@@ -846,7 +846,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.plugins</div>
 					</div>
 					<div>
-						<dt><span class="property">plugins</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">plugins</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to run plug-ins. One of<br><var>allow</var>: Run plug-ins automatically,<br><var>block</var>: Don't run plug-ins automatically. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
@@ -857,7 +857,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.popups</div>
 					</div>
 					<div>
-						<dt><span class="property">popups</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">popups</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to allow sites to show pop-ups. One of<br><var>allow</var>: Allow sites to show pop-ups,<br><var>block</var>: Don't allow sites to show pop-ups. <br>Default is <var>block</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
@@ -868,7 +868,7 @@ You can find samples of this API on the
 						<div class="line">chrome.contentSettings.notifications</div>
 					</div>
 					<div>
-						<dt><span class="property">notifications</span> <span class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</span></dt>
+						<dt><code class="property">notifications</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
 							Whether to allow sites to show desktop notifications. One of<br><var>allow</var>: Allow sites to show desktop notifications,<br><var>block</var>: Don't allow sites to show desktop notifications,<br><var>ask</var>: Ask when a site wants to show desktop notifications. <br>Default is <var>ask</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>

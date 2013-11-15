@@ -7,51 +7,35 @@ originalsource: http://developer.chrome.com/extensions/permissions.html
 ---
 
 <div id="gc-pagecontent">
-	
-	
-	
 	<div id="toc">
 		<ol>
 			<li>
-				<a href="#howto"> Implementing optional permissions </a>
+				<a href="#types">Types</a>
 				<ol>
-					<li><a href="#types">Step 1: Decide which permissions are required and which are optional</a></li><li><a href="#manifest"> Step 2: Declare optional permissions in the manifest </a></li><li><a href="#request"> Step 3: Request optional permissions </a></li><li><a href="#contains"> Step 4: Check the extension's current permissions </a></li><li><a href="#remove"> Step 5: Remove the permissions </a></li>
+					<li>
+						<a href="#type-Permissions">Permissions</a>
+					</li>
 				</ol>
 			</li>
-			<div class="api-reference">
-				<li>
-					<a href="#apiReference">Reference</a>
-					<ol>
-						<li>
-							<a href="#types">Types</a>
-							<ol>
-								<li>
-									<a href="#type-Permissions">Permissions</a>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<a href="#methods">Methods</a>
-							<ol>
-								<li><a href="#method-getAll">getAll</a></li>
-								<li><a href="#method-contains">contains</a></li>
-								<li><a href="#method-request">request</a></li>
-								<li><a href="#method-remove">remove</a></li>
-							</ol>
-						</li>
-						<li>
-							<a href="#events">Events</a>
-							<ol>
-								<li><a href="#event-onAdded">onAdded</a></li>
-								<li><a href="#event-onRemoved">onRemoved</a></li>
-							</ol>
-						</li>
-						<li>
-							<a href="#samples">Sample Extensions</a>
-						</li>
-					</ol>
-				</li>
-			</div>
+			<li>
+				<a href="#methods">Methods</a>
+				<ol>
+					<li><a href="#method-getAll">getAll</a></li>
+					<li><a href="#method-contains">contains</a></li>
+					<li><a href="#method-request">request</a></li>
+					<li><a href="#method-remove">remove</a></li>
+				</ol>
+			</li>
+			<li>
+				<a href="#events">Events</a>
+				<ol>
+					<li><a href="#event-onAdded">onAdded</a></li>
+					<li><a href="#event-onRemoved">onRemoved</a></li>
+				</ol>
+			</li>
+			<li>
+				<a href="#samples">Sample Extensions</a>
+			</li>
 		</ol>
 	</div>
 	<table class="intro" id="intro">
@@ -60,20 +44,8 @@ originalsource: http://developer.chrome.com/extensions/permissions.html
 			<td>
 					
 					
-					Use the <code>chrome.permissions</code> API to request <a href="#manifest">declared optional permissions</a> at run time rather than install time, so users understand why the permissions are needed and grant only those that are necessary.
+					Use the <code>chrome.permissions</code> API to request <a href="tut_optional_permissions.html#manifest">declared optional permissions</a> at run time rather than install time, so users understand why the permissions are needed and grant only those that are necessary.
 					
-					
-					
-					<br>
-			</td>
-		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Chrome 16.
 					
 					
 					<br>
@@ -82,9 +54,9 @@ originalsource: http://developer.chrome.com/extensions/permissions.html
 		<tr>
 			<td class="title">Learn More:</td>
 			<td>
-					<a href="declare_permissions.html">
+					<a href="tut_optional_permissions.html">
 					
-					Declaring permissions
+					Optional permissions
 					
 					
 					</a>
@@ -92,162 +64,6 @@ originalsource: http://developer.chrome.com/extensions/permissions.html
 			</td>
 		</tr>
 	</table>
-<h2 id="howto"> Implementing optional permissions </h2>
-
-<h3 id="types">
-Step 1: Decide which permissions are required and which are optional
-</h3>
-
-<p>
-An extension can declare both required and optional permissions. In general, you should:
-<ul>
-<li>Use required permissions when they are needed for your extension’s basic functionality.</li>
-<li>Use optional permissions when they are needed for optional features in your extension.</li>
-</ul>
-</p>
-
-<p>
-Advantages of <em>required</em> permissions:
-<ul>
-<li><strong>Fewer prompts:</strong>
-An extension can prompt the user once to accept all permissions.</li>
-<li><strong>Simpler development:</strong>
-Required permissions are guaranteed to be present.</li>
-</ul>
-</p>
-
-<p>
-Advantages of <em>optional</em> permissions:
-<ul>
-<li><strong>Better security:</strong>
-Extensions run with fewer permissions since users only enable permissions that are needed.</li>
-<li><strong>Better information for users:</strong>
-An extension can explain why it needs a particular permission when the user enables the relevant feature.</li>
-<li><strong>Easier upgrades:</strong>
-When you upgrade your extension, Chrome will not disable it for your users if the upgrade adds optional rather than required permissions.</li>
-</ul>
-</p>
-
-<h3 id="manifest"> Step 2: Declare optional permissions in the manifest </h3>
-<p>
-Declare optional permissions in your <a href="manifest.html">extension
-manifest</a> with the <code>optional_permissions</code> key, using the
-same format as the <a href="declare_permissions.html#manifest">permissions</a>
-field:
-</p>
-
-<pre data-filename="manifest.json">
-{
-"name": "My extension",
-...
-<b>"optional_permissions": [ "tabs", "http://www.google.com/" ],</b>
-...
-}
-</pre>
-
-<p>
-You can specify any of the following as optional
-<a href="declare_permissions.html">permissions</a>:
-<ul>
-<li><i>host permissions</i></li>
-<li>background</li>
-<li>bookmarks</li>
-<li>clipboardRead</li>
-<li>clipboardWrite</li>
-<li>contentSettings</li>
-<li>contextMenus</li>
-<li>cookies</li>
-<li>debugger</li>
-<li>history</li>
-<li>idle</li>
-<li>management</li>
-<li>notifications</li>
-<li>pageCapture</li>
-<li>tabs</li>
-<li>topSites</li>
-<li>webNavigation</li>
-<li>webRequest</li>
-<li>webRequestBlocking</li>
-</ul>
-</p>
-
-<h3 id="request"> Step 3: Request optional permissions </h3>
-<p>
-Request the permissions from within a user gesture using
-<code>permissions.request()</code>:
-<pre>
-document.querySelector('#my-button').addEventListener('click', function(event) {
-// Permissions must be requested from inside a user gesture, like a button's
-// click handler.
-chrome.permissions.request({
-permissions: ['tabs'],
-origins: ['http://www.google.com/']
-}, function(granted) {
-// The callback argument will be true if the user granted the permissions.
-if (granted) {
-doSomething();
-} else {
-doSomethingElse();
-}
-});
-});
-</pre>
-</p>
-
-<p>
-Chrome prompts the user if adding the permissions results in different
-<a href="permission_warnings.html">warning messages</a> than the user has
-already seen and accepted. For example, the previous code might result in
-a prompt like this:
-</p>
-
-<p style="text-align: center">
-<img src="/static/images/perms-optional.png"
- alt="example permission confirmation prompt"
- width="490" height="193">
-</p>
-
-<h3 id="contains"> Step 4: Check the extension's current permissions </h3>
-<p>
-To check whether your extension has a specific permission or set of
-permissions, use <code>permission.contains()</code>:
-</p>
-
-<pre>
-chrome.permissions.contains({
-permissions: ['tabs'],
-origins: ['http://www.google.com/']
-}, function(result) {
-if (result) {
-// The extension has the permissions.
-} else {
-// The extension doesn't have the permissions.
-}
-});
-</pre>
-
-<h3 id="remove"> Step 5: Remove the permissions </h3>
-<p>
-You should remove permissions when you no longer need them.
-After a permission has been removed, calling
-<code>permissions.request()</code> usually adds the permission back without
-prompting the user.
-</p>
-
-<pre>
-chrome.permissions.remove({
-permissions: ['tabs'],
-origins: ['http://www.google.com/']
-}, function(removed) {
-if (removed) {
-// The permissions have been removed.
-} else {
-// The permissions have not been removed (e.g., you tried to remove
-// required permissions).
-}
-});
-</pre>
-	<h1 id="apiReference">chrome.permissions reference</h1>
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
@@ -263,13 +79,13 @@ if (removed) {
 											<a name="property-Permissions-permissions"></a>
 											<dl>
 												<dt>
-													<span class="variable">permissions</span>
-													<span class="property">
+													<code class="variable">permissions</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															array of string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													List of named permissions (does not include hosts or origins).
@@ -281,13 +97,13 @@ if (removed) {
 											<a name="property-Permissions-origins"></a>
 											<dl>
 												<dt>
-													<span class="variable">origins</span>
-													<span class="property">
+													<code class="variable">origins</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															array of string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													List of origin permissions.
@@ -307,7 +123,7 @@ if (removed) {
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.permissions.getAll</span>(<span>function <span class="variable">callback</span></span>)
+					<code>chrome.permissions.getAll</code>(<code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -320,13 +136,13 @@ if (removed) {
 									<a name="property-getAll-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -339,19 +155,19 @@ if (removed) {
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-permissions"></a>
 										<dl>
 											<dt>
-												<span class="variable">permissions</span>
-												<span class="property">
+												<code class="variable">permissions</code>
+												<code class="property">
 													(
 														
 														<a href="permissions.html#type-Permissions">Permissions</a>
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												The extension's active permissions.
@@ -369,7 +185,7 @@ if (removed) {
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.permissions.contains</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span>function <span class="variable">callback</span></span>)
+					<code>chrome.permissions.contains</code>(<code><a href="permissions.html#type-Permissions">Permissions</a> <code class="variable">permissions</code></code>, <code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -382,13 +198,13 @@ if (removed) {
 									<a name="property-contains-permissions"></a>
 									<dl>
 										<dt>
-											<span class="variable">permissions</span>
-											<span class="property">
+											<code class="variable">permissions</code>
+											<code class="property">
 												(
 													
 													<a href="permissions.html#type-Permissions">Permissions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -399,13 +215,13 @@ if (removed) {
 									<a name="property-contains-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -418,19 +234,19 @@ if (removed) {
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(boolean result) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(boolean result) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-result"></a>
 										<dl>
 											<dt>
-												<span class="variable">result</span>
-												<span class="property">
+												<code class="variable">result</code>
+												<code class="property">
 													(
 														
 														boolean
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												True if the extension has the specified permissions.
@@ -448,7 +264,7 @@ if (removed) {
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.permissions.request</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.permissions.request</code>(<code><a href="permissions.html#type-Permissions">Permissions</a> <code class="variable">permissions</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -461,13 +277,13 @@ if (removed) {
 									<a name="property-request-permissions"></a>
 									<dl>
 										<dt>
-											<span class="variable">permissions</span>
-											<span class="property">
+											<code class="variable">permissions</code>
+											<code class="property">
 												(
 													
 													<a href="permissions.html#type-Permissions">Permissions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -478,13 +294,13 @@ if (removed) {
 									<a name="property-request-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -497,19 +313,19 @@ if (removed) {
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function(boolean granted) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(boolean granted) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-granted"></a>
 										<dl>
 											<dt>
-												<span class="variable">granted</span>
-												<span class="property">
+												<code class="variable">granted</code>
+												<code class="property">
 													(
 														
 														boolean
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												True if the user granted the specified permissions.
@@ -527,7 +343,7 @@ if (removed) {
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.permissions.remove</span>(<span><a href="permissions.html#type-Permissions">Permissions</a> <span class="variable">permissions</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.permissions.remove</code>(<code><a href="permissions.html#type-Permissions">Permissions</a> <code class="variable">permissions</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -540,13 +356,13 @@ if (removed) {
 									<a name="property-remove-permissions"></a>
 									<dl>
 										<dt>
-											<span class="variable">permissions</span>
-											<span class="property">
+											<code class="variable">permissions</code>
+											<code class="property">
 												(
 													
 													<a href="permissions.html#type-Permissions">Permissions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -557,13 +373,13 @@ if (removed) {
 									<a name="property-remove-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -576,19 +392,19 @@ if (removed) {
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function(boolean removed) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(boolean removed) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-removed"></a>
 										<dl>
 											<dt>
-												<span class="variable">removed</span>
-												<span class="property">
+												<code class="variable">removed</code>
+												<code class="property">
 													(
 														
 														boolean
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												True if the permissions were removed.
@@ -613,7 +429,7 @@ if (removed) {
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.permissions.onAdded.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.permissions.onAdded.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -623,13 +439,13 @@ if (removed) {
 												<a name="property-onAdded-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -642,19 +458,19 @@ if (removed) {
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onAdded-permissions"></a>
 													<dl>
 														<dt>
-															<span class="variable">permissions</span>
-															<span class="property">
+															<code class="variable">permissions</code>
+															<code class="property">
 																(
 																	
 																	<a href="permissions.html#type-Permissions">Permissions</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															The newly acquired permissions.
@@ -680,7 +496,7 @@ if (removed) {
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.permissions.onRemoved.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.permissions.onRemoved.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -690,13 +506,13 @@ if (removed) {
 												<a name="property-onRemoved-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -709,19 +525,19 @@ if (removed) {
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(<a href="permissions.html#type-Permissions">Permissions</a> permissions) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onRemoved-permissions"></a>
 													<dl>
 														<dt>
-															<span class="variable">permissions</span>
-															<span class="property">
+															<code class="variable">permissions</code>
+															<code class="property">
 																(
 																	
 																	<a href="permissions.html#type-Permissions">Permissions</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															The permissions that have been removed.

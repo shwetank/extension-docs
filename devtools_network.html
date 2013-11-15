@@ -118,7 +118,7 @@ the Network panel.
 <p>The following code logs URLs of all images larger than 40KB as they are
 loaded:</p>
 
-<pre>
+<pre class="prettyprint">
 chrome.devtools.network.onRequestFinished.addListener(
 function(request) {
 if (request.response.bodySize > 40*1024)
@@ -152,7 +152,7 @@ You can find more examples that use this API in
 											
 											<div class="summary">
 											<div class="line">
-											<span>Request.getContent</span>(<span>function <span class="variable">callback</span></span>)
+											<code>Request.getContent</code>(<code>function <code class="variable">callback</code></code>)
 											</div>
 											</div>
 											<div class="description">
@@ -165,13 +165,13 @@ You can find more examples that use this API in
 															<a name="property-getContent-callback"></a>
 															<dl>
 																<dt>
-																	<span class="variable">callback</span>
-																	<span class="property">
+																	<code class="variable">callback</code>
+																	<code class="property">
 																		(
 																			
 																			function
 																		)
-																	</span>
+																	</code>
 																</dt>
 																<dd>
 																	A function that receives the response body when the request completes.
@@ -185,19 +185,19 @@ You can find more examples that use this API in
 																The <em>callback</em> parameter should specify a function
 																that looks like this:
 													</p>
-													<pre>function(string content, string encoding) <span class="subdued">{...}</span>;</pre>
+													<pre class="prettyprint">function(string content, string encoding) <code class="subdued">{...}</code>;</pre>
 													<dl>
 															<div>
 																<a name="property-callback-content"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">content</span>
-																		<span class="property">
+																		<code class="variable">content</code>
+																		<code class="property">
 																			(
 																				
 																				string
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Content of the response body (potentially encoded).
@@ -209,13 +209,13 @@ You can find more examples that use this API in
 																<a name="property-callback-encoding"></a>
 																<dl>
 																	<dt>
-																		<span class="variable">encoding</span>
-																		<span class="property">
+																		<code class="variable">encoding</code>
+																		<code class="property">
 																			(
 																				
 																				string
 																			)
-																		</span>
+																		</code>
 																	</dt>
 																	<dd>
 																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
@@ -238,7 +238,7 @@ You can find more examples that use this API in
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.devtools.network.getHAR</span>(<span>function <span class="variable">callback</span></span>)
+					<code>chrome.devtools.network.getHAR</code>(<code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -251,13 +251,13 @@ You can find more examples that use this API in
 									<a name="property-getHAR-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A function that receives the HAR log when the request completes.
@@ -271,19 +271,19 @@ You can find more examples that use this API in
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(object harLog) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(object harLog) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-harLog"></a>
 										<dl>
 											<dt>
-												<span class="variable">harLog</span>
-												<span class="property">
+												<code class="variable">harLog</code>
+												<code class="property">
 													(
 														
 														object
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 												A HAR log. See HAR specification for details.
@@ -308,7 +308,7 @@ You can find more examples that use this API in
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.devtools.network.onRequestFinished.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.devtools.network.onRequestFinished.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -318,13 +318,13 @@ You can find more examples that use this API in
 												<a name="property-onRequestFinished-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -337,19 +337,19 @@ You can find more examples that use this API in
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(<a href="devtools.network.html#type-Request">Request</a> request) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(<a href="devtools.network.html#type-Request">Request</a> request) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onRequestFinished-request"></a>
 													<dl>
 														<dt>
-															<span class="variable">request</span>
-															<span class="property">
+															<code class="variable">request</code>
+															<code class="property">
 																(
 																	
 																	<a href="devtools.network.html#type-Request">Request</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															Description of a network request in the form of a HAR entry. See HAR specification for details.
@@ -375,7 +375,7 @@ You can find more examples that use this API in
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.devtools.network.onNavigated.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.devtools.network.onNavigated.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -385,13 +385,13 @@ You can find more examples that use this API in
 												<a name="property-onNavigated-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -404,19 +404,19 @@ You can find more examples that use this API in
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(string url) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(string url) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onNavigated-url"></a>
 													<dl>
 														<dt>
-															<span class="variable">url</span>
-															<span class="property">
+															<code class="variable">url</code>
+															<code class="property">
 																(
 																	
 																	string
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															URL of the new page.

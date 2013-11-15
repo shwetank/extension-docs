@@ -96,10 +96,10 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 			<td class="title">Permissions:</td>
 			<td>
 					
-					<span class="code">
+					<code class="code">
 					"browsingData"
 					
-					</span>
+					</code>
 					
 					<br>
 			</td>
@@ -112,7 +112,7 @@ You must declare the "browsingData" permission in the
 <a href="manifest.html">extension manifest</a> to use this API.
 </p>
 
-<pre data-filename="manifest.json">
+<pre class="prettyprint" data-filename="manifest.json">
 {
 "name": "My extension",
 ...
@@ -139,7 +139,7 @@ For example, to clear all of a user's browsing data from the last week, you
 might write code as follows:
 </p>
 
-<pre>var callback = function () {
+<pre class="prettyprint">var callback = function () {
 // Do something clever here once data has been removed.
 };
 
@@ -170,7 +170,7 @@ clear one specific type of browsing data (cookies, for example), the more
 granular methods offer a readable alternative to a call filled with JSON.
 </p>
 
-<pre>var callback = function () {
+<pre class="prettyprint">var callback = function () {
 // Do something clever here once data has been removed.
 };
 
@@ -221,7 +221,7 @@ something you should be very careful about.
 We could adjust the previous example to remove only data from protected
 websites as follows:
 </p>
-<pre>var callback = function () {
+<pre class="prettyprint">var callback = function () {
 // Do something clever here once data has been removed.
 };
 
@@ -277,13 +277,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-RemovalOptions-since"></a>
 											<dl>
 												<dt>
-													<span class="variable">since</span>
-													<span class="property">
+													<code class="variable">since</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															double
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Remove data accumulated on or after this date, represented in milliseconds since the epoch (accessible via the <code>getTime</code> method of the JavaScript <code>Date</code> object). If absent, defaults to 0 (which would remove all browsing data).
@@ -295,13 +295,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-RemovalOptions-originTypes"></a>
 											<dl>
 												<dt>
-													<span class="variable">originTypes</span>
-													<span class="property">
+													<code class="variable">originTypes</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															object
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													An object whose properties specify which origin types ought to be cleared. If this object isn't specified, it defaults to clearing only "unprotected" origins. Please ensure that you <em>really</em> want to remove application data before adding 'protectedWeb' or 'extensions'.
@@ -309,19 +309,19 @@ Samples for the <code>browsingData</code> API are available
 												</dd>
 											</dl>
 											<dd>
-												<h5>Properties of <span class="variable">originTypes</span></h5>
+												<h5>Properties of <code class="variable">originTypes</code></h5>
 												<dl>
 													<div>
 														<a name="property-originTypes-unprotectedWeb"></a>
 														<dl>
 															<dt>
-																<span class="variable">unprotectedWeb</span>
-																<span class="property">
+																<code class="variable">unprotectedWeb</code>
+																<code class="property">
 																	(
-																		<span class="optional">optional</span>
+																		<code class="optional">optional</code>
 																		boolean
 																	)
-																</span>
+																</code>
 															</dt>
 															<dd>
 																Normal websites.
@@ -333,13 +333,13 @@ Samples for the <code>browsingData</code> API are available
 														<a name="property-originTypes-protectedWeb"></a>
 														<dl>
 															<dt>
-																<span class="variable">protectedWeb</span>
-																<span class="property">
+																<code class="variable">protectedWeb</code>
+																<code class="property">
 																	(
-																		<span class="optional">optional</span>
+																		<code class="optional">optional</code>
 																		boolean
 																	)
-																</span>
+																</code>
 															</dt>
 															<dd>
 																Websites that have been installed as hosted applications (be careful!).
@@ -351,13 +351,13 @@ Samples for the <code>browsingData</code> API are available
 														<a name="property-originTypes-extension"></a>
 														<dl>
 															<dt>
-																<span class="variable">extension</span>
-																<span class="property">
+																<code class="variable">extension</code>
+																<code class="property">
 																	(
-																		<span class="optional">optional</span>
+																		<code class="optional">optional</code>
 																		boolean
 																	)
-																</span>
+																</code>
 															</dt>
 															<dd>
 																Extensions and packaged applications a user has installed (be _really_ careful!).
@@ -386,13 +386,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-appcache"></a>
 											<dl>
 												<dt>
-													<span class="variable">appcache</span>
-													<span class="property">
+													<code class="variable">appcache</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Websites' appcaches.
@@ -404,13 +404,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-cache"></a>
 											<dl>
 												<dt>
-													<span class="variable">cache</span>
-													<span class="property">
+													<code class="variable">cache</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The browser's cache. Note: when removing data, this clears the <em>entire</em> cache: it is not limited to the range you specify.
@@ -422,13 +422,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-cookies"></a>
 											<dl>
 												<dt>
-													<span class="variable">cookies</span>
-													<span class="property">
+													<code class="variable">cookies</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The browser's cookies.
@@ -440,13 +440,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-downloads"></a>
 											<dl>
 												<dt>
-													<span class="variable">downloads</span>
-													<span class="property">
+													<code class="variable">downloads</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The browser's download list.
@@ -458,13 +458,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-fileSystems"></a>
 											<dl>
 												<dt>
-													<span class="variable">fileSystems</span>
-													<span class="property">
+													<code class="variable">fileSystems</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Websites' file systems.
@@ -476,13 +476,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-formData"></a>
 											<dl>
 												<dt>
-													<span class="variable">formData</span>
-													<span class="property">
+													<code class="variable">formData</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The browser's stored form data.
@@ -494,13 +494,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-history"></a>
 											<dl>
 												<dt>
-													<span class="variable">history</span>
-													<span class="property">
+													<code class="variable">history</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The browser's history.
@@ -512,13 +512,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-indexedDB"></a>
 											<dl>
 												<dt>
-													<span class="variable">indexedDB</span>
-													<span class="property">
+													<code class="variable">indexedDB</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Websites' IndexedDB data.
@@ -530,13 +530,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-localStorage"></a>
 											<dl>
 												<dt>
-													<span class="variable">localStorage</span>
-													<span class="property">
+													<code class="variable">localStorage</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Websites' local storage data.
@@ -548,13 +548,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-serverBoundCertificates"></a>
 											<dl>
 												<dt>
-													<span class="variable">serverBoundCertificates</span>
-													<span class="property">
+													<code class="variable">serverBoundCertificates</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Server-bound certificates.
@@ -566,13 +566,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-pluginData"></a>
 											<dl>
 												<dt>
-													<span class="variable">pluginData</span>
-													<span class="property">
+													<code class="variable">pluginData</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Plugins' data.
@@ -584,13 +584,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-passwords"></a>
 											<dl>
 												<dt>
-													<span class="variable">passwords</span>
-													<span class="property">
+													<code class="variable">passwords</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Stored passwords.
@@ -602,13 +602,13 @@ Samples for the <code>browsingData</code> API are available
 											<a name="property-DataTypeSet-webSQL"></a>
 											<dl>
 												<dt>
-													<span class="variable">webSQL</span>
-													<span class="property">
+													<code class="variable">webSQL</code>
+													<code class="property">
 														(
-															<span class="optional">optional</span>
+															<code class="optional">optional</code>
 															boolean
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													Websites' WebSQL data.
@@ -628,7 +628,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.settings</span>(<span>function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.settings</code>(<code>function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -641,13 +641,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-settings-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
 													
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -660,38 +660,38 @@ Samples for the <code>browsingData</code> API are available
 										The <em>callback</em> parameter should specify a function
 										that looks like this:
 							</p>
-							<pre>function(object result) <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function(object result) <code class="subdued">{...}</code>;</pre>
 							<dl>
 									<div>
 										<a name="property-callback-result"></a>
 										<dl>
 											<dt>
-												<span class="variable">result</span>
-												<span class="property">
+												<code class="variable">result</code>
+												<code class="property">
 													(
 														
 														object
 													)
-												</span>
+												</code>
 											</dt>
 											<dd>
 											
 											</dd>
 										</dl>
 										<dd>
-											<h5>Properties of <span class="variable">result</span></h5>
+											<h5>Properties of <code class="variable">result</code></h5>
 											<dl>
 												<div>
 													<a name="property-result-options"></a>
 													<dl>
 														<dt>
-															<span class="variable">options</span>
-															<span class="property">
+															<code class="variable">options</code>
+															<code class="property">
 																(
 																	
 																	<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 														
@@ -702,13 +702,13 @@ Samples for the <code>browsingData</code> API are available
 													<a name="property-result-dataToRemove"></a>
 													<dl>
 														<dt>
-															<span class="variable">dataToRemove</span>
-															<span class="property">
+															<code class="variable">dataToRemove</code>
+															<code class="property">
 																(
 																	
 																	<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															All of the types will be present in the result, with values of <code>true</code> if they are both selected to be removed and permitted to be removed, otherwise <code>false</code>.
@@ -720,13 +720,13 @@ Samples for the <code>browsingData</code> API are available
 													<a name="property-result-dataRemovalPermitted"></a>
 													<dl>
 														<dt>
-															<span class="variable">dataRemovalPermitted</span>
-															<span class="property">
+															<code class="variable">dataRemovalPermitted</code>
+															<code class="property">
 																(
 																	
 																	<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															All of the types will be present in the result, with values of <code>true</code> if they are permitted to be removed (e.g., by enterprise policy) and <code>false</code> if not.
@@ -747,7 +747,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.remove</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span><a href="browsingData.html#type-DataTypeSet">DataTypeSet</a> <span class="variable">dataToRemove</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.remove</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code><a href="browsingData.html#type-DataTypeSet">DataTypeSet</a> <code class="variable">dataToRemove</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -760,13 +760,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-remove-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -777,13 +777,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-remove-dataToRemove"></a>
 									<dl>
 										<dt>
-											<span class="variable">dataToRemove</span>
-											<span class="property">
+											<code class="variable">dataToRemove</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											The set of data types to remove.
@@ -795,13 +795,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-remove-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when deletion has completed.
@@ -815,7 +815,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -825,7 +825,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeAppcache</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeAppcache</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -838,13 +838,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeAppcache-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -855,13 +855,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeAppcache-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when websites' appcache data has been cleared.
@@ -875,7 +875,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -885,7 +885,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeCache</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeCache</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -898,13 +898,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeCache-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -915,13 +915,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeCache-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's cache has been cleared.
@@ -935,7 +935,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -945,7 +945,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeCookies</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeCookies</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -958,13 +958,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeCookies-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -975,13 +975,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeCookies-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's cookies and server-bound certificates have been cleared.
@@ -995,7 +995,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1005,7 +1005,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeDownloads</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeDownloads</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1018,13 +1018,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeDownloads-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1035,13 +1035,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeDownloads-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's list of downloaded files has been cleared.
@@ -1055,7 +1055,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1065,7 +1065,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeFileSystems</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeFileSystems</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1078,13 +1078,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeFileSystems-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1095,13 +1095,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeFileSystems-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when websites' file systems have been cleared.
@@ -1115,7 +1115,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1125,7 +1125,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeFormData</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeFormData</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1138,13 +1138,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeFormData-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1155,13 +1155,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeFormData-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's form data has been cleared.
@@ -1175,7 +1175,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1185,7 +1185,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeHistory</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeHistory</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1198,13 +1198,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeHistory-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1215,13 +1215,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeHistory-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's history has cleared.
@@ -1235,7 +1235,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1245,7 +1245,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeIndexedDB</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeIndexedDB</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1258,13 +1258,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeIndexedDB-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1275,13 +1275,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeIndexedDB-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when websites' IndexedDB data has been cleared.
@@ -1295,7 +1295,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1305,7 +1305,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeLocalStorage</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeLocalStorage</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1318,13 +1318,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeLocalStorage-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1335,13 +1335,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeLocalStorage-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when websites' local storage has been cleared.
@@ -1355,7 +1355,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1365,7 +1365,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removePluginData</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removePluginData</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1378,13 +1378,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removePluginData-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1395,13 +1395,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removePluginData-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when plugins' data has been cleared.
@@ -1415,7 +1415,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1425,7 +1425,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removePasswords</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removePasswords</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1438,13 +1438,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removePasswords-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1455,13 +1455,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removePasswords-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when the browser's passwords have been cleared.
@@ -1475,7 +1475,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 				<div>
@@ -1485,7 +1485,7 @@ Samples for the <code>browsingData</code> API are available
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.browsingData.removeWebSQL</span>(<span><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <span class="variable">options</span></span>, <span class="optional">function <span class="variable">callback</span></span>)
+					<code>chrome.browsingData.removeWebSQL</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -1498,13 +1498,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeWebSQL-options"></a>
 									<dl>
 										<dt>
-											<span class="variable">options</span>
-											<span class="property">
+											<code class="variable">options</code>
+											<code class="property">
 												(
 													
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 										
@@ -1515,13 +1515,13 @@ Samples for the <code>browsingData</code> API are available
 									<a name="property-removeWebSQL-callback"></a>
 									<dl>
 										<dt>
-											<span class="variable">callback</span>
-											<span class="property">
+											<code class="variable">callback</code>
+											<code class="property">
 												(
-													<span class="optional">optional</span>
+													<code class="optional">optional</code>
 													function
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											Called when websites' WebSQL databases have been cleared.
@@ -1535,7 +1535,7 @@ Samples for the <code>browsingData</code> API are available
 										If you specify the <em>callback</em> parameter, it should
 										specify a function that looks like this:
 							</p>
-							<pre>function() <span class="subdued">{...}</span>;</pre>
+							<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 					</div>
 				</div>
 	</div>

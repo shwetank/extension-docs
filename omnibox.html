@@ -7,73 +7,40 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 ---
 
 <div id="gc-pagecontent">
-	
-	
-	
+  <h2 id="contents">Contents</h2>
 	<div id="toc">
 		<ol>
 			<li>
-				<a href="#manifest">Manifest</a>
+				<a href="#types">Types</a>
+				<ol>
+					<li>
+						<a href="#type-SuggestResult">SuggestResult</a>
+					</li>
+				</ol>
 			</li>
 			<li>
-				<a href="#examples">Examples</a>
+				<a href="#methods">Methods</a>
+				<ol>
+					<li><a href="#method-setDefaultSuggestion">setDefaultSuggestion</a></li>
+				</ol>
 			</li>
-			<div class="api-reference">
-				<li>
-					<a href="#apiReference">Reference</a>
-					<ol>
-						<li>
-							<a href="#types">Types</a>
-							<ol>
-								<li>
-									<a href="#type-SuggestResult">SuggestResult</a>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<a href="#methods">Methods</a>
-							<ol>
-								<li><a href="#method-setDefaultSuggestion">setDefaultSuggestion</a></li>
-							</ol>
-						</li>
-						<li>
-							<a href="#events">Events</a>
-							<ol>
-								<li><a href="#event-onInputStarted">onInputStarted</a></li>
-								<li><a href="#event-onInputChanged">onInputChanged</a></li>
-								<li><a href="#event-onInputEntered">onInputEntered</a></li>
-								<li><a href="#event-onInputCancelled">onInputCancelled</a></li>
-							</ol>
-						</li>
-						<li>
-							<a href="#samples">Sample Extensions</a>
-						</li>
-					</ol>
-				</li>
-			</div>
+			<li>
+				<a href="#events">Events</a>
+				<ol>
+					<li><a href="#event-onInputStarted">onInputStarted</a></li>
+					<li><a href="#event-onInputChanged">onInputChanged</a></li>
+					<li><a href="#event-onInputEntered">onInputEntered</a></li>
+					<li><a href="#event-onInputCancelled">onInputCancelled</a></li>
+				</ol>
+			</li>
 		</ol>
 	</div>
 	<table class="intro" id="intro">
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
-					The omnibox API allows you to register a keyword with Google Chrome's address bar, which is also known as the omnibox.
-					
-					
-					
-					<br>
-			</td>
-		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Chrome 9.
-					
+
+					The omnibox API allows you to register a keyword with Opera's address bar.
 					
 					<br>
 			</td>
@@ -82,87 +49,16 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 			<td class="title">Manifest:</td>
 			<td>
 					
-					<span class="code">
+					<code class="code">
 					"omnibox": {...}
 					
-					</span>
+					</code>
 					
 					<br>
 			</td>
 		</tr>
 	</table>
-<p>
-<img src="/static/images/omnibox.png" width="300" height="150"
-alt="A screenshot showing suggestions related to the keyword 'Chromium Search'"/>
-</p>
 
-<p>
-When the user enters your extension's
-keyword, the user starts
-interacting solely with your extension.
-Each keystroke is sent to your
-extension, and you can provide suggestions
-in response.
-</p>
-
-<p>
-The suggestions can be richly formatted
-in a variety of ways.
-
-When the user accepts
-a suggestion, your extension is notified
-and can take action.
-</p>
-
-<h2 id="manifest">Manifest</h2>
-
-<p>
-You must include an <code>omnibox</code> <code>keyword</code> field
-in the <a href="manifest.html">manifest</a> 
-to use the omnibox API.
-You should also
-specify a 16x16-pixel icon, which will be
-displayed in the address bar when suggesting that users
-enter keyword mode.
-</p>
-
-<p>
-For example:
-</p>
-
-<pre data-filename="manifest.json">
-{
-"name": "Aaron's omnibox extension",
-"version": "1.0",
-<b>"omnibox": { "keyword" : "aaron" },</b>
-<b>"icons": {</b>
-<b>"16": "16-full-color.png"</b>
-<b>},</b>
-"background": {
-"persistent": false,
-"scripts": ["background.js"]
-}
-}
-</pre>
-
-<p class="note">
-<strong>Note:</strong>
-Chrome automatically creates a grayscale version of
-your 16x16-pixel icon. You should provide
-a full-color version so that it can also be
-used in other situations that require color.
-For example, the <a href="contextMenus.html"
->context menus API</a> also uses a 16x16-pixel
-icon, but it is displayed in color.
-</p>
-
-
-<h2 id="examples">Examples</h2>
-
-<p>
-You can find samples of this API on the
-<a href="samples.html#omnibox">sample page</a>.
-	<h1 id="apiReference">chrome.omnibox reference</h1>
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
@@ -179,13 +75,13 @@ You can find samples of this API on the
 											<a name="property-SuggestResult-content"></a>
 											<dl>
 												<dt>
-													<span class="variable">content</span>
-													<span class="property">
+													<code class="variable">content</code>
+													<code class="property">
 														(
 															
 															string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The text that is put into the URL bar, and that is sent to the extension when the user chooses this entry.
@@ -197,13 +93,13 @@ You can find samples of this API on the
 											<a name="property-SuggestResult-description"></a>
 											<dl>
 												<dt>
-													<span class="variable">description</span>
-													<span class="property">
+													<code class="variable">description</code>
+													<code class="property">
 														(
 															
 															string
 														)
-													</span>
+													</code>
 												</dt>
 												<dd>
 													The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
@@ -223,7 +119,7 @@ You can find samples of this API on the
 					
 					<div class="summary uncapitalize">
 					<div class="line">
-					<span>chrome.omnibox.setDefaultSuggestion</span>(<span>object <span class="variable">suggestion</span></span>)
+					<code>chrome.omnibox.setDefaultSuggestion</code>(<code>object <code class="variable">suggestion</code></code>)
 					</div>
 					</div>
 					<div class="description">
@@ -236,13 +132,13 @@ You can find samples of this API on the
 									<a name="property-setDefaultSuggestion-suggestion"></a>
 									<dl>
 										<dt>
-											<span class="variable">suggestion</span>
-											<span class="property">
+											<code class="variable">suggestion</code>
+											<code class="property">
 												(
 													
 													object
 												)
-											</span>
+											</code>
 										</dt>
 										<dd>
 											A partial SuggestResult object, without the 'content' parameter.
@@ -250,19 +146,19 @@ You can find samples of this API on the
 										</dd>
 									</dl>
 									<dd>
-										<h5>Properties of <span class="variable">suggestion</span></h5>
+										<h5>Properties of <code class="variable">suggestion</code></h5>
 										<dl>
 											<div>
 												<a name="property-suggestion-description"></a>
 												<dl>
 													<dt>
-														<span class="variable">description</span>
-														<span class="property">
+														<code class="variable">description</code>
+														<code class="property">
 															(
 																
 																string
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 														The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
@@ -290,7 +186,7 @@ You can find samples of this API on the
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.omnibox.onInputStarted.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.omnibox.onInputStarted.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -300,13 +196,13 @@ You can find samples of this API on the
 												<a name="property-onInputStarted-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -319,7 +215,7 @@ You can find samples of this API on the
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function() <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 								</div>
 							</div>
 					</div>
@@ -337,7 +233,7 @@ You can find samples of this API on the
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.omnibox.onInputChanged.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.omnibox.onInputChanged.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -347,13 +243,13 @@ You can find samples of this API on the
 												<a name="property-onInputChanged-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -366,19 +262,19 @@ You can find samples of this API on the
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(string text, function suggest) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(string text, function suggest) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onInputChanged-text"></a>
 													<dl>
 														<dt>
-															<span class="variable">text</span>
-															<span class="property">
+															<code class="variable">text</code>
+															<code class="property">
 																(
 																	
 																	string
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 														
@@ -389,13 +285,13 @@ You can find samples of this API on the
 													<a name="property-onInputChanged-suggest"></a>
 													<dl>
 														<dt>
-															<span class="variable">suggest</span>
-															<span class="property">
+															<code class="variable">suggest</code>
+															<code class="property">
 																(
 																	
 																	function
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															A callback passed to the onInputChanged event used for sending suggestions back to the browser.
@@ -421,7 +317,7 @@ You can find samples of this API on the
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.omnibox.onInputEntered.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.omnibox.onInputEntered.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -431,13 +327,13 @@ You can find samples of this API on the
 												<a name="property-onInputEntered-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -450,19 +346,19 @@ You can find samples of this API on the
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function(string text, enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code> disposition) <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function(string text, enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code> disposition) <code class="subdued">{...}</code>;</pre>
 										<dl>
 												<div>
 													<a name="property-onInputEntered-text"></a>
 													<dl>
 														<dt>
-															<span class="variable">text</span>
-															<span class="property">
+															<code class="variable">text</code>
+															<code class="property">
 																(
 																	
 																	string
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 														
@@ -473,13 +369,13 @@ You can find samples of this API on the
 													<a name="property-onInputEntered-disposition"></a>
 													<dl>
 														<dt>
-															<span class="variable">disposition</span>
-															<span class="property">
+															<code class="variable">disposition</code>
+															<code class="property">
 																(
 																	
 																	enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code>
 																)
-															</span>
+															</code>
 														</dt>
 														<dd>
 															The window disposition for the omnibox query. This is the recommended context to display results. For example, if the omnibox command is to navigate to a certain URL, a disposition of 'newForegroundTab' means the navigation should take place in a new selected tab.
@@ -505,7 +401,7 @@ You can find samples of this API on the
 								
 								<div class="summary uncapitalize">
 								<div class="line">
-								<span>chrome.omnibox.onInputCancelled.addListener</span>(<span>function <span class="variable">callback</span></span>)
+								<code>chrome.omnibox.onInputCancelled.addListener</code>(<code>function <code class="variable">callback</code></code>)
 								</div>
 								</div>
 								<div class="description">
@@ -515,13 +411,13 @@ You can find samples of this API on the
 												<a name="property-onInputCancelled-callback"></a>
 												<dl>
 													<dt>
-														<span class="variable">callback</span>
-														<span class="property">
+														<code class="variable">callback</code>
+														<code class="property">
 															(
 																
 																function
 															)
-														</span>
+														</code>
 													</dt>
 													<dd>
 													
@@ -534,19 +430,10 @@ You can find samples of this API on the
 													The <em>callback</em> parameter should specify a function
 													that looks like this:
 										</p>
-										<pre>function() <span class="subdued">{...}</span>;</pre>
+										<pre class="prettyprint">function() <code class="subdued">{...}</code>;</pre>
 								</div>
 							</div>
 					</div>
 				</div>
 	</div>
-		<h2 id="samples">Sample Extensions that use chrome.omnibox</h2>
-		<ul>
-			<li><strong><a href="samples.html#omnibox-example">Omnibox Example</a></strong>
-			&ndash; To use, type 'omnix' plus a search term into the Omnibox.
-	</li>
-			<li><strong><a href="samples.html#chromium-search">Chromium Search</a></strong>
-			&ndash; Add support to the omnibox to search the Chromium source code.
-	</li>
-		</ul>
 </div>
