@@ -73,22 +73,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					
 					
 					Use the <code>chrome.contentSettings</code> API to change settings that control whether websites can use features such as cookies, JavaScript, and plug-ins. More generally speaking, content settings allow you to customize Opera's behavior on a per-site basis instead of globally.
-					
-					
-					
-					<br>
-			</td>
-		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Opera 18.
-					
-					
-					<br>
+
 			</td>
 		</tr>
 		<tr>
@@ -103,15 +88,18 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<br>
 			</td>
 		</tr>
+		<tr>
+			<td><strong>Learn more:</strong></td>
+			<td><a href="tut_contentsettings.html">Site-specific customization</a></td>
+		</tr>		
 	</table>
 
-	<h1 id="apiReference">chrome.contentSettings reference</h1>
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
 					<h3 id="type-ResourceIdentifier">ResourceIdentifier</h3>
 					<div>
-						<dd>The only content type using resource identifiers is <a href="contentSettings.html#property-plugins">plugins</a>. For more information, see <a href="contentSettings.html#resource-identifiers">Resource Identifiers</a>.</dd>
+						<dd>The only content type using resource identifiers is <a href="contentSettings.html#property-plugins">plugins</a>. For more information, see <a href="tut_contentsettings.html#resource-identifiers">Resource Identifiers</a>.</dd>
 						
 							<h4 id="ResourceIdentifier-properties" class="capitalize">
 								properties of <a href="#type-ResourceIdentifier">ResourceIdentifier</a>
@@ -215,7 +203,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 																				</code>
 																			</dt>
 																			<dd>
-																				Where to clear the setting (default: regular). One of<br><var>regular</var>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><var>incognito_session_only</var>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
+																				Where to clear the setting (default: regular). One of<br><code>regular</code>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><code>incognito_session_only</code>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
 																			
 																			</dd>
 																		</dl>
@@ -547,7 +535,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 																				</code>
 																			</dt>
 																			<dd>
-																				Where to set the setting (default: regular). One of<br><var>regular</var>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><var>incognito_session_only</var>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
+																				Where to set the setting (default: regular). One of<br><code>regular</code>: setting for regular profile (which is inherited by the incognito profile if not overridden elsewhere),<br><code>incognito_session_only</code>: setting for incognito profile that can only be set during an incognito session and is deleted when the incognito session ends (overrides regular settings).
 																			
 																			</dd>
 																		</dl>
@@ -635,7 +623,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 																		</code>
 																	</dt>
 																	<dd>
-																		A list of resource identifiers for this content type, or <var>undefined</var> if this content type does not use resource identifiers.
+																		A list of resource identifiers for this content type, or <code>undefined</code> if this content type does not use resource identifiers.
 																	
 																	</dd>
 																</dl>
@@ -656,7 +644,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">cookies</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to allow cookies and other local data to be set by websites. One of<br><var>allow</var>: Accept cookies,<br><var>block</var>: Block cookies,<br><var>session_only</var>: Accept cookies only for the current session. <br>Default is <var>allow</var>.<br>The primary URL is the URL representing the cookie origin. The secondary URL is the URL of the top-level frame.
+							Whether to allow cookies and other local data to be set by websites. One of<br><code>allow</code>: Accept cookies,<br><code>block</code>: Block cookies,<br><code>session_only</code>: Accept cookies only for the current session. <br>Default is <code>allow</code>.<br>The primary URL is the URL representing the cookie origin. The secondary URL is the URL of the top-level frame.
 						</dd>	</div>
 				</div>
 				<div>
@@ -667,7 +655,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">images</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to show images. One of<br><var>allow</var>: Show images,<br><var>block</var>: Don't show images. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is the URL of the image.
+							Whether to show images. One of<br><code>allow</code>: Show images,<br><code>block</code>: Don't show images. <br>Default is <code>allow</code>.<br>The primary URL is the main-frame URL. The secondary URL is the URL of the image.
 						</dd>	</div>
 				</div>
 				<div>
@@ -678,7 +666,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">javascript</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to run JavaScript. One of<br><var>allow</var>: Run JavaScript,<br><var>block</var>: Don't run JavaScript. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
+							Whether to run JavaScript. One of<br><code>allow</code>: Run JavaScript,<br><code>block</code>: Don't run JavaScript. <br>Default is <code>allow</code>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
 				</div>
 				<div>
@@ -689,7 +677,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">plugins</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to run plug-ins. One of<br><var>allow</var>: Run plug-ins automatically,<br><var>block</var>: Don't run plug-ins automatically. <br>Default is <var>allow</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
+							Whether to run plug-ins. One of<br><code>allow</code>: Run plug-ins automatically,<br><code>block</code>: Don't run plug-ins automatically. <br>Default is <code>allow</code>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
 				</div>
 				<div>
@@ -700,7 +688,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">popups</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to allow sites to show pop-ups. One of<br><var>allow</var>: Allow sites to show pop-ups,<br><var>block</var>: Don't allow sites to show pop-ups. <br>Default is <var>block</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
+							Whether to allow sites to show pop-ups. One of<br><code>allow</code>: Allow sites to show pop-ups,<br><code>block</code>: Don't allow sites to show pop-ups. <br>Default is <code>block</code>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
 				</div>
 				<div>
@@ -711,7 +699,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 					<div>
 						<dt><code class="property">notifications</code> <code class="type_name">	(		<a href="contentSettings.html#type-ContentSetting">ContentSetting</a>	)</code></dt>
 				<dd>
-							Whether to allow sites to show desktop notifications. One of<br><var>allow</var>: Allow sites to show desktop notifications,<br><var>block</var>: Don't allow sites to show desktop notifications,<br><var>ask</var>: Ask when a site wants to show desktop notifications. <br>Default is <var>ask</var>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
+							Whether to allow sites to show desktop notifications. One of<br><code>allow</code>: Allow sites to show desktop notifications,<br><code>block</code>: Don't allow sites to show desktop notifications,<br><code>ask</code>: Ask when a site wants to show desktop notifications. <br>Default is <code>ask</code>.<br>The primary URL is the main-frame URL. The secondary URL is not used.
 						</dd>	</div>
 				</div>
 	</div>
