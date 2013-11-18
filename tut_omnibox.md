@@ -1,19 +1,19 @@
 ---
 layout: default-withsidebar
-title: Creating Omnibox extensions
+title: Creating address bar extensions
 author: shwetankdixit
 copyright: opera-ccby
 ---
 
 ## Introduction
 
-<img src="static/images/omnibox1.png" alt="Omnibox extension" class="img-polaroid">
+Address bar (or "omnibox") extensions are extensions which kick in when you enter a keyword as the first word in the address bar. When you enter that word, then whatever text you enter next will interact solely with that extension. You can then take that text and give the user suggestions in the address bar, or you can process that text and send the user to a specified page. There are quite a few interesting use cases that open up with this functionality. 
 
-Omnibox extensions are extensions which kick in when you enter a keyword as the first word in the address bar. When you enter that word, then whatever text you enter next will interact solely with that extension. You can then take that text and give the user suggestions in the address bar, or could process that text and send the user to a specified page. There are quite a few possibilities which open up with this functionality. 
+<img src="static/images/omnibox1.png" alt="Address bar extension" class="img-polaroid">
 
 ## Manifest specifications
 
-One of the most important things to understand for omnibox extensions is the manifest. An example of an omnibox extension's manifest file be something like the following:
+One of the most important things to understand for address bar extensions is the manifest. An example of an address bar extension's manifest file is something like this:
 
 <pre class="prettyprint">{
   "manifest_version": 2,
@@ -31,15 +31,15 @@ One of the most important things to understand for omnibox extensions is the man
  }
  </pre>
  
- As you can note from the above example, you need to use the `omnibox` field. Inside this field, you need to define your keyword inside the `keyword` sub-field. In our case, we are using the keyword *extdocs* - so whenever the user would enter *extdocs*, the extension would kick in, ready to process whatever text comes next. 
+ As you can note from the example, you need to use the `omnibox` field. Inside this field, you need to define your keyword inside the `keyword` subfield. In our case, we are using the keyword *extdocs* — so whenever the user enters *extdocs*, the extension kicks in, ready to process whatever text comes next. 
  
-In the `icons` field, we specificy what icon comes up in the address bar when your keyword is entered. This needs to be a 16x16 icon. 
+In the `icons` field, we specify what icon comes up in the address bar when your keyword is entered. This needs to be a 16x16 icon. 
 
 
-## Using the Omnibox API
-We have used the manifest to define the keyword we'll use. Great! Now let's go on and actually process the text to do something useful. One of the most common use cases for the [Omnibox API](omnibox.html) would be to take the text and search a certain website with it. 
+## Using the chrome.omnibox API
+We have used the manifest to define the keyword we'll use. Great! Now let's go on and actually process the text to do something useful. One of the most common use cases for the [chrome.omnibox API](omnibox.html) would be to take the text and search a certain website with it. 
 
-So let's make an extension which takes the text and search this site for content.   In the API, we have access to event handlers dealing with various stages of the user entering content (for example, when the user has started entering text, when the user has finished typing, when text has changed, when the text entered is accepted etc.)
+So let's make an extension which takes the text and searches this site for content.   In the API, we have access to event handlers dealing with various stages of the user entering content (for example, when the user has started entering text, when the user has finished typing, when the text has changed, when the text entered is accepted, etc.)
 
 For our example, we will use the [`onInputEntered`](omnibox.html#event-onInputEntered) event handler to take the user's input and take the user to the search page. The background page for our extensions would like so:
 
@@ -52,12 +52,12 @@ For our example, we will use the [`onInputEntered`](omnibox.html#event-onInputEn
 });
   </pre>
 
-The above code will listen to the user's input and when he hit's enter, then it will take the input and redirect to the Opera extensions documentation page with what the user entered as the search query. 
+The above code will listen to the user's input and when he hits enter, then it will take the input and redirect to the Opera extensions documentation page with what the user entered as the search query. 
 
 Feel free to [download this extension](samples/Omnibox.nex) and try it out yourself.
 
 ## Suggestions in the address bar
-The API also enables developers to provide suggestions to the user in the address bar as they type via the [`onInputChanged`](omnibox.html#event-onInputChanged) event handler. This event throws back the text which has been typed till now, as well as a function in which we can put our search suggestion as part of an array of [`suggestionResult`](omnibox.html#type-SuggestResult) objects. Let's see how it's done.
+The API also enables developers to provide suggestions to the user in the address bar as they type via the [`onInputChanged`](omnibox.html#event-onInputChanged) event handler. This event throws back the text which has been typed until now, as well as a function in which we can put our search suggestion as part of an array of [`suggestionResult`](omnibox.html#type-SuggestResult) objects. Let's see how it's done.
 
 
 <pre class="prettyprint">chrome.omnibox.onInputChanged.addListener(
@@ -75,7 +75,7 @@ The API also enables developers to provide suggestions to the user in the addres
 });
   </pre>
   
-One thing to keep in mind is that when the user selects the default suggestion, it will by default, not have a URL attached to it. So we will process the entered text at the point when the user has finally hit *enter* in the address bar, and see if it was a proper URL or not. If not, we will convert it to such, and point the user to the appropriate page, like so:
+One thing to keep in mind is that when the user selects the default suggestion, it will by default not have a URL attached to it. So we will process the entered text at the point when the user has finally hit *enter* in the address bar, and see if it's a proper URL or not. If not, we will convert it to a proper URL, and point the user to the appropriate page, like so:
 
 <pre class="prettyprint">
 chrome.omnibox.onInputEntered.addListener(
@@ -95,11 +95,11 @@ chrome.omnibox.onInputEntered.addListener(
   
 </pre>
   
- You can [download the extension](samples/Omnibox2.nex) (The keyword for this extension is *extdocs*, so type that followed by your search query) and see that the default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag `[opera-extension]` and the next a Google search (keep in mind that all other options apart from the default one are listed in alphabetical order of their descriptions.). 
+ You can [download the extension](samples/Omnibox2.nex) — the keyword for this extension is *extdocs*, so type that followed by your search query — and see that the default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag `[opera-extension]`, followed by a Google search. Keep in mind that all other options apart from the default one are listed in alphabetical order of their descriptions.
  
-You can go further and have suggestions in the address bar by doing an ajax request to your web service, with the suggestions executed in a similar manner as the one shown above. 
+You can go further and have suggestions in the address bar by doing an Ajax request to your web service, with the suggestions executed in a similar manner as the one shown above. 
 
-Making an Omnibox exentension is pretty easy, so [check out the API](omnibox.html) and get cracking!
+Making an address bar extension is pretty easy, so [check out the API](omnibox.html) and get cracking!
   
 
 
