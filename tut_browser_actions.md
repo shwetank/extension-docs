@@ -16,7 +16,7 @@ Getting to display any of these UI elements on the browser is extremely simple. 
 ## Browser Actions
 *Browser actions* are used to put UI elements on the extensions toolbar. These UI elements can be a button (with or without a badge) or a popup. Use browser actions if you want the UI element to appear all the time. 
 
-However, if you don't want the UI element to appear all the time, rather only wanting it to appear in specific pages, then it recommened to use *Page Actions*, which is explained later in the article. You cannot use both *Browser Actions* and *Page Actions* at the same time. 
+However, if you don't want the UI element to appear all the time, rather only wanting it to appear in specific pages, then it's recommended to use *Page Actions*, which is explained later in the article. You cannot use both *Browser Actions* and *Page Actions* at the same time. 
 
 ### Buttons
 
