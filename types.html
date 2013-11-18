@@ -14,7 +14,7 @@ originalsource: http://developer.chrome.com/extensions/types.html
 	<div id="toc">
 		<ol>
 			<li>
-				<a href="#ChromeSetting">Chrome settings</a>
+				<a href="#ChromeSetting">ChromeSetting prototype</a>
 				<ol>
 					<li><a href="#ChromeSetting-lifecycle">Scope and life cycle</a></li><li><a href="#ChromeSetting-precedence">Precedence</a></li>
 				</ol>
@@ -61,27 +61,13 @@ originalsource: http://developer.chrome.com/extensions/types.html
 					<br>
 			</td>
 		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Chrome 13.
-					
-					
-					<br>
-			</td>
-		</tr>
 	</table>
-<h2 id="ChromeSetting">Chrome settings</h2>
+<h2 id="ChromeSetting">ChromeSetting prototype</h2>
 
 <p>
 The <code>ChromeSetting</code> prototype provides a common set of functions
 (<code>get()</code>, <code>set()</code>, and <code>clear()</code>) as
-well as an event publisher (<code>onChange</code>) for settings of the
-Chrome browser. The <a href="proxy.html#overview-examples">proxy settings
-examples</a> demonstrate how these functions are intended to be used.
+well as an event publisher (<code>onChange</code>) for settings in Opera.
 </p>
 
 <h3 id="ChromeSetting-lifecycle">Scope and life cycle</h3>
@@ -116,7 +102,7 @@ can only be set when at least one incognito window is open.</dd>
 <h3 id="ChromeSetting-precedence">Precedence</h3>
 
 <p>
-Chrome manages settings on different layers. The following list describes the
+Opera manages settings on different layers. The following list describes the
 layers that may influence the effective settings, in increasing order of
 precedence.
 <ol>
@@ -135,7 +121,7 @@ be overridden.
 </p>
 
 <p>
-As discussed above, Chrome allows using different settings for regular
+As discussed above, Opera allows using different settings for regular
 windows and incognito windows. The following example illustrates the behavior.
 Assume that no policy overrides the settings and that an extension can set
 settings for regular windows <b>(R)</b> and settings for incognito windows
@@ -165,13 +151,13 @@ settings of regular windows can be defined by previously installed extensions.
 The <em>effective</em> value of a setting is the one that results from
 considering the precedence rules. It is used by Chrome.
 <p>
-	<h1 id="apiReference">chrome.types reference</h1>
+
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
 					<h3 id="type-ChromeSetting">ChromeSetting</h3>
 					<div>
-						<dd>An interface that allows access to a Chrome browser setting. See <a href="proxy.html#property-settings">proxy.settings</a> for an example.</dd>
+						<dd>An interface that allows access to an Opera browser setting.</dd>
 						
 							<h4 id="ChromeSetting-methods" class="capitalize">
 								methods of <a href="#type-ChromeSetting">ChromeSetting</a>

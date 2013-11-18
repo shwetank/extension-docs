@@ -1,15 +1,15 @@
 ---
 layout: default-withsidebar
-title: Working with the 'Off-Road Mode' setting
+title: Working with Off-Road Mode
 author: shwetankdixit
 copyright: opera-ccby
 ---
 
 ## Introduction
 
-One of Opera's most popular features is the 'Off-Road Mode', which is a setting which when enabled, speeds up your web loading by passing content through Opera's servers, which compress the content greatly. 
+One of Opera's most popular features is 'Off-Road Mode', which is a setting which, when enabled, speeds up your web loading by passing content through Opera's servers, thereby greatly compressing the content. 
 
-We've enabled extension developers to acess this setting, which gives the ability to determine if Off-Road Mode is enabled or not, or to set or clear it too. You can also listen to changes to this setting by adding event handlers.
+We've enabled extension developers to access this setting, which gives the ability to determine if Off-Road Mode is enabled or not, or to set or clear it. You can also listen to changes to this setting by adding event handlers.
 
 Off-Road mode, being a browser setting, is accessible like all other browser settings as mentioned in the [Types](types.html) documentaton.
 
