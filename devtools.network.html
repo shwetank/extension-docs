@@ -8,9 +8,6 @@ originalsource: http://developer.chrome.com/extensions/devtools_network.html
 
 
 <div id="gc-pagecontent">
-	
-	
-	
 	<div id="toc">
 		<ol>
 			<li>
@@ -70,22 +67,10 @@ originalsource: http://developer.chrome.com/extensions/devtools_network.html
 					<br>
 			</td>
 		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Chrome 18.
-					
-					
-					<br>
-			</td>
-		</tr>
 	</table>
 <p>
-See <a href="devtools.html">DevTools APIs summary</a> for
-general introduction to using Developer Tools APIs</a>.
+See <a href="devtools.html">Extending DevTools</a> for
+a general introduction to using Developer Tools APIs.
 </p>
 
 <h2 id="overview">Overview</h2>
@@ -93,7 +78,7 @@ general introduction to using Developer Tools APIs</a>.
 <p>
 Network requests information is represented in the HTTP Archive format
 (<em>HAR</em>). The description of HAR is outside of scope of this document,
-please refer to <a href=
+please refer to the <a href=
 "http://www.softwareishard.com/blog/har-12-spec/">
 HAR v1.2 Specification</a>.
 </p><p>
@@ -128,11 +113,6 @@ chrome.experimental.devtools.console.addMessage(
 });
 </pre>
 
-<p>
-You can find more examples that use this API in
-<a href="samples.html#devtools.network">Samples</a>.
-</p>
-	<h1 id="apiReference">chrome.devtools.network reference</h1>
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
@@ -430,10 +410,4 @@ You can find more examples that use this API in
 					</div>
 				</div>
 	</div>
-		<h2 id="samples">Sample Extensions that use chrome.devtools.network</h2>
-		<ul>
-			<li><strong><a href="samples.html#firephp-for-chrome">FirePHP for Chrome</a></strong>
-			&ndash; Extends the Developer Tools, adding support for parsing FirePHP messages from server
-	</li>
-		</ul>
 </div>

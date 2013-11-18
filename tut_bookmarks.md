@@ -9,7 +9,7 @@ copyright: opera-ccby
 
 This article describes how to use the [bookmarks API](bookmarks.html) to work with the browser's bookmarks. 
 
-###Permissions
+##Manifest
 To have access to the bookmarks, you first need to declare this in the manifest file by putting *bookmarks* in the *permissions* field, like so:
 
 <pre class="prettyprint">{

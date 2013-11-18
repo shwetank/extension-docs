@@ -83,18 +83,6 @@ originalsource: http://developer.chrome.com/extensions/devtools_inspectedWindow.
 					<br>
 			</td>
 		</tr>
-		<tr>
-			<td class="title">Availability:</td>
-			<td>
-					
-					
-					
-						Stable since Chrome 18.
-					
-					
-					<br>
-			</td>
-		</tr>
 	</table>
 <p>
 Use <code>chrome.devtools.inspectedWindow</code>
@@ -104,8 +92,8 @@ evaluate the code in the context of inspected window,
 reload the page,
 or obtain the list of resources within the page.
 </p><p>
-See <a href="devtools.html">DevTools APIs summary</a> for
-general introduction to using Developer Tools APIs.
+See <a href="devtools.html">Extending DevTools</a> for
+a general introduction to using Developer Tools APIs.
 </p>
 
 <h2 id="overview">Overview</h2>
@@ -131,7 +119,7 @@ etc) within the inspected page. The <code>getContent</code> and <code
 <code>onResourceContentCommitted</code> event may be used to support
 modification of the resource content, for example, by an external editor.
 </p>
-<h2 id="executing-code">Executing Code in the Inspected Window</h2>
+<h2 id="executing-code">Executing code in the inspected window</h2>
 <p>
 The <code>eval</code> method provides the ability for extensions to execute
 JavaScript code in the context of the inspected page.
@@ -215,11 +203,6 @@ function(result, isException) {
 );
 </pre>
 
-<p>
-You can find more examples that use Developer Tools APIs in
-<a href="samples.html#devtools">Samples</a>.
-</p>
-	<h1 id="apiReference">chrome.devtools.inspectedWindow reference</h1>
 	<div class="api_reference">
 			<h2 id="types">Types</h2>
 				<div>
@@ -863,10 +846,4 @@ You can find more examples that use Developer Tools APIs in
 					</div>
 				</div>
 	</div>
-		<h2 id="samples">Sample Extensions that use chrome.devtools.inspectedWindow</h2>
-		<ul>
-			<li><strong><a href="samples.html#chrome-preprocessor-example">Chrome Preprocessor Example</a></strong>
-			&ndash; Simple hello-world example for chrome.devtools.inspectedWindow.reload() using preprocessor.
-	</li>
-		</ul>
 </div>
