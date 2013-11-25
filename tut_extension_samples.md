@@ -93,6 +93,30 @@ This is a repository of all the example extensions to help you get started with 
 * [chrome.i18n](i18n.html)
 
 
+## Address Bar extensions
+**Sample extension**: 
+
+* [Type the keyword 'extquery' in the address bar followed by your query. The extension will search the query on the Opera extensions documentation site](samples/Omnibox.nex)
+* [Type the keyword 'extdocs' in the address bar followed by your query. The default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag [opera-extension], followed by a Google search.](samples/Omnibox2.nex)
+
+**Relevant reading**:  
+
+* [Creating address bar extensions](tut_omnibox.html)
+* [chrome.omnibox](omnibox.html)
+
+## Off-Road Mode
+**Sample extension**: 
+
+* [Extension which toggles Off-Road Mode in the browser](samples/offroad.nex)
+
+**Relevant reading**:  
+
+* [Working with Off-Road Mode](tut_offroad.html)
+* [chrome.types](types.html)
+
+
+
+
 
 
 
