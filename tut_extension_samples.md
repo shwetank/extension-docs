@@ -97,7 +97,7 @@ This is a repository of all the example extensions to help you get started with 
 **Sample extension**: 
 
 * [Type the keyword 'extquery' in the address bar followed by your query. The extension will search the query on the Opera extensions documentation site](samples/Omnibox.nex)
-* [Type the keyword 'extdocs' in the address bar followed by your query. The default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag [opera-extension], followed by a Google search.](samples/Omnibox2.nex)
+* [Type the keyword 'extdocs' in the address bar followed by your query. The default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag `[opera-extension]`, followed by a Google search.](samples/Omnibox2.nex)
 
 **Relevant reading**:  
 

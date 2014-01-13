@@ -2,7 +2,8 @@
 layout: default-withsidebar
 title: Passing messages in extensions
 author: shwetankdixit
-copyright: opera-ccby
+copyright: opera-google-ccby
+originalsource: http://developer.chrome.com/extensions/messaging.html
 ---
 
 ## Introduction
@@ -62,6 +63,157 @@ chrome.runtime.onMessage.addListener(
 </pre>
 
 Feel free to [download the extension](samples/MessagePassing.nex) and examine it further. 
+
+## Cross-extension messaging
+
+In addition to sending messages between different components in your extension, you can use the messaging API to communicate with other extensions. This lets you expose a public API that other extensions can take advantage of.
+
+Listening for incoming requests and connections is similar to the internal case, except you use the [runtime.onMessageExternal](runtime.html#event-onMessageExternal) or [runtime.onConnectExternal](runtime.html#event-onConnectExternal) methods. Here's an example of each:
+
+<pre class="prettyprint">
+// For simple requests:
+chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    if (sender.id == blacklistedExtension)
+      return;  // don&#39;t allow this extension access
+    else if (request.getTargetData)
+      sendResponse({targetData: targetData});
+    else if (request.activateLasers) {
+      var success = activateLasers();
+      sendResponse({activateLasers: success});
+    }
+  });
+
+// For long-lived connections:
+chrome.runtime.onConnectExternal.addListener(function(port) {
+  port.onMessage.addListener(function(msg) {
+    // See other examples for sample onMessage handlers.
+  });
+});
+</pre>
+
+Likewise, sending a message to another extension is similar to sending one within your extension. The only difference is that you must pass the ID of the extension you want to communicate with. For example:
+
+<pre class="prettyprint">
+/ The ID of the extension we want to talk to.
+var laserExtensionId = &quot;abcdefghijklmnoabcdefhijklmnoabc&quot;;
+
+// Make a simple request:
+chrome.runtime.sendMessage(laserExtensionId, {getTargetData: true},
+  function(response) {
+    if (targetInRange(response.targetData))
+      chrome.runtime.sendMessage(laserExtensionId, {activateLasers: true});
+  });
+
+// Start a long-running conversation:
+var port = chrome.runtime.connect(laserExtensionId);
+port.postMessage(...);
+</pre>
+
+## Sending messages from web pages
+
+Similar to cross-extension messaging, your app or extension can receive and respond to messages from regular web pages. To use this feature, you must first specify in your manifest.json which web sites you want to communicate with. For example:
+
+<pre class="prettyprint">
+&quot;externally_connectable&quot;: {
+  &quot;matches&quot;: [&quot;*://*.example.com/*&quot;]
+}
+</pre>
+
+This will expose the messaging API to any page which matches the URL patterns you specify. The URL pattern must contain at least a second-level domain - that is, hostname patterns like "\*", "\*\.com", "\*\.co\.uk", and "\*\.appspot\.com" are prohibited. From the web page, use the runtime.sendMessage or runtime.connect APIs to send a message to a specific app or extension. For example:
+
+<pre class="prettyprint">
+// The ID of the extension we want to talk to.
+var editorExtensionId = &quot;abcdefghijklmnoabcdefhijklmnoabc&quot;;
+
+// Make a simple request:
+chrome.runtime.sendMessage(editorExtensionId, {openUrlInEditor: url},
+  function(response) {
+    if (!response.success)
+      handleError(url);
+  });
+</pre>
+
+From your app or extension, you may listen to messages from web pages via the runtime.onMessageExternal or runtime.onConnectExternal APIs, similar to cross-extension messaging. Only the web page can initiate a connection. Here is an example:
+
+<pre class="prettyprint">
+chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    if (sender.url == blacklistedWebsite)
+      return;  // don&#39;t allow this web page access
+    if (request.openUrlInEditor)
+      openUrl(request.openUrlInEditor);
+  });
+</pre>
+
+## Native messaging
+
+**Note**: This will be fully available from Opera 20 onwards.
+
+Extensions can exchange messages with native applications. Native applications that support this feature must register a native messaging host that knows how to communicate with the extension. Chrome starts the host in a separate process and communicates with it using standard input and standard output streams.
+
+### Native messaging host
+
+In order to register a native messaging host the application must install a manifest file that defines the native messaging host configuration. Below is an example of the manifest file:
+
+<pre class="prettyprint">
+{
+  &quot;name&quot;: &quot;com.my_company.my_application&quot;,
+  &quot;description&quot;: &quot;My Application&quot;,
+  &quot;path&quot;: &quot;C:\\Program Files\\My Application\\chrome_native_messaging_host.exe&quot;,
+  &quot;type&quot;: &quot;stdio&quot;,
+  &quot;allowed_origins&quot;: [
+    &quot;chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/&quot;
+  ]
+}
+</pre>
+
+Native messaging host manifest file contains the following fields:
+
+<table class="simple">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td>Name of the native messaging host. Clients pass this string to
+    <a href="runtime.html#method-connectNative">runtime.connectNative</a> or <a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a>.</td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td>Short application description.</td>
+  </tr>
+  <tr>
+    <td><code>path</code></td>
+    <td>Path to the native messaging host binary. On Linux and OSX the path must
+    be absolute. On Windows it can be relative to the directory in which the
+    manifest file is located.</td>
+  </tr>
+  <tr>
+    <td><code>type</code></td>
+    <td>Type of the interface used to communicate with the native messaging
+    host. Currently there is only one possible value for this parameter:
+    <code>stdio</code>. It indicates that Chrome should use <code>stdin</code>
+    and <code>stdout</code> to communicate with the host.</td>
+  </tr>
+  <tr>
+    <td><code>allowed_origins</code></td>
+    <td>List of extensions that should have access to the native messaging host.</td>
+  </tr>
+</table>
+
+Location of the manifest file depends on the platform:
+
+**Windows**:
+The manifest file can be located anywhere in the file system. The application installer must create registry key `HKEY_LOCAL_MACHINE\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.my_company.my_application` and set default value of that key to the full path to the manifest file.
+
+**OSX**:
+The manifest file must be placed at `/Library/Google/Chrome/NativeMessagingHosts/com.my_company.my_application.json`.
+
+Opera starts each native messaging host in a separate process and communicates with it using standard input (`stdin`) and standard output (`stdout`). The same format is used to send messages in both directions: each message is serialized using JSON, UTF-8 encoded and is preceded with 32-bit message length in native byte order.
+
+
 
 ## Other methods of communication
 
