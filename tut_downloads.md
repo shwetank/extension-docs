@@ -1,6 +1,6 @@
 ---
 layout: default-withsidebar
-title: Using the downloads API
+title: Working with downloads
 author: shwetankdixit
 copyright: opera-ccby
 ---
