@@ -84,6 +84,6 @@ chrome.downloads.onChanged.addListener(function (e) {
 });
 </pre>
 
-[Download our sample extension](samples/DownloadAPI.nex) which makes use of the API methods and events to show the you last 5 downloaded files as well as information about new downloads. 
+[Download our sample extension](samples/DownloadsAPI.nex) which makes use of the API methods and events to show the you last 5 downloaded files as well as information about new downloads. 
 
 
