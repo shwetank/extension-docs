@@ -54,7 +54,7 @@ In fact, you can listen for the whenever the setting has been changed either way
 
 
 ## Setting the Off-Road Mode through and extension
-You can enable or disable Off-Road Mode through your extension by calling the `opr.offroad.enabled.set()` function and passing an object with a `value` field as `false`. For example,
+You can enable or disable Off-Road Mode through your extension by calling the `opr.offroad.enabled.set()` function and passing an object with a `value` field as `false` or `true`. For example, `opr.offroad.enabled.set({'value': true}, function(){});`
 
 Feel free to [download the sample extension](samples/offroad.nex) and try it out yourself.
   
