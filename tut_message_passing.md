@@ -148,6 +148,8 @@ chrome.runtime.onMessageExternal.addListener(
 
 ## Native messaging
 
+**Note**: This will be fully available from Opera 20 onwards.
+
 Extensions can exchange messages with native applications. Native applications that support this feature must register a native messaging host that knows how to communicate with the extension. Chrome starts the host in a separate process and communicates with it using standard input and standard output streams.
 
 ### Native messaging host
