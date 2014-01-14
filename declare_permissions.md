@@ -27,12 +27,17 @@ The following is an overview of the various permissions declarations possible in
 * **browsingData**: Gives your extension access to the [chrome.browsingData](bookmarks.html) API.
 * **contextMenus**: Required if the extension or app uses the [chrome.contextMenus](contextMenus.html) API.
 * **cookies**: Required if the extension or app uses the [chrome.cookies](cookies.html) API.
+* **downloads**: Required if the extension or app uses the [chrome.downloads](downloads.html) API.
+* **fontSettings**: Required if the extension or app uses the [chrome.fontSettings](fontSettings.html) API.
 * **geolocation**: Allows the extension or app to use the [proposed HTML5 geolocation API](http://dev.w3.org/geo/api/spec-source.html) without prompting the user for permission.
 * **history**: Required if the extension or app uses the [chrome.history](history.html) API.
+* **identity**: Required if the extension or app uses the [chrome.identity](identity.html) API.
 * **idle**: Required if the extension or app uses the [chrome.idle](idle.html) API.
 * **management**: Required if the extension uses the [chrome.management](management.html) API.
 * **offroad**: Gives the extension access to the [Off-Road Mode](tut_offroad.html).
 * **pageCapture**: Gives the extension access to the [chrome.pageCapture](pageCapture.html) API.
+* **power**: Required if the extension or app uses the [chrome.power](power.html) API.
+* **proxy**: Required if the extension or app uses the [chrome.proxy](proxy.html) API.
 * **storage**: Required if the extension or app uses the [chrome.storage](storage.html) API. Note: `storage.sync` is not supported.
 * **tabs**: Required if the extension uses the [chrome.tabs](tabs.html) or [chrome.windows](windows.html) API.
 * **webNavigation**: Gives your extension access to the [chrome.webNavigation](webNavigation.html) API.
