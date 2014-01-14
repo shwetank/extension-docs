@@ -1,0 +1,181 @@
+---
+layout: default-withsidebar
+title: chrome.power
+support: 19
+copyright: opera-google-ccby
+originalsource: http://developer.chrome.com/extensions/power.html
+---
+      <div id="gc-pagecontent">
+      
+            
+      <div id="toc">
+        <ol>
+          <li >
+            <a href="#usage"
+               data-list-item
+               >Usage</a>
+          </li>
+          <li class="separator">
+            <a href="#types"
+               data-list-item
+               >Types</a>
+            <ol>
+              <li >
+                <a href="#type-Level"
+                   data-list-item
+                   >Level</a>
+              </li>
+            </ol>
+          </li>
+          <li >
+            <a href="#methods"
+               data-list-item
+               >Methods</a>
+            <ol>
+              <li >
+                <a href="#method-requestKeepAwake"
+                   data-list-item
+                   >requestKeepAwake        </a>
+              </li>
+              <li >
+                <a href="#method-releaseKeepAwake"
+                   data-list-item
+                   >releaseKeepAwake        </a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        
+        <table class="intro" id="intro">
+          <tr>
+            <td class="title">Description:</td>
+            <td>
+                 Use the <code>chrome.power</code> API to override the system's power
+                 management features.
+                        <br>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">Permissions:</td>
+            <td>
+                <span class="code">
+                "power"
+                        </span>
+                <br>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    
+      <section>
+      <h2 id="usage">Usage</h2>
+      
+      <p>
+      By default,
+      operating systems dim the screen when users are inactive
+      and eventually suspend the system.
+      With the power API,
+      an app or extension can keep the system awake.
+      </p>
+      
+      <p>
+      Using this API,
+      you can specify the
+      <a href="power.html#type-Level">Level</a> to which power management is disabled.
+      The <code>"system"</code> level keeps the system active,
+      but allows the screen to be dimmed or turned off.
+      For example,
+      a communication app can continue to receive messages
+      while the screen is off.
+      The <code>"display"</code> level keeps the screen and system active.
+      E-book and presentation apps, for example,
+      can keep the screen and system active
+      while users read.
+      </p>
+      
+      <p>
+      When a user has more than one app or extension active,
+      each with its own power level,
+      the highest-precedence level takes effect;
+      <code>"display"</code> always takes precendence
+      over <code>"system"</code>.
+      For example,
+      if app A asks for <code>"system"</code> power management,
+      and app B asks for <code>"display"</code>,
+      <code>"display"</code> is used until app B
+      is unloaded or releases its request.
+      If app A is still active,
+      <code>"system"</code> is then used.
+      </p>
+      </section>
+      <section>
+      <h2 id="api-reference-header" title="">chrome.power reference</h2>
+      <div class="api_reference">
+          <h2 id="types">Types</h2>
+            <div>
+              <h3 id="type-Level">Level</h3>
+              <div>
+                <dd>enum of
+                  <code>"system"</code>, 
+                  or <code>"display"</code>
+                </dd>
+                <dd></dd>
+              </div>
+            </div>
+          <h2 id="methods">Methods</h2>
+            <div>
+              <h3
+                  id="method-requestKeepAwake"
+                  >requestKeepAwake
+              </h3>
+              <div class="summary uncapitalize">
+              <div class="line">
+              <span>chrome.power.requestKeepAwake</span>(<span><a href="power.html#type-Level">Level</a> level</span>)
+              </div>
+              </div>
+              <div class="description">
+                <p>
+                  Requests that power management be temporarily disabled. |level| describes the degree to which power management should be disabled. If a request previously made by the same app is still active, it will be replaced by the new request.
+                </p>
+                <h4 title="">Parameters</h4>
+                <dl>
+                    <div>
+                      <a name="property-requestKeepAwake-level"></a>
+                      <dl>
+                        <dt>
+                          <h4 id="property-requestKeepAwake-level" title="">
+                            level
+                            <span class="property">
+                              (
+                                <a href="power.html#type-Level">Level</a>
+                              )
+                            </span>
+                          </h4>
+                        </dt>
+                        <dd>
+                        </dd>
+                      </dl>
+                    </div>
+                </dl>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-releaseKeepAwake"
+                  >releaseKeepAwake
+              </h3>
+              <div class="summary uncapitalize">
+              <div class="line">
+              <span>chrome.power.releaseKeepAwake</span>()
+              </div>
+              </div>
+              <div class="description">
+                <p>
+                  Releases a request previously made via requestKeepAwake().
+                </p>
+              </div>
+            </div>
+      </div>
+      </section>
+            </div>

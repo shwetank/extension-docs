@@ -1,0 +1,535 @@
+---
+layout: default-withsidebar
+title: chrome.identity
+support: 20
+copyright: opera-google-ccby
+originalsource: http://developer.chrome.com/trunk/extensions/identity.html
+---
+      <div id="gc-pagecontent">
+        
+		
+        
+        <div id="toc">
+          <h2>Contents</h2>
+ 
+              <ol>
+                  <li >
+                        <a href="#methods"
+                           data-list-item
+                           >Methods</a>
+                        <ol>
+                          <li >
+                            <a href="#method-getAuthToken"
+                               data-list-item
+                               >getAuthToken        </a>
+                          </li>
+                          <li >
+                            <a href="#method-removeCachedAuthToken"
+                               data-list-item
+                               >removeCachedAuthToken        </a>
+                          </li>
+                          <li >
+                            <a href="#method-launchWebAuthFlow"
+                               data-list-item
+                               >launchWebAuthFlow        </a>
+                          </li>
+                          <li >
+                            <a href="#method-getRedirectURL"
+                               data-list-item
+                               >getRedirectURL        </a>
+                          </li>
+                        </ol>
+                      </li>
+                      <li >
+                        <a href="#events"
+                           data-list-item
+                           >Events</a>
+                        <ol>
+                          <li >
+                            <a href="#event-onSignInChanged"
+                               data-list-item
+                               >onSignInChanged</a>
+                          </li>
+                        </ol>
+                      </li>
+                  
+          </ol>
+          <table class="intro" id="intro">
+            <tr>
+              <td class="title">Description:</td>
+              <td>
+                   Use the <code>chrome.identity</code> API to get OAuth2 access tokens.
+                          <br>
+              </td>
+            </tr>
+            <tr>
+              <td class="title">Permissions:</td>
+              <td>
+                  <span class="code">
+                  "identity"
+                          </span>
+                  <br>
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+
+
+       <div class="api_reference">
+           <h2 id="methods">Methods</h2>
+             <div>
+               <h3
+                   id="method-getAuthToken"
+                   >getAuthToken
+               </h3>
+               <div class="summary uncapitalize">
+               <div class="line">
+               <span>chrome.identity.getAuthToken</span>(<span class="optional">object details</span>, <span>function callback</span>)
+               </div>
+               </div>
+               <div class="description">
+                 <p>
+                   Gets an OAuth2 access token using the client ID and scopes specified in the <a href="app_identity.html#update_manifest"><code>oauth2</code> section of manifest.json</a>.<br/><br/> The Identity API caches access tokens in memory, so it's ok to call <code>getAuthToken</code> any time a token is required. The token cache automatically handles expiration.
+                 </p>
+                 <h4 title="">Parameters</h4>
+                 <dl>
+                     <div>
+                       <a name="property-getAuthToken-details"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-getAuthToken-details" title="">
+                             details
+                             <span class="property">
+                               (
+                                 <span class="optional">optional</span>
+                                 object
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           Token options.
+                         </dd>
+                       </dl>
+                       <dd>
+                         <h4 title="">Properties</h4>
+                         <dl>
+                           <div>
+                             <a name="property-details-interactive"></a>
+                             <dl>
+                               <dt>
+                                 <h4 id="property-details-interactive" title="">
+                                   interactive
+                                   <span class="property">
+                                     (
+                                       <span class="optional">optional</span>
+                                       boolean
+                                     )
+                                   </span>
+                                 </h4>
+                               </dt>
+                               <dd>
+                                 Fetching a token may require the user to sign-in to Chrome, or approve the application's requested scopes. If the interactive flag is <code>true</code>, <code>getAuthToken</code> will prompt the user as necessary. When the flag is <code>false</code> or omitted, <code>getAuthToken</code> will return failure any time a prompt would be required.
+                               </dd>
+                             </dl>
+                           </div>
+                         </dl>
+                       </dd>
+                     </div>
+                     <div>
+                       <a name="property-getAuthToken-callback"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-getAuthToken-callback" title="">
+                             callback
+                             <span class="property">
+                               (
+                                 function
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           Called with an OAuth2 access token as specified by the manifest, or undefined if there was an error.
+                         </dd>
+                       </dl>
+                     </div>
+                 </dl>
+                   <p>
+                         The <em>callback</em> parameter should specify a function
+                         that looks like this:
+                   </p>
+                   <pre>function(string token) <span class="subdued">{...}</span>;</pre>
+                   <dl>
+                       <div>
+                         <a name="property-callback-token"></a>
+                         <dl>
+                           <dt>
+                             <h4 id="property-callback-token" title="">
+                               token
+                               <span class="property">
+                                 (
+                                   <span class="optional">optional</span>
+                                   string
+                                 )
+                               </span>
+                             </h4>
+                           </dt>
+                           <dd>
+                           </dd>
+                         </dl>
+                       </div>
+                   </dl>
+               </div>
+             </div>
+             <div>
+               <h3
+                   id="method-removeCachedAuthToken"
+                   >removeCachedAuthToken
+               </h3>
+               <div class="summary uncapitalize">
+               <div class="line">
+               <span>chrome.identity.removeCachedAuthToken</span>(<span>object details</span>, <span>function callback</span>)
+               </div>
+               </div>
+               <div class="description">
+                 <p>
+                   Removes an OAuth2 access token from the Identity API's token cache.<br/><br/> If an access token is discovered to be invalid, it should be passed to removeCachedAuthToken to remove it from the cache. The app may then retrieve a fresh token with <code>getAuthToken</code>.
+                 </p>
+                 <h4 title="">Parameters</h4>
+                 <dl>
+                     <div>
+                       <a name="property-removeCachedAuthToken-details"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-removeCachedAuthToken-details" title="">
+                             details
+                             <span class="property">
+                               (
+                                 object
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           Token information.
+                         </dd>
+                       </dl>
+                       <dd>
+                         <h4 title="">Properties</h4>
+                         <dl>
+                           <div>
+                             <a name="property-details-token"></a>
+                             <dl>
+                               <dt>
+                                 <h4 id="property-details-token" title="">
+                                   token
+                                   <span class="property">
+                                     (
+                                       string
+                                     )
+                                   </span>
+                                 </h4>
+                               </dt>
+                               <dd>
+                                 The specific token that should be removed from the cache.
+                               </dd>
+                             </dl>
+                           </div>
+                         </dl>
+                       </dd>
+                     </div>
+                     <div>
+                       <a name="property-removeCachedAuthToken-callback"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-removeCachedAuthToken-callback" title="">
+                             callback
+                             <span class="property">
+                               (
+                                 function
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           Called when the token has been removed from the cache.
+                         </dd>
+                       </dl>
+                     </div>
+                 </dl>
+                   <p>
+                         The <em>callback</em> parameter should specify a function
+                         that looks like this:
+                   </p>
+                   <pre>function() <span class="subdued">{...}</span>;</pre>
+               </div>
+             </div>
+             <div>
+               <h3
+                   id="method-launchWebAuthFlow"
+                   >launchWebAuthFlow
+               </h3>
+               <div class="summary uncapitalize">
+               <div class="line">
+               <span>chrome.identity.launchWebAuthFlow</span>(<span>object details</span>, <span>function callback</span>)
+               </div>
+               </div>
+               <div class="description">
+                 <p>
+                   Starts an auth flow at the specified URL.<br/><br/> This method enables auth flows with non-Google identity providers by launching a web view and navigating it to the first URL in the provider's auth flow. When the provider redirects to a URL matching the pattern <code>https://&lt;app-id&gt;.chromiumapp.org/*</code>, the window will close, and the final redirect URL will be passed to the <var>callback</var> function.
+                 </p>
+                 <h4 title="">Parameters</h4>
+                 <dl>
+                     <div>
+                       <a name="property-launchWebAuthFlow-details"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-launchWebAuthFlow-details" title="">
+                             details
+                             <span class="property">
+                               (
+                                 object
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           WebAuth flow options.
+                         </dd>
+                       </dl>
+                       <dd>
+                         <h4 title="">Properties</h4>
+                         <dl>
+                           <div>
+                             <a name="property-details-url"></a>
+                             <dl>
+                               <dt>
+                                 <h4 id="property-details-url" title="">
+                                   url
+                                   <span class="property">
+                                     (
+                                       string
+                                     )
+                                   </span>
+                                 </h4>
+                               </dt>
+                               <dd>
+                                 The URL that initiates the auth flow.
+                               </dd>
+                             </dl>
+                           </div><div>
+                             <a name="property-details-interactive"></a>
+                             <dl>
+                               <dt>
+                                 <h4 id="property-details-interactive" title="">
+                                   interactive
+                                   <span class="property">
+                                     (
+                                       <span class="optional">optional</span>
+                                       boolean
+                                     )
+                                   </span>
+                                 </h4>
+                               </dt>
+                               <dd>
+                                 Whether to launch auth flow in interactive mode.<br/><br/> Since some auth flows may immediately redirect to a result URL, <code>launchWebAuthFlow</code> hides its web view until the first navigation either redirects to the final URL, or finishes loading a page meant to be displayed.<br/><br/> If the interactive flag is <code>true</code>, the window will be displayed when a page load completes. If the flag is <code>false</code> or omitted, <code>launchWebAuthFlow</code> will return with an error if the initial navigation does not complete the flow.
+                               </dd>
+                             </dl>
+                           </div>
+                         </dl>
+                       </dd>
+                     </div>
+                     <div>
+                       <a name="property-launchWebAuthFlow-callback"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-launchWebAuthFlow-callback" title="">
+                             callback
+                             <span class="property">
+                               (
+                                 function
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           Called with the URL redirected back to your application.
+                         </dd>
+                       </dl>
+                     </div>
+                 </dl>
+                   <p>
+                         The <em>callback</em> parameter should specify a function
+                         that looks like this:
+                   </p>
+                   <pre>function(string responseUrl) <span class="subdued">{...}</span>;</pre>
+                   <dl>
+                       <div>
+                         <a name="property-callback-responseUrl"></a>
+                         <dl>
+                           <dt>
+                             <h4 id="property-callback-responseUrl" title="">
+                               responseUrl
+                               <span class="property">
+                                 (
+                                   <span class="optional">optional</span>
+                                   string
+                                 )
+                               </span>
+                             </h4>
+                           </dt>
+                           <dd>
+                           </dd>
+                         </dl>
+                       </div>
+                   </dl>
+               </div>
+             </div>
+             <div>
+               <h3
+                   id="method-getRedirectURL"
+                   >getRedirectURL
+               </h3>
+               <div class="summary">
+               <div class="line">
+               <span>string chrome.identity.getRedirectURL</span>(<span class="optional">string path</span>)
+               </div>
+               </div>
+               <div class="description">
+                 <p>
+                   Generates a redirect URL to be used in |launchWebAuthFlow|.<br/><br/> The generated URLs match the pattern <code>https://&lt;app-id&gt;.chromiumapp.org/*</code>.
+                 </p>
+                 <h4 title="">Parameters</h4>
+                 <dl>
+                     <div>
+                       <a name="property-getRedirectURL-path"></a>
+                       <dl>
+                         <dt>
+                           <h4 id="property-getRedirectURL-path" title="">
+                             path
+                             <span class="property">
+                               (
+                                 <span class="optional">optional</span>
+                                 string
+                               )
+                             </span>
+                           </h4>
+                         </dt>
+                         <dd>
+                           The path appended to the end of the generated URL.
+                         </dd>
+                       </dl>
+                     </div>
+                 </dl>
+               </div>
+             </div>
+           <h2 id="events">Events</h2>
+             <div>
+               <h3 id="event-onSignInChanged">onSignInChanged</h3>
+               <div class="description">
+             <p>
+                   Fired when signin state changes for an account on the user's profile.
+                 </p>      <div>
+                     <h4
+                         title="">addListener
+                     </h4>
+                     <div class="summary uncapitalize">
+                     <div class="line">
+                     <span>chrome.identity.onSignInChanged.addListener</span>(<span>function callback</span>)
+                     </div>
+                     </div>
+                     <div class="description">
+                       <h4 title="">Parameters</h4>
+                       <dl>
+                           <div>
+                             <a name="property-onSignInChanged-callback"></a>
+                             <dl>
+                               <dt>
+                                 <h4 id="property-onSignInChanged-callback" title="">
+                                   callback
+                                   <span class="property">
+                                     (
+                                       function
+                                     )
+                                   </span>
+                                 </h4>
+                               </dt>
+                               <dd>
+                               </dd>
+                             </dl>
+                           </div>
+                       </dl>
+                         <p>
+                               The <em>callback</em> parameter should specify a function
+                               that looks like this:
+                         </p>
+                         <pre>function(object account, boolean signedIn) <span class="subdued">{...}</span>;</pre>
+                         <dl>
+                             <div>
+                               <a name="property-onSignInChanged-account"></a>
+                               <dl>
+                                 <dt>
+                                   <h4 id="property-onSignInChanged-account" title="">
+                                     account
+                                     <span class="property">
+                                       (
+                                         object
+                                       )
+                                     </span>
+                                   </h4>
+                                 </dt>
+                                 <dd>
+                                 </dd>
+                               </dl>
+                               <dd>
+                                 <h4 title="">Properties</h4>
+                                 <dl>
+                                   <div>
+                                     <a name="property-account-id"></a>
+                                     <dl>
+                                       <dt>
+                                         <h4 id="property-account-id" title="">
+                                           id
+                                           <span class="property">
+                                             (
+                                               string
+                                             )
+                                           </span>
+                                         </h4>
+                                       </dt>
+                                       <dd>
+                                         A unique identifier for the account. This ID will not change for the lifetime of the account.
+                                       </dd>
+                                     </dl>
+                                   </div>
+                                 </dl>
+                               </dd>
+                             </div>
+                             <div>
+                               <a name="property-onSignInChanged-signedIn"></a>
+                               <dl>
+                                 <dt>
+                                   <h4 id="property-onSignInChanged-signedIn" title="">
+                                     signedIn
+                                     <span class="property">
+                                       (
+                                         boolean
+                                       )
+                                     </span>
+                                   </h4>
+                                 </dt>
+                                 <dd>
+                                 </dd>
+                               </dl>
+                             </div>
+                         </dl>
+                     </div>
+                   </div>
+               </div>
+             </div>
+       </div>
+           
+          
+      </div>
