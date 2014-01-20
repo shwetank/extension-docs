@@ -22,7 +22,7 @@ You need to list 'downloads' under permissions field in the manifest to enable t
 
 ## The DownloadItem type
 
-Any downloaded item will be of the [`DownloadItem`](downloads.html#type-DownloadItem) type. This object will contain all pertinent information about the downloaded item such as its filename, URL, start time, the total bytes downloaded till now, and other information such as estimated time when the download will end, its MIME type, whether the download can be resumed or not etc. See the documentation for detailed information on the `DownloadItem` type.
+Any downloaded item will be of the [`DownloadItem`](downloads.html#type-DownloadItem) type. This object will contain all pertinent information about the downloaded item such as its filename, URL, start time, the total bytes downloaded until now, and other information such as estimated time when the download will end, its MIME type, whether the download can be resumed or not, etc. See the documentation for detailed information on the `DownloadItem` type.
 
 
 ## Starting a new download
@@ -60,11 +60,11 @@ chrome.downloads.search(
 );
 </pre>
 
-You can use other criteria like the URL, filename, file size etc. One criteria which is particularly usefull is searching by the ID of the downloaded item, as the ID of the item is needed for executing other functions like [pausing](downloads.html#method-pause), [cancelling](downloads.html#method-cancel) or [resuming](downloads.html#method-resume) downloads. You can also [open the folder ](downloads.html#method-show) or [open the actual downloaded file](downloads.html#method-open) provided you know the download id. 
+You can use other criteria like the URL, filename, file size etc. One that is particularly useful is searching by the ID of the downloaded item, as the ID of the item is needed for executing other functions like [pausing](downloads.html#method-pause), [cancelling](downloads.html#method-cancel) or [resuming](downloads.html#method-resume) downloads. You can also [open the folder ](downloads.html#method-show) or [open the actual downloaded file](downloads.html#method-open) provided you know the download id. 
 
 ## Working with events
 
-You also have access to certain events which can be very helpful. In particular, [`onCreated`](downloads.html#event-onCreated) and [`onChanged`](downloads.html#event-onChanged). You can use the `onCreated` event in the background script like so:
+You also have access to certain events that can be very helpful. In particular, [`onCreated`](downloads.html#event-onCreated) and [`onChanged`](downloads.html#event-onChanged). You can use the `onCreated` event in the background script like so:
 
 <pre class="prettyprint">
 chrome.downloads.onCreated.addListener(function (e) {
@@ -84,6 +84,6 @@ chrome.downloads.onChanged.addListener(function (e) {
 });
 </pre>
 
-[Download our sample extension](samples/DownloadsAPI.nex) which makes use of the API methods and events to show the you last 5 downloaded files as well as information about new downloads. 
+[Download our sample extension](samples/DownloadsAPI.nex) which makes use of the API methods and events to show you the last five downloaded files as well as information about new downloads. 
 
 
