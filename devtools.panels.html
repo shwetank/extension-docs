@@ -101,9 +101,6 @@ originalsource: http://developer.chrome.com/extensions/devtools_panels.html
 								<li><a href="#method-setOpenResourceHandler">setOpenResourceHandler</a></li>
 							</ol>
 						</li>
-						<li>
-							<a href="#samples">Sample Extensions</a>
-						</li>
 					</ol>
 				</li>
 			</div>
@@ -137,7 +134,7 @@ modules in <code>chrome.devtools</code> API, as well as to
 <a href="extension.html">chrome.extension</a> API. Other extension APIs are not
 available to the pages within Developer Tools window, but you may invoke them
 by sending a request to the background page of your extension, similarly to how
-it's done in the <a href="overview.html#contentScripts">content scripts</a>.
+it's done in the <a href="tut_content_scripts.html">content scripts</a>.
 </p><p>
 You can use the <code><a href="devtools.panels.html#method-setOpenResourceHandler">devtools.panels.setOpenResourceHandler</a>
 </code> method to install a
@@ -173,7 +170,7 @@ sidebar.setHeight("8ex");
 This screenshot demonstrates the effect the above examples would have on
 Developer Tools window:
 
-<img src="/static/images/devtools-panels.png"
+<img src="static/images/devtools-panels.png"
 style="margin-left: 20px"
 width="686" height="289"
 alt="Extension icon panel on DevTools toolbar" />
@@ -1325,13 +1322,4 @@ alt="Extension icon panel on DevTools toolbar" />
 					</div>
 				</div>
 	</div>
-		<h2 id="samples">Sample Extensions that use chrome.devtools.panels</h2>
-		<ul>
-			<li><strong><a href="samples.html#chrome-preprocessor-example">Chrome Preprocessor Example</a></strong>
-			&ndash; Simple hello-world example for chrome.devtools.inspectedWindow.reload() using preprocessor.
-	</li>
-			<li><strong><a href="samples.html#chrome-query">Chrome Query</a></strong>
-			&ndash; Extends the Developer Tools, adding a sidebar that displays the jQuery data associated with the selected DOM element.
-	</li>
-		</ul>
 </div>

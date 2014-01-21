@@ -70,7 +70,7 @@ originalsource: http://developer.chrome.com/extensions/devtools.html
 		A DevTools extension is structured like any other extension: it can have a background page, content scripts, and other items. In addition, each DevTools extension has a DevTools page, which has access to the DevTools APIs.
 	</p>
 	<p>
-		<img src="/static/images/devtools-extension.png" alt="Architecture diagram showing DevTools page communicating with the inspected window and the background page. The background page is shown communicating with the content scripts and accessing extension APIs. The DevTools page has access to the DevTools APIs, for example, creating panels.">
+		<img src="static/images/devtools-extension.png" alt="Architecture diagram showing DevTools page communicating with the inspected window and the background page. The background page is shown communicating with the content scripts and accessing extension APIs. The DevTools page has access to the DevTools APIs, for example, creating panels.">
 	</p>
 	<h2 id="devtools-page">
 		The DevTools page
@@ -123,7 +123,7 @@ originalsource: http://developer.chrome.com/extensions/devtools.html
 		</li>
 		<li>A <em>sidebar pane</em> presents supplementary UI related to a panel. The Styles, Computed Styles, and Event Listeners panes on the Elements panel are examples of sidebar panes. Currently your extension can only add sidebar panes to the Elements panel. (Note that the appearance of sidebar panes may not match the image, depending on the version of Opera you're using, and where the DevTools window is docked.)
 		</li>
-	</ul><img src="/static/images/devtools-extension-ui.png" alt="DevTools window showing Elements panel and Styles sidebar pane.">
+	</ul><img src="static/images/devtools-extension-ui.png" alt="DevTools window showing Elements panel and Styles sidebar pane.">
 	<p>
 		Each panel is its own HTML file, which can include other resources (JavaScript, CSS, images, and so on). Creating a basic panel looks like this:
 	</p>
@@ -160,7 +160,7 @@ sidebar.setObject({ some_data: "Some data to show" });
 		</li>
 		<li>
 			<p>
-				JSON data. Pass a JSON object to <code><a href="devtools_panels.html#method-ExtensionSidebarPane-setObject">setObject</a></code>.
+				JSON data. Pass a JSON object to <code><a href="devtools.panels.html#method-ExtensionSidebarPane-setObject">setObject</a></code>.
 			</p>
 		</li>
 		<li>

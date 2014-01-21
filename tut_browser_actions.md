@@ -67,6 +67,7 @@ Badges can be set using JavaScript in the background script (make sure to mentio
 `chrome.browserAction.setBadgeText()`: This sets the text of the badge
 
 In our example, lets set the badge text as ‘Hey’ with a background color of red. In our background script, we will write:
+
 <pre class="prettyprint">chrome.browserAction.setBadgeBackgroundColor({ color: "#ff0000" });
 chrome.browserAction.setBadgeText({ text: "Hey" });</pre>
 
