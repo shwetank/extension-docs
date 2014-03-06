@@ -15,22 +15,22 @@ This is especially useful for extension authors who have a dedicated webpage or 
 
 ## What to add in your webpage
 
-You will need to use the `opr.addons.installExtension()` function and add it to your page. Its first parameter is the `id` of the extension, followed by an optional success callback and an error callback. 
+You will need to use the [`opr.addons.installExtension()`](addons.html#method-installextension) function and add it to your page. Its first parameter is the `id` of the extension, followed by an optional success callback and an error callback. 
 
 Let's see some sample code of how it would be like to add inline installation in a webpage.
 
 Assuming a link with the `id` as 'myextension'.
 
-<pre class="prettyprint">&lt;button id=&quot;myextension&quot;&gt;Click here to add my extension&lt;/button&gt;.</pre>
+<pre class="prettyprint">&lt;button id=&quot;installext&quot;&gt;Click here to add my extension&lt;/button&gt;.</pre>
 
 We would add the following peice of JavaScript.
 
 <pre class="prettyprint">var id = &quot;samplextensionid&quot;;
 
-var myExtension = document.querySelector(&quot;#test&quot;);
+var myExtension = document.querySelector(&quot;#installext&quot;);
 
 myExtension.addEventListener(&#39;click&#39;, function(event) {
-	opr.addons.installExtension(id, function (event) { console.log(&#39;success&#39;);}, function (event) {console.log(&#39;failure&#39;)});
+    opr.addons.installExtension(id, function () { console.log(&#39;success&#39;);}, function (errorMessage) {console.log(&#39;Error: &#39;+errorMessage)});
 }, true);</pre>
  
 When the person clicks on the button, it calls `opr.addons.installExtension()`. The first parameter will take the 'id' of the extension and call the installation dialog box, from which the user can see details of the extension (Its name, icon and a short summary of the permissions it wants access to). The user can then either cancel the installation request or go on to install it. 
