@@ -58,12 +58,12 @@ originalsource: http://developer.chrome.com/extensions/devtools_network.html
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
+
+
 					Use the <code>chrome.devtools.network</code> API to retrieve the information about network requests displayed by the Developer Tools in the Network panel.
-					
-					
-					
+
+
+
 					<br>
 			</td>
 		</tr>
@@ -119,7 +119,7 @@ chrome.experimental.devtools.console.addMessage(
 					<h3 id="type-Request">Request</h3>
 					<div>
 						<dd>Represents a network request for a document resource (script, image and so on). See HAR Specification for reference.</dd>
-						
+
 							<h4 id="Request-methods" class="capitalize">
 								methods of <a href="#type-Request">Request</a>
 							</h4>
@@ -129,7 +129,7 @@ chrome.experimental.devtools.console.addMessage(
 											<h4 id="method-Request-getContent">
 												getContent
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>Request.getContent</code>(<code>function <code class="variable">callback</code></code>)
@@ -148,14 +148,14 @@ chrome.experimental.devtools.console.addMessage(
 																	<code class="variable">callback</code>
 																	<code class="property">
 																		(
-																			
+
 																			function
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	A function that receives the response body when the request completes.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -174,14 +174,14 @@ chrome.experimental.devtools.console.addMessage(
 																		<code class="variable">content</code>
 																		<code class="property">
 																			(
-																				
+
 																				string
 																			)
 																		</code>
 																	</dt>
 																	<dd>
 																		Content of the response body (potentially encoded).
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -192,14 +192,14 @@ chrome.experimental.devtools.console.addMessage(
 																		<code class="variable">encoding</code>
 																		<code class="property">
 																			(
-																				
+
 																				string
 																			)
 																		</code>
 																	</dt>
 																	<dd>
 																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -215,7 +215,7 @@ chrome.experimental.devtools.console.addMessage(
 					<h4 id="method-getHAR">
 						getHAR
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.network.getHAR</code>(<code>function <code class="variable">callback</code></code>)
@@ -234,14 +234,14 @@ chrome.experimental.devtools.console.addMessage(
 											<code class="variable">callback</code>
 											<code class="property">
 												(
-													
+
 													function
 												)
 											</code>
 										</dt>
 										<dd>
 											A function that receives the HAR log when the request completes.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -260,14 +260,14 @@ chrome.experimental.devtools.console.addMessage(
 												<code class="variable">harLog</code>
 												<code class="property">
 													(
-														
+
 														object
 													)
 												</code>
 											</dt>
 											<dd>
 												A HAR log. See HAR specification for details.
-											
+
 											</dd>
 										</dl>
 									</div>
@@ -277,7 +277,7 @@ chrome.experimental.devtools.console.addMessage(
 			<h2 id="events">Events</h2>
 				<div>
 					<h4 id="event-onRequestFinished">onRequestFinished</h4>
-					
+
 					<div class="description">
 				<p>
 							Fired when a network request is finished and all request data are available.
@@ -285,7 +285,7 @@ chrome.experimental.devtools.console.addMessage(
 								<h4 id="event-onRequestFinished-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.devtools.network.onRequestFinished.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -301,13 +301,13 @@ chrome.experimental.devtools.console.addMessage(
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -326,14 +326,14 @@ chrome.experimental.devtools.console.addMessage(
 															<code class="variable">request</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="devtools.network.html#type-Request">Request</a>
 																)
 															</code>
 														</dt>
 														<dd>
 															Description of a network request in the form of a HAR entry. See HAR specification for details.
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -344,7 +344,7 @@ chrome.experimental.devtools.console.addMessage(
 				</div>
 				<div>
 					<h4 id="event-onNavigated">onNavigated</h4>
-					
+
 					<div class="description">
 				<p>
 							Fired when the inspected window navigates to a new page.
@@ -352,7 +352,7 @@ chrome.experimental.devtools.console.addMessage(
 								<h4 id="event-onNavigated-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.devtools.network.onNavigated.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -368,13 +368,13 @@ chrome.experimental.devtools.console.addMessage(
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -393,14 +393,14 @@ chrome.experimental.devtools.console.addMessage(
 															<code class="variable">url</code>
 															<code class="property">
 																(
-																	
+
 																	string
 																)
 															</code>
 														</dt>
 														<dd>
 															URL of the new page.
-														
+
 														</dd>
 													</dl>
 												</div>

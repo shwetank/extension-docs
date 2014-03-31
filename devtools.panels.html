@@ -8,9 +8,9 @@ originalsource: http://developer.chrome.com/extensions/devtools_panels.html
 
 
 <div id="gc-pagecontent">
-	
-	
-	
+
+
+
 	<div id="toc">
 		<ol>
 			<li>
@@ -110,12 +110,12 @@ originalsource: http://developer.chrome.com/extensions/devtools_panels.html
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
+
+
 					Use the <code>chrome.devtools.panels</code> API to integrate your extension into Developer Tools window UI: create your own panels, access existing panels, and add sidebars.
-					
-					
-					
+
+
+
 					<br>
 			</td>
 		</tr>
@@ -182,7 +182,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h3 id="type-ElementsPanel">ElementsPanel</h3>
 					<div>
 						<dd>Represents the Elements panel.</dd>
-						
+
 							<h4 id="ElementsPanel-methods" class="capitalize">
 								methods of <a href="#type-ElementsPanel">ElementsPanel</a>
 							</h4>
@@ -192,7 +192,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ElementsPanel-createSidebarPane">
 												createSidebarPane
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>ElementsPanel.createSidebarPane</code>(<code>string <code class="variable">title</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -211,14 +211,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">title</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	Text that is displayed in sidebar caption.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -236,7 +236,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	A callback invoked when the sidebar is created.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -255,14 +255,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																		<code class="variable">result</code>
 																		<code class="property">
 																			(
-																				
+
 																				<a href="devtools.panels.html#type-ExtensionSidebarPane">ExtensionSidebarPane</a>
 																			)
 																		</code>
 																	</dt>
 																	<dd>
 																		An ExtensionSidebarPane object for created sidebar pane.
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -278,7 +278,7 @@ alt="Extension icon panel on DevTools toolbar" />
 								<dl>
 										<div>
 											<h4 id="event-ElementsPanel-onSelectionChanged">onSelectionChanged</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when an object is selected in the panel.
@@ -286,7 +286,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ElementsPanel-onSelectionChanged-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onSelectionChanged.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -302,13 +302,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -331,7 +331,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h3 id="type-ExtensionPanel">ExtensionPanel</h3>
 					<div>
 						<dd>Represents a panel created by extension.</dd>
-						
+
 							<h4 id="ExtensionPanel-methods" class="capitalize">
 								methods of <a href="#type-ExtensionPanel">ExtensionPanel</a>
 							</h4>
@@ -341,7 +341,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ExtensionPanel-createStatusBarButton">
 												createStatusBarButton
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code><a href="devtools.panels.html#type-Button">Button</a> ExtensionPanel.createStatusBarButton</code>(<code>string <code class="variable">iconPath</code></code>, <code>string <code class="variable">tooltipText</code></code>, <code>boolean <code class="variable">disabled</code></code>)
@@ -360,14 +360,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">iconPath</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	Path to the icon of the button. The file should contain a 64x24-pixel image composed of two 32x24 icons. The left icon is used when the button is inactive; the right icon is displayed when the button is pressed.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -378,14 +378,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">tooltipText</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	Text shown as a tooltip when user hovers the mouse over the button.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -396,14 +396,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">disabled</code>
 																	<code class="property">
 																		(
-																			
+
 																			boolean
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	Whether the button is disabled.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -419,7 +419,7 @@ alt="Extension icon panel on DevTools toolbar" />
 								<dl>
 										<div>
 											<h4 id="event-ExtensionPanel-onSearch">onSearch</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired upon a search action (start of a new search, search result navigation, or search being canceled).
@@ -427,7 +427,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ExtensionPanel-onSearch-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onSearch.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -443,13 +443,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -468,14 +468,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																					<code class="variable">action</code>
 																					<code class="property">
 																						(
-																							
+
 																							string
 																						)
 																					</code>
 																				</dt>
 																				<dd>
 																					Type of search action being performed.
-																				
+
 																				</dd>
 																			</dl>
 																		</div>
@@ -493,7 +493,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																				</dt>
 																				<dd>
 																					Query string (only for 'performSearch').
-																				
+
 																				</dd>
 																			</dl>
 																		</div>
@@ -504,7 +504,7 @@ alt="Extension icon panel on DevTools toolbar" />
 										</div>
 										<div>
 											<h4 id="event-ExtensionPanel-onShown">onShown</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when the user switches to the panel.
@@ -512,7 +512,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ExtensionPanel-onShown-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onShown.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -528,13 +528,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -553,14 +553,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																					<code class="variable">window</code>
 																					<code class="property">
 																						(
-																							
+
 																							<a href="windows.html#type-Window">windows.Window</a>
 																						)
 																					</code>
 																				</dt>
 																				<dd>
 																					The <code>window</code> object of panel's page.
-																				
+
 																				</dd>
 																			</dl>
 																		</div>
@@ -571,7 +571,7 @@ alt="Extension icon panel on DevTools toolbar" />
 										</div>
 										<div>
 											<h4 id="event-ExtensionPanel-onHidden">onHidden</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when the user switches away from the panel.
@@ -579,7 +579,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ExtensionPanel-onHidden-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onHidden.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -595,13 +595,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -624,7 +624,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h3 id="type-ExtensionSidebarPane">ExtensionSidebarPane</h3>
 					<div>
 						<dd>A sidebar created by the extension.</dd>
-						
+
 							<h4 id="ExtensionSidebarPane-methods" class="capitalize">
 								methods of <a href="#type-ExtensionSidebarPane">ExtensionSidebarPane</a>
 							</h4>
@@ -634,7 +634,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ExtensionSidebarPane-setHeight">
 												setHeight
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>ExtensionSidebarPane.setHeight</code>(<code>string <code class="variable">height</code></code>)
@@ -653,14 +653,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">height</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	A CSS-like size specification, such as <code>'100px'</code> or <code>'12ex'</code>.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -671,7 +671,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ExtensionSidebarPane-setExpression">
 												setExpression
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>ExtensionSidebarPane.setExpression</code>(<code>string <code class="variable">expression</code></code>, <code class="optional">string <code class="variable">rootTitle</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -690,14 +690,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">expression</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	An expression to be evaluated in context of the inspected page. JavaScript objects and DOM nodes are displayed in an expandable tree similar to the console/watch.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -715,7 +715,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	An optional title for the root of the expression tree.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -733,7 +733,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	A callback invoked after the sidebar pane is updated with the expression evaluation results.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -750,7 +750,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ExtensionSidebarPane-setObject">
 												setObject
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>ExtensionSidebarPane.setObject</code>(<code>string <code class="variable">jsonObject</code></code>, <code class="optional">string <code class="variable">rootTitle</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -769,14 +769,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">jsonObject</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	An object to be displayed in context of the inspected page. Evaluated in the context of the caller (API client).
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -794,7 +794,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	An optional title for the root of the expression tree.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -812,7 +812,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	A callback invoked after the sidebar is updated with the object.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -829,7 +829,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-ExtensionSidebarPane-setPage">
 												setPage
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>ExtensionSidebarPane.setPage</code>(<code>string <code class="variable">path</code></code>)
@@ -848,14 +848,14 @@ alt="Extension icon panel on DevTools toolbar" />
 																	<code class="variable">path</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	Relative path of an extension page to display within the sidebar.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -871,7 +871,7 @@ alt="Extension icon panel on DevTools toolbar" />
 								<dl>
 										<div>
 											<h4 id="event-ExtensionSidebarPane-onShown">onShown</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when the sidebar pane becomes visible as a result of user switching to the panel that hosts it.
@@ -879,7 +879,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ExtensionSidebarPane-onShown-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onShown.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -895,13 +895,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -927,7 +927,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																				</dt>
 																				<dd>
 																					The <code>window</code> object of the sidebar page, if one was set with the <code>setPage()</code> method.
-																				
+
 																				</dd>
 																			</dl>
 																		</div>
@@ -938,7 +938,7 @@ alt="Extension icon panel on DevTools toolbar" />
 										</div>
 										<div>
 											<h4 id="event-ExtensionSidebarPane-onHidden">onHidden</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when the sidebar pane becomes hidden as a result of the user switching away from the panel that hosts the sidebar pane.
@@ -946,7 +946,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-ExtensionSidebarPane-onHidden-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onHidden.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -962,13 +962,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -991,7 +991,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h3 id="type-Button">Button</h3>
 					<div>
 						<dd>A button created by the extension.</dd>
-						
+
 							<h4 id="Button-methods" class="capitalize">
 								methods of <a href="#type-Button">Button</a>
 							</h4>
@@ -1001,7 +1001,7 @@ alt="Extension icon panel on DevTools toolbar" />
 											<h4 id="method-Button-update">
 												update
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>Button.update</code>(<code class="optional">string <code class="variable">iconPath</code></code>, <code class="optional">string <code class="variable">tooltipText</code></code>, <code class="optional">boolean <code class="variable">disabled</code></code>)
@@ -1027,7 +1027,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	Path to the new icon of the button.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -1045,7 +1045,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	Text shown as a tooltip when user hovers the mouse over the button.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -1063,7 +1063,7 @@ alt="Extension icon panel on DevTools toolbar" />
 																</dt>
 																<dd>
 																	Whether the button is disabled.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -1079,7 +1079,7 @@ alt="Extension icon panel on DevTools toolbar" />
 								<dl>
 										<div>
 											<h4 id="event-Button-onClicked">onClicked</h4>
-											
+
 											<div class="description">
 										<p>
 													Fired when the button is clicked.
@@ -1087,7 +1087,7 @@ alt="Extension icon panel on DevTools toolbar" />
 														<h4 id="event-Button-onClicked-addListener">
 															addListener
 														</h4>
-														
+
 														<div class="summary">
 														<div class="line">
 														<code>onClicked.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -1103,13 +1103,13 @@ alt="Extension icon panel on DevTools toolbar" />
 																				<code class="variable">callback</code>
 																				<code class="property">
 																					(
-																						
+
 																						function
 																					)
 																				</code>
 																			</dt>
 																			<dd>
-																			
+
 																			</dd>
 																		</dl>
 																	</div>
@@ -1145,7 +1145,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h4 id="method-create">
 						create
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.panels.create</code>(<code>string <code class="variable">title</code></code>, <code>string <code class="variable">iconPath</code></code>, <code>string <code class="variable">pagePath</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1164,14 +1164,14 @@ alt="Extension icon panel on DevTools toolbar" />
 											<code class="variable">title</code>
 											<code class="property">
 												(
-													
+
 													string
 												)
 											</code>
 										</dt>
 										<dd>
 											Title that is displayed next to the extension icon in the Developer Tools toolbar.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1182,14 +1182,14 @@ alt="Extension icon panel on DevTools toolbar" />
 											<code class="variable">iconPath</code>
 											<code class="property">
 												(
-													
+
 													string
 												)
 											</code>
 										</dt>
 										<dd>
 											Path of the panel's icon relative to the extension directory.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1200,14 +1200,14 @@ alt="Extension icon panel on DevTools toolbar" />
 											<code class="variable">pagePath</code>
 											<code class="property">
 												(
-													
+
 													string
 												)
 											</code>
 										</dt>
 										<dd>
 											Path of the panel's HTML page relative to the extension directory.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1225,7 +1225,7 @@ alt="Extension icon panel on DevTools toolbar" />
 										</dt>
 										<dd>
 											A function that is called when the panel is created.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1244,14 +1244,14 @@ alt="Extension icon panel on DevTools toolbar" />
 												<code class="variable">panel</code>
 												<code class="property">
 													(
-														
+
 														<a href="devtools.panels.html#type-ExtensionPanel">ExtensionPanel</a>
 													)
 												</code>
 											</dt>
 											<dd>
 												An ExtensionPanel object representing the created panel.
-											
+
 											</dd>
 										</dl>
 									</div>
@@ -1262,7 +1262,7 @@ alt="Extension icon panel on DevTools toolbar" />
 					<h4 id="method-setOpenResourceHandler">
 						setOpenResourceHandler
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.panels.setOpenResourceHandler</code>(<code class="optional">function <code class="variable">callback</code></code>)
@@ -1288,7 +1288,7 @@ alt="Extension icon panel on DevTools toolbar" />
 										</dt>
 										<dd>
 											A function that is called when the user clicks on a valid resource link in Developer Tools window. Note that if the user clicks an invalid URL or an XHR, this function is not called.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1307,14 +1307,14 @@ alt="Extension icon panel on DevTools toolbar" />
 												<code class="variable">resource</code>
 												<code class="property">
 													(
-														
+
 														<a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a>
 													)
 												</code>
 											</dt>
 											<dd>
 												A <a href="devtools.inspectedWindow.html#type-Resource">devtools.inspectedWindow.Resource</a> object for the resource that was clicked.
-											
+
 											</dd>
 										</dl>
 									</div>

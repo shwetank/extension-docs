@@ -38,7 +38,7 @@ h3 {
 h4 {
 	font-size: 1.1em;
 	font-weight: bold;
-	margin-top: -47px !important;	
+	margin-top: -47px !important;
 }
 h5 {
 	font-size: 1em;
@@ -54,7 +54,7 @@ pre.prettyprint {
 }
 dt {
 	margin-left: 1em;
-	font-style: italic; 
+	font-style: italic;
 }
 dd {
 	margin: 0.5em 0 0.5em 1em;
@@ -90,7 +90,7 @@ td {
 
 /* Hidden subtitle anchor fix; issue caused by navbar-fixed-top */
 :not(li)>h2, h3, h4 {
-	padding-top: 52px; 
+	padding-top: 52px;
 }
 dd+h4 {
 	padding-top: 50px;
@@ -127,7 +127,7 @@ html, body {
 }
 footer {
 	background-color: #f5f5f5;
-	box-sizing: border-box; 
+	box-sizing: border-box;
 	padding: 10px;
 	border-top: 1px solid #ccc;
 	margin-top: 2em;

@@ -17,7 +17,7 @@ If you have previously submitted an OEX extension to the extensions catalog, and
 
 <img src="static/images/conv1.jpg" alt="screenshot of submitted extensions with Convert button" class="img-polaroid">
 
-Your extension then will be converted on the fly, and you'll get a download prompt for a ZIP package, which contains your converted extension. 
+Your extension then will be converted on the fly, and you'll get a download prompt for a ZIP package, which contains your converted extension.
 
 <img src="static/images/conv2.jpg" alt="screenshot of message after conversion" class="img-polaroid">
 
@@ -45,7 +45,7 @@ When you click *Pack Extension*, you should see the dialog below. There's a NEX 
 
 <img src="static/images/conv6.jpg" alt="screenshot of message shown after packing" class="img-polaroid">
 
-## Publishing the upgrade in the catalog 
+## Publishing the upgrade in the catalog
 
 Go to <a href="http://addons.opera.com/developer/">the extension's catalog developer interface</a> and click the *Upgrade* button of the OEX extension you want to upgrade.
 

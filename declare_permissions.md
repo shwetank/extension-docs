@@ -17,7 +17,7 @@ It is required to first declare which permissions you would like the browser to 
 ...</pre>
 
 ## Permissions declarations allowed in Opera extensions
-The following is an overview of the various permissions declarations possible in extensions in Opera, and what they mean. 
+The following is an overview of the various permissions declarations possible in extensions in Opera, and what they mean.
 
 * **match pattern**: Specifies a host permission. Required if the extension or app wants to interact with the code running on pages. Many capabilities, such as cross-origin XMLHttpRequests, programmatically injected content scripts, etc., require host permissions. For details on the syntax, see [Match Patterns](tut_match_patterns.html).
 * **activeTab**: The activeTab permission gives an extension temporary access to the currently active tab when the user invokes the extension - for example by clicking its browser action. Access to the tab lasts until the tab is navigated or closed. This serves as an alternative for many uses of `<all_urls>`, but displays no warning message during installation
@@ -41,7 +41,7 @@ The following is an overview of the various permissions declarations possible in
 * **storage**: Required if the extension or app uses the [chrome.storage](storage.html) API. Note: `storage.sync` is not supported.
 * **tabs**: Required if the extension uses the [chrome.tabs](tabs.html) or [chrome.windows](windows.html) API.
 * **webNavigation**: Gives your extension access to the [chrome.webNavigation](webNavigation.html) API.
-* **webRequest**: Required if the extension uses the [chrome.webRequest](webRequest.html) API. 
+* **webRequest**: Required if the extension uses the [chrome.webRequest](webRequest.html) API.
 * **speeddial**:  Required if the extension uses the [opr.speeddial](speeddial.html) API.
 
 ## Optional permissions

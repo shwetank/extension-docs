@@ -7,9 +7,9 @@ originalsource: http://developer.chrome.com/extensions/devtools_inspectedWindow.
 ---
 
 <div id="gc-pagecontent">
-	
-	
-	
+
+
+
 	<div id="toc">
 		<ol>
 			<li>
@@ -74,12 +74,12 @@ originalsource: http://developer.chrome.com/extensions/devtools_inspectedWindow.
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
+
+
 					Use the <code>chrome.devtools.inspectedWindow</code> API to interact with the inspected window: obtain the tab ID for the inspected page, evaluate the code in the context of the inspected window, reload the page, or obtain the list of resources within the page.
-					
-					
-					
+
+
+
 					<br>
 			</td>
 		</tr>
@@ -163,25 +163,25 @@ JavaScript state of the inspected page is not required.
 </p>
 
 <p>Note that a page can include multiple different JavaScript execution contexts. Each frame has
-its own context, plus an additional context for each extension that has content scripts running 
+its own context, plus an additional context for each extension that has content scripts running
 in that frame.</p>
 <p>
-By default, the <code>eval</code> method executes in the context of the main frame of the 
+By default, the <code>eval</code> method executes in the context of the main frame of the
 inspected page. </p>
 
-<p>The <code>eval</code> method takes an optional second argument that you can use to specify 
-the context in which the code is evaluated. This <em>options</em> object can contain one or more of the 
+<p>The <code>eval</code> method takes an optional second argument that you can use to specify
+the context in which the code is evaluated. This <em>options</em> object can contain one or more of the
 following keys:</p>
 
 <dl>
 <dt><code>frameURL</code></dt>
 <dd>Use to specify a frame other than the inspected page's main frame.</dd>
 <dt><code>contextSecurityOrigin</code></dt>
-<dd>Use to select a context within the specified frame 
+<dd>Use to select a context within the specified frame
 according to its <a href="http://www.ietf.org/rfc/rfc6454.txt">web origin</a>.</dd>
 <dt><code>useContentScriptContext</code></dt>
 <dd>If true, execute the script in the same context
-as the extensions's content scripts. (Equivalent to specifying the extensions's own web orgin 
+as the extensions's content scripts. (Equivalent to specifying the extensions's own web orgin
 as the context security origin.)
 This can be used to exchange data with the content script.</dd>
 </dl>
@@ -209,7 +209,7 @@ function(result, isException) {
 					<h3 id="type-Resource">Resource</h3>
 					<div>
 						<dd>A resource within the inspected page, such as a document, a script, or an image.</dd>
-						
+
 							<h4 id="Resource-properties" class="capitalize">
 								properties of <a href="#type-Resource">Resource</a>
 							</h4>
@@ -222,14 +222,14 @@ function(result, isException) {
 													<code class="variable">url</code>
 													<code class="property">
 														(
-															
+
 															string
 														)
 													</code>
 												</dt>
 												<dd>
 													The URL of the resource.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -244,7 +244,7 @@ function(result, isException) {
 											<h4 id="method-Resource-getContent">
 												getContent
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>Resource.getContent</code>(<code>function <code class="variable">callback</code></code>)
@@ -263,14 +263,14 @@ function(result, isException) {
 																	<code class="variable">callback</code>
 																	<code class="property">
 																		(
-																			
+
 																			function
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	A function that receives resource content when the request completes.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -289,14 +289,14 @@ function(result, isException) {
 																		<code class="variable">content</code>
 																		<code class="property">
 																			(
-																				
+
 																				string
 																			)
 																		</code>
 																	</dt>
 																	<dd>
 																		Content of the resource (potentially encoded).
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -307,14 +307,14 @@ function(result, isException) {
 																		<code class="variable">encoding</code>
 																		<code class="property">
 																			(
-																				
+
 																				string
 																			)
 																		</code>
 																	</dt>
 																	<dd>
 																		Empty if content is not encoded, encoding name otherwise. Currently, only base64 is supported.
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -325,7 +325,7 @@ function(result, isException) {
 											<h4 id="method-Resource-setContent">
 												setContent
 											</h4>
-											
+
 											<div class="summary">
 											<div class="line">
 											<code>Resource.setContent</code>(<code>string <code class="variable">content</code></code>, <code>boolean <code class="variable">commit</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -344,14 +344,14 @@ function(result, isException) {
 																	<code class="variable">content</code>
 																	<code class="property">
 																		(
-																			
+
 																			string
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	New content of the resource. Only resources with the text type are currently supported.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -362,14 +362,14 @@ function(result, isException) {
 																	<code class="variable">commit</code>
 																	<code class="property">
 																		(
-																			
+
 																			boolean
 																		)
 																	</code>
 																</dt>
 																<dd>
 																	True if the user has finished editing the resource, and the new content of the resource should be persisted; false if this is a minor change sent in progress of the user editing the resource.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -387,7 +387,7 @@ function(result, isException) {
 																</dt>
 																<dd>
 																	A function called upon request completion.
-																
+
 																</dd>
 															</dl>
 														</div>
@@ -413,7 +413,7 @@ function(result, isException) {
 																	</dt>
 																	<dd>
 																		Set to undefined if the resource content was set successfully; describes error otherwise.
-																	
+
 																	</dd>
 																</dl>
 															</div>
@@ -441,7 +441,7 @@ function(result, isException) {
 					<h4 id="method-eval">
 						eval
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.inspectedWindow.eval</code>(<code>string <code class="variable">expression</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -460,14 +460,14 @@ function(result, isException) {
 											<code class="variable">expression</code>
 											<code class="property">
 												(
-													
+
 													string
 												)
 											</code>
 										</dt>
 										<dd>
 											An expression to evaluate.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -485,7 +485,7 @@ function(result, isException) {
 										</dt>
 										<dd>
 											A function called when evaluation completes.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -504,14 +504,14 @@ function(result, isException) {
 												<code class="variable">result</code>
 												<code class="property">
 													(
-														
+
 														object
 													)
 												</code>
 											</dt>
 											<dd>
 												The result of evaluation.
-											
+
 											</dd>
 										</dl>
 									</div>
@@ -522,14 +522,14 @@ function(result, isException) {
 												<code class="variable">isException</code>
 												<code class="property">
 													(
-														
+
 														boolean
 													)
 												</code>
 											</dt>
 											<dd>
 												Set if an exception was caught while evaluating the expression.
-											
+
 											</dd>
 										</dl>
 									</div>
@@ -540,7 +540,7 @@ function(result, isException) {
 					<h4 id="method-reload">
 						reload
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.inspectedWindow.reload</code>(<code class="optional">object <code class="variable">reloadOptions</code></code>)
@@ -565,7 +565,7 @@ function(result, isException) {
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 									<dd>
@@ -585,7 +585,7 @@ function(result, isException) {
 													</dt>
 													<dd>
 														When true, the loader will ignore the cache for all inspected page resources loaded before the <code>load</code> event is fired. The effect is similar to pressing Ctrl+Shift+R in the inspected window or within the Developer Tools window.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -603,7 +603,7 @@ function(result, isException) {
 													</dt>
 													<dd>
 														If specified, the string will override the value of the <code>User-Agent</code> HTTP header that's sent while loading the resources of the inspected page. The string will also override the value of the <code>navigator.userAgent</code> property that's returned to any scripts that are running within the inspected page.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -621,7 +621,7 @@ function(result, isException) {
 													</dt>
 													<dd>
 														If specified, the script will be injected into every frame of the inspected page immediately upon load, before any of the frame's scripts. The script will not be injected after subsequent reloads&mdash;for example, if the user presses Ctrl+R.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -635,7 +635,7 @@ function(result, isException) {
 					<h4 id="method-getResources">
 						getResources
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.devtools.inspectedWindow.getResources</code>(<code>function <code class="variable">callback</code></code>)
@@ -654,14 +654,14 @@ function(result, isException) {
 											<code class="variable">callback</code>
 											<code class="property">
 												(
-													
+
 													function
 												)
 											</code>
 										</dt>
 										<dd>
 											A function that receives the list of resources when the request completes.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -680,14 +680,14 @@ function(result, isException) {
 												<code class="variable">resources</code>
 												<code class="property">
 													(
-														
+
 														array of <a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 													)
 												</code>
 											</dt>
 											<dd>
 												The resources within the page.
-											
+
 											</dd>
 										</dl>
 									</div>
@@ -697,7 +697,7 @@ function(result, isException) {
 			<h2 id="events">Events</h2>
 				<div>
 					<h4 id="event-onResourceAdded">onResourceAdded</h4>
-					
+
 					<div class="description">
 				<p>
 							Fired when a new resource is added to the inspected page.
@@ -705,7 +705,7 @@ function(result, isException) {
 								<h4 id="event-onResourceAdded-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.devtools.inspectedWindow.onResourceAdded.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -721,13 +721,13 @@ function(result, isException) {
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -746,13 +746,13 @@ function(result, isException) {
 															<code class="variable">resource</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
 															</code>
 														</dt>
 														<dd>
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -763,7 +763,7 @@ function(result, isException) {
 				</div>
 				<div>
 					<h4 id="event-onResourceContentCommitted">onResourceContentCommitted</h4>
-					
+
 					<div class="description">
 				<p>
 							Fired when a new revision of the resource is committed (e.g. user saves an edited version of the resource in the Developer Tools).
@@ -771,7 +771,7 @@ function(result, isException) {
 								<h4 id="event-onResourceContentCommitted-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -787,13 +787,13 @@ function(result, isException) {
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -812,13 +812,13 @@ function(result, isException) {
 															<code class="variable">resource</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="devtools.inspectedWindow.html#type-Resource">Resource</a>
 																)
 															</code>
 														</dt>
 														<dd>
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -829,14 +829,14 @@ function(result, isException) {
 															<code class="variable">content</code>
 															<code class="property">
 																(
-																	
+
 																	string
 																)
 															</code>
 														</dt>
 														<dd>
 															New content of the resource.
-														
+
 														</dd>
 													</dl>
 												</div>

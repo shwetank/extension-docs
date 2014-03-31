@@ -6,12 +6,12 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/trunk/extensions/webRequest.html
 ---
       <div id="gc-pagecontent">
-        
-        
-        
+
+
+
         <div id="toc">
           <h2>Contents</h2>
- 
+
               <ol>
                   <li><a href="webRequest.html#types">Types</a><ol>  <li>    <a href="webRequest.html#type-RequestFilter">RequestFilter</a>  </li>  <li>    <a href="webRequest.html#type-HttpHeaders">HttpHeaders</a>  </li>  <li>    <a href="webRequest.html#type-BlockingResponse">BlockingResponse</a>  </li>  <li>    <a href="webRequest.html#type-UploadData">UploadData</a>  </li></ol></li>
                   <li><a href="webRequest.html#properties">Properties</a><ol>  <li>    <a href="webRequest.html#property-MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES">MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES</a>  </li></ol></li>
@@ -43,7 +43,7 @@ or modify requests in-flight and to observe and analyze traffic.
                         <code class="variable">urls</code>
                         <code class="property">
                           (
-                            
+
                             array of string
                           )
                         </code>
@@ -193,7 +193,7 @@ or modify requests in-flight and to observe and analyze traffic.
                               <code class="variable">username</code>
                               <code class="property">
                                 (
-                                  
+
                                   string
                                 )
                               </code>
@@ -205,7 +205,7 @@ or modify requests in-flight and to observe and analyze traffic.
                               <code class="variable">password</code>
                               <code class="property">
                                 (
-                                  
+
                                   string
                                 )
                               </code>
@@ -326,7 +326,7 @@ or modify requests in-flight and to observe and analyze traffic.
                 </code></div>
                 <div class="description">
               <p>
-                    Fired before sending an HTTP request, once the request headers are available. This may occur after a TCP connection is made to the server, but before any HTTP data is sent. 
+                    Fired before sending an HTTP request, once the request headers are available. This may occur after a TCP connection is made to the server, but before any HTTP data is sent.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
                       <div>  <a name="property-onBeforeSendHeaders-details"></a>  <dt><code>    <span class="variable">details</span>    <span class="property">      (                object      )    </span>  </code></dt>  <dd>    <dl>      <div>        <a name="property-details-requestId"></a>        <dt><code>          <span class="variable">requestId</span>          <span class="property">            (                            string            )          </span>        </code></dt>        <dd>          The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.        </dd>      </div>      <div>        <a name="property-details-url"></a>        <dt><code>          <span class="variable">url</span>          <span class="property">            (                            string            )          </span>        </code></dt>      </div>      <div>        <a name="property-details-method"></a>        <dt><code>          <span class="variable">method</span>          <span class="property">            (                            string            )          </span>        </code></dt>        <dd>          Standard HTTP method.        </dd>      </div>      <div>        <a name="property-details-frameId"></a>        <dt><code>          <span class="variable">frameId</span>          <span class="property">            (                            integer            )          </span>        </code></dt>        <dd>          The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.        </dd>      </div>      <div>        <a name="property-details-parentFrameId"></a>        <dt><code>          <span class="variable">parentFrameId</span>          <span class="property">            (                            integer            )          </span>        </code></dt>        <dd>          ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.        </dd>      </div>      <div>        <a name="property-details-tabId"></a>        <dt><code>          <span class="variable">tabId</span>          <span class="property">            (                            integer            )          </span>        </code></dt>        <dd>          The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.        </dd>      </div>      <div>        <a name="property-details-type"></a>        <dt><code>          <span class="variable">type</span>          <span class="property">            (                            enumerated string ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]            )          </span>        </code></dt>        <dd>          How the requested resource will be used.        </dd>      </div>      <div>        <a name="property-details-timeStamp"></a>        <dt><code>          <span class="variable">timeStamp</span>          <span class="property">            (                            double            )          </span>        </code></dt>        <dd>          The time when this signal is triggered, in milliseconds since the epoch.        </dd>      </div>      <div>        <a name="property-details-requestHeaders"></a>        <dt><code>          <span class="variable">requestHeaders</span>          <span class="property">            (              <span class="optional">optional</span>              <a href="webRequest.html#type-HttpHeaders">HttpHeaders</a>            )          </span>        </code></dt>        <dd>          The HTTP request headers that are going to be sent out with this request.        </dd>      </div>    </dl>  </dd></div>
@@ -386,7 +386,7 @@ or modify requests in-flight and to observe and analyze traffic.
                             <code class="variable">response</code>
                             <span class="property">
                               (
-                                
+
                                 <a href="webRequest.html#type-BlockingResponse">BlockingResponse</a>
                               )
                             </span>
@@ -452,5 +452,5 @@ or modify requests in-flight and to observe and analyze traffic.
                 </div>
               </div>
         </div>
-         
+
       </div>

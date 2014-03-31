@@ -4,7 +4,7 @@ title: Creating effective icons
 author: demonstro
 copyright: opera-ccby
 ---
- 
+
 <h2>Contents</h2>
   <ul>
     <li><a href="#intro">Introduction</a></li>
@@ -33,9 +33,9 @@ copyright: opera-ccby
         </ul>
 
 	<h2 id="intro">Introduction</h2>
-	
+
 	<p>This article provides a tutorial and some hints and tips on creating effective icons for your extensions. I've put the hints and tips at the beginning so you can easily refer back to them; the tutorial then follows.</p>
-	
+
 	<div class="note"><h3>Downloading and using the icon template</h3>
 	  <p>You should download our icon template if you want to follow along with the tutorial, or if you just want to speed up your own icon creation work.</p>
 	  <ul>
@@ -43,10 +43,10 @@ copyright: opera-ccby
 	     <li><p><a href="static/templates/user_icon_template.svg">Inkscape SVG icon template</a></p></li>
              <li><p>There is also an extension icons screencast available covering how to use an older version of the Inkscape template. Watch this for more details: <a href="http://dev.opera.com/articles/view/creating-effective-opera-extension-icons/svg_template_tutorial.webm">Extension icons screencast (WebM)</a></p></li>
 	  </ul>
-	</div>	
-  
+	</div>
+
   <h2 id="hints-tips">Quick hints and tips</h2>
-  
+
   <h3 id="branding">Branding and simplicity</h3>
 
   <p>Your icon should be simple and effective, and it should reflect the style and purpose of your extension. A simple shape or letter from an interesting font works well, but detailed images and intricate fonts might not. A game will benefit from having a playful, colorful icon, whereas a more serious application may be better served by a more conservative and functional icon. For identification purposes, consider making your icon consistent with the styling and colors of your extension. Figure 1 shows some good examples.</p>
@@ -70,7 +70,7 @@ copyright: opera-ccby
 
   <div class="note" style="margin: 25px;">
     <p>Do not use system icons or other application icons in your work - see Figure 4 for some examples.</p>
-    
+
     <p><img src="static/images/04_dontuse.png" alt="examples of system icons and software vendor icons that you should not use" class="img-polaroid"></p>
     <p class="comment">Figure 4: System icons or icons from other software vendors are not allowed.</p>
   </div>
@@ -106,15 +106,15 @@ copyright: opera-ccby
     <li>Icons must not be completely white, and must not lose their coherence on a white background or on the Opera toolbar chrome.<br><img src="static/images/10_do_dont_white.png" alt="Not completely white background" class="img-polaroid"></li>
     <li>Icons should have a background or fill the space allotted to them. They should not occupy much less than 85% of the field.<br><img src="static/images/11_do_dont_back.png" alt="Fill space or use background" class="img-polaroid"></li>
   </ol>
-  
+
   <h2 id="tutorial">Photoshop: Icon tutorial</h2>
-  
+
   <p class="note">Note: Even though this tutorial is written with Photoshop in mind, you can still get some useful tips if you decide to use a different graphics package.</p>
-  
+
   <p>First of all, open the <a href="static/templates/user_icon_template.psd">Photoshop (PSD) icon template</a> and save it with a different filename. You can work on your own icon inside this file. This tutorial is written with complete beginners in mind, but even Photoshop veterans may be able to pick up a thing or two.</p>
-  
+
   <h3 id="selecting-icon">Selecting an icon</h3>
-  
+
   <p>You don't need to be able to draw to create a good icon shape. The next best thing to drawing something unique and sexy is to cheat, and select an icon shape from somewhere like a freeware site on the Web or a icon font like the Web- or Wingdings fonts that are available on pretty much all computers, see Figure 6. For this tutorial, I am using the Wingdings letter "z": &#x2318;. (Unicode: <code>U+2318</code>, HTML: <code>&amp;#8984;</code>) </p>
 
 
@@ -144,106 +144,106 @@ copyright: opera-ccby
 
   <p><img src="static/images/17_shapezoomed.png" alt="The resulting shape with vector outlines" class="img-polaroid"></p>
   <p class="comment">Figure 10: An enlarged view of your text item turned vector shape.</p>
-  
+
   <p><img src="static/images/18_shapelayer.png" alt="The resulting shape layer" class="img-polaroid"></p>
   <p class="comment">Figure 11: Your shape layer will now look like this. You can no longer edit the content with the text tool, but you can alter the shape of it.</p>
-  
+
 
   <h3 id="sharpvectors">Pixel sharp vectors</h3>
-  
+
   <p>Now that you have an icon that you can work with, you need to place it and make it the correct size (see Figure 12). First, drag it over the 128 px background shape with the "Move Tool" (Shortcut: V), then select "Edit &gt; Free Transform" (or hit Ctrl/Cmd + T) to make it fit. Make sure you have zoomed your view (Ctrl/Cmd -+) enough to clearly see what's going on. While you can drag the corner or side boxes of the transform selection, I recommend you use the input fields up on the tool bar instead. This will ensure you hit whole pixel values thereby giving you an overall much higher level of control.</p>
 
   <p>Depending on what you have previously selected, your icon might have a color that is not good to work with. If so, change this by double-clicking the shape icon in the layer palette. </p>
-  
+
   <p><img src="static/images/19_place_reference.png" alt="Click on the image for the full resolution" class="img-polaroid"></p>
   <p class="comment">Figure 12: Placing the icon shape on the background shape with the 'Transform' tool.</p>
-  
+
   <p>Your icon is probably not placed on a whole pixel value on the x- or y-axis — Change this now by rounding the "X:" and "Y:" values in the toolbar up or down.</p>
-  
+
   <p>In the next fields, "W:" (width) and "H:" (height), you should also input whole pixel values. By default these fields are set to percentages, so you have to right click both of them in turn and select "pixels" from the dropdown. If you want to, you can click the little chain icon between the fields to maintain the aspect ratio of your icon. Do this. Round your values up to a whole, preferably even, number. In this case, we're going for 90px. The number in <em>(brackets)</em>, 108 px, underneath the icon size is a maximum recommended shape size for this icon (roughly 85% of the background size). In this case we go for something slightly smaller. 90px is a nice number. For tall or wide shapes, first scale the widest aspect to the desired size with aspect ratio locked, then release it and tweak the narrow aspect if needed. Usually pointy or curved sides can do without a perfect fit, while straight horizontal or vertical edges look better when exactly matching the pixel grid.</p>
-  
+
   <p><img src="static/images/20_place_values.png" alt="The transform input fields after new input" class="img-polaroid"></p>
   <p class="comment">Figure 13: The rounded values make sure your shape is placed nicely on the pixel grid.</p>
-  
+
   <p>Zoom in a bit more, then look at your icon shape. It should fit the pixel grid perfectly, as seen in Figure 14. That was lucky! Let's see what happens when we scale the icon down.</p>
-  
+
   <p><img src="static/images/21_noblur.png" alt="Perfect fit!" class="img-polaroid"></p>
   <p class="comment">Figure 14: The icon details are perfectly matching the pixel grid.</p>
-  
+
   <h3 id="smallicons">Small icons</h3>
-  
+
   <p>Let's start by duplicating the icon shape layer. One way to do this is by holding down the Alt key while dragging the icon with the "Move Tool" active. In CS6 you will have to disable the "effects" layer before trying this method, or you will duplicate the linked background and effect layers instead. Next, free transform the layer shape (Ctrl/Cmd + T) to px: 34x34 px (See Figure 17).</p>
-  
+
   <p><img src="static/images/22_copytransform.png" alt="Copy/paste/scale to fit the small default background shape" class="img-polaroid"></p>
   <p class="comment">Figure 15: Duplicate the icon shape layer and move and scale it to fit the 48 px background shape.</p>
-  
+
   <p>Zoom in on that new icon shape, and you'll see that the vector shape is fuzzy around the edges. To see the path, make sure you select the "Path Selection Tool (A)". Now, all vector paths cannot line up with the pixel grid - that would produce pixel art - a judgement on what to tweak has to be made. In this case, the horizontal and vertical paths almost align with the grid. It might work to nudge them a little. The resulting shape should end up slightly fatter than the original, but it might be worth it. The only way to find out is by trying.</p>
-    
+
   <p><img src="static/images/23_mismatch.png" alt="Vector paths do not fit pixel grid" class="img-polaroid"></p>
   <p class="comment">Figure 16: The vector paths do not fit the pixel grid.</p>
-   
+
   <h3 id="sharpvectors2">Pixel sharp vectors, Part 2</h3>
-  
+
   <p><img src="static/images/24_directselect.png" alt="Direct Selection Tool" class="img-polaroid"></p>
   <p class="comment">Figure 17: Direct Selection Tool.</p>
-  
+
   <p>With the "Direct Selection Tool" select the six vector points of the left edge of the left vertical bar (Figure 18). Nudge the points a little to the left with the arrow keys on your keyboard so they align with the pixel grid. Repeat for all the eight edges.</p>
 
-  <p>If for some reason you cannot select vector points, you might have another shape selected, in which case you must select your shape in the 'Layers Tab'. This happens from time to time if you click away from the current shape.</p>  
+  <p>If for some reason you cannot select vector points, you might have another shape selected, in which case you must select your shape in the 'Layers Tab'. This happens from time to time if you click away from the current shape.</p>
 
   <p><img src="static/images/25_nudge.png" alt="Left edge vector points selected" class="img-polaroid"></p>
   <p class="comment">Figure 18: Left edge vector points selected.</p>
-  
+
   <div class="note" style="margin: 25px;">
     <p>Before we proceed, here's a little extra tip. The built in vector pixel snapping functionality of Photoshop CS6 is sadly a bit lacking and it can behave differently from what you'd expect. If you wish to make use of grid snapping, a better method is using grid lines. First open the Preferences dialog (Ctrl/Cmd + K) and make sure "Snap Vector Tools and Transforms to Pixel Grid" is unchecked. Then go to "Guides, Grid &amp; Slices". Change the values for "Gridline Every" and "Subdivisions" to 10 pixels both. You can now snap to the pixel grid by viewing it ("View &gt; Show &gt; Pixel Grid") and making sure snapping is turned on ("View &gt; Snap to &gt; Grid").</p>
 
     <p><img src="static/images/26_nosnap.png" alt="Turn off vector snapping" class="img-polaroid"> <img src="static/images/27_10pxgrid.png" alt="Make new gridlines" class="img-polaroid"></p>
     <p class="comment">Figure 19: Turn off vector snapping and make new gridlines.</p>
   </div>
-  
+
   <p>With the "Direct Selection Tool" selected (the white arrow), select the vector points and move them to pixel corners. You should end up with something like this:</p>
 
   <p><img src="static/images/28_nudged.png" alt="Straight lines matched" class="img-polaroid"></p>
   <p class="comment">Figure 20: Straight lines matched.</p>
-    
+
   <p>Now, that's less fuzzy, but the loops are now a bit thinner and must be tweaked a little. The outer edge is fine, so we'll just alter the four corner cut-outs. To do this it would help to reduce the number of points to move around. Less points equals less potential trouble and this shape has way more points than it needs. You can make a perfect circle with just two points, although it's easier with four. The shapes we will deal with here are circle-like, all with one pointy corner. Let's keep the corner point and the ones north, east, south and west, ditching the remaining three.</p>
-  
+
   <p><img src="static/images/29_delete_points.png" alt="Delete Anchor Point Tool" class="img-polaroid"></p>
   <p class="comment">Figure 21: Delete Anchor Point Tool.</p>
-  
+
   <p><img src="static/images/30_deleted.png" alt="Simplified shape" class="img-polaroid"></p>
   <p class="comment">Figure 22: Simplified shape.</p>
 
   <p>Voila! That's easier to deal with. The eagle eyed will notice all the outer edge vector points are aligned to the grid in the above figure. This is strictly not needed, but gives relief to your inner OCD. The vector arms stretching towards the corners are similarily snapped into place.</p>
-  
+
   <p><img src="static/images/31_cutout.png" alt="Transforming cut-outs" class="img-polaroid"></p>
   <p class="comment">Figure 23: Transforming cut-outs.</p>
 
   <p>To make the loops fatter, the cut-outs must be reduced. To make them even, it's best to use the "Transform Tool" on all the vector points. Select them with the "Direct Selection Tool (A) and hit Ctrl/Cmd + T. Now select the little dot in the "Reference point location" grid on the toolbar that corresponds to the pointy part of the cut-out, in this example: the top left one. This makes the transform orienting around the top left corner of the bounding box. Next alter the width and height values to 6,25 px. Hit the Enter key when finished, and repeat for all the next corner cut-outs. Orient towards the corner vector point of the cut-outs as you go along.</p>
 
   <p>Without going into detail how to get there, here are suggestions for solving the last two tweaked shapes. As the number of pixels available is reduced, the detail of the shape naturally also gets reduced. Hence it becomes harder to make the smaller icons look nice the smaller they are. To further complicate things, one of the icons is to have an odd number of pixels along the X and Y axis. The center point has to land on a half-pixel in that case if the icon is to be centered.</p>
-  
+
   <p><img src="static/images/32_19px.png" alt="The 19x19 px icon" class="img-polaroid"></p>
   <p class="comment">Figure 24: The 19x19 px icon.</p>
-  
+
   <p><img src="static/images/33_16px.png" alt="The 16x16 px icon" class="img-polaroid"></p>
   <p class="comment">Figure 25: The 16x16 px icon.</p>
-  
+
   <h3 id="palette">The palette</h3>
-  
+
   <p>Now over to the background shapes. To make your icon interesting, it should have a nice colour, with a subtle gradient. A colour palette is provided in the template — click on the gradient you wish to try, and notice that the layer this gradient sits on has been selected in the layers panel. Right/Ctrl + click the blue area of that layer and select "Copy Layer Style". Paste this gradient by selecting the background shape layers you wish to apply it to, Right/Ctrl + clicking the blue area of those layers and selecting "Paste Layer Style". You can select multiple layers and have all of them affected at once if you wish.</p>
-  
+
   <p><img src="static/images/34_palettelayer.png" alt="Select layer style from palette" class="img-polaroid"></p>
   <p class="comment">Figure 26: Copying the layer style of a palette gradient color.</p>
-  
+
   <p>Your icon should now look something like this and be ready for export:</p>
-  
+
   <p><img src="static/images/35_pasteeffect.png" alt="Finished icons" class="img-polaroid"></p>
   <p class="comment">Figure 27. Final icons ready for export.</p>
-  
+
   <h3 id="exporting">Exporting the icons</h3>
-  
+
   <p>Hanging in there? This last part is very easy, as all the hard work is already done. First, simply hide the background layer by clicking the little eye icon next to it. Next click "File &gt; Save for Web &amp; Devices..." (Ctrl/Cmd + Alt + Shift + S) and select the icons you just made. Your icons might be outside the view, if so pan the viewport until you see your icons (hit the Space key and click-drag). It's a bit hard to see what's selected or not, but selected items get a brown border. Click "Save..." and give your icons a fitting name, they will all get a suffix with their individual size. Make sure to select a correct folder and select "Slices: Selected Slices" in the dropdown. Hit "Save", and you're done!</p>
-  
+
   <p><img src="static/images/36_export.png" alt="Exporting" class="img-polaroid"></p>
   <p class="comment">Figure 28: Exporting.</p>

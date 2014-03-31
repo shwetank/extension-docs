@@ -8,13 +8,13 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 
 
 <div id="gc-pagecontent">
-	
-	
-	
+
+
+
 	<div id="toc">
 
 			<div class="api-reference">
-				
+
 					<ol>
 						<li>
 							<a href="#properties">Properties</a>
@@ -75,33 +75,33 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 									</li></ol>	</li>
 							</ol>
 						</li>
-						
+
 					</ol>
-				
+
 			</div>
 	</div>
 	<table class="intro" id="intro">
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
+
+
 					Use the <code>chrome.privacy</code> API to control usage of the features in Opera that can affect a user's privacy. This API relies on the <a href='types.html#ChromeSetting'>ChromeSetting prototype of the type API</a> for getting and setting Opera's configuration.
-					
-					
-					
+
+
+
 					<br>
 			</td>
 		</tr>
 		<tr>
 			<td class="title">Permissions:</td>
 			<td>
-					
+
 					<code class="code">
 					"privacy"
-					
+
 					</code>
-					
+
 					<br>
 			</td>
 		</tr>
@@ -133,14 +133,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 										<code class="variable">networkPredictionEnabled</code>
 										<code class="property">
 											(
-												
+
 												<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 											)
 										</code>
 									</dt>
 									<dd>
 										If enabled, Chrome attempts to speed up your web browsing experience by pre-resolving DNS entries, prerendering sites (<code>&lt;link rel='prefetch' ...&gt;</code>), and preemptively opening TCP and SSL connections to servers.	This preference's value is a boolean, defaulting to <code>true</code>.
-									
+
 									</dd>
 								</dl>
 							</div>
@@ -166,14 +166,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">alternateErrorPagesEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera uses a web service to help resolve navigation errors. This preference's value is a boolean, defaulting to <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -184,14 +184,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">autofillEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera offers to automatically fill in forms. This preference's value is a boolean, defaulting to <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -202,14 +202,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">safeBrowsingEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera does its best to protect you from phishing and malware. This preference's value is a boolean, defaulting to <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -220,14 +220,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">searchSuggestEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera sends the text you type into the Omnibox to your default search engine, which provides predictions of websites and searches that are likely completions of what you've typed so far. This preference's value is a boolean, defaulting to <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -238,14 +238,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">spellingServiceEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera uses a web service to help correct spelling errors. This preference's value is a boolean, defaulting to <code>false</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -256,14 +256,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">translationServiceEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera offers to translate pages that aren't in a language you read. This preference's value is a boolean, defaulting to <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -289,14 +289,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">thirdPartyCookiesAllowed</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If disabled, Opera blocks third-party sites from setting cookies. The value of this preference is of type boolean, and the default value is <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -307,14 +307,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">hyperlinkAuditingEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera sends auditing pings when requested by a website (<code>&lt;a ping&gt;</code>). The value of this preference is of type boolean, and the default value is <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -325,14 +325,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">referrersEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														If enabled, Opera sends <code>referer</code> headers with your requests. Yes, the name of this preference doesn't match the misspelled header. No, we're not going to change it. The value of this preference is of type boolean, and the default value is <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -343,14 +343,14 @@ originalsource: http://developer.chrome.com/extensions/privacy.html
 														<code class="variable">protectedContentEnabled</code>
 														<code class="property">
 															(
-																
+
 																<a href="types.html#type-ChromeSetting">types.ChromeSetting</a>
 															)
 														</code>
 													</dt>
 													<dd>
 														<strong>Available on Windows only</strong>: If enabled, the browser provides a unique ID to plugins in order to run protected content. The value of this preference is of type boolean, and the default value is <code>true</code>.
-													
+
 													</dd>
 												</dl>
 											</div>

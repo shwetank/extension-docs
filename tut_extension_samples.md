@@ -7,34 +7,34 @@ copyright: opera-ccby
 
 ## Introduction
 
-This is a repository of all the example extensions to help you get started with making Opera extensions. These could be useful for just looking through the code and learning about extensions, or you could take any of these as a starting point and then edit them and build upon them for your own extensions. If you haven't done so already, we highly recommend that you read through the [architecture overview](tut_architecture_overview.html) before proceeding. 
+This is a repository of all the example extensions to help you get started with making Opera extensions. These could be useful for just looking through the code and learning about extensions, or you could take any of these as a starting point and then edit them and build upon them for your own extensions. If you haven't done so already, we highly recommend that you read through the [architecture overview](tut_architecture_overview.html) before proceeding.
 
 
 ## Browser and Page Actions
-**Sample extensions**: 
+**Sample extensions**:
 
 * [An extension which simply adds a button to the toolbar](samples/BrowserActions-button.nex)
 * [An extension which simply adds a popup to the toolbar](samples/BrowserActions-Popup.nex)
 * [An extension which adds a page action](samples/PageActions.nex)
 
-**Relevant reading**: 
+**Relevant reading**:
 * [Buttons, popups and badges(browser actions)](tut_browser_actions.html)
 * [chrome.browserAction](browserAction.html)
 
 
 ## Messaging
-**Sample extensions**: 
+**Sample extensions**:
 
 * [An extension which does simple, short lived communication (it counts the number of paragraphs in the page and updates the badge)](samples/MessagePassing.nex)
 
-**Relevant reading**:  
+**Relevant reading**:
 
 * [Passing messages in extensions](tut_message_passing.html)
 * [chrome.runtime](runtime.html)
 
 
 ## Windows and Tabs
-**Sample extensions**: 
+**Sample extensions**:
 
 * [An extension which simply creates a new tab](samples/WinTabs-CreateATab.nex)
 * [An extension which takes current URL, creates a new tab and runs the URL by the WAVE accessibility evaluation tool](samples/WinTabs-Wave.nex)
@@ -42,74 +42,74 @@ This is a repository of all the example extensions to help you get started with 
 * [An example of closing, reloading and duplicating tabs](samples/WinTabs-CloseReloadDuplicate.nex)
 * [Creates a new window with three predefined URLs loading in that window](samples/WinTabs-PrivateWindow.nex)
 
-**Relevant reading**: 
+**Relevant reading**:
 
 * [Working with tabs and windows](tut_tab_window.html)
 * [chrome.tabs](tabs.html), [chrome.windows](windows.html)
 
 
 ## Context Menu
-**Sample extension**: 
+**Sample extension**:
 
 * [A sample extension showing how to use the Context Menu API](samples/ContextMenu-SelectedText.nex)
 
-**Relevant reading**: 
+**Relevant reading**:
 
 * [Working with the context menu](tut_context_menus.html)
 * [chrome.contextMenus](contextMenus.html)
 
 
 ## Speed Dial
-**Sample extension**: 
+**Sample extension**:
 
 * [Sample speed dial extension](samples/SpeedDial-CenterContent.nex)
 
-**Relevant reading**: 
+**Relevant reading**:
 
 * [Speed Dial extensions](tut_sd_extensions.html)
 * [opr.speeddial](speeddial.html)
 
 
 ## History API
-**Sample extension**: 
+**Sample extension**:
 
 * [Accessing history of currently active tab](samples/HistoryAPI-1.nex)
 * [Deleting history of the currently active tab](samples/HistoryAPI-2.nex)
 
-**Relevant reading**: 
+**Relevant reading**:
 
 * [Working with the browser history](tut_hist.html)
 * [chrome.history](history.html)
 
 
 ## Internationalization (i18n)
-**Sample extension**: 
+**Sample extension**:
 
 * [Extension showing how i18n should work. The text in popup should be correctly translated in Spanish if the browser locale is changed to Spanish](samples/i18nExtension.nex)
 
-**Relevant reading**:  
+**Relevant reading**:
 
 * [Internationalization](tut_internationalization.html)
 * [chrome.i18n](i18n.html)
 
 
 ## Address Bar extensions
-**Sample extension**: 
+**Sample extension**:
 
 * [Type the keyword 'extquery' in the address bar followed by your query. The extension will search the query on the Opera extensions documentation site](samples/Omnibox.nex)
 * [Type the keyword 'extdocs' in the address bar followed by your query. The default suggestion is to search on the Opera Extensions documentation site . The next option is a search on StackOverflow with the tag `[opera-extension]`, followed by a Google search.](samples/Omnibox2.nex)
 
-**Relevant reading**:  
+**Relevant reading**:
 
 * [Creating address bar extensions](tut_omnibox.html)
 * [chrome.omnibox](omnibox.html)
 
 ## Off-Road Mode
-**Sample extension**: 
+**Sample extension**:
 
 * [Extension which toggles Off-Road Mode in the browser](samples/offroad.nex)
 
-**Relevant reading**:  
+**Relevant reading**:
 
 * [Working with Off-Road Mode](tut_offroad.html)
 * [chrome.types](types.html)

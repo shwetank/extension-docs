@@ -20,7 +20,7 @@ The first thing to do when working with the context menu is add the necessary pe
 
 It is also recommended to have a 16x16 icon next to the context menu item, which is also defined in the manifest.
 
-The manifest would look like so: 
+The manifest would look like so:
 
 <pre class="prettyprint">{
   "name": "Context Menu Extension",
@@ -36,7 +36,7 @@ The manifest would look like so:
 }</pre>
 
 ## Creating a context menu item
-We can create a context menu item by calling the `create()` function. As an argument, this function takes an object that details which kind of context menu item we want to create. 
+We can create a context menu item by calling the `create()` function. As an argument, this function takes an object that details which kind of context menu item we want to create.
 
 Lets for example create a context menu item that will only appear when a user right/ctrl-clicks some highlighted text; it will open a new tab, load [Google](http://www.google.com) in it, and perform a Google search for the selected text.
 
@@ -50,9 +50,9 @@ To set up the context menu, we would write something like this in the background
 
 The object we are passing in as the argument of `create()` has three parts to it:
 
-* First, `title` defines what text the context menu item will have when displayed. Note the presence of the *%s*: this will make sure the highlighted text is mentioned in the menu item. For example, if we have selected the text "Opera for Android", in the context menu item, the context menu text will show up as "Look up: Opera for Android". 
+* First, `title` defines what text the context menu item will have when displayed. Note the presence of the *%s*: this will make sure the highlighted text is mentioned in the menu item. For example, if we have selected the text "Opera for Android", in the context menu item, the context menu text will show up as "Look up: Opera for Android".
 
-* Next, the `contexts` line specifies what circumstances the menu item should appear in; we're limiting this context menu item to only appear when selected text is right/ctrl-clicked. You could other types of context like *'image'*, *'video'*, *'page'*, *'link'*, *'editable'* (for form fields) and more. If you want your menu to appear in all contexts, use *'all'*. 
+* Next, the `contexts` line specifies what circumstances the menu item should appear in; we're limiting this context menu item to only appear when selected text is right/ctrl-clicked. You could other types of context like *'image'*, *'video'*, *'page'*, *'link'*, *'editable'* (for form fields) and more. If you want your menu to appear in all contexts, use *'all'*.
 
 * Last, we are defining what happens when the menu item is clicked, in the `onclick` line: When someone clicks on the menu item, the `searchtext()` function will be fired.
 

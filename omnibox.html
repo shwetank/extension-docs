@@ -41,19 +41,19 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 			<td>
 
 					The omnibox API allows you to register a keyword with Opera's address bar.
-					
+
 					<br>
 			</td>
 		</tr>
 		<tr>
 			<td class="title">Manifest:</td>
 			<td>
-					
+
 					<code class="code">
 					"omnibox": {...}
-					
+
 					</code>
-					
+
 					<br>
 			</td>
 		</tr>
@@ -65,7 +65,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 					<h3 id="type-SuggestResult">SuggestResult</h3>
 					<div>
 						<dd>A suggest result.</dd>
-						
+
 							<h4 id="SuggestResult-properties" class="capitalize">
 								properties of <a href="#type-SuggestResult">SuggestResult</a>
 							</h4>
@@ -78,14 +78,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 													<code class="variable">content</code>
 													<code class="property">
 														(
-															
+
 															string
 														)
 													</code>
 												</dt>
 												<dd>
 													The text that is put into the URL bar, and that is sent to the extension when the user chooses this entry.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -96,14 +96,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 													<code class="variable">description</code>
 													<code class="property">
 														(
-															
+
 															string
 														)
 													</code>
 												</dt>
 												<dd>
 													The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -116,7 +116,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 					<h4 id="method-setDefaultSuggestion">
 						setDefaultSuggestion
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.omnibox.setDefaultSuggestion</code>(<code>object <code class="variable">suggestion</code></code>)
@@ -135,14 +135,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 											<code class="variable">suggestion</code>
 											<code class="property">
 												(
-													
+
 													object
 												)
 											</code>
 										</dt>
 										<dd>
 											A partial SuggestResult object, without the 'content' parameter.
-										
+
 										</dd>
 									</dl>
 									<dd>
@@ -155,14 +155,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 														<code class="variable">description</code>
 														<code class="property">
 															(
-																
+
 																string
 															)
 														</code>
 													</dt>
 													<dd>
 														The text that is displayed in the URL dropdown. Can contain XML-style markup for styling. The supported tags are 'url' (for a literal URL), 'match' (for highlighting text that matched what the user's query), and 'dim' (for dim helper text). The styles can be nested, eg. <dim><match>dimmed match</match></dim>.
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -175,7 +175,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 			<h2 id="events">Events</h2>
 				<div>
 					<h4 id="event-onInputStarted">onInputStarted</h4>
-					
+
 					<div class="description">
 				<p>
 							User has started a keyword input session by typing the extension's keyword. This is guaranteed to be sent exactly once per input session, and before any onInputChanged events.
@@ -183,7 +183,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 								<h4 id="event-onInputStarted-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.omnibox.onInputStarted.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -199,13 +199,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -222,7 +222,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 				</div>
 				<div>
 					<h4 id="event-onInputChanged">onInputChanged</h4>
-					
+
 					<div class="description">
 				<p>
 							User has changed what is typed into the omnibox.
@@ -230,7 +230,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 								<h4 id="event-onInputChanged-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.omnibox.onInputChanged.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -246,13 +246,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -271,13 +271,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 															<code class="variable">text</code>
 															<code class="property">
 																(
-																	
+
 																	string
 																)
 															</code>
 														</dt>
 														<dd>
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -288,14 +288,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 															<code class="variable">suggest</code>
 															<code class="property">
 																(
-																	
+
 																	function
 																)
 															</code>
 														</dt>
 														<dd>
 															A callback passed to the onInputChanged event used for sending suggestions back to the browser.
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -306,7 +306,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 				</div>
 				<div>
 					<h4 id="event-onInputEntered">onInputEntered</h4>
-					
+
 					<div class="description">
 				<p>
 							User has accepted what is typed into the omnibox.
@@ -314,7 +314,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 								<h4 id="event-onInputEntered-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.omnibox.onInputEntered.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -330,13 +330,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>
@@ -355,13 +355,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 															<code class="variable">text</code>
 															<code class="property">
 																(
-																	
+
 																	string
 																)
 															</code>
 														</dt>
 														<dd>
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -372,14 +372,14 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 															<code class="variable">disposition</code>
 															<code class="property">
 																(
-																	
+
 																	enum of <code>"currentTab"</code>, <code>"newForegroundTab"</code>, or <code>"newBackgroundTab"</code>
 																)
 															</code>
 														</dt>
 														<dd>
 															The window disposition for the omnibox query. This is the recommended context to display results. For example, if the omnibox command is to navigate to a certain URL, a disposition of 'newForegroundTab' means the navigation should take place in a new selected tab.
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -390,7 +390,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 				</div>
 				<div>
 					<h4 id="event-onInputCancelled">onInputCancelled</h4>
-					
+
 					<div class="description">
 				<p>
 							User has ended the keyword input session without accepting the input.
@@ -398,7 +398,7 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 								<h4 id="event-onInputCancelled-addListener">
 									addListener
 								</h4>
-								
+
 								<div class="summary uncapitalize">
 								<div class="line">
 								<code>chrome.omnibox.onInputCancelled.addListener</code>(<code>function <code class="variable">callback</code></code>)
@@ -414,13 +414,13 @@ originalsource: http://developer.chrome.com/extensions/omnibox.html
 														<code class="variable">callback</code>
 														<code class="property">
 															(
-																
+
 																function
 															)
 														</code>
 													</dt>
 													<dd>
-													
+
 													</dd>
 												</dl>
 											</div>

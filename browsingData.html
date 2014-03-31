@@ -6,7 +6,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 ---
 
 
-<div id="gc-pagecontent">	
+<div id="gc-pagecontent">
 	<div id="toc">
 		<ol>
 			<li>
@@ -45,24 +45,24 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 		<tr>
 			<td class="title">Description:</td>
 			<td>
-					
-					
+
+
 					Use the <code>chrome.browsingData</code> API to remove browsing data from a user's local profile.
-					
-					
-					
+
+
+
 					<br>
 			</td>
 		</tr>
 		<tr>
 			<td class="title">Permissions:</td>
 			<td>
-					
+
 					<code class="code">
 					"browsingData"
-					
+
 					</code>
-					
+
 					<br>
 			</td>
 		</tr>
@@ -78,7 +78,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h3 id="type-RemovalOptions">RemovalOptions</h3>
 					<div>
 						<dd>Options that determine exactly what data will be removed.</dd>
-						
+
 							<h4 id="RemovalOptions-properties" class="capitalize">
 								properties of <a href="#type-RemovalOptions">RemovalOptions</a>
 							</h4>
@@ -98,7 +98,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Remove data accumulated on or after this date, represented in milliseconds since the epoch (accessible via the <code>getTime</code> method of the JavaScript <code>Date</code> object). If absent, defaults to 0 (which would remove all browsing data).
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -116,7 +116,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													An object whose properties specify which origin types ought to be cleared. If this object isn't specified, it defaults to clearing only "unprotected" origins. Please ensure that you <em>really</em> want to remove application data before adding 'protectedWeb' or 'extensions'.
-												
+
 												</dd>
 											</dl>
 											<dd>
@@ -136,7 +136,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															</dt>
 															<dd>
 																Normal websites.
-															
+
 															</dd>
 														</dl>
 													</div>
@@ -154,7 +154,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															</dt>
 															<dd>
 																Websites that have been installed as hosted applications (be careful!).
-															
+
 															</dd>
 														</dl>
 													</div>
@@ -172,7 +172,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															</dt>
 															<dd>
 																Extensions and packaged applications a user has installed (be _really_ careful!).
-															
+
 															</dd>
 														</dl>
 													</div>
@@ -187,7 +187,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h3 id="type-DataTypeSet">DataTypeSet</h3>
 					<div>
 						<dd>A set of data types. Missing data types are interpreted as <code>false</code>.</dd>
-						
+
 							<h4 id="DataTypeSet-properties" class="capitalize">
 								properties of <a href="#type-DataTypeSet">DataTypeSet</a>
 							</h4>
@@ -207,7 +207,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Websites' appcaches.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -225,7 +225,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													The browser's cache. Note: when removing data, this clears the <em>entire</em> cache: it is not limited to the range you specify.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -243,7 +243,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													The browser's cookies.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -261,7 +261,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													The browser's download list.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -279,7 +279,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Websites' file systems.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -297,7 +297,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													The browser's stored form data.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -315,7 +315,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													The browser's history.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -333,7 +333,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Websites' IndexedDB data.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -351,7 +351,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Websites' local storage data.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -369,7 +369,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Server-bound certificates.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -387,7 +387,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Plugins' data.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -405,7 +405,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Stored passwords.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -423,7 +423,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												</dt>
 												<dd>
 													Websites' WebSQL data.
-												
+
 												</dd>
 											</dl>
 										</div>
@@ -436,7 +436,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-settings">
 						settings
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.settings</code>(<code>function <code class="variable">callback</code></code>)
@@ -455,13 +455,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">callback</code>
 											<code class="property">
 												(
-													
+
 													function
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -480,13 +480,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 												<code class="variable">result</code>
 												<code class="property">
 													(
-														
+
 														object
 													)
 												</code>
 											</dt>
 											<dd>
-											
+
 											</dd>
 										</dl>
 										<dd>
@@ -499,13 +499,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															<code class="variable">options</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 																)
 															</code>
 														</dt>
 														<dd>
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -516,14 +516,14 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															<code class="variable">dataToRemove</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 																)
 															</code>
 														</dt>
 														<dd>
 															All of the types will be present in the result, with values of <code>true</code> if they are both selected to be removed and permitted to be removed, otherwise <code>false</code>.
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -534,14 +534,14 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 															<code class="variable">dataRemovalPermitted</code>
 															<code class="property">
 																(
-																	
+
 																	<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 																)
 															</code>
 														</dt>
 														<dd>
 															All of the types will be present in the result, with values of <code>true</code> if they are permitted to be removed (e.g., by enterprise policy) and <code>false</code> if not.
-														
+
 														</dd>
 													</dl>
 												</div>
@@ -555,7 +555,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-remove">
 						remove
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.remove</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code><a href="browsingData.html#type-DataTypeSet">DataTypeSet</a> <code class="variable">dataToRemove</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -574,13 +574,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -591,14 +591,14 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">dataToRemove</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-DataTypeSet">DataTypeSet</a>
 												)
 											</code>
 										</dt>
 										<dd>
 											The set of data types to remove.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -616,7 +616,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when deletion has completed.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -633,7 +633,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeAppcache">
 						removeAppcache
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeAppcache</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -652,13 +652,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -676,7 +676,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when websites' appcache data has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -693,7 +693,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeCache">
 						removeCache
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeCache</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -712,13 +712,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -736,7 +736,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's cache has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -753,7 +753,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeCookies">
 						removeCookies
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeCookies</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -772,13 +772,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -796,7 +796,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's cookies and server-bound certificates have been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -813,7 +813,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeDownloads">
 						removeDownloads
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeDownloads</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -832,13 +832,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -856,7 +856,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's list of downloaded files has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -873,7 +873,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeFileSystems">
 						removeFileSystems
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeFileSystems</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -892,13 +892,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -916,7 +916,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when websites' file systems have been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -933,7 +933,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeFormData">
 						removeFormData
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeFormData</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -952,13 +952,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -976,7 +976,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's form data has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -993,7 +993,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeHistory">
 						removeHistory
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeHistory</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1012,13 +1012,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1036,7 +1036,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's history has cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1053,7 +1053,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeIndexedDB">
 						removeIndexedDB
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeIndexedDB</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1072,13 +1072,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1096,7 +1096,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when websites' IndexedDB data has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1113,7 +1113,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeLocalStorage">
 						removeLocalStorage
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeLocalStorage</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1132,13 +1132,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1156,7 +1156,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when websites' local storage has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1173,7 +1173,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removePluginData">
 						removePluginData
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removePluginData</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1192,13 +1192,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1216,7 +1216,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when plugins' data has been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1233,7 +1233,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removePasswords">
 						removePasswords
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removePasswords</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1252,13 +1252,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1276,7 +1276,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when the browser's passwords have been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1293,7 +1293,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 					<h4 id="method-removeWebSQL">
 						removeWebSQL
 					</h4>
-					
+
 					<div class="summary uncapitalize">
 					<div class="line">
 					<code>chrome.browsingData.removeWebSQL</code>(<code><a href="browsingData.html#type-RemovalOptions">RemovalOptions</a> <code class="variable">options</code></code>, <code class="optional">function <code class="variable">callback</code></code>)
@@ -1312,13 +1312,13 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 											<code class="variable">options</code>
 											<code class="property">
 												(
-													
+
 													<a href="browsingData.html#type-RemovalOptions">RemovalOptions</a>
 												)
 											</code>
 										</dt>
 										<dd>
-										
+
 										</dd>
 									</dl>
 								</div>
@@ -1336,7 +1336,7 @@ originalsource: http://developer.chrome.com/extensions/browsingData.html
 										</dt>
 										<dd>
 											Called when websites' WebSQL databases have been cleared.
-										
+
 										</dd>
 									</dl>
 								</div>

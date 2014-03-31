@@ -6,23 +6,23 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/trunk/extensions/management.html
 ---
       <div id="gc-pagecontent">
-        
-        
-        
+
+
+
         <div id="toc">
           <h2>Contents</h2>
- 
+
               <ol>
                   <li><a href="management.html#types">Types</a><ol>  <li>    <a href="management.html#type-IconInfo">IconInfo</a>  </li>  <li>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>  </li></ol></li>
-                  
+
                   <li><a href="management.html#methods">Methods</a><ol>  <li><a href="management.html#method-getAll">getAll</a></li>  <li><a href="management.html#method-get">get</a></li>  <li><a href="management.html#method-getPermissionWarningsById">getPermissionWarningsById</a></li>  <li><a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a></li>  <li><a href="management.html#method-setEnabled">setEnabled</a></li>  <li><a href="management.html#method-uninstall">uninstall</a></li>  <li><a href="management.html#method-uninstallSelf">uninstallSelf</a></li>  <li><a href="management.html#method-launchApp">launchApp</a></li></ol></li>
                   <li><a href="management.html#events">Events</a><ol>  <li><a href="management.html#event-onInstalled">onInstalled</a></li>  <li><a href="management.html#event-onUninstalled">onUninstalled</a></li>  <li><a href="management.html#event-onEnabled">onEnabled</a></li>  <li><a href="management.html#event-onDisabled">onDisabled</a></li></ol></li>
-                  
+
           </ol>
         </div>
-        
+
         <p id="classSummary">
- The 
+ The
 <code>chrome.management</code>
  module provides ways to manage the list of extensions that are installed and running.
 </p>
@@ -44,7 +44,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">size</code>
                         <code class="property">
                           (
-                            
+
                             integer
                           )
                         </code>
@@ -59,7 +59,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">url</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -86,7 +86,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">id</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -101,7 +101,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">name</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -116,7 +116,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">description</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -131,7 +131,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">version</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -146,7 +146,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">mayDisable</code>
                         <code class="property">
                           (
-                            
+
                             boolean
                           )
                         </code>
@@ -161,7 +161,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">enabled</code>
                         <code class="property">
                           (
-                            
+
                             boolean
                           )
                         </code>
@@ -191,7 +191,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">type</code>
                         <code class="property">
                           (
-                            
+
                             enumerated string ["extension"]
                           )
                         </code>
@@ -236,7 +236,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">offlineEnabled</code>
                         <code class="property">
                           (
-                            
+
                             boolean
                           )
                         </code>
@@ -251,7 +251,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">optionsUrl</code>
                         <code class="property">
                           (
-                            
+
                             string
                           )
                         </code>
@@ -281,7 +281,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">permissions</code>
                         <code class="property">
                           (
-                            
+
                             array of string
                           )
                         </code>
@@ -296,7 +296,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">hostPermissions</code>
                         <code class="property">
                           (
-                            
+
                             array of string
                           )
                         </code>
@@ -311,7 +311,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                         <code class="variable">installType</code>
                         <code class="property">
                           (
-                            
+
                             enumerated string ["admin", "development", "normal", "sideload", "other"]
                           )
                         </code>
@@ -361,7 +361,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                             <code class="variable">result</code>
                             <code class="property">
                               (
-                                
+
                                 array of <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
                               )
                             </code>
@@ -387,7 +387,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">id</code>
                           <code class="property">
                             (
-                              
+
                               string
                             )
                           </code>
@@ -422,7 +422,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                             <code class="variable">result</code>
                             <code class="property">
                               (
-                                
+
                                 <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>
                               )
                             </code>
@@ -448,7 +448,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">id</code>
                           <code class="property">
                             (
-                              
+
                               string
                             )
                           </code>
@@ -483,7 +483,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                             <code class="variable">permissionWarnings</code>
                             <code class="property">
                               (
-                                
+
                                 array of string
                               )
                             </code>
@@ -509,7 +509,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">manifestStr</code>
                           <code class="property">
                             (
-                              
+
                               string
                             )
                           </code>
@@ -544,7 +544,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                             <code class="variable">permissionWarnings</code>
                             <code class="property">
                               (
-                                
+
                                 array of string
                               )
                             </code>
@@ -570,7 +570,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">id</code>
                           <code class="property">
                             (
-                              
+
                               string
                             )
                           </code>
@@ -585,7 +585,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">enabled</code>
                           <code class="property">
                             (
-                              
+
                               boolean
                             )
                           </code>
@@ -632,7 +632,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                           <code class="variable">id</code>
                           <code class="property">
                             (
-                              
+
                               string
                             )
                           </code>
@@ -809,10 +809,12 @@ originalsource: http://developer.chrome.com/trunk/extensions/management.html
                     Fired when an extension has been disabled.
                   </p>      <h4>Listener Parameters</h4>
                     <dl>
-                      <div  <a name="property-onDisabled-info"></a>  <dt><code>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </code></dt></div>
+                      <div>
+                        <a name="property-onDisabled-info"></a>  <dt><code>    <span class="variable">info</span>    <span class="property">      (                <a href="management.html#type-ExtensionInfo">ExtensionInfo</a>      )    </span>  </code></dt>
+                      </div>
                     </dl>
                 </div>
               </div>
         </div>
-          
+
       </div>

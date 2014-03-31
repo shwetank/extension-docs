@@ -4,7 +4,7 @@ authors: # author details
   andreasbovens:
     display_name: Andreas Bovens
     twitter: andreasbovens
-    github: andreasbovens 
+    github: andreasbovens
   chrismills:
     display_name: Chris Mills
     twitter: chrisdavidmills
@@ -15,6 +15,12 @@ authors: # author details
     github: shwetank
   demonstro:
     display_name: Christian Magnus Sinding-Larsen
-    icon: 
+    icon:
     twitter:
-    github: 
+    github:
+exclude:
+- 'node_modules'
+- 'Gruntfile.js'
+- 'package.json'
+- 'README.md'
+- '*.psd'

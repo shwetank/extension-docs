@@ -7,7 +7,7 @@ originalsource: http://developer.chrome.com/extensions/history.html
 ---
 
 ## Introduction
-The History API allows an extension to access and edit the user's browsing history. This can come in handy in some situations, for example analyzing which are the most visited pages by the user, maintaining a list of closed tabs to re-open later, etc. 
+The History API allows an extension to access and edit the user's browsing history. This can come in handy in some situations, for example analyzing which are the most visited pages by the user, maintaining a list of closed tabs to re-open later, etc.
 
 The first thing to note is to declare it in the *permissions* field in the mainifest file, like so:
 
@@ -134,9 +134,9 @@ Each and every visit to any URL will be recorded in the history as a [`VisitItem
 
 ## Accessing the history behind the currently active tab
 
-Let's say you wanted to know how many times the URL in the currently active tab has been accessed. We can take a look at the methods in the History API and build something to find it out. 
+Let's say you wanted to know how many times the URL in the currently active tab has been accessed. We can take a look at the methods in the History API and build something to find it out.
 
-In our example, we'll create a *browser action*, which when clicked, will update its badge with the number of times it has been accessed by the user. Let's see the code for it, which is in the background script. 
+In our example, we'll create a *browser action*, which when clicked, will update its badge with the number of times it has been accessed by the user. Let's see the code for it, which is in the background script.
 
 <pre class="prettyprint">var count = 0;
 
@@ -147,23 +147,23 @@ chrome.browserAction.onClicked.addListener(function (tab){
 		chrome.browserAction.setBadgeText({text: ""+count});
 		console.log("The user has visited "+url+" "+count+" times.");
 	});
-	
+
 });</pre>
 
 In the above piece of code, we are getting the URL of the currently active tab. Then we pass the function [`getVisits()`](history.html#method-getVisits). This will return a callback function which will return an array of [`visitItem`](history.html#type-VisitItem) objects for that particular URL (A `visitItem` object is generated any time a URL is visited). We can count these objects to get a number of the times the user visited that URL, and then update the badge with that number.
 
 [Download the extension](samples/HistoryAPI-1.nex) for the example above and install it to see it work.
 
-## Removing URLs from the history 
+## Removing URLs from the history
 
 One of the most common use cases regarding the browser history, is to remove particular URLs from the history. We can delete a URL from the browser history by using the [`deleteUrl()`](history.html#method-deleteUrl) method. For example, the following example will remove the URL of the currently active tab from the browser history.
 
-<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function (tab){		
+<pre class="prettyprint">chrome.browserAction.onClicked.addListener(function (tab){
 	chrome.history.deleteUrl({"url":tab.url});
 });</pre>
 
 You can [download the extension](samples/HistoryAPI-2.nex) for this example and see it in action. You can go further and create a list of URLs and then remove them by looping over that list and calling the `deleteUrl()` method for each of those URLs.
 
-If you want to remove URLs within a specified time range, then you can use the [`deleteRange()`](history.html#method-deleteRange) method, and finally, if you want to remove all the URLs in history, you can simply call the [`deleteAll()`](history.html#method-deleteAll) method. 
+If you want to remove URLs within a specified time range, then you can use the [`deleteRange()`](history.html#method-deleteRange) method, and finally, if you want to remove all the URLs in history, you can simply call the [`deleteAll()`](history.html#method-deleteAll) method.
 
-You can take a further look at the [History API docs](history.html) for more information regarding the objects, methods and events associated with it. 
+You can take a further look at the [History API docs](history.html) for more information regarding the objects, methods and events associated with it.

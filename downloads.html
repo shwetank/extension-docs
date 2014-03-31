@@ -6,12 +6,12 @@ copyright: opera-google-ccby
 originalsource: http://developer.chrome.com/extensions/downloads.html
 ---
       <div id="gc-pagecontent">
-        
-        
-        
+
+
+
         <div id="toc">
           <h2>Contents</h2>
- 
+
               <ol>
                  <li >
                    <a href="#manifest"
@@ -171,7 +171,7 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
                  </li>
                </ol>
         </div>
-        
+
         <table class="intro" id="intro">
           <tr>
             <td class="title">Description:</td>
@@ -191,15 +191,15 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
             </td>
           </tr>
         </table>
-       
+
        <div class="api_reference">
            <h2 id="types">Types</h2>
              <div>
                <h3 id="type-FilenameConflictAction">FilenameConflictAction</h3>
                <div>
                  <dd>enum of
-                   <code>"uniquify"</code>, 
-                   <code>"overwrite"</code>, 
+                   <code>"uniquify"</code>,
+                   <code>"overwrite"</code>,
                    or <code>"prompt"</code>
                  </dd>
                  <dd><dl><dt>uniquify</dt>     <dd>To avoid duplication, the <code>filename</code> is changed to     include a counter before the filename extension.</dd>     <dt>overwrite</dt>     <dd>The existing file will be overwritten with the new file.</dd>     <dt>prompt</dt>     <dd>The user will be prompted with a file chooser dialog.</dd> </dl></dd>
@@ -209,26 +209,26 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
                <h3 id="type-InterruptReason">InterruptReason</h3>
                <div>
                  <dd>enum of
-                   <code>"FILE_FAILED"</code>, 
-                   <code>"FILE_ACCESS_DENIED"</code>, 
-                   <code>"FILE_NO_SPACE"</code>, 
-                   <code>"FILE_NAME_TOO_LONG"</code>, 
-                   <code>"FILE_TOO_LARGE"</code>, 
-                   <code>"FILE_VIRUS_INFECTED"</code>, 
-                   <code>"FILE_TRANSIENT_ERROR"</code>, 
-                   <code>"FILE_BLOCKED"</code>, 
-                   <code>"FILE_SECURITY_CHECK_FAILED"</code>, 
-                   <code>"FILE_TOO_SHORT"</code>, 
-                   <code>"NETWORK_FAILED"</code>, 
-                   <code>"NETWORK_TIMEOUT"</code>, 
-                   <code>"NETWORK_DISCONNECTED"</code>, 
-                   <code>"NETWORK_SERVER_DOWN"</code>, 
-                   <code>"SERVER_FAILED"</code>, 
-                   <code>"SERVER_NO_RANGE"</code>, 
-                   <code>"SERVER_PRECONDITION"</code>, 
-                   <code>"SERVER_BAD_CONTENT"</code>, 
-                   <code>"USER_CANCELED"</code>, 
-                   <code>"USER_SHUTDOWN"</code>, 
+                   <code>"FILE_FAILED"</code>,
+                   <code>"FILE_ACCESS_DENIED"</code>,
+                   <code>"FILE_NO_SPACE"</code>,
+                   <code>"FILE_NAME_TOO_LONG"</code>,
+                   <code>"FILE_TOO_LARGE"</code>,
+                   <code>"FILE_VIRUS_INFECTED"</code>,
+                   <code>"FILE_TRANSIENT_ERROR"</code>,
+                   <code>"FILE_BLOCKED"</code>,
+                   <code>"FILE_SECURITY_CHECK_FAILED"</code>,
+                   <code>"FILE_TOO_SHORT"</code>,
+                   <code>"NETWORK_FAILED"</code>,
+                   <code>"NETWORK_TIMEOUT"</code>,
+                   <code>"NETWORK_DISCONNECTED"</code>,
+                   <code>"NETWORK_SERVER_DOWN"</code>,
+                   <code>"SERVER_FAILED"</code>,
+                   <code>"SERVER_NO_RANGE"</code>,
+                   <code>"SERVER_PRECONDITION"</code>,
+                   <code>"SERVER_BAD_CONTENT"</code>,
+                   <code>"USER_CANCELED"</code>,
+                   <code>"USER_SHUTDOWN"</code>,
                    or <code>"CRASH"</code>
                  </dd>
                  <dd></dd>
@@ -238,13 +238,13 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
                <h3 id="type-DangerType">DangerType</h3>
                <div>
                  <dd>enum of
-                   <code>"file"</code>, 
-                   <code>"url"</code>, 
-                   <code>"content"</code>, 
-                   <code>"uncommon"</code>, 
-                   <code>"host"</code>, 
-                   <code>"unwanted"</code>, 
-                   <code>"safe"</code>, 
+                   <code>"file"</code>,
+                   <code>"url"</code>,
+                   <code>"content"</code>,
+                   <code>"uncommon"</code>,
+                   <code>"host"</code>,
+                   <code>"unwanted"</code>,
+                   <code>"safe"</code>,
                    or <code>"accepted"</code>
                  </dd>
                  <dd><dl><dt>file</dt>     <dd>The download's filename is suspicious.</dd>     <dt>url</dt>     <dd>The download's URL is known to be malicious.</dd>     <dt>content</dt>     <dd>The downloaded file is known to be malicious.</dd>     <dt>uncommon</dt>     <dd>The download's URL is not commonly downloaded and could be     dangerous.</dd>     <dt>host</dt>     <dd>The download came from a host known to distribute malicious     binaries and is likely dangerous.</dd>     <dt>unwanted</dt>     <dd>The download is potentially unwanted or unsafe. E.g. it could make     changes to browser or computer settings.</dd>     <dt>safe</dt>     <dd>The download presents no known danger to the user's computer.</dd>     <dt>accepted</dt>     <dd>The user has accepted the dangerous download.</dd> </dl></dd>
@@ -254,8 +254,8 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
                <h3 id="type-State">State</h3>
                <div>
                  <dd>enum of
-                   <code>"in_progress"</code>, 
-                   <code>"interrupted"</code>, 
+                   <code>"in_progress"</code>,
+                   <code>"interrupted"</code>,
                    or <code>"complete"</code>
                  </dd>
                  <dd><dl><dt>in_progress</dt>     <dd>The download is currently receiving data from the server.</dd>     <dt>interrupted</dt>     <dd>An error broke the connection with the file host.</dd>     <dt>complete</dt>     <dd>The download completed successfully.</dd> </dl></dd>
@@ -3201,5 +3201,5 @@ originalsource: http://developer.chrome.com/extensions/downloads.html
                </div>
              </div>
        </div>
-          
+
       </div>

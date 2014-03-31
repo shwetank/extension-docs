@@ -58,12 +58,12 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                 <tr>
                   <td><strong>Description:</strong></td>
                   <td>
-                      
-                      
+
+
                       Use the <code>chrome.cookies</code> API to query and modify cookies, and to be notified when they change.
-                      
-                      
-                      
+
+
+
                       <br>
                   </td>
                 </tr>
@@ -77,14 +77,14 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                 </tr>
               </table>
       <h2 id="manifest">Manifest</h2>
-      
+
       <p>To use the cookies API,
       you must declare the "cookies" permission in your manifest,
       along with <a href="declare_permissions.html">host permissions</a>
       for any hosts whose cookies
       you want to access.
       For example:</p>
-      
+
       <pre>{
         "name": "My extension",
         ...
@@ -94,7 +94,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
         ]</b>,
         ...
       }</pre>
-      
+
        <h1 id="apiReference">chrome.cookies reference</h1>
               <div class="api_reference">
                   <h2 id="types">Types</h2>
@@ -113,7 +113,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">name</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -128,7 +128,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">value</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -143,7 +143,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">domain</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -158,7 +158,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">hostOnly</span>
                                     <span class="property">
                                       (
-                                        
+
                                         boolean
                                       )
                                     </span>
@@ -173,7 +173,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">path</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -188,7 +188,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">secure</span>
                                     <span class="property">
                                       (
-                                        
+
                                         boolean
                                       )
                                     </span>
@@ -203,7 +203,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">httpOnly</span>
                                     <span class="property">
                                       (
-                                        
+
                                         boolean
                                       )
                                     </span>
@@ -218,7 +218,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">session</span>
                                     <span class="property">
                                       (
-                                        
+
                                         boolean
                                       )
                                     </span>
@@ -248,7 +248,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">storeId</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -276,7 +276,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">id</span>
                                     <span class="property">
                                       (
-                                        
+
                                         string
                                       )
                                     </span>
@@ -291,7 +291,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                     <span class="variable">tabIds</span>
                                     <span class="property">
                                       (
-                                        
+
                                         array of integer
                                       )
                                     </span>
@@ -324,7 +324,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">details</span>
                                 <span class="property">
                                   (
-                                    
+
                                     object
                                   )
                                 </span>
@@ -340,7 +340,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">url</span>
                                       <span class="property">
                                         (
-                                          
+
                                           string
                                         )
                                       </span>
@@ -355,7 +355,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">name</span>
                                       <span class="property">
                                         (
-                                          
+
                                           string
                                         )
                                       </span>
@@ -388,7 +388,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">callback</span>
                                 <span class="property">
                                   (
-                                    
+
                                     function
                                   )
                                 </span>
@@ -439,7 +439,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">details</span>
                                 <span class="property">
                                   (
-                                    
+
                                     object
                                   )
                                 </span>
@@ -563,7 +563,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">callback</span>
                                 <span class="property">
                                   (
-                                    
+
                                     function
                                   )
                                 </span>
@@ -583,7 +583,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                   <span class="variable">cookies</span>
                                   <span class="property">
                                     (
-                                      
+
                                       array of <a href="cookies.html#type-Cookie">Cookie</a>
                                     )
                                   </span>
@@ -614,7 +614,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">details</span>
                                 <span class="property">
                                   (
-                                    
+
                                     object
                                   )
                                 </span>
@@ -630,7 +630,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">url</span>
                                       <span class="property">
                                         (
-                                          
+
                                           string
                                         )
                                       </span>
@@ -819,7 +819,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">details</span>
                                 <span class="property">
                                   (
-                                    
+
                                     object
                                   )
                                 </span>
@@ -835,7 +835,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">url</span>
                                       <span class="property">
                                         (
-                                          
+
                                           string
                                         )
                                       </span>
@@ -850,7 +850,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">name</span>
                                       <span class="property">
                                         (
-                                          
+
                                           string
                                         )
                                       </span>
@@ -919,7 +919,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                         <span class="variable">url</span>
                                         <span class="property">
                                           (
-                                            
+
                                             string
                                           )
                                         </span>
@@ -934,7 +934,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                         <span class="variable">name</span>
                                         <span class="property">
                                           (
-                                            
+
                                             string
                                           )
                                         </span>
@@ -949,7 +949,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                         <span class="variable">storeId</span>
                                         <span class="property">
                                           (
-                                            
+
                                             string
                                           )
                                         </span>
@@ -983,7 +983,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                 <span class="variable">callback</span>
                                 <span class="property">
                                   (
-                                    
+
                                     function
                                   )
                                 </span>
@@ -1003,7 +1003,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                   <span class="variable">cookieStores</span>
                                   <span class="property">
                                     (
-                                      
+
                                       array of <a href="cookies.html#type-CookieStore">CookieStore</a>
                                     )
                                   </span>
@@ -1037,7 +1037,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                       <span class="variable">callback</span>
                                       <span class="property">
                                         (
-                                          
+
                                           function
                                         )
                                       </span>
@@ -1057,7 +1057,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                         <span class="variable">changeInfo</span>
                                         <span class="property">
                                           (
-                                            
+
                                             object
                                           )
                                         </span>
@@ -1070,7 +1070,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                               <span class="variable">removed</span>
                                               <span class="property">
                                                 (
-                                                  
+
                                                   boolean
                                                 )
                                               </span>
@@ -1085,7 +1085,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                               <span class="variable">cookie</span>
                                               <span class="property">
                                                 (
-                                                  
+
                                                   <a href="cookies.html#type-Cookie">Cookie</a>
                                                 )
                                               </span>
@@ -1100,7 +1100,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/cookies.html
                                               <span class="variable">cause</span>
                                               <span class="property">
                                                 (
-                                                  
+
                                                   enum of <code>"evicted"</code>, <code>"expired"</code>, <code>"explicit"</code>, <code>"expired_overwrite"</code>, or <code>"overwrite"</code>
                                                 )
                                               </span>

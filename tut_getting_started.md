@@ -17,7 +17,7 @@ Note: If you haven’t done so already, then head over to the [Opera extensions 
 If you have already developed extensions for Chrome then you will feel right at home making extensions for Opera 15 and above (in short: Opera 15+). Opera is now based on Chromium, which means it is possible to run CRX files in Opera 15+. For a list of which *chrome.\** APIs we support, please check the API Docs section in the sidebar of this page.
 
 ## Porting your previously made Opera extensions
-Because Opera 15+ is using the Chromium extensions model, existing Opera extensions need to be converted to the new Chromium-based extension format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+. 
+Because Opera 15+ is using the Chromium extensions model, existing Opera extensions need to be converted to the new Chromium-based extension format to work in new and future Opera versions. But don’t worry, we’ve got you covered. If you have already submitted Opera extensions to the Opera extensions gallery, you will find an option on your extension pages to convert them into a suitable format for Opera 15+.
 
 We've also made a tool, which will convert your old *.oex* based extensions into the new extensions format, and is built into the Opera extensions catalog's developer interface. Just click the green "Convert" button to get started and [follow the steps](tut_conversion.html).
 
@@ -26,16 +26,16 @@ To get a good overview of how things work, we would suggest to start with an [ov
 
 To learn how to make Opera extensions, read our [making your first Opera extension](tut_basics.html) article: this will get you familiar with the basics of making a simple extension.
 
-With the basics behind you, consult our range of tutorials and walk-throughs for much more detailed information on specific aspects of extension development and API usage. 
+With the basics behind you, consult our range of tutorials and walk-throughs for much more detailed information on specific aspects of extension development and API usage.
 
 ## Test, debug and look things over
-Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](tut_testing.html). 
+Identify issues and solve them easily by reading our [guide to testing and debugging Opera extensions](tut_testing.html).
 
 ## Finally, show it to the world!
-You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist of the acceptance criteria for you to follow](tut_publishing_guidelines.html#acceptance-criteria), to speed up the submission process further. 
+You can share your extensions with the world by submitting them to the Opera add-ons gallery. To make this process easier and smoother, read the [guidelines on submitting extensions](tut_publishing_guidelines.html) to the add-ons store. We’ve also provided a [handy checklist of the acceptance criteria for you to follow](tut_publishing_guidelines.html#acceptance-criteria), to speed up the submission process further.
 
 ## Discuss and keep up on the latest news
-We’d love to discuss Opera extension development with you some more! 
+We’d love to discuss Opera extension development with you some more!
 
 * If you want ask a quick question or say hi, contact us on [Twitter](https://twitter.com/odevrel/).
 * If you have an extension dev question, [ask it on StackOverFlow](http://stackoverflow.com/questions/tagged/opera-extension) and tag it `[opera-extension]`.

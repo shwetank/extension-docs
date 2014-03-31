@@ -1,18 +1,26 @@
 # Extensions documentation
 
-This is a repo for Opera's totally revamped extensions documentation for Opera 15+, which lives on http://dev.opera.com/extension-docs/
+This is a repo for Opera’s completely revamped extensions documentation for Opera 15+, which lives on <http://dev.opera.com/extension-docs/>.
 
 # Behind the scenes
 
-There's Jekyll, jQuery, Bootstrap, Bootswatch Cosmo, prettify.js, Google CSE
+There’s Grunt, Jekyll, jQuery, Bootstrap, Bootswatch Cosmo, prettify.js, Google CSE.
 
-To generate the site:
+## Getting started
 
-1. install jekyll `$ gem install jekyll` (might need `sudo`)
-2. clone this repo
-3. navigate to the directory with terminal, and type `jekyll serve`. If you want to auto-generate the whole site every time you save a file, type `jekyll serve --watch`
-4. open a browser, and go to http://localhost:1337/ (generated files live in _site)
+1. Install Jekyll using `gem install jekyll` (might need `sudo`)
+2. Clone this repository and navigate to the directory in your terminal.
+3. Run `npm install` to install Grunt and other dependencies.
 
+## Using Grunt
+
+* Run `grunt build` to build the site using Jekyll. The result is placed in the `_site` folder.
+* Run `grunt deploy` to deploy the `_site` folder to the production server.
+
+## Using Jekyll directly
+
+1. Enter `jekyll serve`. If you want to auto-generate the whole site every time you save a file, type `jekyll serve --watch`.
+2. Open your favorite browser, and go to `http://localhost:1337/` (generated files live in `_site`).
 
 # YAML front matter details
 

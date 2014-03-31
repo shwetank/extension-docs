@@ -36,9 +36,9 @@ Of course, you can introduce more arguments to specify how exactly should the do
 
 <pre class="prettyprint">
 chrome.downloads.download({
-  url: &quot;http://example.org/example.zip&quot;, 
-  filename: &#39;download.zip&#39;, 
-  saveAs: true}, 
+  url: &quot;http://example.org/example.zip&quot;,
+  filename: &#39;download.zip&#39;,
+  saveAs: true},
    function(downloadId){
      if (typeof downloadId !== &quot;undefined&quot;){ // If &#39;downloadId&#39; is undefined, then there is an error - so making sure it is not so before proceeding.
        console.log(&#39;Download initiated, id is: &#39;+downloadId);
@@ -60,7 +60,7 @@ chrome.downloads.search(
 );
 </pre>
 
-You can use other criteria like the URL, filename, file size etc. One that is particularly useful is searching by the ID of the downloaded item, as the ID of the item is needed for executing other functions like [pausing](downloads.html#method-pause), [cancelling](downloads.html#method-cancel) or [resuming](downloads.html#method-resume) downloads. You can also [open the folder ](downloads.html#method-show) or [open the actual downloaded file](downloads.html#method-open) provided you know the download id. 
+You can use other criteria like the URL, filename, file size etc. One that is particularly useful is searching by the ID of the downloaded item, as the ID of the item is needed for executing other functions like [pausing](downloads.html#method-pause), [cancelling](downloads.html#method-cancel) or [resuming](downloads.html#method-resume) downloads. You can also [open the folder ](downloads.html#method-show) or [open the actual downloaded file](downloads.html#method-open) provided you know the download id.
 
 ## Working with events
 
@@ -84,6 +84,6 @@ chrome.downloads.onChanged.addListener(function (e) {
 });
 </pre>
 
-[Download our sample extension](samples/DownloadsAPI.nex) which makes use of the API methods and events to show you the last five downloaded files as well as information about new downloads. 
+[Download our sample extension](samples/DownloadsAPI.nex) which makes use of the API methods and events to show you the last five downloaded files as well as information about new downloads.
 
 

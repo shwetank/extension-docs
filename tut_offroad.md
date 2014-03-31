@@ -7,7 +7,7 @@ copyright: opera-ccby
 
 ## Introduction
 
-One of Opera's most popular features is 'Off-Road Mode', which is a setting which, when enabled, speeds up your web loading by passing content through Opera's servers, thereby greatly compressing the content. 
+One of Opera's most popular features is 'Off-Road Mode', which is a setting which, when enabled, speeds up your web loading by passing content through Opera's servers, thereby greatly compressing the content.
 
 We've enabled extension developers to access this setting, which gives the ability to determine if Off-Road Mode is enabled or not, or to set or clear it. You can also listen to changes to this setting by adding event handlers.
 
@@ -26,7 +26,7 @@ You first need to add the `offroad` field to the extension manifest file. For ex
   ...
 }
  </pre>
- 
+
 
 ## Determining whether Off-Road mode is enabled or not
 Determining whether Off-Road Mode is enabled or not is pretty simple. Just call `opr.offroad.enabled.get()` and check the `value` of the callback object. If the value is `true` then it is enabled otherwise it is not. Let's see an example:
@@ -38,7 +38,7 @@ Determining whether Off-Road Mode is enabled or not is pretty simple. Just call 
      	//Off-Road Mode is enabled
      } else {
      	//Off-Road Mode is not enabled
-     }  
+     }
   }
   });</pre>
 
@@ -57,6 +57,6 @@ In fact, you can listen for the whenever the setting has been changed either way
 You can enable or disable Off-Road Mode through your extension by calling the `opr.offroad.enabled.set()` function and passing an object with a `value` field as `false` or `true`. For example, `opr.offroad.enabled.set({'value': true}, function(){});`
 
 Feel free to [download the sample extension](samples/offroad.nex) and try it out yourself.
-  
+
 
 
