@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 			deploy: {
 				options: {
 					src: '_site/',
-					dest: '/var/www/html/extension-docs/',
+					dest: '/var/www/html/extensions/',
 					host: '54.213.240.91'
 				}
 			}
