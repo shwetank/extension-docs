@@ -1,5 +1,4 @@
 port: 1337 # cause that's how we roll
-markdown: maruku
 authors: # author details
   andreasbovens:
     display_name: Andreas Bovens
