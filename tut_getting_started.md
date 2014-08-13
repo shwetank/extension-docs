@@ -39,4 +39,4 @@ We’d love to discuss Opera extension development with you some more!
 
 * If you want ask a quick question or say hi, contact us on [Twitter](https://twitter.com/odevrel/).
 * If you have an extension dev question, [ask it on StackOverFlow](http://stackoverflow.com/questions/tagged/opera-extension) and tag it `[opera-extension]`.
-* Subscribe to the [ODIN blog](http://my.opera.com/odin/blog/) for the latest on Opera extensions and web standards in general.
+* Subscribe to the [ODIN blog](http://dev.opera.com/blog/) for the latest on Opera extensions and web standards in general.
