@@ -14,7 +14,9 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
 
               <ol>
                   <li><a href="storage.html#types">Types</a><ol>  <li>    <a href="storage.html#type-StorageChange">StorageChange</a>  </li>  <li>    <a href="storage.html#type-StorageArea">StorageArea</a><ol><li>      <a href="storage.html#StorageArea-methods">Methods</a>      <ol>        <li><a href="storage.html#method-StorageArea-get">get</a></li>        <li><a href="storage.html#method-StorageArea-getBytesInUse">getBytesInUse</a></li>        <li><a href="storage.html#method-StorageArea-set">set</a></li>        <li><a href="storage.html#method-StorageArea-remove">remove</a></li>        <li><a href="storage.html#method-StorageArea-clear">clear</a></li>      </ol>    </li></ol>  </li></ol></li>
-                  <li><a href="storage.html#properties">Properties</a><ol>  <li>    <a href="storage.html#property-sync">sync</a><ol><li>      <a href="storage.html#sync-properties">Properties</a>      <ol>        <li>          <a href="storage.html#property-sync-QUOTA_BYTES">QUOTA_BYTES</a>        </li>        <li>          <a href="storage.html#property-sync-QUOTA_BYTES_PER_ITEM">QUOTA_BYTES_PER_ITEM</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_ITEMS">MAX_ITEMS</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_WRITE_OPERATIONS_PER_HOUR">MAX_WRITE_OPERATIONS_PER_HOUR</a>        </li>        <li>          <a href="storage.html#property-sync-MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE">MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</a>        </li>      </ol>    </li></ol>  </li>  <li>    <a href="storage.html#property-local">local</a><ol><li>      <a href="storage.html#local-properties">Properties</a>      <ol>        <li>          <a href="storage.html#property-local-QUOTA_BYTES">QUOTA_BYTES</a>        </li>      </ol>    </li></ol>  </li></ol></li>
+                  <li><a href="storage.html#properties">Properties</a>
+                  <ol>  
+                     <li>    <a href="storage.html#property-local">local</a><ol><li>      <a href="storage.html#local-properties">Properties</a>      <ol>        <li>          <a href="storage.html#property-local-QUOTA_BYTES">QUOTA_BYTES</a>        </li>      </ol>    </li></ol>  </li></ol></li>
 
                   <li><a href="storage.html#events">Events</a><ol>  <li><a href="storage.html#event-onChanged">onChanged</a></li></ol></li>
 
@@ -365,96 +367,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/storage.html
               </div>
             <h2 id="properties">Properties</h2>
               <div>
-                <h3 id="property-sync">sync</h3>
-                <div class="summary"><code>
-                  <span>chrome.storage.sync</span>
-                </code></div>
-                <div>
-                  <dt><code><span class="property">sync</span> <span class="type_name">  (    <a href="storage.html#type-StorageArea">StorageArea</a>  )</span></code></dt>
-              <dd>
-                    Items in the <code>sync</code> storage area are synced using Opera Sync.
-                  </dd>    <h4 id="sync-properties">
-                    Properties of <a href="storage.html#property-sync">sync</a>
-                  </h4>
-                  <dd><dl>      <div>
-                      <a name="property-sync-QUOTA_BYTES"></a>
-                      <dt>
-                        <code class="variable">QUOTA_BYTES</code>
-                        <code class="property">
-                          (
-
-                            <code>102,400</code>
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The maximum total amount (in bytes) of data that can be stored in sync storage, as measured by the JSON stringification of every value plus every key's length. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-sync-QUOTA_BYTES_PER_ITEM"></a>
-                      <dt>
-                        <code class="variable">QUOTA_BYTES_PER_ITEM</code>
-                        <code class="property">
-                          (
-
-                            <code>4,096</code>
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The maximum size (in bytes) of each individual item in sync storage, as measured by the JSON stringification of its value plus its key length. Updates containing items larger than this limit will fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-sync-MAX_ITEMS"></a>
-                      <dt>
-                        <code class="variable">MAX_ITEMS</code>
-                        <code class="property">
-                          (
-
-                            <code>512</code>
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The maximum number of items that can be stored in sync storage. Updates that would cause this limit to be exceeded will fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-sync-MAX_WRITE_OPERATIONS_PER_HOUR"></a>
-                      <dt>
-                        <code class="variable">MAX_WRITE_OPERATIONS_PER_HOUR</code>
-                        <code class="property">
-                          (
-
-                            <code>1,000</code>
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each hour. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
-                      </dd>
-                    </div>
-                    <div>
-                      <a name="property-sync-MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE"></a>
-                      <dt>
-                        <code class="variable">MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</code>
-                        <code class="property">
-                          (
-
-                            <code>10</code>
-                          )
-                        </code>
-                      </dt>
-                      <dd>
-                        The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each minute, sustained over 10 minutes. Updates that would cause this limit to be exceeded fail immediately and set <a href="runtime.html#property-lastError">runtime.lastError</a>.
-                      </dd>
-                    </div>
-              </dl></dd>
-                </div>
-              </div>
-              <div>
+               
                 <h3 id="property-local">local</h3>
                 <div class="summary"><code>
                   <span>chrome.storage.local</span>
