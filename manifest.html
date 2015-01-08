@@ -21,6 +21,7 @@ originalsource: http://developer.chrome.com/trunk/extensions/manifest.html
                 <li><a href="manifest.html#icons">icons</a></li>
                 <li><a href="manifest.html#incognito">incognito</a></li>
                 <li><a href="manifest.html#key">key</a></li>
+                <li><a href="manifest.html#minimum_opera_version">minimum_opera_version</a></li>
                 <li><a href="manifest.html#name">name</a></li>
                 <li><a href="manifest.html#permissions">permissions</a></li>
                 <li><a href="manifest.html#requirements">requirements</a></li>
@@ -70,14 +71,15 @@ are <b>name</b> and <b>version</b>.
   "<a href="pageAction.html">page_action</a>": {...},
 
   <em>// Add any of these that you need</em>
-  "<a href="tut_architecture_overview.html#the_background_process">background</a>": {"persistent": false, ...},
-  "<a href="tut_architecture_overview.html#the_background_process">background</a>": {"persistent": true, ...},
+  "<a href="tut_architecture_overview.html#the-background-process">background</a>": {"persistent": false, ...},
+  "<a href="tut_architecture_overview.html#the-background-process">background</a>": {"persistent": true, ...},
   "<a href="tut_content_scripts.html">content_scripts</a>": [...],
-  "<a href="tut_architecture_overview.html#permissions_and_privileges">content_security_policy</a>": "<em>policyString</em>",
+  "<a href="tut_architecture_overview.html#permissions-and-privileges">content_security_policy</a>": "<em>policyString</em>",
   "<a href="manifest.html#homepage_url">homepage_url</a>": "http://<em>path/to/homepage</em>",
   "<a href="manifest.html#incognito">incognito</a>": "spanning" <em>or</em> "split",
   "<a href="manifest.html#key">key</a>": "<em>publicKey</em>",
-  "<a href="tut_architecture_overview.html#the_options_page">options_page</a>": "<em>aFile</em>.html",
+  "<a href="manifest.html#minimum_opera_version">minimum_opera_version</a>": "<em>versionString</em>",
+  "<a href="tut_architecture_overview.html#the-options-page">options_page</a>": "<em>aFile</em>.html",
   "<a href="declare_permissions.html">permissions</a>": [...],
   "<a href="manifest.html#requirements">requirements</a>": {...},
   "update_url": "http://<em>path/to/updateInfo</em>.xml",
@@ -222,6 +224,12 @@ install your extension from a <code>.crx</code> file.
 Then, in your user data directory</a>, look in the file
 <code>Default/Extensions/<em>&lt;extensionId&gt;</em>/<em>&lt;versionString&gt;</em>/manifest.json</code>.
 You will see the key value filled in there.
+</p>
+
+<h3 id="minimum_opera_version"> minimum Opera version </h2>
+
+<p>
+The version of Opera that your extension requires, if any. The format for this string is the same as for the <a href="#version">version</a> field.
 </p>
 
 <h3 id="name">name</h3>
