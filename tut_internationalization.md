@@ -44,12 +44,12 @@ Let's take an example. A normal manifest file (which is not internationalized) w
 If we were to create add Spanish language support to it, then we would create a directory as *'_locales/es'* and have a file called 'messages.json' in it, where we would list the translated text in the following way:
 
 <pre class="prettyprint">{
-	"extensionName":{
-		"message": "Hola mundo!",
+	"extensionName": {
+		"message": "Hola mundo!"
 	},
 
 	"extensionDescription":{
-		"message":"Esta es una extensión de la muestra.",
+		"message": "Esta es una extensión de la muestra."
 	}
 }</pre>
 
@@ -84,10 +84,10 @@ Predefined messages are particularly helpful in CSS. For example, we can write t
 
 <pre class="prettyprint">{
 ...
-  body{
+  body {
   	direction: __MSG_@@bidi_dir__ ;
-  	}
-  header{
+  }
+  header {
   	float: __MSG_@@bidi_start_edge__ ;
   	padding-__MSG_@@bidi_end_edge: 2.5px;
   }
@@ -99,10 +99,10 @@ If the current locale is a 'ltr' language like English, then the CSS will effect
 
 <pre class="prettyprint">{
 ...
-  body{
+  body {
   	direction: ltr ;
-  	}
-  header{
+  }
+  header {
   	float: left ;
   	padding-right: 2.5px;
   }
@@ -113,10 +113,10 @@ In case the current locale is a 'rtl' language like Arabic, then the CSS will ef
 
 <pre class="prettyprint">{
 ...
-  body{
+  body {
   	direction: rtl ;
-  	}
-  header{
+  }
+  header {
   	float: right ;
   	padding-left: 2.5px;
   }
@@ -179,13 +179,10 @@ In our popup file, we would like the heading to be the title of the extension (w
 Here you can see that we have used a 'data-\*' attribute which we have named as `data-translate`. In our JavaScript code, we will loop over all elements, and detect if the element has a `data-translate` attribute associated with it. If so, we will take the value of it and find the corresponding message in the messages.json file using the function `getMessage()`. Let us see an example of it.
 
 <pre class="prettyprint">
-var allElements = document.querySelectorAll(&quot;*&quot;);
-
-for (var i = 0; i &lt; allElements.length; i++){
- if (allElements[i].dataset &amp;&amp; allElements[i].dataset.translate){
-  allElements[i].innerText = chrome.i18n.getMessage(allElements[i].dataset.translate);
-  }
-}
+var elements = document.querySelectorAll('[data-translate]');
+[].forEach.call(elements, function(element) {
+	element.textContent = chrome.i18n.getMessage(element.dataset.translate);
+});
 </pre>
 
 This will ensure that when the locale is set to English, then the text in the popup will display in English, like so:
