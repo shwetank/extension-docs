@@ -21,28 +21,28 @@ The following is an overview of the various permissions declarations possible in
 
 * **match pattern**: Specifies a host permission. Required if the extension or app wants to interact with the code running on pages. Many capabilities, such as cross-origin XMLHttpRequests, programmatically injected content scripts, etc., require host permissions. For details on the syntax, see [Match Patterns](tut_match_patterns.html).
 * **activeTab**: The activeTab permission gives an extension temporary access to the currently active tab when the user invokes the extension - for example by clicking its browser action. Access to the tab lasts until the tab is navigated or closed. This serves as an alternative for many uses of `<all_urls>`, but displays no warning message during installation
-* **alarms**: Required if the extension or app uses the [chrome.alarms](alarms.html) API.
+* **alarms**: Required if the extension or app uses the [chrome.alarms](https://developer.chrome.com/extensions/alarms) API.
 * **background**: You typically use the background permission with a [background page or event page](tut_architecture_overview.html#the_background_process).
-* **bookmarks**: Gives your extension access to the [chrome.bookmarks](bookmarks.html) API.
-* **browsingData**: Gives your extension access to the [chrome.browsingData](bookmarks.html) API.
-* **contextMenus**: Required if the extension or app uses the [chrome.contextMenus](contextMenus.html) API.
-* **cookies**: Required if the extension or app uses the [chrome.cookies](cookies.html) API.
-* **downloads**: Required if the extension or app uses the [chrome.downloads](downloads.html) API.
-* **fontSettings**: Required if the extension or app uses the [chrome.fontSettings](fontSettings.html) API.
+* **bookmarks**: Gives your extension access to the [chrome.bookmarks](https://developer.chrome.com/extensions/bookmarks) API.
+* **browsingData**: Gives your extension access to the [chrome.browsingData](https://developer.chrome.com/extensions/browsingData) API.
+* **contextMenus**: Required if the extension or app uses the [chrome.contextMenus](https://developer.chrome.com/extensions/contextMenus) API.
+* **cookies**: Required if the extension or app uses the [chrome.cookies](https://developer.chrome.com/extensions/cookies) API.
+* **downloads**: Required if the extension or app uses the [chrome.downloads](https://developer.chrome.com/extensions/downloads) API.
+* **fontSettings**: Required if the extension or app uses the [chrome.fontSettings](https://developer.chrome.com/extensions/fontSettings) API.
 * **geolocation**: Allows the extension or app to use the [proposed HTML5 geolocation API](http://dev.w3.org/geo/api/spec-source.html) without prompting the user for permission.
-* **history**: Required if the extension or app uses the [chrome.history](history.html) API.
-* **identity**: Required if the extension or app uses the [chrome.identity](identity.html) API.
-* **idle**: Required if the extension or app uses the [chrome.idle](idle.html) API.
-* **management**: Required if the extension uses the [chrome.management](management.html) API.
+* **history**: Required if the extension or app uses the [chrome.history](https://developer.chrome.com/extensions/history) API.
+* **identity**: Required if the extension or app uses the [chrome.identity](https://developer.chrome.com/extensions/identity) API.
+* **idle**: Required if the extension or app uses the [chrome.idle](https://developer.chrome.com/extensions/idle) API.
+* **management**: Required if the extension uses the [chrome.management](https://developer.chrome.com/extensions/management) API.
 * **offroad**: Gives the extension access to the [Off-Road Mode](tut_offroad.html).
-* **pageCapture**: Gives the extension access to the [chrome.pageCapture](pageCapture.html) API.
-* **power**: Required if the extension or app uses the [chrome.power](power.html) API.
-* **proxy**: Required if the extension or app uses the [chrome.proxy](proxy.html) API.
-* **storage**: Required if the extension or app uses the [chrome.storage](storage.html) API. Note: `storage.sync` is not supported.
-* **tabs**: Required if the extension uses the [chrome.tabs](tabs.html) or [chrome.windows](windows.html) API.
-* **webNavigation**: Gives your extension access to the [chrome.webNavigation](webNavigation.html) API.
-* **webRequest**: Required if the extension uses the [chrome.webRequest](webRequest.html) API.
+* **pageCapture**: Gives the extension access to the [chrome.pageCapture](https://developer.chrome.com/extensions/pageCapture) API.
+* **power**: Required if the extension or app uses the [chrome.power](https://developer.chrome.com/extensions/power) API.
+* **proxy**: Required if the extension or app uses the [chrome.proxy](https://developer.chrome.com/extensions/proxy) API.
+* **storage**: Required if the extension or app uses the [chrome.storage](https://developer.chrome.com/extensions/storage) API. Note: `storage.sync` is not supported.
+* **tabs**: Required if the extension uses the [chrome.tabs](https://developer.chrome.com/extensions/tabs) or [chrome.windows](https://developer.chrome.com/extensions/windows) API.
+* **webNavigation**: Gives your extension access to the [chrome.webNavigation](https://developer.chrome.com/extensions/webNavigation) API.
+* **webRequest**: Required if the extension uses the [chrome.webRequest](https://developer.chrome.com/extensions/webNavigation) API.
 * **speeddial**:  Required if the extension uses the [opr.speeddial](speeddial.html) API.
 
 ## Optional permissions
-<p>You can use the <a href="permissions.html"><code>chrome.permissions</code> API</a> to request <a href="tut_optional_permissions.html#manifest">declared optional permissions</a> at run time rather than install time, so users understand why the permissions are needed and grant only those that are necessary.</p>
+<p>You can use the <a href="https://developer.chrome.com/extensions/permissions"><code>chrome.permissions</code> API</a> to request <a href="tut_optional_permissions.html#manifest">declared optional permissions</a> at run time rather than install time, so users understand why the permissions are needed and grant only those that are necessary.</p>
