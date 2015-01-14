@@ -6,50 +6,183 @@ author: shwetankdixit
 
 ## Introduction
 
-Communicating and passing messages around is an essential part in developing extensions. Let’s take a look at the different ways to do that using the Opera Extensions API.
+Below are is the list of extension APIs supported in Opera. Since most of these APIs are in common with Chrome, we are linking each of those APIs with the appropriate documentation page (most of them link to the relavent chrome extension API page) and also mentioning whatever differences (if any) that our implementation of an API has vis-a-vis Chrome's. 
 
-The two broad types of communication methods we have are simple short lived messages, and a more long lived communication method. We’ll cover both in this article.
 
-|  API Name                   | URL                                                               | Differences with Chrome (if any)                                                                                                                                                                                                                                                                                                                             |
-| --------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Alarms                      | https://developer.chrome.com/apps/alarms                          | None                                                                                                                                                                                                                                                                                                                                                         |
-| Bookmarks                   | https://developer.chrome.com/extensions/bookmarks                 | None                                                                                                                                                                                                                                                                                                                                                         |
-| browserAction               | https://developer.chrome.com/extensions/browserAction             | None                                                                                                                                                                                                                                                                                                                                                         |
-| browsingData                | https://developer.chrome.com/extensions/browsingData              | None                                                                                                                                                                                                                                                                                                                                                         |
-| Commands                    | https://developer.chrome.com/extensions/commands                  | None                                                                                                                                                                                                                                                                                                                                                         |
-| ContentSettings             | https://developer.chrome.com/extensions/contentSettings           | None                                                                                                                                                                                                                                                                                                                                                         |
-| Context Menus               | https://developer.chrome.com/extensions/contextMenus              | None                                                                                                                                                                                                                                                                                                                                                         |
-| Cookies                     | https://developer.chrome.com/extensions/cookies                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Debugger                    | https://developer.chrome.com/extensions/debugger                  | None                                                                                                                                                                                                                                                                                                                                                         |
-| Declarative Content         | https://developer.chrome.com/extensions/declarativeContent        | None                                                                                                                                                                                                                                                                                                                                                         |
-| devtools.inspectedWindow    | https://developer.chrome.com/extensions/devtools_inspectedWindow  | None                                                                                                                                                                                                                                                                                                                                                         |
-| devtools.network            | https://developer.chrome.com/extensions/devtools_network          | None                                                                                                                                                                                                                                                                                                                                                         |
-| devtools.panels             | https://developer.chrome.com/extensions/devtools_panels           | None                                                                                                                                                                                                                                                                                                                                                         |
-| Downloads                   | https://developer.chrome.com/extensions/downloads                 | None                                                                                                                                                                                                                                                                                                                                                         |
-| Events                      | https://developer.chrome.com/extensions/events                    | None                                                                                                                                                                                                                                                                                                                                                         |
-| Extensions                  | https://developer.chrome.com/extensions/extensions                | Opera does not support the `sendRequest()` and `getExtensionTabs()` methods.                                                                                                                                                                                                                                                                                 |
-| Font Settings               | https://developer.chrome.com/extensions/fontSettings              | None                                                                                                                                                                                                                                                                                                                                                         |
-| History                     | https://developer.chrome.com/extensions/history                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Internationalization (i18n) | https://developer.chrome.com/extensions/i18n                      | Opera does not support the `getUILanguage()` method.                                                                                                                                                                                                                                                                                                         |
-| Identity                    | https://developer.chrome.com/extensions/identity                  | Opera only supports the `launchWebAuthFlow()` Method in this API.                                                                                                                                                                                                                                                                                            |
-| Idle                        | https://developer.chrome.com/extensions/idle                      | None                                                                                                                                                                                                                                                                                                                                                         |
-| Management                  | https://developer.chrome.com/extensions/management                | Opera does not support the `LaunchType` type and the `getSelf()`, `createAppShortCut()`, `setLaunchType()` and `generateAppForLink()` methods.                                                                                                                                                                                                               |
-| Omnibox                     | https://developer.chrome.com/extensions/omnibox                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Page Action                 | https://developer.chrome.com/extensions/pageAction                | None                                                                                                                                                                                                                                                                                                                                                         |
-| Page Capture                | https://developer.chrome.com/extensions/pageCapture               | None                                                                                                                                                                                                                                                                                                                                                         |
-| Permissions                 | https://developer.chrome.com/extensions/permissions               | None                                                                                                                                                                                                                                                                                                                                                         |
-| Power                       | https://developer.chrome.com/extensions/power                     | None                                                                                                                                                                                                                                                                                                                                                         |
-| Privacy                     | https://developer.chrome.com/extensions/privacy                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Proxy                       | https://developer.chrome.com/extensions/proxy                     | None                                                                                                                                                                                                                                                                                                                                                         |
-| Runtime                     | https://developer.chrome.com/extensions/runtime                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Storage                     | https://developer.chrome.com/extensions/storage                   | Opera does not support the `sync()` and `managed()` methods.                                                                                                                                                                                                                                                                                                 |
-| System.CPU                  | https://developer.chrome.com/extensions/system_cpu                | None                                                                                                                                                                                                                                                                                                                                                         |
-| System.Memory               | https://developer.chrome.com/extensions/system_memory             | None                                                                                                                                                                                                                                                                                                                                                         |
-| System.Storage              | https://developer.chrome.com/extensions/systemStorage             | None                                                                                                                                                                                                                                                                                                                                                         |
-| Tabs                        | https://developer.chrome.com/extensions/tabs                      | Opera does not support the `InjectDetails` and `ZoomSettings` types and the  `sendRequest()`, `getSelected()`, `getAllInWindow()`, `highlight()`, `setZoom`, `getZoom()`, `setZoomSettings()` and `getZoomSettings()`. Also, the `onSelectionChanged`, `onActiveChanged`, `onHighlightChanged`, `onHighlighted` and `onZoomChange` events are not supported. |
-| Types                       | https://developer.chrome.com/extensions/types                     | None                                                                                                                                                                                                                                                                                                                                                         |
-| Web Navigation              | https://developer.chrome.com/extensions/webNavigation             | None                                                                                                                                                                                                                                                                                                                                                         |
-| Web Request                 | https://developer.chrome.com/extensions/webRequest                | None                                                                                                                                                                                                                                                                                                                                                         |
-| Windows                     | https://developer.chrome.com/extensions/windows                   | None                                                                                                                                                                                                                                                                                                                                                         |
-| Addons                      | https://dev.opera.com/extensions/addons.html                      | Only in Opera                                                                                                                                                                                                                                                                                                                                                |
-| Speed Dial                  | https://dev.opera.com/extensions/speeddial.html                   | Only in Opera                                                                                                                                                                                                                                                                                                                                                |
+<table>
+	<tbody>
+		<tr>
+			<th>API Name</th>
+			<th>Differences with Chrome (if any)</th>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/apps/alarms">Alarms</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/bookmarks">Bookmarks</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/browserAction">browserAction</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/browsingData">browsingData</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/commands">Commands</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/contentSettings">Content Settings</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/contextMenus">Context Menus</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/cookies">Cookies</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/debugger">Debugger</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/declarativeContent">Declarative Content</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/devtools_inspectedWindow">devtools.inspectedWindow</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/devtools_network">devtools.network</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/devtools_panels">devtools.panels</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/downloads">Downloads</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/events">Events</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/extensions">Extensions</a></td>
+			<td>Opera does not support the <code>sendRequest()</code> and <code>getExtensionTabs()</code> methods.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/fontSettings">Font Settings</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/history">History</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/i18n">Internationalization (i18n)</a></td>
+			<td>Opera does not support the <code>getUILanguage()</code> method.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/identity">Identity</a></td>
+			<td>Opera only supports the <code>launchWebAuthFlow()</code> Method in this API.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/idle">Idle</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/management">Management</a></td>
+			<td>Opera does not support the <code>LaunchType</code> type and the<code> getSelf()</code>, <code>createAppShortCut()</code>, <code>setLaunchType()</code> and <code>generateAppForLink()</code> methods.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/notifications">Notifications</a></td>
+			<td>In <code>TemplateTypes,</code>, Opera does not support the <code>Image</code>, <code>List</code> or <code>Progress</code> types. Also, on mac, the <code>update()</code> method will not work for now.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/omnibox">Omnibox</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/pageAction">Page Action</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/pageCapture">Page Capture</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/permissions">Permissions</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/power">Power</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/privacy">Privacy</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/proxy">Proxy</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/runtime">Runtime</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/storage">Storage</a></td>
+			<td>Opera does not support the <code>sync()</code> and <code>managed()</code> methods.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/system_cpu">System.CPU</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/system_memory">System.Memory</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/systemStorage">System.Storage</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/tabs">Tabs</a></td>
+			<td>Opera does not support the <code>InjectDetails</code> and <code>ZoomSettings</code> types and the <code>sendRequest()</code>, <code>getSelected()</code>, <code>getAllInWindow()</code>, <code>highlight()</code>, <code>setZoom()</code>, <code>getZoom()</code>, <code>setZoomSettings()</code> and <code>getZoomSettings()&nbsp;</code>methods. Also, the <code>onSelectionChanged</code>, <code>onActiveChanged</code>, <code>onHighlightChanged</code>, <code>onHighlighted</code> and <code>onZoomChange</code> events are not supported.</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/types">Types</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/webNavigation">Web Navigation</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/webRequest">Web Request</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.chrome.com/extensions/windows">Windows</a></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><a href="https://dev.opera.com/extensions/addons.html">Addons</a></td>
+			<td>Only in Opera</td>
+		</tr>
+		<tr>
+			<td><a href="https://dev.opera.com/extensions/speeddial.html">Speed Dial</a></td>
+			<td>Only in Opera</td>
+		</tr>
+	</tbody>
+</table>
+
