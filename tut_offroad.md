@@ -11,7 +11,7 @@ One of Opera's most popular features is 'Off-Road Mode', which is a setting whic
 
 We've enabled extension developers to access this setting, which gives the ability to determine if Off-Road Mode is enabled or not, or to set or clear it. You can also listen to changes to this setting by adding event handlers.
 
-Off-Road mode, being a browser setting, is accessible like all other browser settings as mentioned in the [Types](types.html) documentaton.
+Off-Road mode, being a browser setting, is accessible like all other browser settings as mentioned in the [Types](https://developer.chrome.com/extensions/types) documentaton.
 
 ## Manifest specifications
 
