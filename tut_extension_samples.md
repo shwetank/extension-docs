@@ -19,7 +19,7 @@ This is a repository of all the example extensions to help you get started with 
 
 **Relevant reading**:
 * [Buttons, popups and badges(browser actions)](tut_browser_actions.html)
-* [chrome.browserAction](browserAction.html)
+* [chrome.browserAction](https://developer.chrome.com/extensions/browserAction)
 
 
 ## Messaging
@@ -30,7 +30,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Passing messages in extensions](tut_message_passing.html)
-* [chrome.runtime](runtime.html)
+* [chrome.runtime](https://developer.chrome.com/extensions/runtime)
 
 
 ## Windows and Tabs
@@ -45,7 +45,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Working with tabs and windows](tut_tab_window.html)
-* [chrome.tabs](tabs.html), [chrome.windows](windows.html)
+* [chrome.tabs](https://developer.chrome.com/extensions/tabs), [chrome.windows](https://developer.chrome.com/extensions/windows)
 
 
 ## Context Menu
@@ -56,7 +56,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Working with the context menu](tut_context_menus.html)
-* [chrome.contextMenus](contextMenus.html)
+* [chrome.contextMenus](https://developer.chrome.com/extensions/contextMenus)
 
 
 ## Speed Dial
@@ -67,7 +67,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Speed Dial extensions](tut_sd_extensions.html)
-* [opr.speeddial](speeddial.html)
+* [opr.speeddial](https://developer.chrome.com/extensions/speeddial)
 
 
 ## History API
@@ -79,7 +79,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Working with the browser history](tut_hist.html)
-* [chrome.history](history.html)
+* [chrome.history](https://developer.chrome.com/extensions/history)
 
 
 ## Internationalization (i18n)
@@ -90,7 +90,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Internationalization](tut_internationalization.html)
-* [chrome.i18n](i18n.html)
+* [chrome.i18n](https://developer.chrome.com/extensions/i18n)
 
 
 ## Address Bar extensions
@@ -102,7 +102,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Creating address bar extensions](tut_omnibox.html)
-* [chrome.omnibox](omnibox.html)
+* [chrome.omnibox](https://developer.chrome.com/extensions/omnibox)
 
 ## Off-Road Mode
 **Sample extension**:
@@ -112,7 +112,7 @@ This is a repository of all the example extensions to help you get started with 
 **Relevant reading**:
 
 * [Working with Off-Road Mode](tut_offroad.html)
-* [chrome.types](types.html)
+* [chrome.types](https://developer.chrome.com/extensions/types)
 
 
 
