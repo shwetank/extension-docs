@@ -68,7 +68,7 @@ Feel free to [download the extension](samples/MessagePassing.nex) and examine it
 
 In addition to sending messages between different components in your extension, you can use the messaging API to communicate with other extensions. This lets you expose a public API that other extensions can take advantage of.
 
-Listening for incoming requests and connections is similar to the internal case, except you use the [runtime.onMessageExternal](runtime.html#event-onMessageExternal) or [runtime.onConnectExternal](runtime.html#event-onConnectExternal) methods. Here's an example of each:
+Listening for incoming requests and connections is similar to the internal case, except you use the [runtime.onMessageExternal](https://developer.chrome.com/apps/runtime#event-onMessageExternal) or [runtime.onConnectExternal](https://developer.chrome.com/apps/runtime#event-onConnectExternal) methods. Here's an example of each:
 
 <pre class="prettyprint">
 // For simple requests:
@@ -178,7 +178,7 @@ Native messaging host manifest file contains the following fields:
   <tr>
     <td><code>name</code></td>
     <td>Name of the native messaging host. Clients pass this string to
-    <a href="runtime.html#method-connectNative">runtime.connectNative</a> or <a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a>.</td>
+    <a href="https://developer.chrome.com/apps/runtime#method-connectNative">runtime.connectNative</a> or <a href="https://developer.chrome.com/apps/runtime#method-sendNativeMessage">runtime.sendNativeMessage</a>.</td>
   </tr>
   <tr>
     <td><code>description</code></td>
@@ -217,6 +217,6 @@ Opera starts each native messaging host in a separate process and communicates w
 
 ## Other methods of communication
 
-In some situations you might want a more *persistent* form of communication between the different parts of your extension, in which case you can open a message channel between your content script and the extension page using [`runtime.connect()`](runtime.html#method-connect) or [`tabs.connect()`](tabs.html#method-connect).
+In some situations you might want a more *persistent* form of communication between the different parts of your extension, in which case you can open a message channel between your content script and the extension page using [`runtime.connect()`](https://developer.chrome.com/apps/runtime#method-connect) or [`tabs.connect()`](https://developer.chrome.com/extensions/tabs#method-connect).
 
-You can communicate between different extensions by using the [`runtime.onMessageExternal()`](runtime.html#event-onMessageExternal) and [`runtime.onConnectExternal()`](runtime.html#event-onConnectExternal) methods.
+You can communicate between different extensions by using the [`runtime.onMessageExternal()`](https://developer.chrome.com/apps/runtime#event-onMessageExternal) and [`runtime.onConnectExternal()`](https://developer.chrome.com/apps/runtime#event-onConnectExternal) methods.

@@ -6,7 +6,7 @@ copyright: opera-ccby
 ---
 ##Introduction
 
-This article describes how to use the [Commands API](commands.html) to add keyboard shortcuts to various commands in your extensions.
+This article describes how to use the [Commands API](https://developer.chrome.com/extensions/commands) to add keyboard shortcuts to various commands in your extensions.
 
 ##Keyboard shortcuts in extensions
 

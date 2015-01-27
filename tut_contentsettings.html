@@ -8,7 +8,7 @@ originalsource: http://developer.chrome.com/extensions/contentSettings.html
 
 <h2 id="manifest">Manifest</h2>
 <p>
-You must declare the <code>"contentSettings"</code> permission in your extension's manifest to use <a href="contentSettings.html">contentSettings API</a>, which allows you to do per-site customizations. For example:
+You must declare the <code>"contentSettings"</code> permission in your extension's manifest to use <a href="https://developer.chrome.com/extensions/contentSettings">contentSettings API</a>, which allows you to do per-site customizations. For example:
 </p>
 
 <pre class="prettyprint" data-filename="manifest.json">
@@ -56,9 +56,9 @@ You can use patterns to specify the websites that each content setting affects. 
 </ul>
 
 <h2 id="primary-secondary-patterns">Primary and secondary patterns</h2>
-<p>The URL taken into account when deciding which content setting to apply depends on the content type. For example, for <a href="contentSettings.html#property-notifications">notifications</a> settings are based on the URL shown in the omnibox. This URL is called the "primary" URL.</p>
+<p>The URL taken into account when deciding which content setting to apply depends on the content type. For example, for <a href="https://developer.chrome.com/extensions/contentSettings#property-notifications">notifications</a> settings are based on the URL shown in the omnibox. This URL is called the "primary" URL.</p>
 
-<p>Some content types can take additional URLs into account. For example, whether a site is allowed to set a <a href="contentSettings.html#property-cookies">cookies</a> is decided based on the URL of the HTTP request (which is the primary URL in this case) as well as the URL shown in the omnibox (which is called the "secondary" URL).</p>
+<p>Some content types can take additional URLs into account. For example, whether a site is allowed to set a <a href="https://developer.chrome.com/extensions/contentSettings#property-cookies">cookies</a> is decided based on the URL of the HTTP request (which is the primary URL in this case) as well as the URL shown in the omnibox (which is called the "secondary" URL).</p>
 
 <p>If multiple rules have primary and secondary patterns, the rule with the more specific primary pattern takes precedence. If there multiple rules have the same primary pattern, the rule with the more specific secondary pattern takes precedence. For example, the following list of primary/secondary pattern pairs is ordered by precedence:</p>
 
