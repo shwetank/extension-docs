@@ -1,12 +1,12 @@
 ---
 layout: default-withsidebar
-title: API documentation in Opera
+title: Supported extension APIs
 author: shwetankdixit
 ---
 
 ## Introduction
 
-Below are is the list of extension APIs supported in Opera. Since most of these APIs are in common with Chrome, we are linking each of those APIs with the appropriate documentation page (most of them link to the relavent chrome extension API page) and also mentioning whatever differences (if any) that our implementation of an API has vis-a-vis Chrome's. 
+Below are is the list of extension APIs supported in Opera. Since most of these APIs are in common with Chrome, we are linking each of those APIs with the appropriate documentation page (most of them link to the relavent chrome extension API page) and also mentioning whatever differences (if any) that our implementation of an API has vis-a-vis Chrome's.
 
 
 <table>
