@@ -39,14 +39,14 @@ copyright: opera-ccby
 							<p>These would be the changes in the manifest:</p>
 
 							<pre data-filename="manifest.json">{
-		"name": "My extension",
-		...
-		<b>"sidebar_action": {
-				"default_icon": "images/default_icon.png",           <em>// required</em>
-				"default_title" : "My extension title" <em>// optional; shown in tooltip</em>
-				"default_panel": "panel.html"        <em>// optional</em>
-				},</b>
-		...
+"name": "My extension",
+...
+<b>"sidebar_action": {
+	"default_icon": "images/default_icon.png",           <em>// required</em>
+	"default_title" : "My extension title" <em>// optional; shown in tooltip</em>
+	"default_panel": "panel.html"        <em>// optional</em>
+},</b>
+...
 } </pre>
 
 							<h3 id="icon">Icon</h3>
@@ -149,18 +149,6 @@ copyright: opera-ccby
 											<code class="prettyprint"> opr.sidebarAction.getBadgeBackgroundColor(
 												<span>object details</span>,
 												<span>function callback</span>) </code>
-										</td>
-									</tr>
-									<tr>
-										<td><a href="#method-enable">enable</a> −
-											<code class="prettyprint"> opr.sidebarAction.enable(
-												<span class="optional">integer tabId</span>) </code>
-										</td>
-									</tr>
-									<tr>
-										<td><a href="#method-disable">disable</a> −
-											<code class="prettyprint"> opr.sidebarAction.disable(
-												<span class="optional">integer tabId</span>) </code>
 										</td>
 									</tr>
 									<tr>
@@ -662,58 +650,6 @@ copyright: opera-ccby
 																</tr>
 															</tbody>
 														</table>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div>
-									<h3 id="method-enable">enable </h3>
-									<div class="summary">
-										<code class="prettyprint"> opr.sidebarAction.enable(
-											<span class="optional">integer tabId</span>) </code>
-									</div>
-									<div class="description">
-										<p class="availability"> </p>
-										<p> Enables the sidebar action for a tab. By default, sidebar actions are enabled. </p>
-										<table>
-											<tbody>
-												<tr>
-													<th colspan="3">Parameters</th>
-												</tr>
-												<tr id="property-enable-tabId">
-													<td>integer</td>
-													<td>
-														<span class="optional">(optional)</span> tabId</td>
-													<td>
-														<p> The id of the tab for which you want to modify the sidebar action. </p>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div>
-									<h3 id="method-disable">disable </h3>
-									<div class="summary">
-										<code class="prettyprint"> opr.sidebarAction.disable(
-											<span class="optional">integer tabId</span>) </code>
-									</div>
-									<div class="description">
-										<p class="availability"> </p>
-										<p> Disables the sidebar action for a tab. </p>
-										<table>
-											<tbody>
-												<tr>
-													<th colspan="3">Parameters</th>
-												</tr>
-												<tr id="property-disable-tabId">
-													<td>integer</td>
-													<td>
-														<span class="optional">(optional)</span> tabId</td>
-													<td>
-														<p> The id of the tab for which you want to modify the sidebar action. </p>
 													</td>
 												</tr>
 											</tbody>
