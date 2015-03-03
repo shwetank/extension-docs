@@ -32,7 +32,7 @@ copyright: opera-ccby
 						</table>
 						<section>
 							<h2 id="ui">Terminology</h2>
-							<p>Just for clarity, we’ll use the following terms to describe the needed elements. These are the <i>sidebar</i>, which consists of a <i>buttons list</i> on the left hand side of the sidebar. Clicking on each icon will open up its corresponding <i>panel</i> on the right hand side of the sidebar.</p>
+							<p>There are some additional elements in the browser that we need to understand in the context of sidebar extensions. These are the <i>sidebar</i>, which consists of a <i>buttons list</i> on the left hand side (which contains the icons for sidebar extensions). Clicking on each icon will open up its corresponding <i>panel</i> on the right hand side of the sidebar.</p>
 							<img src="static/images/sidebar-illustration.png" width="650">
 
 							<h2 id="manifest">Manifest</h2>
@@ -44,7 +44,7 @@ copyright: opera-ccby
 <b>"sidebar_action": {
 	"default_icon": "images/default_icon.png",           <em>// required</em>
 	"default_title" : "My extension title" <em>// optional; shown in tooltip</em>
-	"default_panel": "panel.html"        <em>// optional</em>
+	"default_panel": "panel.html"        <em>// required</em>
 	},</b>
 ...
 } </pre>
@@ -159,11 +159,11 @@ copyright: opera-ccby
 										</td>
 									</tr>
 									<tr>
-										<td><a href="#event-onFocus">onFocus</a>
+										<td><a href="#event-onFocus">onFocus</a> (not supported yet)
 										</td>
 									</tr>
 									<tr>
-										<td><a href="#event-onBlur">onBlur</a>
+										<td><a href="#event-onBlur">onBlur</a> (not supported yet)
 										</td>
 									</tr>
 								</tbody>
@@ -385,7 +385,7 @@ copyright: opera-ccby
 																	<td>string</td>
 																	<td> popup</td>
 																	<td>
-																		<p> The html file to show in a popup. If set to the empty string (''), no popup is shown. </p>
+																		<p> The html file to show in a popup. Cannot be empty an emptry string (entering a valid html file is mandatory)</p>
 																	</td>
 																</tr>
 															</tbody>
@@ -701,7 +701,7 @@ copyright: opera-ccby
 									</div>
 								</div>
 								<div>
-									<h3 id="event-onFocus">onFocus</h3>
+									<h3 id="event-onFocus">onFocus (not supported yet)</h3>
 									<div class="description">
 										<p>When the panel becomes in focus (user clicks inside the panel).</p>
 
@@ -745,7 +745,7 @@ copyright: opera-ccby
 									</div>
 								</div>
 								<div>
-									<h3 id="event-onBlur">onBlur</h3>
+									<h3 id="event-onBlur">onBlur (not supported yet)</h3>
 									<div class="description">
 										<p>When panel loses focus when the user clicks on the webpage (or any other area outside the panel), thereby the panel loses focus.
 										</p>
