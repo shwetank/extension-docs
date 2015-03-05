@@ -49,6 +49,19 @@ copyright: opera-ccby
 ...
 } </pre>
 
+You can also specify a series of sizes and icon paths as keys and values, instead of a single icon value described above. If you want to specify icons for a series of sizes, then instead of mentioning one default icon, you can specify an object listing out the paths to the icons and their corresponding sizes in the <code>default_icon</code> field like so:
+
+<pre data-filename="manifest.json">
+...
+<b>"sidebar_action": {
+	"default_icon": {
+		"19": "images/19.png",
+		"38": "images/38.png"
+	},
+...
+</b>
+</pre>
+
 							<h3 id="icon">Icon</h3>
 							<p>
 								You can set the icon in two ways: using a static image or using the HTML5 canvas element. Using static images is easier for simple applications, but you can create more dynamic UIs — such as smooth animation — using the canvas element. Static images can be in any format Blink can display, including BMP, GIF, ICO, JPEG, or PNG. For unpacked extensions, images must be in the PNG format.
