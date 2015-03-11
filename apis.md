@@ -157,7 +157,7 @@ Below are is the list of extension APIs supported in Opera. Since most of these 
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/tabs">Tabs</a></td>
-			<td>Opera does not support the <code>InjectDetails</code> and <code>ZoomSettings</code> types and the <code>sendRequest()</code>, <code>getSelected()</code>, <code>getAllInWindow()</code>, <code>highlight()</code>, <code>setZoom()</code>, <code>getZoom()</code>, <code>setZoomSettings()</code> and <code>getZoomSettings()&nbsp;</code>methods. Also, the <code>onSelectionChanged</code>, <code>onActiveChanged</code>, <code>onHighlightChanged</code>, <code>onHighlighted</code> and <code>onZoomChange</code> events are not supported.</td>
+			<td><p>Opera currently does not support the <code>InjectDetails</code> and <code>ZoomSettings</code> types and the <code>sendRequest()</code>, <code>getSelected()</code>, <code>getAllInWindow()</code>, <code>highlight()</code>, <code>setZoom()</code>, <code>getZoom()</code>, <code>setZoomSettings()</code> and <code>getZoomSettings()</code> methods. Also, the <code>onSelectionChanged</code>, <code>onActiveChanged</code>, <code>onHighlightChanged</code>, <code>onHighlighted</code> and <code>onZoomChange</code> events are not supported.</p> <p>Opera 29 onwards, things related to zoom in the API will be supported - namely, the <code>ZoomSettings</code> type and the <code>setZoom()</code>, <code>getZoom()</code>, <code>setZoomSettings()</code> and <code>getZoomSettings()</code> methods. </p> </td>
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/types">Types</a></td>
