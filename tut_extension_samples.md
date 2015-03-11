@@ -114,6 +114,17 @@ This is a repository of all the example extensions to help you get started with 
 * [Working with Off-Road Mode](tut_offroad.html)
 * [chrome.types](https://developer.chrome.com/extensions/types)
 
+## Sidebar Extensions
+**Sample extension**:
+
+* [Sidebar extension which maintains state using background script and localStorage](samples/sidebar-maintain-state.zip)
+
+**Relevant reading**:
+
+* [Creating extensions for the sidebar](tut_sidebar_actions.html)
+* [opr.sidebarAction](sidebarAction.html)
+
+
 
 
 
