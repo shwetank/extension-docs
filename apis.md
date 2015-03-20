@@ -33,7 +33,7 @@ Below are is the list of extension APIs supported in Opera. Since most of these 
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/commands">Commands</a></td>
-			<td>None</td>
+			<td>From Opera 29 onwards, it will be possible to assign shortcuts to open sidebar extensions by defining the shortcut in the manifest under the <code>_execute_sidebar_action</code> field. You can define shortcuts in the same way you do for browser and page actions.</td>
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/contentSettings">Content Settings</a></td>
@@ -41,7 +41,7 @@ Below are is the list of extension APIs supported in Opera. Since most of these 
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/contextMenus">Context Menus</a></td>
-			<td>None</td>
+			<td><code>chrome.contextmenus.create()</code> and <code>chrome.contextmenus.update()</code> will support an additional <code>enum</code> type of <code>sidebar_action</code> from Opera 29 onwards.</td>
 		</tr>
 		<tr>
 			<td><a href="https://developer.chrome.com/extensions/cookies">Cookies</a></td>
@@ -183,6 +183,9 @@ Below are is the list of extension APIs supported in Opera. Since most of these 
 			<td><a href="https://dev.opera.com/extensions/speeddial.html">Speed Dial</a></td>
 			<td>Only in Opera</td>
 		</tr>
+		<tr>
+			<td><a href="https://dev.opera.com/extensions/sidebarAction.html">sidebarAction</a></td>
+			<td>Only in Opera</td>
+		</tr>
 	</tbody>
 </table>
-
