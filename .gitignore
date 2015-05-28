@@ -1,5 +1,6 @@
 _site/
 node_modules
+.jekyll-metadata
 
 # Folder view configuration files
 .DS_Store
