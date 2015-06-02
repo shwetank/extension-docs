@@ -140,6 +140,10 @@ Below are is the list of extension APIs supported in Opera. Since most of these 
 			<td>None</td>
 		</tr>
 		<tr>
+			<td><a href="https://developer.chrome.com/extensions/sessions">Sessions</a></td>
+			<td>Sync is not supported right now, so <code>getDevices</code> will not work.</td>
+		</tr>
+		<tr>
 			<td><a href="https://developer.chrome.com/extensions/storage">Storage</a></td>
 			<td>Opera does not support the <code>sync()</code> and <code>managed()</code> methods.</td>
 		</tr>

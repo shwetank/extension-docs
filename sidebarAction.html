@@ -28,6 +28,11 @@ copyright: opera-ccby
 										<span class="code"> "sidebar_action": {...} </span>
 										<br> </td>
 								</tr>
+								<tr>
+									<td class="title">Learn More:</td>
+									<td> <a href="tut_sidebar_actions.html">Creating extensions for the sidebar</a>
+										<br> </td>
+								</tr>
 							</tbody>
 						</table>
 						<section>
@@ -76,7 +81,7 @@ You can also specify a series of sizes and icon paths as keys and values, instea
 			 To set the tooltip, use the <b>default_title</b> field of <b>sidebar_action</b> in the <a href="#manifest">manifest</a>, or call the <a href="#method-setTitle">sidebarAction.setTitle</a> method. You can specify locale-specific strings for the <b>default_title</b> field; see <a href="tut_internationalization.html">Internationalization</a> for details.
 			</p>
 
-							<h3 id="badge">Badge (not supported yet)</h3>
+							<h3 id="badge">Badge</h3>
 							<p>sidebar actions can optionally display a
 								<em>badge</em> — a bit of text that is layered over the icon. Badges make it easy to update the sidebar action to display a small amount of information about the state of the extension.</p>
 							<p>Because the badge has limited space, it should have 4 characters or less. </p>
@@ -670,48 +675,6 @@ You can also specify a series of sizes and icon paths as keys and values, instea
 								</div>
 								<h2 id="events">Events</h2>
 								<div>
-									<h3 id="event-onClicked">onClicked</h3>
-									<div class="description">
-										<p> Fired when a sidebar action icon is clicked.</p>
-										<div>
-											<h4 title="">addListener </h4>
-											<div class="summary">
-												<code class="prettyprint"> opr.sidebarAction.onClicked.addListener(
-													<span>function callback</span>) </code>
-											</div>
-											<div class="description">
-												<table class="innerTable">
-													<tbody>
-														<tr>
-															<th colspan="3">Parameters</th>
-														</tr>
-														<tr id="property-onClicked-callback">
-															<td>function</td>
-															<td> callback</td>
-															<td>
-																<p> The
-																	<em>callback</em> parameter should be a function that looks like this: </p>
-																<code class="prettyprint">function( <a href="/extensions/tabs#type-Tab">tabs.Tab</a> tab)
-																	<span class="subdued">{...}</span>;</code>
-																<table class="innerTable">
-																	<tbody>
-																		<tr id="property-onClicked-tab">
-																			<td> <a href="/extensions/tabs#type-Tab">tabs.Tab</a>
-																			</td>
-																			<td> tab</td>
-																			<td>
-																				<br> </td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
 								<div>
 									<h3 id="event-onFocus">onFocus (not supported yet)</h3>
 									<div class="description">
@@ -735,14 +698,14 @@ You can also specify a series of sizes and icon paths as keys and values, instea
 															<td>
 																<p> The
 																	<em>callback</em> parameter should be a function that looks like this: </p>
-																<code class="prettyprint">function( <a href="/extensions/tabs#type-Tab">tabs.Tab</a> tab)
+																<code class="prettyprint">function( <a href="https://developer.chrome.com/extensions/windows#type-Window">windows.Window</a> window)
 																	<span class="subdued">{...}</span>;</code>
 																<table class="innerTable">
 																	<tbody>
 																		<tr id="property-onClicked-tab">
-																			<td> <a href="/extensions/tabs#type-Tab">tabs.Tab</a>
+																			<td> <a href="https://developer.chrome.com/extensions/windows#type-Window">windows.Window</a>
 																			</td>
-																			<td> tab</td>
+																			<td> window</td>
 																			<td>
 																				<br> </td>
 																		</tr>
@@ -779,14 +742,14 @@ You can also specify a series of sizes and icon paths as keys and values, instea
 															<td>
 																<p> The
 																	<em>callback</em> parameter should be a function that looks like this: </p>
-																<code class="prettyprint">function( <a href="/extensions/tabs#type-Tab">tabs.Tab</a> tab)
+																<code class="prettyprint">function( <a href="https://developer.chrome.com/extensions/windows#type-Window">windows.Window</a> window)
 																	<span class="subdued">{...}</span>;</code>
 																<table class="innerTable">
 																	<tbody>
 																		<tr id="property-onClicked-tab">
-																			<td> <a href="/extensions/tabs#type-Tab">tabs.Tab</a>
+																			<td> <a href="https://developer.chrome.com/extensions/windows#type-Window">windows.Window</a>
 																			</td>
-																			<td> tab</td>
+																			<td> window</td>
 																			<td>
 																				<br> </td>
 																		</tr>

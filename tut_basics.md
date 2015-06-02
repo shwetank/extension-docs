@@ -7,7 +7,7 @@ copyright: opera-ccby
 
 ## Introduction
 
-Making extensions for Opera 15+ is really easy. If you are already familiar with making Google Chrome extensions, then you will be right at home, as Opera 15+ uses the Chromium extensions architecture (with some minor differences). And even if you aren't, Opera extensions are still easy — they are made using open web technologies, plus some specific APIs to tap into browser functionality.
+Making extensions for Opera is really easy. If you are already familiar with making Google Chrome extensions, then you will be right at home, as Opera uses the Chromium extensions architecture (with some minor differences). And even if you aren't, Opera extensions are still easy — they are made using open web technologies, plus some specific APIs to tap into browser functionality.
 
 In this article we'll put together a simple example extension to show you how it works.
 
@@ -86,4 +86,4 @@ Your .nex package will be generated in the parent directory of the one you had s
 ## What now?
 As you can see, making extensions for Opera is really easy. Through this tutorial, you've learn how to make a basic extension, load it in *Developer Mode*, test it out and finally package it.
 
-From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure reference guide, check out the Opera extensions [API documentation](index.html).
+From here you should take a look at the other tutorials we've written, covering different parts of extension functionality in more detail (like Buttons, Tabs, Messaging, etc.) If you need a pure reference guide, check out the API Docs section in the sidebar.
