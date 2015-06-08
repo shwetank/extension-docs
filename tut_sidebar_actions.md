@@ -101,3 +101,17 @@ function setValue(theValue){
 Keep in mind that the extensions panel page can be considered as 'closed' if the panel is not open, but it's background will always be running. So you can maintain state by making sure that the background script either stores data to localStorage, or if it stores the data in the background script itself.
 
 You can [download the sample sidebar extension](samples/sidebar-maintain-state.zip) and have a look at the code.
+
+## Detecting user focus on the panel
+
+There might be situations where you would want to detect whether the user has focus on your panel or not. You can listen to the [`onfocus`](sidebarAction.html#event-onFocus) and [`onblur`](sidebarAction.html#event-onBlur) events to see when the user has focus on your panel, and when the user leaves focus from your panel. 
+
+<pre class="prettyprint">window.onfocus = function() {
+	console.log('The user is focussed on the panel page');
+}
+window.onblur = function() {
+	console.log('The user has left focus from the panel page.');
+}</pre> 
+
+Now that you know how to make sidebar extensions, here is hoping you quickly submit some great extensions to the [addons store](https://addons.opera.com).
+
