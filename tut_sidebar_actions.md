@@ -104,7 +104,7 @@ You can [download the sample sidebar extension](samples/sidebar-maintain-state.z
 
 ## Detecting user focus on the panel
 
-There might be situations where you would want to detect whether the user has focus on your panel or not. You can listen to the [`onfocus`](sidebarAction.html#event-onFocus) and [`onblur`](sidebarAction.html#event-onBlur) events to see when the user has focus on your panel, and when the user leaves focus from your panel. 
+There might be situations where you would want to detect whether the user has focus on your panel or not. You can listen to the `onfocus` and `onblur` events on the `window` elements in the panel page, to see when the user has focus on your panel, and when the user leaves focus from your panel. Support for the events on the `sidebarAction` namespace will also come soon.
 
 <pre class="prettyprint">window.onfocus = function() {
 	console.log('The user is focussed on the panel page');
