@@ -25,6 +25,13 @@ There are four simple steps to make your animated theme and to test it out on yo
 
 If all things are valid, your theme should be installed in the Opera browser running on your local machine.
 
+You can easily make an animated theme using the *theme creator* in Opera. 
+
+1. Open Opera and go to "opera://themes"
+2. On the left hand side menu, click on *create your theme*
+3. Enter relavent details and select the .webm file you want. 
+4. Click on the *create* button.
+
 ### The `Persona.ini` file
 
 The `Persona.ini` file is just a file which lists essential details about the theme. This includes the theme name, the author, name of the `.webm` file(s) you want included in the theme, and other such things. Let's see a sample `Persona.ini` file to know more.
