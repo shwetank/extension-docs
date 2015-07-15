@@ -44,7 +44,7 @@ However, feel free to tweak your extensions by setting "size_mode" to "adapt" in
 
 If you set he value of "size_mode" to "adapt" then the speed dial extension is rendered with viewport size of the current thumbnail size (no scaling) and the extension needs to adapt to the changing size. This gives you control of how the speed dial extension will look in different sizes. 
 
-We would recommend all extension authors to use use "adapt" as the automatic algorithmic scaling using "auto_zoom" might produce results which could be bettered if you use "adapt" and set the styling yourself using media queries and other responsive design techniques. 
+We would recommend all extension authors to use use "adapt". This is because automatic algorithmic scaling using "auto_zoom" might produce results which could be bettered if you use "adapt" and set the styling yourself using media queries and other responsive design techniques. 
 
 ## The Speed Dial page
 The Speed Dial page itself is just an HTML page, which will be displayed in the Speed Dial cell. A Speed Dial cell is 188px in width and 120px in height. Lets take an example Speed Dial extension, and see the HTML associated HTML page.
