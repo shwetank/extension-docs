@@ -10,7 +10,7 @@ This tutorial will tell you about animated themes, how to make them, and where t
 
 ##Animated Themes
 
-Support for themes has been there for [quite a long time](https://dev.opera.com/articles/themes-in-opera-18-and-higher/), but it was using JPG, PNG or other such non-animated images. However with Opera 31 and above, you have support for animated themes in which you can use a `.webm` video file.
+Support for themes has been there for [quite a long time](https://dev.opera.com/articles/themes-in-opera-18-and-higher/), but it was using JPG, PNG or other such non-animated images. However with Opera 32 and above, you have support for animated themes in which you can use a `.webm` video file.
 
 The maximum file size supported for a `.webm` file in themes is 50MB.
 
@@ -24,6 +24,13 @@ There are four simple steps to make your animated theme and to test it out on yo
 4. Goto `opera:themes`. Drag and drop the `.zip` file to the window.
 
 If all things are valid, your theme should be installed in the Opera browser running on your local machine.
+
+You can easily make an animated theme using the *theme creator* in Opera. 
+
+1. Open Opera and go to "opera://themes"
+2. On the left hand side menu, click on *create your theme*
+3. Enter relavent details and select the .webm file you want. 
+4. Click on the *create* button.
 
 ### The `Persona.ini` file
 
