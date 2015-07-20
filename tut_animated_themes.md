@@ -6,7 +6,7 @@ copyright: opera-ccby
 ---
 
 ##Introduction
-This tutorial will tell you about animated themes, how to make them, and where to uload them for distribution.
+This tutorial will tell you about animated themes, how to make them, and where to upload them for distribution.
 
 ##Animated Themes
 
@@ -50,7 +50,7 @@ Position			      = center bottom
 [Web UI Pages]
 Background			      = sample.webm
 Position			      = center top
-; 'sample' video coutesy of example.org
+; 'sample' video courtesy of example.org
 </pre>
 
 The `[info]` section contains all the information about the extension. The things you lists under it are the following:
